@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"meshes\":[{\"object\":\"nil\",\"name\":\"P16_GeometryCandidate\",\"content\":\"Content{SourceType=None}\"},{\"object\":\"nil\",\"name\":\"P11_GeometryCandidate\",\"content\":\"Content{SourceType=None}\"},{\"object\":\"nil\",\"name\":\"P07_GeometryCandidate\",\"content\":\"Content{SourceType=None}\"},{\"object\":\"nil\",\"name\":\"P04_Geometry\",\"content\":\"Content{SourceType=None}\"}],\"surfaces\":[{\"content\":\"Content{SourceType=None}\",\"object\":\"nil\"},{\"content\":\"Content{SourceType=None}\",\"object\":\"nil\"},{\"content\":\"Content{SourceType=None}\",\"object\":\"nil\"},{\"content\":\"Content{SourceType=None}\",\"object\":\"nil\"}],\"images\":[{\"object\":\"nil\",\"name\":\"PanelMask\",\"content\":\"Content{SourceType=None}\"},{\"object\":\"nil\",\"name\":\"Icon\",\"content\":\"Content{SourceType=None}\"},{\"object\":\"nil\",\"name\":\"Icon\",\"content\":\"Content{SourceType=None}\"}]}"
+    }
+  ],
+  "isError": false
+}

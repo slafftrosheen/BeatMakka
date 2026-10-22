@@ -1,0 +1,645 @@
+{
+  "date": "2026-10-22",
+  "source_mapped": 74,
+  "total": 74,
+  "meaning": "File-level implementation traceability, not 100 percent asset or runtime acceptance",
+  "packages": [
+    {
+      "id": "H01",
+      "name": "MK-I sampler workstation",
+      "sources": [
+        "src/server/WorldBuilder.luau"
+      ],
+      "boundary": "Authored runtime assembly; navigation/visual acceptance separate"
+    },
+    {
+      "id": "H02",
+      "name": "Compact speaker stack",
+      "sources": [
+        "src/server/AssetDetails.luau",
+        "src/client/WorldFeedback.luau"
+      ],
+      "boundary": "Functional bindings and articulated proxies; imported art gates separate"
+    },
+    {
+      "id": "H03",
+      "name": "Vinyl crate and record insert",
+      "sources": [
+        "src/server/AssetDetails.luau",
+        "src/client/WorldFeedback.luau"
+      ],
+      "boundary": "Functional bindings and articulated proxies; imported art gates separate"
+    },
+    {
+      "id": "H04",
+      "name": "Maintenance helper robot",
+      "sources": [
+        "src/server/AssetDetails.luau",
+        "src/client/WorldFeedback.luau"
+      ],
+      "boundary": "Functional bindings and articulated proxies; imported art gates separate"
+    },
+    {
+      "id": "H05",
+      "name": "Curved street lamp",
+      "sources": [
+        "src/server/AssetDetails.luau",
+        "src/client/WorldFeedback.luau"
+      ],
+      "boundary": "Functional bindings and articulated proxies; imported art gates separate"
+    },
+    {
+      "id": "H06",
+      "name": "Record-shop / workshop shell",
+      "sources": [
+        "src/server/WorldBuilder.luau"
+      ],
+      "boundary": "Authored runtime assembly; navigation/visual acceptance separate"
+    },
+    {
+      "id": "M01",
+      "name": "Full wall bay",
+      "sources": [
+        "src/server/ModularKit.luau"
+      ],
+      "boundary": "Source constructor; DCC/export/art/import gates separate"
+    },
+    {
+      "id": "M02",
+      "name": "Half wall bay",
+      "sources": [
+        "src/server/ModularKit.luau"
+      ],
+      "boundary": "Source constructor; DCC/export/art/import gates separate"
+    },
+    {
+      "id": "M03",
+      "name": "Corner post",
+      "sources": [
+        "src/server/ModularKit.luau"
+      ],
+      "boundary": "Source constructor; DCC/export/art/import gates separate"
+    },
+    {
+      "id": "M04",
+      "name": "Door portal bay",
+      "sources": [
+        "src/server/ModularKit.luau"
+      ],
+      "boundary": "Source constructor; DCC/export/art/import gates separate"
+    },
+    {
+      "id": "M05",
+      "name": "Display window bay",
+      "sources": [
+        "src/server/ModularKit.luau"
+      ],
+      "boundary": "Source constructor; DCC/export/art/import gates separate"
+    },
+    {
+      "id": "M06",
+      "name": "Door leaf",
+      "sources": [
+        "src/server/ModularKit.luau"
+      ],
+      "boundary": "Source constructor; DCC/export/art/import gates separate"
+    },
+    {
+      "id": "M07",
+      "name": "Floor tile",
+      "sources": [
+        "src/server/ModularKit.luau"
+      ],
+      "boundary": "Source constructor; DCC/export/art/import gates separate"
+    },
+    {
+      "id": "M08",
+      "name": "Roof panel",
+      "sources": [
+        "src/server/ModularKit.luau"
+      ],
+      "boundary": "Source constructor; DCC/export/art/import gates separate"
+    },
+    {
+      "id": "M09",
+      "name": "Roof-edge trim",
+      "sources": [
+        "src/server/ModularKit.luau"
+      ],
+      "boundary": "Source constructor; DCC/export/art/import gates separate"
+    },
+    {
+      "id": "M10",
+      "name": "Striped awning bay",
+      "sources": [
+        "src/server/ModularKit.luau"
+      ],
+      "boundary": "Source constructor; DCC/export/art/import gates separate"
+    },
+    {
+      "id": "M11",
+      "name": "Entry step unit",
+      "sources": [
+        "src/server/ModularKit.luau"
+      ],
+      "boundary": "Source constructor; DCC/export/art/import gates separate"
+    },
+    {
+      "id": "M12",
+      "name": "Access ramp",
+      "sources": [
+        "src/server/ModularKit.luau"
+      ],
+      "boundary": "Source constructor; DCC/export/art/import gates separate"
+    },
+    {
+      "id": "M13",
+      "name": "Paving tile",
+      "sources": [
+        "src/server/ModularKit.luau"
+      ],
+      "boundary": "Source constructor; DCC/export/art/import gates separate"
+    },
+    {
+      "id": "M14",
+      "name": "Curb section",
+      "sources": [
+        "src/server/ModularKit.luau"
+      ],
+      "boundary": "Source constructor; DCC/export/art/import gates separate"
+    },
+    {
+      "id": "M15",
+      "name": "Waterfront railing",
+      "sources": [
+        "src/server/ModularKit.luau"
+      ],
+      "boundary": "Source constructor; DCC/export/art/import gates separate"
+    },
+    {
+      "id": "M16",
+      "name": "Roof parapet",
+      "sources": [
+        "src/server/ModularKit.luau"
+      ],
+      "boundary": "Source constructor; DCC/export/art/import gates separate"
+    },
+    {
+      "id": "M17",
+      "name": "Vinyl storefront sign",
+      "sources": [
+        "src/server/ModularKit.luau"
+      ],
+      "boundary": "Source constructor; DCC/export/art/import gates separate"
+    },
+    {
+      "id": "M18",
+      "name": "Shop shutter",
+      "sources": [
+        "src/server/ModularKit.luau"
+      ],
+      "boundary": "Source constructor; DCC/export/art/import gates separate"
+    },
+    {
+      "id": "P01",
+      "name": "Studio workbench",
+      "sources": [
+        "assets/optimized/P01/P01_atlas_v1.glb",
+        "src/server/AssetSpawner.luau"
+      ],
+      "boundary": "Existing candidate source and placement; art/import gates separate"
+    },
+    {
+      "id": "P02",
+      "name": "Round workshop stool",
+      "sources": [
+        "assets/optimized/P02/P02_atlas_v1.glb",
+        "src/server/AssetSpawner.luau"
+      ],
+      "boundary": "Existing candidate source and placement; art/import gates separate"
+    },
+    {
+      "id": "P03",
+      "name": "Listening bench",
+      "sources": [
+        "assets/optimized/P03/P03_atlas_v1.glb",
+        "src/server/AssetSpawner.luau"
+      ],
+      "boundary": "Existing candidate source and placement; art/import gates separate"
+    },
+    {
+      "id": "P04",
+      "name": "Record browsing bin",
+      "sources": [
+        "assets/optimized/P04/P04_atlas_v1.glb",
+        "src/server/AssetSpawner.luau"
+      ],
+      "boundary": "Existing candidate source and placement; art/import gates separate"
+    },
+    {
+      "id": "P05",
+      "name": "Wall shelf",
+      "sources": [
+        "assets/optimized/P05/P05_atlas_v1.glb",
+        "src/server/AssetSpawner.luau"
+      ],
+      "boundary": "Existing candidate source and placement; art/import gates separate"
+    },
+    {
+      "id": "P06",
+      "name": "Storage crate",
+      "sources": [
+        "assets/optimized/P06/P06_atlas_v1.glb",
+        "src/server/AssetSpawner.luau"
+      ],
+      "boundary": "Existing candidate source and placement; art/import gates separate"
+    },
+    {
+      "id": "P07",
+      "name": "Headphones",
+      "sources": [
+        "assets/optimized/P07/P07_atlas_v1.glb",
+        "src/server/AssetSpawner.luau"
+      ],
+      "boundary": "Existing candidate source and placement; art/import gates separate"
+    },
+    {
+      "id": "P08",
+      "name": "Woven studio rug",
+      "sources": [
+        "src/server/ModularKit.luau"
+      ],
+      "boundary": "Source constructor; DCC/export/art/import gates separate"
+    },
+    {
+      "id": "P09",
+      "name": "Cable-run kit",
+      "sources": [
+        "src/server/ModularKit.luau"
+      ],
+      "boundary": "Source constructor; DCC/export/art/import gates separate"
+    },
+    {
+      "id": "P10",
+      "name": "Cable coil",
+      "sources": [
+        "src/server/ModularKit.luau"
+      ],
+      "boundary": "Source constructor; DCC/export/art/import gates separate"
+    },
+    {
+      "id": "P11",
+      "name": "Planter pot",
+      "sources": [
+        "assets/optimized/P11/P11_atlas_v1.glb",
+        "src/server/AssetSpawner.luau"
+      ],
+      "boundary": "Existing candidate source and placement; art/import gates separate"
+    },
+    {
+      "id": "P12",
+      "name": "Broad-leaf plant cluster",
+      "sources": [
+        "assets/optimized/P12/P12_atlas_v1.glb",
+        "src/server/AssetSpawner.luau"
+      ],
+      "boundary": "Existing candidate source and placement; art/import gates separate"
+    },
+    {
+      "id": "P13",
+      "name": "Wall / pendant lamp family",
+      "sources": [
+        "assets/optimized/P13/P13_atlas_v1.glb",
+        "src/server/AssetSpawner.luau"
+      ],
+      "boundary": "Existing candidate source and placement; art/import gates separate"
+    },
+    {
+      "id": "P14",
+      "name": "Utility junction box",
+      "sources": [
+        "assets/optimized/P14/P14_atlas_v1.glb",
+        "src/server/AssetSpawner.luau"
+      ],
+      "boundary": "Existing candidate source and placement; art/import gates separate"
+    },
+    {
+      "id": "P15",
+      "name": "Repair-bench clutter cluster",
+      "sources": [
+        "src/server/ModularKit.luau"
+      ],
+      "boundary": "Source constructor; DCC/export/art/import gates separate"
+    },
+    {
+      "id": "P16",
+      "name": "Rooftop vent / duct",
+      "sources": [
+        "assets/optimized/P16/P16_atlas_v1.glb",
+        "src/server/AssetSpawner.luau"
+      ],
+      "boundary": "Existing candidate source and placement; art/import gates separate"
+    },
+    {
+      "id": "I01",
+      "name": "Metal strike-sign discovery node",
+      "sources": [
+        "src/server/MusicService.luau",
+        "src/client/WorldFeedback.luau"
+      ],
+      "boundary": "Server unlock/preview binding; audio permission gate separate"
+    },
+    {
+      "id": "I02",
+      "name": "Vent-thump discovery binding",
+      "sources": [
+        "src/server/MusicService.luau",
+        "src/client/WorldFeedback.luau"
+      ],
+      "boundary": "Server unlock/preview binding; audio permission gate separate"
+    },
+    {
+      "id": "I03",
+      "name": "Robot-chirp discovery binding",
+      "sources": [
+        "src/server/MusicService.luau",
+        "src/client/WorldFeedback.luau"
+      ],
+      "boundary": "Server unlock/preview binding; audio permission gate separate"
+    },
+    {
+      "id": "I04",
+      "name": "Workshop resonator junction",
+      "sources": [
+        "src/client/Restoration.luau",
+        "src/client/WorldFeedback.luau"
+      ],
+      "boundary": "Personal four-state restoration; art gate separate"
+    },
+    {
+      "id": "I05",
+      "name": "Listening-stage control podium",
+      "sources": [
+        "src/server/ListeningSession.luau"
+      ],
+      "boundary": "Snapshot/session ownership; visual/audio acceptance separate"
+    },
+    {
+      "id": "W01",
+      "name": "Courtyard listening-stage assembly",
+      "sources": [
+        "src/server/WorldBuilder.luau"
+      ],
+      "boundary": "Authored runtime assembly; navigation/visual acceptance separate"
+    },
+    {
+      "id": "W02",
+      "name": "Waterfront edge and calm water",
+      "sources": [
+        "src/server/WorldBuilder.luau"
+      ],
+      "boundary": "Authored runtime assembly; navigation/visual acceptance separate"
+    },
+    {
+      "id": "W03",
+      "name": "Distant skyline cluster",
+      "sources": [
+        "src/server/ModularKit.luau"
+      ],
+      "boundary": "Source constructor; DCC/export/art/import gates separate"
+    },
+    {
+      "id": "W04",
+      "name": "Elevated transit / bridge silhouette",
+      "sources": [
+        "src/server/ModularKit.luau"
+      ],
+      "boundary": "Source constructor; DCC/export/art/import gates separate"
+    },
+    {
+      "id": "T01",
+      "name": "Equipment paint / trim material set",
+      "sources": [
+        "tools/build_content_sources.py",
+        "assets/production/source-manifest.json"
+      ],
+      "boundary": "Original editable/generator sources; upload/art gates separate"
+    },
+    {
+      "id": "T02",
+      "name": "Wood material set",
+      "sources": [
+        "tools/build_content_sources.py",
+        "assets/production/source-manifest.json"
+      ],
+      "boundary": "Original editable/generator sources; upload/art gates separate"
+    },
+    {
+      "id": "T03",
+      "name": "Masonry / paving material set",
+      "sources": [
+        "tools/build_content_sources.py",
+        "assets/production/source-manifest.json"
+      ],
+      "boundary": "Original editable/generator sources; upload/art gates separate"
+    },
+    {
+      "id": "T04",
+      "name": "Fabric / rubber material set",
+      "sources": [
+        "tools/build_content_sources.py",
+        "assets/production/source-manifest.json"
+      ],
+      "boundary": "Original editable/generator sources; upload/art gates separate"
+    },
+    {
+      "id": "G01",
+      "name": "Original record sleeve / label atlas",
+      "sources": [
+        "tools/build_content_sources.py",
+        "assets/production/source-manifest.json"
+      ],
+      "boundary": "Original editable/generator sources; upload/art gates separate"
+    },
+    {
+      "id": "G02",
+      "name": "Neighborhood poster / sticker atlas",
+      "sources": [
+        "tools/build_content_sources.py",
+        "assets/production/source-manifest.json"
+      ],
+      "boundary": "Original editable/generator sources; upload/art gates separate"
+    },
+    {
+      "id": "G03",
+      "name": "Equipment face / pad / icon atlas",
+      "sources": [
+        "tools/build_content_sources.py",
+        "assets/production/source-manifest.json"
+      ],
+      "boundary": "Original editable/generator sources; upload/art gates separate"
+    },
+    {
+      "id": "G04",
+      "name": "Wayfinding and status graphics",
+      "sources": [
+        "tools/build_content_sources.py",
+        "assets/production/source-manifest.json"
+      ],
+      "boundary": "Original editable/generator sources; upload/art gates separate"
+    },
+    {
+      "id": "A01",
+      "name": "Sampler pad feedback",
+      "sources": [
+        "src/shared/MotionPoses.luau",
+        "src/client/WorldFeedback.luau"
+      ],
+      "boundary": "Local rigid transform reactions; candidate rig/art review separate"
+    },
+    {
+      "id": "A02",
+      "name": "Speaker cone response",
+      "sources": [
+        "src/shared/MotionPoses.luau",
+        "src/client/WorldFeedback.luau"
+      ],
+      "boundary": "Local rigid transform reactions; candidate rig/art review separate"
+    },
+    {
+      "id": "A03",
+      "name": "Robot basic motion set",
+      "sources": [
+        "src/shared/MotionPoses.luau",
+        "src/client/WorldFeedback.luau"
+      ],
+      "boundary": "Local rigid transform reactions; candidate rig/art review separate"
+    },
+    {
+      "id": "A04",
+      "name": "Robot celebration / carry set",
+      "sources": [
+        "src/shared/MotionPoses.luau",
+        "src/client/WorldFeedback.luau"
+      ],
+      "boundary": "Local rigid transform reactions; candidate rig/art review separate"
+    },
+    {
+      "id": "A05",
+      "name": "Restoration reveal choreography",
+      "sources": [
+        "src/shared/MotionPoses.luau",
+        "src/client/WorldFeedback.luau"
+      ],
+      "boundary": "Local rigid transform reactions; candidate rig/art review separate"
+    },
+    {
+      "id": "F01",
+      "name": "Dusk and practical-light presets",
+      "sources": [
+        "src/shared/LightingPresets.luau",
+        "src/client/WorldFeedback.luau",
+        "src/client/Restoration.luau"
+      ],
+      "boundary": "Local optional presentation; visual/performance acceptance separate"
+    },
+    {
+      "id": "F02",
+      "name": "Music-reactive visual preset",
+      "sources": [
+        "src/shared/LightingPresets.luau",
+        "src/client/WorldFeedback.luau",
+        "src/client/Restoration.luau"
+      ],
+      "boundary": "Local optional presentation; visual/performance acceptance separate"
+    },
+    {
+      "id": "F03",
+      "name": "Discovery feedback",
+      "sources": [
+        "src/shared/LightingPresets.luau",
+        "src/client/WorldFeedback.luau",
+        "src/client/Restoration.luau"
+      ],
+      "boundary": "Local optional presentation; visual/performance acceptance separate"
+    },
+    {
+      "id": "F04",
+      "name": "Ambient dust / water accents",
+      "sources": [
+        "src/shared/LightingPresets.luau",
+        "src/client/WorldFeedback.luau",
+        "src/client/Restoration.luau"
+      ],
+      "boundary": "Local optional presentation; visual/performance acceptance separate"
+    },
+    {
+      "id": "U01",
+      "name": "Workstation UI art kit",
+      "sources": [
+        "src/client/WorkshopView.luau"
+      ],
+      "boundary": "Native responsive controls and state feedback; device checks recorded separately"
+    },
+    {
+      "id": "U02",
+      "name": "Discovery / sample card kit",
+      "sources": [
+        "src/client/WorkshopView.luau"
+      ],
+      "boundary": "Native responsive controls and state feedback; device checks recorded separately"
+    },
+    {
+      "id": "U03",
+      "name": "Listening / session status kit",
+      "sources": [
+        "src/client/ListeningView.luau"
+      ],
+      "boundary": "Native responsive controls and state feedback; device checks recorded separately"
+    },
+    {
+      "id": "U04",
+      "name": "Save / restore feedback kit",
+      "sources": [
+        "src/client/WorkshopView.luau"
+      ],
+      "boundary": "Native responsive controls and state feedback; device checks recorded separately"
+    },
+    {
+      "id": "S01",
+      "name": "Starter production sound bank",
+      "sources": [
+        "assets/production/audio/manifest.json",
+        "src/client/AudioEngine.luau"
+      ],
+      "boundary": "Original WAV sources and runtime binding; audio uploads/listening remain open"
+    },
+    {
+      "id": "S02",
+      "name": "Discovery sample bank",
+      "sources": [
+        "assets/production/audio/manifest.json",
+        "src/client/AudioEngine.luau"
+      ],
+      "boundary": "Original WAV sources and runtime binding; audio uploads/listening remain open"
+    },
+    {
+      "id": "S03",
+      "name": "Interaction and UI cue bank",
+      "sources": [
+        "assets/production/audio/manifest.json",
+        "src/client/AudioEngine.luau"
+      ],
+      "boundary": "Original WAV sources and runtime binding; audio uploads/listening remain open"
+    },
+    {
+      "id": "S04",
+      "name": "Quiet waterfront ambience",
+      "sources": [
+        "assets/production/audio/manifest.json",
+        "src/client/AudioEngine.luau"
+      ],
+      "boundary": "Original WAV sources and runtime binding; audio uploads/listening remain open"
+    }
+  ]
+}

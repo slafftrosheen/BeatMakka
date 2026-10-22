@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"steps\":{\"Step_14\":\"14\\nOFF\",\"Step_02\":\"02\\nOFF\",\"Step_07\":\"07\\nON\",\"Step_12\":\"12\\nOFF\",\"Step_09\":\"09\\nON\",\"Step_03\":\"03\\nOFF\",\"Step_16\":\"16\\nOFF\",\"Step_13\":\"13\\nON\",\"Step_08\":\"08\\nOFF\",\"Step_10\":\"10\\nOFF\",\"Step_11\":\"11\\nOFF\",\"Step_05\":\"05\\nOFF\",\"Step_15\":\"15\\nOFF\",\"Step_06\":\"06\\nOFF\",\"Step_04\":\"04\\nOFF\",\"Step_01\":\"01\\nON\"},\"status\":\"Saved pattern restored.\",\"save\":\"Save\",\"restore\":\"Restore\",\"finish\":\"Finish: Workshop teal\"}"
+    }
+  ],
+  "isError": false
+}

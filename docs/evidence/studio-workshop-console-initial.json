@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "You must publish this place to the web to access DataStore.\nStack Begin\nScript 'ServerScriptService.Server.ProfileStore', Line 8\nStack End\nRequested module experienced an error while loading\nStack Begin\nScript 'ServerScriptService.Server.MusicService', Line 7\nStack End\nRequested module experienced an error while loading\nStack Begin\nScript 'ServerScriptService.Server', Line 2\nStack End\nContentId: rbxassetid://203785492 failed due to: Asset type does not match requested type\nContentId: rbxassetid://203785492 failed due to: Asset type does not match requested type\nContentId: rbxassetid://203785492 failed due to: Asset type does not match requested type"
+    }
+  ],
+  "isError": false
+}

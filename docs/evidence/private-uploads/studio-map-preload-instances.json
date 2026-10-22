@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"ok\":true,\"callbacks\":[{\"id\":\"rbxassetid://138362874983991\",\"status\":\"Enum.AssetFetchStatus.Success\"},{\"id\":\"rbxassetid://99087195128670\",\"status\":\"Enum.AssetFetchStatus.Success\"}]}"
+    }
+  ],
+  "isError": false
+}

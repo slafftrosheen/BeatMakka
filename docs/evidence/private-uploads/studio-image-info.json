@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "[{\"id\":137950080210331,\"info\":{\"public\":false,\"type\":1,\"name\":\"Assistant_7d7a6af150541731fac4735cf4027891.png\",\"creator\":{\"Name\":\"CuuteFoxey\",\"CreatorTargetId\":11274985967,\"Id\":11274985967,\"HasVerifiedBadge\":false,\"CreatorType\":\"User\"}},\"ok\":true},{\"id\":138362874983991,\"info\":{\"public\":false,\"type\":1,\"name\":\"Assistant_edf2fc37749a5ebc6527e92ef1ab7fa1.png\",\"creator\":{\"Name\":\"CuuteFoxey\",\"CreatorTargetId\":11274985967,\"Id\":11274985967,\"HasVerifiedBadge\":false,\"CreatorType\":\"User\"}},\"ok\":true}]"
+    }
+  ],
+  "isError": false
+}

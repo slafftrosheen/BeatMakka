@@ -12,3 +12,4 @@
 *.glb binary
 *.fbx binary
 *.blend binary
+*.wav binary

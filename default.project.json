@@ -2,7 +2,26 @@
   "name": "FrequencyZero",
   "tree": {
     "$className": "DataModel",
+    "Workspace": {
+      "$ignoreUnknownInstances": true,
+      "$properties": { "StreamingEnabled": true }
+    },
+    "ServerStorage": {
+      "$ignoreUnknownInstances": true,
+      "AssetLibrary": {
+        "$className": "Folder",
+        "$ignoreUnknownInstances": true
+      }
+    },
     "ReplicatedStorage": {
+      "AppearanceLibrary": {
+        "$className": "Folder",
+        "$ignoreUnknownInstances": true
+      },
+      "UiImageLibrary": {
+        "$className": "Folder",
+        "$ignoreUnknownInstances": true
+      },
       "Shared": {
         "$path": "src/shared"
       }
@@ -18,6 +37,9 @@
           "$path": "src/client"
         }
       }
+    },
+    "StarterGui": {
+      "$properties": { "ScreenOrientation": "Sensor" }
     }
   }
 }

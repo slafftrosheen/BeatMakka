@@ -26,7 +26,10 @@
         "acceptance": "16 correctly mapped pads; screen separate; readable at play distance; no baked labels needed for gameplay."
       },
       "dcc_candidate": "assets/cleaned/H01/H01_sampler_shell_surface_repaired.glb",
-      "surface_audit": "docs/evidence/cleaned-asset-surface-review.md"
+      "surface_audit": "docs/evidence/cleaned-asset-surface-review.md",
+      "optimized_candidate": "assets/optimized/H01/H01_atlas_v1.glb",
+      "optimized_review": "New texture/UV/static-grouping variant; Blender re-import checked, art/Studio/runtime review pending. Accepted dcc_candidate remains unchanged.",
+      "optimization_evidence": "docs/evidence/optimized-assets.json"
     },
     {
       "id": "H02",
@@ -50,7 +53,10 @@
         "acceptance": "Stacking socket aligned; cone child named; no animated collision; quiet state visually complete."
       },
       "dcc_candidate": "assets/cleaned/H02/H02_compact_speaker_stack_surface_repaired.glb",
-      "surface_audit": "docs/evidence/cleaned-asset-surface-review.md"
+      "surface_audit": "docs/evidence/cleaned-asset-surface-review.md",
+      "optimized_candidate": "assets/optimized/H02/H02_atlas_v1.glb",
+      "optimized_review": "New texture/UV/static-grouping variant; Blender re-import checked, art/Studio/runtime review pending. Accepted dcc_candidate remains unchanged.",
+      "optimization_evidence": "docs/evidence/optimized-assets.json"
     },
     {
       "id": "H03",
@@ -75,7 +81,10 @@
         "acceptance": "Empty shell plus one insert delivered; artwork original; browse proxy independent of insert."
       },
       "dcc_candidate": "assets/cleaned/H03/H03_vinyl_crate_shell_surface_repaired.glb",
-      "surface_audit": "docs/evidence/cleaned-asset-surface-review.md"
+      "surface_audit": "docs/evidence/cleaned-asset-surface-review.md",
+      "optimized_candidate": "assets/optimized/H03/H03_atlas_v1.glb",
+      "optimized_review": "New texture/UV/static-grouping variant; Blender re-import checked, art/Studio/runtime review pending. Accepted dcc_candidate remains unchanged.",
+      "optimization_evidence": "docs/evidence/optimized-assets.json"
     },
     {
       "id": "H04",
@@ -100,7 +109,10 @@
         "acceptance": "Robot remains readable without glow; chirp interaction socket present; no per-link tread simulation."
       },
       "dcc_candidate": "assets/cleaned/H04/H04_maintenance_helper_robot_surface_repaired.glb",
-      "surface_audit": "docs/evidence/cleaned-asset-surface-review.md"
+      "surface_audit": "docs/evidence/cleaned-asset-surface-review.md",
+      "optimized_candidate": "assets/optimized/H04/H04_atlas_v1.glb",
+      "optimized_review": "New texture/UV/static-grouping variant; Blender re-import checked, art/Studio/runtime review pending. Accepted dcc_candidate remains unchanged.",
+      "optimization_evidence": "docs/evidence/optimized-assets.json"
     },
     {
       "id": "H05",
@@ -124,7 +136,10 @@
         "acceptance": "Emissive insert separate from glass; lit silhouette readable with local light disabled."
       },
       "dcc_candidate": "assets/cleaned/H05/H05_curved_street_lamp_scaled_surface_repaired.glb",
-      "surface_audit": "docs/evidence/cleaned-asset-surface-review.md"
+      "surface_audit": "docs/evidence/cleaned-asset-surface-review.md",
+      "optimized_candidate": "assets/optimized/H05/H05_atlas_v1.glb",
+      "optimized_review": "New texture/UV/static-grouping variant; Blender re-import checked, art/Studio/runtime review pending. Accepted dcc_candidate remains unchanged.",
+      "optimization_evidence": "docs/evidence/optimized-assets.json"
     },
     {
       "id": "H06",
@@ -159,7 +174,9 @@
           "T04"
         ],
         "acceptance": "One modular shell, not a fused diorama; 24 x 20 usable interior; doorway and camera clearances pass."
-      }
+      },
+      "runtime_implementation": "docs/WORKSHOP_MILESTONE.md",
+      "runtime_status": "Implemented source; Studio/runtime acceptance pending"
     },
     {
       "id": "M01",
@@ -183,7 +200,10 @@
           "T03"
         ],
         "acceptance": "Snaps to 4-stud planning / 8-stud bay grid; no seams, inverted faces or blocked route."
-      }
+      },
+      "source_deliverable": "src/server/ModularKit.luau",
+      "runtime_implementation": "docs/IMPLEMENTATION_COVERAGE.md",
+      "runtime_status": "Deterministic code constructor implemented; DCC export, art and imported-asset acceptance remain separate"
     },
     {
       "id": "M02",
@@ -207,7 +227,10 @@
           "T03"
         ],
         "acceptance": "Snaps to 4-stud planning / 8-stud bay grid; no seams, inverted faces or blocked route."
-      }
+      },
+      "source_deliverable": "src/server/ModularKit.luau",
+      "runtime_implementation": "docs/IMPLEMENTATION_COVERAGE.md",
+      "runtime_status": "Deterministic code constructor implemented; DCC export, art and imported-asset acceptance remain separate"
     },
     {
       "id": "M03",
@@ -231,7 +254,10 @@
           "T03"
         ],
         "acceptance": "Snaps to 4-stud planning / 8-stud bay grid; no seams, inverted faces or blocked route."
-      }
+      },
+      "source_deliverable": "src/server/ModularKit.luau",
+      "runtime_implementation": "docs/IMPLEMENTATION_COVERAGE.md",
+      "runtime_status": "Deterministic code constructor implemented; DCC export, art and imported-asset acceptance remain separate"
     },
     {
       "id": "M04",
@@ -255,7 +281,10 @@
           "T03"
         ],
         "acceptance": "Snaps to 4-stud planning / 8-stud bay grid; no seams, inverted faces or blocked route."
-      }
+      },
+      "source_deliverable": "src/server/ModularKit.luau",
+      "runtime_implementation": "docs/IMPLEMENTATION_COVERAGE.md",
+      "runtime_status": "Deterministic code constructor implemented; DCC export, art and imported-asset acceptance remain separate"
     },
     {
       "id": "M05",
@@ -279,7 +308,10 @@
           "T03"
         ],
         "acceptance": "Snaps to 4-stud planning / 8-stud bay grid; no seams, inverted faces or blocked route."
-      }
+      },
+      "source_deliverable": "src/server/ModularKit.luau",
+      "runtime_implementation": "docs/IMPLEMENTATION_COVERAGE.md",
+      "runtime_status": "Deterministic code constructor implemented; DCC export, art and imported-asset acceptance remain separate"
     },
     {
       "id": "M06",
@@ -303,7 +335,10 @@
           "T03"
         ],
         "acceptance": "Snaps to 4-stud planning / 8-stud bay grid; no seams, inverted faces or blocked route."
-      }
+      },
+      "source_deliverable": "src/server/ModularKit.luau",
+      "runtime_implementation": "docs/IMPLEMENTATION_COVERAGE.md",
+      "runtime_status": "Deterministic code constructor implemented; DCC export, art and imported-asset acceptance remain separate"
     },
     {
       "id": "M07",
@@ -327,7 +362,10 @@
           "T03"
         ],
         "acceptance": "Snaps to 4-stud planning / 8-stud bay grid; no seams, inverted faces or blocked route."
-      }
+      },
+      "source_deliverable": "src/server/ModularKit.luau",
+      "runtime_implementation": "docs/IMPLEMENTATION_COVERAGE.md",
+      "runtime_status": "Deterministic code constructor implemented; DCC export, art and imported-asset acceptance remain separate"
     },
     {
       "id": "M08",
@@ -351,7 +389,10 @@
           "T03"
         ],
         "acceptance": "Snaps to 4-stud planning / 8-stud bay grid; no seams, inverted faces or blocked route."
-      }
+      },
+      "source_deliverable": "src/server/ModularKit.luau",
+      "runtime_implementation": "docs/IMPLEMENTATION_COVERAGE.md",
+      "runtime_status": "Deterministic code constructor implemented; DCC export, art and imported-asset acceptance remain separate"
     },
     {
       "id": "M09",
@@ -375,7 +416,10 @@
           "T03"
         ],
         "acceptance": "Snaps to 4-stud planning / 8-stud bay grid; no seams, inverted faces or blocked route."
-      }
+      },
+      "source_deliverable": "src/server/ModularKit.luau",
+      "runtime_implementation": "docs/IMPLEMENTATION_COVERAGE.md",
+      "runtime_status": "Deterministic code constructor implemented; DCC export, art and imported-asset acceptance remain separate"
     },
     {
       "id": "M10",
@@ -399,7 +443,10 @@
           "T04"
         ],
         "acceptance": "Snaps to 4-stud planning / 8-stud bay grid; no seams, inverted faces or blocked route."
-      }
+      },
+      "source_deliverable": "src/server/ModularKit.luau",
+      "runtime_implementation": "docs/IMPLEMENTATION_COVERAGE.md",
+      "runtime_status": "Deterministic code constructor implemented; DCC export, art and imported-asset acceptance remain separate"
     },
     {
       "id": "M11",
@@ -423,7 +470,10 @@
           "T03"
         ],
         "acceptance": "Snaps to 4-stud planning / 8-stud bay grid; no seams, inverted faces or blocked route."
-      }
+      },
+      "source_deliverable": "src/server/ModularKit.luau",
+      "runtime_implementation": "docs/IMPLEMENTATION_COVERAGE.md",
+      "runtime_status": "Deterministic code constructor implemented; DCC export, art and imported-asset acceptance remain separate"
     },
     {
       "id": "M12",
@@ -447,7 +497,10 @@
           "T03"
         ],
         "acceptance": "Snaps to 4-stud planning / 8-stud bay grid; no seams, inverted faces or blocked route."
-      }
+      },
+      "source_deliverable": "src/server/ModularKit.luau",
+      "runtime_implementation": "docs/IMPLEMENTATION_COVERAGE.md",
+      "runtime_status": "Deterministic code constructor implemented; DCC export, art and imported-asset acceptance remain separate"
     },
     {
       "id": "M13",
@@ -471,7 +524,10 @@
           "T03"
         ],
         "acceptance": "Snaps to 4-stud planning / 8-stud bay grid; no seams, inverted faces or blocked route."
-      }
+      },
+      "source_deliverable": "src/server/ModularKit.luau",
+      "runtime_implementation": "docs/IMPLEMENTATION_COVERAGE.md",
+      "runtime_status": "Deterministic code constructor implemented; DCC export, art and imported-asset acceptance remain separate"
     },
     {
       "id": "M14",
@@ -495,7 +551,10 @@
           "T03"
         ],
         "acceptance": "Snaps to 4-stud planning / 8-stud bay grid; no seams, inverted faces or blocked route."
-      }
+      },
+      "source_deliverable": "src/server/ModularKit.luau",
+      "runtime_implementation": "docs/IMPLEMENTATION_COVERAGE.md",
+      "runtime_status": "Deterministic code constructor implemented; DCC export, art and imported-asset acceptance remain separate"
     },
     {
       "id": "M15",
@@ -519,7 +578,10 @@
           "T03"
         ],
         "acceptance": "Snaps to 4-stud planning / 8-stud bay grid; no seams, inverted faces or blocked route."
-      }
+      },
+      "source_deliverable": "src/server/ModularKit.luau",
+      "runtime_implementation": "docs/IMPLEMENTATION_COVERAGE.md",
+      "runtime_status": "Deterministic code constructor implemented; DCC export, art and imported-asset acceptance remain separate"
     },
     {
       "id": "M16",
@@ -543,7 +605,10 @@
           "T03"
         ],
         "acceptance": "Snaps to 4-stud planning / 8-stud bay grid; no seams, inverted faces or blocked route."
-      }
+      },
+      "source_deliverable": "src/server/ModularKit.luau",
+      "runtime_implementation": "docs/IMPLEMENTATION_COVERAGE.md",
+      "runtime_status": "Deterministic code constructor implemented; DCC export, art and imported-asset acceptance remain separate"
     },
     {
       "id": "M17",
@@ -567,7 +632,10 @@
           "T03"
         ],
         "acceptance": "Snaps to 4-stud planning / 8-stud bay grid; no seams, inverted faces or blocked route."
-      }
+      },
+      "source_deliverable": "src/server/ModularKit.luau",
+      "runtime_implementation": "docs/IMPLEMENTATION_COVERAGE.md",
+      "runtime_status": "Deterministic code constructor implemented; DCC export, art and imported-asset acceptance remain separate"
     },
     {
       "id": "M18",
@@ -591,7 +659,10 @@
           "T03"
         ],
         "acceptance": "Snaps to 4-stud planning / 8-stud bay grid; no seams, inverted faces or blocked route."
-      }
+      },
+      "source_deliverable": "src/server/ModularKit.luau",
+      "runtime_implementation": "docs/IMPLEMENTATION_COVERAGE.md",
+      "runtime_status": "Deterministic code constructor implemented; DCC export, art and imported-asset acceptance remain separate"
     },
     {
       "id": "P01",
@@ -617,7 +688,10 @@
         "acceptance": "H01 footprint fits; standing interaction needs no seat."
       },
       "dcc_candidate": "assets/cleaned/P01/P01_studio_workbench_surface_repaired.glb",
-      "surface_audit": "docs/evidence/cleaned-asset-surface-review.md"
+      "surface_audit": "docs/evidence/cleaned-asset-surface-review.md",
+      "optimized_candidate": "assets/optimized/P01/P01_atlas_v1.glb",
+      "optimized_review": "New texture/UV/static-grouping variant; Blender re-import checked, art/Studio/runtime review pending. Accepted dcc_candidate remains unchanged.",
+      "optimization_evidence": "docs/evidence/optimized-assets.json"
     },
     {
       "id": "P02",
@@ -643,7 +717,10 @@
         "acceptance": "Optional seating only; cannot block station."
       },
       "dcc_candidate": "assets/cleaned/P02/P02_round_workshop_stool_surface_repaired.glb",
-      "surface_audit": "docs/evidence/cleaned-asset-surface-review.md"
+      "surface_audit": "docs/evidence/cleaned-asset-surface-review.md",
+      "optimized_candidate": "assets/optimized/P02/P02_atlas_v1.glb",
+      "optimized_review": "New texture/UV/static-grouping variant; Blender re-import checked, art/Studio/runtime review pending. Accepted dcc_candidate remains unchanged.",
+      "optimization_evidence": "docs/evidence/optimized-assets.json"
     },
     {
       "id": "P03",
@@ -669,7 +746,10 @@
         "acceptance": "Sightline to stage; accessible approach."
       },
       "dcc_candidate": "assets/cleaned/P03/P03_listening_bench_surface_repaired.glb",
-      "surface_audit": "docs/evidence/cleaned-asset-surface-review.md"
+      "surface_audit": "docs/evidence/cleaned-asset-surface-review.md",
+      "optimized_candidate": "assets/optimized/P03/P03_atlas_v1.glb",
+      "optimized_review": "New texture/UV/static-grouping variant; Blender re-import checked, art/Studio/runtime review pending. Accepted dcc_candidate remains unchanged.",
+      "optimization_evidence": "docs/evidence/optimized-assets.json"
     },
     {
       "id": "P04",
@@ -696,7 +776,10 @@
         "acceptance": "Browse socket on front; artwork legible at close range."
       },
       "dcc_candidate": "assets/cleaned/P04/P04_record_browsing_bin_surface_repaired.glb",
-      "surface_audit": "docs/evidence/cleaned-asset-surface-review.md"
+      "surface_audit": "docs/evidence/cleaned-asset-surface-review.md",
+      "optimized_candidate": "assets/optimized/P04/P04_atlas_v1.glb",
+      "optimized_review": "New texture/UV/static-grouping variant; Blender re-import checked, art/Studio/runtime review pending. Accepted dcc_candidate remains unchanged.",
+      "optimization_evidence": "docs/evidence/optimized-assets.json"
     },
     {
       "id": "P05",
@@ -722,7 +805,10 @@
         "acceptance": "Mounted off head/camera route; shared props not embedded duplicates."
       },
       "dcc_candidate": "assets/cleaned/P05/P05_wall_shelf.glb",
-      "surface_audit": "docs/evidence/cleaned-asset-surface-review.md"
+      "surface_audit": "docs/evidence/cleaned-asset-surface-review.md",
+      "optimized_candidate": "assets/optimized/P05/P05_atlas_v1.glb",
+      "optimized_review": "New texture/UV/static-grouping variant; Blender re-import checked, art/Studio/runtime review pending. Accepted dcc_candidate remains unchanged.",
+      "optimization_evidence": "docs/evidence/optimized-assets.json"
     },
     {
       "id": "P06",
@@ -749,7 +835,10 @@
       },
       "dcc_candidate": "assets/cleaned/P06/P06_normalized_geometry_candidate_surface_repaired.glb",
       "dcc_evidence": "docs/evidence/dcc-normalization/remaining-batch-export-inspection.json",
-      "surface_audit": "docs/evidence/cleaned-asset-surface-review.md"
+      "surface_audit": "docs/evidence/cleaned-asset-surface-review.md",
+      "optimized_candidate": "assets/optimized/P06/P06_atlas_v1.glb",
+      "optimized_review": "New texture/UV/static-grouping variant; Blender re-import checked, art/Studio/runtime review pending. Accepted dcc_candidate remains unchanged.",
+      "optimization_evidence": "docs/evidence/optimized-assets.json"
     },
     {
       "id": "P07",
@@ -776,7 +865,10 @@
       },
       "dcc_candidate": "assets/cleaned/P07/P07_normalized_geometry_candidate_surface_repaired.glb",
       "dcc_evidence": "docs/evidence/dcc-normalization/remaining-batch-export-inspection.json",
-      "surface_audit": "docs/evidence/cleaned-asset-surface-review.md"
+      "surface_audit": "docs/evidence/cleaned-asset-surface-review.md",
+      "optimized_candidate": "assets/optimized/P07/P07_atlas_v1.glb",
+      "optimized_review": "New texture/UV/static-grouping variant; Blender re-import checked, art/Studio/runtime review pending. Accepted dcc_candidate remains unchanged.",
+      "optimization_evidence": "docs/evidence/optimized-assets.json"
     },
     {
       "id": "P08",
@@ -800,7 +892,10 @@
           "T04"
         ],
         "acceptance": "No floor z-fighting; noncolliding."
-      }
+      },
+      "source_deliverable": "src/server/ModularKit.luau",
+      "runtime_implementation": "docs/IMPLEMENTATION_COVERAGE.md",
+      "runtime_status": "Deterministic code constructor implemented; DCC export, art and imported-asset acceptance remain separate"
     },
     {
       "id": "P09",
@@ -824,7 +919,10 @@
           "T04"
         ],
         "acceptance": "No physics cables; simplified at distance; route does not imply a puzzle unless tagged."
-      }
+      },
+      "source_deliverable": "src/server/ModularKit.luau",
+      "runtime_implementation": "docs/IMPLEMENTATION_COVERAGE.md",
+      "runtime_status": "Deterministic code constructor implemented; DCC export, art and imported-asset acceptance remain separate"
     },
     {
       "id": "P10",
@@ -848,7 +946,10 @@
           "T04"
         ],
         "acceptance": "Noncolliding; removable without losing scene meaning."
-      }
+      },
+      "source_deliverable": "src/server/ModularKit.luau",
+      "runtime_implementation": "docs/IMPLEMENTATION_COVERAGE.md",
+      "runtime_status": "Deterministic code constructor implemented; DCC export, art and imported-asset acceptance remain separate"
     },
     {
       "id": "P11",
@@ -875,7 +976,10 @@
       },
       "dcc_candidate": "assets/cleaned/P11/P11_normalized_geometry_candidate_surface_repaired.glb",
       "dcc_evidence": "docs/evidence/dcc-normalization/remaining-batch-export-inspection.json",
-      "surface_audit": "docs/evidence/cleaned-asset-surface-review.md"
+      "surface_audit": "docs/evidence/cleaned-asset-surface-review.md",
+      "optimized_candidate": "assets/optimized/P11/P11_atlas_v1.glb",
+      "optimized_review": "New texture/UV/static-grouping variant; Blender re-import checked, art/Studio/runtime review pending. Accepted dcc_candidate remains unchanged.",
+      "optimization_evidence": "docs/evidence/optimized-assets.json"
     },
     {
       "id": "P12",
@@ -902,7 +1006,10 @@
       },
       "dcc_candidate": "assets/cleaned/P12/P12_solid_repair_candidate.glb",
       "dcc_evidence": "docs/evidence/dcc-normalization/solid-repair-candidates.json",
-      "surface_audit": "docs/evidence/cleaned-asset-surface-review.md"
+      "surface_audit": "docs/evidence/cleaned-asset-surface-review.md",
+      "optimized_candidate": "assets/optimized/P12/P12_atlas_v1.glb",
+      "optimized_review": "New texture/UV/static-grouping variant; Blender re-import checked, art/Studio/runtime review pending. Accepted dcc_candidate remains unchanged.",
+      "optimization_evidence": "docs/evidence/optimized-assets.json"
     },
     {
       "id": "P13",
@@ -929,7 +1036,10 @@
       },
       "dcc_candidate": "assets/cleaned/P13/P13_art_repair_candidate.glb",
       "dcc_evidence": "docs/evidence/dcc-normalization/art-repair-export-inspection.json",
-      "surface_audit": "docs/evidence/cleaned-asset-surface-review.md"
+      "surface_audit": "docs/evidence/cleaned-asset-surface-review.md",
+      "optimized_candidate": "assets/optimized/P13/P13_atlas_v1.glb",
+      "optimized_review": "New texture/UV/static-grouping variant; Blender re-import checked, art/Studio/runtime review pending. Accepted dcc_candidate remains unchanged.",
+      "optimization_evidence": "docs/evidence/optimized-assets.json"
     },
     {
       "id": "P14",
@@ -956,7 +1066,10 @@
       },
       "dcc_candidate": "assets/cleaned/P14/P14_solid_repair_candidate.glb",
       "dcc_evidence": "docs/evidence/dcc-normalization/solid-repair-candidates.json",
-      "surface_audit": "docs/evidence/cleaned-asset-surface-review.md"
+      "surface_audit": "docs/evidence/cleaned-asset-surface-review.md",
+      "optimized_candidate": "assets/optimized/P14/P14_atlas_v1.glb",
+      "optimized_review": "New texture/UV/static-grouping variant; Blender re-import checked, art/Studio/runtime review pending. Accepted dcc_candidate remains unchanged.",
+      "optimization_evidence": "docs/evidence/optimized-assets.json"
     },
     {
       "id": "P15",
@@ -980,7 +1093,10 @@
           "T04"
         ],
         "acceptance": "Single dressing cluster; does not block sampler or become a loot promise."
-      }
+      },
+      "source_deliverable": "src/server/ModularKit.luau",
+      "runtime_implementation": "docs/IMPLEMENTATION_COVERAGE.md",
+      "runtime_status": "Deterministic code constructor implemented; DCC export, art and imported-asset acceptance remain separate"
     },
     {
       "id": "P16",
@@ -1005,7 +1121,10 @@
       },
       "dcc_candidate": "assets/cleaned/P16/P16_normalized_geometry_candidate_surface_repaired.glb",
       "dcc_evidence": "docs/evidence/dcc-normalization/remaining-batch-export-inspection.json",
-      "surface_audit": "docs/evidence/cleaned-asset-surface-review.md"
+      "surface_audit": "docs/evidence/cleaned-asset-surface-review.md",
+      "optimized_candidate": "assets/optimized/P16/P16_atlas_v1.glb",
+      "optimized_review": "New texture/UV/static-grouping variant; Blender re-import checked, art/Studio/runtime review pending. Accepted dcc_candidate remains unchanged.",
+      "optimization_evidence": "docs/evidence/optimized-assets.json"
     },
     {
       "id": "I01",
@@ -1033,7 +1152,10 @@
       },
       "dcc_candidate": "assets/cleaned/I01/I01_art_repair_candidate.glb",
       "dcc_evidence": "docs/evidence/dcc-normalization/art-repair-export-inspection.json",
-      "surface_audit": "docs/evidence/cleaned-asset-surface-review.md"
+      "surface_audit": "docs/evidence/cleaned-asset-surface-review.md",
+      "optimized_candidate": "assets/optimized/I01/I01_atlas_v1.glb",
+      "optimized_review": "New texture/UV/static-grouping variant; Blender re-import checked, art/Studio/runtime review pending. Accepted dcc_candidate remains unchanged.",
+      "optimization_evidence": "docs/evidence/optimized-assets.json"
     },
     {
       "id": "I02",
@@ -1057,7 +1179,9 @@
           "S02"
         ],
         "acceptance": "No new vent mesh; audio cue, label and collection badge agree."
-      }
+      },
+      "runtime_implementation": "docs/WORKSHOP_MILESTONE.md",
+      "runtime_status": "Implemented source; Studio/runtime acceptance pending"
     },
     {
       "id": "I03",
@@ -1081,7 +1205,9 @@
           "S02"
         ],
         "acceptance": "Approved authored chirp sample linked; collected state not repeated as reward."
-      }
+      },
+      "runtime_implementation": "docs/WORKSHOP_MILESTONE.md",
+      "runtime_status": "Implemented source; Studio/runtime acceptance pending"
     },
     {
       "id": "I04",
@@ -1107,7 +1233,12 @@
       },
       "dcc_candidate": "assets/cleaned/I04/I04_art_repair_candidate.glb",
       "dcc_evidence": "docs/evidence/dcc-normalization/art-repair-export-inspection.json",
-      "surface_audit": "docs/evidence/cleaned-asset-surface-review.md"
+      "surface_audit": "docs/evidence/cleaned-asset-surface-review.md",
+      "optimized_candidate": "assets/optimized/I04/I04_atlas_v1.glb",
+      "optimized_review": "New texture/UV/static-grouping variant; Blender re-import checked, art/Studio/runtime review pending. Accepted dcc_candidate remains unchanged.",
+      "optimization_evidence": "docs/evidence/optimized-assets.json",
+      "runtime_implementation": "docs/WORKSHOP_MILESTONE.md",
+      "runtime_status": "Implemented source; Studio/runtime acceptance pending"
     },
     {
       "id": "I05",
@@ -1133,7 +1264,12 @@
       },
       "dcc_candidate": "assets/cleaned/I05/I05_solid_repair_candidate.glb",
       "dcc_evidence": "docs/evidence/dcc-normalization/solid-repair-candidates.json",
-      "surface_audit": "docs/evidence/cleaned-asset-surface-review.md"
+      "surface_audit": "docs/evidence/cleaned-asset-surface-review.md",
+      "optimized_candidate": "assets/optimized/I05/I05_atlas_v1.glb",
+      "optimized_review": "New texture/UV/static-grouping variant; Blender re-import checked, art/Studio/runtime review pending. Accepted dcc_candidate remains unchanged.",
+      "optimization_evidence": "docs/evidence/optimized-assets.json",
+      "runtime_implementation": "docs/LISTENING_MILESTONE.md",
+      "runtime_status": "Implemented source; Studio/multiplayer/runtime acceptance pending"
     },
     {
       "id": "W01",
@@ -1161,7 +1297,10 @@
           "U03"
         ],
         "acceptance": "Safe audience lane; local listening boundary explicit; no stairs-only access."
-      }
+      },
+      "runtime_implementation": "docs/LISTENING_MILESTONE.md",
+      "runtime_status": "Implemented source; Studio/multiplayer/runtime acceptance pending",
+      "prototype_direction": "Visual Artbook v0.2 p5 / Production Atlas v0.2 p14: 12 x 8 stage within 28 x 24 courtyard; supersedes register size for graybox only, clearance acceptance pending"
     },
     {
       "id": "W02",
@@ -1206,7 +1345,10 @@
           "T03"
         ],
         "acceptance": "Horizon adds depth without stealing contrast from shop or implying accessible doors."
-      }
+      },
+      "source_deliverable": "src/server/ModularKit.luau",
+      "runtime_implementation": "docs/IMPLEMENTATION_COVERAGE.md",
+      "runtime_status": "Deterministic code constructor implemented; DCC export, art and imported-asset acceptance remain separate"
     },
     {
       "id": "W04",
@@ -1228,7 +1370,10 @@
           "T03"
         ],
         "acceptance": "Readable only as backdrop; removable on low tier."
-      }
+      },
+      "source_deliverable": "src/server/ModularKit.luau",
+      "runtime_implementation": "docs/IMPLEMENTATION_COVERAGE.md",
+      "runtime_status": "Deterministic code constructor implemented; DCC export, art and imported-asset acceptance remain separate"
     },
     {
       "id": "T01",
@@ -1239,7 +1384,7 @@
       "full_asset_triangle_budget": null,
       "tripo_face_limit": null,
       "texture_cap_px": 1024,
-      "status": "Not started",
+      "status": "Shared source sets authored; Roblox map upload and PBR review pending",
       "owner": "Unassigned",
       "contract": {
         "dimensions": "Shared library",
@@ -1248,7 +1393,8 @@
         "separate_or_moving_parts": "None",
         "dependencies": [],
         "acceptance": "Check neutral light and dusk; maps named; no unnecessary maps or duplicate uploads."
-      }
+      },
+      "source_deliverable": "assets/production/materials/layout.json"
     },
     {
       "id": "T02",
@@ -1259,7 +1405,7 @@
       "full_asset_triangle_budget": null,
       "tripo_face_limit": null,
       "texture_cap_px": 1024,
-      "status": "Not started",
+      "status": "Shared source sets authored; Roblox map upload and PBR review pending",
       "owner": "Unassigned",
       "contract": {
         "dimensions": "Shared library",
@@ -1268,7 +1414,8 @@
         "separate_or_moving_parts": "None",
         "dependencies": [],
         "acceptance": "Check neutral light and dusk; maps named; no unnecessary maps or duplicate uploads."
-      }
+      },
+      "source_deliverable": "assets/production/materials/layout.json"
     },
     {
       "id": "T03",
@@ -1279,7 +1426,7 @@
       "full_asset_triangle_budget": null,
       "tripo_face_limit": null,
       "texture_cap_px": 1024,
-      "status": "Not started",
+      "status": "Shared source sets authored; Roblox map upload and PBR review pending",
       "owner": "Unassigned",
       "contract": {
         "dimensions": "Shared library",
@@ -1288,7 +1435,8 @@
         "separate_or_moving_parts": "None",
         "dependencies": [],
         "acceptance": "Check neutral light and dusk; maps named; no unnecessary maps or duplicate uploads."
-      }
+      },
+      "source_deliverable": "assets/production/materials/layout.json"
     },
     {
       "id": "T04",
@@ -1299,7 +1447,7 @@
       "full_asset_triangle_budget": null,
       "tripo_face_limit": null,
       "texture_cap_px": 1024,
-      "status": "Not started",
+      "status": "Shared source sets authored; Roblox map upload and PBR review pending",
       "owner": "Unassigned",
       "contract": {
         "dimensions": "Shared library",
@@ -1308,7 +1456,8 @@
         "separate_or_moving_parts": "None",
         "dependencies": [],
         "acceptance": "Check neutral light and dusk; maps named; no unnecessary maps or duplicate uploads."
-      }
+      },
+      "source_deliverable": "assets/production/materials/layout.json"
     },
     {
       "id": "G01",
@@ -1319,7 +1468,7 @@
       "full_asset_triangle_budget": null,
       "tripo_face_limit": null,
       "texture_cap_px": 1024,
-      "status": "Not started",
+      "status": "Original source graphics authored; upload/Studio review pending",
       "owner": "Unassigned",
       "contract": {
         "dimensions": "2D source + exported atlas",
@@ -1328,7 +1477,8 @@
         "separate_or_moving_parts": "None",
         "dependencies": [],
         "acceptance": "Editable vector/raster source; transparent padding; no baked essential language."
-      }
+      },
+      "source_deliverable": "assets/production/graphics"
     },
     {
       "id": "G02",
@@ -1339,7 +1489,7 @@
       "full_asset_triangle_budget": null,
       "tripo_face_limit": null,
       "texture_cap_px": 1024,
-      "status": "Not started",
+      "status": "Original editable SVG and PNG authored; upload and art review pending",
       "owner": "Unassigned",
       "contract": {
         "dimensions": "2D source + exported atlas",
@@ -1348,7 +1498,8 @@
         "separate_or_moving_parts": "None",
         "dependencies": [],
         "acceptance": "Editable vector/raster source; transparent padding; no baked essential language."
-      }
+      },
+      "source_deliverable": "assets/production/graphics/G02_neighborhood.svg"
     },
     {
       "id": "G03",
@@ -1359,7 +1510,7 @@
       "full_asset_triangle_budget": null,
       "tripo_face_limit": null,
       "texture_cap_px": 1024,
-      "status": "Not started",
+      "status": "Original source graphics authored; upload/Studio review pending",
       "owner": "Unassigned",
       "contract": {
         "dimensions": "2D source + exported atlas",
@@ -1368,7 +1519,8 @@
         "separate_or_moving_parts": "None",
         "dependencies": [],
         "acceptance": "Editable vector/raster source; transparent padding; no baked essential language."
-      }
+      },
+      "source_deliverable": "assets/production/graphics"
     },
     {
       "id": "G04",
@@ -1379,7 +1531,7 @@
       "full_asset_triangle_budget": null,
       "tripo_face_limit": null,
       "texture_cap_px": 1024,
-      "status": "Not started",
+      "status": "Original source graphics authored; upload/Studio review pending",
       "owner": "Unassigned",
       "contract": {
         "dimensions": "2D source + exported atlas",
@@ -1388,7 +1540,8 @@
         "separate_or_moving_parts": "None",
         "dependencies": [],
         "acceptance": "Editable vector/raster source; transparent padding; no baked essential language."
-      }
+      },
+      "source_deliverable": "assets/production/graphics"
     },
     {
       "id": "A01",
@@ -1411,7 +1564,10 @@
           "U01"
         ],
         "acceptance": "Loops seamless where needed; stop/rejoin safe; reduced-motion fallback supplied."
-      }
+      },
+      "source_deliverable": "src/client/WorldFeedback.luau",
+      "runtime_implementation": "docs/IMPLEMENTATION_COVERAGE.md",
+      "runtime_status": "Local runtime reactions implemented; final candidate rig and art acceptance remain separate"
     },
     {
       "id": "A02",
@@ -1433,7 +1589,10 @@
           "H02"
         ],
         "acceptance": "Loops seamless where needed; stop/rejoin safe; reduced-motion fallback supplied."
-      }
+      },
+      "source_deliverable": "src/client/WorldFeedback.luau",
+      "runtime_implementation": "docs/IMPLEMENTATION_COVERAGE.md",
+      "runtime_status": "Local runtime reactions implemented; final candidate rig and art acceptance remain separate"
     },
     {
       "id": "A03",
@@ -1455,7 +1614,10 @@
           "H04"
         ],
         "acceptance": "Loops seamless where needed; stop/rejoin safe; reduced-motion fallback supplied."
-      }
+      },
+      "source_deliverable": "src/client/WorldFeedback.luau",
+      "runtime_implementation": "docs/IMPLEMENTATION_COVERAGE.md",
+      "runtime_status": "Local runtime reactions implemented; final candidate rig and art acceptance remain separate"
     },
     {
       "id": "A04",
@@ -1478,7 +1640,10 @@
           "A03"
         ],
         "acceptance": "Loops seamless where needed; stop/rejoin safe; reduced-motion fallback supplied."
-      }
+      },
+      "source_deliverable": "src/client/WorldFeedback.luau",
+      "runtime_implementation": "docs/IMPLEMENTATION_COVERAGE.md",
+      "runtime_status": "Local runtime reactions implemented; final candidate rig and art acceptance remain separate"
     },
     {
       "id": "A05",
@@ -1502,7 +1667,10 @@
           "F01"
         ],
         "acceptance": "Loops seamless where needed; stop/rejoin safe; reduced-motion fallback supplied."
-      }
+      },
+      "source_deliverable": "src/client/WorldFeedback.luau",
+      "runtime_implementation": "docs/IMPLEMENTATION_COVERAGE.md",
+      "runtime_status": "Local runtime reactions implemented; final candidate rig and art acceptance remain separate"
     },
     {
       "id": "F01",
@@ -1525,7 +1693,10 @@
           "P13"
         ],
         "acceptance": "Scene remains complete when disabled; no gameplay information conveyed solely by effect."
-      }
+      },
+      "runtime_implementation": "docs/IMPLEMENTATION_COVERAGE.md",
+      "runtime_status": "Local runtime reactions implemented; final candidate rig and art acceptance remain separate",
+      "source_deliverable": "src/client/WorldFeedback.luau"
     },
     {
       "id": "F02",
@@ -1549,7 +1720,10 @@
           "I04"
         ],
         "acceptance": "Scene remains complete when disabled; no gameplay information conveyed solely by effect."
-      }
+      },
+      "source_deliverable": "src/client/WorldFeedback.luau",
+      "runtime_implementation": "docs/IMPLEMENTATION_COVERAGE.md",
+      "runtime_status": "Local runtime reactions implemented; final candidate rig and art acceptance remain separate"
     },
     {
       "id": "F03",
@@ -1574,7 +1748,10 @@
           "U02"
         ],
         "acceptance": "Scene remains complete when disabled; no gameplay information conveyed solely by effect."
-      }
+      },
+      "runtime_implementation": "docs/IMPLEMENTATION_COVERAGE.md",
+      "runtime_status": "Local runtime reactions implemented; final candidate rig and art acceptance remain separate",
+      "source_deliverable": "src/client/WorldFeedback.luau"
     },
     {
       "id": "F04",
@@ -1597,7 +1774,10 @@
           "W02"
         ],
         "acceptance": "Scene remains complete when disabled; no gameplay information conveyed solely by effect."
-      }
+      },
+      "source_deliverable": "src/client/WorldFeedback.luau",
+      "runtime_implementation": "docs/IMPLEMENTATION_COVERAGE.md",
+      "runtime_status": "Local runtime reactions implemented; final candidate rig and art acceptance remain separate"
     },
     {
       "id": "U01",
@@ -1608,7 +1788,7 @@
       "full_asset_triangle_budget": null,
       "tripo_face_limit": null,
       "texture_cap_px": null,
-      "status": "Not started",
+      "status": "Implemented source; Studio touch/keyboard/gamepad/runtime review pending",
       "owner": "Unassigned",
       "contract": {
         "dimensions": "Component layouts + exportable graphics",
@@ -1619,7 +1799,8 @@
           "G03"
         ],
         "acceptance": "Touch and keyboard focus states; text labels localizable; monochrome/reduced-motion readability."
-      }
+      },
+      "source_deliverable": "src/client/WorkshopView.luau"
     },
     {
       "id": "U02",
@@ -1630,7 +1811,7 @@
       "full_asset_triangle_budget": null,
       "tripo_face_limit": null,
       "texture_cap_px": null,
-      "status": "Not started",
+      "status": "Implemented source; Studio touch/keyboard/gamepad/runtime review pending",
       "owner": "Unassigned",
       "contract": {
         "dimensions": "Component layouts + exportable graphics",
@@ -1641,7 +1822,8 @@
           "G04"
         ],
         "acceptance": "Touch and keyboard focus states; text labels localizable; monochrome/reduced-motion readability."
-      }
+      },
+      "source_deliverable": "src/client/WorkshopView.luau"
     },
     {
       "id": "U03",
@@ -1652,7 +1834,7 @@
       "full_asset_triangle_budget": null,
       "tripo_face_limit": null,
       "texture_cap_px": null,
-      "status": "Not started",
+      "status": "Implemented source; Studio touch/keyboard/gamepad/runtime review pending",
       "owner": "Unassigned",
       "contract": {
         "dimensions": "Component layouts + exportable graphics",
@@ -1663,7 +1845,10 @@
           "G04"
         ],
         "acceptance": "Touch and keyboard focus states; text labels localizable; monochrome/reduced-motion readability."
-      }
+      },
+      "runtime_implementation": "docs/LISTENING_MILESTONE.md",
+      "runtime_status": "Implemented source; Studio/multiplayer/runtime acceptance pending",
+      "source_deliverable": "src/client/ListeningView.luau"
     },
     {
       "id": "U04",
@@ -1674,7 +1859,7 @@
       "full_asset_triangle_budget": null,
       "tripo_face_limit": null,
       "texture_cap_px": null,
-      "status": "Not started",
+      "status": "Implemented source; Studio touch/keyboard/gamepad/runtime review pending",
       "owner": "Unassigned",
       "contract": {
         "dimensions": "Component layouts + exportable graphics",
@@ -1685,7 +1870,8 @@
           "G04"
         ],
         "acceptance": "Touch and keyboard focus states; text labels localizable; monochrome/reduced-motion readability."
-      }
+      },
+      "source_deliverable": "src/client/WorkshopView.luau"
     },
     {
       "id": "S01",
@@ -1696,7 +1882,7 @@
       "full_asset_triangle_budget": null,
       "tripo_face_limit": null,
       "texture_cap_px": null,
-      "status": "Not started",
+      "status": "Original synthesized source bank authored; listening, upload permissions and playback review pending",
       "owner": "Unassigned",
       "contract": {
         "dimensions": "Audio files + manifest",
@@ -1705,7 +1891,8 @@
         "separate_or_moving_parts": "Not applicable",
         "dependencies": [],
         "acceptance": "Source/rights manifest, loudness review, trims, import permissions and published-place playback checked."
-      }
+      },
+      "source_deliverable": "assets/production/audio/manifest.json"
     },
     {
       "id": "S02",
@@ -1716,7 +1903,7 @@
       "full_asset_triangle_budget": null,
       "tripo_face_limit": null,
       "texture_cap_px": null,
-      "status": "Not started",
+      "status": "Original synthesized source bank authored; listening, upload permissions and playback review pending",
       "owner": "Unassigned",
       "contract": {
         "dimensions": "Audio files + manifest",
@@ -1725,7 +1912,8 @@
         "separate_or_moving_parts": "Not applicable",
         "dependencies": [],
         "acceptance": "Source/rights manifest, loudness review, trims, import permissions and published-place playback checked."
-      }
+      },
+      "source_deliverable": "assets/production/audio/manifest.json"
     },
     {
       "id": "S03",
@@ -1736,7 +1924,7 @@
       "full_asset_triangle_budget": null,
       "tripo_face_limit": null,
       "texture_cap_px": null,
-      "status": "Not started",
+      "status": "Original synthesized sources and runtime binding implemented; audio upload permissions and listening review pending",
       "owner": "Unassigned",
       "contract": {
         "dimensions": "Audio files + manifest",
@@ -1745,7 +1933,8 @@
         "separate_or_moving_parts": "Not applicable",
         "dependencies": [],
         "acceptance": "Source/rights manifest, loudness review, trims, import permissions and published-place playback checked."
-      }
+      },
+      "source_deliverable": "assets/production/audio/manifest.json"
     },
     {
       "id": "S04",
@@ -1756,7 +1945,7 @@
       "full_asset_triangle_budget": null,
       "tripo_face_limit": null,
       "texture_cap_px": null,
-      "status": "Not started",
+      "status": "Original synthesized sources and runtime binding implemented; audio upload permissions and listening review pending",
       "owner": "Unassigned",
       "contract": {
         "dimensions": "Audio files + manifest",
@@ -1765,7 +1954,8 @@
         "separate_or_moving_parts": "Not applicable",
         "dependencies": [],
         "acceptance": "Source/rights manifest, loudness review, trims, import permissions and published-place playback checked."
-      }
+      },
+      "source_deliverable": "assets/production/audio/manifest.json"
     }
   ]
 }

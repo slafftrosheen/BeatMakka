@@ -1,5 +1,28 @@
 # Execution batches
 
+## First-zone code completion and MCP verification — 22 October 2026
+
+- [x] Map all 74 authored packages to concrete local sources in `docs/IMPLEMENTATION_COVERAGE.md`.
+- [x] Complete exact kit, scene/socket bindings, rigid motion/effects, cue/ambience sources, UI feedback and gamepad bindings.
+- [x] Synchronize the complete local source place through Studio MCP.
+- [x] Run 8/8 contract groups and 16/16 real two-client integration checks.
+- [x] Fix and retest TouchGui overlap during device switching; inspect portrait/landscape text fit; test effects-off and virtual gamepad controls.
+- [x] Build `work/FrequencyZero-Complete.rbxlx`; preserve failed-attempt receipts and final results.
+- [ ] Complete authorized audio uploads and audible/permission acceptance, persistent native mesh imports, final rig/atlas art approval, live cloud persistence and physical-device/performance acceptance.
+
+Current evidence: `docs/RUNTIME_VERIFICATION.md`. No provider spend, publishing, commit, push or asset-stage promotion.
+
+## Courtyard listening source continuation — 22 October 2026
+
+- [x] Inspect the named review place through Studio MCP without changing it.
+- [x] Read v0.2 stage dimensions and I05/U03 contracts against the register.
+- [x] Implement fixed-snapshot sharing, opt-in listening, leave/mute UI, server proximity/lifecycle cleanup and stage ramp.
+- [x] Preserve asset IDs, pipeline stages and the register contract; record the W01 source discrepancy separately.
+- [ ] Sync/open the source batch in Studio and obtain explicit runtime verification scope.
+- [ ] Accept multiplayer behavior, device UI, navigation, audio permissions and timing with direct evidence.
+
+See `docs/LISTENING_MILESTONE.md`. Spend: 0 credits. No art/import/runtime promotion.
+
 ## Global rules
 
 - Default authorized spend is zero. A balance is not authorization.
@@ -270,3 +293,13 @@
 - Re-import checks retained bounds, mesh count and UV presence. Repaired outputs have zero winding conflicts; all except H01 and the intentional P16 vent mouth have zero boundary/non-manifold edges. H01 remains explicitly flagged for Studio visual review.
 - Full inventory: `docs/evidence/glb-surface-audit.json`; active 20-asset paths and outcomes: `docs/evidence/cleaned-asset-surface-review.md`; detailed repair receipts: `docs/evidence/glb-normal-repair.json` and `docs/evidence/open-surface-repair.json`.
 - Roblox Studio re-import and visual acceptance remain pending.
+
+
+## Workshop implementation, shared materials and optimized variants (22 October 2026)
+
+- Added the two-station sampler, pattern editor, recording/transport, discovery interactions, personal restoration, manual session/cloud save boundary, responsive UI and four saved finish presets. See `WORKSHOP_PLAY_GUIDE.md` for the current scope and limits.
+- Created original material, UI mask/icon, record-sleeve and audio sources with provenance. Optimized 20 models from 75 objects / 79 material primitives to 32 parts/primitives, preserving 15,432 triangles and source geometry. New UV/material variants remain separate from the previously accepted assets.
+- User approved 32 mesh parts and 14 shared image uploads. Studio MCP returned all 14 image IDs, now bound in `data/content-ids.json`. Instance-based preload succeeded for all 14; the actual UI icons and panel report loaded. No audio upload was included.
+- The first automated mesh upload returned an explicit API-unavailable error. Zero mesh uploads are confirmed; the batch stopped. Editable local review meshes do not carry across Edit/Play. Native Importer instructions and visible runtime proxies are provided.
+- Studio evidence covers station entry, pattern edits, session save/clear/restore, finish selection, desktop and phone layouts. Hidden movement controls fix the phone overlap. No project Lua exception was present in the captured run, although an unrelated default avatar asset warning remains.
+- No Tripo spend, game publishing, test suites, commit or push in this batch. Cloud saves, multi-player contention, actual audio, persistent mesh rendering and final PBR appearance remain separate acceptance steps.

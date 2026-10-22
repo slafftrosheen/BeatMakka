@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"panel\":\"377, 696\",\"buttons\":[{\"name\":\"Play\",\"position\":\"28, 94\",\"text\":\"Play [SPACE]\",\"fits\":true,\"size\":\"78.75, 44\"},{\"name\":\"Record\",\"position\":\"114.75, 94\",\"text\":\"Record OFF [T]\",\"fits\":true,\"size\":\"78.75, 44\"},{\"name\":\"TempoDown\",\"position\":\"201.5, 94\",\"text\":\"Tempo -\",\"fits\":true,\"size\":\"78.75, 44\"},{\"name\":\"TempoUp\",\"position\":\"288.25, 94\",\"text\":\"Tempo +\",\"fits\":true,\"size\":\"78.75, 44\"},{\"name\":\"Save\",\"position\":\"28, 146\",\"text\":\"Save\",\"fits\":true,\"size\":\"78.75, 44\"},{\"name\":\"Restore\",\"position\":\"114.75, 146\",\"text\":\"No saved pattern\",\"fits\":true,\"size\":\"78.75, 44\"},{\"name\":\"MutePad\",\"position\":\"201.5, 146\",\"text\":\"Mute pad\",\"fits\":true,\"size\":\"78.75, 44\"},{\"name\":\"ClearPad\",\"position\":\"288.25, 146\",\"text\":\"Clear pad\",\"fits\":true,\"size\":\"78.75, 44\"},{\"name\":\"Sound\",\"position\":\"28, 198\",\"text\":\"Sound ON\",\"fits\":true,\"size\":\"78.75, 44\"},{\"name\":\"Effects\",\"position\":\"114.75, 198\",\"text\":\"Effects ON\",\"fits\":true,\"size\":\"78.75, 44\"},{\"name\":\"Finish\",\"position\":\"201.5, 198\",\"text\":\"Finish: Workshop teal\",\"fits\":true,\"size\":\"78.75, 44\"}],\"visible\":true,\"resolution\":\"874, 402\"}"
+    }
+  ],
+  "isError": false
+}

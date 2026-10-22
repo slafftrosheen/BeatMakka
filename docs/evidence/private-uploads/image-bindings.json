@@ -1,0 +1,108 @@
+{
+  "images": [
+    {
+      "key": "atlas.quay.basecolor.512",
+      "file": "assets/production/materials/sets/quay/atlas_basecolor_512.png",
+      "asset_id": 137950080210331,
+      "sha256": "c128102bf1fac7d04614371f54b3f236ea54e508b904f30f6c3ace861083a977",
+      "stage": "Uploaded; instance-based Play fetch succeeded; final PBR review pending"
+    },
+    {
+      "key": "atlas.quay.basecolor.1024",
+      "file": "assets/production/materials/sets/quay/atlas_basecolor.png",
+      "asset_id": 72083879648967,
+      "sha256": "1ef47e53827bfe874807b68f8f886e98501fb3f406ff24a896d1533ae08e9d66",
+      "stage": "Uploaded; instance-based Play fetch succeeded; final PBR review pending"
+    },
+    {
+      "key": "atlas.chalk.basecolor.512",
+      "file": "assets/production/materials/sets/chalk/atlas_basecolor_512.png",
+      "asset_id": 100805049598715,
+      "sha256": "37d8ab4408466c604e3965abad364d46c95d75a6efbd0a812b57745b7407ef35",
+      "stage": "Uploaded; instance-based Play fetch succeeded; final PBR review pending"
+    },
+    {
+      "key": "atlas.chalk.basecolor.1024",
+      "file": "assets/production/materials/sets/chalk/atlas_basecolor.png",
+      "asset_id": 117689403172472,
+      "sha256": "528dd42473ae0df14726b0185cd7b5ec3aff6e7a034e3eb44bfa3de80645df27",
+      "stage": "Uploaded; instance-based Play fetch succeeded; final PBR review pending"
+    },
+    {
+      "key": "atlas.coral.basecolor.512",
+      "file": "assets/production/materials/sets/coral/atlas_basecolor_512.png",
+      "asset_id": 78348915703467,
+      "sha256": "b03e53f850e329b18a00696ba6323bb16ccc04d1600700e6d91940d5bd2c9d07",
+      "stage": "Uploaded; instance-based Play fetch succeeded; final PBR review pending"
+    },
+    {
+      "key": "atlas.coral.basecolor.1024",
+      "file": "assets/production/materials/sets/coral/atlas_basecolor.png",
+      "asset_id": 86114142638116,
+      "sha256": "105ebf24c670e4cd26fc519529a7aa7ce41ab13146cbc7fb35bcd328e95ca56e",
+      "stage": "Uploaded; instance-based Play fetch succeeded; final PBR review pending"
+    },
+    {
+      "key": "atlas.afterhours.basecolor.512",
+      "file": "assets/production/materials/sets/afterhours/atlas_basecolor_512.png",
+      "asset_id": 116045023802730,
+      "sha256": "bd6810366ae61d9905fd110b0881f404755a5e667ee2c87940003dc0a89f6e07",
+      "stage": "Uploaded; instance-based Play fetch succeeded; final PBR review pending"
+    },
+    {
+      "key": "atlas.afterhours.basecolor.1024",
+      "file": "assets/production/materials/sets/afterhours/atlas_basecolor.png",
+      "asset_id": 91426340502972,
+      "sha256": "b44b8d8c77d6eab0fa537ac01d7fa7d93d9673d1404bfd7298bbcb2eb705c6eb",
+      "stage": "Uploaded; instance-based Play fetch succeeded; final PBR review pending"
+    },
+    {
+      "key": "atlas.roughness.512",
+      "file": "assets/production/materials/shared/atlas_roughness_512.png",
+      "asset_id": 78643804613550,
+      "sha256": "31dc32832abac61b114e1bf38396fb3da897e680c2053d0f1f1c73c072064cb5",
+      "stage": "Uploaded; instance-based Play fetch succeeded; final PBR review pending"
+    },
+    {
+      "key": "atlas.roughness.1024",
+      "file": "assets/production/materials/shared/atlas_roughness.png",
+      "asset_id": 137206541823495,
+      "sha256": "79916cdb0b3ad460a84a1561402cf848759649d8b1134f35f6c32416038325b8",
+      "stage": "Uploaded; instance-based Play fetch succeeded; final PBR review pending"
+    },
+    {
+      "key": "atlas.metalness.512",
+      "file": "assets/production/materials/shared/atlas_metalness_512.png",
+      "asset_id": 128962279524469,
+      "sha256": "2f5537207895c626bad32a88d93038ebcf023221adede6d208d53ee80e7e0f22",
+      "stage": "Uploaded; instance-based Play fetch succeeded; final PBR review pending"
+    },
+    {
+      "key": "atlas.metalness.1024",
+      "file": "assets/production/materials/shared/atlas_metalness.png",
+      "asset_id": 92626694607620,
+      "sha256": "d2f1433b85dd698ac2617204c24c5384ed45d0d583916fc70b4e73451cbb966d",
+      "stage": "Uploaded; instance-based Play fetch succeeded; final PBR review pending"
+    },
+    {
+      "key": "ui.icons",
+      "file": "assets/production/graphics/G03_G04_icons.png",
+      "asset_id": 138362874983991,
+      "sha256": "599387fdfc78aa6d39d71dcafe8f87b34fd49489f5f5cd20b35c478d7cc9e4d4",
+      "stage": "Uploaded; instance-based Play fetch succeeded; final PBR review pending"
+    },
+    {
+      "key": "ui.panel",
+      "file": "assets/production/graphics/panel_9slice.png",
+      "asset_id": 99087195128670,
+      "sha256": "eeff113dff43c1f327c6b0f2924b55bedff2325138984ca244f337954c1a30fa",
+      "stage": "Uploaded; instance-based Play fetch succeeded; final PBR review pending"
+    }
+  ],
+  "submitted": 14,
+  "confirmed_ids": 14,
+  "mesh_uploads_confirmed": 0,
+  "runtime_fetch_evidence": "studio-all-images-loaded.json",
+  "ui_render_load_evidence": "studio-image-loaded.json",
+  "mesh_blocker": "CreateAssetAsync and CreateAssetVersionAsync are not available yet"
+}

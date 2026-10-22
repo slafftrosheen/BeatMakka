@@ -45,6 +45,12 @@ For Blender, launch:
 
 ## Asset work
 
+The current local implementation is covered by the [workshop play and import guide](docs/WORKSHOP_PLAY_GUIDE.md), [material customization guide](docs/MATERIAL_CUSTOMIZATION.md), and [milestone design](docs/WORKSHOP_MILESTONE.md). It includes a sampler, discovery route, saved finish presets, optimized models, texture sets and UI sources. Persistent mesh uploads and successful image/audio loading remain separate acceptance steps.
+
+The [courtyard listening milestone](docs/LISTENING_MILESTONE.md) adds podium snapshot sharing, opt-in listening, accessible stage entry, and leave/mute controls. The subsequent two-client MCP run passed its session/ownership/cleanup checks; audible playback and final asset acceptance remain separate.
+
+The [first-zone coverage table](docs/IMPLEMENTATION_COVERAGE.md) maps all 74 packages to sources. [Runtime verification](docs/RUNTIME_VERIFICATION.md) records the subsequent Studio MCP checks and fixes, including the remaining asset/audio/device acceptance. Build the current complete source place with `rojo build default.project.json --output work/FrequencyZero-Complete.rbxlx`.
+
 Read `AGENTS.md`, `CODEX_START_HERE.md`, `TRIPO_RUNBOOK.md`, the two supplied art/production PDFs, and the source ledger before asset work. The approved style board, full source-drift ledger, execution-batch checklist, and some referenced templates were not included in the provided folder; B00 records these as setup blockers rather than inventing evidence.
 
 Paid provider work is disabled until a named asset batch, current quote, and total credit cap are explicitly authorized and the offline preflight passes. See `docs/EXECUTION_BATCHES.md` and `tools/preflight_gate.py`.

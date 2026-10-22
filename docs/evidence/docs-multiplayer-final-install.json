@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "Disconnect test waits for actual client removal"
+    }
+  ],
+  "isError": false
+}

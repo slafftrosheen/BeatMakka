@@ -1,0 +1,592 @@
+{
+  "generator": "tools/build_content_sources.py",
+  "palette_authority": "01_Visual_Artbook.pdf page 4",
+  "provenance": "Deterministic local original pixel/vector/audio generation; no external media or provider charges.",
+  "files": [
+    {
+      "path": "assets/production/audio/bass_c.wav",
+      "bytes": 57374,
+      "sha256": "61e4f3de0fd518d5f3184e9b7e7b40f574325279a929a1fd7e8348d0a58a8046"
+    },
+    {
+      "path": "assets/production/audio/bass_eb.wav",
+      "bytes": 57374,
+      "sha256": "2f2263b10de934b8dafc499412665df6e0e924cedf784d63749fe062f17ea429"
+    },
+    {
+      "path": "assets/production/audio/bass_g.wav",
+      "bytes": 57374,
+      "sha256": "e39dcfa3ac5cf59d4d9c5a7f841a06ccc18300d63d74f5dc6b00b96acd3c3ac7"
+    },
+    {
+      "path": "assets/production/audio/bell.wav",
+      "bytes": 105884,
+      "sha256": "c2325a94572ed15c0d5f1b74d5cdc77893a12881db21088a28595ab6a3f4eea7"
+    },
+    {
+      "path": "assets/production/audio/chord.wav",
+      "bytes": 105884,
+      "sha256": "10098a7c6329b2926012e2947dfb772b1e8ca646d297d6c38b7084c5175cc0b3"
+    },
+    {
+      "path": "assets/production/audio/clap.wav",
+      "bytes": 57374,
+      "sha256": "620957faffd6389e72e4bc4e03b74f6c94ab8a032d27ebcd8c285cefa033f0c5"
+    },
+    {
+      "path": "assets/production/audio/closed_hat.wav",
+      "bytes": 57374,
+      "sha256": "a539eaa196c8d5aeff2e77a02df5ea1d773c5f14d0392caecde2bf0033332220"
+    },
+    {
+      "path": "assets/production/audio/high_tom.wav",
+      "bytes": 57374,
+      "sha256": "2309262b49825d700fcb3d54b0f0dbe17e8176a548b68b1e3755a8103639d4c8"
+    },
+    {
+      "path": "assets/production/audio/kick.wav",
+      "bytes": 57374,
+      "sha256": "4c8dc34846bc857a953bd176edca6567dbd73207abd34c9c2cd4d2056913e767"
+    },
+    {
+      "path": "assets/production/audio/low_tom.wav",
+      "bytes": 57374,
+      "sha256": "33b1cef1507f2c2fb9e4453123d016ff81ccb65343d4a53a6ecbde9e37c072f8"
+    },
+    {
+      "path": "assets/production/audio/manifest.json",
+      "bytes": 8805,
+      "sha256": "d32f146c055a939059cab2b7a90018d8ff2c5dc335229b4a614c7d6ee346be34"
+    },
+    {
+      "path": "assets/production/audio/metal_hit.wav",
+      "bytes": 105884,
+      "sha256": "c2f2b4b40d49116931cfe4566e8885d788e7a2b693a38053e90f9b3e907f89fe"
+    },
+    {
+      "path": "assets/production/audio/open_hat.wav",
+      "bytes": 57374,
+      "sha256": "1bdb037bfcd91d7d2532c6c71124e35db3c47bdd6dce9c097ff58bb48317b98c"
+    },
+    {
+      "path": "assets/production/audio/pluck.wav",
+      "bytes": 57374,
+      "sha256": "a837797565703c867e415309134ea5f41b9eab06b0044a6092d7b50a85fc807a"
+    },
+    {
+      "path": "assets/production/audio/rim.wav",
+      "bytes": 57374,
+      "sha256": "4b4a2d4105cebcd011f984b3a1806cc827801736b9a2eca239d2ba4abfaba2eb"
+    },
+    {
+      "path": "assets/production/audio/robot_chirp.wav",
+      "bytes": 57374,
+      "sha256": "ad587dd6e2ae8cb2f6145ea2a10fcb40cf35a31c2efff07e52a77ad9bc9381bc"
+    },
+    {
+      "path": "assets/production/audio/shaker.wav",
+      "bytes": 57374,
+      "sha256": "da00eef741ed5a4ebc80a3ed5f4db9370ad66b4d58fd9ad60418d10ef4989f95"
+    },
+    {
+      "path": "assets/production/audio/snare.wav",
+      "bytes": 57374,
+      "sha256": "53620a276a570a7cb9a9b0ed95cc6f1ce14bf11a4694248076d7eae8569033bc"
+    },
+    {
+      "path": "assets/production/audio/tambourine.wav",
+      "bytes": 57374,
+      "sha256": "c31e99bf37c75aef00781775e53b5d07cc815319686b73e5ae51dd036f967646"
+    },
+    {
+      "path": "assets/production/audio/ui_collect.wav",
+      "bytes": 14156,
+      "sha256": "6d8557d07d1351ed32f1b1cf40b6e89fdd2039a9fcd6f3193c0438e555cc2bc1"
+    },
+    {
+      "path": "assets/production/audio/ui_error.wav",
+      "bytes": 14156,
+      "sha256": "258bb16773360140308aef47d37cbeaf6587d1f52d9c3a63133737b4ec9eb8a7"
+    },
+    {
+      "path": "assets/production/audio/ui_save.wav",
+      "bytes": 14156,
+      "sha256": "2d866485005c6070e8acadd63ccfe65642a17c4e29037d7bdaa3f5dfc52a26da"
+    },
+    {
+      "path": "assets/production/audio/ui_tap.wav",
+      "bytes": 14156,
+      "sha256": "280de6747c8664c8b1317ec4ee13f7f4abcfb676aed8fbbdbab8f112a2df866b"
+    },
+    {
+      "path": "assets/production/audio/vent_thump.wav",
+      "bytes": 57374,
+      "sha256": "b7f980ff73900f63497ed9054b914b1c5b8defacc7658552e158ad3ab657eb6e"
+    },
+    {
+      "path": "assets/production/audio/waterfront.wav",
+      "bytes": 1058444,
+      "sha256": "74f7ecb9e28dbfe8662c97a620cc78dbe9c41faaa0b49decf06385eeeaceb4b0"
+    },
+    {
+      "path": "assets/production/graphics/close.svg",
+      "bytes": 322,
+      "sha256": "7f7d1d66d2af6fc3ae5cf95dda0a781dd4c3aaa29b67134b82dbda719c07f1f2"
+    },
+    {
+      "path": "assets/production/graphics/collect.svg",
+      "bytes": 324,
+      "sha256": "f667937feb28d8940e646a17c6cc7d234a2cada55fd6d596d387ef71bc2748b8"
+    },
+    {
+      "path": "assets/production/graphics/collected.svg",
+      "bytes": 204,
+      "sha256": "482222b7211bc1f176c8d93b711df3195b41947508b2766f2e653b39f8ec41bb"
+    },
+    {
+      "path": "assets/production/graphics/device_face_mask.png",
+      "bytes": 1129,
+      "sha256": "a96c4ab5ff7520012df8cbe22941a6c21a627890abee9e733189de0509f8d837"
+    },
+    {
+      "path": "assets/production/graphics/display_mask.png",
+      "bytes": 1086,
+      "sha256": "ca30f3ce98bde3783ea09cc83ba9bf6b85f86be0433982c75f76fe0468e01118"
+    },
+    {
+      "path": "assets/production/graphics/G01_record_sleeves.png",
+      "bytes": 37800,
+      "sha256": "a16c49cb07094dc9663c5c3eb89fe1364e5cc7fd3b7af27a47d53a895a9775fd"
+    },
+    {
+      "path": "assets/production/graphics/G02_neighborhood.png",
+      "bytes": 17455,
+      "sha256": "48e3c5bc271312d47cdd891aa2d3c4a63aef4c20c6e791e018f1112902852c7c"
+    },
+    {
+      "path": "assets/production/graphics/G02_neighborhood.svg",
+      "bytes": 9170,
+      "sha256": "c56dd80d17baad6ac219cfc368597886fbac7dc3407501e830d6ced903888676"
+    },
+    {
+      "path": "assets/production/graphics/G03_G04_icons.png",
+      "bytes": 10275,
+      "sha256": "599387fdfc78aa6d39d71dcafe8f87b34fd49489f5f5cd20b35c478d7cc9e4d4"
+    },
+    {
+      "path": "assets/production/graphics/headphones.svg",
+      "bytes": 354,
+      "sha256": "a454fd3cfab1eeb0247cf91513248e688bb5bc8a0ccb49cba62e475f0eb954fc"
+    },
+    {
+      "path": "assets/production/graphics/locked.svg",
+      "bytes": 359,
+      "sha256": "9e5ce5d1822f686188b7e5b7b84a9e82f168598f778df0387fb9487987635137"
+    },
+    {
+      "path": "assets/production/graphics/mute.svg",
+      "bytes": 488,
+      "sha256": "fbfa4238024a36735fb302bde4a2c28c441d8f6bd0b5acefcffef8aabaed875f"
+    },
+    {
+      "path": "assets/production/graphics/pad_mask.png",
+      "bytes": 837,
+      "sha256": "e010081ccd96771c8239212fbb9a892d895d337a15cb258ffc43deb0aef82c2d"
+    },
+    {
+      "path": "assets/production/graphics/panel_9slice.png",
+      "bytes": 258,
+      "sha256": "eeff113dff43c1f327c6b0f2924b55bedff2325138984ca244f337954c1a30fa"
+    },
+    {
+      "path": "assets/production/graphics/pause.svg",
+      "bytes": 201,
+      "sha256": "0f67fde2ad5a2494929b27a40592a8f6b6f6123f9a826dbf41ec4256dd1ee8fd"
+    },
+    {
+      "path": "assets/production/graphics/play.svg",
+      "bytes": 117,
+      "sha256": "d74a6697d5934786c031fc33ebd907d176d3ce04382209a625f3537dc177335c"
+    },
+    {
+      "path": "assets/production/graphics/record.svg",
+      "bytes": 135,
+      "sha256": "88055c92c5affd70f9df07d8e376925d481939e7e2909edafeba65a89d416cf9"
+    },
+    {
+      "path": "assets/production/graphics/restore.svg",
+      "bytes": 366,
+      "sha256": "48b4aa4a1d576b7f10ba509f0ad45cef1e20153a21129e76f48528b2c971dce6"
+    },
+    {
+      "path": "assets/production/graphics/robot.svg",
+      "bytes": 347,
+      "sha256": "185ed2cbf9d2cdfb4a8232068dd350b4f3ca1e0296a8ac66c13d4fdb78fdff8c"
+    },
+    {
+      "path": "assets/production/graphics/save.svg",
+      "bytes": 498,
+      "sha256": "2197d4607989a4acc930b3b8802e1fd3374934c36bc5ab3af9532c4c23893c57"
+    },
+    {
+      "path": "assets/production/graphics/settings.svg",
+      "bytes": 642,
+      "sha256": "feff9ff399cc47e6c5da32067814007083572eee8ec5444c5a058f4dd1d60a7d"
+    },
+    {
+      "path": "assets/production/graphics/stop.svg",
+      "bytes": 136,
+      "sha256": "6f6821f59363675d0b3bdef7c5ea8c021240895b0008f246041db25ab0eba2f9"
+    },
+    {
+      "path": "assets/production/graphics/ui-layout.json",
+      "bytes": 2405,
+      "sha256": "b288e727845e2b10476b074ed24e0eafe35ba2131b3262251292b6ee45402689"
+    },
+    {
+      "path": "assets/production/graphics/volume.svg",
+      "bytes": 502,
+      "sha256": "81175194a4adfb776ce20717effa1de38f1f24e7108d0a3e364bbefd20bd0a5e"
+    },
+    {
+      "path": "assets/production/graphics/wave.svg",
+      "bytes": 582,
+      "sha256": "c55733b36193d0d3b6bddf823c909c70cd4ed6470e1d5a4277ea5a2bac8107d1"
+    },
+    {
+      "path": "assets/production/materials/layout.json",
+      "bytes": 6373,
+      "sha256": "faa441425ecdf67987ca5c82ff607fddd186300d9d2a72c37c7319bf8cb6b0e1"
+    },
+    {
+      "path": "assets/production/materials/masks/accent.png",
+      "bytes": 1752,
+      "sha256": "a88e8b3f9f3869d5f15cd114f03fc1b3667c78029022568bd87920d5c04c96e0"
+    },
+    {
+      "path": "assets/production/materials/masks/primary.png",
+      "bytes": 1752,
+      "sha256": "b4ac1ab784fb55e48bd97f991608af37f210af42b052ce90e6357d984ce06728"
+    },
+    {
+      "path": "assets/production/materials/masks/secondary.png",
+      "bytes": 1752,
+      "sha256": "e2a2919c0169092c8c8b0abeedfa1c03bef50b5d8fa2eddff5e6fca551890580"
+    },
+    {
+      "path": "assets/production/materials/masks/slots/accent.png",
+      "bytes": 1425,
+      "sha256": "1644ede43154097a1a388a44ecbb80d9344fcbfc6d9a4edf73532cbdf7ac6eff"
+    },
+    {
+      "path": "assets/production/materials/masks/slots/amber.png",
+      "bytes": 1428,
+      "sha256": "68aed4c54ae34614f40297209dd6cd96b69d36161225c10b8c16f4e9af8d1a3a"
+    },
+    {
+      "path": "assets/production/materials/masks/slots/bare_metal.png",
+      "bytes": 1428,
+      "sha256": "d2f1433b85dd698ac2617204c24c5384ed45d0d583916fc70b4e73451cbb966d"
+    },
+    {
+      "path": "assets/production/materials/masks/slots/canvas.png",
+      "bytes": 1428,
+      "sha256": "f3b3c6ec70bcac70f8ff69bd60ecc5b073f77b64ec88c134e00e3108ba7012d1"
+    },
+    {
+      "path": "assets/production/materials/masks/slots/ceramic.png",
+      "bytes": 1428,
+      "sha256": "9e1c52c0c6477eaac2f9a2975969c8abd37338e821909a1b0a4cba5740cd8d78"
+    },
+    {
+      "path": "assets/production/materials/masks/slots/cloth.png",
+      "bytes": 1428,
+      "sha256": "c8b03df79a269617f33c0cdea9c9bc38d1bfc545b71dfd22ad258830a353f906"
+    },
+    {
+      "path": "assets/production/materials/masks/slots/cloth_trim.png",
+      "bytes": 1428,
+      "sha256": "c76cec7968477255200622816f6c83ec303ead007a5dc7dbeb61b94642dbd858"
+    },
+    {
+      "path": "assets/production/materials/masks/slots/foliage.png",
+      "bytes": 1428,
+      "sha256": "f6d3894d23e52bf0133b08d1eede9573cead9b0c1cd24c5bb16b5a0ea3c5294b"
+    },
+    {
+      "path": "assets/production/materials/masks/slots/graphite.png",
+      "bytes": 1427,
+      "sha256": "435f085f4b403089214b45fa69471d8e8ae35e7cf67af51a8203d3a9774293cf"
+    },
+    {
+      "path": "assets/production/materials/masks/slots/leather.png",
+      "bytes": 1428,
+      "sha256": "759e34137eab1b4de78d00224b44339241a9ca52b539065aeb654abfc65d3d28"
+    },
+    {
+      "path": "assets/production/materials/masks/slots/paint_primary.png",
+      "bytes": 1423,
+      "sha256": "eb75f38d2ed533245dc679d5a20c7e55406ecfcb7cdfe9314ab80a3de12fe468"
+    },
+    {
+      "path": "assets/production/materials/masks/slots/paint_secondary.png",
+      "bytes": 1426,
+      "sha256": "605ee290b24c24e8979bfcb8c9661e0bbb125e85716e2736e0ae04ba894d1a75"
+    },
+    {
+      "path": "assets/production/materials/masks/slots/rubber.png",
+      "bytes": 1427,
+      "sha256": "3ce7f52a66c5e28b3b185d2171f10ede6f8fdb7c69ccafd7bf0f41fd74ba3ada"
+    },
+    {
+      "path": "assets/production/materials/masks/slots/stone.png",
+      "bytes": 1428,
+      "sha256": "9a31dbfcefe2ba7e38407f09a652004d07115711ffeea73086edd29e704474bb"
+    },
+    {
+      "path": "assets/production/materials/masks/slots/trim.png",
+      "bytes": 1426,
+      "sha256": "08f6c003cdfde19af1e66ee03e04177dbb9d4d1e7ad38e03b6f1d28a6e3a6ffc"
+    },
+    {
+      "path": "assets/production/materials/masks/slots/wood.png",
+      "bytes": 1428,
+      "sha256": "45d40b5ff3e249f8cd80b104210093657d7524bba2996611ecf89c5389910d02"
+    },
+    {
+      "path": "assets/production/materials/masks/tint_rgb.png",
+      "bytes": 4220,
+      "sha256": "c820dd27c5ff8a6849759d94e6d3e0f206a2eb81f8c3a20aff8d75e847baf4b6"
+    },
+    {
+      "path": "assets/production/materials/masks/trim.png",
+      "bytes": 1426,
+      "sha256": "08f6c003cdfde19af1e66ee03e04177dbb9d4d1e7ad38e03b6f1d28a6e3a6ffc"
+    },
+    {
+      "path": "assets/production/materials/sets/afterhours/atlas_basecolor.png",
+      "bytes": 30678,
+      "sha256": "b44b8d8c77d6eab0fa537ac01d7fa7d93d9673d1404bfd7298bbcb2eb705c6eb"
+    },
+    {
+      "path": "assets/production/materials/sets/afterhours/atlas_basecolor_512.png",
+      "bytes": 15502,
+      "sha256": "bd6810366ae61d9905fd110b0881f404755a5e667ee2c87940003dc0a89f6e07"
+    },
+    {
+      "path": "assets/production/materials/sets/chalk/atlas_basecolor.png",
+      "bytes": 29148,
+      "sha256": "528dd42473ae0df14726b0185cd7b5ec3aff6e7a034e3eb44bfa3de80645df27"
+    },
+    {
+      "path": "assets/production/materials/sets/chalk/atlas_basecolor_512.png",
+      "bytes": 14367,
+      "sha256": "37d8ab4408466c604e3965abad364d46c95d75a6efbd0a812b57745b7407ef35"
+    },
+    {
+      "path": "assets/production/materials/sets/coral/atlas_basecolor.png",
+      "bytes": 29790,
+      "sha256": "105ebf24c670e4cd26fc519529a7aa7ce41ab13146cbc7fb35bcd328e95ca56e"
+    },
+    {
+      "path": "assets/production/materials/sets/coral/atlas_basecolor_512.png",
+      "bytes": 14633,
+      "sha256": "b03e53f850e329b18a00696ba6323bb16ccc04d1600700e6d91940d5bd2c9d07"
+    },
+    {
+      "path": "assets/production/materials/sets/quay/atlas_basecolor.png",
+      "bytes": 31183,
+      "sha256": "1ef47e53827bfe874807b68f8f886e98501fb3f406ff24a896d1533ae08e9d66"
+    },
+    {
+      "path": "assets/production/materials/sets/quay/atlas_basecolor_512.png",
+      "bytes": 15782,
+      "sha256": "c128102bf1fac7d04614371f54b3f236ea54e508b904f30f6c3ace861083a977"
+    },
+    {
+      "path": "assets/production/materials/shared/atlas_metalness.png",
+      "bytes": 1428,
+      "sha256": "d2f1433b85dd698ac2617204c24c5384ed45d0d583916fc70b4e73451cbb966d"
+    },
+    {
+      "path": "assets/production/materials/shared/atlas_metalness_512.png",
+      "bytes": 491,
+      "sha256": "2f5537207895c626bad32a88d93038ebcf023221adede6d208d53ee80e7e0f22"
+    },
+    {
+      "path": "assets/production/materials/shared/atlas_roughness.png",
+      "bytes": 2438,
+      "sha256": "79916cdb0b3ad460a84a1561402cf848759649d8b1134f35f6c32416038325b8"
+    },
+    {
+      "path": "assets/production/materials/shared/atlas_roughness_512.png",
+      "bytes": 969,
+      "sha256": "31dc32832abac61b114e1bf38396fb3da897e680c2053d0f1f1c73c072064cb5"
+    },
+    {
+      "path": "assets/production/materials/tiles/accent_basecolor.png",
+      "bytes": 1682,
+      "sha256": "ab26cab8f9699081d8c773846e70c5a1cc34484a26e355fa8fd5b0549f83e8e4"
+    },
+    {
+      "path": "assets/production/materials/tiles/accent_roughness.png",
+      "bytes": 920,
+      "sha256": "76ec5ecd629685995549b03735e75293413fc555773ced6cb514d081c48bc601"
+    },
+    {
+      "path": "assets/production/materials/tiles/amber_basecolor.png",
+      "bytes": 1682,
+      "sha256": "93b7e167d06387080c80ba8720b24ca9bab400d7ffffafccd0850769dbe3a668"
+    },
+    {
+      "path": "assets/production/materials/tiles/amber_roughness.png",
+      "bytes": 919,
+      "sha256": "4069e352302e46016bcaa0044d28dbddde1ff8e76c41eb967a7295ae1d2a8741"
+    },
+    {
+      "path": "assets/production/materials/tiles/bare_metal_basecolor.png",
+      "bytes": 1682,
+      "sha256": "3107c8ece9aba869cf35c8d90b8768fc843ef50f937725564f3493bb7e0f3be4"
+    },
+    {
+      "path": "assets/production/materials/tiles/bare_metal_roughness.png",
+      "bytes": 920,
+      "sha256": "2ed2de463ed92b4ecd984cb2f9890c19b3b07a9db8f22b41c1a81f64c9c4c9a1"
+    },
+    {
+      "path": "assets/production/materials/tiles/canvas_basecolor.png",
+      "bytes": 4890,
+      "sha256": "a6e9fad8d234211cd5c606482ff26a946a5565264cfaf9aa2a4e59edd715fa11"
+    },
+    {
+      "path": "assets/production/materials/tiles/canvas_roughness.png",
+      "bytes": 920,
+      "sha256": "79a63430a155dab97e7462179d955564b6dfaf203c896c8648a7eaa2ca3ca80d"
+    },
+    {
+      "path": "assets/production/materials/tiles/ceramic_basecolor.png",
+      "bytes": 1684,
+      "sha256": "2d773a637ebad8a72c567691d371877f99b833f119bd646bce8c3a2ef4e481dc"
+    },
+    {
+      "path": "assets/production/materials/tiles/ceramic_roughness.png",
+      "bytes": 920,
+      "sha256": "2ed2de463ed92b4ecd984cb2f9890c19b3b07a9db8f22b41c1a81f64c9c4c9a1"
+    },
+    {
+      "path": "assets/production/materials/tiles/cloth_basecolor.png",
+      "bytes": 7745,
+      "sha256": "81916e76684849491cc3dda3988a9efea215f3506f2321350e9042c5ca2b49f2"
+    },
+    {
+      "path": "assets/production/materials/tiles/cloth_roughness.png",
+      "bytes": 920,
+      "sha256": "165cbe576c721662101f1dda1b1a4be2b382b78abcea4fd898daff01c6ec0fb9"
+    },
+    {
+      "path": "assets/production/materials/tiles/cloth_trim_basecolor.png",
+      "bytes": 6853,
+      "sha256": "2588bbda854366b41338201b21bc5b71974b4bc06bf3a02a2e6b6afac5b766e5"
+    },
+    {
+      "path": "assets/production/materials/tiles/cloth_trim_roughness.png",
+      "bytes": 920,
+      "sha256": "165cbe576c721662101f1dda1b1a4be2b382b78abcea4fd898daff01c6ec0fb9"
+    },
+    {
+      "path": "assets/production/materials/tiles/foliage_basecolor.png",
+      "bytes": 1682,
+      "sha256": "b6a667b0419e66cfab4778fe6179a441eca7517701b8f833164d9383a8fc4d25"
+    },
+    {
+      "path": "assets/production/materials/tiles/foliage_roughness.png",
+      "bytes": 920,
+      "sha256": "3a1521428dab09c1515ab15eaee8b1677a23e5dca037a682de9b2db97614c3fc"
+    },
+    {
+      "path": "assets/production/materials/tiles/graphite_basecolor.png",
+      "bytes": 1682,
+      "sha256": "1126149ed8479bd873fb2c2c021a8a96c7d2d2fbb6d0ba6b97bf4f8ad5f91e33"
+    },
+    {
+      "path": "assets/production/materials/tiles/graphite_roughness.png",
+      "bytes": 920,
+      "sha256": "fb9daac010138e6f4d12aa2c244785c930cf58766b552e7bc02eb632ffe9692d"
+    },
+    {
+      "path": "assets/production/materials/tiles/leather_basecolor.png",
+      "bytes": 1682,
+      "sha256": "36bc6745278b375acbd4da215247d65bce2c4ee45e732be4dbac9f85229476ac"
+    },
+    {
+      "path": "assets/production/materials/tiles/leather_roughness.png",
+      "bytes": 920,
+      "sha256": "9e10c54b78469a577f177ce9aa9841df2d26e5e46385f42b377b93cedce731e7"
+    },
+    {
+      "path": "assets/production/materials/tiles/paint_primary_basecolor.png",
+      "bytes": 1683,
+      "sha256": "859e80cf799466f660c347adc38b80286aac605dcb4ca675daffa045e0af4489"
+    },
+    {
+      "path": "assets/production/materials/tiles/paint_primary_roughness.png",
+      "bytes": 920,
+      "sha256": "7245a6ee93b449bc002e323c829be26abb814d95f742f71d9629a5135a7c6768"
+    },
+    {
+      "path": "assets/production/materials/tiles/paint_secondary_basecolor.png",
+      "bytes": 1682,
+      "sha256": "b6a667b0419e66cfab4778fe6179a441eca7517701b8f833164d9383a8fc4d25"
+    },
+    {
+      "path": "assets/production/materials/tiles/paint_secondary_roughness.png",
+      "bytes": 920,
+      "sha256": "2502862ad7d6cefb4dc046fcc9ee276a473c6d927d5de360b2bafcf76c465034"
+    },
+    {
+      "path": "assets/production/materials/tiles/rubber_basecolor.png",
+      "bytes": 6108,
+      "sha256": "5bddc4797ee9f924a0f119171fb5dc14631b225121bf7ba7f93a13821badd741"
+    },
+    {
+      "path": "assets/production/materials/tiles/rubber_roughness.png",
+      "bytes": 920,
+      "sha256": "165cbe576c721662101f1dda1b1a4be2b382b78abcea4fd898daff01c6ec0fb9"
+    },
+    {
+      "path": "assets/production/materials/tiles/stone_basecolor.png",
+      "bytes": 6836,
+      "sha256": "779471f7c3697b5828774a97bca3ab52ae4a431485c8a1f2f4d7164f92757af3"
+    },
+    {
+      "path": "assets/production/materials/tiles/stone_roughness.png",
+      "bytes": 920,
+      "sha256": "4a043aca018f60ccc3d4f78c38023826de29b67cb697426313d8a3abaf99d267"
+    },
+    {
+      "path": "assets/production/materials/tiles/trim_basecolor.png",
+      "bytes": 1684,
+      "sha256": "2d773a637ebad8a72c567691d371877f99b833f119bd646bce8c3a2ef4e481dc"
+    },
+    {
+      "path": "assets/production/materials/tiles/trim_roughness.png",
+      "bytes": 920,
+      "sha256": "d6c80e7f8e0e5eecf47f9dd8673ed0f161173e4610d9b55818fcb3c215d28b41"
+    },
+    {
+      "path": "assets/production/materials/tiles/wood_basecolor.png",
+      "bytes": 15004,
+      "sha256": "3d05defd007e470156f70d27dcdbef49bf743336b99e34017ff653fd52d9e802"
+    },
+    {
+      "path": "assets/production/materials/tiles/wood_roughness.png",
+      "bytes": 920,
+      "sha256": "9120696136c980532bb741be44826cd77dfc62282e82591d5e60ba7a49ecd815"
+    },
+    {
+      "path": "assets/production/upload-manifest.json",
+      "bytes": 5771,
+      "sha256": "8adb669c64cd835b457f85da3de16e2806dd1de96c7fa11c7b264012b4ffb238"
+    }
+  ]
+}

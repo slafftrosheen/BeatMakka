@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "[{\"id\":\"rbxassetid://99087195128670\",\"path\":\"Players.CuuteFoxey.PlayerGui.FrequencyZero.Workstation.PanelMask\",\"status\":\"Enum.AssetFetchStatus.None\",\"loaded\":true},{\"id\":\"rbxassetid://138362874983991\",\"path\":\"Players.CuuteFoxey.PlayerGui.FrequencyZero.Workstation.Content.Transport.Play.Icon\",\"status\":\"Enum.AssetFetchStatus.None\",\"loaded\":true},{\"id\":\"rbxassetid://138362874983991\",\"path\":\"Players.CuuteFoxey.PlayerGui.FrequencyZero.Workstation.Content.Transport.Record.Icon\",\"status\":\"Enum.AssetFetchStatus.None\",\"loaded\":true}]"
+    }
+  ],
+  "isError": false
+}

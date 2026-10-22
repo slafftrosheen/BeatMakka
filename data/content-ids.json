@@ -1,0 +1,19 @@
+{
+  "Audio": {},
+  "Images": {
+    "atlas.quay.basecolor.512": 137950080210331,
+    "atlas.quay.basecolor.1024": 72083879648967,
+    "atlas.chalk.basecolor.512": 100805049598715,
+    "atlas.chalk.basecolor.1024": 117689403172472,
+    "atlas.coral.basecolor.512": 78348915703467,
+    "atlas.coral.basecolor.1024": 86114142638116,
+    "atlas.afterhours.basecolor.512": 116045023802730,
+    "atlas.afterhours.basecolor.1024": 91426340502972,
+    "atlas.roughness.512": 78643804613550,
+    "atlas.roughness.1024": 137206541823495,
+    "atlas.metalness.512": 128962279524469,
+    "atlas.metalness.1024": 92626694607620,
+    "ui.icons": 138362874983991,
+    "ui.panel": 99087195128670
+  }
+}

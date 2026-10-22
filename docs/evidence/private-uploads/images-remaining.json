@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"http://127.0.0.1:8769/assets/production/graphics/panel_9slice.png\":\"rbxassetid://99087195128670\",\"http://127.0.0.1:8769/assets/production/graphics/G03_G04_icons.png\":\"rbxassetid://138362874983991\",\"http://127.0.0.1:8769/assets/production/materials/sets/afterhours/atlas_basecolor.png\":\"rbxassetid://91426340502972\",\"http://127.0.0.1:8769/assets/production/materials/shared/atlas_metalness_512.png\":\"rbxassetid://128962279524469\",\"http://127.0.0.1:8769/assets/production/materials/sets/quay/atlas_basecolor.png\":\"rbxassetid://72083879648967\",\"http://127.0.0.1:8769/assets/production/materials/shared/atlas_roughness_512.png\":\"rbxassetid://78643804613550\",\"http://127.0.0.1:8769/assets/production/materials/shared/atlas_roughness.png\":\"rbxassetid://137206541823495\",\"http://127.0.0.1:8769/assets/production/materials/sets/coral/atlas_basecolor_512.png\":\"rbxassetid://78348915703467\",\"http://127.0.0.1:8769/assets/production/materials/sets/afterhours/atlas_basecolor_512.png\":\"rbxassetid://116045023802730\",\"http://127.0.0.1:8769/assets/production/materials/shared/atlas_metalness.png\":\"rbxassetid://92626694607620\",\"http://127.0.0.1:8769/assets/production/materials/sets/chalk/atlas_basecolor_512.png\":\"rbxassetid://100805049598715\",\"http://127.0.0.1:8769/assets/production/materials/sets/coral/atlas_basecolor.png\":\"rbxassetid://86114142638116\",\"http://127.0.0.1:8769/assets/production/materials/sets/chalk/atlas_basecolor.png\":\"rbxassetid://117689403172472\"}"
+    }
+  ],
+  "isError": false
+}

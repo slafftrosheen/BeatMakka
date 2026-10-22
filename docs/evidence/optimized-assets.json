@@ -1,0 +1,1443 @@
+{
+  "blender": "5.2.2 LTS",
+  "policy": "No decimation; preserve geometry, bounds, functional parts and accepted source files. Static dressing grouped; new planar atlas UVs and one material per MeshPart. Workbench previews inspect color/UVs, not PBR lighting.",
+  "assets": [
+    {
+      "id": "H01",
+      "source": "assets/cleaned/H01/H01_sampler_shell_surface_repaired.glb",
+      "source_sha256": "5b6d8b31ec8850bab98022dbdaa49049073be32f69b6b591fa7f1a3dd0562dab",
+      "output": "assets/optimized/H01/H01_atlas_v1.glb",
+      "sha256": "7f27ff7da218c44e19fba120ab3decda47f4cbd836db0eb38d94d0882dfa15e3",
+      "bytes": 138004,
+      "before": {
+        "triangles": 2088,
+        "mesh_objects": 1,
+        "material_primitives": 3,
+        "bounds_min": [
+          -3.0,
+          -2.0,
+          0.0
+        ],
+        "bounds_max": [
+          3.0,
+          2.0,
+          1.25
+        ]
+      },
+      "after": {
+        "triangles": 2088,
+        "mesh_objects": 1,
+        "material_primitives": 1,
+        "bounds_min": [
+          -3.0,
+          -2.0,
+          0.0
+        ],
+        "bounds_max": [
+          3.0,
+          2.0,
+          1.25
+        ]
+      },
+      "texture_size": 1024,
+      "images": [
+        {
+          "name": "atlas_basecolor",
+          "size": [
+            1024,
+            1024
+          ]
+        },
+        {
+          "name": "atlas_metalness-atlas_roughness",
+          "size": [
+            1024,
+            1024
+          ]
+        }
+      ],
+      "slot_mapping": {
+        "Sampler | Workshop Teal": "paint_primary",
+        "Sampler | Warm Cream Trim": "trim",
+        "Sampler | Graphite Base": "graphite"
+      },
+      "texture_layout": "FZ_MaterialAtlas_v1",
+      "part_groups": {
+        "H01_Housing_Shell": [
+          "H01_Housing_Shell"
+        ]
+      },
+      "preview": "assets/optimized/H01/H01_atlas_v1.png",
+      "review": "New textured variant: static Blender re-import checked; visual/Studio/runtime acceptance pending."
+    },
+    {
+      "id": "H02",
+      "source": "assets/cleaned/H02/H02_compact_speaker_stack_surface_repaired.glb",
+      "source_sha256": "0fb2d7c67aefaf2919246ff78fd0b65041c69f1b5557f9a57bf414000c6d873b",
+      "output": "assets/optimized/H02/H02_atlas_v1.glb",
+      "sha256": "42be1c3b9abe84d237e80d530b3913a6e3424132d9faa72e4fcb84e96785476f",
+      "bytes": 141984,
+      "before": {
+        "triangles": 1670,
+        "mesh_objects": 1,
+        "material_primitives": 1,
+        "bounds_min": [
+          -2.0,
+          -1.5,
+          0.0
+        ],
+        "bounds_max": [
+          2.0,
+          1.5,
+          8.0
+        ]
+      },
+      "after": {
+        "triangles": 1670,
+        "mesh_objects": 1,
+        "material_primitives": 1,
+        "bounds_min": [
+          -2.0,
+          -1.5,
+          0.0
+        ],
+        "bounds_max": [
+          2.0,
+          1.5,
+          8.0
+        ]
+      },
+      "texture_size": 1024,
+      "images": [
+        {
+          "name": "atlas_basecolor",
+          "size": [
+            1024,
+            1024
+          ]
+        },
+        {
+          "name": "atlas_metalness-atlas_roughness",
+          "size": [
+            1024,
+            1024
+          ]
+        }
+      ],
+      "slot_mapping": {
+        "Material_0": "wood"
+      },
+      "texture_layout": "FZ_MaterialAtlas_v1",
+      "part_groups": {
+        "H02_Geometry": [
+          "H02_Geometry"
+        ]
+      },
+      "preview": "assets/optimized/H02/H02_atlas_v1.png",
+      "review": "New textured variant: static Blender re-import checked; visual/Studio/runtime acceptance pending."
+    },
+    {
+      "id": "H03",
+      "source": "assets/cleaned/H03/H03_vinyl_crate_shell_surface_repaired.glb",
+      "source_sha256": "9070b7d6c8da39de6d0123c9ba230bfb3abcefe20c46914537efa52a7f7c2e59",
+      "output": "assets/optimized/H03/H03_atlas_v1.glb",
+      "sha256": "eaf6e8e42300da9e23a082946d28b7e60d2671617bcde3561949c67d61be6c4b",
+      "bytes": 87056,
+      "before": {
+        "triangles": 632,
+        "mesh_objects": 1,
+        "material_primitives": 1,
+        "bounds_min": [
+          -1.5,
+          -1.5,
+          0.0
+        ],
+        "bounds_max": [
+          1.5,
+          1.5,
+          2.5
+        ]
+      },
+      "after": {
+        "triangles": 632,
+        "mesh_objects": 1,
+        "material_primitives": 1,
+        "bounds_min": [
+          -1.5,
+          -1.5,
+          0.0
+        ],
+        "bounds_max": [
+          1.5,
+          1.5,
+          2.5
+        ]
+      },
+      "texture_size": 1024,
+      "images": [
+        {
+          "name": "atlas_basecolor",
+          "size": [
+            1024,
+            1024
+          ]
+        },
+        {
+          "name": "atlas_metalness-atlas_roughness",
+          "size": [
+            1024,
+            1024
+          ]
+        }
+      ],
+      "slot_mapping": {
+        "Material_0": "wood"
+      },
+      "texture_layout": "FZ_MaterialAtlas_v1",
+      "part_groups": {
+        "H03_Geometry": [
+          "H03_Geometry"
+        ]
+      },
+      "preview": "assets/optimized/H03/H03_atlas_v1.png",
+      "review": "New textured variant: static Blender re-import checked; visual/Studio/runtime acceptance pending."
+    },
+    {
+      "id": "H04",
+      "source": "assets/cleaned/H04/H04_maintenance_helper_robot_surface_repaired.glb",
+      "source_sha256": "35794341dfad624e283a802514532cd9fdf7a74709d247c0c431c7344f65d860",
+      "output": "assets/optimized/H04/H04_atlas_v1.glb",
+      "sha256": "8046e7baf00797212a970b03acc55118471d0bb9d4bf54871533bc2e6181dc22",
+      "bytes": 209336,
+      "before": {
+        "triangles": 3400,
+        "mesh_objects": 1,
+        "material_primitives": 1,
+        "bounds_min": [
+          -1.75,
+          -1.5,
+          0.0
+        ],
+        "bounds_max": [
+          1.75,
+          1.5,
+          4.0
+        ]
+      },
+      "after": {
+        "triangles": 3400,
+        "mesh_objects": 1,
+        "material_primitives": 1,
+        "bounds_min": [
+          -1.75,
+          -1.5,
+          0.0
+        ],
+        "bounds_max": [
+          1.75,
+          1.5,
+          4.0
+        ]
+      },
+      "texture_size": 1024,
+      "images": [
+        {
+          "name": "atlas_basecolor",
+          "size": [
+            1024,
+            1024
+          ]
+        },
+        {
+          "name": "atlas_metalness-atlas_roughness",
+          "size": [
+            1024,
+            1024
+          ]
+        }
+      ],
+      "slot_mapping": {
+        "Material_0": "wood"
+      },
+      "texture_layout": "FZ_MaterialAtlas_v1",
+      "part_groups": {
+        "H04_Geometry": [
+          "H04_Geometry"
+        ]
+      },
+      "preview": "assets/optimized/H04/H04_atlas_v1.png",
+      "review": "New textured variant: static Blender re-import checked; visual/Studio/runtime acceptance pending."
+    },
+    {
+      "id": "H05",
+      "source": "assets/cleaned/H05/H05_curved_street_lamp_scaled_surface_repaired.glb",
+      "source_sha256": "b3bfdf21164e40f5604a6b035d6c97904a8c831918e128924487368293591f1f",
+      "output": "assets/optimized/H05/H05_atlas_v1.glb",
+      "sha256": "2a3928024f2c9bac4b69440a9d0ff63e2922efdd7861a27e2d62138d7c501458",
+      "bytes": 107136,
+      "before": {
+        "triangles": 1040,
+        "mesh_objects": 1,
+        "material_primitives": 1,
+        "bounds_min": [
+          -1.25,
+          -1.5,
+          0.0
+        ],
+        "bounds_max": [
+          1.25,
+          1.5,
+          12.0
+        ]
+      },
+      "after": {
+        "triangles": 1040,
+        "mesh_objects": 1,
+        "material_primitives": 1,
+        "bounds_min": [
+          -1.25,
+          -1.5,
+          0.0
+        ],
+        "bounds_max": [
+          1.25,
+          1.5,
+          12.0
+        ]
+      },
+      "texture_size": 1024,
+      "images": [
+        {
+          "name": "atlas_basecolor",
+          "size": [
+            1024,
+            1024
+          ]
+        },
+        {
+          "name": "atlas_metalness-atlas_roughness",
+          "size": [
+            1024,
+            1024
+          ]
+        }
+      ],
+      "slot_mapping": {
+        "Material_0": "wood"
+      },
+      "texture_layout": "FZ_MaterialAtlas_v1",
+      "part_groups": {
+        "H05_Geometry": [
+          "H05_Geometry"
+        ]
+      },
+      "preview": "assets/optimized/H05/H05_atlas_v1.png",
+      "review": "New textured variant: static Blender re-import checked; visual/Studio/runtime acceptance pending."
+    },
+    {
+      "id": "P01",
+      "source": "assets/cleaned/P01/P01_studio_workbench_surface_repaired.glb",
+      "source_sha256": "e57eeac6ff2bce2778af60ee4ad794e25a7e4f5b6dbbfb535c9df78ba2dc307f",
+      "output": "assets/optimized/P01/P01_atlas_v1.glb",
+      "sha256": "74bd5136fc1edc27d7c603c6834d6eee0386dd2044bde58a32128228588473cd",
+      "bytes": 65156,
+      "before": {
+        "triangles": 632,
+        "mesh_objects": 1,
+        "material_primitives": 1,
+        "bounds_min": [
+          -4.0,
+          -2.0,
+          0.0
+        ],
+        "bounds_max": [
+          4.0,
+          2.0,
+          3.5
+        ]
+      },
+      "after": {
+        "triangles": 632,
+        "mesh_objects": 1,
+        "material_primitives": 1,
+        "bounds_min": [
+          -4.0,
+          -2.0,
+          0.0
+        ],
+        "bounds_max": [
+          4.0,
+          2.0,
+          3.5
+        ]
+      },
+      "texture_size": 512,
+      "images": [
+        {
+          "name": "atlas_basecolor_512",
+          "size": [
+            512,
+            512
+          ]
+        },
+        {
+          "name": "atlas_metalness_512-atlas_roughness_512",
+          "size": [
+            512,
+            512
+          ]
+        }
+      ],
+      "slot_mapping": {
+        "Material_0": "wood"
+      },
+      "texture_layout": "FZ_MaterialAtlas_v1",
+      "part_groups": {
+        "P01_Geometry": [
+          "P01_Geometry"
+        ]
+      },
+      "preview": "assets/optimized/P01/P01_atlas_v1.png",
+      "review": "New textured variant: static Blender re-import checked; visual/Studio/runtime acceptance pending."
+    },
+    {
+      "id": "P02",
+      "source": "assets/cleaned/P02/P02_round_workshop_stool_surface_repaired.glb",
+      "source_sha256": "4af69eed22c2cc52029e5117aea9e0ec497dedb0484e91a14f2261f84e700186",
+      "output": "assets/optimized/P02/P02_atlas_v1.glb",
+      "sha256": "7eb023c02c9f0ae729a68991b9cbb7287a06897ffbd0369ceea7292ebb3ce577",
+      "bytes": 46020,
+      "before": {
+        "triangles": 386,
+        "mesh_objects": 1,
+        "material_primitives": 1,
+        "bounds_min": [
+          -1.25,
+          -1.25,
+          0.0
+        ],
+        "bounds_max": [
+          1.25,
+          1.25,
+          3.0
+        ]
+      },
+      "after": {
+        "triangles": 386,
+        "mesh_objects": 1,
+        "material_primitives": 1,
+        "bounds_min": [
+          -1.25,
+          -1.25,
+          0.0
+        ],
+        "bounds_max": [
+          1.25,
+          1.25,
+          3.0
+        ]
+      },
+      "texture_size": 512,
+      "images": [
+        {
+          "name": "atlas_basecolor_512",
+          "size": [
+            512,
+            512
+          ]
+        },
+        {
+          "name": "atlas_metalness_512-atlas_roughness_512",
+          "size": [
+            512,
+            512
+          ]
+        }
+      ],
+      "slot_mapping": {
+        "Material_0": "wood"
+      },
+      "texture_layout": "FZ_MaterialAtlas_v1",
+      "part_groups": {
+        "P02_Geometry": [
+          "P02_Geometry"
+        ]
+      },
+      "preview": "assets/optimized/P02/P02_atlas_v1.png",
+      "review": "New textured variant: static Blender re-import checked; visual/Studio/runtime acceptance pending."
+    },
+    {
+      "id": "P03",
+      "source": "assets/cleaned/P03/P03_listening_bench_surface_repaired.glb",
+      "source_sha256": "a21aa63700346baab518273881fce22ece9cc6f5fc063d86a27119d8472eb34e",
+      "output": "assets/optimized/P03/P03_atlas_v1.glb",
+      "sha256": "fae0b7a9533b975f44351409b4287c43386394b860fb3600ec76fa3d0a1933b8",
+      "bytes": 53796,
+      "before": {
+        "triangles": 476,
+        "mesh_objects": 1,
+        "material_primitives": 1,
+        "bounds_min": [
+          -3.5,
+          -1.25,
+          0.0
+        ],
+        "bounds_max": [
+          3.5,
+          1.25,
+          3.5
+        ]
+      },
+      "after": {
+        "triangles": 476,
+        "mesh_objects": 1,
+        "material_primitives": 1,
+        "bounds_min": [
+          -3.5,
+          -1.25,
+          0.0
+        ],
+        "bounds_max": [
+          3.5,
+          1.25,
+          3.5
+        ]
+      },
+      "texture_size": 512,
+      "images": [
+        {
+          "name": "atlas_basecolor_512",
+          "size": [
+            512,
+            512
+          ]
+        },
+        {
+          "name": "atlas_metalness_512-atlas_roughness_512",
+          "size": [
+            512,
+            512
+          ]
+        }
+      ],
+      "slot_mapping": {
+        "Material_0": "wood"
+      },
+      "texture_layout": "FZ_MaterialAtlas_v1",
+      "part_groups": {
+        "P03_Geometry": [
+          "P03_Geometry"
+        ]
+      },
+      "preview": "assets/optimized/P03/P03_atlas_v1.png",
+      "review": "New textured variant: static Blender re-import checked; visual/Studio/runtime acceptance pending."
+    },
+    {
+      "id": "P04",
+      "source": "assets/cleaned/P04/P04_record_browsing_bin_surface_repaired.glb",
+      "source_sha256": "c73da01d3ec924ccb5dc96d0542fd17393d799fe59366ff7fc2c9cee9d501c7b",
+      "output": "assets/optimized/P04/P04_atlas_v1.glb",
+      "sha256": "7350fd652073bc70f5894250f0295bec97e8b6fe6fee6145dbbfc06bdf24dcb6",
+      "bytes": 62456,
+      "before": {
+        "triangles": 634,
+        "mesh_objects": 1,
+        "material_primitives": 1,
+        "bounds_min": [
+          -2.5,
+          -1.5,
+          0.0
+        ],
+        "bounds_max": [
+          2.5,
+          1.5,
+          3.5
+        ]
+      },
+      "after": {
+        "triangles": 634,
+        "mesh_objects": 1,
+        "material_primitives": 1,
+        "bounds_min": [
+          -2.5,
+          -1.5,
+          0.0
+        ],
+        "bounds_max": [
+          2.5,
+          1.5,
+          3.5
+        ]
+      },
+      "texture_size": 512,
+      "images": [
+        {
+          "name": "atlas_basecolor_512",
+          "size": [
+            512,
+            512
+          ]
+        },
+        {
+          "name": "atlas_metalness_512-atlas_roughness_512",
+          "size": [
+            512,
+            512
+          ]
+        }
+      ],
+      "slot_mapping": {
+        "Material_0": "wood"
+      },
+      "texture_layout": "FZ_MaterialAtlas_v1",
+      "part_groups": {
+        "P04_Geometry": [
+          "P04_Geometry"
+        ]
+      },
+      "preview": "assets/optimized/P04/P04_atlas_v1.png",
+      "review": "New textured variant: static Blender re-import checked; visual/Studio/runtime acceptance pending."
+    },
+    {
+      "id": "P05",
+      "source": "assets/cleaned/P05/P05_wall_shelf.glb",
+      "source_sha256": "b1ca3f81ee9023dc655918f07338e3f04992ccd3c02895e7a94b69363d5fbd44",
+      "output": "assets/optimized/P05/P05_atlas_v1.glb",
+      "sha256": "da4285ddf0ed582e78f7916373ee822dd543b5776eaf69a62eab6e484a1077ff",
+      "bytes": 33416,
+      "before": {
+        "triangles": 148,
+        "mesh_objects": 1,
+        "material_primitives": 3,
+        "bounds_min": [
+          -3.0,
+          -1.5,
+          -0.3500000238418579
+        ],
+        "bounds_max": [
+          3.0,
+          0.0,
+          0.3499999940395355
+        ]
+      },
+      "after": {
+        "triangles": 148,
+        "mesh_objects": 1,
+        "material_primitives": 1,
+        "bounds_min": [
+          -3.0,
+          -1.5,
+          -0.3500000238418579
+        ],
+        "bounds_max": [
+          3.0,
+          0.0,
+          0.3499999940395355
+        ]
+      },
+      "texture_size": 512,
+      "images": [
+        {
+          "name": "atlas_basecolor_512",
+          "size": [
+            512,
+            512
+          ]
+        },
+        {
+          "name": "atlas_metalness_512-atlas_roughness_512",
+          "size": [
+            512,
+            512
+          ]
+        }
+      ],
+      "slot_mapping": {
+        "P05 | Workshop Teal": "paint_primary",
+        "P05 | Warm Walnut": "wood",
+        "P05 | Warm Cream Edge": "trim"
+      },
+      "texture_layout": "FZ_MaterialAtlas_v1",
+      "part_groups": {
+        "P05_Wall_Shelf": [
+          "P05_Wall_Shelf"
+        ]
+      },
+      "preview": "assets/optimized/P05/P05_atlas_v1.png",
+      "review": "New textured variant: static Blender re-import checked; visual/Studio/runtime acceptance pending."
+    },
+    {
+      "id": "P06",
+      "source": "assets/cleaned/P06/P06_normalized_geometry_candidate_surface_repaired.glb",
+      "source_sha256": "229426b22a8a8f4444d0e44cab33ad41c69f4b31221f38bf238661a60a391955",
+      "output": "assets/optimized/P06/P06_atlas_v1.glb",
+      "sha256": "a444e66bb48f211934382701f2c79b29fc2bc4a326112528732db62170d67c30",
+      "bytes": 42716,
+      "before": {
+        "triangles": 276,
+        "mesh_objects": 1,
+        "material_primitives": 1,
+        "bounds_min": [
+          -1.5,
+          -1.5,
+          0.0
+        ],
+        "bounds_max": [
+          1.5,
+          1.5,
+          3.0
+        ]
+      },
+      "after": {
+        "triangles": 276,
+        "mesh_objects": 1,
+        "material_primitives": 1,
+        "bounds_min": [
+          -1.5,
+          -1.5,
+          0.0
+        ],
+        "bounds_max": [
+          1.5,
+          1.5,
+          3.0
+        ]
+      },
+      "texture_size": 512,
+      "images": [
+        {
+          "name": "atlas_basecolor_512",
+          "size": [
+            512,
+            512
+          ]
+        },
+        {
+          "name": "atlas_metalness_512-atlas_roughness_512",
+          "size": [
+            512,
+            512
+          ]
+        }
+      ],
+      "slot_mapping": {
+        "Material_0": "wood"
+      },
+      "texture_layout": "FZ_MaterialAtlas_v1",
+      "part_groups": {
+        "P06_GeometryCandidate": [
+          "P06_GeometryCandidate"
+        ]
+      },
+      "preview": "assets/optimized/P06/P06_atlas_v1.png",
+      "review": "New textured variant: static Blender re-import checked; visual/Studio/runtime acceptance pending."
+    },
+    {
+      "id": "P07",
+      "source": "assets/cleaned/P07/P07_normalized_geometry_candidate_surface_repaired.glb",
+      "source_sha256": "925df3f365dae06aefcf610415540bba0fea5a8eb3226eab73156d4078cff723",
+      "output": "assets/optimized/P07/P07_atlas_v1.glb",
+      "sha256": "20d0c0f357554b5a6fc5c8d13d3bf8b34700125bd49e9634f59e21c961fad0ef",
+      "bytes": 67452,
+      "before": {
+        "triangles": 846,
+        "mesh_objects": 1,
+        "material_primitives": 1,
+        "bounds_min": [
+          -1.0,
+          -0.4000000059604645,
+          0.0
+        ],
+        "bounds_max": [
+          1.0,
+          0.4000000059604645,
+          1.5
+        ]
+      },
+      "after": {
+        "triangles": 846,
+        "mesh_objects": 1,
+        "material_primitives": 1,
+        "bounds_min": [
+          -1.0,
+          -0.4000000059604645,
+          0.0
+        ],
+        "bounds_max": [
+          1.0,
+          0.4000000059604645,
+          1.5
+        ]
+      },
+      "texture_size": 512,
+      "images": [
+        {
+          "name": "atlas_basecolor_512",
+          "size": [
+            512,
+            512
+          ]
+        },
+        {
+          "name": "atlas_metalness_512-atlas_roughness_512",
+          "size": [
+            512,
+            512
+          ]
+        }
+      ],
+      "slot_mapping": {
+        "Material_0": "wood"
+      },
+      "texture_layout": "FZ_MaterialAtlas_v1",
+      "part_groups": {
+        "P07_GeometryCandidate": [
+          "P07_GeometryCandidate"
+        ]
+      },
+      "preview": "assets/optimized/P07/P07_atlas_v1.png",
+      "review": "New textured variant: static Blender re-import checked; visual/Studio/runtime acceptance pending."
+    },
+    {
+      "id": "P11",
+      "source": "assets/cleaned/P11/P11_normalized_geometry_candidate_surface_repaired.glb",
+      "source_sha256": "ac361396fa96d19632992d6d673a53d54a4bfd2d8156d30fe7b4ad40fd857a96",
+      "output": "assets/optimized/P11/P11_atlas_v1.glb",
+      "sha256": "909512b057494018c3c1cd0025b46b1f94aa04c6d6a8ec90e67031af07dfcf3d",
+      "bytes": 41808,
+      "before": {
+        "triangles": 280,
+        "mesh_objects": 1,
+        "material_primitives": 1,
+        "bounds_min": [
+          -1.0,
+          -1.0,
+          0.0
+        ],
+        "bounds_max": [
+          1.0,
+          1.0,
+          2.5
+        ]
+      },
+      "after": {
+        "triangles": 280,
+        "mesh_objects": 1,
+        "material_primitives": 1,
+        "bounds_min": [
+          -1.0,
+          -1.0,
+          0.0
+        ],
+        "bounds_max": [
+          1.0,
+          1.0,
+          2.5
+        ]
+      },
+      "texture_size": 512,
+      "images": [
+        {
+          "name": "atlas_basecolor_512",
+          "size": [
+            512,
+            512
+          ]
+        },
+        {
+          "name": "atlas_metalness_512-atlas_roughness_512",
+          "size": [
+            512,
+            512
+          ]
+        }
+      ],
+      "slot_mapping": {
+        "Material_0": "wood"
+      },
+      "texture_layout": "FZ_MaterialAtlas_v1",
+      "part_groups": {
+        "P11_GeometryCandidate": [
+          "P11_GeometryCandidate"
+        ]
+      },
+      "preview": "assets/optimized/P11/P11_atlas_v1.png",
+      "review": "New textured variant: static Blender re-import checked; visual/Studio/runtime acceptance pending."
+    },
+    {
+      "id": "P12",
+      "source": "assets/cleaned/P12/P12_solid_repair_candidate.glb",
+      "source_sha256": "15464d11082ba47a95e1a1b99c5e743315166f84b3c424b3cb87faed6a6ab2ad",
+      "output": "assets/optimized/P12/P12_atlas_v1.glb",
+      "sha256": "9421a35dafdec9b5cc621b60872ced5b904a7af6c85d5a51181b90986aa18b9c",
+      "bytes": 58472,
+      "before": {
+        "triangles": 460,
+        "mesh_objects": 15,
+        "material_primitives": 15,
+        "bounds_min": [
+          -1.5,
+          -1.5,
+          0.0
+        ],
+        "bounds_max": [
+          1.5,
+          1.5,
+          4.0
+        ]
+      },
+      "after": {
+        "triangles": 460,
+        "mesh_objects": 1,
+        "material_primitives": 1,
+        "bounds_min": [
+          -1.5,
+          -1.5,
+          0.0
+        ],
+        "bounds_max": [
+          1.5,
+          1.5,
+          4.0
+        ]
+      },
+      "texture_size": 512,
+      "images": [
+        {
+          "name": "atlas_basecolor_512",
+          "size": [
+            512,
+            512
+          ]
+        },
+        {
+          "name": "atlas_metalness_512-atlas_roughness_512",
+          "size": [
+            512,
+            512
+          ]
+        }
+      ],
+      "slot_mapping": {
+        "FZ Solid Leaflight": "foliage",
+        "FZ Solid Leaf": "foliage"
+      },
+      "texture_layout": "FZ_MaterialAtlas_v1",
+      "part_groups": {
+        "P12_PlantCluster": [
+          "P12_BroadLeaf_1",
+          "P12_BroadLeaf_2",
+          "P12_BroadLeaf_3",
+          "P12_BroadLeaf_4",
+          "P12_BroadLeaf_5",
+          "P12_LowerLeaf_1",
+          "P12_LowerLeaf_2",
+          "P12_LowerLeaf_3",
+          "P12_LowerLeaf_4",
+          "P12_LowerLeaf_5",
+          "P12_Stem_1",
+          "P12_Stem_2",
+          "P12_Stem_3",
+          "P12_Stem_4",
+          "P12_Stem_5"
+        ]
+      },
+      "preview": "assets/optimized/P12/P12_atlas_v1.png",
+      "review": "New textured variant: static Blender re-import checked; visual/Studio/runtime acceptance pending."
+    },
+    {
+      "id": "P13",
+      "source": "assets/cleaned/P13/P13_art_repair_candidate.glb",
+      "source_sha256": "c87ce266607f22bc8dbf4386a2ea4003f8c46bfdf82f6aabe1184c570b8544f7",
+      "output": "assets/optimized/P13/P13_atlas_v1.glb",
+      "sha256": "6a2c6a0cf8b2c3a6840671b690c6425d098d11c42c61f5f608ba5ff02c3f763a",
+      "bytes": 42824,
+      "before": {
+        "triangles": 312,
+        "mesh_objects": 6,
+        "material_primitives": 6,
+        "bounds_min": [
+          -0.75,
+          -1.5,
+          -1.0
+        ],
+        "bounds_max": [
+          0.75,
+          0.0,
+          1.0
+        ]
+      },
+      "after": {
+        "triangles": 312,
+        "mesh_objects": 2,
+        "material_primitives": 2,
+        "bounds_min": [
+          -0.75,
+          -1.5,
+          -1.0
+        ],
+        "bounds_max": [
+          0.75,
+          0.0,
+          1.0
+        ]
+      },
+      "texture_size": 512,
+      "images": [
+        {
+          "name": "atlas_basecolor_512",
+          "size": [
+            512,
+            512
+          ]
+        },
+        {
+          "name": "atlas_metalness_512-atlas_roughness_512",
+          "size": [
+            512,
+            512
+          ]
+        }
+      ],
+      "slot_mapping": {
+        "FZ Amber Indicator": "amber",
+        "FZ Faded Teal": "paint_primary",
+        "FZ Warm Cream": "trim",
+        "FZ Workshop Teal": "paint_primary",
+        "FZ Walnut": "wood"
+      },
+      "texture_layout": "FZ_MaterialAtlas_v1",
+      "part_groups": {
+        "P13_Diffuser": [
+          "P13_Amber_Diffuser"
+        ],
+        "P13_StaticBody": [
+          "P13_Arm",
+          "P13_Cream_Enamel_Shade",
+          "P13_Teal_Mount",
+          "P13_Teal_Shade_Rim",
+          "P13_Walnut_WallPlate"
+        ]
+      },
+      "preview": "assets/optimized/P13/P13_atlas_v1.png",
+      "review": "New textured variant: static Blender re-import checked; visual/Studio/runtime acceptance pending."
+    },
+    {
+      "id": "P14",
+      "source": "assets/cleaned/P14/P14_solid_repair_candidate.glb",
+      "source_sha256": "5d93a060f4746370dd53fa75756b1a97d3ed268e81e661dd1ecb922b989a59f1",
+      "output": "assets/optimized/P14/P14_atlas_v1.glb",
+      "sha256": "d7fac77f423088161016b32f2446775b984d582b3a5e98db7f13c2845610bd14",
+      "bytes": 46452,
+      "before": {
+        "triangles": 352,
+        "mesh_objects": 8,
+        "material_primitives": 8,
+        "bounds_min": [
+          -1.0,
+          -0.5,
+          -2.48421049118042
+        ],
+        "bounds_max": [
+          1.0,
+          0.5,
+          0.5157893896102905
+        ]
+      },
+      "after": {
+        "triangles": 352,
+        "mesh_objects": 3,
+        "material_primitives": 3,
+        "bounds_min": [
+          -1.0,
+          -0.5,
+          -2.48421049118042
+        ],
+        "bounds_max": [
+          1.0,
+          0.5,
+          0.5157893896102905
+        ]
+      },
+      "texture_size": 512,
+      "images": [
+        {
+          "name": "atlas_basecolor_512",
+          "size": [
+            512,
+            512
+          ]
+        },
+        {
+          "name": "atlas_metalness_512-atlas_roughness_512",
+          "size": [
+            512,
+            512
+          ]
+        }
+      ],
+      "slot_mapping": {
+        "FZ Solid Cream": "trim",
+        "FZ Solid Graphite": "graphite",
+        "FZ Solid Brass": "wood",
+        "FZ Solid Walnut": "wood",
+        "FZ Solid Amber": "amber",
+        "FZ Solid Teal": "paint_primary"
+      },
+      "texture_layout": "FZ_MaterialAtlas_v1",
+      "part_groups": {
+        "P14_StaticBody": [
+          "P14_Cream_Front_Rim",
+          "P14_Status_Bezel",
+          "P14_Teal_Cabinet",
+          "P14_Teal_Face",
+          "P14_Walnut_Wall_Backplate"
+        ],
+        "P14_Socket": [
+          "P14_Socket_Recess",
+          "P14_Socket_Rim"
+        ],
+        "P14_StatusInsert": [
+          "P14_Status_Insert"
+        ]
+      },
+      "preview": "assets/optimized/P14/P14_atlas_v1.png",
+      "review": "New textured variant: static Blender re-import checked; visual/Studio/runtime acceptance pending."
+    },
+    {
+      "id": "P16",
+      "source": "assets/cleaned/P16/P16_normalized_geometry_candidate_surface_repaired.glb",
+      "source_sha256": "7bfb4f614dd97d7a5054aa3660c922f7441f9ccc9ab834e903eff4ae61ed97f0",
+      "output": "assets/optimized/P16/P16_atlas_v1.glb",
+      "sha256": "9e0dc1f0a74e2bb0502ae0aae24b5c821ed1c71b5e9fc1979cffa2371fc5c335",
+      "bytes": 48656,
+      "before": {
+        "triangles": 376,
+        "mesh_objects": 1,
+        "material_primitives": 1,
+        "bounds_min": [
+          -1.5,
+          -1.0,
+          0.0
+        ],
+        "bounds_max": [
+          1.5,
+          1.0,
+          3.0
+        ]
+      },
+      "after": {
+        "triangles": 376,
+        "mesh_objects": 1,
+        "material_primitives": 1,
+        "bounds_min": [
+          -1.5,
+          -1.0,
+          0.0
+        ],
+        "bounds_max": [
+          1.5,
+          1.0,
+          3.0
+        ]
+      },
+      "texture_size": 512,
+      "images": [
+        {
+          "name": "atlas_basecolor_512",
+          "size": [
+            512,
+            512
+          ]
+        },
+        {
+          "name": "atlas_metalness_512-atlas_roughness_512",
+          "size": [
+            512,
+            512
+          ]
+        }
+      ],
+      "slot_mapping": {
+        "Material_0": "wood"
+      },
+      "texture_layout": "FZ_MaterialAtlas_v1",
+      "part_groups": {
+        "P16_GeometryCandidate": [
+          "P16_GeometryCandidate"
+        ]
+      },
+      "preview": "assets/optimized/P16/P16_atlas_v1.png",
+      "review": "New textured variant: static Blender re-import checked; visual/Studio/runtime acceptance pending."
+    },
+    {
+      "id": "I01",
+      "source": "assets/cleaned/I01/I01_art_repair_candidate.glb",
+      "source_sha256": "c46ea6fb810ce5784040ec45c787d6b59c0517315c5d60bc658cc5abff78397a",
+      "output": "assets/optimized/I01/I01_atlas_v1.glb",
+      "sha256": "e8ea8d33cb38472335ba808c5d788591f3597a6eaa60d78f7432848674b25e97",
+      "bytes": 41120,
+      "before": {
+        "triangles": 260,
+        "mesh_objects": 7,
+        "material_primitives": 7,
+        "bounds_min": [
+          -1.5,
+          -0.30000001192092896,
+          -2.0
+        ],
+        "bounds_max": [
+          1.5,
+          0.0,
+          0.0
+        ]
+      },
+      "after": {
+        "triangles": 260,
+        "mesh_objects": 2,
+        "material_primitives": 2,
+        "bounds_min": [
+          -1.5,
+          -0.30000001192092896,
+          -2.0
+        ],
+        "bounds_max": [
+          1.5,
+          0.0,
+          0.0
+        ]
+      },
+      "texture_size": 512,
+      "images": [
+        {
+          "name": "atlas_basecolor_512",
+          "size": [
+            512,
+            512
+          ]
+        },
+        {
+          "name": "atlas_metalness_512-atlas_roughness_512",
+          "size": [
+            512,
+            512
+          ]
+        }
+      ],
+      "slot_mapping": {
+        "FZ Workshop Teal": "paint_primary",
+        "FZ Warm Brass": "wood",
+        "FZ Walnut": "wood",
+        "FZ Warm Cream": "trim"
+      },
+      "texture_layout": "FZ_MaterialAtlas_v1",
+      "part_groups": {
+        "I01_FixedMount": [
+          "I01_Fixed_Hinge_Lugs",
+          "I01_Fixed_Hinge_Pin",
+          "I01_Fixed_Wall_Mount"
+        ],
+        "I01_SwingingSign": [
+          "I01_Swinging_Cream_Upper_Trim",
+          "I01_Swinging_Sign_Body",
+          "I01_Swinging_Strike_Centre",
+          "I01_Swinging_Strike_Plate"
+        ]
+      },
+      "preview": "assets/optimized/I01/I01_atlas_v1.png",
+      "review": "New textured variant: static Blender re-import checked; visual/Studio/runtime acceptance pending."
+    },
+    {
+      "id": "I04",
+      "source": "assets/cleaned/I04/I04_art_repair_candidate.glb",
+      "source_sha256": "a6aa8c8d7767150c0ea0d0a609e1869d7a2b54f6d3a8492ac739b2e636b88dd7",
+      "output": "assets/optimized/I04/I04_atlas_v1.glb",
+      "sha256": "af6c82c9ae33d67e8b6dad754b07c7fd31482e65316ae3738fd2e705ba81ccf0",
+      "bytes": 65220,
+      "before": {
+        "triangles": 648,
+        "mesh_objects": 14,
+        "material_primitives": 14,
+        "bounds_min": [
+          -1.5,
+          -1.5,
+          -2.0
+        ],
+        "bounds_max": [
+          1.5,
+          0.0,
+          2.0
+        ]
+      },
+      "after": {
+        "triangles": 648,
+        "mesh_objects": 6,
+        "material_primitives": 6,
+        "bounds_min": [
+          -1.5,
+          -1.5,
+          -2.0
+        ],
+        "bounds_max": [
+          1.5,
+          0.0,
+          2.0
+        ]
+      },
+      "texture_size": 512,
+      "images": [
+        {
+          "name": "atlas_basecolor_512",
+          "size": [
+            512,
+            512
+          ]
+        },
+        {
+          "name": "atlas_metalness_512-atlas_roughness_512",
+          "size": [
+            512,
+            512
+          ]
+        }
+      ],
+      "slot_mapping": {
+        "FZ Warm Cream": "trim",
+        "FZ Warm Brass": "wood",
+        "FZ Graphite": "graphite",
+        "FZ Faded Teal": "paint_primary",
+        "FZ Amber Indicator": "amber",
+        "FZ Teal Indicator": "paint_primary",
+        "FZ Dusty Coral": "accent",
+        "FZ Workshop Teal": "paint_primary",
+        "FZ Walnut": "wood"
+      },
+      "texture_layout": "FZ_MaterialAtlas_v1",
+      "part_groups": {
+        "I04_StaticBody": [
+          "I04_Cream_Faceplate",
+          "I04_Dial_Brass_Ring",
+          "I04_Dial_Graphite_Base",
+          "I04_Indicator_1_Socket",
+          "I04_Indicator_2_Socket",
+          "I04_Indicator_3_Socket",
+          "I04_Indicator_4_Socket",
+          "I04_Teal_Cabinet",
+          "I04_Walnut_Wall_Backplate"
+        ],
+        "I04_Dial_Teal_Knob": [
+          "I04_Dial_Teal_Knob"
+        ],
+        "I04_Indicator_1_Lens": [
+          "I04_Indicator_1_Lens"
+        ],
+        "I04_Indicator_2_Lens": [
+          "I04_Indicator_2_Lens"
+        ],
+        "I04_Indicator_3_Lens": [
+          "I04_Indicator_3_Lens"
+        ],
+        "I04_Indicator_4_Lens": [
+          "I04_Indicator_4_Lens"
+        ]
+      },
+      "preview": "assets/optimized/I04/I04_atlas_v1.png",
+      "review": "New textured variant: static Blender re-import checked; visual/Studio/runtime acceptance pending."
+    },
+    {
+      "id": "I05",
+      "source": "assets/cleaned/I05/I05_solid_repair_candidate.glb",
+      "source_sha256": "7fc7b0557e3f19fd2a16abd842537c52f27e4d74c6479a9ed997b46c61610461",
+      "output": "assets/optimized/I05/I05_atlas_v1.glb",
+      "sha256": "eba7e2a952e18b5a92e1a05684bf94e59c78264467869a9f856bc993194bc18a",
+      "bytes": 58396,
+      "before": {
+        "triangles": 516,
+        "mesh_objects": 11,
+        "material_primitives": 11,
+        "bounds_min": [
+          -1.5,
+          -1.0,
+          0.0
+        ],
+        "bounds_max": [
+          1.5,
+          1.0,
+          4.0
+        ]
+      },
+      "after": {
+        "triangles": 516,
+        "mesh_objects": 4,
+        "material_primitives": 4,
+        "bounds_min": [
+          -1.5,
+          -1.0,
+          0.0
+        ],
+        "bounds_max": [
+          1.5,
+          1.0,
+          4.0
+        ]
+      },
+      "texture_size": 512,
+      "images": [
+        {
+          "name": "atlas_basecolor_512",
+          "size": [
+            512,
+            512
+          ]
+        },
+        {
+          "name": "atlas_metalness_512-atlas_roughness_512",
+          "size": [
+            512,
+            512
+          ]
+        }
+      ],
+      "slot_mapping": {
+        "FZ Solid Walnut": "wood",
+        "FZ Solid Graphite": "graphite",
+        "FZ Solid Teal": "paint_primary",
+        "FZ Solid Brass": "wood",
+        "FZ Solid Faded": "paint_secondary",
+        "FZ Solid Amber": "amber",
+        "FZ Solid Cream": "trim"
+      },
+      "texture_layout": "FZ_MaterialAtlas_v1",
+      "part_groups": {
+        "I05_StaticBody": [
+          "I05_Base_Plinth",
+          "I05_Dial_Base",
+          "I05_Dial_Ring",
+          "I05_Front_Faceplate",
+          "I05_Front_Status_Plate",
+          "I05_Podium_Body",
+          "I05_Status_Bezel",
+          "I05_Top_Control_Deck"
+        ],
+        "I05_Dial_Knob": [
+          "I05_Dial_Knob"
+        ],
+        "I05_Front_Status_Lens": [
+          "I05_Front_Status_Lens"
+        ],
+        "I05_Status_Insert": [
+          "I05_Status_Insert"
+        ]
+      },
+      "preview": "assets/optimized/I05/I05_atlas_v1.png",
+      "review": "New textured variant: static Blender re-import checked; visual/Studio/runtime acceptance pending."
+    }
+  ],
+  "totals": {
+    "triangles": 15432,
+    "before_material_primitives": 79,
+    "before_mesh_objects": 75,
+    "after_mesh_objects": 32,
+    "after_material_primitives": 32
+  }
+}

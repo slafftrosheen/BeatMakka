@@ -1,0 +1,176 @@
+{
+  "icons": {
+    "play": {
+      "offset": [
+        0,
+        0
+      ],
+      "size": [
+        256,
+        256
+      ]
+    },
+    "stop": {
+      "offset": [
+        256,
+        0
+      ],
+      "size": [
+        256,
+        256
+      ]
+    },
+    "record": {
+      "offset": [
+        512,
+        0
+      ],
+      "size": [
+        256,
+        256
+      ]
+    },
+    "pause": {
+      "offset": [
+        768,
+        0
+      ],
+      "size": [
+        256,
+        256
+      ]
+    },
+    "save": {
+      "offset": [
+        0,
+        256
+      ],
+      "size": [
+        256,
+        256
+      ]
+    },
+    "restore": {
+      "offset": [
+        256,
+        256
+      ],
+      "size": [
+        256,
+        256
+      ]
+    },
+    "volume": {
+      "offset": [
+        512,
+        256
+      ],
+      "size": [
+        256,
+        256
+      ]
+    },
+    "mute": {
+      "offset": [
+        768,
+        256
+      ],
+      "size": [
+        256,
+        256
+      ]
+    },
+    "collect": {
+      "offset": [
+        0,
+        512
+      ],
+      "size": [
+        256,
+        256
+      ]
+    },
+    "collected": {
+      "offset": [
+        256,
+        512
+      ],
+      "size": [
+        256,
+        256
+      ]
+    },
+    "locked": {
+      "offset": [
+        512,
+        512
+      ],
+      "size": [
+        256,
+        256
+      ]
+    },
+    "headphones": {
+      "offset": [
+        768,
+        512
+      ],
+      "size": [
+        256,
+        256
+      ]
+    },
+    "wave": {
+      "offset": [
+        0,
+        768
+      ],
+      "size": [
+        256,
+        256
+      ]
+    },
+    "robot": {
+      "offset": [
+        256,
+        768
+      ],
+      "size": [
+        256,
+        256
+      ]
+    },
+    "settings": {
+      "offset": [
+        512,
+        768
+      ],
+      "size": [
+        256,
+        256
+      ]
+    },
+    "close": {
+      "offset": [
+        768,
+        768
+      ],
+      "size": [
+        256,
+        256
+      ]
+    }
+  },
+  "atlas_px": [
+    1024,
+    1024
+  ],
+  "essential_text_baked": false,
+  "panel_slice_center": [
+    18,
+    18,
+    46,
+    46
+  ],
+  "mask_usage": "Alpha authoring masks. UI clips with UICorner and ClipsDescendants even without uploads."
+}

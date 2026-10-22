@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-22",
+  "source_scripts": 20,
+  "optimized_models": 20,
+  "totals": {
+    "triangles": 15432,
+    "before_material_primitives": 79,
+    "before_mesh_objects": 75,
+    "after_mesh_objects": 32,
+    "after_material_primitives": 32
+  },
+  "images_uploaded": 14,
+  "image_instance_preload_successes": 14,
+  "persistent_mesh_uploads": 0,
+  "mesh_upload_blocker": "CreateAssetAsync and CreateAssetVersionAsync are not available yet",
+  "audio_uploads": 0,
+  "checks": {
+    "selene": "0 errors, 0 warnings, 0 parse errors",
+    "stylua": "check succeeded",
+    "rojo_build": "work/FrequencyZero-Workshop.rbxlx",
+    "git_diff_check": "passed",
+    "test_suites": "not added or run"
+  },
+  "studio_mode_left": "Edit; default simulator restored",
+  "publication": "No game publication; no commit or push"
+}

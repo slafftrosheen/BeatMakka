@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"ok\":true,\"assets\":[{\"id\":\"rbxassetid://91426340502972\",\"status\":\"Enum.AssetFetchStatus.Failure\"},{\"id\":\"rbxassetid://78643804613550\",\"status\":\"Enum.AssetFetchStatus.Failure\"},{\"id\":\"rbxassetid://138362874983991\",\"status\":\"Enum.AssetFetchStatus.Failure\"},{\"id\":\"rbxassetid://100805049598715\",\"status\":\"Enum.AssetFetchStatus.Failure\"},{\"id\":\"rbxassetid://128962279524469\",\"status\":\"Enum.AssetFetchStatus.Failure\"},{\"id\":\"rbxassetid://86114142638116\",\"status\":\"Enum.AssetFetchStatus.Failure\"},{\"id\":\"rbxassetid://137206541823495\",\"status\":\"Enum.AssetFetchStatus.Failure\"},{\"id\":\"rbxassetid://92626694607620\",\"status\":\"Enum.AssetFetchStatus.Failure\"},{\"id\":\"rbxassetid://117689403172472\",\"status\":\"Enum.AssetFetchStatus.Failure\"},{\"id\":\"rbxassetid://99087195128670\",\"status\":\"Enum.AssetFetchStatus.Failure\"},{\"id\":\"rbxassetid://78348915703467\",\"status\":\"Enum.AssetFetchStatus.Failure\"},{\"id\":\"rbxassetid://137950080210331\",\"status\":\"Enum.AssetFetchStatus.Failure\"},{\"id\":\"rbxassetid://72083879648967\",\"status\":\"Enum.AssetFetchStatus.Failure\"},{\"id\":\"rbxassetid://116045023802730\",\"status\":\"Enum.AssetFetchStatus.Failure\"}],\"surface\":\"Enum.ContentSourceType.Uri\",\"icon\":\"Enum.ContentSourceType.Uri\"}"
+    }
+  ],
+  "isError": false
+}

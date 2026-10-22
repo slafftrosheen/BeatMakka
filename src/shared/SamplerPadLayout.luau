@@ -44,7 +44,8 @@ function SamplerPadLayout.createTargets(parent: Instance, housingPivot: CFrame):
         target.Anchored = true
         target.CanCollide = false
         target.CanQuery = true
-        target.CanTouch = true
+        target.CanTouch = false
+        target.CastShadow = false
         target.Material = Enum.Material.SmoothPlastic
         target.Color = Color3.fromRGB(44, 48, 49)
         target.Size = pad.size
@@ -53,6 +54,20 @@ function SamplerPadLayout.createTargets(parent: Instance, housingPivot: CFrame):
         target:SetAttribute("Row", pad.row)
         target:SetAttribute("Column", pad.column)
         target.Parent = folder
+        local face = Instance.new("SurfaceGui")
+        face.Name = "PadNumber"
+        face.Face = Enum.NormalId.Top
+        face.CanvasSize = Vector2.new(128, 128)
+        face.LightInfluence = 1
+        face.Parent = target
+        local text = Instance.new("TextLabel")
+        text.Size = UDim2.fromScale(1, 1)
+        text.BackgroundTransparency = 1
+        text.Font = Enum.Font.GothamBold
+        text.TextColor3 = Color3.fromRGB(232, 216, 183)
+        text.TextSize = 54
+        text.Text = string.format("%02d", pad.id)
+        text.Parent = face
     end
 
     return folder

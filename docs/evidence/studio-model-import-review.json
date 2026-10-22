@@ -1,0 +1,245 @@
+{
+  "stage": "Edit-only local mesh review; zero persistent mesh uploads confirmed",
+  "models": [
+    {
+      "sourceHash": "7f27ff7da218c44e19fba120ab3decda47f4cbd836db0eb38d94d0882dfa15e3",
+      "triangles": 2088,
+      "id": "H01",
+      "size": [
+        6,
+        1.25,
+        4
+      ],
+      "stage": "Local EditableMesh review only; no uploaded asset ID",
+      "parts": 1
+    },
+    {
+      "sourceHash": "42be1c3b9abe84d237e80d530b3913a6e3424132d9faa72e4fcb84e96785476f",
+      "triangles": 1670,
+      "id": "H02",
+      "size": [
+        4,
+        8,
+        3
+      ],
+      "stage": "Local EditableMesh review only; no uploaded asset ID",
+      "parts": 1
+    },
+    {
+      "sourceHash": "eaf6e8e42300da9e23a082946d28b7e60d2671617bcde3561949c67d61be6c4b",
+      "triangles": 632,
+      "id": "H03",
+      "size": [
+        3,
+        2.5,
+        3
+      ],
+      "stage": "Local EditableMesh review only; no uploaded asset ID",
+      "parts": 1
+    },
+    {
+      "sourceHash": "8046e7baf00797212a970b03acc55118471d0bb9d4bf54871533bc2e6181dc22",
+      "triangles": 3400,
+      "id": "H04",
+      "size": [
+        3.5,
+        4,
+        3
+      ],
+      "stage": "Local EditableMesh review only; no uploaded asset ID",
+      "parts": 1
+    },
+    {
+      "sourceHash": "2a3928024f2c9bac4b69440a9d0ff63e2922efdd7861a27e2d62138d7c501458",
+      "triangles": 1040,
+      "id": "H05",
+      "size": [
+        2.5,
+        12,
+        3
+      ],
+      "stage": "Local EditableMesh review only; no uploaded asset ID",
+      "parts": 1
+    },
+    {
+      "sourceHash": "74bd5136fc1edc27d7c603c6834d6eee0386dd2044bde58a32128228588473cd",
+      "triangles": 632,
+      "id": "P01",
+      "size": [
+        8,
+        3.5,
+        4
+      ],
+      "stage": "Local EditableMesh review only; no uploaded asset ID",
+      "parts": 1
+    },
+    {
+      "sourceHash": "7eb023c02c9f0ae729a68991b9cbb7287a06897ffbd0369ceea7292ebb3ce577",
+      "triangles": 386,
+      "id": "P02",
+      "size": [
+        2.5,
+        3,
+        2.5
+      ],
+      "stage": "Local EditableMesh review only; no uploaded asset ID",
+      "parts": 1
+    },
+    {
+      "sourceHash": "fae0b7a9533b975f44351409b4287c43386394b860fb3600ec76fa3d0a1933b8",
+      "triangles": 476,
+      "id": "P03",
+      "size": [
+        7,
+        3.5,
+        2.5
+      ],
+      "stage": "Local EditableMesh review only; no uploaded asset ID",
+      "parts": 1
+    },
+    {
+      "sourceHash": "7350fd652073bc70f5894250f0295bec97e8b6fe6fee6145dbbfc06bdf24dcb6",
+      "triangles": 634,
+      "id": "P04",
+      "size": [
+        5,
+        3.5,
+        3
+      ],
+      "stage": "Local EditableMesh review only; no uploaded asset ID",
+      "parts": 1
+    },
+    {
+      "sourceHash": "da4285ddf0ed582e78f7916373ee822dd543b5776eaf69a62eab6e484a1077ff",
+      "triangles": 148,
+      "id": "P05",
+      "size": [
+        6,
+        0.7000000476837158,
+        1.5
+      ],
+      "stage": "Local EditableMesh review only; no uploaded asset ID",
+      "parts": 1
+    },
+    {
+      "sourceHash": "a444e66bb48f211934382701f2c79b29fc2bc4a326112528732db62170d67c30",
+      "triangles": 276,
+      "id": "P06",
+      "size": [
+        3,
+        3,
+        3
+      ],
+      "stage": "Local EditableMesh review only; no uploaded asset ID",
+      "parts": 1
+    },
+    {
+      "sourceHash": "20d0c0f357554b5a6fc5c8d13d3bf8b34700125bd49e9634f59e21c961fad0ef",
+      "triangles": 846,
+      "id": "P07",
+      "size": [
+        2,
+        1.5,
+        0.800000011920929
+      ],
+      "stage": "Local EditableMesh review only; no uploaded asset ID",
+      "parts": 1
+    },
+    {
+      "sourceHash": "909512b057494018c3c1cd0025b46b1f94aa04c6d6a8ec90e67031af07dfcf3d",
+      "triangles": 280,
+      "id": "P11",
+      "size": [
+        2,
+        2.5,
+        2
+      ],
+      "stage": "Local EditableMesh review only; no uploaded asset ID",
+      "parts": 1
+    },
+    {
+      "sourceHash": "9421a35dafdec9b5cc621b60872ced5b904a7af6c85d5a51181b90986aa18b9c",
+      "triangles": 460,
+      "id": "P12",
+      "size": [
+        3,
+        4,
+        3
+      ],
+      "stage": "Local EditableMesh review only; no uploaded asset ID",
+      "parts": 1
+    },
+    {
+      "sourceHash": "6a2c6a0cf8b2c3a6840671b690c6425d098d11c42c61f5f608ba5ff02c3f763a",
+      "triangles": 312,
+      "id": "P13",
+      "size": [
+        1.5,
+        2,
+        1.5
+      ],
+      "stage": "Local EditableMesh review only; no uploaded asset ID",
+      "parts": 2
+    },
+    {
+      "sourceHash": "d7fac77f423088161016b32f2446775b984d582b3a5e98db7f13c2845610bd14",
+      "triangles": 352,
+      "id": "P14",
+      "size": [
+        2,
+        3,
+        1.001030683517456
+      ],
+      "stage": "Local EditableMesh review only; no uploaded asset ID",
+      "parts": 3
+    },
+    {
+      "sourceHash": "9e0dc1f0a74e2bb0502ae0aae24b5c821ed1c71b5e9fc1979cffa2371fc5c335",
+      "triangles": 376,
+      "id": "P16",
+      "size": [
+        3,
+        3,
+        2
+      ],
+      "stage": "Local EditableMesh review only; no uploaded asset ID",
+      "parts": 1
+    },
+    {
+      "sourceHash": "e8ea8d33cb38472335ba808c5d788591f3597a6eaa60d78f7432848674b25e97",
+      "triangles": 260,
+      "id": "I01",
+      "size": [
+        3,
+        2,
+        0.30000001192092896
+      ],
+      "stage": "Local EditableMesh review only; no uploaded asset ID",
+      "parts": 2
+    },
+    {
+      "sourceHash": "af6c82c9ae33d67e8b6dad754b07c7fd31482e65316ae3738fd2e705ba81ccf0",
+      "triangles": 648,
+      "id": "I04",
+      "size": [
+        3,
+        4,
+        1.5
+      ],
+      "stage": "Local EditableMesh review only; no uploaded asset ID",
+      "parts": 6
+    },
+    {
+      "sourceHash": "eba7e2a952e18b5a92e1a05684bf94e59c78264467869a9f856bc993194bc18a",
+      "triangles": 516,
+      "id": "I05",
+      "size": [
+        3,
+        4,
+        2
+      ],
+      "stage": "Local EditableMesh review only; no uploaded asset ID",
+      "parts": 4
+    }
+  ]
+}

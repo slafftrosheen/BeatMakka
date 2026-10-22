@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "sabuiltin_Assistant.rbxm.Assistant.Packages._Index.AssistantUI.AssistantUI.Tools.ExecuteLuauTool:126: sabuiltin_Assistant.rbxm.Assistant.Packages._Index.AssistantUI.AssistantUI.Util.CommandExecution:54: AssistantCommand:49: Upload did not confirm success; no automatic retry: H01__H01_Housing_Shell / CreateAssetAsync and CreateAssetVersionAsync are not available yet / nil"
+    }
+  ],
+  "isError": true
+}

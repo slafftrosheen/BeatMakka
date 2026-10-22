@@ -1,0 +1,112 @@
+local Workspace = game:GetService("Workspace")
+local Pattern = require(game:GetService("ReplicatedStorage").Shared.Pattern)
+local ListeningSession = {}
+ListeningSession.__index = ListeningSession
+
+function ListeningSession.new(podium, profiles, send, release, nearby)
+    local self = setmetatable({
+        podium = podium,
+        profiles = profiles,
+        send = send,
+        nearby = nearby,
+        members = {},
+        revision = 0,
+    }, ListeningSession)
+    podium.prompt.Triggered:Connect(function(player)
+        local profile = profiles[player]
+        if not profile or not profile.ready or not nearby(player, podium.anchor, 11) then
+            return
+        end
+        local now = os.clock()
+        if profile.lastListening and now - profile.lastListening < 0.5 then
+            return
+        end
+        profile.lastListening = now
+        if self.owner == player then
+            self:stop("The listening session has ended.")
+        elseif self.owner then
+            if self.members[player] then
+                self:leave(player)
+            else
+                release(player)
+                self.members[player] = true
+                send(player, "Joined the courtyard loop. Mute or leave at any time.")
+            end
+        else
+            local snapshot = Pattern.sanitize(profile.pattern, profile.unlocked)
+            local audible = false
+            for pad, row in snapshot.rows do
+                if not snapshot.muted[pad] then
+                    for _, enabled in row do
+                        audible = audible or enabled
+                    end
+                end
+            end
+            if not audible then
+                send(player, "Make a loop with an unmuted step at a workshop sampler first.")
+                return
+            end
+            release(player)
+            self.owner = player
+            self.pattern = snapshot
+            self.startedAt = Workspace:GetServerTimeNow() + 0.3
+            self.revision += 1
+            self.members[player] = true
+            podium.prompt.ActionText = "Join / leave listening"
+            podium.label.Text = "LIVE LOOP / " .. player.DisplayName
+            send(
+                player,
+                "Sharing a snapshot of your loop. Stop sharing from the listening controls."
+            )
+        end
+    end)
+    return self
+end
+
+function ListeningSession:state(player)
+    if not self.owner or not self.members[player] then
+        return nil
+    end
+    return {
+        pattern = self.pattern,
+        startedAt = self.startedAt,
+        epoch = self.revision,
+        performer = self.owner.DisplayName,
+        hosting = self.owner == player,
+    }
+end
+
+function ListeningSession:stop(notice)
+    local members = self.members
+    self.members = {}
+    self.owner = nil
+    self.pattern = nil
+    self.podium.prompt.ActionText = "Share your loop"
+    self.podium.label.Text = "LISTENING COURT / IDLE"
+    for player in members do
+        self.send(player, notice)
+    end
+end
+
+function ListeningSession:leave(player)
+    if self.owner == player then
+        self:stop("The listening session has ended.")
+    elseif self.members[player] then
+        self.members[player] = nil
+        self.send(player, "Left listening. Your own pattern is unchanged.")
+    end
+end
+
+function ListeningSession:tick()
+    if self.owner and not self.nearby(self.owner, self.podium.anchor, 32) then
+        self:stop("The performer left the courtyard. Listening has ended.")
+        return
+    end
+    for player in self.members do
+        if not self.nearby(player, self.podium.anchor, 32) then
+            self:leave(player)
+        end
+    end
+end
+
+return ListeningSession
