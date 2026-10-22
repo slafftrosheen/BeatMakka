@@ -1,0 +1,50 @@
+{
+  "asset_id": "H04",
+  "cleaned_glb": "assets/cleaned/H04/H04_maintenance_helper_robot.glb",
+  "inspection_method": "Blender 5.2.2 headless re-import of exported GLB",
+  "mesh_objects": 1,
+  "triangles": 3400,
+  "blender_scene_bounds_xyz": [
+    3.5,
+    3.0,
+    4.0
+  ],
+  "floor_min_z": 0.0,
+  "object_origins_world": [
+    [
+      0.0,
+      0.0,
+      0.0
+    ]
+  ],
+  "target_blender_bounds_xyz": [
+    3.5,
+    3.0,
+    4.0
+  ],
+  "materials": [
+    "Material_0"
+  ],
+  "uv_layers": [
+    "UVMap"
+  ],
+  "within_full_asset_triangle_cap": true,
+  "stage": "DCC-clean geometry candidate; art, Roblox Studio and runtime acceptance pending",
+  "source": "assets/candidates/tripo-out/b06-h04-maintenance-helper-robot-d452487b/model.glb",
+  "source_sha256": "2cce737c76cae1da8ff935f1a97060e00225be9df7fe0533213d0f291ae02e3e",
+  "editable_source": "assets/cleaned/H04/H04_maintenance_helper_robot.blend",
+  "preview": "assets/cleaned/H04/preview.png",
+  "yaw_degrees_applied": -90,
+  "cleaned_glb_sha256": "6b2caea467da0548ac531aa1268748595e5193017e1ed184502099111b3cf8dc",
+  "editable_source_sha256": "c572af2c1359b7b326f78cbf1fa94085ba70006ff63053e16d6db0532fe6195f",
+  "preview_sha256": "05ed6dbd1ac2e8fa15959227534c4afe951fe665c7959ebff3f582c3dfd59c06",
+  "geometry_operations": [
+    "baked glTF importer transforms",
+    "asset-specific yaw alignment",
+    "axis-aligned dimension fitting",
+    "XY-centered floor pivot at object origin",
+    "normal recalculation"
+  ],
+  "color_or_part_editing": "none; source material and mesh grouping retained",
+  "acceptance_boundary": "DCC geometry normalization only; art, authored palette, part separation, Roblox Studio import and runtime validation remain pending"
+}

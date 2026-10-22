@@ -1,0 +1,35 @@
+{
+  "dry_run": true,
+  "valid": true,
+  "input": "references\\production\\B19-I04-resonator-junction.png",
+  "model": "P1-20260311",
+  "model_reason": "explicit --model",
+  "steps": [
+    {
+      "name": "image-to-model",
+      "endpoint": "/v3/generation/image-to-model",
+      "task_type": "image_to_model",
+      "payload": {
+        "input": "<upload:references\\production\\B19-I04-resonator-junction.png>",
+        "model": "P1-20260311",
+        "face_limit": 500,
+        "texture": false,
+        "pbr": false,
+        "export_uv": true
+      }
+    }
+  ],
+  "pending_uploads": [
+    "references\\production\\B19-I04-resonator-junction.png"
+  ],
+  "deliverables": [],
+  "candidates": 1,
+  "warnings": [],
+  "errors": [],
+  "cost_notes": [
+    "bare geometry: no texture credits"
+  ],
+  "reference_sha256": "3e3c8104e7a07c1151ed75fde80f93846a73e3a05e59367fdaca1e8b4d5bc3b9",
+  "reference_prompt": "Use case: stylized-concept. Clean isolated reference for a wall-mounted workshop resonator junction, a chunky rounded rectangle cabinet in warm cream and muted teal painted metal on a walnut rear mounting plate, about 3:4 tall proportion. Front has exactly four large distinct status indicator windows in a clear 2x2 grid and one medium-size rotary tuning dial below them, all readable and physically separated in the design; do not use letters or numbers. Friendly tactile industrial music equipment, large forms, matte surfaces, tiny restrained bolts. Straight-on three-quarter view showing the face and a little side depth, neutral light gray seamless background, even studio lighting, soft contact shadow. One object only, no wall or cables, no text, no logo, no extra objects, no collage, square 1:1.",
+  "reference_provenance": "Generated with built-in image_gen for this asset reference."
+}

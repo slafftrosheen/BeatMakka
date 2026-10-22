@@ -1,0 +1,26 @@
+{
+  "asset_id": "P01",
+  "task_id": "8fc6650b-2c61-4172-afa4-e9e4368cda8e",
+  "source": "assets/candidates/tripo-out/b07-p01-studio-workbench-8fc6650b/model.glb",
+  "inspection_method": "Blender 5.2.2 headless GLB import after clearing factory-startup scene; read-only scene inspection",
+  "mesh_objects": 1,
+  "triangles": 616,
+  "raw_local_bounds_blender_units_xyz": [
+    0.447265625,
+    0.998046875,
+    0.416015625
+  ],
+  "target_studs_xyz": [
+    8,
+    3.5,
+    4
+  ],
+  "materials": [
+    "Material_0"
+  ],
+  "uv_layers": [
+    "UVMap"
+  ],
+  "pivot": "not measured",
+  "notes": "Triangle count is under the 700 candidate cap. Raw normalized proportions are suitable for DCC fitting but do not establish target dimensions; scale and floor-center pivot remain pending."
+}

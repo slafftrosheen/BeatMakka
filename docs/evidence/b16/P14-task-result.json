@@ -1,0 +1,14 @@
+{
+  "task_id": "d57e4c07-7762-4c7b-9356-2de36b60e47d",
+  "type": "image_to_model",
+  "status": "success",
+  "credits_consumed": 40,
+  "output_dir": "assets\\candidates\\tripo-out\\b16-p14-utility-junction-box-d57e4c07",
+  "files": [
+    "model.glb",
+    "rendered_image.webp",
+    "preview.png"
+  ],
+  "model_file": "assets\\candidates\\tripo-out\\b16-p14-utility-junction-box-d57e4c07\\model.glb",
+  "preview": "assets\\candidates\\tripo-out\\b16-p14-utility-junction-box-d57e4c07\\preview.png"
+}

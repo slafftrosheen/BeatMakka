@@ -1,0 +1,26 @@
+{
+  "asset_id": "P02",
+  "task_id": "3c9288ec-22fe-4efb-8ac6-9e176a95c861",
+  "source": "assets/candidates/tripo-out/b08-p02-round-workshop-stool-3c9288ec/model.glb",
+  "inspection_method": "Blender 5.2.2 headless GLB import after clearing factory-startup scene; read-only scene inspection",
+  "mesh_objects": 1,
+  "triangles": 338,
+  "raw_local_bounds_blender_units_xyz": [
+    0.998046875,
+    0.986328125,
+    0.919921875
+  ],
+  "target_studs_xyz": [
+    2.5,
+    3,
+    2.5
+  ],
+  "materials": [
+    "Material_0"
+  ],
+  "uv_layers": [
+    "UVMap"
+  ],
+  "pivot": "not measured",
+  "notes": "Triangle count is within the 350 candidate cap. Raw normalized proportions are close to the target form; exact scale and floor-center pivot remain pending."
+}

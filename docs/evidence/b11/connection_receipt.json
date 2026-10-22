@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-10-22T13:24:38.613089+00:00",
+  "route": "tripo-cli",
+  "cli_version": "0.7.2",
+  "api_family": "v3",
+  "authenticated": true,
+  "profile": "default",
+  "region": "ov",
+  "api_base_url": "https://openapi.tripo3d.ai",
+  "account_check": {
+    "doctor_ran": true,
+    "node_ok": true,
+    "api_key_present": true,
+    "api_reachability_checked": true,
+    "balance_checked": true,
+    "balance_credits": 210.0,
+    "frozen_credits": 0.0,
+    "usage_checked": true
+  },
+  "capabilities": {
+    "explicit_face_limit": true,
+    "explicit_model_selection": true,
+    "p1_low_poly": true,
+    "geometry_only_texture_false_pbr_false": true,
+    "result_download": true,
+    "task_ids": true,
+    "usage_tracking_commands": true,
+    "account_usage_verified": true
+  },
+  "verified": true,
+  "notes": "Live balance checked before B20; region ov, frozen 0. Total project spend before this call 750.0 of 1000."
+}

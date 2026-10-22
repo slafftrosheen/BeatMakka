@@ -1,0 +1,29 @@
+# Roblox build and sync output
+*.rbxl
+*.rbxlx
+sourcemap.json
+
+# Local package/cache state
+.tripo/
+tripo-out/
+node_modules/
+Packages/
+ServerPackages/
+DevPackages/
+
+# DCC backups and temporary renders
+*.blend1
+*.blend2
+*.tmp
+*.bak
+work/
+
+# Operating system/editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+
+# Roblox Studio lock files
+*.rbxl.lock

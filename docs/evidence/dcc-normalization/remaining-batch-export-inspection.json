@@ -1,0 +1,245 @@
+{
+  "blender_version": "5.2.2 LTS",
+  "assets": [
+    {
+      "asset_id": "P06",
+      "path": "assets/cleaned/P06/P06_normalized_geometry_candidate.glb",
+      "reimported_bounds_blender_xyz": [
+        3.0,
+        3.0,
+        3.0
+      ],
+      "origin": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pivot": "floor-center",
+      "exact_dimensions": true,
+      "pivot_valid": true,
+      "triangles": 276,
+      "within_triangle_cap": true,
+      "mesh_objects": 1,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "result": "PASS"
+    },
+    {
+      "asset_id": "P07",
+      "path": "assets/cleaned/P07/P07_normalized_geometry_candidate.glb",
+      "reimported_bounds_blender_xyz": [
+        2.0,
+        0.8,
+        1.5
+      ],
+      "origin": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pivot": "floor-center",
+      "exact_dimensions": true,
+      "pivot_valid": true,
+      "triangles": 846,
+      "within_triangle_cap": true,
+      "mesh_objects": 1,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "result": "PASS"
+    },
+    {
+      "asset_id": "P11",
+      "path": "assets/cleaned/P11/P11_normalized_geometry_candidate.glb",
+      "reimported_bounds_blender_xyz": [
+        2.0,
+        2.0,
+        2.5
+      ],
+      "origin": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pivot": "floor-center",
+      "exact_dimensions": true,
+      "pivot_valid": true,
+      "triangles": 280,
+      "within_triangle_cap": true,
+      "mesh_objects": 1,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "result": "PASS"
+    },
+    {
+      "asset_id": "P12",
+      "path": "assets/cleaned/P12/P12_normalized_geometry_candidate.glb",
+      "reimported_bounds_blender_xyz": [
+        3.0,
+        3.0,
+        4.0
+      ],
+      "origin": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pivot": "floor-center",
+      "exact_dimensions": true,
+      "pivot_valid": true,
+      "triangles": 488,
+      "within_triangle_cap": true,
+      "mesh_objects": 1,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "result": "PASS"
+    },
+    {
+      "asset_id": "P13",
+      "path": "assets/cleaned/P13/P13_normalized_geometry_candidate.glb",
+      "reimported_bounds_blender_xyz": [
+        1.5,
+        1.5,
+        2.0
+      ],
+      "origin": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pivot": "rear-center",
+      "exact_dimensions": true,
+      "pivot_valid": true,
+      "triangles": 412,
+      "within_triangle_cap": true,
+      "mesh_objects": 1,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "result": "PASS"
+    },
+    {
+      "asset_id": "P14",
+      "path": "assets/cleaned/P14/P14_normalized_geometry_candidate.glb",
+      "reimported_bounds_blender_xyz": [
+        2.0,
+        1.0,
+        3.0
+      ],
+      "origin": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pivot": "rear-center",
+      "exact_dimensions": true,
+      "pivot_valid": true,
+      "triangles": 284,
+      "within_triangle_cap": true,
+      "mesh_objects": 1,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "result": "PASS"
+    },
+    {
+      "asset_id": "P16",
+      "path": "assets/cleaned/P16/P16_normalized_geometry_candidate.glb",
+      "reimported_bounds_blender_xyz": [
+        3.0,
+        2.0,
+        3.0
+      ],
+      "origin": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pivot": "floor-center",
+      "exact_dimensions": true,
+      "pivot_valid": true,
+      "triangles": 376,
+      "within_triangle_cap": true,
+      "mesh_objects": 1,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "result": "PASS"
+    },
+    {
+      "asset_id": "I01",
+      "path": "assets/cleaned/I01/I01_normalized_geometry_candidate.glb",
+      "reimported_bounds_blender_xyz": [
+        3.0,
+        0.3,
+        2.0
+      ],
+      "origin": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pivot": "upper-hinge",
+      "exact_dimensions": true,
+      "pivot_valid": true,
+      "triangles": 264,
+      "within_triangle_cap": true,
+      "mesh_objects": 1,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "result": "PASS"
+    },
+    {
+      "asset_id": "I04",
+      "path": "assets/cleaned/I04/I04_normalized_geometry_candidate.glb",
+      "reimported_bounds_blender_xyz": [
+        3.0,
+        1.5,
+        4.0
+      ],
+      "origin": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pivot": "rear-center",
+      "exact_dimensions": true,
+      "pivot_valid": true,
+      "triangles": 414,
+      "within_triangle_cap": true,
+      "mesh_objects": 1,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "result": "PASS"
+    },
+    {
+      "asset_id": "I05",
+      "path": "assets/cleaned/I05/I05_normalized_geometry_candidate.glb",
+      "reimported_bounds_blender_xyz": [
+        3.0,
+        2.0,
+        4.0
+      ],
+      "origin": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pivot": "floor-center",
+      "exact_dimensions": true,
+      "pivot_valid": true,
+      "triangles": 580,
+      "within_triangle_cap": true,
+      "mesh_objects": 1,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "result": "PASS"
+    }
+  ]
+}

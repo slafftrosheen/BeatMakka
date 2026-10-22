@@ -1,0 +1,35 @@
+{
+  "dry_run": true,
+  "valid": true,
+  "input": "references\\production\\B20-I05-listening-podium.png",
+  "model": "P1-20260311",
+  "model_reason": "explicit --model",
+  "steps": [
+    {
+      "name": "image-to-model",
+      "endpoint": "/v3/generation/image-to-model",
+      "task_type": "image_to_model",
+      "payload": {
+        "input": "<upload:references\\production\\B20-I05-listening-podium.png>",
+        "model": "P1-20260311",
+        "face_limit": 650,
+        "texture": false,
+        "pbr": false,
+        "export_uv": true
+      }
+    }
+  ],
+  "pending_uploads": [
+    "references\\production\\B20-I05-listening-podium.png"
+  ],
+  "deliverables": [],
+  "candidates": 1,
+  "warnings": [],
+  "errors": [],
+  "cost_notes": [
+    "bare geometry: no texture credits"
+  ],
+  "reference_sha256": "f98b64c9c515807b8db3f9bc821bd22bebfa0da42c2cddbcfc0f99f85dacc6e5",
+  "reference_prompt": "Use case: stylized-concept. Isolated reference for a compact listening-stage control podium for a cozy music-making game. Sturdy waist-high boxy floor-standing console with a clear accessible front control face, warm cream body with muted workshop teal side panels and a walnut top cap. On the tilted upper face show one large simple circular join/listen control and a separate small status insert; controls are physical blank shapes, no writing, letters or numbers. Broad stable base, softened corners, no microphone, no screen content, no cables. Friendly handmade industrial equipment, tactile matte materials, restrained brass fasteners. Three-quarter front view showing top controls and all sides, full object centered against neutral light gray seamless background, even neutral studio lighting, soft contact shadow. One object only, no stage or people, no text, no logo, no collage, square 1:1.",
+  "reference_provenance": "Generated with built-in image_gen for this asset reference."
+}

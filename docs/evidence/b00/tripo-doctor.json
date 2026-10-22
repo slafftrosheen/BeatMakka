@@ -1,0 +1,41 @@
+{
+  "ok": false,
+  "checks": [
+    {
+      "name": "node",
+      "ok": true,
+      "detail": "v22.23.2 (need >= 20)",
+      "critical": true
+    },
+    {
+      "name": "api key",
+      "ok": false,
+      "detail": "missing — run \"tripo login\"",
+      "critical": true
+    },
+    {
+      "name": "api reachability",
+      "ok": false,
+      "detail": "skipped (no key) · would use https://openapi.tripo3d.ai (region ov)",
+      "critical": false
+    },
+    {
+      "name": "llm (tripo ai conversation mode)",
+      "ok": true,
+      "detail": "not configured — wizard mode only (this is fine)",
+      "critical": false
+    },
+    {
+      "name": "terminal",
+      "ok": true,
+      "detail": "non-TTY (headless mode)",
+      "critical": false
+    },
+    {
+      "name": "language",
+      "ok": true,
+      "detail": "auto",
+      "critical": false
+    }
+  ]
+}

@@ -1,0 +1,1170 @@
+{
+  "blender_version": "5.2.2 LTS",
+  "glb_count": 64,
+  "method": "Import every GLB with Blender 5.2.2; weld coincident export seam vertices in-memory at 1e-5; count boundary edges, non-manifold edges, degenerate faces and adjacent face winding conflicts. Boundary edges can be intentional (open mouths/sheets); inspect each flagged part before repair.",
+  "assets": [
+    {
+      "path": "assets/candidates/dcc-source/H05_base_repaired_unscaled.glb",
+      "mesh_objects": 1,
+      "triangles": 1034,
+      "boundary_edges": 8,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "orientation_conflicts": 0,
+      "parts": [
+        {
+          "name": "H05_CurvedStreetLamp",
+          "triangles": 1034,
+          "boundary_edges": 8,
+          "nonmanifold_edges": 0,
+          "degenerate_faces": 0,
+          "orientation_conflicts": 0
+        }
+      ],
+      "topology_flag": true
+    },
+    {
+      "path": "assets/candidates/tripo-out/b01-h01-sampler-housing-803380d4/model.glb",
+      "mesh_objects": 1,
+      "triangles": 2094,
+      "boundary_edges": 6,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "orientation_conflicts": 0,
+      "parts": [
+        {
+          "name": "tripo_node_803380d4-9f8a-41fd-9ece-d935e4565fb6",
+          "triangles": 2094,
+          "boundary_edges": 6,
+          "nonmanifold_edges": 0,
+          "degenerate_faces": 0,
+          "orientation_conflicts": 0
+        }
+      ],
+      "topology_flag": true
+    },
+    {
+      "path": "assets/candidates/tripo-out/b02-h01-sampler-shell-image-76920209/model.glb",
+      "mesh_objects": 1,
+      "triangles": 2049,
+      "boundary_edges": 73,
+      "nonmanifold_edges": 14,
+      "degenerate_faces": 0,
+      "orientation_conflicts": 0,
+      "parts": [
+        {
+          "name": "Model",
+          "triangles": 2049,
+          "boundary_edges": 73,
+          "nonmanifold_edges": 14,
+          "degenerate_faces": 0,
+          "orientation_conflicts": 0
+        }
+      ],
+      "topology_flag": true
+    },
+    {
+      "path": "assets/candidates/tripo-out/b03-h05-curved-street-lamp-d9329072/model.glb",
+      "mesh_objects": 1,
+      "triangles": 854,
+      "boundary_edges": 8,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "orientation_conflicts": 0,
+      "parts": [
+        {
+          "name": "tripo_node_d9329072-9ea5-4c1e-b958-90321ede34c9",
+          "triangles": 854,
+          "boundary_edges": 8,
+          "nonmanifold_edges": 0,
+          "degenerate_faces": 0,
+          "orientation_conflicts": 0
+        }
+      ],
+      "topology_flag": true
+    },
+    {
+      "path": "assets/candidates/tripo-out/b04-h02-compact-speaker-stack-090d3674/model.glb",
+      "mesh_objects": 1,
+      "triangles": 1584,
+      "boundary_edges": 94,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "orientation_conflicts": 0,
+      "parts": [
+        {
+          "name": "tripo_node_090d3674-c965-40bb-8e9d-d6ff720a3022",
+          "triangles": 1584,
+          "boundary_edges": 94,
+          "nonmanifold_edges": 0,
+          "degenerate_faces": 0,
+          "orientation_conflicts": 0
+        }
+      ],
+      "topology_flag": true
+    },
+    {
+      "path": "assets/candidates/tripo-out/b05-h03-vinyl-crate-shell-0959611a/model.glb",
+      "mesh_objects": 1,
+      "triangles": 632,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "orientation_conflicts": 0,
+      "parts": [],
+      "topology_flag": false
+    },
+    {
+      "path": "assets/candidates/tripo-out/b06-h04-maintenance-helper-robot-d452487b/model.glb",
+      "mesh_objects": 1,
+      "triangles": 3400,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "orientation_conflicts": 0,
+      "parts": [],
+      "topology_flag": false
+    },
+    {
+      "path": "assets/candidates/tripo-out/b07-p01-studio-workbench-8fc6650b/model.glb",
+      "mesh_objects": 1,
+      "triangles": 616,
+      "boundary_edges": 20,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "orientation_conflicts": 0,
+      "parts": [
+        {
+          "name": "tripo_node_8fc6650b-2c61-4172-afa4-e9e4368cda8e",
+          "triangles": 616,
+          "boundary_edges": 20,
+          "nonmanifold_edges": 0,
+          "degenerate_faces": 0,
+          "orientation_conflicts": 0
+        }
+      ],
+      "topology_flag": true
+    },
+    {
+      "path": "assets/candidates/tripo-out/b08-p02-round-workshop-stool-3c9288ec/model.glb",
+      "mesh_objects": 1,
+      "triangles": 338,
+      "boundary_edges": 56,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "orientation_conflicts": 0,
+      "parts": [
+        {
+          "name": "tripo_node_3c9288ec-22fe-4efb-8ac6-9e176a95c861",
+          "triangles": 338,
+          "boundary_edges": 56,
+          "nonmanifold_edges": 0,
+          "degenerate_faces": 0,
+          "orientation_conflicts": 0
+        }
+      ],
+      "topology_flag": true
+    },
+    {
+      "path": "assets/candidates/tripo-out/b09-p03-listening-bench-a484dfae/model.glb",
+      "mesh_objects": 1,
+      "triangles": 470,
+      "boundary_edges": 8,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "orientation_conflicts": 0,
+      "parts": [
+        {
+          "name": "tripo_node_a484dfae-34da-4a6d-917c-1d2da891f8c3",
+          "triangles": 470,
+          "boundary_edges": 8,
+          "nonmanifold_edges": 0,
+          "degenerate_faces": 0,
+          "orientation_conflicts": 0
+        }
+      ],
+      "topology_flag": true
+    },
+    {
+      "path": "assets/candidates/tripo-out/b10-p04-record-browsing-bin-c79fb1fa/model.glb",
+      "mesh_objects": 1,
+      "triangles": 634,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "orientation_conflicts": 0,
+      "parts": [],
+      "topology_flag": false
+    },
+    {
+      "path": "assets/candidates/tripo-out/b11-p06-storage-crate-add32aad/model.glb",
+      "mesh_objects": 1,
+      "triangles": 276,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "orientation_conflicts": 0,
+      "parts": [],
+      "topology_flag": false
+    },
+    {
+      "path": "assets/candidates/tripo-out/b12-p07-headphones-6e5357d9/model.glb",
+      "mesh_objects": 1,
+      "triangles": 846,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "orientation_conflicts": 0,
+      "parts": [],
+      "topology_flag": false
+    },
+    {
+      "path": "assets/candidates/tripo-out/b13-p11-planter-pot-daea9589/model.glb",
+      "mesh_objects": 1,
+      "triangles": 280,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "orientation_conflicts": 0,
+      "parts": [],
+      "topology_flag": false
+    },
+    {
+      "path": "assets/candidates/tripo-out/b14-p12-broad-leaf-plant-eebbc149/model.glb",
+      "mesh_objects": 1,
+      "triangles": 488,
+      "boundary_edges": 39,
+      "nonmanifold_edges": 76,
+      "degenerate_faces": 0,
+      "orientation_conflicts": 5,
+      "parts": [
+        {
+          "name": "Model",
+          "triangles": 488,
+          "boundary_edges": 39,
+          "nonmanifold_edges": 76,
+          "degenerate_faces": 0,
+          "orientation_conflicts": 5
+        }
+      ],
+      "topology_flag": true
+    },
+    {
+      "path": "assets/candidates/tripo-out/b15-p13-lamp-core-09cb43ae/model.glb",
+      "mesh_objects": 1,
+      "triangles": 412,
+      "boundary_edges": 32,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "orientation_conflicts": 0,
+      "parts": [
+        {
+          "name": "tripo_node_09cb43ae-7107-467c-a41d-cf67461a2f0d",
+          "triangles": 412,
+          "boundary_edges": 32,
+          "nonmanifold_edges": 0,
+          "degenerate_faces": 0,
+          "orientation_conflicts": 0
+        }
+      ],
+      "topology_flag": true
+    },
+    {
+      "path": "assets/candidates/tripo-out/b16-p14-utility-junction-box-d57e4c07/model.glb",
+      "mesh_objects": 1,
+      "triangles": 284,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "orientation_conflicts": 0,
+      "parts": [],
+      "topology_flag": false
+    },
+    {
+      "path": "assets/candidates/tripo-out/b17-p16-rooftop-vent-c6945d18/model.glb",
+      "mesh_objects": 1,
+      "triangles": 376,
+      "boundary_edges": 32,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "orientation_conflicts": 0,
+      "parts": [
+        {
+          "name": "tripo_node_c6945d18-e29e-4f9c-999f-5cde0817fdd7",
+          "triangles": 376,
+          "boundary_edges": 32,
+          "nonmanifold_edges": 0,
+          "degenerate_faces": 0,
+          "orientation_conflicts": 0
+        }
+      ],
+      "topology_flag": true
+    },
+    {
+      "path": "assets/candidates/tripo-out/b18-i01-metal-strike-sign-b931a097/model.glb",
+      "mesh_objects": 1,
+      "triangles": 264,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "orientation_conflicts": 0,
+      "parts": [],
+      "topology_flag": false
+    },
+    {
+      "path": "assets/candidates/tripo-out/b19-i04-resonator-junction-0b2aa08d/model.glb",
+      "mesh_objects": 1,
+      "triangles": 414,
+      "boundary_edges": 28,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "orientation_conflicts": 0,
+      "parts": [
+        {
+          "name": "tripo_node_0b2aa08d-601d-46af-9cbe-a203364583e6",
+          "triangles": 414,
+          "boundary_edges": 28,
+          "nonmanifold_edges": 0,
+          "degenerate_faces": 0,
+          "orientation_conflicts": 0
+        }
+      ],
+      "topology_flag": true
+    },
+    {
+      "path": "assets/candidates/tripo-out/b20-i05-listening-podium-d89353d8/model.glb",
+      "mesh_objects": 1,
+      "triangles": 580,
+      "boundary_edges": 56,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "orientation_conflicts": 0,
+      "parts": [
+        {
+          "name": "tripo_node_d89353d8-83b7-42f5-8130-dd1e849aefab",
+          "triangles": 580,
+          "boundary_edges": 56,
+          "nonmanifold_edges": 0,
+          "degenerate_faces": 0,
+          "orientation_conflicts": 0
+        }
+      ],
+      "topology_flag": true
+    },
+    {
+      "path": "assets/cleaned/H01/H01_sampler_shell.glb",
+      "mesh_objects": 1,
+      "triangles": 2049,
+      "boundary_edges": 73,
+      "nonmanifold_edges": 14,
+      "degenerate_faces": 0,
+      "orientation_conflicts": 202,
+      "parts": [
+        {
+          "name": "H01_Housing_Shell",
+          "triangles": 2049,
+          "boundary_edges": 73,
+          "nonmanifold_edges": 14,
+          "degenerate_faces": 0,
+          "orientation_conflicts": 202
+        }
+      ],
+      "topology_flag": true
+    },
+    {
+      "path": "assets/cleaned/H01/H01_sampler_shell_surface_repaired.glb",
+      "mesh_objects": 1,
+      "triangles": 2049,
+      "boundary_edges": 73,
+      "nonmanifold_edges": 14,
+      "degenerate_faces": 0,
+      "orientation_conflicts": 0,
+      "parts": [
+        {
+          "name": "H01_Housing_Shell",
+          "triangles": 2049,
+          "boundary_edges": 73,
+          "nonmanifold_edges": 14,
+          "degenerate_faces": 0,
+          "orientation_conflicts": 0
+        }
+      ],
+      "topology_flag": true
+    },
+    {
+      "path": "assets/cleaned/H02/H02_compact_speaker_stack.glb",
+      "mesh_objects": 1,
+      "triangles": 1584,
+      "boundary_edges": 94,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "orientation_conflicts": 143,
+      "parts": [
+        {
+          "name": "H02_Geometry",
+          "triangles": 1584,
+          "boundary_edges": 94,
+          "nonmanifold_edges": 0,
+          "degenerate_faces": 0,
+          "orientation_conflicts": 143
+        }
+      ],
+      "topology_flag": true
+    },
+    {
+      "path": "assets/cleaned/H02/H02_compact_speaker_stack_surface_repaired.glb",
+      "mesh_objects": 1,
+      "triangles": 1584,
+      "boundary_edges": 94,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "orientation_conflicts": 0,
+      "parts": [
+        {
+          "name": "H02_Geometry",
+          "triangles": 1584,
+          "boundary_edges": 94,
+          "nonmanifold_edges": 0,
+          "degenerate_faces": 0,
+          "orientation_conflicts": 0
+        }
+      ],
+      "topology_flag": true
+    },
+    {
+      "path": "assets/cleaned/H03/H03_vinyl_crate_shell.glb",
+      "mesh_objects": 1,
+      "triangles": 632,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "orientation_conflicts": 94,
+      "parts": [
+        {
+          "name": "H03_Geometry",
+          "triangles": 632,
+          "boundary_edges": 0,
+          "nonmanifold_edges": 0,
+          "degenerate_faces": 0,
+          "orientation_conflicts": 94
+        }
+      ],
+      "topology_flag": true
+    },
+    {
+      "path": "assets/cleaned/H03/H03_vinyl_crate_shell_surface_repaired.glb",
+      "mesh_objects": 1,
+      "triangles": 632,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "orientation_conflicts": 0,
+      "parts": [],
+      "topology_flag": false
+    },
+    {
+      "path": "assets/cleaned/H04/H04_maintenance_helper_robot.glb",
+      "mesh_objects": 1,
+      "triangles": 3400,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "orientation_conflicts": 170,
+      "parts": [
+        {
+          "name": "H04_Geometry",
+          "triangles": 3400,
+          "boundary_edges": 0,
+          "nonmanifold_edges": 0,
+          "degenerate_faces": 0,
+          "orientation_conflicts": 170
+        }
+      ],
+      "topology_flag": true
+    },
+    {
+      "path": "assets/cleaned/H04/H04_maintenance_helper_robot_surface_repaired.glb",
+      "mesh_objects": 1,
+      "triangles": 3400,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "orientation_conflicts": 0,
+      "parts": [],
+      "topology_flag": false
+    },
+    {
+      "path": "assets/cleaned/H05/H05_curved_street_lamp.glb",
+      "mesh_objects": 1,
+      "triangles": 1034,
+      "boundary_edges": 8,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "orientation_conflicts": 0,
+      "parts": [
+        {
+          "name": "H05_CurvedStreetLamp",
+          "triangles": 1034,
+          "boundary_edges": 8,
+          "nonmanifold_edges": 0,
+          "degenerate_faces": 0,
+          "orientation_conflicts": 0
+        }
+      ],
+      "topology_flag": true
+    },
+    {
+      "path": "assets/cleaned/H05/H05_curved_street_lamp_scaled.glb",
+      "mesh_objects": 1,
+      "triangles": 1034,
+      "boundary_edges": 8,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "orientation_conflicts": 126,
+      "parts": [
+        {
+          "name": "H05_Geometry",
+          "triangles": 1034,
+          "boundary_edges": 8,
+          "nonmanifold_edges": 0,
+          "degenerate_faces": 0,
+          "orientation_conflicts": 126
+        }
+      ],
+      "topology_flag": true
+    },
+    {
+      "path": "assets/cleaned/H05/H05_curved_street_lamp_scaled_surface_repaired.glb",
+      "mesh_objects": 1,
+      "triangles": 1034,
+      "boundary_edges": 8,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "orientation_conflicts": 0,
+      "parts": [
+        {
+          "name": "H05_Geometry",
+          "triangles": 1034,
+          "boundary_edges": 8,
+          "nonmanifold_edges": 0,
+          "degenerate_faces": 0,
+          "orientation_conflicts": 0
+        }
+      ],
+      "topology_flag": true
+    },
+    {
+      "path": "assets/cleaned/I01/I01_art_repair_candidate.glb",
+      "mesh_objects": 7,
+      "triangles": 228,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "orientation_conflicts": 0,
+      "parts": [],
+      "topology_flag": false
+    },
+    {
+      "path": "assets/cleaned/I01/I01_normalized_geometry_candidate.glb",
+      "mesh_objects": 1,
+      "triangles": 264,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "orientation_conflicts": 45,
+      "parts": [
+        {
+          "name": "I01_GeometryCandidate",
+          "triangles": 264,
+          "boundary_edges": 0,
+          "nonmanifold_edges": 0,
+          "degenerate_faces": 0,
+          "orientation_conflicts": 45
+        }
+      ],
+      "topology_flag": true
+    },
+    {
+      "path": "assets/cleaned/I04/I04_art_repair_candidate.glb",
+      "mesh_objects": 14,
+      "triangles": 616,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "orientation_conflicts": 0,
+      "parts": [],
+      "topology_flag": false
+    },
+    {
+      "path": "assets/cleaned/I04/I04_normalized_geometry_candidate.glb",
+      "mesh_objects": 1,
+      "triangles": 414,
+      "boundary_edges": 28,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "orientation_conflicts": 56,
+      "parts": [
+        {
+          "name": "I04_GeometryCandidate",
+          "triangles": 414,
+          "boundary_edges": 28,
+          "nonmanifold_edges": 0,
+          "degenerate_faces": 0,
+          "orientation_conflicts": 56
+        }
+      ],
+      "topology_flag": true
+    },
+    {
+      "path": "assets/cleaned/I05/I05_art_repair_candidate.glb",
+      "mesh_objects": 5,
+      "triangles": 724,
+      "boundary_edges": 56,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "orientation_conflicts": 64,
+      "parts": [
+        {
+          "name": "I05_GeometryCandidate",
+          "triangles": 580,
+          "boundary_edges": 56,
+          "nonmanifold_edges": 0,
+          "degenerate_faces": 0,
+          "orientation_conflicts": 64
+        }
+      ],
+      "topology_flag": true
+    },
+    {
+      "path": "assets/cleaned/I05/I05_normalized_geometry_candidate.glb",
+      "mesh_objects": 1,
+      "triangles": 580,
+      "boundary_edges": 56,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "orientation_conflicts": 64,
+      "parts": [
+        {
+          "name": "I05_GeometryCandidate",
+          "triangles": 580,
+          "boundary_edges": 56,
+          "nonmanifold_edges": 0,
+          "degenerate_faces": 0,
+          "orientation_conflicts": 64
+        }
+      ],
+      "topology_flag": true
+    },
+    {
+      "path": "assets/cleaned/I05/I05_solid_repair_candidate.glb",
+      "mesh_objects": 11,
+      "triangles": 484,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "orientation_conflicts": 0,
+      "parts": [],
+      "topology_flag": false
+    },
+    {
+      "path": "assets/cleaned/P01/P01_studio_workbench.glb",
+      "mesh_objects": 1,
+      "triangles": 616,
+      "boundary_edges": 20,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "orientation_conflicts": 111,
+      "parts": [
+        {
+          "name": "P01_Geometry",
+          "triangles": 616,
+          "boundary_edges": 20,
+          "nonmanifold_edges": 0,
+          "degenerate_faces": 0,
+          "orientation_conflicts": 111
+        }
+      ],
+      "topology_flag": true
+    },
+    {
+      "path": "assets/cleaned/P01/P01_studio_workbench_surface_repaired.glb",
+      "mesh_objects": 1,
+      "triangles": 616,
+      "boundary_edges": 20,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "orientation_conflicts": 0,
+      "parts": [
+        {
+          "name": "P01_Geometry",
+          "triangles": 616,
+          "boundary_edges": 20,
+          "nonmanifold_edges": 0,
+          "degenerate_faces": 0,
+          "orientation_conflicts": 0
+        }
+      ],
+      "topology_flag": true
+    },
+    {
+      "path": "assets/cleaned/P02/P02_round_workshop_stool.glb",
+      "mesh_objects": 1,
+      "triangles": 338,
+      "boundary_edges": 56,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "orientation_conflicts": 22,
+      "parts": [
+        {
+          "name": "P02_Geometry",
+          "triangles": 338,
+          "boundary_edges": 56,
+          "nonmanifold_edges": 0,
+          "degenerate_faces": 0,
+          "orientation_conflicts": 22
+        }
+      ],
+      "topology_flag": true
+    },
+    {
+      "path": "assets/cleaned/P02/P02_round_workshop_stool_surface_repaired.glb",
+      "mesh_objects": 1,
+      "triangles": 338,
+      "boundary_edges": 56,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "orientation_conflicts": 0,
+      "parts": [
+        {
+          "name": "P02_Geometry",
+          "triangles": 338,
+          "boundary_edges": 56,
+          "nonmanifold_edges": 0,
+          "degenerate_faces": 0,
+          "orientation_conflicts": 0
+        }
+      ],
+      "topology_flag": true
+    },
+    {
+      "path": "assets/cleaned/P03/P03_listening_bench.glb",
+      "mesh_objects": 1,
+      "triangles": 470,
+      "boundary_edges": 8,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "orientation_conflicts": 92,
+      "parts": [
+        {
+          "name": "P03_Geometry",
+          "triangles": 470,
+          "boundary_edges": 8,
+          "nonmanifold_edges": 0,
+          "degenerate_faces": 0,
+          "orientation_conflicts": 92
+        }
+      ],
+      "topology_flag": true
+    },
+    {
+      "path": "assets/cleaned/P03/P03_listening_bench_surface_repaired.glb",
+      "mesh_objects": 1,
+      "triangles": 470,
+      "boundary_edges": 8,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "orientation_conflicts": 0,
+      "parts": [
+        {
+          "name": "P03_Geometry",
+          "triangles": 470,
+          "boundary_edges": 8,
+          "nonmanifold_edges": 0,
+          "degenerate_faces": 0,
+          "orientation_conflicts": 0
+        }
+      ],
+      "topology_flag": true
+    },
+    {
+      "path": "assets/cleaned/P04/P04_record_browsing_bin.glb",
+      "mesh_objects": 1,
+      "triangles": 634,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "orientation_conflicts": 139,
+      "parts": [
+        {
+          "name": "P04_Geometry",
+          "triangles": 634,
+          "boundary_edges": 0,
+          "nonmanifold_edges": 0,
+          "degenerate_faces": 0,
+          "orientation_conflicts": 139
+        }
+      ],
+      "topology_flag": true
+    },
+    {
+      "path": "assets/cleaned/P04/P04_record_browsing_bin_surface_repaired.glb",
+      "mesh_objects": 1,
+      "triangles": 634,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "orientation_conflicts": 0,
+      "parts": [],
+      "topology_flag": false
+    },
+    {
+      "path": "assets/cleaned/P05/P05_wall_shelf.glb",
+      "mesh_objects": 1,
+      "triangles": 148,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "orientation_conflicts": 0,
+      "parts": [],
+      "topology_flag": false
+    },
+    {
+      "path": "assets/cleaned/P06/P06_normalized_geometry_candidate.glb",
+      "mesh_objects": 1,
+      "triangles": 276,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "orientation_conflicts": 91,
+      "parts": [
+        {
+          "name": "P06_GeometryCandidate",
+          "triangles": 276,
+          "boundary_edges": 0,
+          "nonmanifold_edges": 0,
+          "degenerate_faces": 0,
+          "orientation_conflicts": 91
+        }
+      ],
+      "topology_flag": true
+    },
+    {
+      "path": "assets/cleaned/P06/P06_normalized_geometry_candidate_surface_repaired.glb",
+      "mesh_objects": 1,
+      "triangles": 276,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "orientation_conflicts": 0,
+      "parts": [],
+      "topology_flag": false
+    },
+    {
+      "path": "assets/cleaned/P07/P07_normalized_geometry_candidate.glb",
+      "mesh_objects": 1,
+      "triangles": 846,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "orientation_conflicts": 38,
+      "parts": [
+        {
+          "name": "P07_GeometryCandidate",
+          "triangles": 846,
+          "boundary_edges": 0,
+          "nonmanifold_edges": 0,
+          "degenerate_faces": 0,
+          "orientation_conflicts": 38
+        }
+      ],
+      "topology_flag": true
+    },
+    {
+      "path": "assets/cleaned/P07/P07_normalized_geometry_candidate_surface_repaired.glb",
+      "mesh_objects": 1,
+      "triangles": 846,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "orientation_conflicts": 0,
+      "parts": [],
+      "topology_flag": false
+    },
+    {
+      "path": "assets/cleaned/P11/P11_normalized_geometry_candidate.glb",
+      "mesh_objects": 1,
+      "triangles": 280,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "orientation_conflicts": 57,
+      "parts": [
+        {
+          "name": "P11_GeometryCandidate",
+          "triangles": 280,
+          "boundary_edges": 0,
+          "nonmanifold_edges": 0,
+          "degenerate_faces": 0,
+          "orientation_conflicts": 57
+        }
+      ],
+      "topology_flag": true
+    },
+    {
+      "path": "assets/cleaned/P11/P11_normalized_geometry_candidate_surface_repaired.glb",
+      "mesh_objects": 1,
+      "triangles": 280,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "orientation_conflicts": 0,
+      "parts": [],
+      "topology_flag": false
+    },
+    {
+      "path": "assets/cleaned/P12/P12_art_repair_candidate.glb",
+      "mesh_objects": 15,
+      "triangles": 340,
+      "boundary_edges": 120,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "orientation_conflicts": 0,
+      "parts": [
+        {
+          "name": "P12_BroadLeaf_1",
+          "triangles": 20,
+          "boundary_edges": 12,
+          "nonmanifold_edges": 0,
+          "degenerate_faces": 0,
+          "orientation_conflicts": 0
+        },
+        {
+          "name": "P12_BroadLeaf_2",
+          "triangles": 20,
+          "boundary_edges": 12,
+          "nonmanifold_edges": 0,
+          "degenerate_faces": 0,
+          "orientation_conflicts": 0
+        },
+        {
+          "name": "P12_BroadLeaf_3",
+          "triangles": 20,
+          "boundary_edges": 12,
+          "nonmanifold_edges": 0,
+          "degenerate_faces": 0,
+          "orientation_conflicts": 0
+        },
+        {
+          "name": "P12_BroadLeaf_4",
+          "triangles": 20,
+          "boundary_edges": 12,
+          "nonmanifold_edges": 0,
+          "degenerate_faces": 0,
+          "orientation_conflicts": 0
+        },
+        {
+          "name": "P12_BroadLeaf_5",
+          "triangles": 20,
+          "boundary_edges": 12,
+          "nonmanifold_edges": 0,
+          "degenerate_faces": 0,
+          "orientation_conflicts": 0
+        },
+        {
+          "name": "P12_LowerLeaf_1",
+          "triangles": 20,
+          "boundary_edges": 12,
+          "nonmanifold_edges": 0,
+          "degenerate_faces": 0,
+          "orientation_conflicts": 0
+        },
+        {
+          "name": "P12_LowerLeaf_2",
+          "triangles": 20,
+          "boundary_edges": 12,
+          "nonmanifold_edges": 0,
+          "degenerate_faces": 0,
+          "orientation_conflicts": 0
+        },
+        {
+          "name": "P12_LowerLeaf_3",
+          "triangles": 20,
+          "boundary_edges": 12,
+          "nonmanifold_edges": 0,
+          "degenerate_faces": 0,
+          "orientation_conflicts": 0
+        },
+        {
+          "name": "P12_LowerLeaf_4",
+          "triangles": 20,
+          "boundary_edges": 12,
+          "nonmanifold_edges": 0,
+          "degenerate_faces": 0,
+          "orientation_conflicts": 0
+        },
+        {
+          "name": "P12_LowerLeaf_5",
+          "triangles": 20,
+          "boundary_edges": 12,
+          "nonmanifold_edges": 0,
+          "degenerate_faces": 0,
+          "orientation_conflicts": 0
+        }
+      ],
+      "topology_flag": true
+    },
+    {
+      "path": "assets/cleaned/P12/P12_normalized_geometry_candidate.glb",
+      "mesh_objects": 1,
+      "triangles": 488,
+      "boundary_edges": 39,
+      "nonmanifold_edges": 76,
+      "degenerate_faces": 0,
+      "orientation_conflicts": 213,
+      "parts": [
+        {
+          "name": "P12_GeometryCandidate",
+          "triangles": 488,
+          "boundary_edges": 39,
+          "nonmanifold_edges": 76,
+          "degenerate_faces": 0,
+          "orientation_conflicts": 213
+        }
+      ],
+      "topology_flag": true
+    },
+    {
+      "path": "assets/cleaned/P12/P12_solid_repair_candidate.glb",
+      "mesh_objects": 15,
+      "triangles": 460,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "orientation_conflicts": 0,
+      "parts": [],
+      "topology_flag": false
+    },
+    {
+      "path": "assets/cleaned/P13/P13_art_repair_candidate.glb",
+      "mesh_objects": 6,
+      "triangles": 296,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "orientation_conflicts": 0,
+      "parts": [],
+      "topology_flag": false
+    },
+    {
+      "path": "assets/cleaned/P13/P13_normalized_geometry_candidate.glb",
+      "mesh_objects": 1,
+      "triangles": 412,
+      "boundary_edges": 32,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "orientation_conflicts": 74,
+      "parts": [
+        {
+          "name": "P13_GeometryCandidate",
+          "triangles": 412,
+          "boundary_edges": 32,
+          "nonmanifold_edges": 0,
+          "degenerate_faces": 0,
+          "orientation_conflicts": 74
+        }
+      ],
+      "topology_flag": true
+    },
+    {
+      "path": "assets/cleaned/P14/P14_art_repair_candidate.glb",
+      "mesh_objects": 5,
+      "triangles": 396,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "orientation_conflicts": 40,
+      "parts": [
+        {
+          "name": "P14_GeometryCandidate",
+          "triangles": 284,
+          "boundary_edges": 0,
+          "nonmanifold_edges": 0,
+          "degenerate_faces": 0,
+          "orientation_conflicts": 40
+        }
+      ],
+      "topology_flag": true
+    },
+    {
+      "path": "assets/cleaned/P14/P14_normalized_geometry_candidate.glb",
+      "mesh_objects": 1,
+      "triangles": 284,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "orientation_conflicts": 40,
+      "parts": [
+        {
+          "name": "P14_GeometryCandidate",
+          "triangles": 284,
+          "boundary_edges": 0,
+          "nonmanifold_edges": 0,
+          "degenerate_faces": 0,
+          "orientation_conflicts": 40
+        }
+      ],
+      "topology_flag": true
+    },
+    {
+      "path": "assets/cleaned/P14/P14_solid_repair_candidate.glb",
+      "mesh_objects": 8,
+      "triangles": 304,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "orientation_conflicts": 0,
+      "parts": [],
+      "topology_flag": false
+    },
+    {
+      "path": "assets/cleaned/P16/P16_normalized_geometry_candidate.glb",
+      "mesh_objects": 1,
+      "triangles": 376,
+      "boundary_edges": 32,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "orientation_conflicts": 58,
+      "parts": [
+        {
+          "name": "P16_GeometryCandidate",
+          "triangles": 376,
+          "boundary_edges": 32,
+          "nonmanifold_edges": 0,
+          "degenerate_faces": 0,
+          "orientation_conflicts": 58
+        }
+      ],
+      "topology_flag": true
+    },
+    {
+      "path": "assets/cleaned/P16/P16_normalized_geometry_candidate_surface_repaired.glb",
+      "mesh_objects": 1,
+      "triangles": 376,
+      "boundary_edges": 32,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "orientation_conflicts": 0,
+      "parts": [
+        {
+          "name": "P16_GeometryCandidate",
+          "triangles": 376,
+          "boundary_edges": 32,
+          "nonmanifold_edges": 0,
+          "degenerate_faces": 0,
+          "orientation_conflicts": 0
+        }
+      ],
+      "topology_flag": true
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "asset_id": "P02",
+  "cleaned_glb": "assets/cleaned/P02/P02_round_workshop_stool.glb",
+  "inspection_method": "Blender 5.2.2 headless re-import of exported GLB",
+  "mesh_objects": 1,
+  "triangles": 338,
+  "blender_scene_bounds_xyz": [
+    2.5,
+    2.5,
+    3.0
+  ],
+  "floor_min_z": 0.0,
+  "object_origins_world": [
+    [
+      0.0,
+      0.0,
+      0.0
+    ]
+  ],
+  "target_blender_bounds_xyz": [
+    2.5,
+    2.5,
+    3.0
+  ],
+  "materials": [
+    "Material_0"
+  ],
+  "uv_layers": [
+    "UVMap"
+  ],
+  "within_full_asset_triangle_cap": true,
+  "stage": "DCC-clean geometry candidate; art, Roblox Studio and runtime acceptance pending",
+  "source": "assets/candidates/tripo-out/b08-p02-round-workshop-stool-3c9288ec/model.glb",
+  "source_sha256": "31e85b42b759d516b2488ad11ab670f7132288b16c315ea237e6e419d8caf031",
+  "editable_source": "assets/cleaned/P02/P02_round_workshop_stool.blend",
+  "preview": "assets/cleaned/P02/preview.png",
+  "yaw_degrees_applied": 0,
+  "cleaned_glb_sha256": "c69b20105b2657b923c4ade1763c2c6e3fc4c091fc3b8a61798295b9f464c163",
+  "editable_source_sha256": "4ff2483f884657f31e97487a5e700ba354afba0aa84d5faf3e00f7808af61cfd",
+  "preview_sha256": "82419eb52e051d4b6f746ee83ba7889d9e1ffbdd1abd0a5622c2b801fd543f99",
+  "geometry_operations": [
+    "baked glTF importer transforms",
+    "asset-specific yaw alignment",
+    "axis-aligned dimension fitting",
+    "XY-centered floor pivot at object origin",
+    "normal recalculation"
+  ],
+  "color_or_part_editing": "none; source material and mesh grouping retained",
+  "acceptance_boundary": "DCC geometry normalization only; art, authored palette, part separation, Roblox Studio import and runtime validation remain pending"
+}

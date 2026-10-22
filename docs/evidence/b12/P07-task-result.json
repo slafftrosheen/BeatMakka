@@ -1,0 +1,14 @@
+{
+  "task_id": "6e5357d9-c58e-47e7-adea-134676fa4459",
+  "type": "image_to_model",
+  "status": "success",
+  "credits_consumed": 40,
+  "output_dir": "assets\\candidates\\tripo-out\\b12-p07-headphones-6e5357d9",
+  "files": [
+    "model.glb",
+    "rendered_image.webp",
+    "preview.png"
+  ],
+  "model_file": "assets\\candidates\\tripo-out\\b12-p07-headphones-6e5357d9\\model.glb",
+  "preview": "assets\\candidates\\tripo-out\\b12-p07-headphones-6e5357d9\\preview.png"
+}

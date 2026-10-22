@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-10-22T13:20:37.878965+00:00",
+  "verified": true,
+  "checked_sources": [
+    {
+      "id": "T-P1-IMAGE",
+      "url": "https://developers.tripo3d.ai/en/docs/generation-image-to-model/p",
+      "note": "Official P-series image endpoint supports P1-20260311, explicit face_limit, texture=false, pbr=false and export_uv."
+    },
+    {
+      "id": "T-P1-MODEL",
+      "url": "https://developers.tripo3d.ai/en/models/p1",
+      "note": "Official P1 card: image-to-3D without texture is 40 credits; P1 stable low-poly model."
+    },
+    {
+      "id": "T-BILLING",
+      "url": "https://developers.tripo3d.ai/en/docs/billing",
+      "note": "Official balance, frozen-credit and usage fields reviewed."
+    },
+    {
+      "id": "T-CLI",
+      "url": "https://developers.tripo3d.ai/en/docs/cli",
+      "note": "Installed tripo-cli documentation confirms dry-run, task result and balance commands; installed version 0.7.2."
+    }
+  ],
+  "cli_evidence": {
+    "version": "0.7.2",
+    "model": "P1-20260311",
+    "operation": "image-to-model",
+    "texture": false,
+    "pbr": false,
+    "export_uv": true,
+    "face_limit": "per canonical asset recipe",
+    "quoted_cost_credits_per_asset": 40,
+    "dry_runs_recorded_under": "docs/evidence/b11/ and later batch evidence directories"
+  },
+  "notes": "Checked immediately before the authorized B11-B20 production batches. No P2 Preview or processing chain."
+}

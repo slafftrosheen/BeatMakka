@@ -1,0 +1,407 @@
+{
+  "blender_version": "5.2.2",
+  "inspection_method": "Re-import each exported GLB in a clean Blender 5.2.2 scene; measure mesh bounds, triangle count, floor contact, object origin, materials and UV layers.",
+  "normalizer": "tools/normalize_dcc_candidates.py",
+  "assets": [
+    {
+      "asset_id": "H02",
+      "cleaned_glb": "assets/cleaned/H02/H02_compact_speaker_stack.glb",
+      "inspection_method": "Blender 5.2.2 headless re-import of exported GLB",
+      "mesh_objects": 1,
+      "triangles": 1584,
+      "blender_scene_bounds_xyz": [
+        4.0,
+        3.0,
+        8.0
+      ],
+      "floor_min_z": 0.0,
+      "object_origins_world": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "target_blender_bounds_xyz": [
+        4.0,
+        3.0,
+        8.0
+      ],
+      "materials": [
+        "Material_0"
+      ],
+      "uv_layers": [
+        "UVMap"
+      ],
+      "within_full_asset_triangle_cap": true,
+      "stage": "DCC-clean geometry candidate; art, Roblox Studio and runtime acceptance pending",
+      "source": "assets/candidates/tripo-out/b04-h02-compact-speaker-stack-090d3674/model.glb",
+      "source_sha256": "6d090f821703b9285ab24b8826bc16ae5c968f2f8acc6f4ef8e3ad0eeb3381d4",
+      "editable_source": "assets/cleaned/H02/H02_compact_speaker_stack.blend",
+      "preview": "assets/cleaned/H02/preview.png",
+      "yaw_degrees_applied": -90,
+      "cleaned_glb_sha256": "a36c115e349b6cecd367e5590c2f12b242eb2112540b5513f94f82aaeb08e6bd",
+      "editable_source_sha256": "a2f7833721999709a2308c5705a7882499751727abb8dc9efed72ca254e5e659",
+      "preview_sha256": "115d66e673ad4c7dd6590ed4aed310a8446e7265dffa27f42e028ef0b65f4da7",
+      "geometry_operations": [
+        "baked glTF importer transforms",
+        "asset-specific yaw alignment",
+        "axis-aligned dimension fitting",
+        "XY-centered floor pivot at object origin",
+        "normal recalculation"
+      ],
+      "color_or_part_editing": "none; source material and mesh grouping retained",
+      "acceptance_boundary": "DCC geometry normalization only; art, authored palette, part separation, Roblox Studio import and runtime validation remain pending"
+    },
+    {
+      "asset_id": "H03",
+      "cleaned_glb": "assets/cleaned/H03/H03_vinyl_crate_shell.glb",
+      "inspection_method": "Blender 5.2.2 headless re-import of exported GLB",
+      "mesh_objects": 1,
+      "triangles": 632,
+      "blender_scene_bounds_xyz": [
+        3.0,
+        3.0,
+        2.5
+      ],
+      "floor_min_z": 0.0,
+      "object_origins_world": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "target_blender_bounds_xyz": [
+        3.0,
+        3.0,
+        2.5
+      ],
+      "materials": [
+        "Material_0"
+      ],
+      "uv_layers": [
+        "UVMap"
+      ],
+      "within_full_asset_triangle_cap": true,
+      "stage": "DCC-clean geometry candidate; art, Roblox Studio and runtime acceptance pending",
+      "source": "assets/candidates/tripo-out/b05-h03-vinyl-crate-shell-0959611a/model.glb",
+      "source_sha256": "2df14388fbb429e6d370455a71bb199650cba97303d3e811d5a3fcafaed68366",
+      "editable_source": "assets/cleaned/H03/H03_vinyl_crate_shell.blend",
+      "preview": "assets/cleaned/H03/preview.png",
+      "yaw_degrees_applied": -90,
+      "cleaned_glb_sha256": "34a8a582cc7c1e46c4d5b3f262be3dcf93c0bcfb2035123ca36033948bb5e184",
+      "editable_source_sha256": "abcb8111d29f32901af31f55f87582509cc207d56b9efc32d188e0aa38378906",
+      "preview_sha256": "e37db0498b2aad1a33985a70e171c4f79f12099533311e3712ccd51447b37a55",
+      "geometry_operations": [
+        "baked glTF importer transforms",
+        "asset-specific yaw alignment",
+        "axis-aligned dimension fitting",
+        "XY-centered floor pivot at object origin",
+        "normal recalculation"
+      ],
+      "color_or_part_editing": "none; source material and mesh grouping retained",
+      "acceptance_boundary": "DCC geometry normalization only; art, authored palette, part separation, Roblox Studio import and runtime validation remain pending"
+    },
+    {
+      "asset_id": "H04",
+      "cleaned_glb": "assets/cleaned/H04/H04_maintenance_helper_robot.glb",
+      "inspection_method": "Blender 5.2.2 headless re-import of exported GLB",
+      "mesh_objects": 1,
+      "triangles": 3400,
+      "blender_scene_bounds_xyz": [
+        3.5,
+        3.0,
+        4.0
+      ],
+      "floor_min_z": 0.0,
+      "object_origins_world": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "target_blender_bounds_xyz": [
+        3.5,
+        3.0,
+        4.0
+      ],
+      "materials": [
+        "Material_0"
+      ],
+      "uv_layers": [
+        "UVMap"
+      ],
+      "within_full_asset_triangle_cap": true,
+      "stage": "DCC-clean geometry candidate; art, Roblox Studio and runtime acceptance pending",
+      "source": "assets/candidates/tripo-out/b06-h04-maintenance-helper-robot-d452487b/model.glb",
+      "source_sha256": "2cce737c76cae1da8ff935f1a97060e00225be9df7fe0533213d0f291ae02e3e",
+      "editable_source": "assets/cleaned/H04/H04_maintenance_helper_robot.blend",
+      "preview": "assets/cleaned/H04/preview.png",
+      "yaw_degrees_applied": -90,
+      "cleaned_glb_sha256": "6b2caea467da0548ac531aa1268748595e5193017e1ed184502099111b3cf8dc",
+      "editable_source_sha256": "c572af2c1359b7b326f78cbf1fa94085ba70006ff63053e16d6db0532fe6195f",
+      "preview_sha256": "05ed6dbd1ac2e8fa15959227534c4afe951fe665c7959ebff3f582c3dfd59c06",
+      "geometry_operations": [
+        "baked glTF importer transforms",
+        "asset-specific yaw alignment",
+        "axis-aligned dimension fitting",
+        "XY-centered floor pivot at object origin",
+        "normal recalculation"
+      ],
+      "color_or_part_editing": "none; source material and mesh grouping retained",
+      "acceptance_boundary": "DCC geometry normalization only; art, authored palette, part separation, Roblox Studio import and runtime validation remain pending"
+    },
+    {
+      "asset_id": "H05",
+      "cleaned_glb": "assets/cleaned/H05/H05_curved_street_lamp_scaled.glb",
+      "inspection_method": "Blender 5.2.2 headless re-import of exported GLB",
+      "mesh_objects": 1,
+      "triangles": 1034,
+      "blender_scene_bounds_xyz": [
+        2.5,
+        3.0,
+        12.0
+      ],
+      "floor_min_z": 0.0,
+      "object_origins_world": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "target_blender_bounds_xyz": [
+        2.5,
+        3.0,
+        12.0
+      ],
+      "materials": [
+        "Material_0"
+      ],
+      "uv_layers": [
+        "UVMap"
+      ],
+      "within_full_asset_triangle_cap": true,
+      "stage": "DCC-clean geometry candidate; art, Roblox Studio and runtime acceptance pending",
+      "source": "assets/candidates/dcc-source/H05_base_repaired_unscaled.glb",
+      "source_sha256": "b69d78188750ab8df60526eb3c3d701ce7bc4ef2ee6fd7e99bfea86233534d16",
+      "editable_source": "assets/cleaned/H05/H05_curved_street_lamp_scaled.blend",
+      "preview": "assets/cleaned/H05/preview_scaled.png",
+      "yaw_degrees_applied": 0,
+      "cleaned_glb_sha256": "92c038db20fa4a4079402cf690ca7f65690d648fa1326eec576eb7ddd97f78d5",
+      "editable_source_sha256": "c473be95c94b8a04ff4939d40414856fcad0621997334723c0a835ca718d92cf",
+      "preview_sha256": "629ef02847944ccbcb9d408ae30d93982d64f385f828c5cdfe17001005ce3aa5",
+      "geometry_operations": [
+        "baked glTF importer transforms",
+        "asset-specific yaw alignment",
+        "axis-aligned dimension fitting",
+        "XY-centered floor pivot at object origin",
+        "normal recalculation"
+      ],
+      "color_or_part_editing": "none; source material and mesh grouping retained",
+      "acceptance_boundary": "DCC geometry normalization only; art, authored palette, part separation, Roblox Studio import and runtime validation remain pending"
+    },
+    {
+      "asset_id": "P01",
+      "cleaned_glb": "assets/cleaned/P01/P01_studio_workbench.glb",
+      "inspection_method": "Blender 5.2.2 headless re-import of exported GLB",
+      "mesh_objects": 1,
+      "triangles": 616,
+      "blender_scene_bounds_xyz": [
+        8.0,
+        4.0,
+        3.5
+      ],
+      "floor_min_z": 0.0,
+      "object_origins_world": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "target_blender_bounds_xyz": [
+        8.0,
+        4.0,
+        3.5
+      ],
+      "materials": [
+        "Material_0"
+      ],
+      "uv_layers": [
+        "UVMap"
+      ],
+      "within_full_asset_triangle_cap": true,
+      "stage": "DCC-clean geometry candidate; art, Roblox Studio and runtime acceptance pending",
+      "source": "assets/candidates/tripo-out/b07-p01-studio-workbench-8fc6650b/model.glb",
+      "source_sha256": "5ee1adaefd54e094a8e53a51db3e9283748d71f7650f7906ba64f7da55962f1f",
+      "editable_source": "assets/cleaned/P01/P01_studio_workbench.blend",
+      "preview": "assets/cleaned/P01/preview.png",
+      "yaw_degrees_applied": -90,
+      "cleaned_glb_sha256": "ce4f613d789effeb8c29b1cbe2aed89fdc1e40dda49801bad844f12131009472",
+      "editable_source_sha256": "820335b29814bd859671a24818db7b29fb9498056dcd7406772981f7cba6b9cd",
+      "preview_sha256": "84827b5765d7b36e9c2fcb7d4b8f6c0dc59b57801ea990747f0951750e59b93b",
+      "geometry_operations": [
+        "baked glTF importer transforms",
+        "asset-specific yaw alignment",
+        "axis-aligned dimension fitting",
+        "XY-centered floor pivot at object origin",
+        "normal recalculation"
+      ],
+      "color_or_part_editing": "none; source material and mesh grouping retained",
+      "acceptance_boundary": "DCC geometry normalization only; art, authored palette, part separation, Roblox Studio import and runtime validation remain pending"
+    },
+    {
+      "asset_id": "P02",
+      "cleaned_glb": "assets/cleaned/P02/P02_round_workshop_stool.glb",
+      "inspection_method": "Blender 5.2.2 headless re-import of exported GLB",
+      "mesh_objects": 1,
+      "triangles": 338,
+      "blender_scene_bounds_xyz": [
+        2.5,
+        2.5,
+        3.0
+      ],
+      "floor_min_z": 0.0,
+      "object_origins_world": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "target_blender_bounds_xyz": [
+        2.5,
+        2.5,
+        3.0
+      ],
+      "materials": [
+        "Material_0"
+      ],
+      "uv_layers": [
+        "UVMap"
+      ],
+      "within_full_asset_triangle_cap": true,
+      "stage": "DCC-clean geometry candidate; art, Roblox Studio and runtime acceptance pending",
+      "source": "assets/candidates/tripo-out/b08-p02-round-workshop-stool-3c9288ec/model.glb",
+      "source_sha256": "31e85b42b759d516b2488ad11ab670f7132288b16c315ea237e6e419d8caf031",
+      "editable_source": "assets/cleaned/P02/P02_round_workshop_stool.blend",
+      "preview": "assets/cleaned/P02/preview.png",
+      "yaw_degrees_applied": 0,
+      "cleaned_glb_sha256": "c69b20105b2657b923c4ade1763c2c6e3fc4c091fc3b8a61798295b9f464c163",
+      "editable_source_sha256": "4ff2483f884657f31e97487a5e700ba354afba0aa84d5faf3e00f7808af61cfd",
+      "preview_sha256": "82419eb52e051d4b6f746ee83ba7889d9e1ffbdd1abd0a5622c2b801fd543f99",
+      "geometry_operations": [
+        "baked glTF importer transforms",
+        "asset-specific yaw alignment",
+        "axis-aligned dimension fitting",
+        "XY-centered floor pivot at object origin",
+        "normal recalculation"
+      ],
+      "color_or_part_editing": "none; source material and mesh grouping retained",
+      "acceptance_boundary": "DCC geometry normalization only; art, authored palette, part separation, Roblox Studio import and runtime validation remain pending"
+    },
+    {
+      "asset_id": "P03",
+      "cleaned_glb": "assets/cleaned/P03/P03_listening_bench.glb",
+      "inspection_method": "Blender 5.2.2 headless re-import of exported GLB",
+      "mesh_objects": 1,
+      "triangles": 470,
+      "blender_scene_bounds_xyz": [
+        7.0,
+        2.5,
+        3.5
+      ],
+      "floor_min_z": 0.0,
+      "object_origins_world": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "target_blender_bounds_xyz": [
+        7.0,
+        2.5,
+        3.5
+      ],
+      "materials": [
+        "Material_0"
+      ],
+      "uv_layers": [
+        "UVMap"
+      ],
+      "within_full_asset_triangle_cap": true,
+      "stage": "DCC-clean geometry candidate; art, Roblox Studio and runtime acceptance pending",
+      "source": "assets/candidates/tripo-out/b09-p03-listening-bench-a484dfae/model.glb",
+      "source_sha256": "e2067964cce8499a7fe4a88e086610f4236ccdce92748e88b7972fec429dcaeb",
+      "editable_source": "assets/cleaned/P03/P03_listening_bench.blend",
+      "preview": "assets/cleaned/P03/preview.png",
+      "yaw_degrees_applied": -90,
+      "cleaned_glb_sha256": "e4047eb0babf8028da8eb755d23659c6bfa091a58dbaa80062fbe68baa98a62e",
+      "editable_source_sha256": "b2b3a8a97099112949d112acd157bced191244d7d3d551aaa63dc4ff3cecf228",
+      "preview_sha256": "24bd5731ce0de33e98d2e37ea89782391497d8d85f1f90e83d828e51aaf94487",
+      "geometry_operations": [
+        "baked glTF importer transforms",
+        "asset-specific yaw alignment",
+        "axis-aligned dimension fitting",
+        "XY-centered floor pivot at object origin",
+        "normal recalculation"
+      ],
+      "color_or_part_editing": "none; source material and mesh grouping retained",
+      "acceptance_boundary": "DCC geometry normalization only; art, authored palette, part separation, Roblox Studio import and runtime validation remain pending"
+    },
+    {
+      "asset_id": "P04",
+      "cleaned_glb": "assets/cleaned/P04/P04_record_browsing_bin.glb",
+      "inspection_method": "Blender 5.2.2 headless re-import of exported GLB",
+      "mesh_objects": 1,
+      "triangles": 634,
+      "blender_scene_bounds_xyz": [
+        5.0,
+        3.0,
+        3.5
+      ],
+      "floor_min_z": 0.0,
+      "object_origins_world": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "target_blender_bounds_xyz": [
+        5.0,
+        3.0,
+        3.5
+      ],
+      "materials": [
+        "Material_0"
+      ],
+      "uv_layers": [
+        "UVMap"
+      ],
+      "within_full_asset_triangle_cap": true,
+      "stage": "DCC-clean geometry candidate; art, Roblox Studio and runtime acceptance pending",
+      "source": "assets/candidates/tripo-out/b10-p04-record-browsing-bin-c79fb1fa/model.glb",
+      "source_sha256": "24f8c9de1530aee3393d55a0db630cdfc351c8544e8c5da1d0dbdc7e1d8277e8",
+      "editable_source": "assets/cleaned/P04/P04_record_browsing_bin.blend",
+      "preview": "assets/cleaned/P04/preview.png",
+      "yaw_degrees_applied": -90,
+      "cleaned_glb_sha256": "fb875da1c969262c5f807aa7a1a274d9053c324b76e34d406f147b154af8bfaf",
+      "editable_source_sha256": "4bdd7e2320fa80cc00ce602f5ca2de6acf4f92255745b8523943721c1d8d7df8",
+      "preview_sha256": "3a3ff6971d8213a0d132db2eff3f195311f64081a99b827aac6ffc7fff70c298",
+      "geometry_operations": [
+        "baked glTF importer transforms",
+        "asset-specific yaw alignment",
+        "axis-aligned dimension fitting",
+        "XY-centered floor pivot at object origin",
+        "normal recalculation"
+      ],
+      "color_or_part_editing": "none; source material and mesh grouping retained",
+      "acceptance_boundary": "DCC geometry normalization only; art, authored palette, part separation, Roblox Studio import and runtime validation remain pending"
+    }
+  ]
+}

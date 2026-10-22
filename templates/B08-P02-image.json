@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "batch_id": "B08-P02-image",
+  "authorization": {
+    "approved": true,
+    "approved_cap_credits": 730,
+    "approved_asset_ids": [
+      "P02"
+    ]
+  },
+  "quoted_total_credits": 40,
+  "docs_receipt": "docs/evidence/b01/docs_receipt.json",
+  "connection_receipt": "docs/evidence/b01/connection_receipt.json",
+  "requests": [
+    {
+      "asset_id": "P02",
+      "estimated_credits": 40,
+      "approved_reference": "references/production/B08-P02-round-workshop-stool.png",
+      "face_limit": 350,
+      "dry_run_receipt": "docs/evidence/b08/P02-image-to-model-dry-run.json"
+    }
+  ]
+}

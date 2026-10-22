@@ -1,0 +1,8 @@
+Rokit: 1.2.0
+Rojo CLI: 7.7.0
+Rojo Studio plugin file: %LOCALAPPDATA%\Roblox\Plugins\RojoManagedPlugin.rbxm
+Rojo Studio plugin version: 7.7.0
+Selene: 0.32.0
+StyLua: 2.6.0
+Studio MCP tools: configured in Codex, not exposed to this task session
+Plugin install checked_at: 2026-10-22T10:03:27Z

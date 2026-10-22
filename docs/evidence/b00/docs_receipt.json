@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-10-22T10:03:27Z",
+  "verified": true,
+  "checked_sources": [
+    {
+      "id": "T01",
+      "url": "https://developers.tripo3d.ai/en/models/p1",
+      "note": "P1-20260311; P1 card search result checked; fresh direct open redirected to P2."
+    },
+    {
+      "id": "T02",
+      "url": "https://developers.tripo3d.ai/en/docs/generation-image-to-model/p",
+      "note": "P1 image-to-model request fields and defaults checked."
+    },
+    {
+      "id": "T05",
+      "url": "https://developers.tripo3d.ai/en/docs/cli",
+      "note": "Current CLI preset and documented workflows checked."
+    },
+    {
+      "id": "T07",
+      "url": "https://developers.tripo3d.ai/en/docs/task-query",
+      "note": "Task status/output/accounting surface checked."
+    },
+    {
+      "id": "T08",
+      "url": "https://developers.tripo3d.ai/en/docs/billing",
+      "note": "Billing and usage surfaces checked; no account authenticated."
+    },
+    {
+      "id": "T06",
+      "url": "https://developers.tripo3d.ai/en/docs/codex-plugin",
+      "note": "Official Codex integration page checked; local tool exposure still absent."
+    },
+    {
+      "id": "R01",
+      "url": "https://create.roblox.com/docs/studio/importer",
+      "note": "Studio supported formats and glTF hierarchy checked."
+    },
+    {
+      "id": "R02",
+      "url": "https://create.roblox.com/docs/art/modeling/texture-specifications",
+      "note": "Texture resolution and material/UV requirements checked; page has a 4K/1024 inconsistency."
+    },
+    {
+      "id": "R04",
+      "url": "https://create.roblox.com/docs/projects/external-tools",
+      "note": "Official external-tool workflow checked."
+    },
+    {
+      "id": "ROJO",
+      "url": "https://github.com/rojo-rbx/rojo/releases",
+      "note": "Rojo 7.7.0 release checked and pinned."
+    }
+  ],
+  "local_evidence_sha256": {
+    "docs/evidence/b00/roblox-toolchain.txt": "59b03c47f61c415ea6400405b723e8b9b7fe11ab811953d83eb8c1645034e377",
+    "docs/evidence/b00/tripo-doctor.json": "0e695c10e64c07899ed055114eda1061f2feb1a8f6dadbcc2e48f8c5e41f2343",
+    "docs/evidence/b00/tripo-game-mobile-dry-run.json": "d959cde7099ad64f325ecf6bfc6709c2cb05db814dc9560ac5899f4008fe5a0c",
+    "docs/evidence/b00/tripo-h01-dry-run.json": "6c0d9a3c0634d58941d3ad1ea5794e7a26a127765ec58d1bd8ae2e3b7ac632c3",
+    "docs/evidence/b00/tripo-h05-dry-run.json": "ee862e470cfd3b8237c02ecf44e8f547f74bc2561f0cbcf6fdb5d627b0bf5188",
+    "docs/evidence/b00/tripo-version.txt": "f830bb7cd89e62355ac42abf47d4eb5f27a9ff1dac2d000e8390ca6807d5a891"
+  },
+  "notes": "Documentation and CLI schema were checked for non-billable setup. This receipt is not authorization to generate or proof of provider account access."
+}

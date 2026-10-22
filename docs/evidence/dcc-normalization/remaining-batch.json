@@ -1,0 +1,305 @@
+{
+  "blender_version": "5.2.2 LTS",
+  "assets": [
+    {
+      "asset_id": "P06",
+      "raw_source": "assets/candidates/tripo-out/b11-p06-storage-crate-add32aad/model.glb",
+      "normalized_glb": "assets/cleaned/P06/P06_normalized_geometry_candidate.glb",
+      "editable_blend": "assets/cleaned/P06/P06_normalized_geometry_candidate.blend",
+      "neutral_preview": "assets/cleaned/P06/P06_normalized_geometry_candidate_preview.png",
+      "target_blender_bounds_xyz": [
+        3.0,
+        3.0,
+        3.0
+      ],
+      "target_game_dimensions_w_h_d": [
+        3.0,
+        3.0,
+        3.0
+      ],
+      "pivot": "floor-center",
+      "yaw_degrees_applied": -90,
+      "triangles": 276,
+      "triangle_cap": 350,
+      "within_triangle_cap": true,
+      "mesh_objects": 1,
+      "materials": [
+        "Material_0"
+      ],
+      "uv_layers": [
+        "UVMap"
+      ],
+      "stage": "DCC normalized geometry candidate; palette, part separation, art review and Studio/runtime acceptance pending"
+    },
+    {
+      "asset_id": "P07",
+      "raw_source": "assets/candidates/tripo-out/b12-p07-headphones-6e5357d9/model.glb",
+      "normalized_glb": "assets/cleaned/P07/P07_normalized_geometry_candidate.glb",
+      "editable_blend": "assets/cleaned/P07/P07_normalized_geometry_candidate.blend",
+      "neutral_preview": "assets/cleaned/P07/P07_normalized_geometry_candidate_preview.png",
+      "target_blender_bounds_xyz": [
+        2.0,
+        0.8,
+        1.5
+      ],
+      "target_game_dimensions_w_h_d": [
+        2.0,
+        1.5,
+        0.8
+      ],
+      "pivot": "floor-center",
+      "yaw_degrees_applied": -90,
+      "triangles": 846,
+      "triangle_cap": 1000,
+      "within_triangle_cap": true,
+      "mesh_objects": 1,
+      "materials": [
+        "Material_0"
+      ],
+      "uv_layers": [
+        "UVMap"
+      ],
+      "stage": "DCC normalized geometry candidate; palette, part separation, art review and Studio/runtime acceptance pending"
+    },
+    {
+      "asset_id": "P11",
+      "raw_source": "assets/candidates/tripo-out/b13-p11-planter-pot-daea9589/model.glb",
+      "normalized_glb": "assets/cleaned/P11/P11_normalized_geometry_candidate.glb",
+      "editable_blend": "assets/cleaned/P11/P11_normalized_geometry_candidate.blend",
+      "neutral_preview": "assets/cleaned/P11/P11_normalized_geometry_candidate_preview.png",
+      "target_blender_bounds_xyz": [
+        2.0,
+        2.0,
+        2.5
+      ],
+      "target_game_dimensions_w_h_d": [
+        2.0,
+        2.5,
+        2.0
+      ],
+      "pivot": "floor-center",
+      "yaw_degrees_applied": 0,
+      "triangles": 280,
+      "triangle_cap": 400,
+      "within_triangle_cap": true,
+      "mesh_objects": 1,
+      "materials": [
+        "Material_0"
+      ],
+      "uv_layers": [
+        "UVMap"
+      ],
+      "stage": "DCC normalized geometry candidate; palette, part separation, art review and Studio/runtime acceptance pending"
+    },
+    {
+      "asset_id": "P12",
+      "raw_source": "assets/candidates/tripo-out/b14-p12-broad-leaf-plant-eebbc149/model.glb",
+      "normalized_glb": "assets/cleaned/P12/P12_normalized_geometry_candidate.glb",
+      "editable_blend": "assets/cleaned/P12/P12_normalized_geometry_candidate.blend",
+      "neutral_preview": "assets/cleaned/P12/P12_normalized_geometry_candidate_preview.png",
+      "target_blender_bounds_xyz": [
+        3.0,
+        3.0,
+        4.0
+      ],
+      "target_game_dimensions_w_h_d": [
+        3.0,
+        4.0,
+        3.0
+      ],
+      "pivot": "floor-center",
+      "yaw_degrees_applied": 0,
+      "triangles": 488,
+      "triangle_cap": 550,
+      "within_triangle_cap": true,
+      "mesh_objects": 1,
+      "materials": [
+        "Material"
+      ],
+      "uv_layers": [
+        "UVMap"
+      ],
+      "stage": "DCC normalized geometry candidate; palette, part separation, art review and Studio/runtime acceptance pending"
+    },
+    {
+      "asset_id": "P13",
+      "raw_source": "assets/candidates/tripo-out/b15-p13-lamp-core-09cb43ae/model.glb",
+      "normalized_glb": "assets/cleaned/P13/P13_normalized_geometry_candidate.glb",
+      "editable_blend": "assets/cleaned/P13/P13_normalized_geometry_candidate.blend",
+      "neutral_preview": "assets/cleaned/P13/P13_normalized_geometry_candidate_preview.png",
+      "target_blender_bounds_xyz": [
+        1.5,
+        1.5,
+        2.0
+      ],
+      "target_game_dimensions_w_h_d": [
+        1.5,
+        2.0,
+        1.5
+      ],
+      "pivot": "rear-center",
+      "yaw_degrees_applied": -90,
+      "triangles": 412,
+      "triangle_cap": 500,
+      "within_triangle_cap": true,
+      "mesh_objects": 1,
+      "materials": [
+        "Material_0"
+      ],
+      "uv_layers": [
+        "UVMap"
+      ],
+      "stage": "DCC normalized geometry candidate; palette, part separation, art review and Studio/runtime acceptance pending"
+    },
+    {
+      "asset_id": "P14",
+      "raw_source": "assets/candidates/tripo-out/b16-p14-utility-junction-box-d57e4c07/model.glb",
+      "normalized_glb": "assets/cleaned/P14/P14_normalized_geometry_candidate.glb",
+      "editable_blend": "assets/cleaned/P14/P14_normalized_geometry_candidate.blend",
+      "neutral_preview": "assets/cleaned/P14/P14_normalized_geometry_candidate_preview.png",
+      "target_blender_bounds_xyz": [
+        2.0,
+        1.0,
+        3.0
+      ],
+      "target_game_dimensions_w_h_d": [
+        2.0,
+        3.0,
+        1.0
+      ],
+      "pivot": "rear-center",
+      "yaw_degrees_applied": -90,
+      "triangles": 284,
+      "triangle_cap": 400,
+      "within_triangle_cap": true,
+      "mesh_objects": 1,
+      "materials": [
+        "Material_0"
+      ],
+      "uv_layers": [
+        "UVMap"
+      ],
+      "stage": "DCC normalized geometry candidate; palette, part separation, art review and Studio/runtime acceptance pending"
+    },
+    {
+      "asset_id": "P16",
+      "raw_source": "assets/candidates/tripo-out/b17-p16-rooftop-vent-c6945d18/model.glb",
+      "normalized_glb": "assets/cleaned/P16/P16_normalized_geometry_candidate.glb",
+      "editable_blend": "assets/cleaned/P16/P16_normalized_geometry_candidate.blend",
+      "neutral_preview": "assets/cleaned/P16/P16_normalized_geometry_candidate_preview.png",
+      "target_blender_bounds_xyz": [
+        3.0,
+        2.0,
+        3.0
+      ],
+      "target_game_dimensions_w_h_d": [
+        3.0,
+        3.0,
+        2.0
+      ],
+      "pivot": "floor-center",
+      "yaw_degrees_applied": -90,
+      "triangles": 376,
+      "triangle_cap": 500,
+      "within_triangle_cap": true,
+      "mesh_objects": 1,
+      "materials": [
+        "Material_0"
+      ],
+      "uv_layers": [
+        "UVMap"
+      ],
+      "stage": "DCC normalized geometry candidate; palette, part separation, art review and Studio/runtime acceptance pending"
+    },
+    {
+      "asset_id": "I01",
+      "raw_source": "assets/candidates/tripo-out/b18-i01-metal-strike-sign-b931a097/model.glb",
+      "normalized_glb": "assets/cleaned/I01/I01_normalized_geometry_candidate.glb",
+      "editable_blend": "assets/cleaned/I01/I01_normalized_geometry_candidate.blend",
+      "neutral_preview": "assets/cleaned/I01/I01_normalized_geometry_candidate_preview.png",
+      "target_blender_bounds_xyz": [
+        3.0,
+        0.3,
+        2.0
+      ],
+      "target_game_dimensions_w_h_d": [
+        3.0,
+        2.0,
+        0.3
+      ],
+      "pivot": "upper-hinge",
+      "yaw_degrees_applied": -90,
+      "triangles": 264,
+      "triangle_cap": 300,
+      "within_triangle_cap": true,
+      "mesh_objects": 1,
+      "materials": [
+        "Material_0"
+      ],
+      "uv_layers": [
+        "UVMap"
+      ],
+      "stage": "DCC normalized geometry candidate; palette, part separation, art review and Studio/runtime acceptance pending"
+    },
+    {
+      "asset_id": "I04",
+      "raw_source": "assets/candidates/tripo-out/b19-i04-resonator-junction-0b2aa08d/model.glb",
+      "normalized_glb": "assets/cleaned/I04/I04_normalized_geometry_candidate.glb",
+      "editable_blend": "assets/cleaned/I04/I04_normalized_geometry_candidate.blend",
+      "neutral_preview": "assets/cleaned/I04/I04_normalized_geometry_candidate_preview.png",
+      "target_blender_bounds_xyz": [
+        3.0,
+        1.5,
+        4.0
+      ],
+      "target_game_dimensions_w_h_d": [
+        3.0,
+        4.0,
+        1.5
+      ],
+      "pivot": "rear-center",
+      "yaw_degrees_applied": -90,
+      "triangles": 414,
+      "triangle_cap": 650,
+      "within_triangle_cap": true,
+      "mesh_objects": 1,
+      "materials": [
+        "Material_0"
+      ],
+      "uv_layers": [
+        "UVMap"
+      ],
+      "stage": "DCC normalized geometry candidate; palette, part separation, art review and Studio/runtime acceptance pending"
+    },
+    {
+      "asset_id": "I05",
+      "raw_source": "assets/candidates/tripo-out/b20-i05-listening-podium-d89353d8/model.glb",
+      "normalized_glb": "assets/cleaned/I05/I05_normalized_geometry_candidate.glb",
+      "editable_blend": "assets/cleaned/I05/I05_normalized_geometry_candidate.blend",
+      "neutral_preview": "assets/cleaned/I05/I05_normalized_geometry_candidate_preview.png",
+      "target_blender_bounds_xyz": [
+        3.0,
+        2.0,
+        4.0
+      ],
+      "target_game_dimensions_w_h_d": [
+        3.0,
+        4.0,
+        2.0
+      ],
+      "pivot": "floor-center",
+      "yaw_degrees_applied": -90,
+      "triangles": 580,
+      "triangle_cap": 800,
+      "within_triangle_cap": true,
+      "mesh_objects": 1,
+      "materials": [
+        "Material_0"
+      ],
+      "uv_layers": [
+        "UVMap"
+      ],
+      "stage": "DCC normalized geometry candidate; palette, part separation, art review and Studio/runtime acceptance pending"
+    }
+  ]
+}

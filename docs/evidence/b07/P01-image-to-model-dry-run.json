@@ -1,0 +1,34 @@
+{
+  "dry_run": true,
+  "valid": true,
+  "input": "references/production/B07-P01-studio-workbench.png",
+  "model": "P1-20260311",
+  "model_reason": "explicit --model",
+  "steps": [
+    {
+      "name": "image-to-model",
+      "endpoint": "/v3/generation/image-to-model",
+      "task_type": "image_to_model",
+      "payload": {
+        "input": "<upload:references/production/B07-P01-studio-workbench.png>",
+        "model": "P1-20260311",
+        "face_limit": 700,
+        "texture": false,
+        "pbr": false,
+        "export_uv": true
+      }
+    }
+  ],
+  "pending_uploads": [
+    "references/production/B07-P01-studio-workbench.png"
+  ],
+  "deliverables": [],
+  "candidates": 1,
+  "warnings": [],
+  "errors": [],
+  "cost_notes": [
+    "bare geometry: no texture credits"
+  ],
+  "reference_sha256": "dcfef0e55b30c63838a12557788f1dc7a4a92d16c7697630ca4df06b355ec20f",
+  "reference_prompt": "Isolated standing-height workbench with walnut work surface, teal structural supports and broad cream drawer, no equipment or clutter, based on the artbook palette and P01 contract."
+}

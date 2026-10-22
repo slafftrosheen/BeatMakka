@@ -1,0 +1,15 @@
+{
+  "asset_id": "P06",
+  "batch_id": "B11",
+  "task_id": "add32aad-1457-469d-8afe-1c47b5a1aa3c",
+  "status": "success",
+  "credits_consumed": 40.0,
+  "balance_after": 570,
+  "frozen_after": 0,
+  "output_dir": "assets\\candidates\\tripo-out\\b11-p06-storage-crate-add32aad",
+  "model_file": "assets\\candidates\\tripo-out\\b11-p06-storage-crate-add32aad\\model.glb",
+  "preview": "assets\\candidates\\tripo-out\\b11-p06-storage-crate-add32aad\\preview.png",
+  "reference_path": "references/production/B11-P06-storage-crate.png",
+  "reference_sha256": "e54d8b20ef38477d69a5949fd8341b88134e7bf1bfd64e7e3080c51047be3e73",
+  "candidate_state": "raw provider candidate; DCC/art review pending"
+}

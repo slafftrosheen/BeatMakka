@@ -1,0 +1,34 @@
+{
+  "dry_run": true,
+  "valid": true,
+  "input": "references/production/B05-H03-vinyl-crate-shell.png",
+  "model": "P1-20260311",
+  "model_reason": "explicit --model",
+  "steps": [
+    {
+      "name": "image-to-model",
+      "endpoint": "/v3/generation/image-to-model",
+      "task_type": "image_to_model",
+      "payload": {
+        "input": "<upload:references/production/B05-H03-vinyl-crate-shell.png>",
+        "model": "P1-20260311",
+        "face_limit": 650,
+        "texture": false,
+        "pbr": false,
+        "export_uv": true
+      }
+    }
+  ],
+  "pending_uploads": [
+    "references/production/B05-H03-vinyl-crate-shell.png"
+  ],
+  "deliverables": [],
+  "candidates": 1,
+  "warnings": [],
+  "errors": [],
+  "cost_notes": [
+    "bare geometry: no texture credits"
+  ],
+  "reference_sha256": "9a23c4a91d764c69fac083a2b6312dba7c89eef2a99dcc996cffea76bb09e73a",
+  "reference_prompt": "Generated H03 empty crate-shell reference from Production Atlas page 06. No records/sleeves; those remain a separate deterministic insert."
+}

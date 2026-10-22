@@ -1,0 +1,35 @@
+{
+  "dry_run": true,
+  "valid": true,
+  "input": "references\\production\\B13-P11-planter-pot.png",
+  "model": "P1-20260311",
+  "model_reason": "explicit --model",
+  "steps": [
+    {
+      "name": "image-to-model",
+      "endpoint": "/v3/generation/image-to-model",
+      "task_type": "image_to_model",
+      "payload": {
+        "input": "<upload:references\\production\\B13-P11-planter-pot.png>",
+        "model": "P1-20260311",
+        "face_limit": 300,
+        "texture": false,
+        "pbr": false,
+        "export_uv": true
+      }
+    }
+  ],
+  "pending_uploads": [
+    "references\\production\\B13-P11-planter-pot.png"
+  ],
+  "deliverables": [],
+  "candidates": 1,
+  "warnings": [],
+  "errors": [],
+  "cost_notes": [
+    "bare geometry: no texture credits"
+  ],
+  "reference_sha256": "087f4578ccc22c7325b099ce956c52814091990210cefa6338e8e37b9f0fe52c",
+  "reference_prompt": "Use case: stylized-concept. Create a clean game-asset production reference: one squat handmade ceramic planter pot, gently tapered wide body with a thick rounded rim and visible empty dark soil opening, warm cream body with a single broad muted workshop-teal painted band and a small walnut repair patch. Friendly tactile industrial workshop decor, sturdy softened geometry, simple readable silhouette. Three-quarter front view from slightly above so rim and empty centered foliage socket are clear. Neutral light gray seamless background, evenly lit with neutral studio light and a soft contact shadow. Single centered object only, no plant, no stand, no other objects, no text, no logo, no collage, no dramatic lighting, square 1:1.",
+  "reference_provenance": "Generated with built-in image_gen for this asset reference."
+}

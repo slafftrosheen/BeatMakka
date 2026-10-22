@@ -1,0 +1,26 @@
+{
+  "asset_id": "H02",
+  "task_id": "090d3674-c965-40bb-8e9d-d6ff720a3022",
+  "source": "assets/candidates/tripo-out/b04-h02-compact-speaker-stack-090d3674/model.glb",
+  "inspection_method": "Blender 5.2.2 headless GLB import after clearing factory-startup scene; read-only scene inspection",
+  "mesh_objects": 1,
+  "triangles": 1584,
+  "raw_local_bounds_blender_units_xyz": [
+    0.529296875,
+    0.626953125,
+    0.998046875
+  ],
+  "target_studs_width_height_depth_xyz": [
+    4,
+    8,
+    3
+  ],
+  "materials": [
+    "Material_0"
+  ],
+  "uv_layers": [
+    "UVMap"
+  ],
+  "pivot": "not measured",
+  "notes": "Triangle count is under the 1,800 candidate face cap. Provider geometry is normalized and its local bounds do not prove fit to target studs; DCC scale/pivot and part separation remain pending. Preview is monochrome."
+}

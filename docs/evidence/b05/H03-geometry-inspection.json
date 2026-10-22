@@ -1,0 +1,26 @@
+{
+  "asset_id": "H03",
+  "task_id": "0959611a-7ad8-4a88-a9ad-b9dfba678416",
+  "source": "assets/candidates/tripo-out/b05-h03-vinyl-crate-shell-0959611a/model.glb",
+  "inspection_method": "Blender 5.2.2 headless GLB import after clearing factory-startup scene; read-only scene inspection",
+  "mesh_objects": 1,
+  "triangles": 632,
+  "raw_local_bounds_blender_units_xyz": [
+    0.998046875,
+    0.994140625,
+    0.681640625
+  ],
+  "target_studs_width_height_depth_xyz": [
+    3,
+    2.5,
+    3
+  ],
+  "materials": [
+    "Material_0"
+  ],
+  "uv_layers": [
+    "UVMap"
+  ],
+  "pivot": "not measured",
+  "notes": "Triangle count is under the 650 candidate cap. The normalized raw height is shorter than the width/depth ratios in the target dimensions; DCC scaling/pivot and shared-material work remain pending."
+}

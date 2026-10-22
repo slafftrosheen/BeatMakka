@@ -1,0 +1,14 @@
+{
+  "task_id": "b931a097-b2e2-484d-8de1-ed94bf300e74",
+  "type": "image_to_model",
+  "status": "success",
+  "credits_consumed": 40,
+  "output_dir": "assets\\candidates\\tripo-out\\b18-i01-metal-strike-sign-b931a097",
+  "files": [
+    "model.glb",
+    "rendered_image.webp",
+    "preview.png"
+  ],
+  "model_file": "assets\\candidates\\tripo-out\\b18-i01-metal-strike-sign-b931a097\\model.glb",
+  "preview": "assets\\candidates\\tripo-out\\b18-i01-metal-strike-sign-b931a097\\preview.png"
+}

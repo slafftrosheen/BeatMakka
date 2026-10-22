@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "style_authority": "01_Visual_Artbook.pdf; authored palette and style guidance, not a final engineering drawing",
+  "created_at": "2026-10-22T13:19:19.659114+00:00",
+  "references": [
+    {
+      "asset_id": "P06",
+      "reference_path": "references/production/B11-P06-storage-crate.png",
+      "sha256": "e54d8b20ef38477d69a5949fd8341b88134e7bf1bfd64e7e3080c51047be3e73",
+      "bytes": 1987614,
+      "source": "Existing reference generated from project art direction, with prompt recorded in prior dry-run evidence.",
+      "prompt": "Isolated stackable 3 x 3 x 3 utility storage crate with muted-teal boards, walnut rails, cream corner blocks and integrated front handhold; clean three-quarter view."
+    },
+    {
+      "asset_id": "P07",
+      "reference_path": "references/production/B12-P07-headphones.png",
+      "sha256": "24a6bf0bec44aa2ad63fd22fd9ec820c3a3878aff7b35f888c6128cbb0e38d5c",
+      "bytes": 2214078,
+      "source": "Generated with built-in image_gen for this asset reference.",
+      "prompt": "Use case: stylized-concept. Create a clean production reference for a single low-poly game prop: compact padded over-ear studio headphones, full silhouette visible, upright three-quarter front view, thick dark graphite headband, broad warm cream ear cushions, muted workshop teal ear cups with small walnut adjustment yokes. Warm tactile handmade industrial style from an indie music workshop, large readable forms, softly rounded corners, matte painted surfaces, restrained repair details. Neutral light gray seamless background, even neutral studio lighting, soft contact shadow, centered, no other objects, no hands, no text, no logos, no collage, no dramatic lighting, crisp silhouette, square 1:1 image."
+    },
+    {
+      "asset_id": "P11",
+      "reference_path": "references/production/B13-P11-planter-pot.png",
+      "sha256": "087f4578ccc22c7325b099ce956c52814091990210cefa6338e8e37b9f0fe52c",
+      "bytes": 2289224,
+      "source": "Generated with built-in image_gen for this asset reference.",
+      "prompt": "Use case: stylized-concept. Create a clean game-asset production reference: one squat handmade ceramic planter pot, gently tapered wide body with a thick rounded rim and visible empty dark soil opening, warm cream body with a single broad muted workshop-teal painted band and a small walnut repair patch. Friendly tactile industrial workshop decor, sturdy softened geometry, simple readable silhouette. Three-quarter front view from slightly above so rim and empty centered foliage socket are clear. Neutral light gray seamless background, evenly lit with neutral studio light and a soft contact shadow. Single centered object only, no plant, no stand, no other objects, no text, no logo, no collage, no dramatic lighting, square 1:1."
+    },
+    {
+      "asset_id": "P12",
+      "reference_path": "references/production/B14-P12-broad-leaf-plant.png",
+      "sha256": "80322b2011b5d346b6858b1134fdc13377630e2a01d72ccf8572ead4c078008e",
+      "bytes": 1790045,
+      "source": "Generated with built-in image_gen for this asset reference.",
+      "prompt": "Use case: stylized-concept. Clean game prop reference of one compact broad-leaf plant cluster for a cozy music workshop, roughly three stacked tiers of large simple heart-shaped leaves on a few thick sturdy stems, planted as a single reusable cluster; no pot, no flowers. Foliage uses deep sage and muted teal green with a few lighter undersides, softly stylized low-poly planes, readable uncluttered silhouette, handcrafted friendly look. Entire plant visible upright in a centered three-quarter view on a neutral light gray seamless background, even neutral studio lighting, soft contact shadow, no other objects, no text, no logo, no collage, square 1:1."
+    },
+    {
+      "asset_id": "P13",
+      "reference_path": "references/production/B15-P13-lamp-core.png",
+      "sha256": "ec1f9c1654a501fdb7922a0c95402c6530a444c24ea4f085914ad19da25f85ca",
+      "bytes": 1902967,
+      "source": "Generated with built-in image_gen for this asset reference.",
+      "prompt": "Use case: stylized-concept. A clean single-object production reference for a reusable wall or pendant lamp core used in a cozy music workshop. Show one compact industrial wall sconce with a chunky rounded walnut wall plate and short teal metal arm holding a warm cream enamel shade; amber diffuser visible beneath. The geometry should clearly read as a shared lamp core that can be mounted on a wall or hung from a pendant bracket later, with simple attachment interfaces and no wires. Tactile rounded forms, matte painted metal, restrained detail, warm handmade indie game style. Three-quarter view, full object centered on neutral light gray seamless background, even studio lighting, soft contact shadow, no scene, no wall, no text, no logo, no collage, square 1:1."
+    },
+    {
+      "asset_id": "P14",
+      "reference_path": "references/production/B16-P14-utility-junction-box.png",
+      "sha256": "7cc3ef1b8db425bd76810ab440a0a736b7406998789a4af70cd2c451bd074635",
+      "bytes": 2270067,
+      "source": "Generated with built-in image_gen for this asset reference.",
+      "prompt": "Use case: stylized-concept. Single prop reference: compact wall-mounted utility junction box for a repaired cozy workshop, a chunky rectangular faded-teal painted-metal cabinet with rounded edges, thick walnut mounting backplate, simple hinged front door, one large clearly visible circular dark socket opening and one separate small cream status insert on the front. Show the box closed and front face readable at three-quarter view, with the small insert visibly distinct. Tactile matte surfaces, warm cream and teal palette, restrained brass screws. Neutral light gray seamless studio background, even neutral lighting, soft contact shadow, centered entire object, no wires, no wall scene, no text, no logo, no extra objects, no collage, square 1:1."
+    },
+    {
+      "asset_id": "P16",
+      "reference_path": "references/production/B17-P16-rooftop-vent.png",
+      "sha256": "cc797978ef2153b1b2d518d867e697c3c0ba1ef515866cf6784fe47d6715c59c",
+      "bytes": 2122705,
+      "source": "Generated with built-in image_gen for this asset reference.",
+      "prompt": "Use case: stylized-concept. Clean isolated production reference for a small rooftop vent / duct prop from a warm, repaired music workshop. A low chunky square muted-teal metal roof vent with broad cream rim, short boxy duct and a prominent angled hood with dark opening; stout walnut mounting flange at the base, no long pipe. Clear silhouette and simple bold parts, matte painted metal, friendly soft industrial forms, restrained bolts. Three-quarter view slightly above to show hood opening and base. Neutral light gray seamless studio background, even light, soft contact shadow, centered single object only, no roof, no building, no wires, no text, no logos, no collage, square 1:1."
+    },
+    {
+      "asset_id": "I01",
+      "reference_path": "references/production/B18-I01-metal-strike-sign.png",
+      "sha256": "2b076c6f4b45f0ec964ad6422daf3219daee00ad5f456212188aaf11308e2592",
+      "bytes": 1966557,
+      "source": "Generated with built-in image_gen for this asset reference.",
+      "prompt": "Use case: stylized-concept. Isolated game prop reference for a metal strike-sign discovery node in a cozy repaired music neighborhood. A broad rounded-rectangle hanging sign plate in muted teal painted metal, suspended from one chunky top hinge on a walnut wall-mount bracket; centered on the blank sign face is one large easy-to-hit circular brass sound plate with a simple raised concentric ring. Keep face blank, no lettering, no icon, no tiny target. Slight three-quarter front view, complete object visible, stout friendly forms and restrained screws, matte metal and walnut. Neutral light gray seamless background, even studio lighting and soft contact shadow. One object only, no wall, no environment, no text, no logo, no collage, square 1:1."
+    },
+    {
+      "asset_id": "I04",
+      "reference_path": "references/production/B19-I04-resonator-junction.png",
+      "sha256": "3e3c8104e7a07c1151ed75fde80f93846a73e3a05e59367fdaca1e8b4d5bc3b9",
+      "bytes": 2131378,
+      "source": "Generated with built-in image_gen for this asset reference.",
+      "prompt": "Use case: stylized-concept. Clean isolated reference for a wall-mounted workshop resonator junction, a chunky rounded rectangle cabinet in warm cream and muted teal painted metal on a walnut rear mounting plate, about 3:4 tall proportion. Front has exactly four large distinct status indicator windows in a clear 2x2 grid and one medium-size rotary tuning dial below them, all readable and physically separated in the design; do not use letters or numbers. Friendly tactile industrial music equipment, large forms, matte surfaces, tiny restrained bolts. Straight-on three-quarter view showing the face and a little side depth, neutral light gray seamless background, even studio lighting, soft contact shadow. One object only, no wall or cables, no text, no logo, no extra objects, no collage, square 1:1."
+    },
+    {
+      "asset_id": "I05",
+      "reference_path": "references/production/B20-I05-listening-podium.png",
+      "sha256": "f98b64c9c515807b8db3f9bc821bd22bebfa0da42c2cddbcfc0f99f85dacc6e5",
+      "bytes": 1951144,
+      "source": "Generated with built-in image_gen for this asset reference.",
+      "prompt": "Use case: stylized-concept. Isolated reference for a compact listening-stage control podium for a cozy music-making game. Sturdy waist-high boxy floor-standing console with a clear accessible front control face, warm cream body with muted workshop teal side panels and a walnut top cap. On the tilted upper face show one large simple circular join/listen control and a separate small status insert; controls are physical blank shapes, no writing, letters or numbers. Broad stable base, softened corners, no microphone, no screen content, no cables. Friendly handmade industrial equipment, tactile matte materials, restrained brass fasteners. Three-quarter front view showing top controls and all sides, full object centered against neutral light gray seamless background, even neutral studio lighting, soft contact shadow. One object only, no stage or people, no text, no logo, no collage, square 1:1."
+    }
+  ]
+}

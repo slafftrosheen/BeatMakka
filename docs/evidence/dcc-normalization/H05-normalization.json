@@ -1,0 +1,50 @@
+{
+  "asset_id": "H05",
+  "cleaned_glb": "assets/cleaned/H05/H05_curved_street_lamp_scaled.glb",
+  "inspection_method": "Blender 5.2.2 headless re-import of exported GLB",
+  "mesh_objects": 1,
+  "triangles": 1034,
+  "blender_scene_bounds_xyz": [
+    2.5,
+    3.0,
+    12.0
+  ],
+  "floor_min_z": 0.0,
+  "object_origins_world": [
+    [
+      0.0,
+      0.0,
+      0.0
+    ]
+  ],
+  "target_blender_bounds_xyz": [
+    2.5,
+    3.0,
+    12.0
+  ],
+  "materials": [
+    "Material_0"
+  ],
+  "uv_layers": [
+    "UVMap"
+  ],
+  "within_full_asset_triangle_cap": true,
+  "stage": "DCC-clean geometry candidate; art, Roblox Studio and runtime acceptance pending",
+  "source": "assets/candidates/dcc-source/H05_base_repaired_unscaled.glb",
+  "source_sha256": "b69d78188750ab8df60526eb3c3d701ce7bc4ef2ee6fd7e99bfea86233534d16",
+  "editable_source": "assets/cleaned/H05/H05_curved_street_lamp_scaled.blend",
+  "preview": "assets/cleaned/H05/preview_scaled.png",
+  "yaw_degrees_applied": 0,
+  "cleaned_glb_sha256": "92c038db20fa4a4079402cf690ca7f65690d648fa1326eec576eb7ddd97f78d5",
+  "editable_source_sha256": "c473be95c94b8a04ff4939d40414856fcad0621997334723c0a835ca718d92cf",
+  "preview_sha256": "629ef02847944ccbcb9d408ae30d93982d64f385f828c5cdfe17001005ce3aa5",
+  "geometry_operations": [
+    "baked glTF importer transforms",
+    "asset-specific yaw alignment",
+    "axis-aligned dimension fitting",
+    "XY-centered floor pivot at object origin",
+    "normal recalculation"
+  ],
+  "color_or_part_editing": "none; source material and mesh grouping retained",
+  "acceptance_boundary": "DCC geometry normalization only; art, authored palette, part separation, Roblox Studio import and runtime validation remain pending"
+}

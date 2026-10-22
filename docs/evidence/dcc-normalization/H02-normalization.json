@@ -1,0 +1,50 @@
+{
+  "asset_id": "H02",
+  "cleaned_glb": "assets/cleaned/H02/H02_compact_speaker_stack.glb",
+  "inspection_method": "Blender 5.2.2 headless re-import of exported GLB",
+  "mesh_objects": 1,
+  "triangles": 1584,
+  "blender_scene_bounds_xyz": [
+    4.0,
+    3.0,
+    8.0
+  ],
+  "floor_min_z": 0.0,
+  "object_origins_world": [
+    [
+      0.0,
+      0.0,
+      0.0
+    ]
+  ],
+  "target_blender_bounds_xyz": [
+    4.0,
+    3.0,
+    8.0
+  ],
+  "materials": [
+    "Material_0"
+  ],
+  "uv_layers": [
+    "UVMap"
+  ],
+  "within_full_asset_triangle_cap": true,
+  "stage": "DCC-clean geometry candidate; art, Roblox Studio and runtime acceptance pending",
+  "source": "assets/candidates/tripo-out/b04-h02-compact-speaker-stack-090d3674/model.glb",
+  "source_sha256": "6d090f821703b9285ab24b8826bc16ae5c968f2f8acc6f4ef8e3ad0eeb3381d4",
+  "editable_source": "assets/cleaned/H02/H02_compact_speaker_stack.blend",
+  "preview": "assets/cleaned/H02/preview.png",
+  "yaw_degrees_applied": -90,
+  "cleaned_glb_sha256": "a36c115e349b6cecd367e5590c2f12b242eb2112540b5513f94f82aaeb08e6bd",
+  "editable_source_sha256": "a2f7833721999709a2308c5705a7882499751727abb8dc9efed72ca254e5e659",
+  "preview_sha256": "115d66e673ad4c7dd6590ed4aed310a8446e7265dffa27f42e028ef0b65f4da7",
+  "geometry_operations": [
+    "baked glTF importer transforms",
+    "asset-specific yaw alignment",
+    "axis-aligned dimension fitting",
+    "XY-centered floor pivot at object origin",
+    "normal recalculation"
+  ],
+  "color_or_part_editing": "none; source material and mesh grouping retained",
+  "acceptance_boundary": "DCC geometry normalization only; art, authored palette, part separation, Roblox Studio import and runtime validation remain pending"
+}

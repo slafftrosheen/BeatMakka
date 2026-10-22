@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-10-22T10:11:50Z",
+  "verified": true,
+  "checked_sources": [
+    {
+      "id": "T-P1",
+      "url": "https://developers.tripo3d.ai/en/models/p1",
+      "note": "Current P1-20260311 card confirms text input, face limit range, and bare text-to-3D pricing of 30 credits."
+    },
+    {
+      "id": "T-TEXT-P",
+      "url": "https://developers.tripo3d.ai/en/docs/generation-text-to-model/p",
+      "note": "P1 text-to-model endpoint schema referenced; exact resolved request body recorded in local CLI dry-run receipt."
+    },
+    {
+      "id": "T-BILLING",
+      "url": "https://developers.tripo3d.ai/en/docs/billing",
+      "note": "Official billing and balance surfaces reviewed; account-specific balance is not authenticated."
+    }
+  ],
+  "cli_evidence": {
+    "version": "0.7.2",
+    "dry_run_receipt": "docs/evidence/b01/H01-text-to-model-dry-run.json",
+    "dry_run_valid": true,
+    "request_count": 1,
+    "resolved_model": "P1-20260311",
+    "estimated_credits": 30
+  },
+  "notes": "Non-billable planning evidence only. No account authentication or generation occurred."
+}

@@ -1,0 +1,35 @@
+{
+  "dry_run": true,
+  "valid": true,
+  "input": "references\\production\\B14-P12-broad-leaf-plant.png",
+  "model": "P1-20260311",
+  "model_reason": "explicit --model",
+  "steps": [
+    {
+      "name": "image-to-model",
+      "endpoint": "/v3/generation/image-to-model",
+      "task_type": "image_to_model",
+      "payload": {
+        "input": "<upload:references\\production\\B14-P12-broad-leaf-plant.png>",
+        "model": "P1-20260311",
+        "face_limit": 450,
+        "texture": false,
+        "pbr": false,
+        "export_uv": true
+      }
+    }
+  ],
+  "pending_uploads": [
+    "references\\production\\B14-P12-broad-leaf-plant.png"
+  ],
+  "deliverables": [],
+  "candidates": 1,
+  "warnings": [],
+  "errors": [],
+  "cost_notes": [
+    "bare geometry: no texture credits"
+  ],
+  "reference_sha256": "80322b2011b5d346b6858b1134fdc13377630e2a01d72ccf8572ead4c078008e",
+  "reference_prompt": "Use case: stylized-concept. Clean game prop reference of one compact broad-leaf plant cluster for a cozy music workshop, roughly three stacked tiers of large simple heart-shaped leaves on a few thick sturdy stems, planted as a single reusable cluster; no pot, no flowers. Foliage uses deep sage and muted teal green with a few lighter undersides, softly stylized low-poly planes, readable uncluttered silhouette, handcrafted friendly look. Entire plant visible upright in a centered three-quarter view on a neutral light gray seamless background, even neutral studio lighting, soft contact shadow, no other objects, no text, no logo, no collage, square 1:1.",
+  "reference_provenance": "Generated with built-in image_gen for this asset reference."
+}

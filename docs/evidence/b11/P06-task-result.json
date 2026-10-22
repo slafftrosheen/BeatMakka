@@ -1,0 +1,14 @@
+{
+  "task_id": "add32aad-1457-469d-8afe-1c47b5a1aa3c",
+  "type": "image_to_model",
+  "status": "success",
+  "credits_consumed": 40,
+  "output_dir": "assets\\candidates\\tripo-out\\b11-p06-storage-crate-add32aad",
+  "files": [
+    "model.glb",
+    "rendered_image.webp",
+    "preview.png"
+  ],
+  "model_file": "assets\\candidates\\tripo-out\\b11-p06-storage-crate-add32aad\\model.glb",
+  "preview": "assets\\candidates\\tripo-out\\b11-p06-storage-crate-add32aad\\preview.png"
+}

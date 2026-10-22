@@ -1,0 +1,21 @@
+{
+  "batch_id": "B05-H03-image",
+  "asset_id": "H03",
+  "task_id": "0959611a-7ad8-4a88-a9ad-b9dfba678416",
+  "status": "success",
+  "model": "P1-20260311",
+  "operation": "image-to-model",
+  "credits_consumed": 40,
+  "input_reference": "references/production/B05-H03-vinyl-crate-shell.png",
+  "dry_run_receipt": "docs/evidence/b05/H03-image-to-model-dry-run.json",
+  "raw_output_dir": "assets/candidates/tripo-out/b05-h03-vinyl-crate-shell-0959611a",
+  "files": {
+    "model.glb": "2df14388fbb429e6d370455a71bb199650cba97303d3e811d5a3fcafaed68366",
+    "preview.png": "7b255f70c816bdf70b78331a8c769c7565410b122314f6f02ca676fd8b7c836c",
+    "task.json": "cd832e91bcfdd7fc9c30128592c6208deaf4302691897a18349dceeef345500e"
+  },
+  "preview_visual_review": "Provider preview shows a single open square crate shell with corner reinforcements and a front handhold opening. No record insert was generated, consistent with the separate-insert brief. Preview is monochrome gray.",
+  "acceptance_stage": "CANDIDATE_PENDING_DCC_AND_ART_REVIEW",
+  "balance_after_credits": 810,
+  "frozen_after_credits": 0
+}

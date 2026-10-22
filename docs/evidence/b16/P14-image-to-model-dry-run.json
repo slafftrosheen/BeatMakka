@@ -1,0 +1,35 @@
+{
+  "dry_run": true,
+  "valid": true,
+  "input": "references\\production\\B16-P14-utility-junction-box.png",
+  "model": "P1-20260311",
+  "model_reason": "explicit --model",
+  "steps": [
+    {
+      "name": "image-to-model",
+      "endpoint": "/v3/generation/image-to-model",
+      "task_type": "image_to_model",
+      "payload": {
+        "input": "<upload:references\\production\\B16-P14-utility-junction-box.png>",
+        "model": "P1-20260311",
+        "face_limit": 300,
+        "texture": false,
+        "pbr": false,
+        "export_uv": true
+      }
+    }
+  ],
+  "pending_uploads": [
+    "references\\production\\B16-P14-utility-junction-box.png"
+  ],
+  "deliverables": [],
+  "candidates": 1,
+  "warnings": [],
+  "errors": [],
+  "cost_notes": [
+    "bare geometry: no texture credits"
+  ],
+  "reference_sha256": "7cc3ef1b8db425bd76810ab440a0a736b7406998789a4af70cd2c451bd074635",
+  "reference_prompt": "Use case: stylized-concept. Single prop reference: compact wall-mounted utility junction box for a repaired cozy workshop, a chunky rectangular faded-teal painted-metal cabinet with rounded edges, thick walnut mounting backplate, simple hinged front door, one large clearly visible circular dark socket opening and one separate small cream status insert on the front. Show the box closed and front face readable at three-quarter view, with the small insert visibly distinct. Tactile matte surfaces, warm cream and teal palette, restrained brass screws. Neutral light gray seamless studio background, even neutral lighting, soft contact shadow, centered entire object, no wires, no wall scene, no text, no logo, no extra objects, no collage, square 1:1.",
+  "reference_provenance": "Generated with built-in image_gen for this asset reference."
+}

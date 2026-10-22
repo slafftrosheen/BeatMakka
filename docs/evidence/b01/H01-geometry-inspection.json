@@ -1,0 +1,12 @@
+{
+  "inspected_with": "Blender 5.2.2 background glTF import",
+  "source": "assets/candidates/tripo-out/b01-h01-sampler-housing-803380d4/model.glb",
+  "mesh_objects": 2,
+  "vertices": 1872,
+  "triangles": 2106,
+  "bounds_xyz": [2.0, 2.0, 2.0],
+  "materials": ["Material", "Material_0"],
+  "uv_layers": ["UVMap"],
+  "target_studs": [6.0, 1.25, 4.0],
+  "review": "Candidate is under the 2200-triangle housing cap, but bounds do not match target proportions and generated preview includes controls despite the shell-only prompt. Keep as unapproved candidate; do not wire into runtime."
+}

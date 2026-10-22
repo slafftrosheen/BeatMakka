@@ -1,0 +1,222 @@
+{
+  "blender_version": "5.2.2 LTS",
+  "assets": [
+    {
+      "asset_id": "P12",
+      "reimported_glb": "assets/cleaned/P12/P12_art_repair_candidate.glb",
+      "dimensions_blender_xyz": [
+        3.0,
+        3.0,
+        4.0
+      ],
+      "expected_xyz": [
+        3.0,
+        3.0,
+        4.0
+      ],
+      "pivot": "floor-center",
+      "pivot_anchor_xyz": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "triangles": 380,
+      "triangle_cap": 550,
+      "triangle_cap_pass": true,
+      "mesh_objects": 15,
+      "uv_layers_across_meshes": 15,
+      "uv_pass": true,
+      "materials": [
+        "FZ Leaf Light",
+        "FZ Leaf Sage"
+      ],
+      "dimensions_pass": true,
+      "pivot_pass": true,
+      "pass": true
+    },
+    {
+      "asset_id": "P13",
+      "reimported_glb": "assets/cleaned/P13/P13_art_repair_candidate.glb",
+      "dimensions_blender_xyz": [
+        1.5,
+        1.5,
+        2.0
+      ],
+      "expected_xyz": [
+        1.5,
+        1.5,
+        2.0
+      ],
+      "pivot": "rear-center",
+      "pivot_anchor_xyz": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "triangles": 312,
+      "triangle_cap": 500,
+      "triangle_cap_pass": true,
+      "mesh_objects": 6,
+      "uv_layers_across_meshes": 6,
+      "uv_pass": true,
+      "materials": [
+        "FZ Amber Indicator",
+        "FZ Faded Teal",
+        "FZ Walnut",
+        "FZ Warm Cream",
+        "FZ Workshop Teal"
+      ],
+      "dimensions_pass": true,
+      "pivot_pass": true,
+      "pass": true
+    },
+    {
+      "asset_id": "P14",
+      "reimported_glb": "assets/cleaned/P14/P14_art_repair_candidate.glb",
+      "dimensions_blender_xyz": [
+        2.0,
+        1.0,
+        3.0
+      ],
+      "expected_xyz": [
+        2.0,
+        1.0,
+        3.0
+      ],
+      "pivot": "rear-center",
+      "pivot_anchor_xyz": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "triangles": 396,
+      "triangle_cap": 400,
+      "triangle_cap_pass": true,
+      "mesh_objects": 5,
+      "uv_layers_across_meshes": 5,
+      "uv_pass": true,
+      "materials": [
+        "FZ Amber Indicator.001",
+        "FZ Graphite",
+        "FZ Walnut.001",
+        "FZ Warm Brass",
+        "FZ Workshop Teal.001"
+      ],
+      "dimensions_pass": true,
+      "pivot_pass": true,
+      "pass": true
+    },
+    {
+      "asset_id": "I01",
+      "reimported_glb": "assets/cleaned/I01/I01_art_repair_candidate.glb",
+      "dimensions_blender_xyz": [
+        3.0,
+        0.3,
+        2.0
+      ],
+      "expected_xyz": [
+        3.0,
+        0.3,
+        2.0
+      ],
+      "pivot": "upper-hinge",
+      "pivot_anchor_xyz": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "triangles": 260,
+      "triangle_cap": 300,
+      "triangle_cap_pass": true,
+      "mesh_objects": 7,
+      "uv_layers_across_meshes": 7,
+      "uv_pass": true,
+      "materials": [
+        "FZ Walnut.002",
+        "FZ Warm Brass.001",
+        "FZ Warm Cream.001",
+        "FZ Workshop Teal.002"
+      ],
+      "dimensions_pass": true,
+      "pivot_pass": true,
+      "pass": true
+    },
+    {
+      "asset_id": "I04",
+      "reimported_glb": "assets/cleaned/I04/I04_art_repair_candidate.glb",
+      "dimensions_blender_xyz": [
+        3.0,
+        1.5,
+        4.0
+      ],
+      "expected_xyz": [
+        3.0,
+        1.5,
+        4.0
+      ],
+      "pivot": "rear-center",
+      "pivot_anchor_xyz": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "triangles": 648,
+      "triangle_cap": 650,
+      "triangle_cap_pass": true,
+      "mesh_objects": 14,
+      "uv_layers_across_meshes": 14,
+      "uv_pass": true,
+      "materials": [
+        "FZ Amber Indicator.002",
+        "FZ Dusty Coral",
+        "FZ Faded Teal.001",
+        "FZ Graphite.001",
+        "FZ Teal Indicator",
+        "FZ Walnut.003",
+        "FZ Warm Brass.002",
+        "FZ Warm Cream.002",
+        "FZ Workshop Teal.003"
+      ],
+      "dimensions_pass": true,
+      "pivot_pass": true,
+      "pass": true
+    },
+    {
+      "asset_id": "I05",
+      "reimported_glb": "assets/cleaned/I05/I05_art_repair_candidate.glb",
+      "dimensions_blender_xyz": [
+        3.0,
+        2.0,
+        4.0
+      ],
+      "expected_xyz": [
+        3.0,
+        2.0,
+        4.0
+      ],
+      "pivot": "floor-center",
+      "pivot_anchor_xyz": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "triangles": 756,
+      "triangle_cap": 800,
+      "triangle_cap_pass": true,
+      "mesh_objects": 5,
+      "uv_layers_across_meshes": 5,
+      "uv_pass": true,
+      "materials": [
+        "FZ Amber Indicator.003",
+        "FZ Graphite.002",
+        "FZ Teal Indicator.001",
+        "FZ Walnut.004",
+        "FZ Workshop Teal.004"
+      ],
+      "dimensions_pass": true,
+      "pivot_pass": true,
+      "pass": true
+    }
+  ],
+  "all_pass": true
+}

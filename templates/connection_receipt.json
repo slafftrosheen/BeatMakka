@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-10-22T10:03:27Z",
+  "route": "tripo-cli",
+  "cli_version": "0.7.2",
+  "api_family": "v3",
+  "plugin_skill_present": true,
+  "tripo_mcp_present": false,
+  "authenticated": false,
+  "region": null,
+  "account_check": {
+    "doctor_ran": true,
+    "node_ok": true,
+    "api_key_present": false,
+    "api_reachability_checked": false,
+    "balance_checked": false,
+    "usage_checked": false
+  },
+  "capabilities": {
+    "explicit_face_limit": true,
+    "explicit_model_selection": true,
+    "p1_low_poly": true,
+    "geometry_only_texture_false_pbr_false": true,
+    "result_download": true,
+    "task_ids": true,
+    "usage_tracking_commands": true,
+    "account_usage_verified": false
+  },
+  "evidence": [
+    "docs/evidence/b00/tripo-version.txt",
+    "docs/evidence/b00/tripo-doctor.json",
+    "docs/evidence/b00/tripo-h01-dry-run.json",
+    "docs/evidence/b00/tripo-h05-dry-run.json",
+    "docs/evidence/b00/tripo-game-mobile-dry-run.json"
+  ],
+  "verified": false,
+  "notes": "Local schema and dry-run support are verified. Account, region, balance, and live usage are not verified. No credentials are stored in this receipt."
+}

@@ -1,0 +1,26 @@
+{
+  "asset_id": "P03",
+  "task_id": "a484dfae-34da-4a6d-917c-1d2da891f8c3",
+  "source": "assets/candidates/tripo-out/b09-p03-listening-bench-a484dfae/model.glb",
+  "inspection_method": "Blender 5.2.2 headless GLB import after clearing factory-startup scene; read-only scene inspection",
+  "mesh_objects": 1,
+  "triangles": 470,
+  "raw_local_bounds_blender_units_xyz": [
+    0.376953,
+    0.998047,
+    0.419922
+  ],
+  "target_studs_xyz": [
+    7,
+    3.5,
+    2.5
+  ],
+  "materials": [
+    "Material_0"
+  ],
+  "uv_layers": [
+    "UVMap"
+  ],
+  "pivot": "not measured",
+  "notes": "Triangle count is within the 500 candidate cap. Single connected monochrome mesh; raw normalized proportions differ from the 7 x 3.5 x 2.5 stud target and need deterministic DCC scaling and pivot work."
+}

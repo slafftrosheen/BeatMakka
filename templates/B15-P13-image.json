@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "batch_id": "B15-P13-IMAGE",
+  "authorization": {
+    "approved": true,
+    "approved_cap_credits": 40,
+    "approved_asset_ids": [
+      "P13"
+    ]
+  },
+  "quoted_total_credits": 40,
+  "docs_receipt": "docs/evidence/b11/docs_receipt.json",
+  "connection_receipt": "docs/evidence/b11/connection_receipt.json",
+  "requests": [
+    {
+      "asset_id": "P13",
+      "estimated_credits": 40,
+      "approved_reference": "references/production/B15-P13-lamp-core.png",
+      "face_limit": 400,
+      "dry_run_receipt": "docs/evidence/b15/P13-image-to-model-dry-run.json"
+    }
+  ]
+}

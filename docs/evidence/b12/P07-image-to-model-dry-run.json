@@ -1,0 +1,35 @@
+{
+  "dry_run": true,
+  "valid": true,
+  "input": "references\\production\\B12-P07-headphones.png",
+  "model": "P1-20260311",
+  "model_reason": "explicit --model",
+  "steps": [
+    {
+      "name": "image-to-model",
+      "endpoint": "/v3/generation/image-to-model",
+      "task_type": "image_to_model",
+      "payload": {
+        "input": "<upload:references\\production\\B12-P07-headphones.png>",
+        "model": "P1-20260311",
+        "face_limit": 800,
+        "texture": false,
+        "pbr": false,
+        "export_uv": true
+      }
+    }
+  ],
+  "pending_uploads": [
+    "references\\production\\B12-P07-headphones.png"
+  ],
+  "deliverables": [],
+  "candidates": 1,
+  "warnings": [],
+  "errors": [],
+  "cost_notes": [
+    "bare geometry: no texture credits"
+  ],
+  "reference_sha256": "24a6bf0bec44aa2ad63fd22fd9ec820c3a3878aff7b35f888c6128cbb0e38d5c",
+  "reference_prompt": "Use case: stylized-concept. Create a clean production reference for a single low-poly game prop: compact padded over-ear studio headphones, full silhouette visible, upright three-quarter front view, thick dark graphite headband, broad warm cream ear cushions, muted workshop teal ear cups with small walnut adjustment yokes. Warm tactile handmade industrial style from an indie music workshop, large readable forms, softly rounded corners, matte painted surfaces, restrained repair details. Neutral light gray seamless background, even neutral studio lighting, soft contact shadow, centered, no other objects, no hands, no text, no logos, no collage, no dramatic lighting, crisp silhouette, square 1:1 image.",
+  "reference_provenance": "Generated with built-in image_gen for this asset reference."
+}

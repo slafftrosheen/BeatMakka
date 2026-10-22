@@ -1,0 +1,35 @@
+{
+  "dry_run": true,
+  "valid": true,
+  "input": "references\\production\\B17-P16-rooftop-vent.png",
+  "model": "P1-20260311",
+  "model_reason": "explicit --model",
+  "steps": [
+    {
+      "name": "image-to-model",
+      "endpoint": "/v3/generation/image-to-model",
+      "task_type": "image_to_model",
+      "payload": {
+        "input": "<upload:references\\production\\B17-P16-rooftop-vent.png>",
+        "model": "P1-20260311",
+        "face_limit": 400,
+        "texture": false,
+        "pbr": false,
+        "export_uv": true
+      }
+    }
+  ],
+  "pending_uploads": [
+    "references\\production\\B17-P16-rooftop-vent.png"
+  ],
+  "deliverables": [],
+  "candidates": 1,
+  "warnings": [],
+  "errors": [],
+  "cost_notes": [
+    "bare geometry: no texture credits"
+  ],
+  "reference_sha256": "cc797978ef2153b1b2d518d867e697c3c0ba1ef515866cf6784fe47d6715c59c",
+  "reference_prompt": "Use case: stylized-concept. Clean isolated production reference for a small rooftop vent / duct prop from a warm, repaired music workshop. A low chunky square muted-teal metal roof vent with broad cream rim, short boxy duct and a prominent angled hood with dark opening; stout walnut mounting flange at the base, no long pipe. Clear silhouette and simple bold parts, matte painted metal, friendly soft industrial forms, restrained bolts. Three-quarter view slightly above to show hood opening and base. Neutral light gray seamless studio background, even light, soft contact shadow, centered single object only, no roof, no building, no wires, no text, no logos, no collage, square 1:1.",
+  "reference_provenance": "Generated with built-in image_gen for this asset reference."
+}

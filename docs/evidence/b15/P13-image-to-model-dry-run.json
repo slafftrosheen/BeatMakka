@@ -1,0 +1,35 @@
+{
+  "dry_run": true,
+  "valid": true,
+  "input": "references\\production\\B15-P13-lamp-core.png",
+  "model": "P1-20260311",
+  "model_reason": "explicit --model",
+  "steps": [
+    {
+      "name": "image-to-model",
+      "endpoint": "/v3/generation/image-to-model",
+      "task_type": "image_to_model",
+      "payload": {
+        "input": "<upload:references\\production\\B15-P13-lamp-core.png>",
+        "model": "P1-20260311",
+        "face_limit": 400,
+        "texture": false,
+        "pbr": false,
+        "export_uv": true
+      }
+    }
+  ],
+  "pending_uploads": [
+    "references\\production\\B15-P13-lamp-core.png"
+  ],
+  "deliverables": [],
+  "candidates": 1,
+  "warnings": [],
+  "errors": [],
+  "cost_notes": [
+    "bare geometry: no texture credits"
+  ],
+  "reference_sha256": "ec1f9c1654a501fdb7922a0c95402c6530a444c24ea4f085914ad19da25f85ca",
+  "reference_prompt": "Use case: stylized-concept. A clean single-object production reference for a reusable wall or pendant lamp core used in a cozy music workshop. Show one compact industrial wall sconce with a chunky rounded walnut wall plate and short teal metal arm holding a warm cream enamel shade; amber diffuser visible beneath. The geometry should clearly read as a shared lamp core that can be mounted on a wall or hung from a pendant bracket later, with simple attachment interfaces and no wires. Tactile rounded forms, matte painted metal, restrained detail, warm handmade indie game style. Three-quarter view, full object centered on neutral light gray seamless background, even studio lighting, soft contact shadow, no scene, no wall, no text, no logo, no collage, square 1:1.",
+  "reference_provenance": "Generated with built-in image_gen for this asset reference."
+}

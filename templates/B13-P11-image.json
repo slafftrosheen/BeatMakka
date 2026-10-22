@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "batch_id": "B13-P11-IMAGE",
+  "authorization": {
+    "approved": true,
+    "approved_cap_credits": 40,
+    "approved_asset_ids": [
+      "P11"
+    ]
+  },
+  "quoted_total_credits": 40,
+  "docs_receipt": "docs/evidence/b11/docs_receipt.json",
+  "connection_receipt": "docs/evidence/b11/connection_receipt.json",
+  "requests": [
+    {
+      "asset_id": "P11",
+      "estimated_credits": 40,
+      "approved_reference": "references/production/B13-P11-planter-pot.png",
+      "face_limit": 300,
+      "dry_run_receipt": "docs/evidence/b13/P11-image-to-model-dry-run.json"
+    }
+  ]
+}

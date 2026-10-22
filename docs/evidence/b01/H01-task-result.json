@@ -1,0 +1,17 @@
+{
+  "task_id": "803380d4-9f8a-41fd-9ece-d935e4565fb6",
+  "type": "text_to_model",
+  "status": "success",
+  "model": "P1-20260311",
+  "credits_consumed": 30,
+  "output_dir": "assets/candidates/tripo-out/b01-h01-sampler-housing-803380d4",
+  "files": [
+    "model.glb",
+    "rendered_image.webp",
+    "generated_image.jpeg",
+    "preview.png",
+    "task.json"
+  ],
+  "model_file": "assets/candidates/tripo-out/b01-h01-sampler-housing-803380d4/model.glb",
+  "preview": "assets/candidates/tripo-out/b01-h01-sampler-housing-803380d4/preview.png"
+}

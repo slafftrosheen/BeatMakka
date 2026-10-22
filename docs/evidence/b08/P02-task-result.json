@@ -1,0 +1,21 @@
+{
+  "batch_id": "B08-P02-image",
+  "asset_id": "P02",
+  "task_id": "3c9288ec-22fe-4efb-8ac6-9e176a95c861",
+  "status": "success",
+  "model": "P1-20260311",
+  "operation": "image-to-model",
+  "credits_consumed": 40,
+  "input_reference": "references/production/B08-P02-round-workshop-stool.png",
+  "dry_run_receipt": "docs/evidence/b08/P02-image-to-model-dry-run.json",
+  "raw_output_dir": "assets/candidates/tripo-out/b08-p02-round-workshop-stool-3c9288ec",
+  "files": {
+    "model.glb": "31e85b42b759d516b2488ad11ab670f7132288b16c315ea237e6e419d8caf031",
+    "preview.png": "2f58d657d893b08f8b82761bf90e4a814df87cc61d2d100f11cb1c6e7150c3f0",
+    "task.json": "f54e2c71c5c9d24ca40573d37de515e4b1782667f3d2148867549510499c222e"
+  },
+  "preview_visual_review": "Round seat on four sturdy legs with a broad support ring; reads as a stable stool. Provider preview is monochrome gray.",
+  "acceptance_stage": "CANDIDATE_PENDING_DCC_AND_ART_REVIEW",
+  "balance_after_credits": 690,
+  "frozen_after_credits": 0
+}

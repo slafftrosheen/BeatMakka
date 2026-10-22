@@ -1,0 +1,1771 @@
+{
+  "schema_version": 1,
+  "derived_from": "Asset_Production_Register.xlsx",
+  "assets": [
+    {
+      "id": "H01",
+      "name": "MK-I sampler workstation",
+      "priority": "P0",
+      "route": "HYBRID_TRIPO",
+      "placed_units": 3,
+      "full_asset_triangle_budget": 4500,
+      "tripo_face_limit": 2200,
+      "texture_cap_px": 1024,
+      "status": "DCC surface-repaired candidate; residual topology flags and Studio visual review pending",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "6 x 1.25 x 4 studs",
+        "pivot_or_forward": "Bottom-center; controls face -Z",
+        "collision": "One optional query proxy; no decorative collisions",
+        "separate_or_moving_parts": "16 logical pad targets; screen plane; optional pad travel",
+        "dependencies": [
+          "T01",
+          "G03",
+          "U01"
+        ],
+        "acceptance": "16 correctly mapped pads; screen separate; readable at play distance; no baked labels needed for gameplay."
+      },
+      "dcc_candidate": "assets/cleaned/H01/H01_sampler_shell_surface_repaired.glb",
+      "surface_audit": "docs/evidence/cleaned-asset-surface-review.md"
+    },
+    {
+      "id": "H02",
+      "name": "Compact speaker stack",
+      "priority": "P0",
+      "route": "HYBRID_TRIPO",
+      "placed_units": 3,
+      "full_asset_triangle_budget": 2200,
+      "tripo_face_limit": 1800,
+      "texture_cap_px": 1024,
+      "status": "DCC surface-repaired candidate; Studio import and visual review pending",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "4 x 8 x 3 studs",
+        "pivot_or_forward": "Floor-center; cone forward -Z",
+        "collision": "Simple box, not cone mesh",
+        "separate_or_moving_parts": "Woofer / horn face targets; no physics vibration",
+        "dependencies": [
+          "T01"
+        ],
+        "acceptance": "Stacking socket aligned; cone child named; no animated collision; quiet state visually complete."
+      },
+      "dcc_candidate": "assets/cleaned/H02/H02_compact_speaker_stack_surface_repaired.glb",
+      "surface_audit": "docs/evidence/cleaned-asset-surface-review.md"
+    },
+    {
+      "id": "H03",
+      "name": "Vinyl crate and record insert",
+      "priority": "P0",
+      "route": "HYBRID_TRIPO",
+      "placed_units": 8,
+      "full_asset_triangle_budget": 950,
+      "tripo_face_limit": 650,
+      "texture_cap_px": 1024,
+      "status": "DCC surface-repaired candidate; Studio import and visual review pending",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "3 x 2.5 x 3 studs",
+        "pivot_or_forward": "Floor-center",
+        "collision": "Box for solid placed crates; inserts noncolliding",
+        "separate_or_moving_parts": "Separate record insert only",
+        "dependencies": [
+          "T02",
+          "G01"
+        ],
+        "acceptance": "Empty shell plus one insert delivered; artwork original; browse proxy independent of insert."
+      },
+      "dcc_candidate": "assets/cleaned/H03/H03_vinyl_crate_shell_surface_repaired.glb",
+      "surface_audit": "docs/evidence/cleaned-asset-surface-review.md"
+    },
+    {
+      "id": "H04",
+      "name": "Maintenance helper robot",
+      "priority": "P0",
+      "route": "HYBRID_TRIPO",
+      "placed_units": 1,
+      "full_asset_triangle_budget": 5000,
+      "tripo_face_limit": 3500,
+      "texture_cap_px": 1024,
+      "status": "DCC surface-repaired candidate; Studio import and visual review pending",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "3.5 x 4 x 3 studs",
+        "pivot_or_forward": "Root at floor-center; face -Z",
+        "collision": "Single stable body proxy; cosmetic wheels",
+        "separate_or_moving_parts": "Root, head yaw/pitch, two arm pivots, wheel/tread surfaces",
+        "dependencies": [
+          "T01",
+          "G03"
+        ],
+        "acceptance": "Robot remains readable without glow; chirp interaction socket present; no per-link tread simulation."
+      },
+      "dcc_candidate": "assets/cleaned/H04/H04_maintenance_helper_robot_surface_repaired.glb",
+      "surface_audit": "docs/evidence/cleaned-asset-surface-review.md"
+    },
+    {
+      "id": "H05",
+      "name": "Curved street lamp",
+      "priority": "P0",
+      "route": "HYBRID_TRIPO",
+      "placed_units": 6,
+      "full_asset_triangle_budget": 1100,
+      "tripo_face_limit": 900,
+      "texture_cap_px": 1024,
+      "status": "DCC surface-repaired candidate; Studio import and visual review pending",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "2.5 x 12 x 3 studs",
+        "pivot_or_forward": "Floor-center",
+        "collision": "Pole/base box only",
+        "separate_or_moving_parts": "Bulb/glass target; light attachment",
+        "dependencies": [
+          "T01"
+        ],
+        "acceptance": "Emissive insert separate from glass; lit silhouette readable with local light disabled."
+      },
+      "dcc_candidate": "assets/cleaned/H05/H05_curved_street_lamp_scaled_surface_repaired.glb",
+      "surface_audit": "docs/evidence/cleaned-asset-surface-review.md"
+    },
+    {
+      "id": "H06",
+      "name": "Record-shop / workshop shell",
+      "priority": "P0",
+      "route": "STUDIO_ASSEMBLY",
+      "placed_units": 1,
+      "full_asset_triangle_budget": null,
+      "tripo_face_limit": null,
+      "texture_cap_px": 1024,
+      "status": "Not started",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "32 x 16 x 24 studs",
+        "pivot_or_forward": "Front-left floor grid corner",
+        "collision": "Modular proxies; portal remains clear",
+        "separate_or_moving_parts": "Door and optional shutter; sign face separate",
+        "dependencies": [
+          "M01",
+          "M03",
+          "M04",
+          "M05",
+          "M06",
+          "M07",
+          "M08",
+          "M10",
+          "M11",
+          "M12",
+          "M17",
+          "T02",
+          "T03",
+          "T04"
+        ],
+        "acceptance": "One modular shell, not a fused diorama; 24 x 20 usable interior; doorway and camera clearances pass."
+      }
+    },
+    {
+      "id": "M01",
+      "name": "Full wall bay",
+      "priority": "P0",
+      "route": "DCC_EXACT",
+      "placed_units": 16,
+      "full_asset_triangle_budget": 350,
+      "tripo_face_limit": null,
+      "texture_cap_px": 512,
+      "status": "Not started",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "8 x 12 x 1",
+        "pivot_or_forward": "Lower-left grid corner",
+        "collision": "Simple proxy; door opening excluded",
+        "separate_or_moving_parts": "None",
+        "dependencies": [
+          "T01",
+          "T02",
+          "T03"
+        ],
+        "acceptance": "Snaps to 4-stud planning / 8-stud bay grid; no seams, inverted faces or blocked route."
+      }
+    },
+    {
+      "id": "M02",
+      "name": "Half wall bay",
+      "priority": "P1",
+      "route": "DCC_EXACT",
+      "placed_units": 6,
+      "full_asset_triangle_budget": 250,
+      "tripo_face_limit": null,
+      "texture_cap_px": 512,
+      "status": "Not started",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "4 x 12 x 1",
+        "pivot_or_forward": "Lower-left grid corner",
+        "collision": "Simple proxy; door opening excluded",
+        "separate_or_moving_parts": "None",
+        "dependencies": [
+          "T01",
+          "T02",
+          "T03"
+        ],
+        "acceptance": "Snaps to 4-stud planning / 8-stud bay grid; no seams, inverted faces or blocked route."
+      }
+    },
+    {
+      "id": "M03",
+      "name": "Corner post",
+      "priority": "P0",
+      "route": "DCC_EXACT",
+      "placed_units": 8,
+      "full_asset_triangle_budget": 220,
+      "tripo_face_limit": null,
+      "texture_cap_px": 512,
+      "status": "Not started",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "1 x 12 x 1",
+        "pivot_or_forward": "Lower-left grid corner",
+        "collision": "Simple proxy; door opening excluded",
+        "separate_or_moving_parts": "None",
+        "dependencies": [
+          "T01",
+          "T02",
+          "T03"
+        ],
+        "acceptance": "Snaps to 4-stud planning / 8-stud bay grid; no seams, inverted faces or blocked route."
+      }
+    },
+    {
+      "id": "M04",
+      "name": "Door portal bay",
+      "priority": "P0",
+      "route": "DCC_EXACT",
+      "placed_units": 2,
+      "full_asset_triangle_budget": 450,
+      "tripo_face_limit": null,
+      "texture_cap_px": 512,
+      "status": "Not started",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "8 x 12 x 1",
+        "pivot_or_forward": "Lower-left grid corner",
+        "collision": "Simple proxy; door opening excluded",
+        "separate_or_moving_parts": "None",
+        "dependencies": [
+          "T01",
+          "T02",
+          "T03"
+        ],
+        "acceptance": "Snaps to 4-stud planning / 8-stud bay grid; no seams, inverted faces or blocked route."
+      }
+    },
+    {
+      "id": "M05",
+      "name": "Display window bay",
+      "priority": "P0",
+      "route": "DCC_EXACT",
+      "placed_units": 3,
+      "full_asset_triangle_budget": 550,
+      "tripo_face_limit": null,
+      "texture_cap_px": 512,
+      "status": "Not started",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "8 x 12 x 1",
+        "pivot_or_forward": "Lower-left grid corner",
+        "collision": "Simple proxy; door opening excluded",
+        "separate_or_moving_parts": "None",
+        "dependencies": [
+          "T01",
+          "T02",
+          "T03"
+        ],
+        "acceptance": "Snaps to 4-stud planning / 8-stud bay grid; no seams, inverted faces or blocked route."
+      }
+    },
+    {
+      "id": "M06",
+      "name": "Door leaf",
+      "priority": "P0",
+      "route": "DCC_EXACT",
+      "placed_units": 2,
+      "full_asset_triangle_budget": 400,
+      "tripo_face_limit": null,
+      "texture_cap_px": 512,
+      "status": "Not started",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "6 x 10 x 0.5",
+        "pivot_or_forward": "Hinge edge",
+        "collision": "Simple proxy; door opening excluded",
+        "separate_or_moving_parts": "Hinge",
+        "dependencies": [
+          "T01",
+          "T02",
+          "T03"
+        ],
+        "acceptance": "Snaps to 4-stud planning / 8-stud bay grid; no seams, inverted faces or blocked route."
+      }
+    },
+    {
+      "id": "M07",
+      "name": "Floor tile",
+      "priority": "P0",
+      "route": "DCC_EXACT",
+      "placed_units": 12,
+      "full_asset_triangle_budget": 120,
+      "tripo_face_limit": null,
+      "texture_cap_px": 512,
+      "status": "Not started",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "8 x 1 x 8",
+        "pivot_or_forward": "Lower-left grid corner",
+        "collision": "Simple proxy; door opening excluded",
+        "separate_or_moving_parts": "None",
+        "dependencies": [
+          "T01",
+          "T02",
+          "T03"
+        ],
+        "acceptance": "Snaps to 4-stud planning / 8-stud bay grid; no seams, inverted faces or blocked route."
+      }
+    },
+    {
+      "id": "M08",
+      "name": "Roof panel",
+      "priority": "P0",
+      "route": "DCC_EXACT",
+      "placed_units": 12,
+      "full_asset_triangle_budget": 160,
+      "tripo_face_limit": null,
+      "texture_cap_px": 512,
+      "status": "Not started",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "8 x 1 x 8",
+        "pivot_or_forward": "Lower-left grid corner",
+        "collision": "Simple proxy; door opening excluded",
+        "separate_or_moving_parts": "None",
+        "dependencies": [
+          "T01",
+          "T02",
+          "T03"
+        ],
+        "acceptance": "Snaps to 4-stud planning / 8-stud bay grid; no seams, inverted faces or blocked route."
+      }
+    },
+    {
+      "id": "M09",
+      "name": "Roof-edge trim",
+      "priority": "P1",
+      "route": "DCC_EXACT",
+      "placed_units": 12,
+      "full_asset_triangle_budget": 220,
+      "tripo_face_limit": null,
+      "texture_cap_px": 512,
+      "status": "Not started",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "8 x 1 x 1",
+        "pivot_or_forward": "Lower-left grid corner",
+        "collision": "Simple proxy; door opening excluded",
+        "separate_or_moving_parts": "None",
+        "dependencies": [
+          "T01",
+          "T02",
+          "T03"
+        ],
+        "acceptance": "Snaps to 4-stud planning / 8-stud bay grid; no seams, inverted faces or blocked route."
+      }
+    },
+    {
+      "id": "M10",
+      "name": "Striped awning bay",
+      "priority": "P0",
+      "route": "DCC_EXACT",
+      "placed_units": 3,
+      "full_asset_triangle_budget": 650,
+      "tripo_face_limit": null,
+      "texture_cap_px": 512,
+      "status": "Not started",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "8 x 2 x 4",
+        "pivot_or_forward": "Lower-left grid corner",
+        "collision": "Simple proxy; door opening excluded",
+        "separate_or_moving_parts": "None",
+        "dependencies": [
+          "T02",
+          "T03",
+          "T04"
+        ],
+        "acceptance": "Snaps to 4-stud planning / 8-stud bay grid; no seams, inverted faces or blocked route."
+      }
+    },
+    {
+      "id": "M11",
+      "name": "Entry step unit",
+      "priority": "P0",
+      "route": "DCC_EXACT",
+      "placed_units": 2,
+      "full_asset_triangle_budget": 220,
+      "tripo_face_limit": null,
+      "texture_cap_px": 512,
+      "status": "Not started",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "8 x 2 x 4",
+        "pivot_or_forward": "Lower-left grid corner",
+        "collision": "Simple proxy; door opening excluded",
+        "separate_or_moving_parts": "None",
+        "dependencies": [
+          "T01",
+          "T02",
+          "T03"
+        ],
+        "acceptance": "Snaps to 4-stud planning / 8-stud bay grid; no seams, inverted faces or blocked route."
+      }
+    },
+    {
+      "id": "M12",
+      "name": "Access ramp",
+      "priority": "P0",
+      "route": "DCC_EXACT",
+      "placed_units": 1,
+      "full_asset_triangle_budget": 100,
+      "tripo_face_limit": null,
+      "texture_cap_px": 512,
+      "status": "Not started",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "8 x 2 x 8",
+        "pivot_or_forward": "Lower-left grid corner",
+        "collision": "Simple proxy; door opening excluded",
+        "separate_or_moving_parts": "None",
+        "dependencies": [
+          "T01",
+          "T02",
+          "T03"
+        ],
+        "acceptance": "Snaps to 4-stud planning / 8-stud bay grid; no seams, inverted faces or blocked route."
+      }
+    },
+    {
+      "id": "M13",
+      "name": "Paving tile",
+      "priority": "P0",
+      "route": "DCC_EXACT",
+      "placed_units": 48,
+      "full_asset_triangle_budget": 120,
+      "tripo_face_limit": null,
+      "texture_cap_px": 512,
+      "status": "Not started",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "8 x 0.5 x 8",
+        "pivot_or_forward": "Lower-left grid corner",
+        "collision": "Simple proxy; door opening excluded",
+        "separate_or_moving_parts": "None",
+        "dependencies": [
+          "T01",
+          "T02",
+          "T03"
+        ],
+        "acceptance": "Snaps to 4-stud planning / 8-stud bay grid; no seams, inverted faces or blocked route."
+      }
+    },
+    {
+      "id": "M14",
+      "name": "Curb section",
+      "priority": "P1",
+      "route": "DCC_EXACT",
+      "placed_units": 18,
+      "full_asset_triangle_budget": 160,
+      "tripo_face_limit": null,
+      "texture_cap_px": 512,
+      "status": "Not started",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "8 x 1 x 1",
+        "pivot_or_forward": "Lower-left grid corner",
+        "collision": "Simple proxy; door opening excluded",
+        "separate_or_moving_parts": "None",
+        "dependencies": [
+          "T01",
+          "T02",
+          "T03"
+        ],
+        "acceptance": "Snaps to 4-stud planning / 8-stud bay grid; no seams, inverted faces or blocked route."
+      }
+    },
+    {
+      "id": "M15",
+      "name": "Waterfront railing",
+      "priority": "P0",
+      "route": "DCC_EXACT",
+      "placed_units": 10,
+      "full_asset_triangle_budget": 450,
+      "tripo_face_limit": null,
+      "texture_cap_px": 512,
+      "status": "Not started",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "8 x 4 x 0.5",
+        "pivot_or_forward": "Lower-left grid corner",
+        "collision": "Simple proxy; door opening excluded",
+        "separate_or_moving_parts": "None",
+        "dependencies": [
+          "T01",
+          "T02",
+          "T03"
+        ],
+        "acceptance": "Snaps to 4-stud planning / 8-stud bay grid; no seams, inverted faces or blocked route."
+      }
+    },
+    {
+      "id": "M16",
+      "name": "Roof parapet",
+      "priority": "P1",
+      "route": "DCC_EXACT",
+      "placed_units": 6,
+      "full_asset_triangle_budget": 250,
+      "tripo_face_limit": null,
+      "texture_cap_px": 512,
+      "status": "Not started",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "8 x 3 x 1",
+        "pivot_or_forward": "Lower-left grid corner",
+        "collision": "Simple proxy; door opening excluded",
+        "separate_or_moving_parts": "None",
+        "dependencies": [
+          "T01",
+          "T02",
+          "T03"
+        ],
+        "acceptance": "Snaps to 4-stud planning / 8-stud bay grid; no seams, inverted faces or blocked route."
+      }
+    },
+    {
+      "id": "M17",
+      "name": "Vinyl storefront sign",
+      "priority": "P0",
+      "route": "DCC_EXACT",
+      "placed_units": 1,
+      "full_asset_triangle_budget": 750,
+      "tripo_face_limit": null,
+      "texture_cap_px": 512,
+      "status": "Not started",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "8 x 8 x 1",
+        "pivot_or_forward": "Lower-left grid corner",
+        "collision": "Simple proxy; door opening excluded",
+        "separate_or_moving_parts": "None",
+        "dependencies": [
+          "T01",
+          "T02",
+          "T03"
+        ],
+        "acceptance": "Snaps to 4-stud planning / 8-stud bay grid; no seams, inverted faces or blocked route."
+      }
+    },
+    {
+      "id": "M18",
+      "name": "Shop shutter",
+      "priority": "P2",
+      "route": "DCC_EXACT",
+      "placed_units": 1,
+      "full_asset_triangle_budget": 300,
+      "tripo_face_limit": null,
+      "texture_cap_px": 512,
+      "status": "Not started",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "8 x 10 x 0.5",
+        "pivot_or_forward": "Lower-left grid corner",
+        "collision": "Simple proxy; door opening excluded",
+        "separate_or_moving_parts": "Shutter transform",
+        "dependencies": [
+          "T01",
+          "T02",
+          "T03"
+        ],
+        "acceptance": "Snaps to 4-stud planning / 8-stud bay grid; no seams, inverted faces or blocked route."
+      }
+    },
+    {
+      "id": "P01",
+      "name": "Studio workbench",
+      "priority": "P0",
+      "route": "TRIPO_PROP",
+      "placed_units": 2,
+      "full_asset_triangle_budget": 900,
+      "tripo_face_limit": 700,
+      "texture_cap_px": 512,
+      "status": "DCC surface-repaired candidate; Studio import and visual review pending",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "8 x 3.5 x 4",
+        "pivot_or_forward": "Floor-center; wall props rear-center",
+        "collision": "Simple proxy if solid; small dressing none",
+        "separate_or_moving_parts": "None",
+        "dependencies": [
+          "T01",
+          "T02",
+          "T04"
+        ],
+        "acceptance": "H01 footprint fits; standing interaction needs no seat."
+      },
+      "dcc_candidate": "assets/cleaned/P01/P01_studio_workbench_surface_repaired.glb",
+      "surface_audit": "docs/evidence/cleaned-asset-surface-review.md"
+    },
+    {
+      "id": "P02",
+      "name": "Round workshop stool",
+      "priority": "P1",
+      "route": "TRIPO_PROP",
+      "placed_units": 3,
+      "full_asset_triangle_budget": 450,
+      "tripo_face_limit": 350,
+      "texture_cap_px": 512,
+      "status": "DCC surface-repaired candidate; Studio import and visual review pending",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "2.5 x 3 x 2.5",
+        "pivot_or_forward": "Floor-center; wall props rear-center",
+        "collision": "Simple proxy if solid; small dressing none",
+        "separate_or_moving_parts": "None",
+        "dependencies": [
+          "T01",
+          "T02",
+          "T04"
+        ],
+        "acceptance": "Optional seating only; cannot block station."
+      },
+      "dcc_candidate": "assets/cleaned/P02/P02_round_workshop_stool_surface_repaired.glb",
+      "surface_audit": "docs/evidence/cleaned-asset-surface-review.md"
+    },
+    {
+      "id": "P03",
+      "name": "Listening bench",
+      "priority": "P1",
+      "route": "TRIPO_PROP",
+      "placed_units": 2,
+      "full_asset_triangle_budget": 650,
+      "tripo_face_limit": 500,
+      "texture_cap_px": 512,
+      "status": "DCC surface-repaired candidate; Studio import and visual review pending",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "7 x 3.5 x 2.5",
+        "pivot_or_forward": "Floor-center; wall props rear-center",
+        "collision": "Simple proxy if solid; small dressing none",
+        "separate_or_moving_parts": "None",
+        "dependencies": [
+          "T01",
+          "T02",
+          "T04"
+        ],
+        "acceptance": "Sightline to stage; accessible approach."
+      },
+      "dcc_candidate": "assets/cleaned/P03/P03_listening_bench_surface_repaired.glb",
+      "surface_audit": "docs/evidence/cleaned-asset-surface-review.md"
+    },
+    {
+      "id": "P04",
+      "name": "Record browsing bin",
+      "priority": "P1",
+      "route": "HYBRID_TRIPO",
+      "placed_units": 3,
+      "full_asset_triangle_budget": 800,
+      "tripo_face_limit": 650,
+      "texture_cap_px": 512,
+      "status": "DCC surface-repaired candidate; Studio import and visual review pending",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "5 x 3.5 x 3",
+        "pivot_or_forward": "Floor-center; wall props rear-center",
+        "collision": "Simple proxy if solid; small dressing none",
+        "separate_or_moving_parts": "None",
+        "dependencies": [
+          "T01",
+          "T02",
+          "T04",
+          "G01"
+        ],
+        "acceptance": "Browse socket on front; artwork legible at close range."
+      },
+      "dcc_candidate": "assets/cleaned/P04/P04_record_browsing_bin_surface_repaired.glb",
+      "surface_audit": "docs/evidence/cleaned-asset-surface-review.md"
+    },
+    {
+      "id": "P05",
+      "name": "Wall shelf",
+      "priority": "P1",
+      "route": "TRIPO_PROP",
+      "placed_units": 3,
+      "full_asset_triangle_budget": 300,
+      "tripo_face_limit": 250,
+      "texture_cap_px": 512,
+      "status": "DCC-exact candidate; art and Studio validation pending",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "6 x 0.7 x 1.5",
+        "pivot_or_forward": "Floor-center; wall props rear-center",
+        "collision": "Simple proxy if solid; small dressing none",
+        "separate_or_moving_parts": "None",
+        "dependencies": [
+          "T01",
+          "T02",
+          "T04"
+        ],
+        "acceptance": "Mounted off head/camera route; shared props not embedded duplicates."
+      },
+      "dcc_candidate": "assets/cleaned/P05/P05_wall_shelf.glb",
+      "surface_audit": "docs/evidence/cleaned-asset-surface-review.md"
+    },
+    {
+      "id": "P06",
+      "name": "Storage crate",
+      "priority": "P0",
+      "route": "TRIPO_PROP",
+      "placed_units": 5,
+      "full_asset_triangle_budget": 350,
+      "tripo_face_limit": 280,
+      "texture_cap_px": 512,
+      "status": "DCC surface-repaired candidate; Studio import and visual review pending",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "3 x 3 x 3",
+        "pivot_or_forward": "Floor-center; wall props rear-center",
+        "collision": "Simple proxy if solid; small dressing none",
+        "separate_or_moving_parts": "None",
+        "dependencies": [
+          "T01",
+          "T02",
+          "T04"
+        ],
+        "acceptance": "Box collider; repeat uses same mesh ID."
+      },
+      "dcc_candidate": "assets/cleaned/P06/P06_normalized_geometry_candidate_surface_repaired.glb",
+      "dcc_evidence": "docs/evidence/dcc-normalization/remaining-batch-export-inspection.json",
+      "surface_audit": "docs/evidence/cleaned-asset-surface-review.md"
+    },
+    {
+      "id": "P07",
+      "name": "Headphones",
+      "priority": "P1",
+      "route": "TRIPO_PROP",
+      "placed_units": 1,
+      "full_asset_triangle_budget": 1000,
+      "tripo_face_limit": 800,
+      "texture_cap_px": 512,
+      "status": "DCC surface-repaired candidate; Studio import and visual review pending",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "2 x 1.5 x 0.8",
+        "pivot_or_forward": "Floor-center; wall props rear-center",
+        "collision": "Simple proxy if solid; small dressing none",
+        "separate_or_moving_parts": "None",
+        "dependencies": [
+          "T01",
+          "T02",
+          "T04"
+        ],
+        "acceptance": "Reads as headphones at medium shot; does not become a functional mic promise."
+      },
+      "dcc_candidate": "assets/cleaned/P07/P07_normalized_geometry_candidate_surface_repaired.glb",
+      "dcc_evidence": "docs/evidence/dcc-normalization/remaining-batch-export-inspection.json",
+      "surface_audit": "docs/evidence/cleaned-asset-surface-review.md"
+    },
+    {
+      "id": "P08",
+      "name": "Woven studio rug",
+      "priority": "P1",
+      "route": "DCC_EXACT",
+      "placed_units": 1,
+      "full_asset_triangle_budget": 24,
+      "tripo_face_limit": null,
+      "texture_cap_px": 512,
+      "status": "Not started",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "10 x 0.05 x 8",
+        "pivot_or_forward": "Floor-center; wall props rear-center",
+        "collision": "Simple proxy if solid; small dressing none",
+        "separate_or_moving_parts": "None",
+        "dependencies": [
+          "T01",
+          "T02",
+          "T04"
+        ],
+        "acceptance": "No floor z-fighting; noncolliding."
+      }
+    },
+    {
+      "id": "P09",
+      "name": "Cable-run kit",
+      "priority": "P0",
+      "route": "DCC_EXACT",
+      "placed_units": 8,
+      "full_asset_triangle_budget": 220,
+      "tripo_face_limit": null,
+      "texture_cap_px": 512,
+      "status": "Not started",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "4 / 8 length; 0.2 diameter",
+        "pivot_or_forward": "Floor-center; wall props rear-center",
+        "collision": "Simple proxy if solid; small dressing none",
+        "separate_or_moving_parts": "None",
+        "dependencies": [
+          "T01",
+          "T02",
+          "T04"
+        ],
+        "acceptance": "No physics cables; simplified at distance; route does not imply a puzzle unless tagged."
+      }
+    },
+    {
+      "id": "P10",
+      "name": "Cable coil",
+      "priority": "P2",
+      "route": "DCC_EXACT",
+      "placed_units": 2,
+      "full_asset_triangle_budget": 450,
+      "tripo_face_limit": null,
+      "texture_cap_px": 512,
+      "status": "Not started",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "2 x 0.3 x 2",
+        "pivot_or_forward": "Floor-center; wall props rear-center",
+        "collision": "Simple proxy if solid; small dressing none",
+        "separate_or_moving_parts": "None",
+        "dependencies": [
+          "T01",
+          "T02",
+          "T04"
+        ],
+        "acceptance": "Noncolliding; removable without losing scene meaning."
+      }
+    },
+    {
+      "id": "P11",
+      "name": "Planter pot",
+      "priority": "P1",
+      "route": "TRIPO_PROP",
+      "placed_units": 6,
+      "full_asset_triangle_budget": 400,
+      "tripo_face_limit": 300,
+      "texture_cap_px": 512,
+      "status": "DCC surface-repaired candidate; Studio import and visual review pending",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "2 x 2.5 x 2",
+        "pivot_or_forward": "Floor-center; wall props rear-center",
+        "collision": "Simple proxy if solid; small dressing none",
+        "separate_or_moving_parts": "None",
+        "dependencies": [
+          "T01",
+          "T02",
+          "T04"
+        ],
+        "acceptance": "Foliage socket centered; separate plant reusable."
+      },
+      "dcc_candidate": "assets/cleaned/P11/P11_normalized_geometry_candidate_surface_repaired.glb",
+      "dcc_evidence": "docs/evidence/dcc-normalization/remaining-batch-export-inspection.json",
+      "surface_audit": "docs/evidence/cleaned-asset-surface-review.md"
+    },
+    {
+      "id": "P12",
+      "name": "Broad-leaf plant cluster",
+      "priority": "P1",
+      "route": "TRIPO_PROP",
+      "placed_units": 8,
+      "full_asset_triangle_budget": 550,
+      "tripo_face_limit": 450,
+      "texture_cap_px": 512,
+      "status": "DCC solid-geometry repair candidate; Studio import and art review pending",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "3 x 4 x 3",
+        "pivot_or_forward": "Floor-center; wall props rear-center",
+        "collision": "Simple proxy if solid; small dressing none",
+        "separate_or_moving_parts": "None",
+        "dependencies": [
+          "T01",
+          "T02",
+          "T04"
+        ],
+        "acceptance": "Low transparency layering; no leaf collisions."
+      },
+      "dcc_candidate": "assets/cleaned/P12/P12_solid_repair_candidate.glb",
+      "dcc_evidence": "docs/evidence/dcc-normalization/solid-repair-candidates.json",
+      "surface_audit": "docs/evidence/cleaned-asset-surface-review.md"
+    },
+    {
+      "id": "P13",
+      "name": "Wall / pendant lamp family",
+      "priority": "P0",
+      "route": "HYBRID_TRIPO",
+      "placed_units": 4,
+      "full_asset_triangle_budget": 500,
+      "tripo_face_limit": 400,
+      "texture_cap_px": 512,
+      "status": "Art-reviewed DCC candidate; Studio import and runtime validation pending",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "1.5 x 2 x 1.5",
+        "pivot_or_forward": "Floor-center; wall props rear-center",
+        "collision": "Simple proxy if solid; small dressing none",
+        "separate_or_moving_parts": "None",
+        "dependencies": [
+          "T01",
+          "T02",
+          "T04"
+        ],
+        "acceptance": "Shared lamp core; light attachment consistent."
+      },
+      "dcc_candidate": "assets/cleaned/P13/P13_art_repair_candidate.glb",
+      "dcc_evidence": "docs/evidence/dcc-normalization/art-repair-export-inspection.json",
+      "surface_audit": "docs/evidence/cleaned-asset-surface-review.md"
+    },
+    {
+      "id": "P14",
+      "name": "Utility junction box",
+      "priority": "P0",
+      "route": "HYBRID_TRIPO",
+      "placed_units": 2,
+      "full_asset_triangle_budget": 400,
+      "tripo_face_limit": 300,
+      "texture_cap_px": 512,
+      "status": "DCC solid-geometry repair candidate; Studio import and art review pending",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "2 x 3 x 1",
+        "pivot_or_forward": "Floor-center; wall props rear-center",
+        "collision": "Simple proxy if solid; small dressing none",
+        "separate_or_moving_parts": "None",
+        "dependencies": [
+          "T01",
+          "T02",
+          "T04"
+        ],
+        "acceptance": "Front socket and status insert separate."
+      },
+      "dcc_candidate": "assets/cleaned/P14/P14_solid_repair_candidate.glb",
+      "dcc_evidence": "docs/evidence/dcc-normalization/solid-repair-candidates.json",
+      "surface_audit": "docs/evidence/cleaned-asset-surface-review.md"
+    },
+    {
+      "id": "P15",
+      "name": "Repair-bench clutter cluster",
+      "priority": "P2",
+      "route": "DCC_EXACT",
+      "placed_units": 1,
+      "full_asset_triangle_budget": 650,
+      "tripo_face_limit": null,
+      "texture_cap_px": 512,
+      "status": "Not started",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "3 x 1 x 2",
+        "pivot_or_forward": "Floor-center; wall props rear-center",
+        "collision": "Simple proxy if solid; small dressing none",
+        "separate_or_moving_parts": "None",
+        "dependencies": [
+          "T01",
+          "T02",
+          "T04"
+        ],
+        "acceptance": "Single dressing cluster; does not block sampler or become a loot promise."
+      }
+    },
+    {
+      "id": "P16",
+      "name": "Rooftop vent / duct",
+      "priority": "P0",
+      "route": "HYBRID_TRIPO",
+      "placed_units": 2,
+      "full_asset_triangle_budget": 500,
+      "tripo_face_limit": 400,
+      "texture_cap_px": 512,
+      "status": "DCC surface-repaired candidate; Studio import and visual review pending",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "3 x 3 x 2",
+        "pivot_or_forward": "Floor-center; wall props rear-center",
+        "collision": "Simple proxy if solid; small dressing none",
+        "separate_or_moving_parts": "None",
+        "dependencies": [
+          "T01"
+        ],
+        "acceptance": "Discovery version reuses master and adds I02 binding."
+      },
+      "dcc_candidate": "assets/cleaned/P16/P16_normalized_geometry_candidate_surface_repaired.glb",
+      "dcc_evidence": "docs/evidence/dcc-normalization/remaining-batch-export-inspection.json",
+      "surface_audit": "docs/evidence/cleaned-asset-surface-review.md"
+    },
+    {
+      "id": "I01",
+      "name": "Metal strike-sign discovery node",
+      "priority": "P0",
+      "route": "HYBRID_TRIPO",
+      "placed_units": 1,
+      "full_asset_triangle_budget": 300,
+      "tripo_face_limit": 250,
+      "texture_cap_px": 512,
+      "status": "Art-reviewed DCC candidate; Studio import and runtime validation pending",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "3 x 2 x 0.3 studs",
+        "pivot_or_forward": "Upper hinge / rear-center",
+        "collision": "Query proxy only",
+        "separate_or_moving_parts": "Small sign swing; optional",
+        "dependencies": [
+          "T01",
+          "G04",
+          "U02",
+          "S02"
+        ],
+        "acceptance": "One-shot sample ID binding; preview and collect states; no need to hit a tiny target."
+      },
+      "dcc_candidate": "assets/cleaned/I01/I01_art_repair_candidate.glb",
+      "dcc_evidence": "docs/evidence/dcc-normalization/art-repair-export-inspection.json",
+      "surface_audit": "docs/evidence/cleaned-asset-surface-review.md"
+    },
+    {
+      "id": "I02",
+      "name": "Vent-thump discovery binding",
+      "priority": "P0",
+      "route": "GAMEPLAY_BINDING",
+      "placed_units": 1,
+      "full_asset_triangle_budget": null,
+      "tripo_face_limit": null,
+      "texture_cap_px": null,
+      "status": "Not started",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "Reuse P16",
+        "pivot_or_forward": "Attachment on vent front",
+        "collision": "Reuse query proxy",
+        "separate_or_moving_parts": "Optional grille pulse",
+        "dependencies": [
+          "P16",
+          "U02",
+          "S02"
+        ],
+        "acceptance": "No new vent mesh; audio cue, label and collection badge agree."
+      }
+    },
+    {
+      "id": "I03",
+      "name": "Robot-chirp discovery binding",
+      "priority": "P0",
+      "route": "GAMEPLAY_BINDING",
+      "placed_units": 1,
+      "full_asset_triangle_budget": null,
+      "tripo_face_limit": null,
+      "texture_cap_px": null,
+      "status": "Not started",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "Reuse H04",
+        "pivot_or_forward": "Head-side attachment",
+        "collision": "Robot query proxy",
+        "separate_or_moving_parts": "Face changes / head tilt",
+        "dependencies": [
+          "H04",
+          "U02",
+          "S02"
+        ],
+        "acceptance": "Approved authored chirp sample linked; collected state not repeated as reward."
+      }
+    },
+    {
+      "id": "I04",
+      "name": "Workshop resonator junction",
+      "priority": "P0",
+      "route": "HYBRID_TRIPO",
+      "placed_units": 1,
+      "full_asset_triangle_budget": 650,
+      "tripo_face_limit": 500,
+      "texture_cap_px": 512,
+      "status": "Art-reviewed DCC candidate; Studio import and runtime validation pending",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "3 x 4 x 1.5 studs",
+        "pivot_or_forward": "Rear-center at wall",
+        "collision": "Query proxy; decor noncolliding",
+        "separate_or_moving_parts": "Indicator segments; small dial",
+        "dependencies": [
+          "P14",
+          "G04"
+        ],
+        "acceptance": "All four visible states supplied; restoration does not permanently alter public hub for others."
+      },
+      "dcc_candidate": "assets/cleaned/I04/I04_art_repair_candidate.glb",
+      "dcc_evidence": "docs/evidence/dcc-normalization/art-repair-export-inspection.json",
+      "surface_audit": "docs/evidence/cleaned-asset-surface-review.md"
+    },
+    {
+      "id": "I05",
+      "name": "Listening-stage control podium",
+      "priority": "P1",
+      "route": "HYBRID_TRIPO",
+      "placed_units": 1,
+      "full_asset_triangle_budget": 800,
+      "tripo_face_limit": 650,
+      "texture_cap_px": 512,
+      "status": "DCC solid-geometry repair candidate; Studio import and art review pending",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "3 x 4 x 2 studs",
+        "pivot_or_forward": "Floor-center",
+        "collision": "Simple body proxy",
+        "separate_or_moving_parts": "Status insert",
+        "dependencies": [
+          "U03",
+          "G04"
+        ],
+        "acceptance": "Join/listen action readable; mute/leave available without needing podium again."
+      },
+      "dcc_candidate": "assets/cleaned/I05/I05_solid_repair_candidate.glb",
+      "dcc_evidence": "docs/evidence/dcc-normalization/solid-repair-candidates.json",
+      "surface_audit": "docs/evidence/cleaned-asset-surface-review.md"
+    },
+    {
+      "id": "W01",
+      "name": "Courtyard listening-stage assembly",
+      "priority": "P1",
+      "route": "STUDIO_ASSEMBLY",
+      "placed_units": 1,
+      "full_asset_triangle_budget": null,
+      "tripo_face_limit": null,
+      "texture_cap_px": 1024,
+      "status": "Not started",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "24 x 1 x 20 studs",
+        "pivot_or_forward": "Front-left floor corner",
+        "collision": "Simple floor + open accessible route",
+        "separate_or_moving_parts": "Light presets only",
+        "dependencies": [
+          "M07",
+          "H01",
+          "H02",
+          "H05",
+          "I05",
+          "F02",
+          "U03"
+        ],
+        "acceptance": "Safe audience lane; local listening boundary explicit; no stairs-only access."
+      }
+    },
+    {
+      "id": "W02",
+      "name": "Waterfront edge and calm water",
+      "priority": "P0",
+      "route": "STUDIO_ASSEMBLY",
+      "placed_units": 1,
+      "full_asset_triangle_budget": null,
+      "tripo_face_limit": null,
+      "texture_cap_px": 1024,
+      "status": "Not started",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "64 x 8 boundary span",
+        "pivot_or_forward": "Zone origin",
+        "collision": "Visible railing + separate boundary proxy",
+        "separate_or_moving_parts": "Optional low-amplitude surface motion",
+        "dependencies": [
+          "M15",
+          "T03"
+        ],
+        "acceptance": "No unmarked fall route; no expensive reflective requirement for readability."
+      }
+    },
+    {
+      "id": "W03",
+      "name": "Distant skyline cluster",
+      "priority": "P1",
+      "route": "DCC_EXACT",
+      "placed_units": 3,
+      "full_asset_triangle_budget": 1500,
+      "tripo_face_limit": null,
+      "texture_cap_px": 1024,
+      "status": "Not started",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "40 x 50 x 12 studs",
+        "pivot_or_forward": "Floor-center",
+        "collision": "None; inaccessible",
+        "separate_or_moving_parts": "None",
+        "dependencies": [
+          "T03"
+        ],
+        "acceptance": "Horizon adds depth without stealing contrast from shop or implying accessible doors."
+      }
+    },
+    {
+      "id": "W04",
+      "name": "Elevated transit / bridge silhouette",
+      "priority": "P2",
+      "route": "DCC_EXACT",
+      "placed_units": 1,
+      "full_asset_triangle_budget": 1600,
+      "tripo_face_limit": null,
+      "texture_cap_px": 1024,
+      "status": "Not started",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "64 x 12 x 8 studs",
+        "pivot_or_forward": "Floor-center",
+        "collision": "None; inaccessible",
+        "separate_or_moving_parts": "None",
+        "dependencies": [
+          "T03"
+        ],
+        "acceptance": "Readable only as backdrop; removable on low tier."
+      }
+    },
+    {
+      "id": "T01",
+      "name": "Equipment paint / trim material set",
+      "priority": "P0",
+      "route": "MATERIAL_GRAPHICS",
+      "placed_units": 1,
+      "full_asset_triangle_budget": null,
+      "tripo_face_limit": null,
+      "texture_cap_px": 1024,
+      "status": "Not started",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "Shared library",
+        "pivot_or_forward": "Not applicable",
+        "collision": "Not applicable",
+        "separate_or_moving_parts": "None",
+        "dependencies": [],
+        "acceptance": "Check neutral light and dusk; maps named; no unnecessary maps or duplicate uploads."
+      }
+    },
+    {
+      "id": "T02",
+      "name": "Wood material set",
+      "priority": "P0",
+      "route": "MATERIAL_GRAPHICS",
+      "placed_units": 1,
+      "full_asset_triangle_budget": null,
+      "tripo_face_limit": null,
+      "texture_cap_px": 1024,
+      "status": "Not started",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "Shared library",
+        "pivot_or_forward": "Not applicable",
+        "collision": "Not applicable",
+        "separate_or_moving_parts": "None",
+        "dependencies": [],
+        "acceptance": "Check neutral light and dusk; maps named; no unnecessary maps or duplicate uploads."
+      }
+    },
+    {
+      "id": "T03",
+      "name": "Masonry / paving material set",
+      "priority": "P0",
+      "route": "MATERIAL_GRAPHICS",
+      "placed_units": 1,
+      "full_asset_triangle_budget": null,
+      "tripo_face_limit": null,
+      "texture_cap_px": 1024,
+      "status": "Not started",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "Shared library",
+        "pivot_or_forward": "Not applicable",
+        "collision": "Not applicable",
+        "separate_or_moving_parts": "None",
+        "dependencies": [],
+        "acceptance": "Check neutral light and dusk; maps named; no unnecessary maps or duplicate uploads."
+      }
+    },
+    {
+      "id": "T04",
+      "name": "Fabric / rubber material set",
+      "priority": "P0",
+      "route": "MATERIAL_GRAPHICS",
+      "placed_units": 1,
+      "full_asset_triangle_budget": null,
+      "tripo_face_limit": null,
+      "texture_cap_px": 1024,
+      "status": "Not started",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "Shared library",
+        "pivot_or_forward": "Not applicable",
+        "collision": "Not applicable",
+        "separate_or_moving_parts": "None",
+        "dependencies": [],
+        "acceptance": "Check neutral light and dusk; maps named; no unnecessary maps or duplicate uploads."
+      }
+    },
+    {
+      "id": "G01",
+      "name": "Original record sleeve / label atlas",
+      "priority": "P0",
+      "route": "MATERIAL_GRAPHICS",
+      "placed_units": 1,
+      "full_asset_triangle_budget": null,
+      "tripo_face_limit": null,
+      "texture_cap_px": 1024,
+      "status": "Not started",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "2D source + exported atlas",
+        "pivot_or_forward": "Not applicable",
+        "collision": "Not applicable",
+        "separate_or_moving_parts": "None",
+        "dependencies": [],
+        "acceptance": "Editable vector/raster source; transparent padding; no baked essential language."
+      }
+    },
+    {
+      "id": "G02",
+      "name": "Neighborhood poster / sticker atlas",
+      "priority": "P1",
+      "route": "MATERIAL_GRAPHICS",
+      "placed_units": 1,
+      "full_asset_triangle_budget": null,
+      "tripo_face_limit": null,
+      "texture_cap_px": 1024,
+      "status": "Not started",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "2D source + exported atlas",
+        "pivot_or_forward": "Not applicable",
+        "collision": "Not applicable",
+        "separate_or_moving_parts": "None",
+        "dependencies": [],
+        "acceptance": "Editable vector/raster source; transparent padding; no baked essential language."
+      }
+    },
+    {
+      "id": "G03",
+      "name": "Equipment face / pad / icon atlas",
+      "priority": "P0",
+      "route": "MATERIAL_GRAPHICS",
+      "placed_units": 1,
+      "full_asset_triangle_budget": null,
+      "tripo_face_limit": null,
+      "texture_cap_px": 1024,
+      "status": "Not started",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "2D source + exported atlas",
+        "pivot_or_forward": "Not applicable",
+        "collision": "Not applicable",
+        "separate_or_moving_parts": "None",
+        "dependencies": [],
+        "acceptance": "Editable vector/raster source; transparent padding; no baked essential language."
+      }
+    },
+    {
+      "id": "G04",
+      "name": "Wayfinding and status graphics",
+      "priority": "P0",
+      "route": "MATERIAL_GRAPHICS",
+      "placed_units": 1,
+      "full_asset_triangle_budget": null,
+      "tripo_face_limit": null,
+      "texture_cap_px": 1024,
+      "status": "Not started",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "2D source + exported atlas",
+        "pivot_or_forward": "Not applicable",
+        "collision": "Not applicable",
+        "separate_or_moving_parts": "None",
+        "dependencies": [],
+        "acceptance": "Editable vector/raster source; transparent padding; no baked essential language."
+      }
+    },
+    {
+      "id": "A01",
+      "name": "Sampler pad feedback",
+      "priority": "P0",
+      "route": "RIG_ANIMATION",
+      "placed_units": 1,
+      "full_asset_triangle_budget": null,
+      "tripo_face_limit": null,
+      "texture_cap_px": null,
+      "status": "Not started",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "Rig/transform tracks",
+        "pivot_or_forward": "Use rig child pivots",
+        "collision": "No animated gameplay collision",
+        "separate_or_moving_parts": "Named tracks/targets",
+        "dependencies": [
+          "H01",
+          "U01"
+        ],
+        "acceptance": "Loops seamless where needed; stop/rejoin safe; reduced-motion fallback supplied."
+      }
+    },
+    {
+      "id": "A02",
+      "name": "Speaker cone response",
+      "priority": "P1",
+      "route": "RIG_ANIMATION",
+      "placed_units": 1,
+      "full_asset_triangle_budget": null,
+      "tripo_face_limit": null,
+      "texture_cap_px": null,
+      "status": "Not started",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "Rig/transform tracks",
+        "pivot_or_forward": "Use rig child pivots",
+        "collision": "No animated gameplay collision",
+        "separate_or_moving_parts": "Named tracks/targets",
+        "dependencies": [
+          "H02"
+        ],
+        "acceptance": "Loops seamless where needed; stop/rejoin safe; reduced-motion fallback supplied."
+      }
+    },
+    {
+      "id": "A03",
+      "name": "Robot basic motion set",
+      "priority": "P0",
+      "route": "RIG_ANIMATION",
+      "placed_units": 1,
+      "full_asset_triangle_budget": null,
+      "tripo_face_limit": null,
+      "texture_cap_px": null,
+      "status": "Not started",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "Rig/transform tracks",
+        "pivot_or_forward": "Use rig child pivots",
+        "collision": "No animated gameplay collision",
+        "separate_or_moving_parts": "Named tracks/targets",
+        "dependencies": [
+          "H04"
+        ],
+        "acceptance": "Loops seamless where needed; stop/rejoin safe; reduced-motion fallback supplied."
+      }
+    },
+    {
+      "id": "A04",
+      "name": "Robot celebration / carry set",
+      "priority": "P1",
+      "route": "RIG_ANIMATION",
+      "placed_units": 1,
+      "full_asset_triangle_budget": null,
+      "tripo_face_limit": null,
+      "texture_cap_px": null,
+      "status": "Not started",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "Rig/transform tracks",
+        "pivot_or_forward": "Use rig child pivots",
+        "collision": "No animated gameplay collision",
+        "separate_or_moving_parts": "Named tracks/targets",
+        "dependencies": [
+          "H04",
+          "A03"
+        ],
+        "acceptance": "Loops seamless where needed; stop/rejoin safe; reduced-motion fallback supplied."
+      }
+    },
+    {
+      "id": "A05",
+      "name": "Restoration reveal choreography",
+      "priority": "P1",
+      "route": "RIG_ANIMATION",
+      "placed_units": 1,
+      "full_asset_triangle_budget": null,
+      "tripo_face_limit": null,
+      "texture_cap_px": null,
+      "status": "Not started",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "Rig/transform tracks",
+        "pivot_or_forward": "Use rig child pivots",
+        "collision": "No animated gameplay collision",
+        "separate_or_moving_parts": "Named tracks/targets",
+        "dependencies": [
+          "H06",
+          "I04",
+          "F01"
+        ],
+        "acceptance": "Loops seamless where needed; stop/rejoin safe; reduced-motion fallback supplied."
+      }
+    },
+    {
+      "id": "F01",
+      "name": "Dusk and practical-light presets",
+      "priority": "P0",
+      "route": "GAMEPLAY_BINDING",
+      "placed_units": 1,
+      "full_asset_triangle_budget": null,
+      "tripo_face_limit": null,
+      "texture_cap_px": null,
+      "status": "Not started",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "Preset and small sprite sources",
+        "pivot_or_forward": "Attachments specified by owner asset",
+        "collision": "None",
+        "separate_or_moving_parts": "Local visuals only",
+        "dependencies": [
+          "H05",
+          "P13"
+        ],
+        "acceptance": "Scene remains complete when disabled; no gameplay information conveyed solely by effect."
+      }
+    },
+    {
+      "id": "F02",
+      "name": "Music-reactive visual preset",
+      "priority": "P1",
+      "route": "GAMEPLAY_BINDING",
+      "placed_units": 1,
+      "full_asset_triangle_budget": null,
+      "tripo_face_limit": null,
+      "texture_cap_px": null,
+      "status": "Not started",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "Preset and small sprite sources",
+        "pivot_or_forward": "Attachments specified by owner asset",
+        "collision": "None",
+        "separate_or_moving_parts": "Local visuals only",
+        "dependencies": [
+          "H02",
+          "H05",
+          "I04"
+        ],
+        "acceptance": "Scene remains complete when disabled; no gameplay information conveyed solely by effect."
+      }
+    },
+    {
+      "id": "F03",
+      "name": "Discovery feedback",
+      "priority": "P0",
+      "route": "GAMEPLAY_BINDING",
+      "placed_units": 1,
+      "full_asset_triangle_budget": null,
+      "tripo_face_limit": null,
+      "texture_cap_px": null,
+      "status": "Not started",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "Preset and small sprite sources",
+        "pivot_or_forward": "Attachments specified by owner asset",
+        "collision": "None",
+        "separate_or_moving_parts": "Local visuals only",
+        "dependencies": [
+          "I01",
+          "I02",
+          "I03",
+          "U02"
+        ],
+        "acceptance": "Scene remains complete when disabled; no gameplay information conveyed solely by effect."
+      }
+    },
+    {
+      "id": "F04",
+      "name": "Ambient dust / water accents",
+      "priority": "P2",
+      "route": "GAMEPLAY_BINDING",
+      "placed_units": 1,
+      "full_asset_triangle_budget": null,
+      "tripo_face_limit": null,
+      "texture_cap_px": null,
+      "status": "Not started",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "Preset and small sprite sources",
+        "pivot_or_forward": "Attachments specified by owner asset",
+        "collision": "None",
+        "separate_or_moving_parts": "Local visuals only",
+        "dependencies": [
+          "F01",
+          "W02"
+        ],
+        "acceptance": "Scene remains complete when disabled; no gameplay information conveyed solely by effect."
+      }
+    },
+    {
+      "id": "U01",
+      "name": "Workstation UI art kit",
+      "priority": "P0",
+      "route": "UI_CODE",
+      "placed_units": 1,
+      "full_asset_triangle_budget": null,
+      "tripo_face_limit": null,
+      "texture_cap_px": null,
+      "status": "Not started",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "Component layouts + exportable graphics",
+        "pivot_or_forward": "Responsive anchors",
+        "collision": "Not applicable",
+        "separate_or_moving_parts": "Optional small transitions",
+        "dependencies": [
+          "G03"
+        ],
+        "acceptance": "Touch and keyboard focus states; text labels localizable; monochrome/reduced-motion readability."
+      }
+    },
+    {
+      "id": "U02",
+      "name": "Discovery / sample card kit",
+      "priority": "P0",
+      "route": "UI_CODE",
+      "placed_units": 1,
+      "full_asset_triangle_budget": null,
+      "tripo_face_limit": null,
+      "texture_cap_px": null,
+      "status": "Not started",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "Component layouts + exportable graphics",
+        "pivot_or_forward": "Responsive anchors",
+        "collision": "Not applicable",
+        "separate_or_moving_parts": "Optional small transitions",
+        "dependencies": [
+          "G04"
+        ],
+        "acceptance": "Touch and keyboard focus states; text labels localizable; monochrome/reduced-motion readability."
+      }
+    },
+    {
+      "id": "U03",
+      "name": "Listening / session status kit",
+      "priority": "P1",
+      "route": "UI_CODE",
+      "placed_units": 1,
+      "full_asset_triangle_budget": null,
+      "tripo_face_limit": null,
+      "texture_cap_px": null,
+      "status": "Not started",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "Component layouts + exportable graphics",
+        "pivot_or_forward": "Responsive anchors",
+        "collision": "Not applicable",
+        "separate_or_moving_parts": "Optional small transitions",
+        "dependencies": [
+          "G04"
+        ],
+        "acceptance": "Touch and keyboard focus states; text labels localizable; monochrome/reduced-motion readability."
+      }
+    },
+    {
+      "id": "U04",
+      "name": "Save / restore feedback kit",
+      "priority": "P0",
+      "route": "UI_CODE",
+      "placed_units": 1,
+      "full_asset_triangle_budget": null,
+      "tripo_face_limit": null,
+      "texture_cap_px": null,
+      "status": "Not started",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "Component layouts + exportable graphics",
+        "pivot_or_forward": "Responsive anchors",
+        "collision": "Not applicable",
+        "separate_or_moving_parts": "Optional small transitions",
+        "dependencies": [
+          "G04"
+        ],
+        "acceptance": "Touch and keyboard focus states; text labels localizable; monochrome/reduced-motion readability."
+      }
+    },
+    {
+      "id": "S01",
+      "name": "Starter production sound bank",
+      "priority": "P0",
+      "route": "AUTHORED_AUDIO",
+      "placed_units": 1,
+      "full_asset_triangle_budget": null,
+      "tripo_face_limit": null,
+      "texture_cap_px": null,
+      "status": "Not started",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "Audio files + manifest",
+        "pivot_or_forward": "Spatial attachment only when required",
+        "collision": "Not applicable",
+        "separate_or_moving_parts": "Not applicable",
+        "dependencies": [],
+        "acceptance": "Source/rights manifest, loudness review, trims, import permissions and published-place playback checked."
+      }
+    },
+    {
+      "id": "S02",
+      "name": "Discovery sample bank",
+      "priority": "P0",
+      "route": "AUTHORED_AUDIO",
+      "placed_units": 1,
+      "full_asset_triangle_budget": null,
+      "tripo_face_limit": null,
+      "texture_cap_px": null,
+      "status": "Not started",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "Audio files + manifest",
+        "pivot_or_forward": "Spatial attachment only when required",
+        "collision": "Not applicable",
+        "separate_or_moving_parts": "Not applicable",
+        "dependencies": [],
+        "acceptance": "Source/rights manifest, loudness review, trims, import permissions and published-place playback checked."
+      }
+    },
+    {
+      "id": "S03",
+      "name": "Interaction and UI cue bank",
+      "priority": "P0",
+      "route": "AUTHORED_AUDIO",
+      "placed_units": 1,
+      "full_asset_triangle_budget": null,
+      "tripo_face_limit": null,
+      "texture_cap_px": null,
+      "status": "Not started",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "Audio files + manifest",
+        "pivot_or_forward": "Spatial attachment only when required",
+        "collision": "Not applicable",
+        "separate_or_moving_parts": "Not applicable",
+        "dependencies": [],
+        "acceptance": "Source/rights manifest, loudness review, trims, import permissions and published-place playback checked."
+      }
+    },
+    {
+      "id": "S04",
+      "name": "Quiet waterfront ambience",
+      "priority": "P1",
+      "route": "AUTHORED_AUDIO",
+      "placed_units": 1,
+      "full_asset_triangle_budget": null,
+      "tripo_face_limit": null,
+      "texture_cap_px": null,
+      "status": "Not started",
+      "owner": "Unassigned",
+      "contract": {
+        "dimensions": "Audio files + manifest",
+        "pivot_or_forward": "Spatial attachment only when required",
+        "collision": "Not applicable",
+        "separate_or_moving_parts": "Not applicable",
+        "dependencies": [],
+        "acceptance": "Source/rights manifest, loudness review, trims, import permissions and published-place playback checked."
+      }
+    }
+  ]
+}

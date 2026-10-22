@@ -1,0 +1,15 @@
+{
+  "asset_id": "P11",
+  "batch_id": "B13",
+  "task_id": "daea9589-f31d-4294-ac08-5c03f2a87c33",
+  "status": "success",
+  "credits_consumed": 40.0,
+  "balance_after": 490,
+  "frozen_after": 0,
+  "output_dir": "assets\\candidates\\tripo-out\\b13-p11-planter-pot-daea9589",
+  "model_file": "assets\\candidates\\tripo-out\\b13-p11-planter-pot-daea9589\\model.glb",
+  "preview": "assets\\candidates\\tripo-out\\b13-p11-planter-pot-daea9589\\preview.png",
+  "reference_path": "references/production/B13-P11-planter-pot.png",
+  "reference_sha256": "087f4578ccc22c7325b099ce956c52814091990210cefa6338e8e37b9f0fe52c",
+  "candidate_state": "raw provider candidate; DCC/art review pending"
+}

@@ -1,0 +1,21 @@
+{
+  "batch_id": "B06-H04-image",
+  "asset_id": "H04",
+  "task_id": "d452487b-36f3-40b8-a339-c21980b760c0",
+  "status": "success",
+  "model": "P1-20260311",
+  "operation": "image-to-model",
+  "credits_consumed": 40,
+  "input_reference": "references/production/B06-H04-maintenance-helper-robot.png",
+  "dry_run_receipt": "docs/evidence/b06/H04-image-to-model-dry-run.json",
+  "raw_output_dir": "assets/candidates/tripo-out/b06-h04-maintenance-helper-robot-d452487b",
+  "files": {
+    "model.glb": "2cce737c76cae1da8ff935f1a97060e00225be9df7fe0533213d0f291ae02e3e",
+    "preview.png": "6d49ed8cca0c17de7265fce07cb93ea031653028041fb300a7da5ac5f4e15b9c",
+    "task.json": "32792b59345c0952d7ebb3632078a8caf82beedf6acabf110e9db33d008a5695"
+  },
+  "preview_visual_review": "Recognizable compact robot with square head, torso, articulated-looking arms and wheels. Face plate is blank in provider preview; colors are monochrome gray. Rigging and face graphics/insert remain separate DCC work.",
+  "acceptance_stage": "CANDIDATE_PENDING_DCC_AND_ART_REVIEW",
+  "balance_after_credits": 770,
+  "frozen_after_credits": 0
+}

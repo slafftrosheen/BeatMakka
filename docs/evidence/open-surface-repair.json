@@ -1,0 +1,126 @@
+{
+  "blender_version": "5.2.2 LTS",
+  "method": "Welded coincident GLB seam vertices in memory, recalculated consistent normals, and capped each simple closed boundary loop for the six named active shell assets. Original GLBs remain preserved.",
+  "assets": [
+    {
+      "asset_id": "H01",
+      "source": "assets/cleaned/H01/H01_sampler_shell.glb",
+      "repaired_glb": "assets/cleaned/H01/H01_sampler_shell_surface_repaired.glb",
+      "filled_faces": 3,
+      "before": {
+        "triangles": 2049,
+        "boundary_edges": 73,
+        "nonmanifold_edges": 14,
+        "degenerate_faces": 0,
+        "winding_conflicts": 202
+      },
+      "after": {
+        "triangles": 2088,
+        "boundary_edges": 28,
+        "nonmanifold_edges": 14,
+        "degenerate_faces": 0,
+        "winding_conflicts": 0
+      }
+    },
+    {
+      "asset_id": "H02",
+      "source": "assets/cleaned/H02/H02_compact_speaker_stack.glb",
+      "repaired_glb": "assets/cleaned/H02/H02_compact_speaker_stack_surface_repaired.glb",
+      "filled_faces": 4,
+      "before": {
+        "triangles": 1584,
+        "boundary_edges": 94,
+        "nonmanifold_edges": 0,
+        "degenerate_faces": 0,
+        "winding_conflicts": 143
+      },
+      "after": {
+        "triangles": 1670,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "degenerate_faces": 0,
+        "winding_conflicts": 0
+      }
+    },
+    {
+      "asset_id": "H05",
+      "source": "assets/cleaned/H05/H05_curved_street_lamp_scaled.glb",
+      "repaired_glb": "assets/cleaned/H05/H05_curved_street_lamp_scaled_surface_repaired.glb",
+      "filled_faces": 1,
+      "before": {
+        "triangles": 1034,
+        "boundary_edges": 8,
+        "nonmanifold_edges": 0,
+        "degenerate_faces": 0,
+        "winding_conflicts": 126
+      },
+      "after": {
+        "triangles": 1040,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "degenerate_faces": 0,
+        "winding_conflicts": 0
+      }
+    },
+    {
+      "asset_id": "P01",
+      "source": "assets/cleaned/P01/P01_studio_workbench.glb",
+      "repaired_glb": "assets/cleaned/P01/P01_studio_workbench_surface_repaired.glb",
+      "filled_faces": 2,
+      "before": {
+        "triangles": 616,
+        "boundary_edges": 20,
+        "nonmanifold_edges": 0,
+        "degenerate_faces": 0,
+        "winding_conflicts": 111
+      },
+      "after": {
+        "triangles": 632,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "degenerate_faces": 0,
+        "winding_conflicts": 0
+      }
+    },
+    {
+      "asset_id": "P02",
+      "source": "assets/cleaned/P02/P02_round_workshop_stool.glb",
+      "repaired_glb": "assets/cleaned/P02/P02_round_workshop_stool_surface_repaired.glb",
+      "filled_faces": 4,
+      "before": {
+        "triangles": 338,
+        "boundary_edges": 56,
+        "nonmanifold_edges": 0,
+        "degenerate_faces": 0,
+        "winding_conflicts": 22
+      },
+      "after": {
+        "triangles": 386,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "degenerate_faces": 0,
+        "winding_conflicts": 0
+      }
+    },
+    {
+      "asset_id": "P03",
+      "source": "assets/cleaned/P03/P03_listening_bench.glb",
+      "repaired_glb": "assets/cleaned/P03/P03_listening_bench_surface_repaired.glb",
+      "filled_faces": 1,
+      "before": {
+        "triangles": 470,
+        "boundary_edges": 8,
+        "nonmanifold_edges": 0,
+        "degenerate_faces": 0,
+        "winding_conflicts": 92
+      },
+      "after": {
+        "triangles": 476,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "degenerate_faces": 0,
+        "winding_conflicts": 0
+      }
+    }
+  ]
+}

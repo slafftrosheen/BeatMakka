@@ -1,0 +1,16 @@
+в”Ђв”Ђ Plan в”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђ
+input: references\production\B11-P06-storage-crate.png
+model: P1-20260311 вЂ” explicit --model
+steps:
+  1. image-to-model  POST /v3/generation/image-to-model вЂ” generate a 3D model from one image
+     model="P1-20260311" face_limit=280 texture=false pbr=false export_uv=true
+cost impact:
+  В· bare geometry: no texture credits
+в”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђ
+model: P1-20260311 (explicit --model)
+task created add32aad-1457-469d-8afe-1c47b5a1aa3c (@b11-p06-storage-crate)
+image_to_model В· queued
+image_to_model В· success 100% В· add32aad
+вњ“ image_to_model В· add32aad-1457-469d-8afe-1c47b5a1aa3c В· 40 credits
+downloading artifactsвЂ¦
+вњ“ artifacts saved to assets\candidates\tripo-out\b11-p06-storage-crate-add32aad

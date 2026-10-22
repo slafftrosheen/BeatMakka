@@ -1,0 +1,46 @@
+{
+  "dry_run": true,
+  "valid": true,
+  "input": "schema-only preset inspection; do not submit",
+  "scenario": "game-mobile",
+  "model": "P1-20260311",
+  "model_reason": "explicit --model",
+  "steps": [
+    {
+      "name": "text-to-model",
+      "endpoint": "/v3/generation/text-to-model",
+      "task_type": "text_to_model",
+      "payload": {
+        "prompt": "schema-only preset inspection; do not submit",
+        "model": "P1-20260311",
+        "texture": true,
+        "pbr": true,
+        "texture_quality": "standard",
+        "face_limit": 15000
+      }
+    },
+    {
+      "name": "convert",
+      "endpoint": "/v3/models/convert",
+      "task_type": "convert_model",
+      "payload": {
+        "input": "<upstream>",
+        "format": "FBX",
+        "texture_size": 2048
+      }
+    }
+  ],
+  "pending_uploads": [],
+  "deliverables": [
+    "FBX",
+    "GLB"
+  ],
+  "candidates": 1,
+  "warnings": [
+    "non-default convert options use the \"complex convert\" price tier"
+  ],
+  "errors": [],
+  "cost_notes": [
+    "non-default convert options bill as complex convert"
+  ]
+}

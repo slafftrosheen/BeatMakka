@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "batch_id": "B18-I01-IMAGE",
+  "authorization": {
+    "approved": true,
+    "approved_cap_credits": 40,
+    "approved_asset_ids": [
+      "I01"
+    ]
+  },
+  "quoted_total_credits": 40,
+  "docs_receipt": "docs/evidence/b11/docs_receipt.json",
+  "connection_receipt": "docs/evidence/b11/connection_receipt.json",
+  "requests": [
+    {
+      "asset_id": "I01",
+      "estimated_credits": 40,
+      "approved_reference": "references/production/B18-I01-metal-strike-sign.png",
+      "face_limit": 250,
+      "dry_run_receipt": "docs/evidence/b18/I01-image-to-model-dry-run.json"
+    }
+  ]
+}

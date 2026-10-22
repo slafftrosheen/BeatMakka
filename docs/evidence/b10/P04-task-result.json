@@ -1,0 +1,21 @@
+{
+  "batch_id": "B10-P04-image",
+  "asset_id": "P04",
+  "task_id": "c79fb1fa-814e-45b9-9da7-cea4d15fc8ca",
+  "status": "success",
+  "model": "P1-20260311",
+  "operation": "image-to-model",
+  "credits_consumed": 40,
+  "input_reference": "references/production/B10-P04-record-browsing-bin.png",
+  "dry_run_receipt": "docs/evidence/b10/P04-image-to-model-dry-run.json",
+  "raw_output_dir": "assets/candidates/tripo-out/b10-p04-record-browsing-bin-c79fb1fa",
+  "files": {
+    "model.glb": "24f8c9de1530aee3393d55a0db630cdfc351c8544e8c5da1d0dbdc7e1d8277e8",
+    "preview.png": "eb5ff9eb941f519e4664605125185f71641d15f30b32882ebd25ecef8a80810d",
+    "task.json": "b8828e4ca784ae75d92de97af98229197c9cc7ada8b1eee7ad9fab8ef912f563"
+  },
+  "preview_visual_review": "Monochrome low-poly record bin with divided storage and a clearly visible shallow front browse socket. Raw render captures the intended shape; material palette and artwork remain separate deterministic work.",
+  "acceptance_stage": "CANDIDATE_PENDING_DCC_AND_ART_REVIEW",
+  "balance_after_credits": 610,
+  "frozen_after_credits": 0
+}

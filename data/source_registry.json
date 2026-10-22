@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "derived_from": "Asset_Production_Register.xlsx",
+  "sources": [
+    {
+      "id": "T01",
+      "title": "Tripo P1 model card",
+      "url": "https://developers.tripo3d.ai/en/models/p1",
+      "checked_on": "2026-10-22",
+      "notes": "Dedicated low-poly model P1-20260311. Does not support smart_low_poly, generate_parts, quad or geometry_quality. Use explicit per-asset limits; verify current availability before work."
+    },
+    {
+      "id": "T02",
+      "title": "Tripo P-series image generation",
+      "url": "https://developers.tripo3d.ai/en/docs/generation-image-to-model/p",
+      "checked_on": "2026-10-22",
+      "notes": "V3 uses input and model. Image sources can be uploaded tokens or direct image URLs. PBR forces texturing. Retrieved revisions disagree on whether P2 is listed; recheck at execution."
+    },
+    {
+      "id": "T03",
+      "title": "Tripo H-series generation",
+      "url": "https://developers.tripo3d.ai/en/docs/generation-text-to-model/standard",
+      "checked_on": "2026-10-22",
+      "notes": "H3.1 supports smart_low_poly; set explicit face_limit. Prompt limit is documented as 1024 characters and negative_prompt as 255. Parts mode has incompatible options; do not combine it with this pack’s low-poly profile."
+    },
+    {
+      "id": "T04",
+      "title": "Tripo P2 model card",
+      "url": "https://developers.tripo3d.ai/en/models/p2",
+      "checked_on": "2026-10-22",
+      "notes": "P2-20260801 is listed as Preview in current search-indexed official content. It supports triangle/quad output and higher budgets; not the production default here. Page fetch was unavailable, so reconfirm full endpoint schema before opting in."
+    },
+    {
+      "id": "T05",
+      "title": "Tripo CLI",
+      "url": "https://developers.tripo3d.ai/en/docs/cli",
+      "checked_on": "2026-10-22",
+      "notes": "Official CLI documents browser login, doctor, named production presets including game-mobile, and resumable batch workflows. Inspect installed help and resolved parameters rather than guessing extra flags."
+    },
+    {
+      "id": "T06",
+      "title": "Tripo Codex plugin",
+      "url": "https://developers.tripo3d.ai/en/docs/codex-plugin",
+      "checked_on": "2026-10-22",
+      "notes": "Official indexed guide describes a Codex plugin that writes assets into the project, uses browser sign-in and expects confirmation for multi-model spending. Direct page fetch failed; availability in the user’s Codex environment remains unverified."
+    },
+    {
+      "id": "T07",
+      "title": "Tripo task query",
+      "url": "https://developers.tripo3d.ai/en/docs/task-query",
+      "checked_on": "2026-10-22",
+      "notes": "GET /v3/tasks/{task_id} exposes status, output and accounting fields. Keep task identifiers and download files after successful completion; task success is not art or engine acceptance."
+    },
+    {
+      "id": "T08",
+      "title": "Tripo billing",
+      "url": "https://developers.tripo3d.ai/en/docs/billing",
+      "checked_on": "2026-10-22",
+      "notes": "V3 balance and usage are read-only account endpoints. Credit freezing, settlement and failures must be reconciled with actual account/task evidence; do not infer a spend allowance from balance."
+    },
+    {
+      "id": "T09",
+      "title": "Tripo retopology",
+      "url": "https://developers.tripo3d.ai/en/docs/mesh-decimate",
+      "checked_on": "2026-10-22",
+      "notes": "Retopology is POST /v3/mesh/decimate. Retrieved page lists v1/v2; newer indexed content adds v3 and smart_uv. This pack supplies no unverified v3 retopology payload; resolve the discrepancy live."
+    },
+    {
+      "id": "T10",
+      "title": "Tripo conversion",
+      "url": "https://developers.tripo3d.ai/en/docs/models-convert",
+      "checked_on": "2026-10-22",
+      "notes": "POST /v3/models/convert supports FBX and texture-size controls. Conversion is distinct from topology repair. Preserve authoring masters and validate the result after DCC export."
+    },
+    {
+      "id": "T11",
+      "title": "Tripo multiview P series",
+      "url": "https://developers.tripo3d.ai/en/docs/generation-multiview-to-model/p",
+      "checked_on": "2026-10-22",
+      "notes": "Multiview uses separate consistent views and documented view keys; front is required. The retrieved reference supports front/left/back/right. Do not feed a contact sheet as if it were one view."
+    },
+    {
+      "id": "T12",
+      "title": "Tripo texture processing",
+      "url": "https://developers.tripo3d.ai/en/docs/models-texture",
+      "checked_on": "2026-10-22",
+      "notes": "Texturing is a separate model-processing task. Texture guidance modes have compatibility constraints. Reuse accepted geometry rather than creating new geometry to fix only color."
+    },
+    {
+      "id": "T13",
+      "title": "Official Tripo MCP repository",
+      "url": "https://github.com/VAST-AI-Research/tripo-mcp",
+      "checked_on": "2026-10-22",
+      "notes": "The repository describes an alpha Blender-addon integration. This is not proof that the user’s installed connector exposes the current v3 schema or low-poly controls."
+    },
+    {
+      "id": "T14",
+      "title": "Official Tripo JavaScript SDK",
+      "url": "https://github.com/VAST-AI-Research/tripo-js-sdk",
+      "checked_on": "2026-10-22",
+      "notes": "SDK targets the v3 API, unlike the legacy v2 task endpoint. It documents configurable retry behavior and short-lived output URLs; audit retries before enabling billable submissions."
+    },
+    {
+      "id": "R01",
+      "title": "Roblox Importer",
+      "url": "https://create.roblox.com/docs/studio/importer",
+      "checked_on": "2026-10-22",
+      "notes": "Importer documents FBX/glTF/OBJ and model hierarchies/PBR. Preserve the raw GLB as a source master; use a validated FBX or glTF delivery path, not a filename extension change."
+    },
+    {
+      "id": "R02",
+      "title": "Roblox texture specifications",
+      "url": "https://create.roblox.com/docs/art/modeling/texture-specifications",
+      "checked_on": "2026-10-22",
+      "notes": "One material per mesh object and one UV set are documented, plus OpenGL tangent-space normal maps. Retrieved text gives 4K near the top but 1K in a later UV section; no universal platform maximum is asserted in this pack."
+    },
+    {
+      "id": "R03",
+      "title": "Roblox performance guidance",
+      "url": "https://create.roblox.com/docs/performance-optimization/improve",
+      "checked_on": "2026-10-22",
+      "notes": "Guidance covers render fidelity, collision simplification and scene costs. Use Automatic/Performance where suitable, reuse assets, and measure actual scene behavior rather than trusting polygon count alone."
+    },
+    {
+      "id": "O01",
+      "title": "Codex MCP configuration",
+      "url": "https://developers.openai.com/codex/mcp",
+      "checked_on": "2026-10-22",
+      "notes": "Official documentation redirects to ChatGPT Learn. codex mcp list lists configured MCP servers; /mcp shows active servers. A native plugin may not appear as an MCP entry."
+    },
+    {
+      "id": "O02",
+      "title": "OpenAI documentation MCP",
+      "url": "https://developers.openai.com/learn/docs-mcp",
+      "checked_on": "2026-10-22",
+      "notes": "Official read-only documentation MCP is available for OpenAI/Codex product questions. It is not a Tripo API proxy and does not authenticate to Tripo."
+    }
+  ]
+}

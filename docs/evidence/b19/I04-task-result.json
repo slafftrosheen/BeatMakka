@@ -1,0 +1,14 @@
+{
+  "task_id": "0b2aa08d-601d-46af-9cbe-a203364583e6",
+  "type": "image_to_model",
+  "status": "success",
+  "credits_consumed": 40,
+  "output_dir": "assets\\candidates\\tripo-out\\b19-i04-resonator-junction-0b2aa08d",
+  "files": [
+    "model.glb",
+    "rendered_image.webp",
+    "preview.png"
+  ],
+  "model_file": "assets\\candidates\\tripo-out\\b19-i04-resonator-junction-0b2aa08d\\model.glb",
+  "preview": "assets\\candidates\\tripo-out\\b19-i04-resonator-junction-0b2aa08d\\preview.png"
+}

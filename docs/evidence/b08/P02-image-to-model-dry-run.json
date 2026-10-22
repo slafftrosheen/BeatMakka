@@ -1,0 +1,34 @@
+{
+  "dry_run": true,
+  "valid": true,
+  "input": "references/production/B08-P02-round-workshop-stool.png",
+  "model": "P1-20260311",
+  "model_reason": "explicit --model",
+  "steps": [
+    {
+      "name": "image-to-model",
+      "endpoint": "/v3/generation/image-to-model",
+      "task_type": "image_to_model",
+      "payload": {
+        "input": "<upload:references/production/B08-P02-round-workshop-stool.png>",
+        "model": "P1-20260311",
+        "face_limit": 350,
+        "texture": false,
+        "pbr": false,
+        "export_uv": true
+      }
+    }
+  ],
+  "pending_uploads": [
+    "references/production/B08-P02-round-workshop-stool.png"
+  ],
+  "deliverables": [],
+  "candidates": 1,
+  "warnings": [],
+  "errors": [],
+  "cost_notes": [
+    "bare geometry: no texture credits"
+  ],
+  "reference_sha256": "49c515286f10361e69fba28433a90587980c4c8fe3663087307bdec7551c5ce2",
+  "reference_prompt": "Isolated round stool matching the walnut and faded teal studio props, broad round seat, sturdy teal legs and lower foot ring, no backrest or clutter."
+}

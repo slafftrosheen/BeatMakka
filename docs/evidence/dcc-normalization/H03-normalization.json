@@ -1,0 +1,50 @@
+{
+  "asset_id": "H03",
+  "cleaned_glb": "assets/cleaned/H03/H03_vinyl_crate_shell.glb",
+  "inspection_method": "Blender 5.2.2 headless re-import of exported GLB",
+  "mesh_objects": 1,
+  "triangles": 632,
+  "blender_scene_bounds_xyz": [
+    3.0,
+    3.0,
+    2.5
+  ],
+  "floor_min_z": 0.0,
+  "object_origins_world": [
+    [
+      0.0,
+      0.0,
+      0.0
+    ]
+  ],
+  "target_blender_bounds_xyz": [
+    3.0,
+    3.0,
+    2.5
+  ],
+  "materials": [
+    "Material_0"
+  ],
+  "uv_layers": [
+    "UVMap"
+  ],
+  "within_full_asset_triangle_cap": true,
+  "stage": "DCC-clean geometry candidate; art, Roblox Studio and runtime acceptance pending",
+  "source": "assets/candidates/tripo-out/b05-h03-vinyl-crate-shell-0959611a/model.glb",
+  "source_sha256": "2df14388fbb429e6d370455a71bb199650cba97303d3e811d5a3fcafaed68366",
+  "editable_source": "assets/cleaned/H03/H03_vinyl_crate_shell.blend",
+  "preview": "assets/cleaned/H03/preview.png",
+  "yaw_degrees_applied": -90,
+  "cleaned_glb_sha256": "34a8a582cc7c1e46c4d5b3f262be3dcf93c0bcfb2035123ca36033948bb5e184",
+  "editable_source_sha256": "abcb8111d29f32901af31f55f87582509cc207d56b9efc32d188e0aa38378906",
+  "preview_sha256": "e37db0498b2aad1a33985a70e171c4f79f12099533311e3712ccd51447b37a55",
+  "geometry_operations": [
+    "baked glTF importer transforms",
+    "asset-specific yaw alignment",
+    "axis-aligned dimension fitting",
+    "XY-centered floor pivot at object origin",
+    "normal recalculation"
+  ],
+  "color_or_part_editing": "none; source material and mesh grouping retained",
+  "acceptance_boundary": "DCC geometry normalization only; art, authored palette, part separation, Roblox Studio import and runtime validation remain pending"
+}

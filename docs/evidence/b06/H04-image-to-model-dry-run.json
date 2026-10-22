@@ -1,0 +1,34 @@
+{
+  "dry_run": true,
+  "valid": true,
+  "input": "references/production/B06-H04-maintenance-helper-robot.png",
+  "model": "P1-20260311",
+  "model_reason": "explicit --model",
+  "steps": [
+    {
+      "name": "image-to-model",
+      "endpoint": "/v3/generation/image-to-model",
+      "task_type": "image_to_model",
+      "payload": {
+        "input": "<upload:references/production/B06-H04-maintenance-helper-robot.png>",
+        "model": "P1-20260311",
+        "face_limit": 3500,
+        "texture": false,
+        "pbr": false,
+        "export_uv": true
+      }
+    }
+  ],
+  "pending_uploads": [
+    "references/production/B06-H04-maintenance-helper-robot.png"
+  ],
+  "deliverables": [],
+  "candidates": 1,
+  "warnings": [],
+  "errors": [],
+  "cost_notes": [
+    "bare geometry: no texture credits"
+  ],
+  "reference_sha256": "5a5535062d477a68590d286f264edbff38d08914d5b55ba356d7c938d197b644",
+  "reference_prompt": "Generated isolated H04 utility robot reference from Production Atlas page 07; neutral pose, cream square head with two eye bars, teal body, arms clear of body, cosmetic wheels/feet, no glow or props."
+}

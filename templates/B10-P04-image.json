@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "batch_id": "B10-P04-image",
+  "authorization": {
+    "approved": true,
+    "approved_cap_credits": 650,
+    "approved_asset_ids": [
+      "P04"
+    ]
+  },
+  "quoted_total_credits": 40,
+  "docs_receipt": "docs/evidence/b01/docs_receipt.json",
+  "connection_receipt": "docs/evidence/b01/connection_receipt.json",
+  "requests": [
+    {
+      "asset_id": "P04",
+      "estimated_credits": 40,
+      "approved_reference": "references/production/B10-P04-record-browsing-bin.png",
+      "face_limit": 650,
+      "dry_run_receipt": "docs/evidence/b10/P04-image-to-model-dry-run.json"
+    }
+  ]
+}

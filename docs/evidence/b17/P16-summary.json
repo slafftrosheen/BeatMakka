@@ -1,0 +1,15 @@
+{
+  "asset_id": "P16",
+  "batch_id": "B17",
+  "task_id": "c6945d18-e29e-4f9c-999f-5cde0817fdd7",
+  "status": "success",
+  "credits_consumed": 40.0,
+  "balance_after": 330,
+  "frozen_after": 0,
+  "output_dir": "assets\\candidates\\tripo-out\\b17-p16-rooftop-vent-c6945d18",
+  "model_file": "assets\\candidates\\tripo-out\\b17-p16-rooftop-vent-c6945d18\\model.glb",
+  "preview": "assets\\candidates\\tripo-out\\b17-p16-rooftop-vent-c6945d18\\preview.png",
+  "reference_path": "references/production/B17-P16-rooftop-vent.png",
+  "reference_sha256": "cc797978ef2153b1b2d518d867e697c3c0ba1ef515866cf6784fe47d6715c59c",
+  "candidate_state": "raw provider candidate; DCC/art review pending"
+}

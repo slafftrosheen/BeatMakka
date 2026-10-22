@@ -1,0 +1,95 @@
+{
+  "blender_version": "5.2.2 LTS",
+  "method": "Export GLB, re-import each GLB, weld coincident seam vertices in-memory for topology inspection, count open edges and zero-area faces; source files unchanged.",
+  "assets": [
+    {
+      "asset_id": "P12",
+      "candidate": "assets/cleaned/P12/P12_solid_repair_candidate.glb",
+      "source_preserved": "assets/cleaned/P12/P12_art_repair_candidate.glb",
+      "dimensions_blender_xyz": [
+        3,
+        3,
+        4
+      ],
+      "studio_dimensions_xyz": [
+        3,
+        4,
+        3
+      ],
+      "pivot": "floor-center",
+      "mesh_parts": 15,
+      "reimported_triangles": 460,
+      "triangle_cap": 550,
+      "open_edges_after_weld": 0,
+      "degenerate_faces": 0,
+      "result": "PASS",
+      "notes": "Ten leaves are closed thin volumes; old leaf sheets had zero-thickness open boundaries."
+    },
+    {
+      "asset_id": "P14",
+      "candidate": "assets/cleaned/P14/P14_solid_repair_candidate.glb",
+      "source_preserved": "assets/cleaned/P14/P14_art_repair_candidate.glb",
+      "dimensions_blender_xyz": [
+        2,
+        1,
+        3
+      ],
+      "studio_dimensions_xyz": [
+        2,
+        3,
+        1
+      ],
+      "pivot": "rear-center wall mount",
+      "mesh_parts": 8,
+      "reimported_triangles": 304,
+      "triangle_cap": 400,
+      "open_edges_after_weld": 0,
+      "degenerate_faces": 0,
+      "result": "PASS",
+      "notes": "Irregular generated shell replaced by a closed beveled cabinet, wall plate and independent socket/status solids."
+    },
+    {
+      "asset_id": "I05",
+      "candidate": "assets/cleaned/I05/I05_solid_repair_candidate.glb",
+      "source_preserved": "assets/cleaned/I05/I05_art_repair_candidate.glb",
+      "dimensions_blender_xyz": [
+        3,
+        2,
+        4
+      ],
+      "studio_dimensions_xyz": [
+        3,
+        4,
+        2
+      ],
+      "pivot": "floor-center",
+      "mesh_parts": 11,
+      "reimported_triangles": 484,
+      "triangle_cap": 800,
+      "open_edges_after_weld": 0,
+      "degenerate_faces": 0,
+      "result": "PASS",
+      "notes": "Irregular generated podium shell replaced by closed plinth, cabinet, faceplate and control deck solids."
+    }
+  ],
+  "prior_candidate_audit": [
+    {
+      "asset_id": "P12",
+      "file": "assets/cleaned/P12/P12_art_repair_candidate.glb",
+      "open_edges_after_weld": 120,
+      "reason": "Ten leaf meshes were open, zero-thickness sheets."
+    },
+    {
+      "asset_id": "P14",
+      "file": "assets/cleaned/P14/P14_art_repair_candidate.glb",
+      "open_edges_after_weld": 0,
+      "reason": "Topology was closed, but the imported generated body had visible triangular surface artifacts; rebuilt for clean predictable shading."
+    },
+    {
+      "asset_id": "I05",
+      "file": "assets/cleaned/I05/I05_art_repair_candidate.glb",
+      "open_edges_after_weld": 56,
+      "reason": "Generated podium body contained open edges after welding split export vertices."
+    }
+  ]
+}

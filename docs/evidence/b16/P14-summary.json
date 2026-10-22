@@ -1,0 +1,15 @@
+{
+  "asset_id": "P14",
+  "batch_id": "B16",
+  "task_id": "d57e4c07-7762-4c7b-9356-2de36b60e47d",
+  "status": "success",
+  "credits_consumed": 40.0,
+  "balance_after": 370,
+  "frozen_after": 0,
+  "output_dir": "assets\\candidates\\tripo-out\\b16-p14-utility-junction-box-d57e4c07",
+  "model_file": "assets\\candidates\\tripo-out\\b16-p14-utility-junction-box-d57e4c07\\model.glb",
+  "preview": "assets\\candidates\\tripo-out\\b16-p14-utility-junction-box-d57e4c07\\preview.png",
+  "reference_path": "references/production/B16-P14-utility-junction-box.png",
+  "reference_sha256": "7cc3ef1b8db425bd76810ab440a0a736b7406998789a4af70cd2c451bd074635",
+  "candidate_state": "raw provider candidate; DCC/art review pending"
+}

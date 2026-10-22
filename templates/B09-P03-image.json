@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "batch_id": "B09-P03-image",
+  "authorization": {
+    "approved": true,
+    "approved_cap_credits": 690,
+    "approved_asset_ids": ["P03"]
+  },
+  "quoted_total_credits": 40,
+  "docs_receipt": "docs/evidence/b01/docs_receipt.json",
+  "connection_receipt": "docs/evidence/b01/connection_receipt.json",
+  "requests": [{
+    "asset_id": "P03",
+    "estimated_credits": 40,
+    "approved_reference": "references/production/B09-P03-listening-bench.png",
+    "face_limit": 500,
+    "dry_run_receipt": "docs/evidence/b09/P03-image-to-model-dry-run.json"
+  }]
+}

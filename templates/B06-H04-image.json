@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "batch_id": "B06-H04-image",
+  "authorization": {
+    "approved": true,
+    "approved_cap_credits": 810,
+    "approved_asset_ids": [
+      "H04"
+    ]
+  },
+  "quoted_total_credits": 40,
+  "docs_receipt": "docs/evidence/b01/docs_receipt.json",
+  "connection_receipt": "docs/evidence/b01/connection_receipt.json",
+  "requests": [
+    {
+      "asset_id": "H04",
+      "estimated_credits": 40,
+      "approved_reference": "references/production/B06-H04-maintenance-helper-robot.png",
+      "face_limit": 3500,
+      "dry_run_receipt": "docs/evidence/b06/H04-image-to-model-dry-run.json"
+    }
+  ]
+}

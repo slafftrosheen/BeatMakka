@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "batch_id": "B02-H01-image",
+  "authorization": {
+    "approved": true,
+    "approved_cap_credits": 1000,
+    "approved_asset_ids": ["H01"]
+  },
+  "quoted_total_credits": 40,
+  "docs_receipt": "docs/evidence/b01/docs_receipt.json",
+  "connection_receipt": "docs/evidence/b01/connection_receipt.json",
+  "requests": [
+    {
+      "asset_id": "H01",
+      "estimated_credits": 40,
+      "approved_reference": "references/production/B01-H01-sampler-shell.png",
+      "face_limit": 2200,
+      "dry_run_receipt": "docs/evidence/b02/H01-image-to-model-dry-run.json"
+    }
+  ]
+}

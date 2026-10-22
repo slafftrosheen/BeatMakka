@@ -1,0 +1,21 @@
+{
+  "batch_id": "B09-P03-image",
+  "asset_id": "P03",
+  "task_id": "a484dfae-34da-4a6d-917c-1d2da891f8c3",
+  "status": "success",
+  "model": "P1-20260311",
+  "operation": "image-to-model",
+  "credits_consumed": 40,
+  "input_reference": "references/production/B09-P03-listening-bench.png",
+  "dry_run_receipt": "docs/evidence/b09/P03-image-to-model-dry-run.json",
+  "raw_output_dir": "assets/candidates/tripo-out/b09-p03-listening-bench-a484dfae",
+  "files": {
+    "model.glb": "e2067964cce8499a7fe4a88e086610f4236ccdce92748e88b7972fec429dcaeb",
+    "preview.png": "d4ed9e4cca96129ab115eaf906f1dfa258dbde9c9b5568167fb1bfc33083cef5",
+    "task.json": "0dcb1aa706e93c54671945f1309da09bd099c5b674f4030fe87a2c22fde06bf6"
+  },
+  "preview_visual_review": "Low-back bench with broad seat, backrest, side supports and cross brace; monochrome gray provider render. Form reads as a simple listening bench and preserves a low stage sightline.",
+  "acceptance_stage": "CANDIDATE_PENDING_DCC_AND_ART_REVIEW",
+  "balance_after_credits": 650,
+  "frozen_after_credits": 0
+}

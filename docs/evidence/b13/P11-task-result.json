@@ -1,0 +1,14 @@
+{
+  "task_id": "daea9589-f31d-4294-ac08-5c03f2a87c33",
+  "type": "image_to_model",
+  "status": "success",
+  "credits_consumed": 40,
+  "output_dir": "assets\\candidates\\tripo-out\\b13-p11-planter-pot-daea9589",
+  "files": [
+    "model.glb",
+    "rendered_image.webp",
+    "preview.png"
+  ],
+  "model_file": "assets\\candidates\\tripo-out\\b13-p11-planter-pot-daea9589\\model.glb",
+  "preview": "assets\\candidates\\tripo-out\\b13-p11-planter-pot-daea9589\\preview.png"
+}

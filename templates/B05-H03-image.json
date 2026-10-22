@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "batch_id": "B05-H03-image",
+  "authorization": {
+    "approved": true,
+    "approved_cap_credits": 850,
+    "approved_asset_ids": [
+      "H03"
+    ]
+  },
+  "quoted_total_credits": 40,
+  "docs_receipt": "docs/evidence/b01/docs_receipt.json",
+  "connection_receipt": "docs/evidence/b01/connection_receipt.json",
+  "requests": [
+    {
+      "asset_id": "H03",
+      "estimated_credits": 40,
+      "approved_reference": "references/production/B05-H03-vinyl-crate-shell.png",
+      "face_limit": 650,
+      "dry_run_receipt": "docs/evidence/b05/H03-image-to-model-dry-run.json"
+    }
+  ]
+}

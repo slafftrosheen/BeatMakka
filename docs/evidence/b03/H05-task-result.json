@@ -1,0 +1,21 @@
+{
+  "batch_id": "B03-H05-image",
+  "asset_id": "H05",
+  "task_id": "d9329072-9ea5-4c1e-b958-90321ede34c9",
+  "status": "success",
+  "model": "P1-20260311",
+  "operation": "image-to-model",
+  "credits_consumed": 40,
+  "input_reference": "references/production/B03-H05-curved-street-lamp.png",
+  "dry_run_receipt": "docs/evidence/b03/H05-image-to-model-dry-run.json",
+  "raw_output_dir": "assets/candidates/tripo-out/b03-h05-curved-street-lamp-d9329072",
+  "files": {
+    "model.glb": "c08cbf0bd172406a6d5880f32a64c85e6450cf31f88506822f968e205e5108cf",
+    "preview.png": "5726a87fe2a1ff451b0bc2bc705480852015a9e9b27f576019bf9ef8116b00f8",
+    "task.json": "5bd1bc6a7709d952e8a34a83d3a15c61caf3a8f8aa25c489ef45b21f90ce8572"
+  },
+  "preview_visual_review": "Silhouette reads as a curved street lamp with a broad base, curved arm and open lantern cage. Material palette is monochrome gray in the provider preview; fit against target proportions and triangle cap remains unmeasured.",
+  "acceptance_stage": "CANDIDATE_PENDING_DCC_AND_ART_REVIEW",
+  "balance_after_credits": 890,
+  "frozen_after_credits": 0
+}

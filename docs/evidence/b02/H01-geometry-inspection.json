@@ -1,0 +1,19 @@
+{
+  "inspected_with": "Blender 5.2.2 background glTF import after clearing startup scene",
+  "raw_source": "assets/candidates/tripo-out/b02-h01-sampler-shell-image-76920209/model.glb",
+  "dcc_clean_model": "assets/cleaned/H01/H01_sampler_shell.glb",
+  "mesh_objects": 1,
+  "vertices": 2204,
+  "triangles": 2049,
+  "bounds_xyz_blender": [6.0, 4.0, 1.25],
+  "bounds_xyz_roblox_glb": [6.0, 1.25, 4.0],
+  "pivot": "bottom-center at origin; bottom height 0",
+  "front": "-Z",
+  "uv_layers": ["UVMap"],
+  "materials": [
+    "Sampler | Workshop Teal",
+    "Sampler | Warm Cream Trim",
+    "Sampler | Graphite Base"
+  ],
+  "review": "Blank shell reference was followed; no pads, screen, or labels are present. DCC removed Blender startup geometry, scaled/oriented the shell to the canonical dimensions, set the bottom-center pivot, and assigned deterministic palette materials. Candidate remains unapproved pending the grouped art review and Roblox Studio import."
+}

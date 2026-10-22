@@ -1,0 +1,26 @@
+{
+  "asset_id": "P04",
+  "task_id": "c79fb1fa-814e-45b9-9da7-cea4d15fc8ca",
+  "source": "assets/candidates/tripo-out/b10-p04-record-browsing-bin-c79fb1fa/model.glb",
+  "inspection_method": "Blender 5.2.2 headless GLB import after clearing factory-startup scene; read-only scene inspection",
+  "mesh_objects": 1,
+  "triangles": 634,
+  "raw_local_bounds_blender_units_xyz": [
+    0.658203,
+    0.998047,
+    0.533203
+  ],
+  "target_studs_xyz": [
+    5,
+    3.5,
+    3
+  ],
+  "materials": [
+    "Material_0"
+  ],
+  "uv_layers": [
+    "UVMap"
+  ],
+  "pivot": "not measured",
+  "notes": "Triangle count is within the 650 candidate cap. Front browse socket is visible in the provider preview. Raw normalized proportions need deterministic scaling and floor-center pivot work; separate palette, sleeve artwork and close-range legibility remain to implement and review."
+}

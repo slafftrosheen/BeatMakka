@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "batch_id": "B01-H01-TEXT",
+  "authorization": {
+    "approved": true,
+    "approved_cap_credits": 30,
+    "approved_asset_ids": ["H01"]
+  },
+  "quoted_total_credits": 30,
+  "docs_receipt": "docs/evidence/b01/docs_receipt.json",
+  "connection_receipt": "docs/evidence/b01/connection_receipt.json",
+  "requests": [
+    {
+      "asset_id": "H01",
+      "estimated_credits": 30,
+      "prompt": "Create only the outer shell of a compact, stylized music sampler workstation. Warm handmade industrial design: sturdy boxy body with softened corners, matte workshop teal shell (#2F5C58), warm cream trim (#E8D8B7), and graphite lower feet (#2C3031). Broad masses, clean quiet surfaces, shallow control-deck recess only. No pads, screen, labels, knobs, switches, cables, hands, room, table, or extra props. One coherent shell with a flat stable underside and a bottom-center pivot. Target proportions 6:1.25:4; final Roblox stud scale will be set in DCC. Isolated single object.",
+      "face_limit": 2200,
+      "dry_run_receipt": "docs/evidence/b01/H01-text-to-model-dry-run.json"
+    }
+  ]
+}

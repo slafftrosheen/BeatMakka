@@ -1,0 +1,35 @@
+{
+  "dry_run": true,
+  "valid": true,
+  "input": "references\\production\\B18-I01-metal-strike-sign.png",
+  "model": "P1-20260311",
+  "model_reason": "explicit --model",
+  "steps": [
+    {
+      "name": "image-to-model",
+      "endpoint": "/v3/generation/image-to-model",
+      "task_type": "image_to_model",
+      "payload": {
+        "input": "<upload:references\\production\\B18-I01-metal-strike-sign.png>",
+        "model": "P1-20260311",
+        "face_limit": 250,
+        "texture": false,
+        "pbr": false,
+        "export_uv": true
+      }
+    }
+  ],
+  "pending_uploads": [
+    "references\\production\\B18-I01-metal-strike-sign.png"
+  ],
+  "deliverables": [],
+  "candidates": 1,
+  "warnings": [],
+  "errors": [],
+  "cost_notes": [
+    "bare geometry: no texture credits"
+  ],
+  "reference_sha256": "2b076c6f4b45f0ec964ad6422daf3219daee00ad5f456212188aaf11308e2592",
+  "reference_prompt": "Use case: stylized-concept. Isolated game prop reference for a metal strike-sign discovery node in a cozy repaired music neighborhood. A broad rounded-rectangle hanging sign plate in muted teal painted metal, suspended from one chunky top hinge on a walnut wall-mount bracket; centered on the blank sign face is one large easy-to-hit circular brass sound plate with a simple raised concentric ring. Keep face blank, no lettering, no icon, no tiny target. Slight three-quarter front view, complete object visible, stout friendly forms and restrained screws, matte metal and walnut. Neutral light gray seamless background, even studio lighting and soft contact shadow. One object only, no wall, no environment, no text, no logo, no collage, square 1:1.",
+  "reference_provenance": "Generated with built-in image_gen for this asset reference."
+}

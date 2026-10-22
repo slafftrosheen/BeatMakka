@@ -1,0 +1,59 @@
+{
+  "asset_id": "P05",
+  "method": "deterministic Blender 5.2.2 construction; no provider call or credit charge",
+  "source_contract": "6 x 0.7 x 1.5 studs; rear-center wall pivot; no moving pieces",
+  "visual_authority": [
+    "01_Visual_Artbook.pdf page 03 (warm, repaired, tactile; broad masses and softened corners)",
+    "02_Production_Atlas.pdf page 12 (supporting prop selection and mount placement)",
+    "data/assets.json P05 contract"
+  ],
+  "glb": "assets/cleaned/P05/P05_wall_shelf.glb",
+  "editable_source": "assets/cleaned/P05/P05_wall_shelf.blend",
+  "preview": "assets/cleaned/P05/preview.png",
+  "dimensions_game_xyz": [
+    6.0,
+    0.7,
+    1.5
+  ],
+  "dimensions_blender_xyz": [
+    6.0,
+    1.5,
+    0.7
+  ],
+  "pivot": "rear-center at wall-facing plane y=0; object origin at (0,0,0)",
+  "front": "-Y in Blender scene; -Z in Roblox glTF convention",
+  "mesh_objects": 1,
+  "triangles": 148,
+  "full_asset_triangle_cap": 300,
+  "materials": [
+    "P05 | Workshop Teal",
+    "P05 | Warm Walnut",
+    "P05 | Warm Cream Edge"
+  ],
+  "uv_layers": [
+    "UVMap"
+  ],
+  "inspection_method": "Blender 5.2.2 headless re-import of exported GLB",
+  "measured_bounds_xyz": [
+    6.0,
+    1.5,
+    0.7
+  ],
+  "measured_min_xyz": [
+    -3.0,
+    -1.5,
+    -0.35
+  ],
+  "measured_object_origin_xyz": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "sha256": {
+    "glb": "b1ca3f81ee9023dc655918f07338e3f04992ccd3c02895e7a94b69363d5fbd44",
+    "blend": "96fbbdcfa9a19b62daf3ed83a87d283952613eb83f46d0d53e36d127e126cb00",
+    "preview": "8fc1d5e568826b2119913853ae8f4acf22b7c4832166958962cf5cba953a9526",
+    "builder": "7bef7ab9924b45c5047e582e0b9614bc140b99950fb2422b46e10b8392ecf7a3"
+  },
+  "stage": "DCC-exact candidate; art review, Roblox Studio import and runtime validation pending"
+}

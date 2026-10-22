@@ -1,0 +1,41 @@
+{
+  "asset_id": "H05",
+  "source_task_id": "d9329072-9ea5-4c1e-b958-90321ede34c9",
+  "source_glb": "assets/candidates/tripo-out/b03-h05-curved-street-lamp-d9329072/model.glb",
+  "repair": "Added a broad stepped 12-sided foundation flange with four anchor heads at floor contact; raw candidate preserved.",
+  "output_glb": "assets/cleaned/H05/H05_curved_street_lamp.glb",
+  "editable_source": "assets/cleaned/H05/H05_curved_street_lamp.blend",
+  "preview": "assets/cleaned/H05/preview.png",
+  "dcc_tool": "Blender 5.2.2",
+  "mesh_objects": 1,
+  "triangles": 1034,
+  "full_asset_triangle_cap": 1100,
+  "bounds_min_blender_xyz": [
+    -0.19,
+    -0.225,
+    0.0
+  ],
+  "dimensions_blender_xyz": [
+    0.38,
+    0.45,
+    0.998046875
+  ],
+  "materials": [
+    "Material_0"
+  ],
+  "uv_layers": [
+    "UVMap"
+  ],
+  "pivot": "Object origin retained at floor-center; geometry bottom is z=0 in Blender source. Roblox-axis import/pivot verification pending.",
+  "visual_review": "Base now has a broad stepped flange and four anchor heads, matching the atlas description of a broad base. Preview remains monochrome geometry-only.",
+  "remaining": "Exact stud scaling; separate lantern glass/bulb target and light attachment; final art approval, Studio import, runtime verification.",
+  "stage": "DCC_BASE_REPAIRED_CANDIDATE_PENDING_TARGET_SCALE_AND_PARTS",
+  "sha256": {
+    "H05_curved_street_lamp.glb": "b69d78188750ab8df60526eb3c3d701ce7bc4ef2ee6fd7e99bfea86233534d16",
+    "H05_curved_street_lamp.blend": "ad219eeaab1b865173304167a80a6ae039933e0b2129e221d7e78f95d94d61f6",
+    "preview.png": "ea9d1480da48e653422c58e75673d6ffe3fc8c4ff1bd0dca26ec34f57f02526c",
+    "H05_base_repaired_unscaled.glb": "b69d78188750ab8df60526eb3c3d701ce7bc4ef2ee6fd7e99bfea86233534d16"
+  },
+  "restored_working_source": "assets/candidates/dcc-source/H05_base_repaired_unscaled.glb",
+  "note": "The repaired but unscaled source is preserved separately; target-sized output is H05_curved_street_lamp_scaled.glb."
+}

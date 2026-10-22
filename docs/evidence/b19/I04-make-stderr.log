@@ -1,0 +1,17 @@
+в”Ђв”Ђ Plan в”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђ
+input: references\production\B19-I04-resonator-junction.png
+model: P1-20260311 вЂ” explicit --model
+steps:
+  1. image-to-model  POST /v3/generation/image-to-model вЂ” generate a 3D model from one image
+     model="P1-20260311" face_limit=500 texture=false pbr=false export_uv=true
+cost impact:
+  В· bare geometry: no texture credits
+в”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђ
+model: P1-20260311 (explicit --model)
+task created 0b2aa08d-601d-46af-9cbe-a203364583e6 (@b19-i04-resonator-junction)
+image_to_model В· queued
+image_to_model В· running 21% В· 0b2aa08d
+image_to_model В· success 100% В· 0b2aa08d
+вњ“ image_to_model В· 0b2aa08d-601d-46af-9cbe-a203364583e6 В· 40 credits
+downloading artifactsвЂ¦
+вњ“ artifacts saved to assets\candidates\tripo-out\b19-i04-resonator-junction-0b2aa08d

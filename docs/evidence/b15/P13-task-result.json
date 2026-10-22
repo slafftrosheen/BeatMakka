@@ -1,0 +1,14 @@
+{
+  "task_id": "09cb43ae-7107-467c-a41d-cf67461a2f0d",
+  "type": "image_to_model",
+  "status": "success",
+  "credits_consumed": 40,
+  "output_dir": "assets\\candidates\\tripo-out\\b15-p13-lamp-core-09cb43ae",
+  "files": [
+    "model.glb",
+    "rendered_image.webp",
+    "preview.png"
+  ],
+  "model_file": "assets\\candidates\\tripo-out\\b15-p13-lamp-core-09cb43ae\\model.glb",
+  "preview": "assets\\candidates\\tripo-out\\b15-p13-lamp-core-09cb43ae\\preview.png"
+}

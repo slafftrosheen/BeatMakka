@@ -1,0 +1,14 @@
+{
+  "task_id": "76920209-9592-4049-9a34-7a282188d0ce",
+  "type": "image_to_model",
+  "status": "success",
+  "model": "P1-20260311",
+  "credits_consumed": 40,
+  "input_reference": "references/production/B01-H01-sampler-shell.png",
+  "output_dir": "assets/candidates/tripo-out/b02-h01-sampler-shell-image-76920209",
+  "raw_model": "assets/candidates/tripo-out/b02-h01-sampler-shell-image-76920209/model.glb",
+  "raw_preview": "assets/candidates/tripo-out/b02-h01-sampler-shell-image-76920209/preview.png",
+  "dcc_clean_model": "assets/cleaned/H01/H01_sampler_shell.glb",
+  "blender_source": "assets/cleaned/H01/H01_sampler_shell.blend",
+  "dcc_preview": "assets/cleaned/H01/preview.png"
+}

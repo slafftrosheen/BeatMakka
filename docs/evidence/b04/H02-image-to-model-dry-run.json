@@ -1,0 +1,34 @@
+{
+  "dry_run": true,
+  "valid": true,
+  "input": "references/production/B04-H02-compact-speaker-stack.png",
+  "model": "P1-20260311",
+  "model_reason": "explicit --model",
+  "steps": [
+    {
+      "name": "image-to-model",
+      "endpoint": "/v3/generation/image-to-model",
+      "task_type": "image_to_model",
+      "payload": {
+        "input": "<upload:references/production/B04-H02-compact-speaker-stack.png>",
+        "model": "P1-20260311",
+        "face_limit": 1800,
+        "texture": false,
+        "pbr": false,
+        "export_uv": true
+      }
+    }
+  ],
+  "pending_uploads": [
+    "references/production/B04-H02-compact-speaker-stack.png"
+  ],
+  "deliverables": [],
+  "candidates": 1,
+  "warnings": [],
+  "errors": [],
+  "cost_notes": [
+    "bare geometry: no texture credits"
+  ],
+  "reference_sha256": "3cdd2543ad8334765323763be622ea183ebc1f67038677dd5fccc488fc57d2e7",
+  "reference_prompt": "Isolated, generated H02 speaker-stack mock based on Production Atlas page 05; single two-cabinet stack, dark teal cabinets, warm orange edging, one woofer, one square horn, no text or extra props."
+}

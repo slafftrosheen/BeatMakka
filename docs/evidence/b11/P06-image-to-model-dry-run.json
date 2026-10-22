@@ -1,0 +1,35 @@
+{
+  "dry_run": true,
+  "valid": true,
+  "input": "references\\production\\B11-P06-storage-crate.png",
+  "model": "P1-20260311",
+  "model_reason": "explicit --model",
+  "steps": [
+    {
+      "name": "image-to-model",
+      "endpoint": "/v3/generation/image-to-model",
+      "task_type": "image_to_model",
+      "payload": {
+        "input": "<upload:references\\production\\B11-P06-storage-crate.png>",
+        "model": "P1-20260311",
+        "face_limit": 280,
+        "texture": false,
+        "pbr": false,
+        "export_uv": true
+      }
+    }
+  ],
+  "pending_uploads": [
+    "references\\production\\B11-P06-storage-crate.png"
+  ],
+  "deliverables": [],
+  "candidates": 1,
+  "warnings": [],
+  "errors": [],
+  "cost_notes": [
+    "bare geometry: no texture credits"
+  ],
+  "reference_sha256": "e54d8b20ef38477d69a5949fd8341b88134e7bf1bfd64e7e3080c51047be3e73",
+  "reference_prompt": "Isolated stackable 3 x 3 x 3 utility storage crate with muted-teal boards, walnut rails, cream corner blocks and integrated front handhold; clean three-quarter view.",
+  "reference_provenance": "Existing reference generated from project art direction, with prompt recorded in prior dry-run evidence."
+}
