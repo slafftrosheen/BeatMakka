@@ -4,7 +4,7 @@ Reviewed 20 production-facing assets and all 51 GLBs present before repair. The 
 
 | ID | Current GLB | Action | Surface result |
 |---|---|---|---|
-| H01 | `assets/cleaned/H01/H01_sampler_shell_surface_repaired.glb` | Normal repair + boundary patches | 28 boundary edges and 14 non-manifold edges remain; inspect closely in Studio. |
+| H01 | `assets/cleaned/H01/H01_sampler_shell_surface_repaired.glb` | Normal repair + boundary patches | 28 boundary edges and 14 non-manifold edges remain in DCC audit; user confirmed asset is acceptable. |
 | H02 | `assets/cleaned/H02/H02_compact_speaker_stack_surface_repaired.glb` | Normal repair + four speaker-face caps | Closed after re-import; zero open/non-manifold edges. |
 | H03 | `assets/cleaned/H03/H03_vinyl_crate_shell_surface_repaired.glb` | Normal repair | Closed after re-import; zero open/non-manifold edges. |
 | H04 | `assets/cleaned/H04/H04_maintenance_helper_robot_surface_repaired.glb` | Normal repair | Closed after re-import; zero open/non-manifold edges. |
@@ -20,7 +20,7 @@ Reviewed 20 production-facing assets and all 51 GLBs present before repair. The 
 | P12 | `assets/cleaned/P12/P12_solid_repair_candidate.glb` | Rebuilt ten leaves as closed thin volumes | Closed; zero open/non-manifold edges. |
 | P13 | `assets/cleaned/P13/P13_art_repair_candidate.glb` | No repair needed | Closed and winding-consistent in audit. |
 | P14 | `assets/cleaned/P14/P14_solid_repair_candidate.glb` | Rebuilt cabinet and details as closed solids | Closed; zero open/non-manifold edges. |
-| P16 | `assets/cleaned/P16/P16_normalized_geometry_candidate_surface_repaired.glb` | Normal repair | 32-edge hood mouth remains open by design; verify visually. |
+| P16 | `assets/cleaned/P16/P16_normalized_geometry_candidate_surface_repaired.glb` | Normal repair | 32-edge hood mouth remains open by design; user confirmed asset is acceptable. |
 | I01 | `assets/cleaned/I01/I01_art_repair_candidate.glb` | No repair needed | Closed and winding-consistent in audit. |
 | I04 | `assets/cleaned/I04/I04_art_repair_candidate.glb` | No repair needed | Closed and winding-consistent in audit. |
 | I05 | `assets/cleaned/I05/I05_solid_repair_candidate.glb` | Rebuilt podium as closed solids | Closed; zero open/non-manifold edges. |
@@ -32,4 +32,6 @@ Reviewed 20 production-facing assets and all 51 GLBs present before repair. The 
 - Confirmed open-surface patches: `open-surface-repair.json`.
 - Three later solid-geometry replacements for P12, P14 and I05: `dcc-normalization/solid-repair-candidates.json`.
 
-This is DCC evidence only. The repaired GLBs still need Roblox Studio re-import and visual review. H01 remains specifically flagged for its residual topology counts.
+## User review
+
+On 2026-10-22, the user confirmed all 20 production assets are acceptable. This closes the visual acceptance review, including H01's residual DCC topology flags and P16's intentional hood opening. The numerical DCC audit remains unchanged. Roblox Studio import hierarchy and runtime behavior have not been independently recorded here.
