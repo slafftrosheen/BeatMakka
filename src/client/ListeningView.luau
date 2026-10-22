@@ -26,17 +26,38 @@ function ListeningView.new(screen, leave)
 end
 
 function ListeningView:update(session, soundStatus)
+    self.session = session
+    self.soundStatus = soundStatus
     self.panel.Visible = session ~= nil
     if not session then
         return
     end
     self.leave.Text = if session.hosting then "Stop sharing" else "Leave listening"
     self.label.Text = string.format(
-        "%s / %s\n%s",
+        "%s / %s\n%s%s",
         if session.hosting then "SHARING YOUR LOOP" else "LISTENING TO " .. session.performer,
         tostring(session.pattern.bpm) .. " BPM",
-        soundStatus
+        soundStatus,
+        if session.questPerformance then "\nMica's request: finish one complete loop." else ""
     )
+end
+
+function ListeningView:tick()
+    local session = self.session
+    if session and session.questPerformance then
+        local remaining = math.max(
+            0,
+            math.ceil(session.firstLoopEndsAt - game:GetService("Workspace"):GetServerTimeNow())
+        )
+        self.label.Text = string.format(
+            "SHARING YOUR LOOP / %d BPM\n%s\nMica's request: %s",
+            session.pattern.bpm,
+            self.soundStatus,
+            if remaining > 0
+                then tostring(remaining) .. "s to finish this loop."
+                else "finishing this loop..."
+        )
+    end
 end
 
 return ListeningView

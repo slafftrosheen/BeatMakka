@@ -8,7 +8,7 @@ The project starts as a file-system-first Luau project. Roblox Studio is the pla
 
 - Roblox Studio (installed locally on the current workstation).
 - Rokit 1.2.0 or newer.
-- Node.js 20+ and `tripo-cli` 0.7.2 for non-billable Tripo planning and account commands. Authentication is optional and has not been configured by this repository setup.
+- Node.js 20+ and `tripo-cli` 0.7.2 for non-billable Tripo planning and account commands. Account configuration is external; inspect current connection state rather than treating the historical B00 setup status as current.
 - Blender 5.2 (installed under `%ProgramFiles%\Blender Foundation\Blender 5.2` on the setup workstation).
 
 Project CLIs are pinned in `rokit.toml`: Rojo, Selene, and StyLua. No Wally packages or other external Luau dependencies are used yet.
@@ -51,6 +51,10 @@ The [courtyard listening milestone](docs/LISTENING_MILESTONE.md) adds podium sna
 
 The [first-zone coverage table](docs/IMPLEMENTATION_COVERAGE.md) maps all 74 packages to sources. [Runtime verification](docs/RUNTIME_VERIFICATION.md) records the subsequent Studio MCP checks and fixes, including the remaining asset/audio/device acceptance. Build the current complete source place with `rojo build default.project.json --output work/FrequencyZero-Complete.rbxlx`.
 
-Read `AGENTS.md`, `CODEX_START_HERE.md`, `TRIPO_RUNBOOK.md`, the two supplied art/production PDFs, and the source ledger before asset work. The approved style board, full source-drift ledger, execution-batch checklist, and some referenced templates were not included in the provided folder; B00 records these as setup blockers rather than inventing evidence.
+Read `AGENTS.md`, `CODEX_START_HERE.md`, `TRIPO_RUNBOOK.md`, the two supplied art/production PDFs, and the source ledger before asset work. The original approved [style board](assets/references/needle-quay-approved-style-board.png) is restored with [provenance](assets/references/needle-quay-approved-style-board.json). B00 records historical setup gaps, not present-day connection or acceptance state. The dated execution log and evidence remain authoritative for completed batches.
+
+The [audio/content readiness continuation](docs/AUDIO_CONTENT_CONTINUATION.md) records safe incremental binding, bounded audio readiness handling, and the remaining authorized acceptance work. It is source implementation, not a replacement for Studio/runtime evidence.
+
+The [next playable milestone](docs/NEXT_PLAYABLE_MILESTONE.md) implements four independent pattern slots, six personal beat shelf positions and Mica's first courtyard quest. Its [Studio verification](docs/MILESTONE_VERIFICATION.md) records 16 contract groups, 26 two-client checks, the confirmation-expiry fix and phone layouts. Live published cloud persistence and audible content acceptance remain open.
 
 Paid provider work is disabled until a named asset batch, current quote, and total credit cap are explicitly authorized and the offline preflight passes. See `docs/EXECUTION_BATCHES.md` and `tools/preflight_gate.py`.

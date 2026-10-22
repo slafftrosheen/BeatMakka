@@ -103,7 +103,7 @@ task.spawn(function()
         end)
         local a, b = players[1], players[2]
         move(a, Vector3.new(-8, 5, -1))
-        move(b, Vector3.new(-8, 5, -1))
+        move(b, Vector3.new(-14, 5, -1))
         expect(
             "first player owns station one",
             drive(a, "Prompt", "Station_1").station == "Station_1"
@@ -111,7 +111,7 @@ task.spawn(function()
         local denied = drive(b, "Prompt", "Station_1")
         expect(
             "second player cannot take occupied station",
-            denied.station == nil and string.find(denied.notice, "occupied") ~= nil
+            denied.station == nil and string.find(denied.notice or "", "occupied") ~= nil
         )
         move(b, Vector3.new(8, 5, -1))
         expect(
@@ -143,10 +143,61 @@ task.spawn(function()
                 and untouched.restoration == 0
                 and untouched.unlocked.I01 ~= true
         )
+        move(a, Vector3.new(17, 3, 14))
+        expect("Mica accepts the personal quest", drive(a, "Prompt", "Mica").quest.accepted)
+        move(a, Vector3.new(-8, 5, -1))
+        drive(a, "Prompt", "Station_1")
+        drive(a, "SelectSlot", 2)
+        drive(a, "Bpm", 140)
+        drive(a, "Step", 2, 5)
+        local alternate = drive(a, "Hello")
+        expect(
+            "slot B is independent from A",
+            alternate.pattern.bpm == 140 and not alternate.pattern.rows[1][1]
+        )
+        drive(a, "SelectSlot", 1)
+        drive(a, "Bpm", 180)
+        drive(a, "Assign", 1, "robot_chirp")
+        task.wait(5)
+        local shelf = drive(a, "ShelfStore", 1, 0)
+        expect(
+            "shelf captures both patterns and saves the profile",
+            shelf.book.shelf[1].saved and shelf.book.shelf[1].populated == 2
+        )
+        expect("saved discovery loop advances Mica to performance", shelf.quest.stage == "perform")
+        local private = drive(b, "Hello")
+        expect(
+            "shelf and quest stay personal",
+            not private.book.shelf[1].exists and not private.quest.accepted
+        )
+        drive(a, "Release")
+        move(a, Vector3.new(42, 4, 10))
+        local short = drive(a, "Prompt", "I05")
+        expect(
+            "saved loop begins eligible performance",
+            short.listening and short.listening.questPerformance
+        )
+        local stopped = drive(a, "LeaveListening")
+        expect(
+            "stopping before a full loop earns no completion",
+            not stopped.quest.completed and stopped.listening == nil
+        )
+        task.wait(2)
+        expect(
+            "cancelled session deadline cannot award quest",
+            not drive(a, "Hello").quest.completed
+        )
         move(a, Vector3.new(42, 4, 10))
         local host = drive(a, "Prompt", "I05")
         expect("performer shares an audible snapshot", host.listening and host.listening.hosting)
         expect("bystander is not auto-subscribed", drive(b, "Hello").listening == nil)
+        task.wait(2)
+        local performed = drive(a, "Hello")
+        expect(
+            "full loop completes and saves without an audience",
+            performed.quest.completed and not performed.dirty
+        )
+        expect("another player's quest is not completed", not drive(b, "Hello").quest.completed)
         drive(b, "Release")
         move(b, Vector3.new(46, 4, 11))
         local listener = drive(b, "Prompt", "I05")
@@ -186,6 +237,15 @@ task.spawn(function()
     finish({
         passed = ok,
         error = if ok then nil else tostring(err),
+        diagnostic = if ok
+            then nil
+            else reports[index] and {
+                prompt = reports[index].value._qa,
+                quest = reports[index].value.quest,
+                listening = reports[index].value.listening,
+                notice = reports[index].value.notice,
+                station = reports[index].value.station,
+            },
         count = #checks,
         checks = checks,
     })

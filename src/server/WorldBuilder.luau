@@ -398,6 +398,28 @@ function WorldBuilder.build()
         Theme.Walnut,
         Vector3.new(7, 1.8, 2.5)
     )
-    return { root = root, stations = stations, discoveries = nodes, listening = listening }
+    local helper = nodes.I03.anchor.Parent
+    local talkAnchor = part(
+        helper,
+        "MicaTalkTarget",
+        Vector3.new(1, 2, 1),
+        CFrame.new(17, 2.5, 18),
+        Theme.Cream,
+        false
+    )
+    talkAnchor.Transparency = 1
+    talkAnchor:SetAttribute("QuestId", "first_courtyard_set")
+    local talkPrompt = prompt(talkAnchor, "Talk to Mica", "Mica / quay caretaker")
+    talkPrompt.KeyboardKeyCode = Enum.KeyCode.F
+    talkPrompt.GamepadKeyCode = Enum.KeyCode.ButtonY
+    talkPrompt.MaxActivationDistance = 7
+    label(talkAnchor, "MICA / QUAY CARETAKER", 2.5)
+    return {
+        root = root,
+        stations = stations,
+        discoveries = nodes,
+        listening = listening,
+        quest = { anchor = talkAnchor, prompt = talkPrompt },
+    }
 end
 return WorldBuilder

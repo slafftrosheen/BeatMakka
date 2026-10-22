@@ -3,6 +3,8 @@ local RunService = game:GetService("RunService")
 local Shared = game:GetService("ReplicatedStorage").Shared
 local Pattern = require(Shared.Pattern)
 local Cosmetics = require(Shared.CosmeticCatalog)
+local Book = require(Shared.BeatBook)
+local Quest = require(Shared.FirstPerformanceQuest)
 
 local ProfileStore = {}
 local store
@@ -15,8 +17,13 @@ local function cloudStore()
 end
 
 function ProfileStore.new()
+    local slots = Book.sanitizeSlots(nil, {})
     return {
-        pattern = Pattern.new(),
+        slots = slots,
+        activeSlot = 1,
+        pattern = slots[1],
+        shelf = Book.sanitizeShelf(nil, {}),
+        quest = Quest.sanitize(nil),
         unlocked = {},
         finish = "quay",
         saved = nil,
@@ -31,9 +38,14 @@ function ProfileStore.new()
 end
 
 local function capture(profile)
+    local book = Book.capture(profile)
     return {
-        schema = 1,
+        schema = 2,
         pattern = Pattern.sanitize(profile.pattern, profile.unlocked),
+        slots = book.slots,
+        activeSlot = book.activeSlot,
+        shelf = book.shelf,
+        quest = Quest.sanitize(profile.quest),
         unlocked = table.clone(profile.unlocked),
         finish = profile.finish,
     }
@@ -47,14 +59,27 @@ function ProfileStore.load(player, profile, storage)
     local ok, data = pcall(function()
         return (storage or cloudStore()):GetAsync(tostring(player.UserId))
     end)
-    if not ok or (data ~= nil and (type(data) ~= "table" or data.schema ~= 1)) then
+    if
+        not ok
+        or (
+            data ~= nil
+            and (
+                type(data) ~= "table"
+                or (data.schema ~= 1 and data.schema ~= 2)
+                or (data.revision ~= nil and not Pattern.integer(data.revision, 0, 1e12))
+            )
+        )
+    then
         profile.loadFailed = true
         profile.saveMode = "unavailable"
     elseif type(data) == "table" then
         for _, id in { "I01", "I02", "I03" } do
             profile.unlocked[id] = type(data.unlocked) == "table" and data.unlocked[id] == true
         end
-        profile.pattern = Pattern.sanitize(data.pattern, profile.unlocked)
+        Book.restoreWorking(profile, data)
+        profile.shelf =
+            Book.sanitizeShelf(if data.schema == 2 then data.shelf else nil, profile.unlocked)
+        profile.quest = Quest.sanitize(if data.schema == 2 then data.quest else nil)
         profile.finish = if type(data.finish) == "string" and Cosmetics.Sets[data.finish]
             then data.finish
             else "quay"
@@ -83,6 +108,10 @@ function ProfileStore.save(player, profile, storage)
         return true, "Saved for this Studio session only."
     end
     local expected = profile.storageRevision
+    if expected >= 1e12 then
+        profile.saving = false
+        return false, "This profile cannot be saved again. Your current work is still open."
+    end
     snapshot.revision = expected + 1
     local ok, saved = pcall(function()
         return (storage or cloudStore()):UpdateAsync(tostring(player.UserId), function(previous)
@@ -90,10 +119,13 @@ function ProfileStore.save(player, profile, storage)
                 previous ~= nil
                 and (
                     type(previous) ~= "table"
-                    or previous.schema ~= 1
-                    or previous.revision ~= expected
+                    or (previous.schema ~= 1 and previous.schema ~= 2)
+                    or (previous.revision or 0) ~= expected
                 )
             then
+                return nil
+            end
+            if previous == nil and expected ~= 0 then
                 return nil
             end
             return snapshot
@@ -109,7 +141,7 @@ function ProfileStore.save(player, profile, storage)
     profile.saved = snapshot
     profile.savedEditVersion = capturedVersion
     profile.storageRevision = snapshot.revision
-    return true, "Pattern and discoveries saved."
+    return true, "Pattern slots, beat shelf and progress saved."
 end
 
 function ProfileStore.restore(profile)
@@ -117,7 +149,7 @@ function ProfileStore.restore(profile)
         return false, "There is no saved pattern to restore yet."
     end
     -- Discoveries are permanent within this play session; restoring never revokes them.
-    profile.pattern = Pattern.sanitize(profile.saved.pattern, profile.unlocked)
+    Book.restoreWorking(profile, profile.saved)
     profile.finish = profile.saved.finish or "quay"
     profile.editVersion += 1
     local hasNewDiscoveries = false
@@ -126,9 +158,21 @@ function ProfileStore.restore(profile)
             hasNewDiscoveries = true
         end
     end
-    if not hasNewDiscoveries then
+    local savedQuest = Quest.sanitize(profile.saved.quest)
+    local preserved = hasNewDiscoveries
+        or profile.quest.accepted ~= savedQuest.accepted
+        or profile.quest.completed ~= savedQuest.completed
+    for index = 1, Book.ShelfCapacity do
+        local entry = profile.shelf[index]
+        local saved = profile.saved.shelf and profile.saved.shelf[index]
+        if (if entry then entry.version else 0) ~= (if saved then saved.version else 0) then
+            preserved = true
+        end
+    end
+    if not preserved then
         profile.savedEditVersion = profile.editVersion
     end
-    return true, "Saved pattern restored."
+    return true,
+        "Saved pattern slots restored. Your shelf, discoveries and quest progress stay with you."
 end
 return ProfileStore

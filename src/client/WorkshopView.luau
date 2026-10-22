@@ -7,6 +7,7 @@ local Catalog = require(Shared.SampleCatalog)
 local Cosmetics = require(Shared.CosmeticCatalog)
 local Atlas = require(Shared.UiAtlas)
 local Gui = require(script.Parent.GuiFactory)
+local BeatBookView = require(script.Parent.BeatBookView)
 local WorkshopView = {}
 WorkshopView.__index = WorkshopView
 
@@ -168,8 +169,8 @@ function WorkshopView.new(callbacks)
     end)
     self.bpmDown.Name = "TempoDown"
     self.bpmUp.Name = "TempoUp"
-    self.save = control("Save", "Save")
-    self.restore = control("Restore", "Restore")
+    self.save = control("Save profile", "Save")
+    self.restore = control("Restore slots", "Restore")
     self.padMute = control("Mute pad", "MutePad", function()
         return self.selectedPad
     end)
@@ -195,11 +196,11 @@ function WorkshopView.new(callbacks)
     self.status.Name = "Status"
     self.status.Size = UDim2.new(1, -6, 0, 52)
     self.status.AutomaticSize = Enum.AutomaticSize.Y
-    self.status.LayoutOrder = 3
+    self.status.LayoutOrder = 4
     local workspace = Gui.make(
         "Frame",
         scroll,
-        { Size = UDim2.new(1, -6, 0, 300), BackgroundTransparency = 1, LayoutOrder = 4 }
+        { Size = UDim2.new(1, -6, 0, 300), BackgroundTransparency = 1, LayoutOrder = 5 }
     )
     local pads = Gui.make(
         "Frame",
@@ -257,11 +258,11 @@ function WorkshopView.new(callbacks)
     local libraryTitle =
         Gui.label(scroll, "SOUND COLLECTION  /  Choose a sound to assign to the selected pad", 15)
     libraryTitle.Size = UDim2.new(1, -6, 0, 42)
-    libraryTitle.LayoutOrder = 5
+    libraryTitle.LayoutOrder = 7
     local library = Gui.make(
         "Frame",
         scroll,
-        { Size = UDim2.new(1, -6, 0, 356), BackgroundTransparency = 1, LayoutOrder = 6 }
+        { Size = UDim2.new(1, -6, 0, 356), BackgroundTransparency = 1, LayoutOrder = 8 }
     )
     Gui.make("UIGridLayout", library, {
         CellSize = UDim2.new(1 / 3, -6, 0, 44),
@@ -284,13 +285,19 @@ function WorkshopView.new(callbacks)
     self.audioStatus = Gui.label(scroll, "Audio loading...", 13)
     self.audioStatus.Name = "AudioStatus"
     self.audioStatus.Size = UDim2.new(1, -6, 0, 52)
-    self.audioStatus.LayoutOrder = 7
+    self.audioStatus.LayoutOrder = 9
     self.audioStatus.AutomaticSize = Enum.AutomaticSize.Y
     self.appearanceStatus = Gui.label(scroll, "", 13)
     self.appearanceStatus.Name = "AppearanceStatus"
     self.appearanceStatus.Size = UDim2.new(1, -6, 0, 52)
     self.appearanceStatus.AutomaticSize = Enum.AutomaticSize.Y
-    self.appearanceStatus.LayoutOrder = 8
+    self.appearanceStatus.LayoutOrder = 10
+    self.bookView = BeatBookView.new(scroll, {
+        command = callbacks.command,
+        notice = function(text)
+            self:notice(text)
+        end,
+    })
     local function resize()
         local narrow = panel.AbsoluteSize.X < 680
         workspace.Size = UDim2.new(1, -6, 0, if narrow then 568 else 300)
@@ -325,6 +332,7 @@ function WorkshopView:update(state)
     self.panel.Visible = state.station ~= nil
     self.hud.Visible = state.station == nil
     self.resizeHud()
+    self.bookView:update(state)
     if UserInputService.GamepadEnabled and wasOpen ~= self.panel.Visible then
         GuiService.SelectedObject = if self.panel.Visible then self.play else self.sound
     end
@@ -336,9 +344,17 @@ function WorkshopView:update(state)
     self.record.Text = if state.recording then "RECORDING [T]" else "Record OFF [T]"
     self.finish.Text = "Finish: " .. Cosmetics.Sets[state.finish].label
     self.padMute.Text = if p.muted[self.selectedPad] then "Unmute pad" else "Mute pad"
-    self.save.Text = if state.saving then "Saving..." elseif state.dirty then "Save *" else "Save"
-    self.restore.Text = if state.hasSave then "Restore" else "No saved pattern"
-    self.rowTitle.Text = string.format("PAD %02d / %d BPM / 16 STEPS", self.selectedPad, p.bpm)
+    self.save.Text = if state.saving
+        then "Saving..."
+        elseif state.dirty then "Save profile *"
+        else "Save profile"
+    self.restore.Text = if state.hasSave then "Restore slots" else "No saved slots"
+    self.rowTitle.Text = string.format(
+        "%s / PAD %02d / %d BPM",
+        if state.book then state.book.slots[state.book.activeSlot].label else "A",
+        self.selectedPad,
+        p.bpm
+    )
     for pad, button in self.pads do
         local sample = Catalog.ById[p.assignments[pad]]
         local key = Catalog.List[pad].key
@@ -377,10 +393,14 @@ function WorkshopView:update(state)
                     collected += 1
                 end
             end
-            self.hudLabel.Text = string.format(
-                "NEEDLE QUAY / %d of 3 sounds collected\nVisit a sampler to make your loop. Save before leaving.",
-                collected
-            )
+            self.hudLabel.Text = if state.quest
+                then (if state.quest.completed
+                    then "FIRST COURTYARD SET / COMPLETE\n"
+                    else "MICA'S REQUEST / " .. tostring(collected) .. "/3 sounds\n") .. state.quest.objective
+                else string.format(
+                    "NEEDLE QUAY / %d of 3 sounds collected\nVisit a sampler to make your loop. Save before leaving.",
+                    collected
+                )
         end
         self.status.Text = string.format(
             "%s  /  %s. Save before leaving. %d / 4 workshop states.",
@@ -419,6 +439,7 @@ function WorkshopView:playhead(step)
 end
 
 function WorkshopView:tick()
+    self.bookView:tick()
     if self.state and self.noticeUntil and os.clock() >= self.noticeUntil then
         self.noticeUntil = nil
         self:update(self.state)

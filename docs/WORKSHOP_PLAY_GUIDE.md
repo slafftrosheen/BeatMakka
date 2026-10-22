@@ -6,7 +6,9 @@ For the subsequent complete first-zone source batch, current checks and fixes, s
 
 Needle Quay has two sampler stations, a 16-pad/16-step editor, tempo and transport controls, quantized recording, pad mute/clear, sound assignments, three discovery interactions, personal restoration indicators, and manual save/restore. Four device finishes are saved with the pattern. The server checks station ownership, distance, command shape, rates and unlocks.
 
-The current build is a local development milestone. Audio playback requires uploaded sound IDs. The 19 original WAV sources exist but are not uploaded. Courtyard snapshot sharing now has a [source implementation and player flow](LISTENING_MILESTONE.md), with multiplayer/runtime acceptance pending. Character equipment, item ownership, character rigs and character-specific textures remain future implementation.
+The [next playable milestone](NEXT_PLAYABLE_MILESTONE.md) adds four independent pattern slots A–D, six personal beat shelf positions, and Mica's request ending in a full courtyard loop. The subsequent [Studio verification](MILESTONE_VERIFICATION.md) covers its build, contracts, two-client gameplay and phone layouts. Earlier receipts cover the earlier source only.
+
+The current build is a local development milestone. Audio playback requires uploaded sound IDs. The 19 playable samples, four interface cues and one ambience WAV exist but are not uploaded. Courtyard snapshot sharing has a [source implementation and player flow](LISTENING_MILESTONE.md), with its simulated multiplayer checks recorded separately. Character equipment, item ownership, final character rigs and character-specific textures remain future implementation.
 
 ## Open the source build
 
@@ -29,9 +31,12 @@ Open the generated place, or connect the Rojo plugin in the existing review plac
 5. Use `1 2 3 4 / Q W E R / A S D F / Z X C V` to audition pads while the sampler is open. Those keys are captured by the instrument.
 6. Choose a collection entry to assign it to the selected pad. Locked entries require their discovery interaction.
 7. Change tempo, mute/clear a pad, or cycle Finish. Finish selection is personal.
-8. Save explicitly. Restore reloads the last saved pattern, discoveries and finish. Studio session saves are discarded when Play ends. Published cloud saves have separate permission and live acceptance requirements.
-9. Leave the sampler, visit the three discovery nodes, and collect their sounds. Three discoveries plus a nonempty pattern reach restoration state four.
-10. Sound and Effects controls are available. This preview has no uploaded audio bank, so pattern editing currently runs silently.
+8. Choose A–D in the Patterns section. Each slot keeps its own steps, sounds, mutes and tempo; switching stops transport and recording. Use the on-screen slot buttons: the letter keys still audition pads.
+9. Select a position on Your Beat Shelf, then Save to shelf. Each beat stores all four slots. Replacing an occupied position or loading a beat requires pressing the same confirmation button twice within five seconds. Loading replaces working slots A–D and leaves the shelf intact.
+10. Save profile saves current slots, shelf, discoveries, finish and quest progress. Restore slots reloads saved working slots and finish while retaining discoveries, shelf work and earned quest progress. Studio session saves are discarded when Play ends. Cloud saving still needs live acceptance; a failed save keeps current work in memory and marks it unsaved.
+11. Meet Mica, the helper robot in the sound alley, using Talk to Mica (F or gamepad Y). Collect all three discovery sounds, place at least one discovery sound on an enabled, unmuted step, and save that beat to the shelf. Select the saved pattern you want to perform before leaving the sampler.
+12. Share your loop at the courtyard podium and remain there for one complete sixteen-step loop. Mica's quest requires no audience. Stopping, dying or leaving before the loop ends cancels that attempt. Completion requests one profile save; check the save notice and dirty status if storage is unavailable.
+13. Sound and Effects controls are available. This preview has no uploaded audio bank, so pattern editing currently runs silently. Audio availability and local mute do not block Mica's quest.
 
 ## Asset upload outcome, 22 October 2026
 
@@ -67,4 +72,4 @@ Use Studio's [Importer](https://create.roblox.com/docs/studio/importer), since t
 - `studio-workshop-console.json`: no project Lua exception in that captured run; a default avatar asset type warning remains.
 - Real audio, persisted mesh rendering, final 3D PBR appearance, cloud saves, two-player contention, physical-device timing and measured performance remain unverified. No automated test suite was added or run.
 
-Changes in this milestone are local and have not been committed or pushed.
+The dated upload evidence above is historical. Current milestone verification and delivery scope are recorded in [Studio verification](MILESTONE_VERIFICATION.md).

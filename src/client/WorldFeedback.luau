@@ -89,6 +89,12 @@ end
 
 function Feedback:update(state)
     self.state = state
+    local completed = state.quest ~= nil and state.quest.completed == true
+    if self.enabled and self.questCompleted == false and completed then
+        self.pose = "celebrate"
+        self.poseUntil = os.clock() + 1.2
+    end
+    self.questCompleted = completed
     if self.stage ~= state.restoration then
         if self.enabled and state.restoration > self.stage then
             self.pose = "celebrate"

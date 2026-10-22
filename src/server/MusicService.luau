@@ -4,6 +4,8 @@ local Workspace = game:GetService("Workspace")
 local Pattern = require(ReplicatedStorage.Shared.Pattern)
 local Catalog = require(ReplicatedStorage.Shared.SampleCatalog)
 local Cosmetics = require(ReplicatedStorage.Shared.CosmeticCatalog)
+local Book = require(ReplicatedStorage.Shared.BeatBook)
+local Quest = require(ReplicatedStorage.Shared.FirstPerformanceQuest)
 local Profiles = require(script.Parent.ProfileStore)
 local ListeningSession = require(script.Parent.ListeningSession)
 local MusicService = {}
@@ -54,6 +56,8 @@ function MusicService.start(world)
         state:FireClient(player, {
             ready = profile.ready,
             pattern = profile.pattern,
+            book = Book.summary(profile),
+            quest = Quest.summary(profile),
             unlocked = profile.unlocked,
             station = profile.station,
             playing = profile.playing,
@@ -65,7 +69,8 @@ function MusicService.start(world)
             hasSave = profile.saved ~= nil,
             finish = profile.finish,
             dirty = profile.editVersion ~= profile.savedEditVersion,
-            restoration = if count == 3 and Pattern.hasNotes(profile.pattern) then 4 else count,
+            editVersion = profile.editVersion,
+            restoration = if count == 3 and Book.hasNotes(profile) then 4 else count,
             notice = notice,
             preview = preview,
             cue = cue,
@@ -92,7 +97,93 @@ function MusicService.start(world)
         send(player, notice)
     end
 
-    listening = ListeningSession.new(world.listening, profiles, send, release, nearby)
+    local drainQuestSave
+    local function persist(player, profile, successNotice)
+        if profile.saving then
+            return false
+        end
+        profile.saving = true
+        send(player, "Saving...")
+        task.spawn(function()
+            -- ProfileStore owns the flag across its yielding storage operation.
+            profile.saving = false
+            local ok, result = Profiles.save(player, profile)
+            if ok and profile.editVersion ~= profile.savedEditVersion then
+                result = "Snapshot saved. Your newer edits are not saved yet."
+            elseif ok and successNotice then
+                result = successNotice
+            elseif not ok then
+                result = "Current work is temporary. " .. result
+            end
+            send(player, result, nil, if ok then "ui_save" else "ui_error")
+            drainQuestSave(player, profile)
+        end)
+        return true
+    end
+
+    drainQuestSave = function(player, profile)
+        if not profile.questNeedsSave or profile.saving then
+            return
+        end
+        profile.questNeedsSave = false
+        persist(
+            player,
+            profile,
+            if profile.saveMode == "session"
+                then "First courtyard set saved for this Studio session only."
+                else "Your first courtyard set is saved."
+        )
+    end
+
+    listening = ListeningSession.new(world.listening, profiles, send, release, nearby, {
+        eligible = function(player, pattern)
+            local profile = profiles[player]
+            return profile ~= nil and Quest.canPerform(profile, pattern)
+        end,
+        performed = function(player, pattern)
+            local profile = profiles[player]
+            if not profile or not Quest.canPerform(profile, pattern) then
+                return
+            end
+            profile.quest.completed = true
+            profile.editVersion += 1
+            profile.questNeedsSave = true
+            send(
+                player,
+                "Mica: That's our quay! Your first courtyard set is complete.",
+                nil,
+                "ui_collect"
+            )
+            drainQuestSave(player, profile)
+        end,
+    })
+
+    world.quest.prompt.Triggered:Connect(function(player)
+        local profile = profiles[player]
+        if not profile or not profile.ready or not nearby(player, world.quest.anchor, 9) then
+            return
+        end
+        local now = os.clock()
+        if profile.lastTalk and now - profile.lastTalk < 1 then
+            return
+        end
+        profile.lastTalk = now
+        if not profile.quest.accepted then
+            profile.quest.accepted = true
+            profile.editVersion += 1
+            send(
+                player,
+                "Mica: Help me give the quay a tune. Collect our three sounds, save a beat using one, then play it at the courtyard."
+            )
+        elseif profile.quest.completed then
+            send(
+                player,
+                "Mica: The quay has its tune. Your first set belongs here. Keep making it yours."
+            )
+        else
+            send(player, "Mica: " .. Quest.summary(profile).objective)
+        end
+    end)
 
     local function join(player)
         if profiles[player] then
@@ -210,7 +301,49 @@ function MusicService.start(world)
             return
         end
         local notice
-        if action == "Step" and Pattern.integer(a, 1, 16) and Pattern.integer(b, 1, 16) then
+        if action == "SelectSlot" and Pattern.integer(a, 1, Book.SlotCount) then
+            Book.select(profile, a)
+            profile.playing = false
+            profile.recording = false
+            profile.epoch += 1
+        elseif action == "ShelfStore" then
+            if profile.saving or now - profile.lastSave < 5 then
+                send(player, "Please wait a moment between saves.")
+                return
+            end
+            local ok, result = Book.store(profile, a, b)
+            if not ok then
+                send(player, result)
+                return
+            end
+            profile.editVersion += 1
+            profile.lastSave = now
+            persist(
+                player,
+                profile,
+                result
+                    .. (
+                        if profile.saveMode == "session"
+                            then " Saved for this Studio session only."
+                            else " Profile saved."
+                    )
+            )
+            return
+        elseif action == "ShelfLoad" then
+            if profile.saving then
+                send(player, "Wait for the current save before loading a beat.")
+                return
+            end
+            local ok, result = Book.load(profile, a, b)
+            if not ok then
+                send(player, result)
+                return
+            end
+            notice = result
+            profile.playing = false
+            profile.recording = false
+            profile.epoch += 1
+        elseif action == "Step" and Pattern.integer(a, 1, 16) and Pattern.integer(b, 1, 16) then
             profile.pattern.rows[a][b] = not profile.pattern.rows[a][b]
         elseif action == "MutePad" and Pattern.integer(a, 1, 16) then
             profile.pattern.muted[a] = not profile.pattern.muted[a]
@@ -262,18 +395,13 @@ function MusicService.start(world)
                 return
             end
             profile.lastSave = now
-            task.spawn(function()
-                profile.saving = true
-                send(player, "Saving...")
-                profile.saving = false
-                local ok, result = Profiles.save(player, profile)
-                if ok and profile.editVersion ~= profile.savedEditVersion then
-                    result = "Snapshot saved. Your newer edits are not saved yet."
-                end
-                send(player, result, nil, if ok then "ui_save" else "ui_error")
-            end)
+            persist(player, profile)
             return
         elseif action == "Restore" then
+            if profile.saving then
+                send(player, "Wait for the current save before restoring slots.")
+                return
+            end
             local _, result = Profiles.restore(profile)
             notice = result
             profile.playing = false
@@ -290,6 +418,8 @@ function MusicService.start(world)
             or action == "Bpm"
             or action == "Finish"
             or action == "Tap"
+            or action == "SelectSlot"
+            or action == "ShelfLoad"
         then
             profile.editVersion += 1
         end
@@ -301,6 +431,7 @@ function MusicService.start(world)
             task.wait(1)
             listening:tick()
             for player, profile in profiles do
+                drainQuestSave(player, profile)
                 local station = world.stations[profile.station]
                 if station and not nearby(player, station.anchor, 18) then
                     release(player, "Station released. Your pattern stays with you.")

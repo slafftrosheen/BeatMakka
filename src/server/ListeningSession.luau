@@ -3,7 +3,7 @@ local Pattern = require(game:GetService("ReplicatedStorage").Shared.Pattern)
 local ListeningSession = {}
 ListeningSession.__index = ListeningSession
 
-function ListeningSession.new(podium, profiles, send, release, nearby)
+function ListeningSession.new(podium, profiles, send, release, nearby, lifecycle)
     local self = setmetatable({
         podium = podium,
         profiles = profiles,
@@ -11,6 +11,7 @@ function ListeningSession.new(podium, profiles, send, release, nearby)
         nearby = nearby,
         members = {},
         revision = 0,
+        lifecycle = lifecycle or {},
     }, ListeningSession)
     podium.prompt.Triggered:Connect(function(player)
         local profile = profiles[player]
@@ -50,7 +51,18 @@ function ListeningSession.new(podium, profiles, send, release, nearby)
             self.owner = player
             self.pattern = snapshot
             self.startedAt = Workspace:GetServerTimeNow() + 0.3
+            self.firstLoopEndsAt = self.startedAt
+                + Pattern.Steps * Pattern.stepDuration(snapshot.bpm)
+            self.firstBarReported = false
+            self.performanceEligible = self.lifecycle.eligible ~= nil
+                and self.lifecycle.eligible(player, snapshot) == true
             self.revision += 1
+            local revision = self.revision
+            task.delay(self.firstLoopEndsAt - Workspace:GetServerTimeNow(), function()
+                if self.owner == player and self.revision == revision then
+                    self:reportFirstLoop()
+                end
+            end)
             self.members[player] = true
             podium.prompt.ActionText = "Join / leave listening"
             podium.label.Text = "LIVE LOOP / " .. player.DisplayName
@@ -73,14 +85,34 @@ function ListeningSession:state(player)
         epoch = self.revision,
         performer = self.owner.DisplayName,
         hosting = self.owner == player,
+        questPerformance = self.owner == player
+            and self.performanceEligible
+            and not self.firstBarReported,
+        firstLoopEndsAt = self.firstLoopEndsAt,
     }
 end
 
+function ListeningSession:reportFirstLoop()
+    if
+        self.owner
+        and not self.firstBarReported
+        and Workspace:GetServerTimeNow() >= self.firstLoopEndsAt
+        and self.nearby(self.owner, self.podium.anchor, 32)
+    then
+        self.firstBarReported = true
+        if self.performanceEligible and self.lifecycle.performed then
+            self.lifecycle.performed(self.owner, self.pattern)
+        end
+    end
+end
+
 function ListeningSession:stop(notice)
+    self:reportFirstLoop()
     local members = self.members
     self.members = {}
     self.owner = nil
     self.pattern = nil
+    self.performanceEligible = false
     self.podium.prompt.ActionText = "Share your loop"
     self.podium.label.Text = "LISTENING COURT / IDLE"
     for player in members do
@@ -107,6 +139,7 @@ function ListeningSession:tick()
             self:leave(player)
         end
     end
+    self:reportFirstLoop()
 end
 
 return ListeningSession

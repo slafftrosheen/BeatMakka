@@ -1,0 +1,243 @@
+{
+  "date": "2026-10-23",
+  "base_sha": "dc898d887e5f147d95e728040a20a035a1e24c08",
+  "studio_place": "FrequencyZero-Complete.rbxlx",
+  "scope": "Local Studio simulation and injected storage; no uploads or public publishing",
+  "contracts": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"total\":8,\"passed\":8,\"checks\":{\"1\":{\"name\":\"sixteen independent pad rows and canonical sample assignments\",\"passed\":true},\"8\":{\"name\":\"all 24 exact constructors and clear portal contract\",\"passed\":true},\"3\":{\"name\":\"transport phase, loop wrap and pre-roll\",\"passed\":true},\"2\":{\"name\":\"untrusted pattern sanitization and unlock enforcement\",\"passed\":true},\"5\":{\"name\":\"failed cloud load cannot overwrite existing data\",\"passed\":true},\"4\":{\"name\":\"session snapshot restores notes/finish and retains new discoveries dirty\",\"passed\":true},\"7\":{\"name\":\"listening requires audible snapshot, explicit opt-in, proximity and cleanup\",\"passed\":true},\"6\":{\"name\":\"cloud revision conflict aborts and successful snapshot excludes newer edits\",\"passed\":true}}}"
+      }
+    ],
+    "isError": false
+  },
+  "milestoneContracts": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"total\":8,\"passed\":8,\"checks\":{\"1\":{\"name\":\"four slots retain independent notes, assignments, mutes and BPM\",\"passed\":true},\"8\":{\"name\":\"quest requires acceptance, all discoveries and the exact successfully saved quay loop\",\"passed\":true},\"3\":{\"name\":\"six shelf positions are bounded and require an unmuted note\",\"passed\":true},\"2\":{\"name\":\"shelf snapshots all slots and rejects stale overwrite/load commands\",\"passed\":true},\"5\":{\"name\":\"future schemas and corrupt revisions cannot be overwritten\",\"passed\":true},\"4\":{\"name\":\"legacy schema migrates into A and upgrades without changing namespace revision\",\"passed\":true},\"7\":{\"name\":\"restore retains new shelf, discovery and quest progress as dirty\",\"passed\":true},\"6\":{\"name\":\"failed shelf write retains dirty work, later save round-trips every position and quest\",\"passed\":true}}}"
+      }
+    ],
+    "isError": false
+  },
+  "micaKeyboard": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"bpm\":96,\"notes\":0,\"slot\":1,\"notice\":\"Mica: Help me give the quay a tune. Collect our three sounds, save a beat using one, then play it at the courtyard.\",\"book\":{\"activeSlot\":1,\"shelf\":{\"1\":{\"populated\":0,\"exists\":false,\"version\":0,\"saved\":false},\"3\":{\"populated\":0,\"exists\":false,\"version\":0,\"saved\":false},\"2\":{\"populated\":0,\"exists\":false,\"version\":0,\"saved\":false},\"5\":{\"populated\":0,\"exists\":false,\"version\":0,\"saved\":false},\"4\":{\"populated\":0,\"exists\":false,\"version\":0,\"saved\":false},\"6\":{\"populated\":0,\"exists\":false,\"version\":0,\"saved\":false}},\"slots\":{\"1\":{\"bpm\":96,\"label\":\"A\",\"hasNotes\":false},\"4\":{\"bpm\":96,\"label\":\"D\",\"hasNotes\":false},\"3\":{\"bpm\":96,\"label\":\"C\",\"hasNotes\":false},\"2\":{\"bpm\":96,\"label\":\"B\",\"hasNotes\":false}}},\"recording\":false,\"editVersion\":1,\"saveMode\":\"session\",\"dirty\":true,\"quest\":{\"completed\":false,\"objective\":\"Collect the metal, vent and robot sounds: 0/3.\",\"title\":\"A tune for the quay\",\"id\":\"first_courtyard_set\",\"collected\":0,\"stage\":\"discover\",\"accepted\":true},\"playing\":false}"
+      }
+    ],
+    "isError": false
+  },
+  "I01": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"target\":\"I01\",\"quest\":{\"completed\":false,\"objective\":\"Collect the metal, vent and robot sounds: 1/3.\",\"title\":\"A tune for the quay\",\"id\":\"first_courtyard_set\",\"collected\":1,\"stage\":\"discover\",\"accepted\":true}}"
+      }
+    ],
+    "isError": false
+  },
+  "I02": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"target\":\"I02\",\"quest\":{\"completed\":false,\"objective\":\"Collect the metal, vent and robot sounds: 2/3.\",\"title\":\"A tune for the quay\",\"id\":\"first_courtyard_set\",\"collected\":2,\"stage\":\"discover\",\"accepted\":true}}"
+      }
+    ],
+    "isError": false
+  },
+  "I03": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"target\":\"I03\",\"quest\":{\"completed\":false,\"objective\":\"Put a collected sound on an unmuted step, then save your beat to the shelf.\",\"title\":\"A tune for the quay\",\"id\":\"first_courtyard_set\",\"collected\":3,\"stage\":\"save\",\"accepted\":true}}"
+      }
+    ],
+    "isError": false
+  },
+  "Station_1": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"target\":\"Station_1\",\"quest\":{\"completed\":false,\"objective\":\"Put a collected sound on an unmuted step, then save your beat to the shelf.\",\"title\":\"A tune for the quay\",\"id\":\"first_courtyard_set\",\"collected\":3,\"stage\":\"save\",\"accepted\":true},\"station\":\"Station_1\"}"
+      }
+    ],
+    "isError": false
+  },
+  "liveSlots": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"bpm\":96,\"notes\":1,\"slot\":1,\"book\":{\"activeSlot\":1,\"shelf\":{\"1\":{\"populated\":0,\"exists\":false,\"version\":0,\"saved\":false},\"3\":{\"populated\":0,\"exists\":false,\"version\":0,\"saved\":false},\"2\":{\"populated\":0,\"exists\":false,\"version\":0,\"saved\":false},\"5\":{\"populated\":0,\"exists\":false,\"version\":0,\"saved\":false},\"4\":{\"populated\":0,\"exists\":false,\"version\":0,\"saved\":false},\"6\":{\"populated\":0,\"exists\":false,\"version\":0,\"saved\":false}},\"slots\":{\"1\":{\"bpm\":96,\"label\":\"A\",\"hasNotes\":true},\"4\":{\"bpm\":180,\"label\":\"D\",\"hasNotes\":true},\"3\":{\"bpm\":140,\"label\":\"C\",\"hasNotes\":true},\"2\":{\"bpm\":120,\"label\":\"B\",\"hasNotes\":true}}},\"recording\":false,\"editVersion\":16,\"saveMode\":\"session\",\"quest\":{\"completed\":false,\"objective\":\"Put a collected sound on an unmuted step, then save your beat to the shelf.\",\"title\":\"A tune for the quay\",\"id\":\"first_courtyard_set\",\"collected\":3,\"stage\":\"save\",\"accepted\":true},\"dirty\":true,\"station\":\"Station_1\",\"playing\":false}"
+      }
+    ],
+    "isError": false
+  },
+  "liveShelfSave": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"bpm\":96,\"notes\":1,\"slot\":1,\"notice\":\"Beat 01 stored on your shelf. Saved for this Studio session only.\",\"book\":{\"activeSlot\":1,\"shelf\":{\"1\":{\"populated\":4,\"exists\":true,\"version\":1,\"saved\":true},\"3\":{\"populated\":0,\"exists\":false,\"version\":0,\"saved\":false},\"2\":{\"populated\":0,\"exists\":false,\"version\":0,\"saved\":false},\"5\":{\"populated\":0,\"exists\":false,\"version\":0,\"saved\":false},\"4\":{\"populated\":0,\"exists\":false,\"version\":0,\"saved\":false},\"6\":{\"populated\":0,\"exists\":false,\"version\":0,\"saved\":false}},\"slots\":{\"1\":{\"bpm\":96,\"label\":\"A\",\"hasNotes\":true},\"4\":{\"bpm\":180,\"label\":\"D\",\"hasNotes\":true},\"3\":{\"bpm\":140,\"label\":\"C\",\"hasNotes\":true},\"2\":{\"bpm\":120,\"label\":\"B\",\"hasNotes\":true}}},\"recording\":false,\"editVersion\":17,\"saveMode\":\"session\",\"quest\":{\"completed\":false,\"objective\":\"Choose your saved quay-sound pattern, then share one full loop at the courtyard podium.\",\"title\":\"A tune for the quay\",\"id\":\"first_courtyard_set\",\"collected\":3,\"stage\":\"perform\",\"accepted\":true},\"dirty\":false,\"station\":\"Station_1\",\"playing\":false}"
+      }
+    ],
+    "isError": false
+  },
+  "loadConfirmation": {
+    "before": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"stillEdited\":true,\"button\":\"Replace slots A-D?\"}"
+        }
+      ],
+      "isError": false
+    },
+    "after": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"bpm\":96,\"notes\":1,\"slot\":1,\"notice\":\"That shelf position changed. Select it again before replacing it.\",\"book\":{\"activeSlot\":1,\"shelf\":{\"1\":{\"populated\":4,\"exists\":true,\"version\":1,\"saved\":true},\"3\":{\"populated\":0,\"exists\":false,\"version\":0,\"saved\":false},\"2\":{\"populated\":0,\"exists\":false,\"version\":0,\"saved\":false},\"5\":{\"populated\":0,\"exists\":false,\"version\":0,\"saved\":false},\"4\":{\"populated\":0,\"exists\":false,\"version\":0,\"saved\":false},\"6\":{\"populated\":0,\"exists\":false,\"version\":0,\"saved\":false}},\"slots\":{\"1\":{\"bpm\":96,\"label\":\"A\",\"hasNotes\":true},\"4\":{\"bpm\":180,\"label\":\"D\",\"hasNotes\":true},\"3\":{\"bpm\":140,\"label\":\"C\",\"hasNotes\":true},\"2\":{\"bpm\":120,\"label\":\"B\",\"hasNotes\":true}}},\"recording\":false,\"editVersion\":19,\"saveMode\":\"session\",\"quest\":{\"completed\":false,\"objective\":\"Choose your saved quay-sound pattern, then share one full loop at the courtyard podium.\",\"title\":\"A tune for the quay\",\"id\":\"first_courtyard_set\",\"collected\":3,\"stage\":\"perform\",\"accepted\":true},\"dirty\":true,\"station\":\"Station_1\",\"playing\":false}"
+        }
+      ],
+      "isError": false
+    }
+  },
+  "overwriteExpiry": {
+    "content": [
+      {
+        "type": "text",
+        "text": "sabuiltin_Assistant.rbxm.Assistant.Packages._Index.AssistantUI.AssistantUI.Tools.ExecuteLuauTool:126: sabuiltin_Assistant.rbxm.Assistant.Packages._Index.AssistantUI.AssistantUI.Util.CommandExecution:54: AssistantCommand:1: Confirmation failed to expire"
+      }
+    ],
+    "isError": true
+  },
+  "landscape": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"screenInsets\":\"Enum.ScreenInsets.CoreUISafeInsets\",\"overflow\":[],\"orientation\":\"Enum.ScreenOrientation.Sensor\",\"touchControls\":false,\"viewport\":\"750, 381\"}"
+      }
+    ],
+    "isError": false
+  },
+  "interruptedPerformance": {
+    "content": [
+      {
+        "type": "text",
+        "text": "sabuiltin_Assistant.rbxm.Assistant.Packages._Index.AssistantUI.AssistantUI.Tools.ExecuteLuauTool:126: sabuiltin_Assistant.rbxm.Assistant.Packages._Index.AssistantUI.AssistantUI.Util.CommandExecution:54: AssistantCommand:1: Saved loop not quest eligible"
+      }
+    ],
+    "isError": true
+  },
+  "completedPerformance": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"bpm\":96,\"notes\":1,\"slot\":1,\"notice\":\"The listening session has ended.\",\"book\":{\"activeSlot\":1,\"shelf\":{\"1\":{\"populated\":4,\"exists\":true,\"version\":1,\"saved\":true},\"3\":{\"populated\":0,\"exists\":false,\"version\":0,\"saved\":false},\"2\":{\"populated\":0,\"exists\":false,\"version\":0,\"saved\":false},\"5\":{\"populated\":0,\"exists\":false,\"version\":0,\"saved\":false},\"4\":{\"populated\":0,\"exists\":false,\"version\":0,\"saved\":false},\"6\":{\"populated\":0,\"exists\":false,\"version\":0,\"saved\":false}},\"slots\":{\"1\":{\"bpm\":96,\"label\":\"A\",\"hasNotes\":true},\"4\":{\"bpm\":180,\"label\":\"D\",\"hasNotes\":true},\"3\":{\"bpm\":140,\"label\":\"C\",\"hasNotes\":true},\"2\":{\"bpm\":120,\"label\":\"B\",\"hasNotes\":true}}},\"recording\":false,\"editVersion\":20,\"saveMode\":\"session\",\"dirty\":false,\"quest\":{\"completed\":true,\"objective\":\"Your first courtyard set is complete. Make another beat whenever you like.\",\"title\":\"A tune for the quay\",\"id\":\"first_courtyard_set\",\"collected\":3,\"stage\":\"complete\",\"accepted\":true},\"playing\":false}"
+      }
+    ],
+    "isError": false
+  },
+  "multiplayerInitial": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"previous\":\"{\\\"ok\\\":true,\\\"result\\\":{\\\"error\\\":\\\"ServerScriptService.MilestoneMultiplayerQa:64: first player owns station one\\\",\\\"passed\\\":false,\\\"count\\\":0,\\\"checks\\\":[]}}\",\"diagnosticRunStarted\":true}"
+      }
+    ],
+    "isError": false
+  },
+  "multiplayerOcclusionDiagnostic": "Two original test avatars used identical approach coordinates. Diagnostic ray hit Workspace.Player1.Head, 7.18 studs from target. Test approaches separated; gameplay authority unchanged.",
+  "multiplayerBeforeVisibilityDiagnostics": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"previous\":\"{\\\"ok\\\":true,\\\"result\\\":{\\\"diagnostic\\\":{\\\"enabled\\\":true,\\\"distance\\\":4.007804870605469,\\\"target\\\":\\\"I05\\\",\\\"hit\\\":\\\"Workspace.NeedleQuay.I05.CollisionProxy\\\"},\\\"count\\\":11,\\\"checks\\\":[\\\"first player owns station one\\\",\\\"second player cannot take occupied station\\\",\\\"second station can be independently occupied\\\",\\\"patterns are personal\\\",\\\"session restore returns saved notes\\\",\\\"discovery and restoration stay personal\\\",\\\"Mica accepts the personal quest\\\",\\\"slot B is independent from A\\\",\\\"shelf captures both patterns and saves the profile\\\",\\\"saved discovery loop advances Mica to performance\\\",\\\"shelf and quest stay personal\\\"],\\\"passed\\\":false,\\\"error\\\":\\\"ServerScriptService.MilestoneMultiplayerQa:64: saved loop begins eligible performance\\\"}}\",\"runStarted\":true}"
+      }
+    ],
+    "isError": false
+  },
+  "multiplayerFinal": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"ok\":true,\"result\":{\"passed\":true,\"count\":26,\"checks\":[\"first player owns station one\",\"second player cannot take occupied station\",\"second station can be independently occupied\",\"patterns are personal\",\"session restore returns saved notes\",\"discovery and restoration stay personal\",\"Mica accepts the personal quest\",\"slot B is independent from A\",\"shelf captures both patterns and saves the profile\",\"saved discovery loop advances Mica to performance\",\"shelf and quest stay personal\",\"saved loop begins eligible performance\",\"stopping before a full loop earns no completion\",\"cancelled session deadline cannot award quest\",\"performer shares an audible snapshot\",\"bystander is not auto-subscribed\",\"full loop completes and saves without an audience\",\"another player's quest is not completed\",\"listener explicitly joins same transport\",\"listening never overwrites personal pattern\",\"listener can leave without podium\",\"listener leaving does not stop host\",\"listener exits on distance\",\"distance cleanup preserves host\",\"performer respawn stops all listeners\",\"performer disconnect stops remaining listener\"]}}"
+      }
+    ],
+    "isError": false
+  },
+  "ContractsFinal": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"total\":8,\"passed\":8,\"checks\":{\"1\":{\"name\":\"sixteen independent pad rows and canonical sample assignments\",\"passed\":true},\"8\":{\"name\":\"all 24 exact constructors and clear portal contract\",\"passed\":true},\"3\":{\"name\":\"transport phase, loop wrap and pre-roll\",\"passed\":true},\"2\":{\"name\":\"untrusted pattern sanitization and unlock enforcement\",\"passed\":true},\"5\":{\"name\":\"failed cloud load cannot overwrite existing data\",\"passed\":true},\"4\":{\"name\":\"session snapshot restores notes/finish and retains new discoveries dirty\",\"passed\":true},\"7\":{\"name\":\"listening requires audible snapshot, explicit opt-in, proximity and cleanup\",\"passed\":true},\"6\":{\"name\":\"cloud revision conflict aborts and successful snapshot excludes newer edits\",\"passed\":true}}}"
+      }
+    ],
+    "isError": false
+  },
+  "MilestoneContractsFinal": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"total\":8,\"passed\":8,\"checks\":{\"1\":{\"name\":\"four slots retain independent notes, assignments, mutes and BPM\",\"passed\":true},\"8\":{\"name\":\"quest requires acceptance, all discoveries and the exact successfully saved quay loop\",\"passed\":true},\"3\":{\"name\":\"six shelf positions are bounded and require an unmuted note\",\"passed\":true},\"2\":{\"name\":\"shelf snapshots all slots and rejects stale overwrite/load commands\",\"passed\":true},\"5\":{\"name\":\"future schemas and corrupt revisions cannot be overwritten\",\"passed\":true},\"4\":{\"name\":\"legacy schema migrates into A and upgrades without changing namespace revision\",\"passed\":true},\"7\":{\"name\":\"restore retains new shelf, discovery and quest progress as dirty\",\"passed\":true},\"6\":{\"name\":\"failed shelf write retains dirty work, later save round-trips every position and quest\",\"passed\":true}}}"
+      }
+    ],
+    "isError": false
+  },
+  "MilestoneUiFinal": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"replacementRequiresTwoClicks\":true,\"passed\":true,\"expirySeconds\":5,\"editCancelsLoad\":true}"
+      }
+    ],
+    "isError": false
+  },
+  "audioUnconfigured": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"cleanupRestoredChildCount\":true,\"courtyardBanks\":19,\"allocatedVoices\":0,\"status\":\"Audio engine stopped.\",\"personalBanks\":24}"
+      }
+    ],
+    "isError": false
+  },
+  "desktopFinal": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"viewport\":\"939, 744\",\"screenInsets\":\"Enum.ScreenInsets.CoreUISafeInsets\",\"overflow\":[]}"
+      }
+    ],
+    "isError": false
+  },
+  "portraitFinal": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"targetSizes\":{\"Beat_01\":\"100.333336, 44\",\"Slot_A\":\"78.75, 44\",\"ShelfLoad\":\"155.5, 44\",\"ShelfStore\":\"155.5, 44\"},\"overflow\":[],\"orientation\":\"Portrait\",\"device\":\"iPhone 17 Pro\",\"touchControlsHidden\":true,\"viewport\":\"401, 778\"}"
+      }
+    ],
+    "isError": false
+  },
+  "landscapeFinal": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"targetSizes\":{\"Beat_01\":\"216.666672, 44\",\"Slot_A\":\"166, 44\",\"ShelfLoad\":\"330, 44\",\"ShelfStore\":\"330, 44\"},\"overflow\":[],\"orientation\":\"LandscapeLeft\",\"device\":\"iPhone 17 Pro\",\"touchControlsHidden\":true,\"viewport\":\"750, 381\"}"
+      }
+    ],
+    "isError": false
+  },
+  "finalConsole": {
+    "content": [
+      {
+        "type": "text",
+        "text": "ContentId: rbxassetid://203785492 failed due to: Asset type does not match requested type\nContentId: rbxassetid://203785492 failed due to: Asset type does not match requested type\nContentId: rbxassetid://203785492 failed due to: Asset type does not match requested type\nPosition is not a valid member of Model \"Workspace.NeedleQuay.H01\"\nStack Begin\nScript 'AssistantCommand', Line 1\nStack End\n[Roblox][sabuiltin_Assistant.rbxm.Assistant.Packages._Index.AssistantUI.AssistantUI.Actions.ExecuteLuauActions] The execute_luau changed camera type. Resetting from Enum.CameraType.Scriptable back to Enum.CameraType.Custom\n[Roblox][sabuiltin_Assistant.rbxm.Assistant.Packages._Index.AssistantUI.AssistantUI.Actions.ExecuteLuauActions] The execute_luau changed camera type. Resetting from Enum.CameraType.Scriptable back to Enum.CameraType.Custom"
+      }
+    ],
+    "isError": false
+  }
+}

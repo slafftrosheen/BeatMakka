@@ -6,81 +6,34 @@ local Catalog = require(Shared.SampleCatalog)
 local AudioEngine = {}
 AudioEngine.__index = AudioEngine
 
-function AudioEngine.new(groupName)
-    local self = setmetatable(
-        { banks = {}, muted = false, configured = 0, Changed = Instance.new("BindableEvent") },
-        AudioEngine
-    )
-    local group = Instance.new("SoundGroup")
-    group.Name = groupName or "PersonalSampler"
-    group.Volume = 0.6
-    group.Parent = SoundService
-    self.group = group
-    local preload = {}
-    local ids = {}
-    for _, sample in Catalog.List do
-        table.insert(ids, sample.id)
-    end
-    for _, id in { "ui_tap", "ui_collect", "ui_save", "ui_error", "waterfront" } do
-        table.insert(ids, id)
-    end
-    for _, sampleId in ids do
-        local id = ContentIds.Audio[sampleId]
-        if type(id) == "number" and id > 0 then
-            self.configured += 1
-            local voice = Instance.new("Sound")
-            voice.Name = sampleId
-            voice.SoundId = "rbxassetid://" .. tostring(id)
-            voice.Volume = 0.7
-            voice.SoundGroup = group
-            voice.Parent = SoundService
-            self.banks[sampleId] = { voices = { voice }, cursor = 0 }
-            table.insert(preload, voice)
-        end
-    end
-    task.spawn(function()
-        if #preload > 0 then
-            pcall(function()
-                ContentProvider:PreloadAsync(preload)
-            end)
-        end
-        self.Changed:Fire()
-    end)
-    return self
+-- Project limits, not Roblox API limits. No voices are allocated on a pad hit.
+local MUSIC_VOICES = 4
+local LOAD_TIMEOUT = 15
+local CUES = { "ui_tap", "ui_collect", "ui_save", "ui_error" }
+
+local function validAssetId(id)
+    return type(id) == "number" and id > 0 and id < 2 ^ 53 and id == math.floor(id)
 end
 
-function AudioEngine:status()
-    if self.configured == 0 then
-        return "Sound bank unavailable in this preview. You can still create and save patterns."
+local function allLoaded(bank)
+    if #bank.voices == 0 then
+        return false
     end
-    local ready = 0
-    local configured = 0
-    for _, sample in Catalog.List do
-        local bank = self.banks[sample.id]
-        if bank then
-            configured += 1
-        end
-        if bank and bank.voices[1].IsLoaded then
-            ready += 1
+    for _, voice in bank.voices do
+        if not voice.IsLoaded then
+            return false
         end
     end
-    return string.format(
-        "Sounds ready: %d / %d. %d unavailable in this preview.",
-        ready,
-        configured,
-        #Catalog.List - ready
-    )
+    return true
 end
 
-function AudioEngine:ambient(enabled)
+function AudioEngine:_syncAmbient()
     local bank = self.banks.waterfront
-    if not bank then
+    if self.destroyed or not bank or #bank.voices == 0 then
         return false
     end
     local voice = bank.voices[1]
-    if enabled and not self.muted and voice.IsLoaded then
-        voice.Looped = true
-        voice.Volume = 0.12
+    if self.ambientRequested and not self.muted and bank.state == "ready" and voice.IsLoaded then
         if not voice.IsPlaying then
             voice:Play()
         end
@@ -90,37 +43,248 @@ function AudioEngine:ambient(enabled)
     return false
 end
 
-function AudioEngine:play(id)
-    local bank = self.banks[id]
-    if self.muted or not bank or not bank.voices[1].IsLoaded then
+function AudioEngine:_setState(bank, state)
+    if self.destroyed or bank.state == state then
+        return
+    end
+    bank.state = state
+    bank.generation += 1
+    if state == "loading" then
+        local generation = bank.generation
+        task.delay(LOAD_TIMEOUT, function()
+            if not self.destroyed and bank.generation == generation and bank.state == "loading" then
+                self:_setState(bank, if allLoaded(bank) then "ready" else "timedOut")
+            end
+        end)
+    end
+    self:_syncAmbient()
+    self.Changed:Fire()
+end
+
+function AudioEngine:_refresh(bank)
+    if self.destroyed then
+        return
+    end
+    if allLoaded(bank) then
+        -- A late successful load may recover a timed-out or failed bank.
+        self:_setState(bank, "ready")
+    elseif bank.state == "ready" then
+        self:_setState(bank, "loading")
+    end
+end
+
+function AudioEngine:_addBank(sampleId, voiceCount)
+    local id = ContentIds.Audio[sampleId]
+    local bank = {
+        voices = {},
+        cursor = 0,
+        generation = 0,
+        state = if id == nil then "unconfigured" else "invalid",
+    }
+    self.banks[sampleId] = bank
+    if not validAssetId(id) then
+        return
+    end
+    self.configured += 1
+    for index = 1, voiceCount do
+        local voice = Instance.new("Sound")
+        voice.Name = sampleId .. "_" .. tostring(index)
+        voice.SoundId = "rbxassetid://" .. string.format("%.0f", id)
+        voice.Volume = if sampleId == "waterfront" then 0.12 else 0.7
+        voice.Looped = sampleId == "waterfront"
+        voice.SoundGroup = self.group
+        table.insert(bank.voices, voice)
+    end
+    self:_setState(bank, "loading")
+    for _, voice in bank.voices do
+        table.insert(
+            self.connections,
+            voice:GetPropertyChangedSignal("IsLoaded"):Connect(function()
+                self:_refresh(bank)
+            end)
+        )
+        voice.Parent = SoundService
+    end
+    self:_refresh(bank)
+    task.spawn(function()
+        if self.destroyed then
+            return
+        end
+        local ok = pcall(function()
+            ContentProvider:PreloadAsync(bank.voices, function(_, fetchStatus)
+                if self.destroyed then
+                    return
+                end
+                bank.fetchStatus = fetchStatus.Name
+                if allLoaded(bank) then
+                    self:_setState(bank, "ready")
+                elseif fetchStatus == Enum.AssetFetchStatus.Failure then
+                    self:_setState(bank, "failed")
+                elseif fetchStatus == Enum.AssetFetchStatus.TimedOut then
+                    self:_setState(bank, "timedOut")
+                end
+            end)
+        end)
+        if self.destroyed then
+            return
+        end
+        if not ok and not allLoaded(bank) then
+            self:_setState(bank, "failed")
+        else
+            self:_refresh(bank)
+        end
+    end)
+end
+
+function AudioEngine.new(groupName, options)
+    local self = setmetatable({
+        banks = {},
+        connections = {},
+        muted = false,
+        configured = 0,
+        destroyed = false,
+        ambientRequested = false,
+        Changed = Instance.new("BindableEvent"),
+    }, AudioEngine)
+    options = options or {}
+    local group = Instance.new("SoundGroup")
+    group.Name = groupName or "PersonalSampler"
+    group.Volume = 0.6
+    group.Parent = SoundService
+    self.group = group
+    for _, sample in Catalog.List do
+        self:_addBank(sample.id, MUSIC_VOICES)
+    end
+    if not options.musicOnly then
+        for _, id in CUES do
+            self:_addBank(id, 1)
+        end
+        self:_addBank("waterfront", 1)
+    end
+    return self
+end
+
+function AudioEngine:diagnostics()
+    local states = {}
+    for id, bank in self.banks do
+        states[id] = { state = bank.state, fetchStatus = bank.fetchStatus, voices = #bank.voices }
+    end
+    return { muted = self.muted, destroyed = self.destroyed, banks = states }
+end
+
+function AudioEngine:status()
+    if self.destroyed then
+        return "Audio engine stopped."
+    end
+    local counts =
+        { ready = 0, loading = 0, failed = 0, timedOut = 0, unconfigured = 0, invalid = 0 }
+    for _, sample in Catalog.List do
+        local bank = self.banks[sample.id]
+        counts[bank.state] += 1
+    end
+    local prefix = if self.muted then "Sound muted. " else ""
+    if counts.unconfigured == #Catalog.List then
+        return prefix .. "Sound bank not configured. You can still create and save patterns."
+    end
+    local parts = { string.format("Sounds %d/%d ready", counts.ready, #Catalog.List) }
+    for _, item in
+        {
+            { "loading", "loading" },
+            { "failed", "failed" },
+            { "timedOut", "timed out" },
+            { "unconfigured", "unconfigured" },
+            { "invalid", "invalid IDs" },
+        }
+    do
+        if counts[item[1]] > 0 then
+            table.insert(parts, tostring(counts[item[1]]) .. " " .. item[2])
+        end
+    end
+    return prefix .. table.concat(parts, "; ") .. "."
+end
+
+function AudioEngine:ambient(enabled)
+    if self.destroyed then
         return false
     end
-    bank.cursor = bank.cursor % 4 + 1
-    local voice = bank.voices[bank.cursor]
-    if not voice then
-        voice = bank.voices[1]:Clone()
-        voice.Parent = SoundService
-        bank.voices[bank.cursor] = voice
+    self.ambientRequested = enabled == true
+    return self:_syncAmbient()
+end
+
+function AudioEngine:play(id)
+    local bank = self.banks[id]
+    if self.destroyed or self.muted or not bank or bank.state ~= "ready" or id == "waterfront" then
+        return false
     end
+    -- Prefer an idle voice, otherwise steal the next voice in the bounded ring.
+    local index = bank.cursor % #bank.voices + 1
+    for offset = 1, #bank.voices do
+        local candidate = (bank.cursor + offset - 1) % #bank.voices + 1
+        if bank.voices[candidate].IsLoaded and not bank.voices[candidate].IsPlaying then
+            index = candidate
+            break
+        end
+    end
+    local voice = bank.voices[index]
+    if not voice.IsLoaded then
+        self:_refresh(bank)
+        return false
+    end
+    bank.cursor = index
     voice:Stop()
     voice.TimePosition = 0
     voice:Play()
     return true
 end
 
-function AudioEngine:setMuted(value)
-    self.muted = value
-    self.group.Volume = if value then 0 else 0.6
-    if value then
-        self:stop()
-    end
-end
-
-function AudioEngine:stop()
+function AudioEngine:_stopVoices()
     for _, bank in self.banks do
         for _, voice in bank.voices do
             voice:Stop()
         end
     end
 end
+
+function AudioEngine:setMuted(value)
+    if self.destroyed then
+        return
+    end
+    self.muted = value == true
+    self.group.Volume = if self.muted then 0 else 0.6
+    if self.muted then
+        self:_stopVoices()
+    else
+        self:_syncAmbient()
+    end
+    self.Changed:Fire()
+end
+
+function AudioEngine:stop()
+    if self.destroyed then
+        return
+    end
+    self.ambientRequested = false
+    self:_stopVoices()
+end
+
+function AudioEngine:destroy()
+    if self.destroyed then
+        return
+    end
+    self.destroyed = true
+    for _, connection in self.connections do
+        connection:Disconnect()
+    end
+    self:_stopVoices()
+    for _, bank in self.banks do
+        for _, voice in bank.voices do
+            voice:Destroy()
+        end
+    end
+    table.clear(self.connections)
+    table.clear(self.banks)
+    self.group:Destroy()
+    self.Changed:Destroy()
+end
+
 return AudioEngine

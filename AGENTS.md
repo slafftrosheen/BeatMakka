@@ -3,7 +3,7 @@
 ## Scope and sources
 
 - This is the Roblox music-making project described in `CODEX_START_HERE.md`.
-- Treat `01_Visual_Artbook.pdf`, `02_Production_Atlas.pdf`, `Asset_Production_Register.xlsx`, and `TRIPO_RUNBOOK.md` as project source material. The supplied visual board remains the visual authority, but it was not present in the provided folder when this repository was initialized.
+- Treat `01_Visual_Artbook.pdf`, `02_Production_Atlas.pdf`, `Asset_Production_Register.xlsx`, and `TRIPO_RUNBOOK.md` as project source material. The supplied visual board remains the visual authority. It is restored at `assets/references/needle-quay-approved-style-board.png`, with its original-attachment provenance and SHA-256 in the adjacent JSON. Use it for art direction, not as a multi-object Tripo input.
 - Keep the machine-readable asset contracts in `data/` aligned with the supplied register. Preserve canonical IDs. Treat dimensions, budgets, and visual proposals as authored project constraints, not platform limits.
 - Preserve stage separation: candidate -> DCC-clean -> art-approved -> Studio-imported -> runtime-verified. Never promote an asset based on a provider task or preview alone.
 

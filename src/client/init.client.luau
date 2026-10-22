@@ -17,7 +17,7 @@ local network = ReplicatedStorage:WaitForChild("MusicNetwork")
 local command = network:WaitForChild("Command")
 local stateEvent = network:WaitForChild("State")
 local audio = AudioEngine.new()
-local listeningAudio = AudioEngine.new("CourtyardListening")
+local listeningAudio = AudioEngine.new("CourtyardListening", { musicOnly = true })
 local listeningView
 local listeningAbsolute = -1
 local listeningEpoch = -1
@@ -28,7 +28,13 @@ local lastAbsolute = -1
 local epoch = -1
 local effects = true
 local feedback = WorldFeedback.new()
-GuiFactory.Cue.Event:Connect(function(id)
+local connections = {}
+local function connect(signal, callback)
+    local connection = signal:Connect(callback)
+    table.insert(connections, connection)
+    return connection
+end
+connect(GuiFactory.Cue.Event, function(id)
     audio:play(id)
 end)
 local playerGui = game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui")
@@ -64,7 +70,7 @@ local function updateTouchControls()
         touchWasEnabled = nil
     end
 end
-playerGui.ChildAdded:Connect(updateTouchControls)
+connect(playerGui.ChildAdded, updateTouchControls)
 
 local function send(action, a, b)
     if
@@ -110,7 +116,7 @@ view = WorkshopView.new({
 listeningView = ListeningView.new(view.screen, function()
     send("LeaveListening")
 end)
-listeningAudio.Changed.Event:Connect(function()
+connect(listeningAudio.Changed.Event, function()
     if state then
         listeningView:update(
             state.listening,
@@ -121,10 +127,10 @@ listeningAudio.Changed.Event:Connect(function()
     end
 end)
 view.audioStatus.Text = audio:status()
-audio.Changed.Event:Connect(function()
+connect(audio.Changed.Event, function()
     view.audioStatus.Text = audio:status()
 end)
-stateEvent.OnClientEvent:Connect(function(nextState)
+connect(stateEvent.OnClientEvent, function(nextState)
     if state and state.playing and not nextState.playing then
         audio:stop()
     end
@@ -135,6 +141,10 @@ stateEvent.OnClientEvent:Connect(function(nextState)
         listeningEpoch = if nextListening then nextListening.epoch else -1
     end
     state = nextState
+    if state.station or state.listening then
+        -- Do not let waterfront ambience bleed into an opted-in music session.
+        audio:ambient(false)
+    end
     feedback:update(state)
     updateTouchControls()
     view:update(state)
@@ -205,7 +215,7 @@ ContextActionService:BindActionAtPriority("SamplerKeyboard", function(_, inputSt
 end, false, Enum.ContextActionPriority.High.Value, table.unpack(keys))
 
 local refresh = 0
-RunService.Heartbeat:Connect(function(dt)
+connect(RunService.Heartbeat, function(dt)
     feedback:step()
     local session = state and state.listening
     if session then
@@ -229,6 +239,7 @@ RunService.Heartbeat:Connect(function(dt)
     if refresh > 1 then
         refresh = 0
         view:tick()
+        listeningView:tick()
         if state then
             Restoration.update(state.restoration, effects)
         end
@@ -270,4 +281,17 @@ RunService.Heartbeat:Connect(function(dt)
         end
         view:playhead(step)
     end
+end)
+
+script.Destroying:Connect(function()
+    for _, connection in connections do
+        connection:Disconnect()
+    end
+    table.clear(connections)
+    ContextActionService:UnbindAction("SamplerKeyboard")
+    state = nil
+    updateTouchControls()
+    audio:destroy()
+    listeningAudio:destroy()
+    view.screen:Destroy()
 end)
