@@ -73,6 +73,8 @@ def tile(slot, color, size=256):
 
 def materials():
     base = OUT / "materials"
+    if (base / "revision.json").exists():
+        raise SystemExit("Approved material revision is active; use tools/apply_approved_finishes.py instead of overwriting it")
     roughness = np.zeros((1024, 1024))
     metalness = np.zeros((1024, 1024))
     masks = {name: np.zeros((1024, 1024)) for name in ("primary", "secondary", "trim", "accent")}

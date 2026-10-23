@@ -1405,52 +1405,52 @@
     {
       "key": "atlas.quay.basecolor.512",
       "file": "assets/production/materials/sets/quay/atlas_basecolor_512.png",
-      "asset_id": 137950080210331
+      "asset_id": 117477251057253
     },
     {
       "key": "atlas.quay.basecolor.1024",
       "file": "assets/production/materials/sets/quay/atlas_basecolor.png",
-      "asset_id": 72083879648967
+      "asset_id": 81934793658593
     },
     {
       "key": "atlas.chalk.basecolor.512",
       "file": "assets/production/materials/sets/chalk/atlas_basecolor_512.png",
-      "asset_id": 100805049598715
+      "asset_id": 112632272656560
     },
     {
       "key": "atlas.chalk.basecolor.1024",
       "file": "assets/production/materials/sets/chalk/atlas_basecolor.png",
-      "asset_id": 117689403172472
+      "asset_id": 88940724090844
     },
     {
       "key": "atlas.coral.basecolor.512",
       "file": "assets/production/materials/sets/coral/atlas_basecolor_512.png",
-      "asset_id": 78348915703467
+      "asset_id": 74759921052973
     },
     {
       "key": "atlas.coral.basecolor.1024",
       "file": "assets/production/materials/sets/coral/atlas_basecolor.png",
-      "asset_id": 86114142638116
+      "asset_id": 74133884008207
     },
     {
       "key": "atlas.afterhours.basecolor.512",
       "file": "assets/production/materials/sets/afterhours/atlas_basecolor_512.png",
-      "asset_id": 116045023802730
+      "asset_id": 95226082514274
     },
     {
       "key": "atlas.afterhours.basecolor.1024",
       "file": "assets/production/materials/sets/afterhours/atlas_basecolor.png",
-      "asset_id": 91426340502972
+      "asset_id": 94272551191392
     },
     {
       "key": "atlas.roughness.512",
       "file": "assets/production/materials/shared/atlas_roughness_512.png",
-      "asset_id": 78643804613550
+      "asset_id": 111737962862803
     },
     {
       "key": "atlas.roughness.1024",
       "file": "assets/production/materials/shared/atlas_roughness.png",
-      "asset_id": 137206541823495
+      "asset_id": 133776164802456
     },
     {
       "key": "atlas.metalness.512",

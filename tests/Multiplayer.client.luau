@@ -6,6 +6,7 @@ end
 control.Report:FireServer(0, true, "Client started")
 local network = game:GetService("ReplicatedStorage"):WaitForChild("MusicNetwork")
 local state
+local finishArtCleanup
 local visiblePrompts = {}
 local promptService = game:GetService("ProximityPromptService")
 promptService.PromptShown:Connect(function(prompt)
@@ -68,7 +69,39 @@ control.Drive.OnClientEvent:Connect(function(index, action, a, b)
             anchor.ProximityPrompt:InputHoldBegin()
             task.wait(0.35)
             anchor.ProximityPrompt:InputHoldEnd()
+        elseif action == "InstallFinishArt" then
+            assert(not finishArtCleanup, "Finish art already installed")
+            finishArtCleanup =
+                require(script.Parent.FinishArtQa)(require(script.Parent.FinishArtData))
+        elseif action == "RemoveFinishArt" then
+            if finishArtCleanup then
+                finishArtCleanup()
+                finishArtCleanup = nil
+            end
+        elseif action == "FinishEvidence" then
+            diagnostic = { stations = {} }
+            for _, model in workspace.NeedleQuay:GetChildren() do
+                local id = model:GetAttribute("StationId")
+                if not id then
+                    continue
+                end
+                local info = { pads = 0, maps = {} }
+                for _, object in model:GetDescendants() do
+                    if object:IsA("BasePart") and object:GetAttribute("PadId") then
+                        info.pads += 1
+                    elseif object:IsA("SurfaceAppearance") then
+                        table.insert(info.maps, {
+                            finish = object:GetAttribute("FinishSet"),
+                            color = object.ColorMapContent.Uri,
+                        })
+                    end
+                end
+                diagnostic.stations[id] = info
+            end
         elseif action == "LeaveTest" then
+            if finishArtCleanup then
+                finishArtCleanup()
+            end
             game:GetService("StudioTestService"):LeaveTest()
             return nil
         else

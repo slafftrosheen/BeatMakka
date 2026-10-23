@@ -1,0 +1,6 @@
+{
+  "passed": true,
+  "legacy_generator_blocked": true,
+  "production_maps_unchanged": 65,
+  "template_bake_idempotent": true
+}

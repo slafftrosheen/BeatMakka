@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "revision": "assets-folder-v1",
+  "stage": "art-approved; upload/runtime evidence recorded separately",
+  "approval": "docs/evidence/a01-07-application/approval.json",
+  "candidate_manifest_sha256": "cb121901415faf49462218b73f7ae85f62d2197a6207797f1a2622f7d7d2206d",
+  "files": {
+    "sets/afterhours/atlas_basecolor.png": "cfdc17cc38ee09825e8e8fbc5b66c7f63ddb6c451ac25c9bcfa00bbabadd3c21",
+    "sets/afterhours/atlas_basecolor_512.png": "0e79de899c33175372e31fd9cc0b0605682852922571ecb25341ea2ded1b3a25",
+    "sets/chalk/atlas_basecolor.png": "ca807fa10ed5f6e8abb1241fd5b7ed4caea4adbc12d3204394d01941c3a43b68",
+    "sets/chalk/atlas_basecolor_512.png": "c184103aa2c001f8c26e18139535ff3ef909e4a662aff70c86e9f013a2db31b3",
+    "sets/coral/atlas_basecolor.png": "c6bd4d35ad73253c9bda1698e01eb46a751031a17f1056b000d7896a934e6a25",
+    "sets/coral/atlas_basecolor_512.png": "ce6d0f067b0403cc5f04f602cf31c0893232c041a40300a99f476dde968530a6",
+    "sets/quay/atlas_basecolor.png": "3a8c1c74de6a310628feb7aa2cbd1042de38c1d8905764dc1b4407717275da41",
+    "sets/quay/atlas_basecolor_512.png": "890720e2b19cf2d9d3f55a429d893d0c54493019b7cdb82bb4a3352fbe033009",
+    "shared/atlas_metalness.png": "d2f1433b85dd698ac2617204c24c5384ed45d0d583916fc70b4e73451cbb966d",
+    "shared/atlas_metalness_512.png": "2f5537207895c626bad32a88d93038ebcf023221adede6d208d53ee80e7e0f22",
+    "shared/atlas_roughness.png": "7752c9e4fb0cabccf33f0ba3d26d697b6c364531ca14ccf02934c2e922e3ba5b",
+    "shared/atlas_roughness_512.png": "f7cbac79a62e6498f986591c071111710d8112b7dcbae338619552398411d277"
+  }
+}

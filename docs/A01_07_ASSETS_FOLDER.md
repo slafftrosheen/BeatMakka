@@ -1,5 +1,7 @@
 # Issue 8: materials from the user Assets folder
 
+This is the original candidate-stage record. The user subsequently approved this revision; see [applied finishes and current acceptance](A01_07_APPLIED_FINISHES.md). The frozen candidate/source bytes remain unchanged.
+
 23 October 2026. Candidate **assets-folder-v1** continues issue #8. It is not a production replacement or an art-approved upload. [Visual review](../output/materials-assets-folder-v1/index.html) and [neutral comparison](evidence/a01-07-assets/neutral-contact.jpg).
 
 ## Sources and treatment

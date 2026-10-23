@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"pads\":16,\"labels\":1}"
+    }
+  ],
+  "isError": false
+}

@@ -184,7 +184,7 @@ function WorldBuilder.build()
         stations[id] = {
             anchor = anchor,
             prompt = prompt(anchor, "Make music", "MK-I sampler"),
-            label = label(anchor, "MK-I  /  READY", 2),
+            label = label(anchor, "MK-I  /  READY", 4),
             screen = displayText,
         }
     end

@@ -1,0 +1,97 @@
+{
+  "owner": 11274985967,
+  "revision": "assets-folder-v1",
+  "charges_cap": 0,
+  "approval": "approval.json",
+  "images": [
+    {
+      "key": "atlas.quay.basecolor.512",
+      "file": "assets/candidates/materials/assets-folder-v1/sets/quay/atlas_basecolor_512.png",
+      "sha256": "890720e2b19cf2d9d3f55a429d893d0c54493019b7cdb82bb4a3352fbe033009",
+      "previous_asset_id": 137950080210331,
+      "asset_id": 117477251057253,
+      "stage": "Studio MCP upload confirmed; live fetch/render acceptance pending"
+    },
+    {
+      "key": "atlas.quay.basecolor.1024",
+      "file": "assets/candidates/materials/assets-folder-v1/sets/quay/atlas_basecolor.png",
+      "sha256": "3a8c1c74de6a310628feb7aa2cbd1042de38c1d8905764dc1b4407717275da41",
+      "previous_asset_id": 72083879648967,
+      "asset_id": 81934793658593,
+      "stage": "Studio MCP upload confirmed; live fetch/render acceptance pending"
+    },
+    {
+      "key": "atlas.chalk.basecolor.512",
+      "file": "assets/candidates/materials/assets-folder-v1/sets/chalk/atlas_basecolor_512.png",
+      "sha256": "c184103aa2c001f8c26e18139535ff3ef909e4a662aff70c86e9f013a2db31b3",
+      "previous_asset_id": 100805049598715,
+      "asset_id": 112632272656560,
+      "stage": "Studio MCP upload confirmed; live fetch/render acceptance pending"
+    },
+    {
+      "key": "atlas.chalk.basecolor.1024",
+      "file": "assets/candidates/materials/assets-folder-v1/sets/chalk/atlas_basecolor.png",
+      "sha256": "ca807fa10ed5f6e8abb1241fd5b7ed4caea4adbc12d3204394d01941c3a43b68",
+      "previous_asset_id": 117689403172472,
+      "asset_id": 88940724090844,
+      "stage": "Studio MCP upload confirmed; live fetch/render acceptance pending"
+    },
+    {
+      "key": "atlas.coral.basecolor.512",
+      "file": "assets/candidates/materials/assets-folder-v1/sets/coral/atlas_basecolor_512.png",
+      "sha256": "ce6d0f067b0403cc5f04f602cf31c0893232c041a40300a99f476dde968530a6",
+      "previous_asset_id": 78348915703467,
+      "asset_id": 74759921052973,
+      "stage": "Studio MCP upload confirmed; live fetch/render acceptance pending"
+    },
+    {
+      "key": "atlas.coral.basecolor.1024",
+      "file": "assets/candidates/materials/assets-folder-v1/sets/coral/atlas_basecolor.png",
+      "sha256": "c6bd4d35ad73253c9bda1698e01eb46a751031a17f1056b000d7896a934e6a25",
+      "previous_asset_id": 86114142638116,
+      "asset_id": 74133884008207,
+      "stage": "Studio MCP upload confirmed; live fetch/render acceptance pending"
+    },
+    {
+      "key": "atlas.afterhours.basecolor.512",
+      "file": "assets/candidates/materials/assets-folder-v1/sets/afterhours/atlas_basecolor_512.png",
+      "sha256": "0e79de899c33175372e31fd9cc0b0605682852922571ecb25341ea2ded1b3a25",
+      "previous_asset_id": 116045023802730,
+      "asset_id": 95226082514274,
+      "stage": "Studio MCP upload confirmed; live fetch/render acceptance pending"
+    },
+    {
+      "key": "atlas.afterhours.basecolor.1024",
+      "file": "assets/candidates/materials/assets-folder-v1/sets/afterhours/atlas_basecolor.png",
+      "sha256": "cfdc17cc38ee09825e8e8fbc5b66c7f63ddb6c451ac25c9bcfa00bbabadd3c21",
+      "previous_asset_id": 91426340502972,
+      "asset_id": 94272551191392,
+      "stage": "Studio MCP upload confirmed; live fetch/render acceptance pending"
+    },
+    {
+      "key": "atlas.roughness.512",
+      "file": "assets/candidates/materials/assets-folder-v1/shared/atlas_roughness_512.png",
+      "sha256": "f7cbac79a62e6498f986591c071111710d8112b7dcbae338619552398411d277",
+      "previous_asset_id": 78643804613550,
+      "asset_id": 111737962862803,
+      "stage": "Studio MCP upload confirmed; live fetch/render acceptance pending"
+    },
+    {
+      "key": "atlas.roughness.1024",
+      "file": "assets/candidates/materials/assets-folder-v1/shared/atlas_roughness.png",
+      "sha256": "7752c9e4fb0cabccf33f0ba3d26d697b6c364531ca14ccf02934c2e922e3ba5b",
+      "previous_asset_id": 137206541823495,
+      "asset_id": 133776164802456,
+      "stage": "Studio MCP upload confirmed; live fetch/render acceptance pending"
+    }
+  ],
+  "reused_keys": [
+    "atlas.metalness.512",
+    "atlas.metalness.1024",
+    "ui.icons",
+    "ui.panel"
+  ],
+  "confirmed_uploads": 10,
+  "duplicate_uploads": 0,
+  "charges": 0
+}

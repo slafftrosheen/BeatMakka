@@ -1,6 +1,5 @@
 local Workspace = game:GetService("Workspace")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local AssetService = game:GetService("AssetService")
 local Shared = ReplicatedStorage.Shared
 local Cosmetics = require(Shared.CosmeticCatalog)
 local Ids = require(Shared.ContentIds)
@@ -15,9 +14,9 @@ function Appearance.new(createSurface)
         pending = {},
         station = nil,
         destroyed = false,
-        createSurface = createSurface or function(maps)
-            return AssetService:CreateSurfaceAppearanceAsync(maps)
-        end,
+        -- Asset-ID map properties are PluginSecurity. Normal builds carry
+        -- authored templates; an injected factory is only for explicit tests.
+        createSurface = createSurface,
     }, Appearance)
 end
 
@@ -73,6 +72,7 @@ function Appearance:template(finish, resolution)
         type(color) == "number"
         and type(rough) == "number"
         and type(metal) == "number"
+        and self.createSurface ~= nil
         and not self.pending[key]
     then
         self.pending[key] = "loading"

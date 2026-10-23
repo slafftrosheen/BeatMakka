@@ -1,7 +1,7 @@
 {
   "generator": "tools/build_content_sources.py",
   "palette_authority": "01_Visual_Artbook.pdf page 4",
-  "provenance": "Deterministic local original pixel/vector/audio generation; no external media or provider charges.",
+  "provenance": "Original deterministic graphics/audio and authoring masks; approved user-supplied wood/scratch-derived material atlas. See material revision and retained source provenance.",
   "files": [
     {
       "path": "assets/production/audio/bass_c.wav",
@@ -365,63 +365,75 @@
     },
     {
       "path": "assets/production/materials/sets/afterhours/atlas_basecolor.png",
-      "bytes": 30678,
-      "sha256": "b44b8d8c77d6eab0fa537ac01d7fa7d93d9673d1404bfd7298bbcb2eb705c6eb"
+      "bytes": 331141,
+      "sha256": "cfdc17cc38ee09825e8e8fbc5b66c7f63ddb6c451ac25c9bcfa00bbabadd3c21",
+      "material_revision": "assets-folder-v1"
     },
     {
       "path": "assets/production/materials/sets/afterhours/atlas_basecolor_512.png",
-      "bytes": 15502,
-      "sha256": "bd6810366ae61d9905fd110b0881f404755a5e667ee2c87940003dc0a89f6e07"
+      "bytes": 75113,
+      "sha256": "0e79de899c33175372e31fd9cc0b0605682852922571ecb25341ea2ded1b3a25",
+      "material_revision": "assets-folder-v1"
     },
     {
       "path": "assets/production/materials/sets/chalk/atlas_basecolor.png",
-      "bytes": 29148,
-      "sha256": "528dd42473ae0df14726b0185cd7b5ec3aff6e7a034e3eb44bfa3de80645df27"
+      "bytes": 331080,
+      "sha256": "ca807fa10ed5f6e8abb1241fd5b7ed4caea4adbc12d3204394d01941c3a43b68",
+      "material_revision": "assets-folder-v1"
     },
     {
       "path": "assets/production/materials/sets/chalk/atlas_basecolor_512.png",
-      "bytes": 14367,
-      "sha256": "37d8ab4408466c604e3965abad364d46c95d75a6efbd0a812b57745b7407ef35"
+      "bytes": 74627,
+      "sha256": "c184103aa2c001f8c26e18139535ff3ef909e4a662aff70c86e9f013a2db31b3",
+      "material_revision": "assets-folder-v1"
     },
     {
       "path": "assets/production/materials/sets/coral/atlas_basecolor.png",
-      "bytes": 29790,
-      "sha256": "105ebf24c670e4cd26fc519529a7aa7ce41ab13146cbc7fb35bcd328e95ca56e"
+      "bytes": 330903,
+      "sha256": "c6bd4d35ad73253c9bda1698e01eb46a751031a17f1056b000d7896a934e6a25",
+      "material_revision": "assets-folder-v1"
     },
     {
       "path": "assets/production/materials/sets/coral/atlas_basecolor_512.png",
-      "bytes": 14633,
-      "sha256": "b03e53f850e329b18a00696ba6323bb16ccc04d1600700e6d91940d5bd2c9d07"
+      "bytes": 74441,
+      "sha256": "ce6d0f067b0403cc5f04f602cf31c0893232c041a40300a99f476dde968530a6",
+      "material_revision": "assets-folder-v1"
     },
     {
       "path": "assets/production/materials/sets/quay/atlas_basecolor.png",
-      "bytes": 31183,
-      "sha256": "1ef47e53827bfe874807b68f8f886e98501fb3f406ff24a896d1533ae08e9d66"
+      "bytes": 331029,
+      "sha256": "3a8c1c74de6a310628feb7aa2cbd1042de38c1d8905764dc1b4407717275da41",
+      "material_revision": "assets-folder-v1"
     },
     {
       "path": "assets/production/materials/sets/quay/atlas_basecolor_512.png",
-      "bytes": 15782,
-      "sha256": "c128102bf1fac7d04614371f54b3f236ea54e508b904f30f6c3ace861083a977"
+      "bytes": 74629,
+      "sha256": "890720e2b19cf2d9d3f55a429d893d0c54493019b7cdb82bb4a3352fbe033009",
+      "material_revision": "assets-folder-v1"
     },
     {
       "path": "assets/production/materials/shared/atlas_metalness.png",
       "bytes": 1428,
-      "sha256": "d2f1433b85dd698ac2617204c24c5384ed45d0d583916fc70b4e73451cbb966d"
+      "sha256": "d2f1433b85dd698ac2617204c24c5384ed45d0d583916fc70b4e73451cbb966d",
+      "material_revision": "assets-folder-v1"
     },
     {
       "path": "assets/production/materials/shared/atlas_metalness_512.png",
       "bytes": 491,
-      "sha256": "2f5537207895c626bad32a88d93038ebcf023221adede6d208d53ee80e7e0f22"
+      "sha256": "2f5537207895c626bad32a88d93038ebcf023221adede6d208d53ee80e7e0f22",
+      "material_revision": "assets-folder-v1"
     },
     {
       "path": "assets/production/materials/shared/atlas_roughness.png",
-      "bytes": 2438,
-      "sha256": "79916cdb0b3ad460a84a1561402cf848759649d8b1134f35f6c32416038325b8"
+      "bytes": 343683,
+      "sha256": "7752c9e4fb0cabccf33f0ba3d26d697b6c364531ca14ccf02934c2e922e3ba5b",
+      "material_revision": "assets-folder-v1"
     },
     {
       "path": "assets/production/materials/shared/atlas_roughness_512.png",
-      "bytes": 969,
-      "sha256": "31dc32832abac61b114e1bf38396fb3da897e680c2053d0f1f1c73c072064cb5"
+      "bytes": 78286,
+      "sha256": "f7cbac79a62e6498f986591c071111710d8112b7dcbae338619552398411d277",
+      "material_revision": "assets-folder-v1"
     },
     {
       "path": "assets/production/materials/tiles/accent_basecolor.png",
@@ -588,5 +600,6 @@
       "bytes": 5771,
       "sha256": "8adb669c64cd835b457f85da3de16e2806dd1de96c7fa11c7b264012b4ffb238"
     }
-  ]
+  ],
+  "material_revision": "assets/production/materials/revision.json"
 }

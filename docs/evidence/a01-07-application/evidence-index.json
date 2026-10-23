@@ -1,0 +1,110 @@
+{
+  "schema": 1,
+  "purpose": "Approved finishes application evidence; hashes cover retained receipt and image bytes. Native import/cloud rejoin remain unverified.",
+  "files": {
+    "approval.json": {
+      "bytes": 5740,
+      "sha256": "46c720c2860002fd598a14dacd2a2324b1c0ddba40bb82ba3d05f052543992ed"
+    },
+    "gameplay-dusk-clear.jpg": {
+      "bytes": 86738,
+      "sha256": "7a6f1b398c9f306c46e56d42f3ed7914c6a36749527b61434161b0618209a67f"
+    },
+    "gameplay-dusk-controls.jpg": {
+      "bytes": 90088,
+      "sha256": "7f1422f446499796dfaca70a3a595c033715b511f53527501bf98807631ffb2c"
+    },
+    "gameplay-dusk-front.jpg": {
+      "bytes": 84725,
+      "sha256": "6c83cf5ac9bbd29a904867bcbb2ba91c24ba4bb3ad32a1d111d1742916b6e25c"
+    },
+    "gameplay-dusk.jpg": {
+      "bytes": 78254,
+      "sha256": "41afb12b3717825049d3a0fc0e30aa1af4936ae9e58742208b48561656a0746d"
+    },
+    "gameplay-neutral.jpg": {
+      "bytes": 86650,
+      "sha256": "b26fb03c52a9d3af9478e5e4354f9362364c4d71d477491f2d5ca1a85221ed4b"
+    },
+    "gameplay-ui.jpg": {
+      "bytes": 108169,
+      "sha256": "86d2327137c760947402fdce435a06cf82904386c4a2c57055ac40445b5d4ac4"
+    },
+    "generator-guard.json": {
+      "bytes": 128,
+      "sha256": "d53f44c00c426c9feeb441d8571bfce4eecf2132726b8b1ec26f134527ddb638"
+    },
+    "readability-check.luau": {
+      "bytes": 759,
+      "sha256": "526f6674e1df935e153250bdf70469b89f9cc26b95af588c77cfed2871b04add"
+    },
+    "rojo-template-verification.json": {
+      "bytes": 243,
+      "sha256": "c43f6f2b190f3023fa67671f493dce86d4eb7ade96e5d0270b7289fc9138c2df"
+    },
+    "studio-binding.json": {
+      "bytes": 156,
+      "sha256": "5972d8f2fa82d4e18f5d7cea5ff7991bcdef7589807402e4bc8d0a86e58024cf"
+    },
+    "studio-controls-readability.json": {
+      "bytes": 120,
+      "sha256": "2511e9fb1902667f9726c268da26bf9f47fc68903d02f526be995c171141e619"
+    },
+    "studio-images-render-loaded.json": {
+      "bytes": 2384,
+      "sha256": "96592744486d1437289e92a2f818ad07fb4d3c1fbc73c1d21b202fae912a5ff1"
+    },
+    "studio-owner-info.json": {
+      "bytes": 2330,
+      "sha256": "f4ab1903dde37ed0061bc2c5b2f4b2680bad06cbd1e9f1ee6ce4f4161574c4a6"
+    },
+    "studio-qa-cleanup.json": {
+      "bytes": 130,
+      "sha256": "b1eaa6047d1fba42950d8c234350f7c5c8f693b111aa05231b0d8622d3d73766"
+    },
+    "studio-real-ids.json": {
+      "bytes": 2560,
+      "sha256": "12f673bcf43a08f8cc217b1f391e1d01eafb5da84870823fafea46fa8e9e82b2"
+    },
+    "studio-regressions.json": {
+      "bytes": 1749,
+      "sha256": "10e13e9280a07be2ead239698c1818a830c514952149bc7ca63d6d0abaa238e2"
+    },
+    "studio-two-client.json": {
+      "bytes": 1043,
+      "sha256": "e43c67dc302ae0503f562b97ef6063254fc5bd5435ddfef3b4d6ee9290c32e52"
+    },
+    "upload-batch.json": {
+      "bytes": 4259,
+      "sha256": "30a3a3d8d491983552a70bd8aa16ee58463007bf7823ab44ebac511b8390a656"
+    },
+    "upload-quay.json": {
+      "bytes": 226,
+      "sha256": "fe884433d2c6bf81707ca4aad9193b3be2e15b44052913855e92089d525bea18"
+    },
+    "uploaded-bindings.json": {
+      "bytes": 516,
+      "sha256": "330956785bdc8ae42466dd66165ea643900ab2a9e29b8dd371ea957df8832a8f"
+    },
+    "workshop-dusk-afterhours.jpg": {
+      "bytes": 89356,
+      "sha256": "c12b082f3a0c97e208b146552eb88fd93f9d5a1d595a2ff4b2542651e82a5b01"
+    },
+    "workshop-dusk-chalk.jpg": {
+      "bytes": 89219,
+      "sha256": "b5d4424eda68442358fba3174f18ef9d48801c46a4269673e8c9e6ee1c7d49a8"
+    },
+    "workshop-dusk-coral.jpg": {
+      "bytes": 89944,
+      "sha256": "89bf618c439fa7246d83cd979de82227632367cfbdc7f8958ad4e3d2a576f2ae"
+    },
+    "workshop-dusk-quay.jpg": {
+      "bytes": 90200,
+      "sha256": "a5acb79422efacb6dcc08b2bb503f04f04d6a63349c916f89486d8252e062455"
+    },
+    "workshop-finishes.jpg": {
+      "bytes": 102699,
+      "sha256": "afc8f5178fc9671a4761a4c945880433ae81e8b8ebefa6494d3d789767605207"
+    }
+  }
+}

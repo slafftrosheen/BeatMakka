@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "authored_surfaces": 8,
+  "correct_map_references": 24,
+  "project": "default.project.json",
+  "built_file_sha256": "bc2745b04a08d7f21abada8f375d36fc383de8c6e345b7ceb7872b61ff5801f8",
+  "native_reopen_performed": false
+}

@@ -1,0 +1,8 @@
+{
+  "stage": "Studio MCP upload returned real IDs; fetch/render acceptance pending",
+  "owner": 11274985967,
+  "assets": {
+    "atlas.quay.basecolor.512": 117477251057253,
+    "atlas.quay.basecolor.1024": 81934793658593
+  }
+}

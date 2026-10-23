@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"ok\":true,\"result\":{\"realUploadedMaps\":true,\"count\":21,\"checks\":[\"player 1 owns its station\",\"player 2 owns its station\",\"player 1 selects quay\",\"player 1 real maps and controls quay\",\"player 1 selects chalk\",\"player 1 real maps and controls chalk\",\"player 1 selects coral\",\"player 1 real maps and controls coral\",\"player 1 selects afterhours\",\"player 1 real maps and controls afterhours\",\"player 2 selects quay\",\"player 2 real maps and controls quay\",\"player 2 selects chalk\",\"player 2 real maps and controls chalk\",\"player 2 selects coral\",\"player 2 real maps and controls coral\",\"player 2 selects afterhours\",\"player 2 real maps and controls afterhours\",\"finish command cannot change other profile\",\"session restore retains saved finish\",\"restore leaves other profile unchanged\"],\"storage\":\"session only\",\"geometry\":\"temporary H01 Client acceptance art\",\"passed\":true,\"clients\":2}}"
+    }
+  ],
+  "isError": false
+}

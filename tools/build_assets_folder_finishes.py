@@ -7,6 +7,7 @@ import argparse
 import hashlib
 import json
 import shutil
+import subprocess
 from pathlib import Path
 
 import numpy as np
@@ -97,6 +98,7 @@ def source_details():
 
 
 def build(dest):
+    assert not (ROOT/'docs/evidence/a01-07-application/approval.json').exists(), 'Approved revision is frozen; use its recorded source commit for reproduction'
     assert not dest.exists(), 'Candidate exists; verify it or create a new version'
     provenance = json.loads((SOURCES/'provenance.json').read_text())
     for record in provenance['files']:
@@ -140,9 +142,19 @@ def build(dest):
 def verify(dest):
     manifest = json.loads((dest/'manifest.json').read_text())
     assert not any(manifest[k] for k in ['art_approved', 'studio_imported', 'runtime_verified', 'uploaded'])
-    assert manifest['image_bindings_sha256'] == image_bindings()
-    for relative, expected in manifest['inputs'].items():
-        assert normalized_digest(ROOT/relative) == expected, relative
+    approval_path = ROOT/'docs/evidence/a01-07-application/approval.json'
+    if approval_path.exists():
+        approval = json.loads(approval_path.read_text())
+        assert approval['art_approved'] is True and approval['candidate'] == manifest['id']
+        assert digest(dest/'manifest.json') == approval['manifest_sha256'], 'Approved artifact changed'
+        assert manifest['image_bindings_sha256'] == approval['artifact_image_bindings_sha256']
+        for relative, expected in manifest['inputs'].items():
+            original = subprocess.check_output(['git', 'show', approval['approved_source_commit']+':'+relative], cwd=ROOT)
+            assert hashlib.sha256(original.replace(b'\r\n', b'\n')).hexdigest() == expected, relative
+    else:
+        assert manifest['image_bindings_sha256'] == image_bindings()
+        for relative, expected in manifest['inputs'].items():
+            assert normalized_digest(ROOT/relative) == expected, relative
     assert normalized_digest(SOURCES/'provenance.json') == manifest['source_provenance_sha256']
     provenance = json.loads((SOURCES/'provenance.json').read_text())
     assert {r['file'] for r in provenance['files']} == set(SOURCE_PATHS)
@@ -169,7 +181,7 @@ def verify(dest):
                         tile = values[y:y+256, x:x+256]
                         assert np.all(tile[:8] == tile[8]) and np.all(tile[-8:] == tile[-9])
                         assert np.all(tile[:, :8] == tile[:, 8:9]) and np.all(tile[:, -8:] == tile[:, -9:-8])
-    return {'passed': True, 'stage': 'candidate', 'sources': 2, 'maps': 12, 'palettes': 4, 'layout_and_image_bindings_unchanged': True}
+    return {'passed': True, 'stage': 'frozen candidate snapshot', 'sources': 2, 'maps': 12, 'palettes': 4, 'layout_and_approval_snapshot_verified': True}
 
 
 if __name__ == '__main__':
