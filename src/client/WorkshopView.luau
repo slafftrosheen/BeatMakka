@@ -787,7 +787,7 @@ function WorkshopView:update(state)
     if not self.panel.Visible then
         self:cancelInput(false)
     end
-    self.hud.Visible = state.station == nil
+    self.hud.Visible = state.station == nil and not (state.concert and state.concert.open)
     self.resizeHud()
     if not wasOpen and self.panel.Visible then
         self:showPage("Play")
@@ -880,7 +880,9 @@ function WorkshopView:update(state)
                 )
             if state.quest and state.quest.completed and state.neighborhood then
                 self.hudLabel.Text = if state.neighborhood.courtReady
-                    then "COURTYARD PREPARED\nKeep creating. The chapter concert is still ahead."
+                    then (if state.concert and state.concert.completed
+                        then "NEIGHBORHOOD SECTION COMPLETE\nKeep creating. Other chapters are still ahead."
+                        else "COURTYARD PREPARED\nVisit the Chapter concert prompt beside the listening podium.")
                     else string.format(
                         "NEIGHBORHOOD JOBS / %d of 3 complete\nOpen Virtual recorder in Sounds for your next job.",
                         state.neighborhood.completed

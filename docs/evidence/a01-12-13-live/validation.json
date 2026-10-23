@@ -1,0 +1,53 @@
+{
+  "date": "2026-10-23",
+  "baseline": "2c966099c4480f4e12679662d81d32f937b7b69c",
+  "studio_id": "1ae28dc4-9587-420e-a530-1beef3a77c6c",
+  "place": "FrequencyZero-StyleKits.rbxlx",
+  "place_id": 0,
+  "live_single_client": "collection, assignments, successive saves, original quest, chapter phases, replay/close/range, effects off",
+  "server_contracts_passed": 39,
+  "world_entry_smoke": "PASS: 2 samplers and chapter target",
+  "client_suites_passed": [
+    "RecorderGuide",
+    "ConcertTouch",
+    "RoomSettings",
+    "GrooveboxUi",
+    "ConcertUi"
+  ],
+  "multiplayer_checks_passed": 22,
+  "multiplayer_clients": 2,
+  "multiplayer_before_touch_followup": true,
+  "final_touch_followup": "PASS through real phone prompt and OnClientEvent",
+  "stylua": "PASS",
+  "selene": {
+    "errors": 0,
+    "warnings": 0,
+    "parse_errors": 0
+  },
+  "rojo_build": {
+    "sha256": "1927e0659521e759593b6304cc94fbd055d7a164c14fcf4afbe26750eb4f3e1d",
+    "source_scripts": 44,
+    "qa_excluded": true
+  },
+  "offline_binding_checks": 6,
+  "material_verifier": {
+    "production_maps": 12,
+    "templates": 8,
+    "audio_preserved": 100
+  },
+  "assets_and_content_ids_unchanged": true,
+  "desktop_control_used": false,
+  "published": false,
+  "qa_drivers_removed": true,
+  "viewport_restored": true,
+  "final_mode": "Edit",
+  "not_verified": [
+    "audible collected sounds: original asset IDs missing",
+    "real cloud persistence/rejoin: session-only local place",
+    "novice comprehension",
+    "final resident art and causal readability approval",
+    "physical device/controller feel"
+  ],
+  "issue12_closed": false,
+  "issue13_closed": false
+}

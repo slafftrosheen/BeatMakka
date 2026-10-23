@@ -1,5 +1,7 @@
 # Neighborhood jobs and virtual recorder
 
+Latest: [live single/two-client verification and fixes](A01_12_13_LIVE_VERIFICATION.md). Real collection, assignments, saved mission awards, original Mica compatibility and personal restoration isolation pass. Collected-sound audio, real cloud/rejoin and novice comprehension remain pending; #12 is open. Earlier checkpoints below are historical.
+
 23 October 2026. Source implementation from synchronized `dc7a0b9`. **#12 stays open.** Studio MCP initially had no instances; a later connection exposed a start page with no place open. No project was modified through Studio and no Studio test or visual/runtime acceptance is claimed for this batch. No foreground application launch, desktop input, uploads, generation or spending.
 
 ## Mission map

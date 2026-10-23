@@ -145,5 +145,14 @@ return function()
             expect(q.neighborhood.metal_pulse and q.editVersion ~= q.savedEditVersion)
         end
     )
+    check("courtyard guidance distinguishes ready and completed chapter", function()
+        local p = ready()
+        p.neighborhood = { metal_pulse = true, vent_duet = true, helper_reply = true }
+        p.quest.completed = true
+        expect(Missions.summary(p).objective:find("Chapter concert", 1, true) ~= nil)
+        p.chapter.completed = true
+        expect(Missions.summary(p).objective:find("restored", 1, true) ~= nil)
+        expect(not Missions.summary(p).objective:find("still ahead", 1, true))
+    end)
     return { passed = true, count = #checks, checks = checks, storage = "injected/session only" }
 end

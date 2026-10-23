@@ -98,6 +98,13 @@ return function()
         )
         assert(view.status.TextBounds.Y <= view.status.AbsoluteSize.Y, "Portrait status is clipped")
         assert(view.noticeLabel.Text:find("shelf message"), "Notice is lost")
+        state.station = nil
+        state.concert = { open = true }
+        view:update(state)
+        assert(not view.hud.Visible, "Hub controls overlap the chapter concert")
+        state.concert.open = false
+        view:update(state)
+        assert(view.hud.Visible, "Hub controls did not return after closing concert")
         return { passed = true, testedSizes = results, pads = #view.pads }
     end)
     view.screen:Destroy()

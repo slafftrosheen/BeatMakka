@@ -31,6 +31,7 @@ control.Drive.OnClientEvent:Connect(function(index, action, a, b)
                         or (o.Name == "DiscoveryTarget" and o.Parent:GetAttribute("DiscoveryId") == a)
                         or (a == "I05" and o.Name == "ListeningTarget")
                         or (a == "Mica" and o.Name == "MicaTalkTarget")
+                        or (a == "Chapter" and o.Name == "ChapterTarget")
                     )
                 then
                     anchor = o
@@ -98,6 +99,17 @@ control.Drive.OnClientEvent:Connect(function(index, action, a, b)
                 end
                 diagnostic.stations[id] = info
             end
+        elseif action == "NeighborhoodEvidence" then
+            local root = workspace.NeedleQuay
+            diagnostic =
+                { indicators = {}, crowd = root:FindFirstChild("PersonalChapterCrowd") ~= nil }
+            for _, part in root:GetDescendants() do
+                if part:IsA("BasePart") and part:GetAttribute("NeighborhoodMissionId") then
+                    diagnostic.indicators[part:GetAttribute("NeighborhoodMissionId")] =
+                        part.Color:ToHex()
+                end
+            end
+            diagnostic.hudVisible = game.Players.LocalPlayer.PlayerGui.FrequencyZero.HubHud.Visible
         elseif action == "RoomEvidence" then
             diagnostic = { rooms = {}, pads = 0 }
             for _, model in workspace.NeedleQuay:GetChildren() do

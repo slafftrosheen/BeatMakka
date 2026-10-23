@@ -1,0 +1,2759 @@
+{
+  "prematureRejected": "Let this full loop finish before the next musical action.",
+  "effectsOff": {
+    "button": "Effects OFF",
+    "lights": [
+      {
+        "color": "f3b65f",
+        "material": "SmoothPlastic",
+        "name": "ChapterLight"
+      },
+      {
+        "color": "f3b65f",
+        "material": "SmoothPlastic",
+        "name": "Neighborhood_vent_duet"
+      },
+      {
+        "color": "f3b65f",
+        "material": "SmoothPlastic",
+        "name": "ChapterLight"
+      },
+      {
+        "color": "f3b65f",
+        "material": "SmoothPlastic",
+        "name": "Neighborhood_metal_pulse"
+      },
+      {
+        "color": "f3b65f",
+        "material": "SmoothPlastic",
+        "name": "Neighborhood_helper_reply"
+      }
+    ],
+    "actors": [
+      {
+        "name": "Quay crew",
+        "static": true
+      },
+      {
+        "name": "Vent keeper",
+        "static": true
+      },
+      {
+        "name": "Mica",
+        "static": true
+      }
+    ]
+  },
+  "sceneResult": {
+    "actors": [
+      {
+        "standIn": true,
+        "pivot": "37.5, 0.0736634955, 20.9984169, 1, 0, 0, 0, 0.999769092, 0.0214884952, 0, -0.0214884952, 0.999769092",
+        "name": "Quay crew",
+        "colliding": false
+      },
+      {
+        "standIn": true,
+        "pivot": "42, 0.0398885868, 21.0004635, 1, 0, 0, 0, 0.999932289, -0.0116346963, 0, 0.0116346963, 0.999932289",
+        "name": "Vent keeper",
+        "colliding": false
+      },
+      {
+        "standIn": true,
+        "pivot": "46.5, 0.116719477, 21.0039768, 1, 0, 0, 0, 0.999419928, -0.0340563543, 0, 0.0340563543, 0.999419928",
+        "name": "Mica",
+        "colliding": false
+      }
+    ],
+    "serverCompletion": true,
+    "lights": [
+      {
+        "color": "f3b65f",
+        "material": "Neon",
+        "name": "ChapterLight"
+      },
+      {
+        "color": "f3b65f",
+        "material": "Neon",
+        "name": "Neighborhood_vent_duet",
+        "job": "vent_duet"
+      },
+      {
+        "color": "f3b65f",
+        "material": "Neon",
+        "name": "ChapterLight"
+      },
+      {
+        "color": "f3b65f",
+        "material": "Neon",
+        "name": "Neighborhood_metal_pulse",
+        "job": "metal_pulse"
+      },
+      {
+        "color": "f3b65f",
+        "material": "Neon",
+        "name": "Neighborhood_helper_reply",
+        "job": "helper_reply"
+      },
+      {
+        "color": "6f9186",
+        "material": "SmoothPlastic",
+        "name": "ListeningCourt"
+      }
+    ]
+  },
+  "distanceRetained": true,
+  "saveMode": "session",
+  "phaseResults": [
+    {
+      "phase": 2,
+      "reaction": 2,
+      "action": "ChapterSupport",
+      "checkpoint": 2
+    },
+    {
+      "phase": 3,
+      "reaction": 2,
+      "action": "ChapterBreak",
+      "checkpoint": 3
+    },
+    {
+      "phase": 4,
+      "reaction": 2,
+      "action": "ChapterReturn",
+      "checkpoint": 4
+    },
+    {
+      "phase": 5,
+      "reaction": 3,
+      "action": "ChapterSwitch",
+      "checkpoint": 5
+    },
+    {
+      "phase": 6,
+      "reaction": 4,
+      "action": "ChapterFeature",
+      "checkpoint": 6
+    }
+  ],
+  "missingAudio": [
+    "metal_hit",
+    "vent_thump",
+    "robot_chirp",
+    "kick"
+  ],
+  "replayCloseRetained": true,
+  "states": [
+    {
+      "at": 1792773126.035077,
+      "saving": false,
+      "concert": {
+        "completed": false,
+        "reaction": 0,
+        "checkpoint": 0,
+        "phase": 0,
+        "open": false,
+        "waiting": false
+      },
+      "neighborhood": {
+        "completed": 0,
+        "courtReady": false,
+        "earned": {
+          "vent_duet": false,
+          "metal_pulse": false,
+          "helper_reply": false
+        },
+        "objective": "Meet Mica to begin the neighborhood jobs.",
+        "nextId": "metal_pulse"
+      },
+      "quest": {
+        "completed": false,
+        "title": "A tune for the quay",
+        "objective": "Meet Mica, the helper robot in the sound alley.",
+        "id": "first_courtyard_set",
+        "collected": 0,
+        "stage": "meet",
+        "accepted": false
+      },
+      "dirty": false
+    },
+    {
+      "at": 1792773133.834143,
+      "saving": false,
+      "concert": {
+        "completed": false,
+        "reaction": 0,
+        "checkpoint": 0,
+        "phase": 0,
+        "open": false,
+        "waiting": false
+      },
+      "notice": "Mica: Help me give the quay a tune. Collect our three sounds, save a beat using one, then play it at the courtyard.",
+      "neighborhood": {
+        "completed": 0,
+        "courtReady": false,
+        "earned": {
+          "vent_duet": false,
+          "metal_pulse": false,
+          "helper_reply": false
+        },
+        "objective": "Collect Quay metal. Put it on two different unmuted steps and save a beat to the shelf.",
+        "nextId": "metal_pulse"
+      },
+      "quest": {
+        "completed": false,
+        "title": "A tune for the quay",
+        "objective": "Collect the metal, vent and robot sounds: 0/3.",
+        "id": "first_courtyard_set",
+        "collected": 0,
+        "stage": "discover",
+        "accepted": true
+      },
+      "dirty": true
+    },
+    {
+      "at": 1792773150.598831,
+      "saving": false,
+      "concert": {
+        "completed": false,
+        "reaction": 0,
+        "checkpoint": 0,
+        "phase": 0,
+        "open": false,
+        "waiting": false
+      },
+      "notice": "A short reply from Mica's helper speaker. Virtual sample collected. At a sampler, choose Sounds to assign it to a pad.",
+      "neighborhood": {
+        "completed": 0,
+        "courtReady": false,
+        "earned": {
+          "vent_duet": false,
+          "metal_pulse": false,
+          "helper_reply": false
+        },
+        "objective": "Collect Quay metal. Put it on two different unmuted steps and save a beat to the shelf.",
+        "nextId": "metal_pulse"
+      },
+      "quest": {
+        "completed": false,
+        "title": "A tune for the quay",
+        "objective": "Collect the metal, vent and robot sounds: 1/3.",
+        "id": "first_courtyard_set",
+        "collected": 1,
+        "stage": "discover",
+        "accepted": true
+      },
+      "dirty": true
+    },
+    {
+      "at": 1792773152.016487,
+      "saving": false,
+      "concert": {
+        "completed": false,
+        "reaction": 0,
+        "checkpoint": 0,
+        "phase": 0,
+        "open": false,
+        "waiting": false
+      },
+      "notice": "A low thump from the alley vent. Virtual sample collected. At a sampler, choose Sounds to assign it to a pad.",
+      "neighborhood": {
+        "completed": 0,
+        "courtReady": false,
+        "earned": {
+          "vent_duet": false,
+          "metal_pulse": false,
+          "helper_reply": false
+        },
+        "objective": "Collect Quay metal. Put it on two different unmuted steps and save a beat to the shelf.",
+        "nextId": "metal_pulse"
+      },
+      "quest": {
+        "completed": false,
+        "title": "A tune for the quay",
+        "objective": "Collect the metal, vent and robot sounds: 2/3.",
+        "id": "first_courtyard_set",
+        "collected": 2,
+        "stage": "discover",
+        "accepted": true
+      },
+      "dirty": true
+    },
+    {
+      "at": 1792773153.600406,
+      "saving": false,
+      "concert": {
+        "completed": false,
+        "reaction": 0,
+        "checkpoint": 0,
+        "phase": 0,
+        "open": false,
+        "waiting": false
+      },
+      "notice": "A metal strike at the quay. Virtual sample collected. At a sampler, choose Sounds to assign it to a pad.",
+      "neighborhood": {
+        "completed": 0,
+        "courtReady": false,
+        "earned": {
+          "vent_duet": false,
+          "metal_pulse": false,
+          "helper_reply": false
+        },
+        "objective": "Collect Quay metal. Put it on two different unmuted steps and save a beat to the shelf.",
+        "nextId": "metal_pulse"
+      },
+      "quest": {
+        "completed": false,
+        "title": "A tune for the quay",
+        "objective": "Put a collected sound on an unmuted step, then save your beat to the shelf.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "save",
+        "accepted": true
+      },
+      "dirty": true
+    },
+    {
+      "at": 1792773166.629211,
+      "saving": false,
+      "concert": {
+        "completed": false,
+        "reaction": 0,
+        "checkpoint": 0,
+        "phase": 0,
+        "open": false,
+        "waiting": false
+      },
+      "notice": "Return to a workbench to edit your pattern.",
+      "neighborhood": {
+        "completed": 0,
+        "courtReady": false,
+        "earned": {
+          "vent_duet": false,
+          "metal_pulse": false,
+          "helper_reply": false
+        },
+        "objective": "Collect Quay metal. Put it on two different unmuted steps and save a beat to the shelf.",
+        "nextId": "metal_pulse"
+      },
+      "quest": {
+        "completed": false,
+        "title": "A tune for the quay",
+        "objective": "Put a collected sound on an unmuted step, then save your beat to the shelf.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "save",
+        "accepted": true
+      },
+      "dirty": true
+    },
+    {
+      "at": 1792773166.712014,
+      "saving": false,
+      "concert": {
+        "completed": false,
+        "reaction": 0,
+        "checkpoint": 0,
+        "phase": 0,
+        "open": false,
+        "waiting": false
+      },
+      "notice": "Return to a workbench to edit your pattern.",
+      "neighborhood": {
+        "completed": 0,
+        "courtReady": false,
+        "earned": {
+          "vent_duet": false,
+          "metal_pulse": false,
+          "helper_reply": false
+        },
+        "objective": "Collect Quay metal. Put it on two different unmuted steps and save a beat to the shelf.",
+        "nextId": "metal_pulse"
+      },
+      "quest": {
+        "completed": false,
+        "title": "A tune for the quay",
+        "objective": "Put a collected sound on an unmuted step, then save your beat to the shelf.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "save",
+        "accepted": true
+      },
+      "dirty": true
+    },
+    {
+      "at": 1792773166.795029,
+      "saving": false,
+      "concert": {
+        "completed": false,
+        "reaction": 0,
+        "checkpoint": 0,
+        "phase": 0,
+        "open": false,
+        "waiting": false
+      },
+      "notice": "Return to a workbench to edit your pattern.",
+      "neighborhood": {
+        "completed": 0,
+        "courtReady": false,
+        "earned": {
+          "vent_duet": false,
+          "metal_pulse": false,
+          "helper_reply": false
+        },
+        "objective": "Collect Quay metal. Put it on two different unmuted steps and save a beat to the shelf.",
+        "nextId": "metal_pulse"
+      },
+      "quest": {
+        "completed": false,
+        "title": "A tune for the quay",
+        "objective": "Put a collected sound on an unmuted step, then save your beat to the shelf.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "save",
+        "accepted": true
+      },
+      "dirty": true
+    },
+    {
+      "at": 1792773243.44673,
+      "saving": false,
+      "concert": {
+        "completed": false,
+        "reaction": 0,
+        "checkpoint": 0,
+        "phase": 0,
+        "open": false,
+        "waiting": false
+      },
+      "neighborhood": {
+        "completed": 0,
+        "courtReady": false,
+        "earned": {
+          "vent_duet": false,
+          "metal_pulse": false,
+          "helper_reply": false
+        },
+        "objective": "Collect Quay metal. Put it on two different unmuted steps and save a beat to the shelf.",
+        "nextId": "metal_pulse"
+      },
+      "quest": {
+        "completed": false,
+        "title": "A tune for the quay",
+        "objective": "Put a collected sound on an unmuted step, then save your beat to the shelf.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "save",
+        "accepted": true
+      },
+      "dirty": true
+    },
+    {
+      "at": 1792773243.448984,
+      "saving": false,
+      "concert": {
+        "completed": false,
+        "reaction": 0,
+        "checkpoint": 0,
+        "phase": 0,
+        "open": false,
+        "waiting": false
+      },
+      "notice": "Select a pad, then add steps. Space plays your loop.",
+      "neighborhood": {
+        "completed": 0,
+        "courtReady": false,
+        "earned": {
+          "vent_duet": false,
+          "metal_pulse": false,
+          "helper_reply": false
+        },
+        "objective": "Collect Quay metal. Put it on two different unmuted steps and save a beat to the shelf.",
+        "nextId": "metal_pulse"
+      },
+      "quest": {
+        "completed": false,
+        "title": "A tune for the quay",
+        "objective": "Put a collected sound on an unmuted step, then save your beat to the shelf.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "save",
+        "accepted": true
+      },
+      "dirty": true
+    },
+    {
+      "at": 1792773258.426891,
+      "saving": false,
+      "concert": {
+        "completed": false,
+        "reaction": 0,
+        "checkpoint": 0,
+        "phase": 0,
+        "open": false,
+        "waiting": false
+      },
+      "neighborhood": {
+        "completed": 0,
+        "courtReady": false,
+        "earned": {
+          "vent_duet": false,
+          "metal_pulse": false,
+          "helper_reply": false
+        },
+        "objective": "Collect Quay metal. Put it on two different unmuted steps and save a beat to the shelf.",
+        "nextId": "metal_pulse"
+      },
+      "quest": {
+        "completed": false,
+        "title": "A tune for the quay",
+        "objective": "Put a collected sound on an unmuted step, then save your beat to the shelf.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "save",
+        "accepted": true
+      },
+      "dirty": true
+    },
+    {
+      "at": 1792773258.543728,
+      "saving": false,
+      "concert": {
+        "completed": false,
+        "reaction": 0,
+        "checkpoint": 0,
+        "phase": 0,
+        "open": false,
+        "waiting": false
+      },
+      "neighborhood": {
+        "completed": 0,
+        "courtReady": false,
+        "earned": {
+          "vent_duet": false,
+          "metal_pulse": false,
+          "helper_reply": false
+        },
+        "objective": "Collect Quay metal. Put it on two different unmuted steps and save a beat to the shelf.",
+        "nextId": "metal_pulse"
+      },
+      "quest": {
+        "completed": false,
+        "title": "A tune for the quay",
+        "objective": "Put a collected sound on an unmuted step, then save your beat to the shelf.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "save",
+        "accepted": true
+      },
+      "dirty": true
+    },
+    {
+      "at": 1792773258.677392,
+      "saving": false,
+      "concert": {
+        "completed": false,
+        "reaction": 0,
+        "checkpoint": 0,
+        "phase": 0,
+        "open": false,
+        "waiting": false
+      },
+      "neighborhood": {
+        "completed": 0,
+        "courtReady": false,
+        "earned": {
+          "vent_duet": false,
+          "metal_pulse": false,
+          "helper_reply": false
+        },
+        "objective": "Collect Quay metal. Put it on two different unmuted steps and save a beat to the shelf.",
+        "nextId": "metal_pulse"
+      },
+      "quest": {
+        "completed": false,
+        "title": "A tune for the quay",
+        "objective": "Put a collected sound on an unmuted step, then save your beat to the shelf.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "save",
+        "accepted": true
+      },
+      "dirty": true
+    },
+    {
+      "at": 1792773258.811976,
+      "saving": true,
+      "concert": {
+        "completed": false,
+        "reaction": 0,
+        "checkpoint": 0,
+        "phase": 0,
+        "open": false,
+        "waiting": false
+      },
+      "notice": "Saving...",
+      "neighborhood": {
+        "completed": 0,
+        "courtReady": false,
+        "earned": {
+          "vent_duet": false,
+          "metal_pulse": false,
+          "helper_reply": false
+        },
+        "objective": "Collect Quay metal. Put it on two different unmuted steps and save a beat to the shelf.",
+        "nextId": "metal_pulse"
+      },
+      "quest": {
+        "completed": false,
+        "title": "A tune for the quay",
+        "objective": "Put a collected sound on an unmuted step, then save your beat to the shelf.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "save",
+        "accepted": true
+      },
+      "dirty": true
+    },
+    {
+      "at": 1792773258.827112,
+      "saving": false,
+      "concert": {
+        "completed": false,
+        "reaction": 0,
+        "checkpoint": 0,
+        "phase": 0,
+        "open": false,
+        "waiting": false
+      },
+      "notice": "Beat 01 stored on your shelf. Saved for this Studio session only.",
+      "neighborhood": {
+        "completed": 1,
+        "courtReady": false,
+        "earned": {
+          "vent_duet": false,
+          "metal_pulse": true,
+          "helper_reply": false
+        },
+        "objective": "Collect Vent thump. Save a pattern with audible metal and vent notes together.",
+        "nextId": "vent_duet"
+      },
+      "quest": {
+        "completed": false,
+        "title": "A tune for the quay",
+        "objective": "Choose your saved quay-sound pattern, then share one full loop at the courtyard podium.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "perform",
+        "accepted": true
+      },
+      "dirty": false
+    },
+    {
+      "at": 1792773266.72852,
+      "saving": false,
+      "concert": {
+        "completed": false,
+        "reaction": 0,
+        "checkpoint": 0,
+        "phase": 0,
+        "open": false,
+        "waiting": false
+      },
+      "neighborhood": {
+        "completed": 1,
+        "courtReady": false,
+        "earned": {
+          "vent_duet": false,
+          "metal_pulse": true,
+          "helper_reply": false
+        },
+        "objective": "Collect Vent thump. Save a pattern with audible metal and vent notes together.",
+        "nextId": "vent_duet"
+      },
+      "quest": {
+        "completed": false,
+        "title": "A tune for the quay",
+        "objective": "Put a collected sound on an unmuted step, then save your beat to the shelf.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "save",
+        "accepted": true
+      },
+      "dirty": true
+    },
+    {
+      "at": 1792773266.845727,
+      "saving": false,
+      "concert": {
+        "completed": false,
+        "reaction": 0,
+        "checkpoint": 0,
+        "phase": 0,
+        "open": false,
+        "waiting": false
+      },
+      "neighborhood": {
+        "completed": 1,
+        "courtReady": false,
+        "earned": {
+          "vent_duet": false,
+          "metal_pulse": true,
+          "helper_reply": false
+        },
+        "objective": "Collect Vent thump. Save a pattern with audible metal and vent notes together.",
+        "nextId": "vent_duet"
+      },
+      "quest": {
+        "completed": false,
+        "title": "A tune for the quay",
+        "objective": "Put a collected sound on an unmuted step, then save your beat to the shelf.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "save",
+        "accepted": true
+      },
+      "dirty": true
+    },
+    {
+      "at": 1792773266.979904,
+      "saving": true,
+      "concert": {
+        "completed": false,
+        "reaction": 0,
+        "checkpoint": 0,
+        "phase": 0,
+        "open": false,
+        "waiting": false
+      },
+      "notice": "Saving...",
+      "neighborhood": {
+        "completed": 1,
+        "courtReady": false,
+        "earned": {
+          "vent_duet": false,
+          "metal_pulse": true,
+          "helper_reply": false
+        },
+        "objective": "Collect Vent thump. Save a pattern with audible metal and vent notes together.",
+        "nextId": "vent_duet"
+      },
+      "quest": {
+        "completed": false,
+        "title": "A tune for the quay",
+        "objective": "Put a collected sound on an unmuted step, then save your beat to the shelf.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "save",
+        "accepted": true
+      },
+      "dirty": true
+    },
+    {
+      "at": 1792773266.981904,
+      "saving": false,
+      "concert": {
+        "completed": false,
+        "reaction": 0,
+        "checkpoint": 0,
+        "phase": 0,
+        "open": false,
+        "waiting": false
+      },
+      "notice": "Beat 01 stored on your shelf. Saved for this Studio session only.",
+      "neighborhood": {
+        "completed": 2,
+        "courtReady": false,
+        "earned": {
+          "vent_duet": true,
+          "metal_pulse": true,
+          "helper_reply": false
+        },
+        "objective": "Collect Helper chirp. Save two patterns with different audible chirp rhythms.",
+        "nextId": "helper_reply"
+      },
+      "quest": {
+        "completed": false,
+        "title": "A tune for the quay",
+        "objective": "Choose your saved quay-sound pattern, then share one full loop at the courtyard podium.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "perform",
+        "accepted": true
+      },
+      "dirty": false
+    },
+    {
+      "at": 1792773278.576383,
+      "saving": false,
+      "concert": {
+        "completed": false,
+        "reaction": 0,
+        "checkpoint": 0,
+        "phase": 0,
+        "open": false,
+        "waiting": false
+      },
+      "neighborhood": {
+        "completed": 2,
+        "courtReady": false,
+        "earned": {
+          "vent_duet": true,
+          "metal_pulse": true,
+          "helper_reply": false
+        },
+        "objective": "Collect Helper chirp. Save two patterns with different audible chirp rhythms.",
+        "nextId": "helper_reply"
+      },
+      "quest": {
+        "completed": false,
+        "title": "A tune for the quay",
+        "objective": "Put a collected sound on an unmuted step, then save your beat to the shelf.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "save",
+        "accepted": true
+      },
+      "dirty": true
+    },
+    {
+      "at": 1792773278.692692,
+      "saving": false,
+      "concert": {
+        "completed": false,
+        "reaction": 0,
+        "checkpoint": 0,
+        "phase": 0,
+        "open": false,
+        "waiting": false
+      },
+      "neighborhood": {
+        "completed": 2,
+        "courtReady": false,
+        "earned": {
+          "vent_duet": true,
+          "metal_pulse": true,
+          "helper_reply": false
+        },
+        "objective": "Collect Helper chirp. Save two patterns with different audible chirp rhythms.",
+        "nextId": "helper_reply"
+      },
+      "quest": {
+        "completed": false,
+        "title": "A tune for the quay",
+        "objective": "Put a collected sound on an unmuted step, then save your beat to the shelf.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "save",
+        "accepted": true
+      },
+      "dirty": true
+    },
+    {
+      "at": 1792773278.823951,
+      "saving": false,
+      "concert": {
+        "completed": false,
+        "reaction": 0,
+        "checkpoint": 0,
+        "phase": 0,
+        "open": false,
+        "waiting": false
+      },
+      "neighborhood": {
+        "completed": 2,
+        "courtReady": false,
+        "earned": {
+          "vent_duet": true,
+          "metal_pulse": true,
+          "helper_reply": false
+        },
+        "objective": "Collect Helper chirp. Save two patterns with different audible chirp rhythms.",
+        "nextId": "helper_reply"
+      },
+      "quest": {
+        "completed": false,
+        "title": "A tune for the quay",
+        "objective": "Put a collected sound on an unmuted step, then save your beat to the shelf.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "save",
+        "accepted": true
+      },
+      "dirty": true
+    },
+    {
+      "at": 1792773278.958404,
+      "saving": false,
+      "concert": {
+        "completed": false,
+        "reaction": 0,
+        "checkpoint": 0,
+        "phase": 0,
+        "open": false,
+        "waiting": false
+      },
+      "neighborhood": {
+        "completed": 2,
+        "courtReady": false,
+        "earned": {
+          "vent_duet": true,
+          "metal_pulse": true,
+          "helper_reply": false
+        },
+        "objective": "Collect Helper chirp. Save two patterns with different audible chirp rhythms.",
+        "nextId": "helper_reply"
+      },
+      "quest": {
+        "completed": false,
+        "title": "A tune for the quay",
+        "objective": "Put a collected sound on an unmuted step, then save your beat to the shelf.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "save",
+        "accepted": true
+      },
+      "dirty": true
+    },
+    {
+      "at": 1792773279.091362,
+      "saving": false,
+      "concert": {
+        "completed": false,
+        "reaction": 0,
+        "checkpoint": 0,
+        "phase": 0,
+        "open": false,
+        "waiting": false
+      },
+      "neighborhood": {
+        "completed": 2,
+        "courtReady": false,
+        "earned": {
+          "vent_duet": true,
+          "metal_pulse": true,
+          "helper_reply": false
+        },
+        "objective": "Collect Helper chirp. Save two patterns with different audible chirp rhythms.",
+        "nextId": "helper_reply"
+      },
+      "quest": {
+        "completed": false,
+        "title": "A tune for the quay",
+        "objective": "Put a collected sound on an unmuted step, then save your beat to the shelf.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "save",
+        "accepted": true
+      },
+      "dirty": true
+    },
+    {
+      "at": 1792773279.22448,
+      "saving": false,
+      "concert": {
+        "completed": false,
+        "reaction": 0,
+        "checkpoint": 0,
+        "phase": 0,
+        "open": false,
+        "waiting": false
+      },
+      "neighborhood": {
+        "completed": 2,
+        "courtReady": false,
+        "earned": {
+          "vent_duet": true,
+          "metal_pulse": true,
+          "helper_reply": false
+        },
+        "objective": "Collect Helper chirp. Save two patterns with different audible chirp rhythms.",
+        "nextId": "helper_reply"
+      },
+      "quest": {
+        "completed": false,
+        "title": "A tune for the quay",
+        "objective": "Put a collected sound on an unmuted step, then save your beat to the shelf.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "save",
+        "accepted": true
+      },
+      "dirty": true
+    },
+    {
+      "at": 1792773279.357541,
+      "saving": false,
+      "concert": {
+        "completed": false,
+        "reaction": 0,
+        "checkpoint": 0,
+        "phase": 0,
+        "open": false,
+        "waiting": false
+      },
+      "neighborhood": {
+        "completed": 2,
+        "courtReady": false,
+        "earned": {
+          "vent_duet": true,
+          "metal_pulse": true,
+          "helper_reply": false
+        },
+        "objective": "Collect Helper chirp. Save two patterns with different audible chirp rhythms.",
+        "nextId": "helper_reply"
+      },
+      "quest": {
+        "completed": false,
+        "title": "A tune for the quay",
+        "objective": "Put a collected sound on an unmuted step, then save your beat to the shelf.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "save",
+        "accepted": true
+      },
+      "dirty": true
+    },
+    {
+      "at": 1792773279.491611,
+      "saving": false,
+      "concert": {
+        "completed": false,
+        "reaction": 0,
+        "checkpoint": 0,
+        "phase": 0,
+        "open": false,
+        "waiting": false
+      },
+      "neighborhood": {
+        "completed": 2,
+        "courtReady": false,
+        "earned": {
+          "vent_duet": true,
+          "metal_pulse": true,
+          "helper_reply": false
+        },
+        "objective": "Collect Helper chirp. Save two patterns with different audible chirp rhythms.",
+        "nextId": "helper_reply"
+      },
+      "quest": {
+        "completed": false,
+        "title": "A tune for the quay",
+        "objective": "Put a collected sound on an unmuted step, then save your beat to the shelf.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "save",
+        "accepted": true
+      },
+      "dirty": true
+    },
+    {
+      "at": 1792773279.624277,
+      "saving": false,
+      "concert": {
+        "completed": false,
+        "reaction": 0,
+        "checkpoint": 0,
+        "phase": 0,
+        "open": false,
+        "waiting": false
+      },
+      "neighborhood": {
+        "completed": 2,
+        "courtReady": false,
+        "earned": {
+          "vent_duet": true,
+          "metal_pulse": true,
+          "helper_reply": false
+        },
+        "objective": "Collect Helper chirp. Save two patterns with different audible chirp rhythms.",
+        "nextId": "helper_reply"
+      },
+      "quest": {
+        "completed": false,
+        "title": "A tune for the quay",
+        "objective": "Put a collected sound on an unmuted step, then save your beat to the shelf.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "save",
+        "accepted": true
+      },
+      "dirty": true
+    },
+    {
+      "at": 1792773279.759032,
+      "saving": false,
+      "concert": {
+        "completed": false,
+        "reaction": 0,
+        "checkpoint": 0,
+        "phase": 0,
+        "open": false,
+        "waiting": false
+      },
+      "neighborhood": {
+        "completed": 2,
+        "courtReady": false,
+        "earned": {
+          "vent_duet": true,
+          "metal_pulse": true,
+          "helper_reply": false
+        },
+        "objective": "Collect Helper chirp. Save two patterns with different audible chirp rhythms.",
+        "nextId": "helper_reply"
+      },
+      "quest": {
+        "completed": false,
+        "title": "A tune for the quay",
+        "objective": "Put a collected sound on an unmuted step, then save your beat to the shelf.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "save",
+        "accepted": true
+      },
+      "dirty": true
+    },
+    {
+      "at": 1792773279.891737,
+      "saving": false,
+      "concert": {
+        "completed": false,
+        "reaction": 0,
+        "checkpoint": 0,
+        "phase": 0,
+        "open": false,
+        "waiting": false
+      },
+      "neighborhood": {
+        "completed": 2,
+        "courtReady": false,
+        "earned": {
+          "vent_duet": true,
+          "metal_pulse": true,
+          "helper_reply": false
+        },
+        "objective": "Collect Helper chirp. Save two patterns with different audible chirp rhythms.",
+        "nextId": "helper_reply"
+      },
+      "quest": {
+        "completed": false,
+        "title": "A tune for the quay",
+        "objective": "Put a collected sound on an unmuted step, then save your beat to the shelf.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "save",
+        "accepted": true
+      },
+      "dirty": true
+    },
+    {
+      "at": 1792773280.024641,
+      "saving": true,
+      "concert": {
+        "completed": false,
+        "reaction": 0,
+        "checkpoint": 0,
+        "phase": 0,
+        "open": false,
+        "waiting": false
+      },
+      "notice": "Saving...",
+      "neighborhood": {
+        "completed": 2,
+        "courtReady": false,
+        "earned": {
+          "vent_duet": true,
+          "metal_pulse": true,
+          "helper_reply": false
+        },
+        "objective": "Collect Helper chirp. Save two patterns with different audible chirp rhythms.",
+        "nextId": "helper_reply"
+      },
+      "quest": {
+        "completed": false,
+        "title": "A tune for the quay",
+        "objective": "Put a collected sound on an unmuted step, then save your beat to the shelf.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "save",
+        "accepted": true
+      },
+      "dirty": true
+    },
+    {
+      "at": 1792773280.026953,
+      "saving": false,
+      "concert": {
+        "completed": false,
+        "reaction": 0,
+        "checkpoint": 0,
+        "phase": 0,
+        "open": false,
+        "waiting": false
+      },
+      "notice": "Beat 01 stored on your shelf. Saved for this Studio session only.",
+      "neighborhood": {
+        "completed": 3,
+        "objective": "Finish Mica's original courtyard request to prepare this section's concert.",
+        "courtReady": false,
+        "earned": {
+          "vent_duet": true,
+          "metal_pulse": true,
+          "helper_reply": true
+        }
+      },
+      "quest": {
+        "completed": false,
+        "title": "A tune for the quay",
+        "objective": "Choose your saved quay-sound pattern, then share one full loop at the courtyard podium.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "perform",
+        "accepted": true
+      },
+      "dirty": false
+    },
+    {
+      "at": 1792773380.709288,
+      "saving": false,
+      "concert": {
+        "completed": false,
+        "reaction": 0,
+        "checkpoint": 0,
+        "phase": 0,
+        "open": false,
+        "waiting": false
+      },
+      "neighborhood": {
+        "completed": 3,
+        "objective": "Finish Mica's original courtyard request to prepare this section's concert.",
+        "courtReady": false,
+        "earned": {
+          "vent_duet": true,
+          "metal_pulse": true,
+          "helper_reply": true
+        }
+      },
+      "quest": {
+        "completed": false,
+        "title": "A tune for the quay",
+        "objective": "Choose your saved quay-sound pattern, then share one full loop at the courtyard podium.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "perform",
+        "accepted": true
+      },
+      "dirty": false
+    },
+    {
+      "at": 1792773381.374839,
+      "saving": false,
+      "concert": {
+        "completed": false,
+        "reaction": 0,
+        "checkpoint": 0,
+        "phase": 0,
+        "open": false,
+        "waiting": false
+      },
+      "neighborhood": {
+        "completed": 3,
+        "objective": "Finish Mica's original courtyard request to prepare this section's concert.",
+        "courtReady": false,
+        "earned": {
+          "vent_duet": true,
+          "metal_pulse": true,
+          "helper_reply": true
+        }
+      },
+      "quest": {
+        "completed": false,
+        "title": "A tune for the quay",
+        "objective": "Choose your saved quay-sound pattern, then share one full loop at the courtyard podium.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "perform",
+        "accepted": true
+      },
+      "dirty": false
+    },
+    {
+      "at": 1792773381.392167,
+      "saving": false,
+      "concert": {
+        "completed": false,
+        "reaction": 0,
+        "checkpoint": 0,
+        "phase": 0,
+        "open": false,
+        "waiting": false
+      },
+      "notice": "Sharing a snapshot of your loop. Stop sharing from the listening controls.",
+      "neighborhood": {
+        "completed": 3,
+        "objective": "Finish Mica's original courtyard request to prepare this section's concert.",
+        "courtReady": false,
+        "earned": {
+          "vent_duet": true,
+          "metal_pulse": true,
+          "helper_reply": true
+        }
+      },
+      "quest": {
+        "completed": false,
+        "title": "A tune for the quay",
+        "objective": "Choose your saved quay-sound pattern, then share one full loop at the courtyard podium.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "perform",
+        "accepted": true
+      },
+      "dirty": false
+    },
+    {
+      "at": 1792773383.025207,
+      "saving": false,
+      "concert": {
+        "completed": false,
+        "reaction": 0,
+        "checkpoint": 0,
+        "phase": 0,
+        "open": false,
+        "waiting": false
+      },
+      "notice": "Mica: That's our quay! Your first courtyard set is complete.",
+      "neighborhood": {
+        "completed": 3,
+        "objective": "This courtyard is prepared for a future chapter concert. Keep making music; the chapter finale is still ahead.",
+        "courtReady": true,
+        "earned": {
+          "vent_duet": true,
+          "metal_pulse": true,
+          "helper_reply": true
+        }
+      },
+      "quest": {
+        "completed": true,
+        "title": "A tune for the quay",
+        "objective": "Your first courtyard set is complete. Make another beat whenever you like.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "complete",
+        "accepted": true
+      },
+      "dirty": true
+    },
+    {
+      "at": 1792773383.027873,
+      "saving": true,
+      "concert": {
+        "completed": false,
+        "reaction": 0,
+        "checkpoint": 0,
+        "phase": 0,
+        "open": false,
+        "waiting": false
+      },
+      "notice": "Saving...",
+      "neighborhood": {
+        "completed": 3,
+        "objective": "This courtyard is prepared for a future chapter concert. Keep making music; the chapter finale is still ahead.",
+        "courtReady": true,
+        "earned": {
+          "vent_duet": true,
+          "metal_pulse": true,
+          "helper_reply": true
+        }
+      },
+      "quest": {
+        "completed": true,
+        "title": "A tune for the quay",
+        "objective": "Your first courtyard set is complete. Make another beat whenever you like.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "complete",
+        "accepted": true
+      },
+      "dirty": true
+    },
+    {
+      "at": 1792773383.041648,
+      "saving": false,
+      "concert": {
+        "completed": false,
+        "reaction": 0,
+        "checkpoint": 0,
+        "phase": 0,
+        "open": false,
+        "waiting": false
+      },
+      "notice": "Music and progress saved for this Studio session only.",
+      "neighborhood": {
+        "completed": 3,
+        "objective": "This courtyard is prepared for a future chapter concert. Keep making music; the chapter finale is still ahead.",
+        "courtReady": true,
+        "earned": {
+          "vent_duet": true,
+          "metal_pulse": true,
+          "helper_reply": true
+        }
+      },
+      "quest": {
+        "completed": true,
+        "title": "A tune for the quay",
+        "objective": "Your first courtyard set is complete. Make another beat whenever you like.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "complete",
+        "accepted": true
+      },
+      "dirty": false
+    },
+    {
+      "at": 1792773423.870207,
+      "saving": false,
+      "concert": {
+        "completed": false,
+        "reaction": 0,
+        "checkpoint": 0,
+        "phase": 0,
+        "open": false,
+        "waiting": false
+      },
+      "notice": "Return to the chapter podium to start or continue a set.",
+      "neighborhood": {
+        "completed": 3,
+        "objective": "This courtyard is prepared for a future chapter concert. Keep making music; the chapter finale is still ahead.",
+        "courtReady": true,
+        "earned": {
+          "vent_duet": true,
+          "metal_pulse": true,
+          "helper_reply": true
+        }
+      },
+      "quest": {
+        "completed": true,
+        "title": "A tune for the quay",
+        "objective": "Your first courtyard set is complete. Make another beat whenever you like.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "complete",
+        "accepted": true
+      },
+      "dirty": false
+    },
+    {
+      "at": 1792773431.70439,
+      "saving": false,
+      "concert": {
+        "completed": false,
+        "reaction": 0,
+        "checkpoint": 0,
+        "phase": 0,
+        "open": false,
+        "waiting": false
+      },
+      "notice": "The listening session has ended.",
+      "neighborhood": {
+        "completed": 3,
+        "objective": "This courtyard is prepared for a future chapter concert. Keep making music; the chapter finale is still ahead.",
+        "courtReady": true,
+        "earned": {
+          "vent_duet": true,
+          "metal_pulse": true,
+          "helper_reply": true
+        }
+      },
+      "quest": {
+        "completed": true,
+        "title": "A tune for the quay",
+        "objective": "Your first courtyard set is complete. Make another beat whenever you like.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "complete",
+        "accepted": true
+      },
+      "dirty": false
+    },
+    {
+      "at": 1792773431.720874,
+      "saving": false,
+      "concert": {
+        "completed": false,
+        "reaction": 0,
+        "checkpoint": 0,
+        "phase": 0,
+        "open": false,
+        "waiting": false
+      },
+      "neighborhood": {
+        "completed": 3,
+        "objective": "This courtyard is prepared for a future chapter concert. Keep making music; the chapter finale is still ahead.",
+        "courtReady": true,
+        "earned": {
+          "vent_duet": true,
+          "metal_pulse": true,
+          "helper_reply": true
+        }
+      },
+      "quest": {
+        "completed": true,
+        "title": "A tune for the quay",
+        "objective": "Your first courtyard set is complete. Make another beat whenever you like.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "complete",
+        "accepted": true
+      },
+      "dirty": false
+    },
+    {
+      "at": 1792773431.722611,
+      "saving": false,
+      "concert": {
+        "completed": false,
+        "reaction": 0,
+        "checkpoint": 0,
+        "phase": 0,
+        "open": true,
+        "waiting": false
+      },
+      "notice": "Your chapter concert is solo-friendly. Your working music stays unchanged.",
+      "neighborhood": {
+        "completed": 3,
+        "objective": "This courtyard is prepared for a future chapter concert. Keep making music; the chapter finale is still ahead.",
+        "courtReady": true,
+        "earned": {
+          "vent_duet": true,
+          "metal_pulse": true,
+          "helper_reply": true
+        }
+      },
+      "quest": {
+        "completed": true,
+        "title": "A tune for the quay",
+        "objective": "Your first courtyard set is complete. Make another beat whenever you like.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "complete",
+        "accepted": true
+      },
+      "dirty": false
+    },
+    {
+      "at": 1792773453.601643,
+      "saving": false,
+      "concert": {
+        "completed": false,
+        "reaction": 0,
+        "checkpoint": 0,
+        "phase": 0,
+        "open": false,
+        "waiting": false
+      },
+      "neighborhood": {
+        "completed": 3,
+        "objective": "This courtyard is prepared for a future chapter concert. Keep making music; the chapter finale is still ahead.",
+        "courtReady": true,
+        "earned": {
+          "vent_duet": true,
+          "metal_pulse": true,
+          "helper_reply": true
+        }
+      },
+      "quest": {
+        "completed": true,
+        "title": "A tune for the quay",
+        "objective": "Your first courtyard set is complete. Make another beat whenever you like.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "complete",
+        "accepted": true
+      },
+      "dirty": false
+    },
+    {
+      "at": 1792773453.617734,
+      "saving": false,
+      "concert": {
+        "completed": false,
+        "reaction": 0,
+        "checkpoint": 0,
+        "phase": 0,
+        "open": true,
+        "waiting": false
+      },
+      "notice": "Choose an audible pad to introduce your rhythm.",
+      "neighborhood": {
+        "completed": 3,
+        "objective": "This courtyard is prepared for a future chapter concert. Keep making music; the chapter finale is still ahead.",
+        "courtReady": true,
+        "earned": {
+          "vent_duet": true,
+          "metal_pulse": true,
+          "helper_reply": true
+        }
+      },
+      "quest": {
+        "completed": true,
+        "title": "A tune for the quay",
+        "objective": "Your first courtyard set is complete. Make another beat whenever you like.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "complete",
+        "accepted": true
+      },
+      "dirty": false
+    },
+    {
+      "at": 1792773453.901461,
+      "saving": false,
+      "concert": {
+        "completed": false,
+        "reaction": 1,
+        "checkpoint": 0,
+        "phase": 1,
+        "open": true,
+        "waiting": true
+      },
+      "notice": "Add a different low or supporting part.",
+      "neighborhood": {
+        "completed": 3,
+        "objective": "This courtyard is prepared for a future chapter concert. Keep making music; the chapter finale is still ahead.",
+        "courtReady": true,
+        "earned": {
+          "vent_duet": true,
+          "metal_pulse": true,
+          "helper_reply": true
+        }
+      },
+      "quest": {
+        "completed": true,
+        "title": "A tune for the quay",
+        "objective": "Your first courtyard set is complete. Make another beat whenever you like.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "complete",
+        "accepted": true
+      },
+      "dirty": false
+    },
+    {
+      "at": 1792773454.051604,
+      "saving": false,
+      "concert": {
+        "completed": false,
+        "reaction": 1,
+        "checkpoint": 0,
+        "phase": 1,
+        "open": true,
+        "waiting": true
+      },
+      "notice": "Let this full loop finish before the next musical action.",
+      "neighborhood": {
+        "completed": 3,
+        "objective": "This courtyard is prepared for a future chapter concert. Keep making music; the chapter finale is still ahead.",
+        "courtReady": true,
+        "earned": {
+          "vent_duet": true,
+          "metal_pulse": true,
+          "helper_reply": true
+        }
+      },
+      "quest": {
+        "completed": true,
+        "title": "A tune for the quay",
+        "objective": "Your first courtyard set is complete. Make another beat whenever you like.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "complete",
+        "accepted": true
+      },
+      "dirty": false
+    },
+    {
+      "at": 1792773454.254635,
+      "saving": false,
+      "concert": {
+        "completed": false,
+        "reaction": 1,
+        "checkpoint": 0,
+        "phase": 1,
+        "open": true,
+        "waiting": true
+      },
+      "neighborhood": {
+        "completed": 3,
+        "objective": "This courtyard is prepared for a future chapter concert. Keep making music; the chapter finale is still ahead.",
+        "courtReady": true,
+        "earned": {
+          "vent_duet": true,
+          "metal_pulse": true,
+          "helper_reply": true
+        }
+      },
+      "quest": {
+        "completed": true,
+        "title": "A tune for the quay",
+        "objective": "Your first courtyard set is complete. Make another beat whenever you like.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "complete",
+        "accepted": true
+      },
+      "dirty": false
+    },
+    {
+      "at": 1792773456.270609,
+      "saving": true,
+      "concert": {
+        "completed": false,
+        "reaction": 1,
+        "checkpoint": 1,
+        "phase": 1,
+        "open": true,
+        "waiting": false
+      },
+      "notice": "Saving...",
+      "neighborhood": {
+        "completed": 3,
+        "objective": "This courtyard is prepared for a future chapter concert. Keep making music; the chapter finale is still ahead.",
+        "courtReady": true,
+        "earned": {
+          "vent_duet": true,
+          "metal_pulse": true,
+          "helper_reply": true
+        }
+      },
+      "quest": {
+        "completed": true,
+        "title": "A tune for the quay",
+        "objective": "Your first courtyard set is complete. Make another beat whenever you like.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "complete",
+        "accepted": true
+      },
+      "dirty": true
+    },
+    {
+      "at": 1792773456.27325,
+      "saving": false,
+      "concert": {
+        "completed": false,
+        "reaction": 1,
+        "checkpoint": 1,
+        "phase": 1,
+        "open": true,
+        "waiting": false
+      },
+      "notice": "Music and progress saved for this Studio session only.",
+      "neighborhood": {
+        "completed": 3,
+        "objective": "This courtyard is prepared for a future chapter concert. Keep making music; the chapter finale is still ahead.",
+        "courtReady": true,
+        "earned": {
+          "vent_duet": true,
+          "metal_pulse": true,
+          "helper_reply": true
+        }
+      },
+      "quest": {
+        "completed": true,
+        "title": "A tune for the quay",
+        "objective": "Your first courtyard set is complete. Make another beat whenever you like.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "complete",
+        "accepted": true
+      },
+      "dirty": false
+    },
+    {
+      "at": 1792773456.287313,
+      "saving": false,
+      "concert": {
+        "completed": false,
+        "reaction": 1,
+        "checkpoint": 1,
+        "phase": 1,
+        "open": true,
+        "waiting": false
+      },
+      "notice": "The neighbors heard your change. Section progress updated.",
+      "neighborhood": {
+        "completed": 3,
+        "objective": "This courtyard is prepared for a future chapter concert. Keep making music; the chapter finale is still ahead.",
+        "courtReady": true,
+        "earned": {
+          "vent_duet": true,
+          "metal_pulse": true,
+          "helper_reply": true
+        }
+      },
+      "quest": {
+        "completed": true,
+        "title": "A tune for the quay",
+        "objective": "Your first courtyard set is complete. Make another beat whenever you like.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "complete",
+        "accepted": true
+      },
+      "dirty": false
+    },
+    {
+      "at": 1792773474.837246,
+      "saving": false,
+      "concert": {
+        "completed": false,
+        "reaction": 2,
+        "checkpoint": 1,
+        "phase": 2,
+        "open": true,
+        "waiting": true
+      },
+      "notice": "Make space: take the supporting part out.",
+      "neighborhood": {
+        "completed": 3,
+        "objective": "This courtyard is prepared for a future chapter concert. Keep making music; the chapter finale is still ahead.",
+        "courtReady": true,
+        "earned": {
+          "vent_duet": true,
+          "metal_pulse": true,
+          "helper_reply": true
+        }
+      },
+      "quest": {
+        "completed": true,
+        "title": "A tune for the quay",
+        "objective": "Your first courtyard set is complete. Make another beat whenever you like.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "complete",
+        "accepted": true
+      },
+      "dirty": false
+    },
+    {
+      "at": 1792773476.45425,
+      "saving": true,
+      "concert": {
+        "completed": false,
+        "reaction": 2,
+        "checkpoint": 2,
+        "phase": 2,
+        "open": true,
+        "waiting": false
+      },
+      "notice": "Saving...",
+      "neighborhood": {
+        "completed": 3,
+        "objective": "This courtyard is prepared for a future chapter concert. Keep making music; the chapter finale is still ahead.",
+        "courtReady": true,
+        "earned": {
+          "vent_duet": true,
+          "metal_pulse": true,
+          "helper_reply": true
+        }
+      },
+      "quest": {
+        "completed": true,
+        "title": "A tune for the quay",
+        "objective": "Your first courtyard set is complete. Make another beat whenever you like.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "complete",
+        "accepted": true
+      },
+      "dirty": true
+    },
+    {
+      "at": 1792773476.45688,
+      "saving": false,
+      "concert": {
+        "completed": false,
+        "reaction": 2,
+        "checkpoint": 2,
+        "phase": 2,
+        "open": true,
+        "waiting": false
+      },
+      "notice": "Music and progress saved for this Studio session only.",
+      "neighborhood": {
+        "completed": 3,
+        "objective": "This courtyard is prepared for a future chapter concert. Keep making music; the chapter finale is still ahead.",
+        "courtReady": true,
+        "earned": {
+          "vent_duet": true,
+          "metal_pulse": true,
+          "helper_reply": true
+        }
+      },
+      "quest": {
+        "completed": true,
+        "title": "A tune for the quay",
+        "objective": "Your first courtyard set is complete. Make another beat whenever you like.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "complete",
+        "accepted": true
+      },
+      "dirty": false
+    },
+    {
+      "at": 1792773476.469117,
+      "saving": false,
+      "concert": {
+        "completed": false,
+        "reaction": 2,
+        "checkpoint": 2,
+        "phase": 2,
+        "open": true,
+        "waiting": false
+      },
+      "notice": "The neighbors heard your change. Section progress updated.",
+      "neighborhood": {
+        "completed": 3,
+        "objective": "This courtyard is prepared for a future chapter concert. Keep making music; the chapter finale is still ahead.",
+        "courtReady": true,
+        "earned": {
+          "vent_duet": true,
+          "metal_pulse": true,
+          "helper_reply": true
+        }
+      },
+      "quest": {
+        "completed": true,
+        "title": "A tune for the quay",
+        "objective": "Your first courtyard set is complete. Make another beat whenever you like.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "complete",
+        "accepted": true
+      },
+      "dirty": false
+    },
+    {
+      "at": 1792773476.519182,
+      "saving": false,
+      "concert": {
+        "completed": false,
+        "reaction": 2,
+        "checkpoint": 2,
+        "phase": 3,
+        "open": true,
+        "waiting": true
+      },
+      "notice": "Bring your supporting part back.",
+      "neighborhood": {
+        "completed": 3,
+        "objective": "This courtyard is prepared for a future chapter concert. Keep making music; the chapter finale is still ahead.",
+        "courtReady": true,
+        "earned": {
+          "vent_duet": true,
+          "metal_pulse": true,
+          "helper_reply": true
+        }
+      },
+      "quest": {
+        "completed": true,
+        "title": "A tune for the quay",
+        "objective": "Your first courtyard set is complete. Make another beat whenever you like.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "complete",
+        "accepted": true
+      },
+      "dirty": false
+    },
+    {
+      "at": 1792773478.487128,
+      "saving": true,
+      "concert": {
+        "completed": false,
+        "reaction": 2,
+        "checkpoint": 3,
+        "phase": 3,
+        "open": true,
+        "waiting": false
+      },
+      "notice": "Saving...",
+      "neighborhood": {
+        "completed": 3,
+        "objective": "This courtyard is prepared for a future chapter concert. Keep making music; the chapter finale is still ahead.",
+        "courtReady": true,
+        "earned": {
+          "vent_duet": true,
+          "metal_pulse": true,
+          "helper_reply": true
+        }
+      },
+      "quest": {
+        "completed": true,
+        "title": "A tune for the quay",
+        "objective": "Your first courtyard set is complete. Make another beat whenever you like.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "complete",
+        "accepted": true
+      },
+      "dirty": true
+    },
+    {
+      "at": 1792773478.489974,
+      "saving": false,
+      "concert": {
+        "completed": false,
+        "reaction": 2,
+        "checkpoint": 3,
+        "phase": 3,
+        "open": true,
+        "waiting": false
+      },
+      "notice": "Music and progress saved for this Studio session only.",
+      "neighborhood": {
+        "completed": 3,
+        "objective": "This courtyard is prepared for a future chapter concert. Keep making music; the chapter finale is still ahead.",
+        "courtReady": true,
+        "earned": {
+          "vent_duet": true,
+          "metal_pulse": true,
+          "helper_reply": true
+        }
+      },
+      "quest": {
+        "completed": true,
+        "title": "A tune for the quay",
+        "objective": "Your first courtyard set is complete. Make another beat whenever you like.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "complete",
+        "accepted": true
+      },
+      "dirty": false
+    },
+    {
+      "at": 1792773478.502943,
+      "saving": false,
+      "concert": {
+        "completed": false,
+        "reaction": 2,
+        "checkpoint": 3,
+        "phase": 3,
+        "open": true,
+        "waiting": false
+      },
+      "notice": "The neighbors heard your change. Section progress updated.",
+      "neighborhood": {
+        "completed": 3,
+        "objective": "This courtyard is prepared for a future chapter concert. Keep making music; the chapter finale is still ahead.",
+        "courtReady": true,
+        "earned": {
+          "vent_duet": true,
+          "metal_pulse": true,
+          "helper_reply": true
+        }
+      },
+      "quest": {
+        "completed": true,
+        "title": "A tune for the quay",
+        "objective": "Your first courtyard set is complete. Make another beat whenever you like.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "complete",
+        "accepted": true
+      },
+      "dirty": false
+    },
+    {
+      "at": 1792773478.669257,
+      "saving": false,
+      "concert": {
+        "completed": false,
+        "reaction": 2,
+        "checkpoint": 3,
+        "phase": 4,
+        "open": true,
+        "waiting": true
+      },
+      "notice": "Switch to a different saved pattern.",
+      "neighborhood": {
+        "completed": 3,
+        "objective": "This courtyard is prepared for a future chapter concert. Keep making music; the chapter finale is still ahead.",
+        "courtReady": true,
+        "earned": {
+          "vent_duet": true,
+          "metal_pulse": true,
+          "helper_reply": true
+        }
+      },
+      "quest": {
+        "completed": true,
+        "title": "A tune for the quay",
+        "objective": "Your first courtyard set is complete. Make another beat whenever you like.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "complete",
+        "accepted": true
+      },
+      "dirty": false
+    },
+    {
+      "at": 1792773480.504297,
+      "saving": true,
+      "concert": {
+        "completed": false,
+        "reaction": 2,
+        "checkpoint": 4,
+        "phase": 4,
+        "open": true,
+        "waiting": false
+      },
+      "notice": "Saving...",
+      "neighborhood": {
+        "completed": 3,
+        "objective": "This courtyard is prepared for a future chapter concert. Keep making music; the chapter finale is still ahead.",
+        "courtReady": true,
+        "earned": {
+          "vent_duet": true,
+          "metal_pulse": true,
+          "helper_reply": true
+        }
+      },
+      "quest": {
+        "completed": true,
+        "title": "A tune for the quay",
+        "objective": "Your first courtyard set is complete. Make another beat whenever you like.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "complete",
+        "accepted": true
+      },
+      "dirty": true
+    },
+    {
+      "at": 1792773480.506814,
+      "saving": false,
+      "concert": {
+        "completed": false,
+        "reaction": 2,
+        "checkpoint": 4,
+        "phase": 4,
+        "open": true,
+        "waiting": false
+      },
+      "notice": "Music and progress saved for this Studio session only.",
+      "neighborhood": {
+        "completed": 3,
+        "objective": "This courtyard is prepared for a future chapter concert. Keep making music; the chapter finale is still ahead.",
+        "courtReady": true,
+        "earned": {
+          "vent_duet": true,
+          "metal_pulse": true,
+          "helper_reply": true
+        }
+      },
+      "quest": {
+        "completed": true,
+        "title": "A tune for the quay",
+        "objective": "Your first courtyard set is complete. Make another beat whenever you like.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "complete",
+        "accepted": true
+      },
+      "dirty": false
+    },
+    {
+      "at": 1792773480.520129,
+      "saving": false,
+      "concert": {
+        "completed": false,
+        "reaction": 2,
+        "checkpoint": 4,
+        "phase": 4,
+        "open": true,
+        "waiting": false
+      },
+      "notice": "The neighbors heard your change. Section progress updated.",
+      "neighborhood": {
+        "completed": 3,
+        "objective": "This courtyard is prepared for a future chapter concert. Keep making music; the chapter finale is still ahead.",
+        "courtReady": true,
+        "earned": {
+          "vent_duet": true,
+          "metal_pulse": true,
+          "helper_reply": true
+        }
+      },
+      "quest": {
+        "completed": true,
+        "title": "A tune for the quay",
+        "objective": "Your first courtyard set is complete. Make another beat whenever you like.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "complete",
+        "accepted": true
+      },
+      "dirty": false
+    },
+    {
+      "at": 1792773480.554221,
+      "saving": false,
+      "concert": {
+        "completed": false,
+        "reaction": 3,
+        "checkpoint": 4,
+        "phase": 5,
+        "open": true,
+        "waiting": true
+      },
+      "notice": "Feature a collected sound in this pattern. Switch again if needed.",
+      "neighborhood": {
+        "completed": 3,
+        "objective": "This courtyard is prepared for a future chapter concert. Keep making music; the chapter finale is still ahead.",
+        "courtReady": true,
+        "earned": {
+          "vent_duet": true,
+          "metal_pulse": true,
+          "helper_reply": true
+        }
+      },
+      "quest": {
+        "completed": true,
+        "title": "A tune for the quay",
+        "objective": "Your first courtyard set is complete. Make another beat whenever you like.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "complete",
+        "accepted": true
+      },
+      "dirty": false
+    },
+    {
+      "at": 1792773483.554141,
+      "saving": true,
+      "concert": {
+        "completed": false,
+        "reaction": 3,
+        "checkpoint": 5,
+        "phase": 5,
+        "open": true,
+        "waiting": false
+      },
+      "notice": "Saving...",
+      "neighborhood": {
+        "completed": 3,
+        "objective": "This courtyard is prepared for a future chapter concert. Keep making music; the chapter finale is still ahead.",
+        "courtReady": true,
+        "earned": {
+          "vent_duet": true,
+          "metal_pulse": true,
+          "helper_reply": true
+        }
+      },
+      "quest": {
+        "completed": true,
+        "title": "A tune for the quay",
+        "objective": "Your first courtyard set is complete. Make another beat whenever you like.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "complete",
+        "accepted": true
+      },
+      "dirty": true
+    },
+    {
+      "at": 1792773483.556517,
+      "saving": false,
+      "concert": {
+        "completed": false,
+        "reaction": 3,
+        "checkpoint": 5,
+        "phase": 5,
+        "open": true,
+        "waiting": false
+      },
+      "notice": "Music and progress saved for this Studio session only.",
+      "neighborhood": {
+        "completed": 3,
+        "objective": "This courtyard is prepared for a future chapter concert. Keep making music; the chapter finale is still ahead.",
+        "courtReady": true,
+        "earned": {
+          "vent_duet": true,
+          "metal_pulse": true,
+          "helper_reply": true
+        }
+      },
+      "quest": {
+        "completed": true,
+        "title": "A tune for the quay",
+        "objective": "Your first courtyard set is complete. Make another beat whenever you like.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "complete",
+        "accepted": true
+      },
+      "dirty": false
+    },
+    {
+      "at": 1792773483.570773,
+      "saving": false,
+      "concert": {
+        "completed": false,
+        "reaction": 3,
+        "checkpoint": 5,
+        "phase": 5,
+        "open": true,
+        "waiting": false
+      },
+      "notice": "The neighbors heard your change. Section progress updated.",
+      "neighborhood": {
+        "completed": 3,
+        "objective": "This courtyard is prepared for a future chapter concert. Keep making music; the chapter finale is still ahead.",
+        "courtReady": true,
+        "earned": {
+          "vent_duet": true,
+          "metal_pulse": true,
+          "helper_reply": true
+        }
+      },
+      "quest": {
+        "completed": true,
+        "title": "A tune for the quay",
+        "objective": "Your first courtyard set is complete. Make another beat whenever you like.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "complete",
+        "accepted": true
+      },
+      "dirty": false
+    },
+    {
+      "at": 1792773483.687668,
+      "saving": false,
+      "concert": {
+        "completed": false,
+        "reaction": 3,
+        "checkpoint": 5,
+        "phase": 6,
+        "open": true,
+        "waiting": true
+      },
+      "notice": "Play this last loop to finish the section. Your music can keep going.",
+      "neighborhood": {
+        "completed": 3,
+        "objective": "This courtyard is prepared for a future chapter concert. Keep making music; the chapter finale is still ahead.",
+        "courtReady": true,
+        "earned": {
+          "vent_duet": true,
+          "metal_pulse": true,
+          "helper_reply": true
+        }
+      },
+      "quest": {
+        "completed": true,
+        "title": "A tune for the quay",
+        "objective": "Your first courtyard set is complete. Make another beat whenever you like.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "complete",
+        "accepted": true
+      },
+      "dirty": false
+    },
+    {
+      "at": 1792773486.583421,
+      "saving": true,
+      "concert": {
+        "completed": true,
+        "reaction": 4,
+        "checkpoint": 6,
+        "phase": 6,
+        "open": true,
+        "waiting": false
+      },
+      "notice": "Saving...",
+      "neighborhood": {
+        "completed": 3,
+        "objective": "This courtyard is prepared for a future chapter concert. Keep making music; the chapter finale is still ahead.",
+        "courtReady": true,
+        "earned": {
+          "vent_duet": true,
+          "metal_pulse": true,
+          "helper_reply": true
+        }
+      },
+      "quest": {
+        "completed": true,
+        "title": "A tune for the quay",
+        "objective": "Your first courtyard set is complete. Make another beat whenever you like.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "complete",
+        "accepted": true
+      },
+      "dirty": true
+    },
+    {
+      "at": 1792773486.585898,
+      "saving": false,
+      "concert": {
+        "completed": true,
+        "reaction": 4,
+        "checkpoint": 6,
+        "phase": 6,
+        "open": true,
+        "waiting": false
+      },
+      "notice": "Music and progress saved for this Studio session only.",
+      "neighborhood": {
+        "completed": 3,
+        "objective": "This courtyard is prepared for a future chapter concert. Keep making music; the chapter finale is still ahead.",
+        "courtReady": true,
+        "earned": {
+          "vent_duet": true,
+          "metal_pulse": true,
+          "helper_reply": true
+        }
+      },
+      "quest": {
+        "completed": true,
+        "title": "A tune for the quay",
+        "objective": "Your first courtyard set is complete. Make another beat whenever you like.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "complete",
+        "accepted": true
+      },
+      "dirty": false
+    },
+    {
+      "at": 1792773486.601176,
+      "saving": false,
+      "concert": {
+        "completed": true,
+        "reaction": 4,
+        "checkpoint": 6,
+        "phase": 6,
+        "open": true,
+        "waiting": false
+      },
+      "notice": "This neighborhood section is complete. More chapters are still ahead.",
+      "neighborhood": {
+        "completed": 3,
+        "objective": "This courtyard is prepared for a future chapter concert. Keep making music; the chapter finale is still ahead.",
+        "courtReady": true,
+        "earned": {
+          "vent_duet": true,
+          "metal_pulse": true,
+          "helper_reply": true
+        }
+      },
+      "quest": {
+        "completed": true,
+        "title": "A tune for the quay",
+        "objective": "Your first courtyard set is complete. Make another beat whenever you like.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "complete",
+        "accepted": true
+      },
+      "dirty": false
+    },
+    {
+      "at": 1792773591.046381,
+      "saving": false,
+      "concert": {
+        "completed": true,
+        "reaction": 4,
+        "checkpoint": 6,
+        "phase": 0,
+        "open": false,
+        "waiting": false
+      },
+      "neighborhood": {
+        "completed": 3,
+        "objective": "This courtyard is prepared for a future chapter concert. Keep making music; the chapter finale is still ahead.",
+        "courtReady": true,
+        "earned": {
+          "vent_duet": true,
+          "metal_pulse": true,
+          "helper_reply": true
+        }
+      },
+      "quest": {
+        "completed": true,
+        "title": "A tune for the quay",
+        "objective": "Your first courtyard set is complete. Make another beat whenever you like.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "complete",
+        "accepted": true
+      },
+      "dirty": false
+    },
+    {
+      "at": 1792773591.062372,
+      "saving": false,
+      "concert": {
+        "completed": true,
+        "reaction": 0,
+        "checkpoint": 6,
+        "phase": 0,
+        "open": true,
+        "waiting": false
+      },
+      "notice": "Choose an audible pad to introduce your rhythm.",
+      "neighborhood": {
+        "completed": 3,
+        "objective": "This courtyard is prepared for a future chapter concert. Keep making music; the chapter finale is still ahead.",
+        "courtReady": true,
+        "earned": {
+          "vent_duet": true,
+          "metal_pulse": true,
+          "helper_reply": true
+        }
+      },
+      "quest": {
+        "completed": true,
+        "title": "A tune for the quay",
+        "objective": "Your first courtyard set is complete. Make another beat whenever you like.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "complete",
+        "accepted": true
+      },
+      "dirty": false
+    },
+    {
+      "at": 1792773591.346378,
+      "saving": false,
+      "concert": {
+        "completed": true,
+        "reaction": 0,
+        "checkpoint": 6,
+        "phase": 0,
+        "open": true,
+        "waiting": false
+      },
+      "neighborhood": {
+        "completed": 3,
+        "objective": "This courtyard is prepared for a future chapter concert. Keep making music; the chapter finale is still ahead.",
+        "courtReady": true,
+        "earned": {
+          "vent_duet": true,
+          "metal_pulse": true,
+          "helper_reply": true
+        }
+      },
+      "quest": {
+        "completed": true,
+        "title": "A tune for the quay",
+        "objective": "Your first courtyard set is complete. Make another beat whenever you like.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "complete",
+        "accepted": true
+      },
+      "dirty": false
+    },
+    {
+      "at": 1792773591.361765,
+      "saving": false,
+      "concert": {
+        "completed": true,
+        "reaction": 4,
+        "checkpoint": 6,
+        "phase": 0,
+        "open": false,
+        "waiting": false
+      },
+      "notice": "Set stopped. Earned section progress stays with you; save retries keep it temporary until successful.",
+      "neighborhood": {
+        "completed": 3,
+        "objective": "This courtyard is prepared for a future chapter concert. Keep making music; the chapter finale is still ahead.",
+        "courtReady": true,
+        "earned": {
+          "vent_duet": true,
+          "metal_pulse": true,
+          "helper_reply": true
+        }
+      },
+      "quest": {
+        "completed": true,
+        "title": "A tune for the quay",
+        "objective": "Your first courtyard set is complete. Make another beat whenever you like.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "complete",
+        "accepted": true
+      },
+      "dirty": false
+    },
+    {
+      "at": 1792773662.380352,
+      "saving": false,
+      "concert": {
+        "completed": true,
+        "reaction": 4,
+        "checkpoint": 6,
+        "phase": 0,
+        "open": false,
+        "waiting": false
+      },
+      "neighborhood": {
+        "completed": 3,
+        "objective": "This courtyard is prepared for a future chapter concert. Keep making music; the chapter finale is still ahead.",
+        "courtReady": true,
+        "earned": {
+          "vent_duet": true,
+          "metal_pulse": true,
+          "helper_reply": true
+        }
+      },
+      "quest": {
+        "completed": true,
+        "title": "A tune for the quay",
+        "objective": "Your first courtyard set is complete. Make another beat whenever you like.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "complete",
+        "accepted": true
+      },
+      "dirty": false
+    },
+    {
+      "at": 1792773662.382408,
+      "saving": false,
+      "concert": {
+        "completed": true,
+        "reaction": 4,
+        "checkpoint": 6,
+        "phase": 0,
+        "open": true,
+        "waiting": false
+      },
+      "notice": "Your chapter concert is solo-friendly. Your working music stays unchanged.",
+      "neighborhood": {
+        "completed": 3,
+        "objective": "This courtyard is prepared for a future chapter concert. Keep making music; the chapter finale is still ahead.",
+        "courtReady": true,
+        "earned": {
+          "vent_duet": true,
+          "metal_pulse": true,
+          "helper_reply": true
+        }
+      },
+      "quest": {
+        "completed": true,
+        "title": "A tune for the quay",
+        "objective": "Your first courtyard set is complete. Make another beat whenever you like.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "complete",
+        "accepted": true
+      },
+      "dirty": false
+    },
+    {
+      "at": 1792773662.746757,
+      "saving": false,
+      "concert": {
+        "completed": true,
+        "reaction": 4,
+        "checkpoint": 6,
+        "phase": 0,
+        "open": false,
+        "waiting": false
+      },
+      "neighborhood": {
+        "completed": 3,
+        "objective": "This courtyard is prepared for a future chapter concert. Keep making music; the chapter finale is still ahead.",
+        "courtReady": true,
+        "earned": {
+          "vent_duet": true,
+          "metal_pulse": true,
+          "helper_reply": true
+        }
+      },
+      "quest": {
+        "completed": true,
+        "title": "A tune for the quay",
+        "objective": "Your first courtyard set is complete. Make another beat whenever you like.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "complete",
+        "accepted": true
+      },
+      "dirty": false
+    },
+    {
+      "at": 1792773662.748729,
+      "saving": false,
+      "concert": {
+        "completed": true,
+        "reaction": 0,
+        "checkpoint": 6,
+        "phase": 0,
+        "open": true,
+        "waiting": false
+      },
+      "notice": "Choose an audible pad to introduce your rhythm.",
+      "neighborhood": {
+        "completed": 3,
+        "objective": "This courtyard is prepared for a future chapter concert. Keep making music; the chapter finale is still ahead.",
+        "courtReady": true,
+        "earned": {
+          "vent_duet": true,
+          "metal_pulse": true,
+          "helper_reply": true
+        }
+      },
+      "quest": {
+        "completed": true,
+        "title": "A tune for the quay",
+        "objective": "Your first courtyard set is complete. Make another beat whenever you like.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "complete",
+        "accepted": true
+      },
+      "dirty": false
+    },
+    {
+      "at": 1792773663.446952,
+      "saving": false,
+      "concert": {
+        "completed": true,
+        "reaction": 4,
+        "checkpoint": 6,
+        "phase": 0,
+        "open": false,
+        "waiting": false
+      },
+      "notice": "Set interrupted. Start a new set when ready; earned progress is retained.",
+      "neighborhood": {
+        "completed": 3,
+        "objective": "This courtyard is prepared for a future chapter concert. Keep making music; the chapter finale is still ahead.",
+        "courtReady": true,
+        "earned": {
+          "vent_duet": true,
+          "metal_pulse": true,
+          "helper_reply": true
+        }
+      },
+      "quest": {
+        "completed": true,
+        "title": "A tune for the quay",
+        "objective": "Your first courtyard set is complete. Make another beat whenever you like.",
+        "id": "first_courtyard_set",
+        "collected": 3,
+        "stage": "complete",
+        "accepted": true
+      },
+      "dirty": false
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"RecorderGuide\":{\"widths\":[200,344,740,1000],\"passed\":true,\"sources\":3},\"ConcertTouch\":{\"restoredAfterClose\":true,\"passed\":true,\"hiddenWhileOpen\":true},\"RoomSettings\":{\"sizes\":[\"360, 720\",\"740, 260\",\"820, 1060\",\"1024, 720\"],\"nativeControls\":3,\"passed\":true,\"lockedAndVisitorCallbacksBlocked\":true},\"GrooveboxUi\":{\"pads\":16,\"testedSizes\":[\"360, 720\",\"740, 328\",\"742, 315\",\"740, 260\",\"820, 1060\",\"1024, 720\"],\"passed\":true},\"ConcertUi\":{\"clientRouting\":true,\"shortLayoutSizes\":4,\"passed\":true,\"saveNoticeVisible\":true}}"
+    }
+  ],
+  "isError": false
+}

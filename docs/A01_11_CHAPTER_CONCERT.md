@@ -1,5 +1,7 @@
 # Needle Quay chapter concert
 
+Latest: [live single/two-client verification and fixes](A01_12_13_LIVE_VERIFICATION.md). The actual six-phase encounter, premature-action rejection, personal crowd/environment, replay/range retention and phone control ownership pass. Collected-sound audio, real cloud/rejoin and final visual/player acceptance remain pending; #13 is open. Earlier checkpoints below are historical.
+
 ## Studio verification resumed — 23 October 2026
 
 Later on the same day, Studio MCP exposed the named local review place `FrequencyZero-StyleKits.rbxlx` (place ID 0). Its old source snapshot lacked the new modules. Through MCP, stopped Play, synced 44 repository source scripts, and restored eight missing existing approved AppearanceLibrary templates. No desktop input, uploads or production publishing occurred.

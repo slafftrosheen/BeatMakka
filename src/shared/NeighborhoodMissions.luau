@@ -126,7 +126,10 @@ function Missions.summary(profile)
             elseif
                 not courtReady
             then "Finish Mica's original courtyard request to prepare this section's concert."
-            else "This courtyard is prepared for a future chapter concert. Keep making music; the chapter finale is still ahead.",
+            elseif
+                profile.chapter and profile.chapter.completed == true
+            then "Your chapter set restored this courtyard. Keep making music; other chapters are ahead."
+            else "This courtyard is ready. Visit the Chapter concert prompt beside the listening podium to perform your own set.",
     }
 end
 

@@ -81,6 +81,7 @@ function View.new(screen, command, mute)
     self.save = button("RetryProgressSave", 7, function()
         command("ChapterSave")
     end)
+    self.save.Text = "Save progress again"
     self.mute = Gui.button(self.panel, "Sound", mute)
     self.mute.Position = UDim2.new(0, 12, 1, -56)
     self.mute.Size = UDim2.new(0.5, -18, 0, 44)

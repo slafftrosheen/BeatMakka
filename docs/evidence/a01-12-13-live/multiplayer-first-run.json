@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"ok\":true,\"result\":{\"count\":11,\"checks\":[\"two ready independent profiles\",\"unprepared concert start rejected\",\"Mica request accepted\",\"I01 collected by real prompt\",\"I02 collected by real prompt\",\"I03 collected by real prompt\",\"sampler entry works through its art\",\"unsaved notes earn no jobs\",\"successful shelf save earns all prepared jobs\",\"other profile and music stay untouched\",\"reward colors are personal\"],\"storage\":\"session only; no cloud or audible claim\",\"error\":\"ServerScriptService.NeighborhoodAcceptanceServer:55: original courtyard session starts solo\",\"passed\":false,\"clients\":2}}"
+    }
+  ],
+  "isError": false
+}

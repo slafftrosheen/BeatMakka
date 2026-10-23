@@ -49,9 +49,13 @@ local touchGui
 local touchWasEnabled
 local touchEnabledConnection
 
+local function ownsTouchControls()
+    return state and (state.station or (state.concert and state.concert.open))
+end
+
 local function updateTouchControls()
     local current = playerGui:FindFirstChild("TouchGui")
-    if state and state.station and current and current:IsA("ScreenGui") then
+    if ownsTouchControls() and current and current:IsA("ScreenGui") then
         if touchGui ~= current then
             if touchEnabledConnection then
                 touchEnabledConnection:Disconnect()
@@ -59,7 +63,7 @@ local function updateTouchControls()
             touchGui = current
             touchWasEnabled = current.Enabled
             touchEnabledConnection = current:GetPropertyChangedSignal("Enabled"):Connect(function()
-                if state and state.station and current.Enabled then
+                if ownsTouchControls() and current.Enabled then
                     current.Enabled = false
                 end
             end)

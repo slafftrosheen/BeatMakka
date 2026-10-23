@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"ok\":true,\"result\":{\"count\":22,\"checks\":[\"two ready independent profiles\",\"unprepared concert start rejected\",\"Mica request accepted\",\"I01 collected by real prompt\",\"I02 collected by real prompt\",\"I03 collected by real prompt\",\"sampler entry works through its art\",\"unsaved notes earn no jobs\",\"successful shelf save earns all prepared jobs\",\"other profile and music stay untouched\",\"reward colors are personal\",\"original courtyard session starts solo\",\"original Mica quest completes\",\"chapter prompt opens and leaves listening\",\"chapter starts from saved owned beat\",\"premature musical action rejected\",\"six musical phases finish section\",\"observer gets no chapter progress or crowd\",\"observer environment stays unchanged\",\"server has no private crowd clones\",\"concert heading has no hub overlay\",\"distance interruption preserves earned completion\"],\"storage\":\"session only; no cloud or audible claim\",\"passed\":true,\"clients\":2}}"
+    }
+  ],
+  "isError": false
+}

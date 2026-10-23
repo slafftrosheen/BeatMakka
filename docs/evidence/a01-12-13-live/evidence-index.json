@@ -1,0 +1,81 @@
+{
+  "schema": 1,
+  "files": {
+    "chapter-entry-blocked-landscape.jpg": {
+      "bytes": 30860,
+      "sha256": "bec52fbaa981b9a872751535748fd410b328cce6353be5801b6b9140060247d1"
+    },
+    "cleanup.json": {
+      "bytes": 112,
+      "sha256": "12714122e7139058db33a9d9f05283b2c061ae06b2c566b90ad14c44e15eea2c"
+    },
+    "client-regressions.json": {
+      "bytes": 676,
+      "sha256": "43c3020a57ff839bf1a99fbb687a6a3bb9ed7ec7576c3aaa01ceae9595e33391"
+    },
+    "concert-complete-landscape.jpg": {
+      "bytes": 43059,
+      "sha256": "bce9201b7b4db4c6eaa61de7bd69ba2cb1559da297b8f8da2b9ea88b1bee8638"
+    },
+    "concert-complete-portrait.jpg": {
+      "bytes": 39908,
+      "sha256": "aa9604db3323884afdb6e8f84332ef3ebda6310f3638f534d0a38f3b8e2b29c4"
+    },
+    "concert-entry-fixed-landscape.jpg": {
+      "bytes": 38234,
+      "sha256": "28bd9d37978b0424cbd19f55e691fb38f6410c328d6749f8151dda6d9bd43b7f"
+    },
+    "concert-entry-fixed-portrait.jpg": {
+      "bytes": 38998,
+      "sha256": "9c56a49e9906f2ae7b3b1acae9a78b55c1417347ff3f6ae0e276d3ba73054958"
+    },
+    "concert-fixed-fixture-landscape.jpg": {
+      "bytes": 38545,
+      "sha256": "5b659a3275aca27536612cab808e0ed854744e58773facdb05fbc275c2990c62"
+    },
+    "concert-fixed-fixture-portrait.jpg": {
+      "bytes": 39553,
+      "sha256": "11ac82cb6daa61619bd0734f5636c79b3da9f6bc4adf954618bfc4301ab14b8b"
+    },
+    "final-console.json": {
+      "bytes": 365,
+      "sha256": "9badbaaf97d5d669bcd0c40f7d4e9d69790e6e0dbb4704eab43745db460fac8e"
+    },
+    "hub-complete-portrait.jpg": {
+      "bytes": 33169,
+      "sha256": "cb07e0f6b9b52ee33c7e4722de83957d463ab705e2274ca537ca4c22cbb88345"
+    },
+    "multiplayer-final.json": {
+      "bytes": 1085,
+      "sha256": "a5e90fb92702f544e18965b4a747d2e975cc9c58e600e73329c3d83d00424833"
+    },
+    "multiplayer-first-run.json": {
+      "bytes": 732,
+      "sha256": "f2f09225671807c60b5df6882cac19f1511ab826eafb8a83d46e9ecb86cc495b"
+    },
+    "recorder-guide-landscape.jpg": {
+      "bytes": 52472,
+      "sha256": "5b15f97a8995a7c1a5d1a93b4ab7e53ce8fb778fc64696a58cbeeaf52063a37f"
+    },
+    "server-regressions.json": {
+      "bytes": 3703,
+      "sha256": "0b74779865fbc3239f4d8cb2529ca10ec6a2820c9f5a36a1166cdb6ad259072f"
+    },
+    "single-client-trace.json": {
+      "bytes": 78554,
+      "sha256": "0cf5718cba024213397d1690ba92c5622c163c9d4be1273437908831a254da2c"
+    },
+    "source-inventory.json": {
+      "bytes": 1221,
+      "sha256": "ef83f975da473c065abd5095980f04a6186eec4b8c11d0646b48659fa747804d"
+    },
+    "touch-integration.json": {
+      "bytes": 164,
+      "sha256": "ffedcf7a869d828fa4e290b02cadbe634bad4bbfdd1c8bf7f8bc34ad772711ab"
+    },
+    "validation.json": {
+      "bytes": 1640,
+      "sha256": "7d8b974e930350739f46e2b49f0b34f9bf7d57b85340d841e60674938f94a416"
+    }
+  }
+}

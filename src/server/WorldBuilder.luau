@@ -189,6 +189,9 @@ function WorldBuilder.build()
             label = label(anchor, "MK-I  /  READY", 4),
             screen = displayText,
         }
+        -- The interaction anchor sits inside the sampler's exact pad geometry.
+        -- Its own pads must not occlude entry; MusicService still checks proximity.
+        stations[id].prompt.RequiresLineOfSight = false
         -- Close-up instrument status must not cover the workshop owner's wall sign.
         stations[id].label.Parent.MaxDistance = 8
     end
@@ -368,6 +371,8 @@ function WorldBuilder.build()
     local concertPrompt = prompt(concertAnchor, "Chapter concert", "Solo set / your saved music")
     concertPrompt.KeyboardKeyCode = Enum.KeyCode.F
     concertPrompt.GamepadKeyCode = Enum.KeyCode.ButtonY
+    -- The podium collision proxy can cover this inset target from the court.
+    concertPrompt.RequiresLineOfSight = false
     for _, x in { 38, 46 } do
         local insert = part(
             podium,
