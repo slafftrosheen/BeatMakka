@@ -43,7 +43,11 @@ Refreshed `C:/Users/slavd/OneDrive/Pictures/Assets` before visual-related change
 
 [Evidence and build status](evidence/a01-10/) distinguish local static checks from unavailable Studio checks. Keep #12 open until real Studio tests, visual/multiplayer playthrough, source comprehension and dependent audio/private-experience checks pass.
 
-## Resume Studio verification
+## Studio verification resumed — 23 October 2026
+
+The named local review place became available through MCP. After syncing the current sources and missing existing approved templates, all eight NeighborhoodMissions checks and RecorderGuide at four widths pass. Chapter, contract, milestone, room and UI regressions also pass: 38 server checks and four client suites overall. [Raw results and evidence](evidence/studio-resume-2026-10-23/) supersede the earlier unexecuted-test status, retained above as the original checkpoint. No desktop input or publishing occurred. Live multiplayer gameplay, audio/cloud/rejoin, visual feedback and novice comprehension remain pending; #12 stays open.
+
+## Resume remaining Studio verification
 
 Use the repository-built place and identify its Studio ID before syncing. The generated runners are explicit QA files outside the default project:
 

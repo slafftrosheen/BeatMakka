@@ -1,6 +1,16 @@
 # Needle Quay chapter concert
 
-23 October 2026. Source implementation follows `6fc38a6`. **#13 remains open.** Studio MCP detects a Studio connection but reports no place open. No test execution, rendered NPC/art acceptance, audible playback or cloud rejoin is claimed for this batch. Your desktop was not controlled.
+## Studio verification resumed — 23 October 2026
+
+Later on the same day, Studio MCP exposed the named local review place `FrequencyZero-StyleKits.rbxlx` (place ID 0). Its old source snapshot lacked the new modules. Through MCP, stopped Play, synced 44 repository source scripts, and restored eight missing existing approved AppearanceLibrary templates. No desktop input, uploads or production publishing occurred.
+
+All 38 server checks pass: ChapterConcert 7, NeighborhoodMissions 8, Contracts 8, Milestone 8 and Rooms 7. All four client suites pass: ConcertUi, RecorderGuide, GrooveboxUi and RoomSettings. The service test fixture needed instance identities because BindableEvent copies table arguments; this corrected the fixture without changing its expected behavior. Improved failure messages remain in the test.
+
+[Raw results and hashed evidence](evidence/studio-resume-2026-10-23/) supersede the earlier unavailable-test status below. The earlier evidence is retained as its original checkpoint. These are module/service fixture and native layout checks, not a live chapter playthrough. Real RemoteEvent gameplay, audible playback, independent clients, cloud/rejoin, physical controls, visual approval and player comprehension remain pending. Console also reports asset-type warnings for `rbxassetid://203785492`; their source and impact are not resolved. #13 remains open.
+
+## Original source checkpoint (before Studio became available)
+
+23 October 2026. Source implementation follows `6fc38a6`. **#13 remains open.** At this checkpoint Studio MCP detected a connection but reported no place open. No test execution, rendered NPC/art acceptance, audible playback or cloud rejoin was claimed for that batch. Your desktop was not controlled.
 
 ## Solo encounter and musical ownership
 

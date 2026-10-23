@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-23",
+  "baseline": "ff4bb2f3c4afa76e4cbf0fa9e68601e5837d04fe",
+  "studio_id": "1ae28dc4-9587-420e-a530-1beef3a77c6c",
+  "place_name": "FrequencyZero-StyleKits.rbxlx",
+  "place_id": 0,
+  "source_scripts_synced": 44,
+  "authored_templates_synced": 8,
+  "production_published": false,
+  "desktop_control_used": false,
+  "server_checks_passed": 38,
+  "server_suites": [
+    "Contracts",
+    "ChapterConcert",
+    "Rooms",
+    "NeighborhoodMissions",
+    "Milestone"
+  ],
+  "client_suites": [
+    "RoomSettings",
+    "RecorderGuide",
+    "GrooveboxUi",
+    "ConcertUi"
+  ],
+  "fixture_correction": "BindableEvent copies table arguments. Mock player identities now use instances, preserving real Player identity semantics. Assertions unchanged; diagnostic messages improved.",
+  "review_place_correction": "Missing AppearanceLibrary received eight existing approved repository templates; no asset upload or ID changes.",
+  "not_verified": [
+    "live RemoteEvent chapter playthrough",
+    "audible playback",
+    "cloud persistence and rejoin",
+    "real independent clients",
+    "NPC/environment readability and visual approval",
+    "physical touch/controller input",
+    "novice comprehension"
+  ],
+  "issues_closed": []
+}

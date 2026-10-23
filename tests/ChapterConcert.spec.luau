@@ -5,8 +5,10 @@ return function()
     local Profiles = require(game.ServerScriptService.Server.ProfileStore)
     local Book = require(Shared.BeatBook)
     local checks, current = {}, "setup"
-    local function expect(value)
-        assert(value, current)
+    local function expect(value, detail)
+        if not value then
+            error(debug.traceback(current .. (if detail then ": " .. detail else ""), 2), 0)
+        end
     end
     local function check(name, run)
         current = name
@@ -135,18 +137,22 @@ return function()
             local anchor = Instance.new("Part")
             local p = prepared()
             p.ready = true
-            local a, b = { UserId = 305 }, { UserId = 306 }
+            -- BindableEvent copies table arguments; use instance identities like real Players.
+            local a, b = Instance.new("Folder"), Instance.new("Folder")
             local other = prepared()
             other.ready = true
             local profiles = { [a] = p, [b] = other }
             local near = { [a] = true, [b] = false }
             local changed = 0
+            local notices = {}
             local service
             local ok, err = pcall(function()
                 service = require(game.ServerScriptService.Server.ConcertService).new(
                     { anchor = anchor, prompt = { Triggered = trigger.Event } },
                     profiles,
-                    function() end,
+                    function(_, notice)
+                        table.insert(notices, tostring(notice))
+                    end,
                     function(player)
                         if service then
                             service:stop(player)
@@ -162,30 +168,44 @@ return function()
                 trigger:Fire(a)
                 task.wait()
                 service:command(a, "ChapterStart", 1)
-                expect(service.sessions[a] ~= nil)
+                expect(
+                    service.sessions[a] ~= nil,
+                    "owner session starts after prompt: " .. table.concat(notices, " / ")
+                )
                 service:command(b, "ChapterStart", 1)
-                expect(service.sessions[b] == nil and other.chapter.checkpoint == 0)
+                expect(
+                    service.sessions[b] == nil and other.chapter.checkpoint == 0,
+                    "non-owner remains blocked"
+                )
                 service:command(a, "ChapterRhythm", 1)
                 local session = service.sessions[a]
                 session.startedAt = workspace:GetServerTimeNow() - session.duration - 0.1
                 service:command(a, "ChapterClose")
-                expect(p.chapter.checkpoint == 1 and changed == 1 and service.sessions[a] == nil)
+                expect(
+                    p.chapter.checkpoint == 1 and changed == 1 and service.sessions[a] == nil,
+                    "close banks elapsed loop exactly once"
+                )
                 trigger:Fire(a)
                 task.wait()
                 service:command(a, "ChapterStart", 1)
                 near[a] = false
                 service:tick()
-                expect(service.sessions[a] == nil and p.chapter.checkpoint == 1)
+                expect(
+                    service.sessions[a] == nil and p.chapter.checkpoint == 1,
+                    "distance stop keeps banked loop"
+                )
                 near[a] = true
                 trigger:Fire(a)
                 task.wait()
                 service:command(a, "ChapterSave")
                 local first = changed
                 service:command(a, "ChapterSave")
-                expect(changed == first)
+                expect(changed == first, "second save retry is bounded")
             end)
             trigger:Destroy()
             anchor:Destroy()
+            a:Destroy()
+            b:Destroy()
             if not ok then
                 error(err)
             end

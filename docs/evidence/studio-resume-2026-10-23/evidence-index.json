@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "files": {
+    "concert-client-result.json": {
+      "bytes": 588,
+      "sha256": "c5bb06061bb7d7b823380d12b5056eeadc099994f5df5377c232d44654477b98"
+    },
+    "concert-server-result.json": {
+      "bytes": 3562,
+      "sha256": "6f6f92f372db65f64dabb794a21517d7618f8f038046f454020d3c7e442d9b06"
+    },
+    "console.json": {
+      "bytes": 365,
+      "sha256": "9badbaaf97d5d669bcd0c40f7d4e9d69790e6e0dbb4704eab43745db460fac8e"
+    },
+    "summary.json": {
+      "bytes": 1242,
+      "sha256": "1a7a0aba4e624fd3f644c2f57f248047bed4f3e8f7be17eb8cce2a6facb9bc98"
+    },
+    "sync-approved-templates-result.json": {
+      "bytes": 95,
+      "sha256": "307ee6ac6484106650ebbb2a542b2e159f12d5843cf07b015fed10880b422542"
+    }
+  }
+}
