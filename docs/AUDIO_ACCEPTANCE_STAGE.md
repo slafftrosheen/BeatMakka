@@ -53,3 +53,12 @@ After explicit authorization for that cloud creation and the named 24-file priva
 5. Through Studio MCP, check metadata and real load results, partial failure/late recovery, repeated hits, stop/mute, listening sessions and teardown. Listen to the result for clipping, balance and ambience transitions. Source-file measurements are not a substitute for this acceptance.
 
 Cloud creation, asset submission, permission grants, listening approval and published playback remain pending. No application tests/builds, upload, publication, commit, push or asset-stage promotion were performed in this local preparation pass.
+
+
+## Current authorization and staging — 23 October 2026
+
+The user explicitly approved: “Use the signed-in personal Roblox account; private test only, no paid charges”. This satisfies owner/batch authorization for the new private `Frequency Zero - Audio Test` experience and the 24 original sources above. The connected inventory reports user `11274985967`; the signed-in Creator Dashboard showed `CuuteFoxey`. These are observed account contexts, not a published ownership receipt.
+
+[The authorized batch](evidence/a01-05/authorized-original-batch.json) pins all 24 source hashes, zero paid-cost cap and pending receipts. A fresh local inspection still finds 2,350,704 bytes, zero clipped samples, empty audio bindings and fourteen image bindings. The approved four-sound CC0 audition revision from #4 remains a separate candidate revision; it has not silently replaced the authorized original batch.
+
+The user subsequently requested use of Studio MCP while keeping their PC available for work. Foreground browser/native automation is paused. Current Studio MCP provides no audio upload or new-experience publishing route, and no suitable connected background connector was found. No new experience, upload, permission grant, charge or resubmission occurred. Actual PlaceId/UniverseID/receipts remain null. Continue Studio/local checks; cloud submission requires an available supported route that respects this constraint. No renewed owner approval is needed for the approved scope.
