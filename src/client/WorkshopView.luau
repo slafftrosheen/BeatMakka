@@ -92,7 +92,7 @@ function WorkshopView.new(callbacks)
             Name = "Workstation",
             AnchorPoint = Vector2.new(0.5, 0.5),
             Position = UDim2.fromScale(0.5, 0.5),
-            Size = UDim2.new(1, -24, 1, -24),
+            Size = UDim2.new(1, -8, 1, -8),
             BackgroundColor3 = Theme.Cream,
             Visible = false,
             BorderSizePixel = 0,
@@ -104,150 +104,134 @@ function WorkshopView.new(callbacks)
     self.panel = panel
     self.resizeHud = resizeHud
     Gui.panelMask(panel)
-    local scroll = Gui.make("ScrollingFrame", panel, {
-        Position = UDim2.fromOffset(16, 12),
-        Size = UDim2.new(1, -32, 1, -24),
-        BackgroundTransparency = 1,
-        BorderSizePixel = 0,
-        ScrollBarThickness = 4,
-        CanvasSize = UDim2.new(),
-        AutomaticCanvasSize = Enum.AutomaticSize.Y,
-        ScrollingDirection = Enum.ScrollingDirection.Y,
-    })
-    Gui.make(
-        "UIListLayout",
-        scroll,
-        { Padding = UDim.new(0, 12), SortOrder = Enum.SortOrder.LayoutOrder }
-    )
-    scroll.Name = "Content"
-    local header = Gui.make(
-        "Frame",
-        scroll,
-        { Size = UDim2.new(1, -6, 0, 58), BackgroundTransparency = 1, LayoutOrder = 1 }
-    )
-    local title = Gui.label(header, "MK-I  /  MAKE SOMETHING YOURS", 21)
+    self.pages = {}
+    self.tabs = {}
+    self.page = "Play"
+    local header = Gui.label(panel, "MK-I  /  MAKE SOMETHING YOURS", 18)
     header.Name = "Header"
-    title.Font = Theme.Bold
-    title.Size = UDim2.new(1, -90, 1, 0)
-    local close = Gui.button(header, "Leave", function()
+    header.Font = Theme.Bold
+    local navigation = Gui.make("Frame", panel, {
+        Name = "Navigation",
+        BackgroundTransparency = 1,
+    })
+    local tabNames = { "Play", "Steps", "Sounds", "Beats", "Settings" }
+    for index, name in tabNames do
+        local button = Gui.button(navigation, name, function()
+            self:showPage(name)
+        end)
+        button.Name = name
+        button.Size = UDim2.new(1 / 6, -4, 1, 0)
+        button.Position = UDim2.fromScale((index - 1) / 6, 0)
+        self.tabs[name] = button
+    end
+    local close = Gui.button(navigation, "Leave", function()
         callbacks.command("Release")
     end)
     close.Modal = true
     close.Name = "Leave"
-    close.Size = UDim2.fromOffset(78, 44)
-    close.Position = UDim2.new(1, -78, 0, 5)
-    local toolbar = Gui.make(
-        "Frame",
-        scroll,
-        { Size = UDim2.new(1, -6, 0, 152), BackgroundTransparency = 1, LayoutOrder = 2 }
-    )
-    Gui.make("UIGridLayout", toolbar, {
-        CellSize = UDim2.new(0.25, -6, 0, 44),
-        CellPadding = UDim2.fromOffset(8, 8),
+    close.Size = UDim2.new(1 / 6, -4, 1, 0)
+    close.Position = UDim2.fromScale(5 / 6, 0)
+    local toolbar = Gui.make("Frame", panel, {
+        Name = "Transport",
+        BackgroundTransparency = 1,
+    })
+    local transportGrid = Gui.make("UIGridLayout", toolbar, {
+        CellSize = UDim2.new(1 / 3, -4, 1, 0),
+        CellPadding = UDim2.fromOffset(6, 0),
         SortOrder = Enum.SortOrder.LayoutOrder,
     })
-    toolbar.Name = "Transport"
-    local transportIndex = 0
-    local function control(text, action, a)
-        local button = Gui.button(toolbar, text, function()
-            callbacks.command(action, if type(a) == "function" then a() else a)
+    local function control(parent, text, action, a)
+        local button = Gui.button(parent, text, function()
+            if self.state and self.state.ready then
+                callbacks.command(action, if type(a) == "function" then a() else a)
+            end
         end)
-        transportIndex += 1
         button.Name = action
-        button.LayoutOrder = transportIndex
         return button
     end
-    self.play = control("Play [SPACE]", "Play")
-    self.record = control("Record OFF", "Record")
+    self.play = control(toolbar, "Play", "Play")
+    self.play.LayoutOrder = 1
+    self.record = control(toolbar, "Record", "Record")
+    self.record.LayoutOrder = 2
+    self.stop = control(toolbar, "Stop", "Stop")
+    self.stop.LayoutOrder = 3
     self.playIcon = Gui.icon(self.play, "play")
     Gui.icon(self.record, "record")
-    self.bpmDown = control("Tempo -", "Bpm", function()
-        return math.max(60, self.state.pattern.bpm - 1)
-    end)
-    self.bpmUp = control("Tempo +", "Bpm", function()
-        return math.min(180, self.state.pattern.bpm + 1)
-    end)
-    self.bpmDown.Name = "TempoDown"
-    self.bpmUp.Name = "TempoUp"
-    self.save = control("Save profile", "Save")
-    self.restore = control("Restore slots", "Restore")
-    self.padMute = control("Mute pad", "MutePad", function()
-        return self.selectedPad
-    end)
-    control("Clear pad", "ClearPad", function()
-        return self.selectedPad
-    end)
-    self.panelSound = Gui.button(toolbar, "Sound ON", toggleSound)
-    self.panelEffects = Gui.button(toolbar, "Effects ON", toggleEffects)
-    self.panelSound.Name = "Sound"
-    self.panelSound.LayoutOrder = 9
-    self.panelEffects.Name = "Effects"
-    self.panelEffects.LayoutOrder = 10
-    self.finish = Gui.button(toolbar, "Finish: Workshop teal", function()
-        if not self.state then
-            return
+    local body = Gui.make("Frame", panel, {
+        Name = "Pages",
+        BackgroundTransparency = 1,
+        ClipsDescendants = true,
+    })
+    local function page(name, scrolling)
+        local frame = Gui.make(if scrolling then "ScrollingFrame" else "Frame", body, {
+            Name = name,
+            Size = UDim2.fromScale(1, 1),
+            BackgroundTransparency = 1,
+            BorderSizePixel = 0,
+            Visible = name == "Play",
+        })
+        if scrolling then
+            frame.CanvasSize = UDim2.new()
+            frame.AutomaticCanvasSize = Enum.AutomaticSize.Y
+            frame.ScrollingDirection = Enum.ScrollingDirection.Y
+            frame.ScrollBarThickness = 4
+            Gui.make("UIListLayout", frame, {
+                Padding = UDim.new(0, 12),
+                SortOrder = Enum.SortOrder.LayoutOrder,
+            })
         end
-        local current = table.find(Cosmetics.Order, self.state.finish) or 1
-        callbacks.command("Finish", Cosmetics.Order[current % #Cosmetics.Order + 1])
-    end)
-    self.finish.Name = "Finish"
-    self.finish.LayoutOrder = 11
-    self.status = Gui.label(scroll, "Loading session...", 14)
-    self.status.Name = "Status"
-    self.status.Size = UDim2.new(1, -6, 0, 52)
-    self.status.AutomaticSize = Enum.AutomaticSize.Y
-    self.status.LayoutOrder = 4
-    local workspace = Gui.make(
-        "Frame",
-        scroll,
-        { Size = UDim2.new(1, -6, 0, 300), BackgroundTransparency = 1, LayoutOrder = 5 }
-    )
-    local pads = Gui.make(
-        "Frame",
-        workspace,
-        { Size = UDim2.fromScale(0.49, 1), BackgroundTransparency = 1 }
-    )
-    workspace.Name = "Instrument"
-    pads.Name = "Pads"
-    Gui.make("UIGridLayout", pads, {
-        CellSize = UDim2.new(0.25, -6, 0.25, -6),
-        CellPadding = UDim2.fromOffset(8, 8),
+        self.pages[name] = frame
+        return frame
+    end
+    local performance = page("Play", false)
+    local sequencer = page("Steps", false)
+    local sounds = page("Sounds", true)
+    local beats = page("Beats", true)
+    local settings = page("Settings", true)
+    local pads = Gui.make("Frame", performance, {
+        Name = "Pads",
+        BackgroundTransparency = 1,
+        AnchorPoint = Vector2.new(0.5, 0.5),
+        Position = UDim2.fromScale(0.5, 0.5),
+    })
+    local padGrid = Gui.make("UIGridLayout", pads, {
+        CellSize = UDim2.new(0.25, -4.5, 0.25, -4.5),
+        CellPadding = UDim2.fromOffset(6, 6),
         SortOrder = Enum.SortOrder.LayoutOrder,
     })
-    local details = Gui.make("Frame", workspace, {
-        Position = UDim2.fromScale(0.52, 0),
-        Size = UDim2.fromScale(0.48, 1),
-        BackgroundTransparency = 1,
-    })
-    self.rowTitle = Gui.label(details, "PAD 01 / 16 STEPS", 16)
-    details.Name = "Sequencer"
+    self.rowTitle = Gui.label(sequencer, "PAD 01 / 16 STEPS", 15)
+    self.rowTitle.Name = "SelectedPad"
     self.rowTitle.Font = Theme.Bold
-    self.rowTitle.Size = UDim2.new(1, 0, 0, 38)
-    local steps = Gui.make("Frame", details, {
-        Position = UDim2.fromOffset(0, 44),
-        Size = UDim2.new(1, 0, 1, -44),
+    self.rowTitle.Size = UDim2.new(1, 0, 0, 26)
+    local steps = Gui.make("Frame", sequencer, {
+        Name = "Steps",
+        Position = UDim2.fromOffset(0, 30),
+        Size = UDim2.new(1, 0, 1, -30),
         BackgroundTransparency = 1,
     })
-    Gui.make("UIGridLayout", steps, {
-        CellSize = UDim2.new(0.25, -6, 0.25, -6),
-        CellPadding = UDim2.fromOffset(8, 8),
+    local stepGrid = Gui.make("UIGridLayout", steps, {
+        CellSize = UDim2.new(0.25, -4.5, 0.25, -4.5),
+        CellPadding = UDim2.fromOffset(6, 6),
         SortOrder = Enum.SortOrder.LayoutOrder,
     })
-    steps.Name = "Steps"
     for pad = 1, 16 do
-        self.pads[pad] = Gui.button(pads, tostring(pad), function()
+        local button = Gui.button(pads, tostring(pad), function()
             self:selectPad(pad)
             callbacks.tap(pad)
         end)
-        self.pads[pad].LayoutOrder = pad
-        self.pads[pad].Name = string.format("Pad_%02d", pad)
+        button.LayoutOrder = pad
+        button.Name = string.format("Pad_%02d", pad)
+        self.pads[pad] = button
     end
     for step = 1, 16 do
-        self.steps[step] = Gui.button(steps, tostring(step), function()
-            callbacks.command("Step", self.selectedPad, step)
+        local button = Gui.button(steps, tostring(step), function()
+            if self.state and self.state.ready then
+                callbacks.command("Step", self.selectedPad, step)
+            end
         end)
-        self.steps[step].LayoutOrder = step
-        self.steps[step].Name = string.format("Step_%02d", step)
+        button.LayoutOrder = step
+        button.Name = string.format("Step_%02d", step)
+        self.steps[step] = button
     end
     for index, button in self.pads do
         button.NextSelectionLeft = self.pads[index - 1]
@@ -255,24 +239,29 @@ function WorkshopView.new(callbacks)
         button.NextSelectionUp = self.pads[index - 4]
         button.NextSelectionDown = self.pads[index + 4]
     end
-    local libraryTitle =
-        Gui.label(scroll, "SOUND COLLECTION  /  Choose a sound to assign to the selected pad", 15)
-    libraryTitle.Size = UDim2.new(1, -6, 0, 42)
-    libraryTitle.LayoutOrder = 7
-    local library = Gui.make(
-        "Frame",
-        scroll,
-        { Size = UDim2.new(1, -6, 0, 356), BackgroundTransparency = 1, LayoutOrder = 8 }
-    )
-    Gui.make("UIGridLayout", library, {
-        CellSize = UDim2.new(1 / 3, -6, 0, 44),
+    local libraryTitle = Gui.label(sounds, "Choose a sound for the selected pad", 15)
+    libraryTitle.Name = "CollectionTitle"
+    libraryTitle.Size = UDim2.new(1, -8, 0, 40)
+    libraryTitle.LayoutOrder = 1
+    self.libraryTitle = libraryTitle
+    local library = Gui.make("Frame", sounds, {
+        Name = "Collection",
+        Size = UDim2.new(1, -8, 0, 512),
+        BackgroundTransparency = 1,
+        LayoutOrder = 2,
+    })
+    local libraryGrid = Gui.make("UIGridLayout", library, {
+        CellSize = UDim2.new(0.5, -4, 0, 48),
         CellPadding = UDim2.fromOffset(8, 8),
         SortOrder = Enum.SortOrder.LayoutOrder,
     })
-    library.Name = "Collection"
     for index, sample in Catalog.List do
         local button = Gui.button(library, sample.label, function()
-            if self.state and Catalog.isUnlocked(sample.id, self.state.unlocked) then
+            if
+                self.state
+                and self.state.ready
+                and Catalog.isUnlocked(sample.id, self.state.unlocked)
+            then
                 callbacks.command("Assign", self.selectedPad, sample.id)
             else
                 self:notice("Explore the alley to collect this sound.")
@@ -282,38 +271,219 @@ function WorkshopView.new(callbacks)
         button.Name = sample.id
         self.samples[sample.id] = button
     end
-    self.audioStatus = Gui.label(scroll, "Audio loading...", 13)
-    self.audioStatus.Name = "AudioStatus"
-    self.audioStatus.Size = UDim2.new(1, -6, 0, 52)
-    self.audioStatus.LayoutOrder = 9
-    self.audioStatus.AutomaticSize = Enum.AutomaticSize.Y
-    self.appearanceStatus = Gui.label(scroll, "", 13)
-    self.appearanceStatus.Name = "AppearanceStatus"
-    self.appearanceStatus.Size = UDim2.new(1, -6, 0, 52)
-    self.appearanceStatus.AutomaticSize = Enum.AutomaticSize.Y
-    self.appearanceStatus.LayoutOrder = 10
-    self.bookView = BeatBookView.new(scroll, {
+    self.bookView = BeatBookView.new(beats, {
         command = callbacks.command,
         notice = function(text)
             self:notice(text)
         end,
     })
+    local settingsTitle = Gui.label(settings, "TEMPO / PAD / APPEARANCE", 15)
+    settingsTitle.Size = UDim2.new(1, -8, 0, 32)
+    settingsTitle.LayoutOrder = 1
+    local controls = Gui.make("Frame", settings, {
+        Name = "Controls",
+        Size = UDim2.new(1, -8, 0, 272),
+        BackgroundTransparency = 1,
+        LayoutOrder = 2,
+    })
+    Gui.make("UIGridLayout", controls, {
+        CellSize = UDim2.new(0.5, -4, 0, 48),
+        CellPadding = UDim2.fromOffset(8, 8),
+        SortOrder = Enum.SortOrder.LayoutOrder,
+    })
+    self.bpmDown = control(controls, "Tempo -", "Bpm", function()
+        return math.max(60, self.state.pattern.bpm - 1)
+    end)
+    self.bpmDown.Name = "TempoDown"
+    self.bpmDown.LayoutOrder = 1
+    self.bpmUp = control(controls, "Tempo +", "Bpm", function()
+        return math.min(180, self.state.pattern.bpm + 1)
+    end)
+    self.bpmUp.Name = "TempoUp"
+    self.bpmUp.LayoutOrder = 2
+    self.padMute = control(controls, "Mute pad", "MutePad", function()
+        return self.selectedPad
+    end)
+    self.padMute.LayoutOrder = 3
+    local clear = control(controls, "Clear pad", "ClearPad", function()
+        return self.selectedPad
+    end)
+    clear.LayoutOrder = 4
+    self.save = control(controls, "Save profile", "Save")
+    self.save.LayoutOrder = 5
+    self.restore = control(controls, "Restore slots", "Restore")
+    self.restore.LayoutOrder = 6
+    self.panelSound = Gui.button(controls, "Sound ON", toggleSound)
+    self.panelSound.Name = "Sound"
+    self.panelSound.LayoutOrder = 7
+    self.panelEffects = Gui.button(controls, "Effects ON", toggleEffects)
+    self.panelEffects.Name = "Effects"
+    self.panelEffects.LayoutOrder = 8
+    self.finish = Gui.button(controls, "Finish: Workshop teal", function()
+        if not self.state or not self.state.ready then
+            return
+        end
+        local current = table.find(Cosmetics.Order, self.state.finish) or 1
+        callbacks.command("Finish", Cosmetics.Order[current % #Cosmetics.Order + 1])
+    end)
+    self.finish.Name = "Finish"
+    self.finish.LayoutOrder = 9
+    self.audioStatus = Gui.label(settings, "Audio loading...", 13)
+    self.audioStatus.Name = "AudioStatus"
+    self.audioStatus.Size = UDim2.new(1, -8, 0, 52)
+    self.audioStatus.AutomaticSize = Enum.AutomaticSize.Y
+    self.audioStatus.LayoutOrder = 3
+    self.appearanceStatus = Gui.label(settings, "", 13)
+    self.appearanceStatus.Name = "AppearanceStatus"
+    self.appearanceStatus.Size = UDim2.new(1, -8, 0, 52)
+    self.appearanceStatus.AutomaticSize = Enum.AutomaticSize.Y
+    self.appearanceStatus.LayoutOrder = 4
+    self.status = Gui.label(panel, "Loading session...", 13)
+    self.status.Name = "Status"
+    self.noticeLabel = header
     local function resize()
-        local narrow = panel.AbsoluteSize.X < 680
-        workspace.Size = UDim2.new(1, -6, 0, if narrow then 568 else 300)
-        pads.Size = if narrow then UDim2.new(1, 0, 0, 272) else UDim2.fromScale(0.49, 1)
-        details.Position = if narrow then UDim2.fromOffset(0, 284) else UDim2.fromScale(0.52, 0)
-        details.Size = if narrow then UDim2.new(1, 0, 0, 284) else UDim2.fromScale(0.48, 1)
+        local size = panel.AbsoluteSize
+        local short = size.Y < 440 and size.X >= 600
+        self.shortLayout = short
+        if short then
+            local twoColumns = size.Y < 300
+            local railWidth = if twoColumns then 136 else 96
+            local function navPosition(index)
+                return if twoColumns
+                    then UDim2.fromOffset((index - 1) % 2 * 70, math.floor((index - 1) / 2) * 48)
+                    else UDim2.fromOffset(0, (index - 1) * 48)
+            end
+            navigation.Position = UDim2.fromOffset(8, 8)
+            navigation.Size = UDim2.new(0, railWidth, 1, -16)
+            for index, name in tabNames do
+                local button = self.tabs[name]
+                button.Position = navPosition(index)
+                button.Size = UDim2.fromOffset(if twoColumns then 66 else 96, 44)
+            end
+            close.Position = navPosition(6)
+            close.Size = UDim2.fromOffset(if twoColumns then 66 else 96, 44)
+            toolbar.Position = UDim2.new(1, -120, 0, 8)
+            toolbar.Size = UDim2.fromOffset(112, 140)
+            transportGrid.CellSize = UDim2.fromOffset(112, 44)
+            transportGrid.CellPadding = UDim2.fromOffset(0, 4)
+            header.Position = UDim2.new(1, -120, 0, 160)
+            header.Size = UDim2.new(0, 112, 1, -168)
+            body.Position = UDim2.fromOffset(railWidth + 16, 8)
+            body.Size = UDim2.new(1, -(railWidth + 144), 1, -48)
+            self.status.Position = UDim2.new(0, railWidth + 16, 1, -36)
+            self.status.Size = UDim2.new(1, -(railWidth + 144), 0, 32)
+        else
+            header.Position = UDim2.fromOffset(8, 6)
+            header.Size = UDim2.new(1, -16, 0, 54)
+            navigation.Position = UDim2.fromOffset(8, 64)
+            navigation.Size = UDim2.new(1, -12, 0, 44)
+            for index, name in tabNames do
+                local button = self.tabs[name]
+                button.Position = UDim2.fromScale((index - 1) / 6, 0)
+                button.Size = UDim2.new(1 / 6, -4, 1, 0)
+            end
+            close.Position = UDim2.fromScale(5 / 6, 0)
+            close.Size = UDim2.new(1 / 6, -4, 1, 0)
+            toolbar.Position = UDim2.fromOffset(8, 112)
+            toolbar.Size = UDim2.new(1, -16, 0, 44)
+            transportGrid.CellSize = UDim2.new(1 / 3, -4, 1, 0)
+            transportGrid.CellPadding = UDim2.fromOffset(6, 0)
+            body.Position = UDim2.fromOffset(8, 160)
+            body.Size = UDim2.new(1, -16, 1, -200)
+            self.status.Position = UDim2.new(0, 8, 1, -36)
+            self.status.Size = UDim2.new(1, -16, 0, 32)
+        end
+        header.Font = Theme.Font
+        header.TextSize = 14
+        header.TextYAlignment = Enum.TextYAlignment.Top
+        header.Text = if self.noticeUntil and os.clock() < self.noticeUntil
+            then self.noticeText
+            else "MK-I / MAKE SOMETHING YOURS"
+        local available = body.AbsoluteSize
+        local side = math.max(0, math.min(available.X, available.Y))
+        pads.Size = UDim2.fromOffset(side, side)
+        local cell = math.max(0, math.floor((side - 18) / 4))
+        padGrid.CellSize = UDim2.fromOffset(cell, cell)
+        stepGrid.CellSize = UDim2.fromOffset(
+            math.max(0, math.floor((available.X - 18) / 4)),
+            math.max(0, math.floor((available.Y - 48) / 4))
+        )
+        local smallPads = side < 300
+        for _, button in self.pads do
+            button.TextSize = if smallPads then 11 else 14
+        end
+        self.compactPads = smallPads
+        local columns = if size.X < 480 then 2 else 3
+        libraryGrid.CellSize = UDim2.new(1 / columns, -6, 0, 48)
+        library.Size = UDim2.new(1, -8, 0, math.ceil(#Catalog.List / columns) * 56)
+        if self.state then
+            self:updatePadLabels()
+        end
     end
     panel:GetPropertyChangedSignal("AbsoluteSize"):Connect(resize)
+    body:GetPropertyChangedSignal("AbsoluteSize"):Connect(resize)
+    self:showPage("Play")
     resize()
     return self
+end
+
+function WorkshopView:showPage(name)
+    if not self.pages[name] then
+        return
+    end
+    if self.bookView and self.page ~= name then
+        self.bookView.confirmation = nil
+        if self.state then
+            self.bookView:update(self.state)
+        end
+    end
+    self.page = name
+    for pageName, frame in self.pages do
+        frame.Visible = pageName == name
+        local tab = self.tabs[pageName]
+        tab.BackgroundColor3 = if pageName == name then Theme.Amber else Theme.Teal
+        tab.TextColor3 = if pageName == name then Theme.Ink else Theme.Cream
+    end
+    if
+        UserInputService.GamepadEnabled
+        and GuiService.SelectedObject
+        and GuiService.SelectedObject:IsDescendantOf(self.panel)
+    then
+        GuiService.SelectedObject = self.tabs[name]
+    end
+end
+
+function WorkshopView:updatePadLabels()
+    if not self.state then
+        return
+    end
+    local p = self.state.pattern
+    for pad, button in self.pads do
+        local sample = Catalog.ById[p.assignments[pad]]
+        local key = Catalog.List[pad].key
+        key = ({ One = "1", Two = "2", Three = "3", Four = "4" })[key] or key
+        button.Text = if self.compactPads
+            then string.format("%02d%s\n%s", pad, if p.muted[pad] then " M" else "", sample.label)
+            else string.format(
+                "%02d [%s]\n%s\n%s",
+                pad,
+                key,
+                sample.label,
+                if p.muted[pad]
+                    then "MUTED"
+                    elseif pad == self.selectedPad then "SELECTED"
+                    else "Tap to play"
+            )
+        button.BackgroundColor3 = if pad == self.selectedPad then Theme.Amber else Theme.Teal
+        button.TextColor3 = if pad == self.selectedPad then Theme.Ink else Theme.Cream
+    end
+    self.libraryTitle.Text = string.format("PAD %02d / Choose a sound to assign", self.selectedPad)
 end
 
 function WorkshopView:notice(text)
     self.noticeText = text
     self.noticeUntil = os.clock() + 8
-    self.status.Text = text
+    self.noticeLabel.Text = text
     if not self.panel.Visible then
         self.hudLabel.Text = text
     end
@@ -332,6 +502,9 @@ function WorkshopView:update(state)
     self.panel.Visible = state.station ~= nil
     self.hud.Visible = state.station == nil
     self.resizeHud()
+    if not wasOpen and self.panel.Visible then
+        self:showPage("Play")
+    end
     self.bookView:update(state)
     if UserInputService.GamepadEnabled and wasOpen ~= self.panel.Visible then
         GuiService.SelectedObject = if self.panel.Visible then self.play else self.sound
@@ -355,23 +528,7 @@ function WorkshopView:update(state)
         self.selectedPad,
         p.bpm
     )
-    for pad, button in self.pads do
-        local sample = Catalog.ById[p.assignments[pad]]
-        local key = Catalog.List[pad].key
-        key = ({ One = "1", Two = "2", Three = "3", Four = "4" })[key] or key
-        button.Text = string.format(
-            "%02d [%s]\n%s\n%s",
-            pad,
-            key,
-            sample.label,
-            if p.muted[pad]
-                then "MUTED"
-                elseif pad == self.selectedPad then "SELECTED"
-                else "Tap to play"
-        )
-        button.BackgroundColor3 = if pad == self.selectedPad then Theme.Amber else Theme.Teal
-        button.TextColor3 = if pad == self.selectedPad then Theme.Ink else Theme.Cream
-    end
+    self:updatePadLabels()
     for step, button in self.steps do
         local on = p.rows[self.selectedPad][step]
         button.Text = string.format("%02d\n%s", step, if on then "ON" else "OFF")
@@ -402,16 +559,22 @@ function WorkshopView:update(state)
                     collected
                 )
         end
-        self.status.Text = string.format(
-            "%s  /  %s. Save before leaving. %d / 4 workshop states.",
-            if state.recording then "RECORDING" elseif state.playing then "PLAYING" else "READY",
-            if state.saveMode == "session"
-                then "Studio session save"
-                elseif state.saveMode == "cloud" then "Cloud save"
-                else "Saving unavailable",
-            state.restoration
-        )
     end
+    self.status.Text = string.format(
+        "%s / %d BPM / %s / %s",
+        if state.book then state.book.slots[state.book.activeSlot].label else "A",
+        p.bpm,
+        if not state.ready
+            then "LOADING"
+            elseif state.recording then "REC"
+            elseif state.playing then "PLAYING"
+            else "READY",
+        if state.saving then "SAVING..." elseif state.dirty then "UNSAVED" else "SAVED"
+    )
+    self.noticeLabel.Text = if self.noticeUntil and os.clock() < self.noticeUntil
+        then self.noticeText
+        else "MK-I / MAKE SOMETHING YOURS"
+
     if state.notice then
         self:notice(state.notice)
         state.notice = nil

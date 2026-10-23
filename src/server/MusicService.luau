@@ -370,6 +370,10 @@ function MusicService.start(world)
             profile.recording = false
             profile.startedAt = Workspace:GetServerTimeNow() + 0.15
             profile.epoch += 1
+        elseif action == "Stop" then
+            profile.playing = false
+            profile.recording = false
+            profile.epoch += 1
         elseif action == "Record" then
             profile.recording = not profile.recording
             if profile.recording and not profile.playing then

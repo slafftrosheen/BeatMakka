@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"replacementRequiresTwoClicks\":true,\"passed\":true,\"expirySeconds\":5,\"editCancelsLoad\":true}"
+    }
+  ],
+  "isError": false
+}
