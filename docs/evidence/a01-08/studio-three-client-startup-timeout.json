@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"ok\":true,\"result\":{\"storage\":\"session only\",\"count\":0,\"checks\":[],\"error\":\"ServerScriptService.RoomAcceptanceServer:40: Room acceptance timeout: startup\",\"art\":\"deterministic placeholders; permanent import pending\",\"passed\":false,\"clients\":3}}"
+    }
+  ],
+  "isError": false
+}

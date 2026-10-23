@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"ok\":false,\"error\":\"ServerScriptService.ModuleScript:5: Personal room catalog is not implemented\"}"
+    }
+  ],
+  "isError": false
+}

@@ -5,6 +5,7 @@ local Pattern = require(Shared.Pattern)
 local Cosmetics = require(Shared.CosmeticCatalog)
 local Book = require(Shared.BeatBook)
 local Quest = require(Shared.FirstPerformanceQuest)
+local Rooms = require(Shared.RoomCatalog)
 
 local ProfileStore = {}
 local store
@@ -26,6 +27,7 @@ function ProfileStore.new()
         quest = Quest.sanitize(nil),
         unlocked = {},
         finish = "quay",
+        room = Rooms.sanitize(nil, {}),
         saved = nil,
         storageRevision = 0,
         saveMode = if RunService:IsStudio() then "session" else "cloud",
@@ -48,6 +50,7 @@ local function capture(profile)
         quest = Quest.sanitize(profile.quest),
         unlocked = table.clone(profile.unlocked),
         finish = profile.finish,
+        room = Rooms.sanitize(profile.room, profile),
     }
 end
 
@@ -86,6 +89,7 @@ function ProfileStore.load(player, profile, storage)
         profile.storageRevision = if Pattern.integer(data.revision, 0, 1e12)
             then data.revision
             else 0
+        profile.room = Rooms.sanitize(data.room, profile)
         profile.saved = capture(profile)
     end
     profile.ready = true
@@ -141,7 +145,7 @@ function ProfileStore.save(player, profile, storage)
     profile.saved = snapshot
     profile.savedEditVersion = capturedVersion
     profile.storageRevision = snapshot.revision
-    return true, "Pattern slots, beat shelf and progress saved."
+    return true, "Pattern slots, beat shelf, workshop and progress saved."
 end
 
 function ProfileStore.restore(profile)
@@ -160,6 +164,7 @@ function ProfileStore.restore(profile)
     end
     local savedQuest = Quest.sanitize(profile.saved.quest)
     local preserved = hasNewDiscoveries
+        or not Rooms.equal(profile.room, Rooms.sanitize(profile.saved.room, profile))
         or profile.quest.accepted ~= savedQuest.accepted
         or profile.quest.completed ~= savedQuest.completed
     for index = 1, Book.ShelfCapacity do

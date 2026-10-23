@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"placeId\":0,\"runtimeMovementFixtureRemoved\":true,\"roomIdentifierSeparated\":true,\"gameId\":0,\"pads\":32,\"rooms\":2,\"passed\":true,\"readabilityValues\":true}"
+    }
+  ],
+  "isError": false
+}

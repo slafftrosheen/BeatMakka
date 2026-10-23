@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "build_sha256": "2666a90301bf5d8ca66a100c69988237befc757df213a21b2c42614c9f95fdf6",
+  "authored_surfaces": 8,
+  "qa_drivers_excluded": true,
+  "lint_errors": 0,
+  "lint_warnings": 0,
+  "format_check_passed": true,
+  "binding_safety_tests": 6,
+  "approved_maps_and_100_audio_bindings_unchanged": true,
+  "independent_review": "identifier collision fixed and rechecked; no remaining actionable findings",
+  "three_client_acceptance": "NOT PASSED: prior StudioTestService session prevents launch",
+  "cloud_rejoin": "NOT VERIFIED",
+  "permanent_room_art": "NOT VERIFIED"
+}

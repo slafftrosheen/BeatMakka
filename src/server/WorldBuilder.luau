@@ -7,6 +7,7 @@ local LightingPresets = require(Shared.LightingPresets)
 local Assets = require(script.Parent.AssetSpawner)
 local Kit = require(script.Parent.ModularKit)
 local Details = require(script.Parent.AssetDetails)
+local RoomBuilder = require(script.Parent.RoomBuilder)
 local WorldBuilder = {}
 
 local function label(parent, text, offset)
@@ -187,6 +188,8 @@ function WorldBuilder.build()
             label = label(anchor, "MK-I  /  READY", 4),
             screen = displayText,
         }
+        -- Close-up instrument status must not cover the workshop owner's wall sign.
+        stations[id].label.Parent.MaxDistance = 8
     end
     -- Approved reusable masters dress the exact shell without owning navigation.
     for _, x in { -13, 13 } do
@@ -224,8 +227,7 @@ function WorldBuilder.build()
         Vector3.new(2, 3, 1),
         Theme.Teal
     )
-    Assets.place(root, "P05", CFrame.new(-8, 10, 11), Vector3.new(6, 0.7, 1.5), Theme.Walnut)
-    Assets.place(root, "P07", CFrame.new(-8, 10.7, 10.8), Vector3.new(2, 1.5, 0.8), Theme.Teal)
+    local rooms = RoomBuilder.build(root)
     for _, x in { -22, 38 } do
         Assets.place(
             root,
@@ -417,6 +419,7 @@ function WorldBuilder.build()
     return {
         root = root,
         stations = stations,
+        rooms = rooms,
         discoveries = nodes,
         listening = listening,
         quest = { anchor = talkAnchor, prompt = talkPrompt },

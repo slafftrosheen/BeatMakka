@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"GrooveboxUi\":{\"pads\":16,\"testedSizes\":[\"360, 720\",\"740, 328\",\"742, 315\",\"740, 260\",\"820, 1060\",\"1024, 720\"],\"passed\":true},\"RoomSettings\":{\"sizes\":[\"360, 720\",\"740, 260\",\"820, 1060\",\"1024, 720\"],\"nativeControls\":3,\"passed\":true,\"lockedAndVisitorCallbacksBlocked\":true}}"
+    }
+  ],
+  "isError": false
+}

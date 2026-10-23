@@ -10,6 +10,7 @@ local Pattern = require(Shared.Pattern)
 local Gui = require(script.Parent.GuiFactory)
 local BeatBookView = require(script.Parent.BeatBookView)
 local PadInput = require(script.Parent.PadInput)
+local RoomSettings = require(script.Parent.RoomSettings)
 local WorkshopView = {}
 WorkshopView.__index = WorkshopView
 
@@ -432,6 +433,7 @@ function WorkshopView.new(callbacks)
     self.inputStatus.Size = UDim2.new(1, -8, 0, 72)
     self.inputStatus.AutomaticSize = Enum.AutomaticSize.Y
     self.inputStatus.LayoutOrder = 5
+    self.roomSettings = RoomSettings.new(settings, callbacks.command)
     self.status = Gui.label(panel, "Loading session...", 13)
     self.status.Name = "Status"
     self.noticeLabel = header
@@ -785,6 +787,7 @@ function WorkshopView:update(state)
         self:showPage("Play")
     end
     self.bookView:update(state)
+    self.roomSettings:update(state)
     if UserInputService.GamepadEnabled and wasOpen ~= self.panel.Visible then
         GuiService.SelectedObject = if self.panel.Visible then self.play else self.sound
     end

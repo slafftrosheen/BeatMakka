@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"passed\":false,\"error\":\"AssistantCommand:1: Room masquerades as sampler; DeviceAppearance can intercept it\"}"
+    }
+  ],
+  "isError": false
+}

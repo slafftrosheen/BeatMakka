@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"ok\":true,\"result\":{\"storage\":\"session only\",\"count\":12,\"checks\":[\"two owners and one visitor\",\"locked decor cannot be selected\",\"owner selects room finish\",\"owner selects fixed sign\",\"foreign target and malformed field cannot edit another room\",\"visitor cannot edit any room\",\"Player2 sees owner choices and native sign\",\"Player3 sees owner choices and native sign\",\"discovery unlocks decor independently\",\"far-away cosmetic request rejected\",\"unlocked decor selected\",\"visitor sees one bounded crate\"],\"error\":\"ServerScriptService.RoomAcceptanceServer:55: profile save reports session limitation\",\"art\":\"deterministic placeholders; permanent import pending\",\"passed\":false,\"clients\":3}}"
+    }
+  ],
+  "isError": false
+}

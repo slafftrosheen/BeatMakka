@@ -1,0 +1,81 @@
+{
+  "schema": 1,
+  "files": {
+    "settings.jpg": {
+      "bytes": 90140,
+      "sha256": "79a6b2c04addb4d5eb7e2b6743eabdeb70c55cc2abae69234d3143c72664af70"
+    },
+    "source-inventory.json": {
+      "bytes": 1038,
+      "sha256": "dd366ac4b738385a1eb3b5bfabcc253851e1fcef2ea13d2c684308767ca23ff6"
+    },
+    "studio-client-checks.json": {
+      "bytes": 403,
+      "sha256": "40f66b4edb20e831eef1b97d8038b16f540a755d6bab97397236e778a986dfa1"
+    },
+    "studio-contracts-red.json": {
+      "bytes": 199,
+      "sha256": "82e6c844a918070469feeb2126e8c62b0431fe5a721e1f2b8660bd31d40fe464"
+    },
+    "studio-edit-cleanup.json": {
+      "bytes": 255,
+      "sha256": "fb2106e73f4975c68671aac296ccb674c5ffedb327313ef8de3f0ee8bbebb8d1"
+    },
+    "studio-qa-cleanup.json": {
+      "bytes": 119,
+      "sha256": "28a6e553ad6e046ae62114c9b0809ba7923079c341e66886ffd145450e35c185"
+    },
+    "studio-room-identifier-red.json": {
+      "bytes": 209,
+      "sha256": "d3c7208971b652977edc90ae6b22eb52879b488b8734fec99981f83821913607"
+    },
+    "studio-runtime-audit.json": {
+      "bytes": 261,
+      "sha256": "ab7fafe6287a1ff64261ad62bc679f8c484b10ae723053e147757b0e4d1cb17d"
+    },
+    "studio-runtime-movement-failure.json": {
+      "bytes": 244,
+      "sha256": "3a2261b42ae03747c73633e75b4caafde1a332c4af6e01a11e53da002a6f28d0"
+    },
+    "studio-runtime-setup.json": {
+      "bytes": 153,
+      "sha256": "af2eb708502b1ef543d71ded1084e4caad935efc5080924bf51c332b60ec2e0c"
+    },
+    "studio-runtime.json": {
+      "bytes": 4032,
+      "sha256": "6b5c69624042c03c2ff51375e4c4e1b55fcc4ef9bb9c81e1103cc491b3115582"
+    },
+    "studio-server-checks.json": {
+      "bytes": 2385,
+      "sha256": "af172a0e24a0da1c661ac15eca0ce288f7edb898f594f1758d4f5140a3a8f56a"
+    },
+    "studio-source-sync.json": {
+      "bytes": 147,
+      "sha256": "2ead878e6855edf2cbf1e3aa5c17c8ec35d38f91c1b4d8630ad393d2d077279b"
+    },
+    "studio-three-client-first-failure.json": {
+      "bytes": 831,
+      "sha256": "577502424d8154fc6d1a53e14dc4926784483a0b847ea2158d20de8ffd4d1bc0"
+    },
+    "studio-three-client-startup-timeout.json": {
+      "bytes": 363,
+      "sha256": "62a5c575f2a70576491c4df4caf258f107931853349ab001a161ad37e0a4da52"
+    },
+    "studio-three-client.json": {
+      "bytes": 192,
+      "sha256": "6be4bcdb4378268842476d2b8c210ca2760fcd6901ce23d989d9839e731b6d4b"
+    },
+    "validation.json": {
+      "bytes": 592,
+      "sha256": "9cf6e3a851124252b3498db91dc6d967046e4d0e816afb7010c4c28ed8a90e8f"
+    },
+    "workshop-dusk.jpg": {
+      "bytes": 95609,
+      "sha256": "e599aaa5b15d230fc58f5dec3550225393fc4408c5a3919008b197ffca4ff16a"
+    },
+    "workshop-neutral.jpg": {
+      "bytes": 105630,
+      "sha256": "b71900143d12ee18dd454ca942ddc569dd520526d9ebf56b1781ee6ea2c14f7c"
+    }
+  }
+}

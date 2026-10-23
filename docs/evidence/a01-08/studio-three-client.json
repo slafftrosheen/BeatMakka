@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"ok\":false,\"error\":\"Failed to start the test because a previous one is still in progress.\"}"
+    }
+  ],
+  "isError": false
+}

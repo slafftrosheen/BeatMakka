@@ -98,6 +98,25 @@ control.Drive.OnClientEvent:Connect(function(index, action, a, b)
                 end
                 diagnostic.stations[id] = info
             end
+        elseif action == "RoomEvidence" then
+            diagnostic = { rooms = {}, pads = 0 }
+            for _, model in workspace.NeedleQuay:GetChildren() do
+                if model:GetAttribute("PersonalWorkshop") then
+                    diagnostic.rooms[model.Name] = {
+                        owner = model:GetAttribute("OwnerUserId"),
+                        finish = model:GetAttribute("Finish"),
+                        sign = model:GetAttribute("Sign"),
+                        decor = model:GetAttribute("Decor"),
+                        crates = #model.FixedDecor:GetChildren(),
+                        label = model.SignMount.WorkshopSign.OwnerSign.Text,
+                    }
+                end
+                for _, part in model:GetDescendants() do
+                    if part:IsA("BasePart") and part:GetAttribute("PadId") then
+                        diagnostic.pads += 1
+                    end
+                end
+            end
         elseif action == "LeaveTest" then
             if finishArtCleanup then
                 finishArtCleanup()

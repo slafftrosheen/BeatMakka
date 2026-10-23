@@ -8,6 +8,7 @@ local Book = require(ReplicatedStorage.Shared.BeatBook)
 local Quest = require(ReplicatedStorage.Shared.FirstPerformanceQuest)
 local Profiles = require(script.Parent.ProfileStore)
 local ListeningSession = require(script.Parent.ListeningSession)
+local RoomService = require(script.Parent.RoomService)
 local MusicService = {}
 
 function MusicService.start(world)
@@ -33,11 +34,14 @@ function MusicService.start(world)
             and (root.Position - anchor.Position).Magnitude <= distance
     end
 
+    local rooms = RoomService.new(world.rooms, nearby)
+
     local function send(player, notice, preview, cue)
         local profile = profiles[player]
         if profile == nil or player.Parent == nil then
             return
         end
+        rooms:update(player, profile)
         local count = 0
         for _, id in { "I01", "I02", "I03" } do
             count += if profile.unlocked[id] then 1 else 0
@@ -68,6 +72,7 @@ function MusicService.start(world)
             saving = profile.saving,
             hasSave = profile.saved ~= nil,
             finish = profile.finish,
+            room = rooms:summary(player, profile),
             dirty = profile.editVersion ~= profile.savedEditVersion,
             editVersion = profile.editVersion,
             restoration = if count == 3 and Book.hasNotes(profile) then 4 else count,
@@ -202,6 +207,10 @@ function MusicService.start(world)
         profiles[player] = profile
         task.spawn(function()
             Profiles.load(player, profile)
+            if profiles[player] ~= profile or player.Parent ~= Players then
+                return
+            end
+            rooms:assign(player, profile)
             send(
                 player,
                 if profile.loadFailed
@@ -222,6 +231,12 @@ function MusicService.start(world)
         listening:leave(player)
         release(player)
         profiles[player] = nil
+        rooms:remove(player)
+        for visitor, profile in profiles do
+            if profile.ready and rooms:assign(visitor, profile) then
+                send(visitor)
+            end
+        end
     end)
 
     for id, station in world.stations do
@@ -305,6 +320,11 @@ function MusicService.start(world)
         end
         if action == "Release" then
             release(player)
+            return
+        end
+        if action == "Room" then
+            local _, notice = rooms:change(player, profile, a, b)
+            send(player, notice)
             return
         end
         local station = world.stations[profile.station]
