@@ -1,0 +1,926 @@
+{
+  "schema": 1,
+  "approved_by": "user",
+  "user_statement": "aprovved ,upload to roblox,push to git and move to next issue",
+  "scope": "Ten style starter kits, 160 samples; upload to signed-in personal Roblox account, private test only, no paid charges",
+  "approved_source_commit": "34b079656ba078e732a5b40466f715c3098703e3",
+  "manifest_sha256": "006cfbd88ec2351697f18410089a75a1277ab646ec5a26d1b245c1587ce6455f",
+  "review_sha256": "b8b0326398713fde2997284c79d6e9f7841dfc85ba4ac1297c9228a2d5f10921",
+  "review": {
+    "stage": "Listening review pending; not hosted Roblox playback",
+    "packs": [
+      {
+        "pack": "triphop",
+        "key": "A minor",
+        "file": "triphop.wav",
+        "sha256": "8323c31764761df96b8d2e22d8fa7b0d2cfb214959ed1907eee4a8f7dd6b7f1e",
+        "seconds": 24.52138321995465,
+        "review_gain_db": -12.041199826559248,
+        "peak_dbfs": -14.565813325251654,
+        "clipped_samples": 0,
+        "arrangement_begins_seconds": 17.988049886621315
+      },
+      {
+        "pack": "dance",
+        "key": "A minor",
+        "file": "dance.wav",
+        "sha256": "faa32bc4ea3b622eae9c05c3dba37fbdc73c5f46e91f78f08b0b48f503badfbe",
+        "seconds": 21.86780045351474,
+        "review_gain_db": -12.041199826559248,
+        "peak_dbfs": -5.935794516712129,
+        "clipped_samples": 0,
+        "arrangement_begins_seconds": 17.23925170068027
+      },
+      {
+        "pack": "grunge",
+        "key": "D minor",
+        "file": "grunge.wav",
+        "sha256": "2820d47a70e4d587687564e940a75c889e0e0ce7cfa792ca37159aabda9f0636",
+        "seconds": 21.433333333333334,
+        "review_gain_db": -12.041199826559248,
+        "peak_dbfs": -15.585851193731717,
+        "clipped_samples": 0,
+        "arrangement_begins_seconds": 14.9
+      },
+      {
+        "pack": "hardtrance",
+        "key": "A minor",
+        "file": "hardtrance.wav",
+        "sha256": "13c56a93899727b5c6743b508d97cd6a70b6282ba1a0e5440440752933606df8",
+        "seconds": 23.16591836734694,
+        "review_gain_db": -12.041199826559248,
+        "peak_dbfs": -9.063189165198699,
+        "clipped_samples": 0,
+        "arrangement_begins_seconds": 18.53736961451247
+      },
+      {
+        "pack": "hiphop",
+        "key": "A minor",
+        "file": "hiphop.wav",
+        "sha256": "fa98ddfc453a8dbdcbea1574fe7ccea5acec86948d612e0046197c47bb313971",
+        "seconds": 24.079160997732426,
+        "review_gain_db": -12.041199826559248,
+        "peak_dbfs": -14.129595589811734,
+        "clipped_samples": 0,
+        "arrangement_begins_seconds": 17.54582766439909
+      },
+      {
+        "pack": "industrial",
+        "key": "A minor",
+        "file": "industrial.wav",
+        "sha256": "78abe230b961060b2cf4429aefac366c08ea85df28c578c66ca1039bdf7158cc",
+        "seconds": 19.412063492063492,
+        "review_gain_db": -12.041199826559248,
+        "peak_dbfs": -15.039690076619426,
+        "clipped_samples": 0,
+        "arrangement_begins_seconds": 14.783514739229025
+      },
+      {
+        "pack": "pop",
+        "key": "D major",
+        "file": "pop.wav",
+        "sha256": "d8ec837d406ef16bd71792ddac4a9d8ba2fab4454fb0a56e9d25a14182e95a56",
+        "seconds": 24.020861678004536,
+        "review_gain_db": -12.041199826559248,
+        "peak_dbfs": -13.523523971963973,
+        "clipped_samples": 0,
+        "arrangement_begins_seconds": 17.4875283446712
+      },
+      {
+        "pack": "reggae",
+        "key": "A minor",
+        "file": "reggae.wav",
+        "sha256": "8d42d29d2f762d02472e957133fae2e354284da17a078cc39a05798b6fe76dce",
+        "seconds": 24.580408163265307,
+        "review_gain_db": -12.041199826559248,
+        "peak_dbfs": -13.632674433978568,
+        "clipped_samples": 0,
+        "arrangement_begins_seconds": 18.047074829931972
+      },
+      {
+        "pack": "techno",
+        "key": "A minor",
+        "file": "techno.wav",
+        "sha256": "24d816865a5d04f1a1fb6cdd72277e5498c6494a8e595cb9632213f768c1e23f",
+        "seconds": 22.68174603174603,
+        "review_gain_db": -12.041199826559248,
+        "peak_dbfs": -12.395576363806267,
+        "clipped_samples": 0,
+        "arrangement_begins_seconds": 18.053197278911565
+      },
+      {
+        "pack": "trance",
+        "key": "A minor",
+        "file": "trance.wav",
+        "sha256": "5a27eb5e052e2763df7c2e564522bed978ddb4540572418668678ab71f4f70f1",
+        "seconds": 19.12702947845805,
+        "review_gain_db": -12.041199826559248,
+        "peak_dbfs": -12.339431634538261,
+        "clipped_samples": 0,
+        "arrangement_begins_seconds": 14.498480725623583
+      }
+    ]
+  },
+  "samples": [
+    {
+      "key": "style.triphop.01",
+      "file": "assets/candidates/audio/style-starters-v1/triphop/samples/01_drum.wav",
+      "sha256": "85da707c8ad52033318df2016a285af96e7ea62c75c16367495a5c53466b3009"
+    },
+    {
+      "key": "style.triphop.02",
+      "file": "assets/candidates/audio/style-starters-v1/triphop/samples/02_drum.wav",
+      "sha256": "73cc87759a764724bbc5713c621e2813677d5f70f48f55e2ac99224b7174ea3a"
+    },
+    {
+      "key": "style.triphop.03",
+      "file": "assets/candidates/audio/style-starters-v1/triphop/samples/03_drum.wav",
+      "sha256": "126f1ffd04617fea31adcd3817f77e476caa44d9771c63e48ba8cd8a268c78c8"
+    },
+    {
+      "key": "style.triphop.04",
+      "file": "assets/candidates/audio/style-starters-v1/triphop/samples/04_drum.wav",
+      "sha256": "ead545cb75be54aea718b23aeb874eb6c2cdcca63c6f95f72d677586c9cb4179"
+    },
+    {
+      "key": "style.triphop.05",
+      "file": "assets/candidates/audio/style-starters-v1/triphop/samples/05_drum.wav",
+      "sha256": "6c98609f70aa19e328ed6228535b0ee8386396c94489f3b0b2923d5ae201212d"
+    },
+    {
+      "key": "style.triphop.06",
+      "file": "assets/candidates/audio/style-starters-v1/triphop/samples/06_drum.wav",
+      "sha256": "d8904ca74e6273f60724c0e9ad87214517981dae438f2797cef7d4d038bd3f7c"
+    },
+    {
+      "key": "style.triphop.07",
+      "file": "assets/candidates/audio/style-starters-v1/triphop/samples/07_drum.wav",
+      "sha256": "57cdfc861a10a04a44591802146a7ea2931acefc358f06169d7311e718c9ca5c"
+    },
+    {
+      "key": "style.triphop.08",
+      "file": "assets/candidates/audio/style-starters-v1/triphop/samples/08_drum.wav",
+      "sha256": "cffae31ab361f62fb410d291ca4028f2b28ef6680cccf6059b8b0821ac58044f"
+    },
+    {
+      "key": "style.triphop.09",
+      "file": "assets/candidates/audio/style-starters-v1/triphop/samples/09_guitar.wav",
+      "sha256": "3c7874bd0a48c51ab9cb8fc4cbc262fd79b317e599294399c7d585abdebd3e9d"
+    },
+    {
+      "key": "style.triphop.10",
+      "file": "assets/candidates/audio/style-starters-v1/triphop/samples/10_guitar.wav",
+      "sha256": "8145b4cefb065d84da9aea6b2b73cb93bfd2ef26b6a376a924180c187347ee19"
+    },
+    {
+      "key": "style.triphop.11",
+      "file": "assets/candidates/audio/style-starters-v1/triphop/samples/11_guitar.wav",
+      "sha256": "a59dc535df8cbd3356bbf2b06bda1418a4547ac3121f9cba559d0ae452a76bec"
+    },
+    {
+      "key": "style.triphop.12",
+      "file": "assets/candidates/audio/style-starters-v1/triphop/samples/12_guitar.wav",
+      "sha256": "3339a73888ecc4e04d35b7cd096b37941030a65815b9bf06abadfba50968e23b"
+    },
+    {
+      "key": "style.triphop.13",
+      "file": "assets/candidates/audio/style-starters-v1/triphop/samples/13_keys.wav",
+      "sha256": "11d14566e84b6e2b39cac631e2ea4b1b64f50c29a9678e4f311678da53376555"
+    },
+    {
+      "key": "style.triphop.14",
+      "file": "assets/candidates/audio/style-starters-v1/triphop/samples/14_keys.wav",
+      "sha256": "5417f2ededc188f1e40577a89f85f707eaa13fa68b9d82707a70ad521e90ceb9"
+    },
+    {
+      "key": "style.triphop.15",
+      "file": "assets/candidates/audio/style-starters-v1/triphop/samples/15_keys.wav",
+      "sha256": "bf536764acbcc26c4a11f779f3d5e447158d0790270ef9efd213208cf965bc8d"
+    },
+    {
+      "key": "style.triphop.16",
+      "file": "assets/candidates/audio/style-starters-v1/triphop/samples/16_keys.wav",
+      "sha256": "0ba06ebdae4c4d1a10746bd8251adfabaeebdc09d52176178f55ed4507a1f02c"
+    },
+    {
+      "key": "style.dance.01",
+      "file": "assets/candidates/audio/style-starters-v1/dance/samples/01_kick.wav",
+      "sha256": "c1ded79c446a325453b25e11252b34b83efac5a3bd115f50fde486fbfc65b15b"
+    },
+    {
+      "key": "style.dance.02",
+      "file": "assets/candidates/audio/style-starters-v1/dance/samples/02_kick.wav",
+      "sha256": "0c6105867429e8e666bdc69084fed20f0fa6485cd26f2cf9e2186a34dd7a0915"
+    },
+    {
+      "key": "style.dance.03",
+      "file": "assets/candidates/audio/style-starters-v1/dance/samples/03_snare.wav",
+      "sha256": "5ad740f50d492c0bdf2fbea1d8486707b93cb1bd493e459babf94b152b7bce3c"
+    },
+    {
+      "key": "style.dance.04",
+      "file": "assets/candidates/audio/style-starters-v1/dance/samples/04_snare.wav",
+      "sha256": "460d105b0f1cf2769c298e635ea2d7300cbba1525cc23dd1711bc226ed35dd2f"
+    },
+    {
+      "key": "style.dance.05",
+      "file": "assets/candidates/audio/style-starters-v1/dance/samples/05_hat.wav",
+      "sha256": "7146e060e220ef19673095f48bc099e6d4968b59617b5430557a756ccc5f5c36"
+    },
+    {
+      "key": "style.dance.06",
+      "file": "assets/candidates/audio/style-starters-v1/dance/samples/06_hat.wav",
+      "sha256": "8848b38812640fdbd9cc1d249da54d0a6d402feb2d23d9a69fcf1b00ce5a40e9"
+    },
+    {
+      "key": "style.dance.07",
+      "file": "assets/candidates/audio/style-starters-v1/dance/samples/07_clap.wav",
+      "sha256": "a7971cbfdbce0f9b7fbaa39f1f91872e37aeebb789e3aef74cca9c36462b3a78"
+    },
+    {
+      "key": "style.dance.08",
+      "file": "assets/candidates/audio/style-starters-v1/dance/samples/08_clap.wav",
+      "sha256": "a2f842eeb4c7e837da5a1d3eb13333dd721771cc1311440609013edad6eea354"
+    },
+    {
+      "key": "style.dance.09",
+      "file": "assets/candidates/audio/style-starters-v1/dance/samples/09_bass.wav",
+      "sha256": "8da14d7a52739289f2cd6bf51a8238ad13802051fa9d99ac098029a00f12346d"
+    },
+    {
+      "key": "style.dance.10",
+      "file": "assets/candidates/audio/style-starters-v1/dance/samples/10_bass.wav",
+      "sha256": "938779a07c4f87b0d92c2850190d65b350568b984ef341b20d4c59605eef30c1"
+    },
+    {
+      "key": "style.dance.11",
+      "file": "assets/candidates/audio/style-starters-v1/dance/samples/11_keys.wav",
+      "sha256": "47e928ba48d2bb56f15d70d2f8629b1178e0e6eb75cf4946c9cc0639228b6657"
+    },
+    {
+      "key": "style.dance.12",
+      "file": "assets/candidates/audio/style-starters-v1/dance/samples/12_keys.wav",
+      "sha256": "f8bd4fcf3d81b3c012e03527f68d929bcc38f9f266849ec33562749beca71912"
+    },
+    {
+      "key": "style.dance.13",
+      "file": "assets/candidates/audio/style-starters-v1/dance/samples/13_keys.wav",
+      "sha256": "0e5b1731ffbd230f0df1b3c36b60829859793b39fd6c18c34b1f2255182d223e"
+    },
+    {
+      "key": "style.dance.14",
+      "file": "assets/candidates/audio/style-starters-v1/dance/samples/14_keys.wav",
+      "sha256": "bff85b268ccca49d4ff3086ca5b71472a10280709aade14a5f0c726be0fb1f8a"
+    },
+    {
+      "key": "style.dance.15",
+      "file": "assets/candidates/audio/style-starters-v1/dance/samples/15_fx.wav",
+      "sha256": "5b722dd545fc27b82defbefe28e65b3df08ddce0493f1cfac35a3120b353bec1"
+    },
+    {
+      "key": "style.dance.16",
+      "file": "assets/candidates/audio/style-starters-v1/dance/samples/16_fx.wav",
+      "sha256": "a856d616b155e9e2355f845fe4609d7ea7113cb05a78a835df5ea5921d33edfa"
+    },
+    {
+      "key": "style.grunge.01",
+      "file": "assets/candidates/audio/style-starters-v1/grunge/samples/01_drum_cut.wav",
+      "sha256": "8276e60f45635ee1314a3f35ad0c759885f479851250c7af7d0afca32dd39363"
+    },
+    {
+      "key": "style.grunge.02",
+      "file": "assets/candidates/audio/style-starters-v1/grunge/samples/02_drum_cut.wav",
+      "sha256": "fade35d07ac38d5e2e38f87f5c76d515c2928faaa9b4004618ca575dc6e10adc"
+    },
+    {
+      "key": "style.grunge.03",
+      "file": "assets/candidates/audio/style-starters-v1/grunge/samples/03_drum_cut.wav",
+      "sha256": "e83b784fe066c350d2759f23b74b5086e544feed50e04bb20efbbd5a87e6afc8"
+    },
+    {
+      "key": "style.grunge.04",
+      "file": "assets/candidates/audio/style-starters-v1/grunge/samples/04_drum_cut.wav",
+      "sha256": "ef42e27bfb2e1d855d681fd4ff0b5c7768e0000a56848edf575e868d435432de"
+    },
+    {
+      "key": "style.grunge.05",
+      "file": "assets/candidates/audio/style-starters-v1/grunge/samples/05_percussion_cut.wav",
+      "sha256": "eb4bdf486feb097ce400d7eecacaa384446e83b9e959ed2d632e77551fd43243"
+    },
+    {
+      "key": "style.grunge.06",
+      "file": "assets/candidates/audio/style-starters-v1/grunge/samples/06_percussion_cut.wav",
+      "sha256": "72ecbd5a7349a024fd20646cdd127d53a032f6326173f95e7c856ba28006d354"
+    },
+    {
+      "key": "style.grunge.07",
+      "file": "assets/candidates/audio/style-starters-v1/grunge/samples/07_guitar.wav",
+      "sha256": "d5245eee1a207a3b3439c78026ede3d6fc817aa053abc0a20963a22a49734f9b"
+    },
+    {
+      "key": "style.grunge.08",
+      "file": "assets/candidates/audio/style-starters-v1/grunge/samples/08_guitar.wav",
+      "sha256": "e5eb2bbdd29595e162f40e80f6bad641e4e784e7e9725a735d77096365d7954a"
+    },
+    {
+      "key": "style.grunge.09",
+      "file": "assets/candidates/audio/style-starters-v1/grunge/samples/09_guitar.wav",
+      "sha256": "c4da7dab820f7c433a6f2ecdf0538b3817b644249f1ac4077db45ee5992d6eeb"
+    },
+    {
+      "key": "style.grunge.10",
+      "file": "assets/candidates/audio/style-starters-v1/grunge/samples/10_guitar.wav",
+      "sha256": "fd922534996b549637828e131fc0e1ddc794bdd35f065150709a36d91ae2168c"
+    },
+    {
+      "key": "style.grunge.11",
+      "file": "assets/candidates/audio/style-starters-v1/grunge/samples/11_organ.wav",
+      "sha256": "42c44880a198dee8c306954215644bf592955b7a01d0d274d48a90931750f1a6"
+    },
+    {
+      "key": "style.grunge.12",
+      "file": "assets/candidates/audio/style-starters-v1/grunge/samples/12_organ.wav",
+      "sha256": "a969d8aeb3ded45e9d903e5a6a1e4460ffffa524779d617eeeb6741726990d0d"
+    },
+    {
+      "key": "style.grunge.13",
+      "file": "assets/candidates/audio/style-starters-v1/grunge/samples/13_organ.wav",
+      "sha256": "d8599626550aef1093ab05f60e788717f5c59dbb9d0971300bd5f7b68034a10d"
+    },
+    {
+      "key": "style.grunge.14",
+      "file": "assets/candidates/audio/style-starters-v1/grunge/samples/14_organ.wav",
+      "sha256": "b1871771d32e15a944b1679cdc1016eb3e9a1b8d28cbf12839ba9307f1fa6d2d"
+    },
+    {
+      "key": "style.grunge.15",
+      "file": "assets/candidates/audio/style-starters-v1/grunge/samples/15_strings.wav",
+      "sha256": "b40b033b582c66db5f71eb3cc5e91f0beeb502daaccb75e0d2bcdd61e54319bd"
+    },
+    {
+      "key": "style.grunge.16",
+      "file": "assets/candidates/audio/style-starters-v1/grunge/samples/16_strings.wav",
+      "sha256": "75b814821f54fc543c1b60afff2422b24ff301e8880863fd7cd25856740c67f6"
+    },
+    {
+      "key": "style.hardtrance.01",
+      "file": "assets/candidates/audio/style-starters-v1/hardtrance/samples/01_kick.wav",
+      "sha256": "93fb8ffa60cb4368743c992c75cea521189ee07b2a69360409382670033e4d6d"
+    },
+    {
+      "key": "style.hardtrance.02",
+      "file": "assets/candidates/audio/style-starters-v1/hardtrance/samples/02_kick.wav",
+      "sha256": "e9c94a8dc11fb460c30ad31be0a93b60449c565d738c35bc76a3f411307932ab"
+    },
+    {
+      "key": "style.hardtrance.03",
+      "file": "assets/candidates/audio/style-starters-v1/hardtrance/samples/03_snare.wav",
+      "sha256": "1e01de1a4c4a12efddef0a388a710d08b3ea6d356da30c23c75873c17b10bc1a"
+    },
+    {
+      "key": "style.hardtrance.04",
+      "file": "assets/candidates/audio/style-starters-v1/hardtrance/samples/04_snare.wav",
+      "sha256": "8778120a40585f19fde7885873b805a9f94ef90b38de2082fa55fbff3f265b28"
+    },
+    {
+      "key": "style.hardtrance.05",
+      "file": "assets/candidates/audio/style-starters-v1/hardtrance/samples/05_clap.wav",
+      "sha256": "87b3233055de0d946c4f3246f91c46b275b4ea4c2fa2d9ad3271498c20a343b2"
+    },
+    {
+      "key": "style.hardtrance.06",
+      "file": "assets/candidates/audio/style-starters-v1/hardtrance/samples/06_percussion.wav",
+      "sha256": "f4404af78e86cc54633b8801294e7cd043d4a439e52f3567d8317a98c80977a2"
+    },
+    {
+      "key": "style.hardtrance.07",
+      "file": "assets/candidates/audio/style-starters-v1/hardtrance/samples/07_percussion.wav",
+      "sha256": "d067c57e44f4c12be0e3610678672780fe5621235056e3202ea4d5ac66f26992"
+    },
+    {
+      "key": "style.hardtrance.08",
+      "file": "assets/candidates/audio/style-starters-v1/hardtrance/samples/08_percussion.wav",
+      "sha256": "c0a9901ae453386d54b973d6d5a3df099195562d8de407f61ef2ed20406a405b"
+    },
+    {
+      "key": "style.hardtrance.09",
+      "file": "assets/candidates/audio/style-starters-v1/hardtrance/samples/09_bass.wav",
+      "sha256": "c110bb8ace8d0bb54469fbdd2db079b0ede6b6a1ab7f1b70da0af7a11ce56f70"
+    },
+    {
+      "key": "style.hardtrance.10",
+      "file": "assets/candidates/audio/style-starters-v1/hardtrance/samples/10_bass.wav",
+      "sha256": "bc2ec90edef52be3dcba4d3587ba65c892fbd668c6c225dc40146187a1979b3f"
+    },
+    {
+      "key": "style.hardtrance.11",
+      "file": "assets/candidates/audio/style-starters-v1/hardtrance/samples/11_bass.wav",
+      "sha256": "0d85a67451fa4994d10f826c7eb47e53975597613a5dbf0fea23067b5635c64e"
+    },
+    {
+      "key": "style.hardtrance.12",
+      "file": "assets/candidates/audio/style-starters-v1/hardtrance/samples/12_synth.wav",
+      "sha256": "0c3ca3d298d7519203a036fdcf9dbfd9c71f5499d70814bf360953e1c720b8c2"
+    },
+    {
+      "key": "style.hardtrance.13",
+      "file": "assets/candidates/audio/style-starters-v1/hardtrance/samples/13_synth.wav",
+      "sha256": "deface559a2225b028c862efdba16e069dfbd291d5fc4839bc9b7e46af62cc97"
+    },
+    {
+      "key": "style.hardtrance.14",
+      "file": "assets/candidates/audio/style-starters-v1/hardtrance/samples/14_synth.wav",
+      "sha256": "02a462618ca3ede4cf7f6889eb6993dc83eb5041c3ae047c653cdaaacfe5f72a"
+    },
+    {
+      "key": "style.hardtrance.15",
+      "file": "assets/candidates/audio/style-starters-v1/hardtrance/samples/15_fx.wav",
+      "sha256": "567c8f17d538ad783aa145b9ca832de7a64afbc2fd8ea58688998bb95f0d271d"
+    },
+    {
+      "key": "style.hardtrance.16",
+      "file": "assets/candidates/audio/style-starters-v1/hardtrance/samples/16_fx.wav",
+      "sha256": "5c97ca1f338333f61c1341e1fcb9dd07daf338f76f8fa3341e2f45c9e64f0d12"
+    },
+    {
+      "key": "style.hiphop.01",
+      "file": "assets/candidates/audio/style-starters-v1/hiphop/samples/01_drum.wav",
+      "sha256": "c72f06e09579a63ee8c14e95cdff7d6be2e11c330040bdaaa3881460ef511689"
+    },
+    {
+      "key": "style.hiphop.02",
+      "file": "assets/candidates/audio/style-starters-v1/hiphop/samples/02_drum.wav",
+      "sha256": "b475bcfe7ac645e8efd964e7184d5af8ccfd27f11338c281d39cb627bd822dd2"
+    },
+    {
+      "key": "style.hiphop.03",
+      "file": "assets/candidates/audio/style-starters-v1/hiphop/samples/03_drum.wav",
+      "sha256": "27e13792a375d885950c9bf4b96ab1c849b40cab965e9202c0e755ff5aeb1822"
+    },
+    {
+      "key": "style.hiphop.04",
+      "file": "assets/candidates/audio/style-starters-v1/hiphop/samples/04_drum.wav",
+      "sha256": "6edfb6692fcc9b36ac28ed37e453623ddb1728e2dd7195f507eac59549f8141b"
+    },
+    {
+      "key": "style.hiphop.05",
+      "file": "assets/candidates/audio/style-starters-v1/hiphop/samples/05_drum.wav",
+      "sha256": "07eb1883852254f316ad84d6c9aa93c9ef98d3dd7c008ee63c955be99e9a40bf"
+    },
+    {
+      "key": "style.hiphop.06",
+      "file": "assets/candidates/audio/style-starters-v1/hiphop/samples/06_drum.wav",
+      "sha256": "96cfa551f34b37d2ff8fafe5323fd95d87499981aa787dd520ea35f4a2ab9631"
+    },
+    {
+      "key": "style.hiphop.07",
+      "file": "assets/candidates/audio/style-starters-v1/hiphop/samples/07_drum.wav",
+      "sha256": "1a400501f29e53a5cb8746c08092836df8bd0f2827fdbcbd76ca261a43476002"
+    },
+    {
+      "key": "style.hiphop.08",
+      "file": "assets/candidates/audio/style-starters-v1/hiphop/samples/08_drum.wav",
+      "sha256": "d69d98ca6b8aa9bf126710e42581ca52c9317d20fbe990d2df70ab7faa6d515f"
+    },
+    {
+      "key": "style.hiphop.09",
+      "file": "assets/candidates/audio/style-starters-v1/hiphop/samples/09_bass.wav",
+      "sha256": "2163ff35cfd9ad91fcfa9572ad27dacd8d8e013420619bbc51182f2f83e75b4d"
+    },
+    {
+      "key": "style.hiphop.10",
+      "file": "assets/candidates/audio/style-starters-v1/hiphop/samples/10_bass.wav",
+      "sha256": "ef2ca35a8f8f172dc0884050a2b2796e726193b6272dee420f896e75ff1fffe1"
+    },
+    {
+      "key": "style.hiphop.11",
+      "file": "assets/candidates/audio/style-starters-v1/hiphop/samples/11_guitar.wav",
+      "sha256": "e608dc49e8665a43a46a861982b9113518b89717146aabc7d5ef3f26c4869fbe"
+    },
+    {
+      "key": "style.hiphop.12",
+      "file": "assets/candidates/audio/style-starters-v1/hiphop/samples/12_guitar.wav",
+      "sha256": "34d4c890618a925ecd32668f7d732916617afb4f62426b79f480ab573d22ae85"
+    },
+    {
+      "key": "style.hiphop.13",
+      "file": "assets/candidates/audio/style-starters-v1/hiphop/samples/13_keys.wav",
+      "sha256": "706819d89260e76f554430663379ef41ec5786e61b40dc60209359e848748da8"
+    },
+    {
+      "key": "style.hiphop.14",
+      "file": "assets/candidates/audio/style-starters-v1/hiphop/samples/14_keys.wav",
+      "sha256": "fedd1fa8c6184776d80af71b833b1c6f41675034d669a2481e708a7394fc15f5"
+    },
+    {
+      "key": "style.hiphop.15",
+      "file": "assets/candidates/audio/style-starters-v1/hiphop/samples/15_fx.wav",
+      "sha256": "8386f07f9baa79c15741df83a977cecf059fe62337e7c461b44b91a8d4bd6769"
+    },
+    {
+      "key": "style.hiphop.16",
+      "file": "assets/candidates/audio/style-starters-v1/hiphop/samples/16_fx.wav",
+      "sha256": "b031a2bc915759b6678c65e3798ecb8414d48cf6d75aaad4f17abb5bc073b3b5"
+    },
+    {
+      "key": "style.industrial.01",
+      "file": "assets/candidates/audio/style-starters-v1/industrial/samples/01_snare.wav",
+      "sha256": "4579d64f443872a1dc1d9311d4d96c48a70d6b106ba8781df9135d650030a178"
+    },
+    {
+      "key": "style.industrial.02",
+      "file": "assets/candidates/audio/style-starters-v1/industrial/samples/02_snare.wav",
+      "sha256": "30a6fa0c8324bb64eb71383545eac1695108acb96c8b8fbbb792c24272c8fa92"
+    },
+    {
+      "key": "style.industrial.03",
+      "file": "assets/candidates/audio/style-starters-v1/industrial/samples/03_snare.wav",
+      "sha256": "18ee5b8be2ce2cd28cc501300473a1c9f16effdd3ba60f5eab405675c3429df7"
+    },
+    {
+      "key": "style.industrial.04",
+      "file": "assets/candidates/audio/style-starters-v1/industrial/samples/04_snare.wav",
+      "sha256": "4e4f21d5cd141a5272b7e23eb3fac0bee3c94cc63381a558e81763c08718d7de"
+    },
+    {
+      "key": "style.industrial.05",
+      "file": "assets/candidates/audio/style-starters-v1/industrial/samples/05_tom.wav",
+      "sha256": "773df743c3044966c1cc92868e6ec0f1ae307608a6e44c341dcaa8344dc0a2d0"
+    },
+    {
+      "key": "style.industrial.06",
+      "file": "assets/candidates/audio/style-starters-v1/industrial/samples/06_tom.wav",
+      "sha256": "5f8661bedd4915be0e9be1f5d9404f78e9706854b1db767f173a807e8e12f773"
+    },
+    {
+      "key": "style.industrial.07",
+      "file": "assets/candidates/audio/style-starters-v1/industrial/samples/07_fx.wav",
+      "sha256": "ebe984d4c0eeab4f40a0a84892275ab7b239aa73a0052c6e0ef0c3dbdc8988f7"
+    },
+    {
+      "key": "style.industrial.08",
+      "file": "assets/candidates/audio/style-starters-v1/industrial/samples/08_fx.wav",
+      "sha256": "819d2eeaeb39299f6e608fc56202e5a70ba20c8dda1e8dbe96ceccdb49ef14d1"
+    },
+    {
+      "key": "style.industrial.09",
+      "file": "assets/candidates/audio/style-starters-v1/industrial/samples/09_fx.wav",
+      "sha256": "c5d40b855197fe3c5b5cec800d24b1bd839d26f5c263eca8bb634846321814ac"
+    },
+    {
+      "key": "style.industrial.10",
+      "file": "assets/candidates/audio/style-starters-v1/industrial/samples/10_fx.wav",
+      "sha256": "af4a1450828498e6b7a28924ae418e2ec7ca2adef899add80d6c4b9e430e5b08"
+    },
+    {
+      "key": "style.industrial.11",
+      "file": "assets/candidates/audio/style-starters-v1/industrial/samples/11_synth.wav",
+      "sha256": "1f622bd26892342ab2b63b140c4747ee2d8f579b296a1aa766569176b865b1a1"
+    },
+    {
+      "key": "style.industrial.12",
+      "file": "assets/candidates/audio/style-starters-v1/industrial/samples/12_synth.wav",
+      "sha256": "aff7ef49e6379a52f76fcc96653505c9ea779668595095538f9a0cfbdafc24dd"
+    },
+    {
+      "key": "style.industrial.13",
+      "file": "assets/candidates/audio/style-starters-v1/industrial/samples/13_synth.wav",
+      "sha256": "a5fe87aaaa918647786b374dc285156de69b78a49b6b061cf35c907baa7d83cc"
+    },
+    {
+      "key": "style.industrial.14",
+      "file": "assets/candidates/audio/style-starters-v1/industrial/samples/14_synth.wav",
+      "sha256": "f9e422e8be66067ec24579b010ebc826e97822607e24e44f97422ed31a5bbf0f"
+    },
+    {
+      "key": "style.industrial.15",
+      "file": "assets/candidates/audio/style-starters-v1/industrial/samples/15_percussion_cut.wav",
+      "sha256": "3fcf9ac1ff8967091d7cd405b12c927228a7ed40cd80415f4f60cce0b1742cc9"
+    },
+    {
+      "key": "style.industrial.16",
+      "file": "assets/candidates/audio/style-starters-v1/industrial/samples/16_percussion_cut.wav",
+      "sha256": "74a0efdcf7c112632728d0719d72cb63a906004a8adde4c9769701aac226f4d3"
+    },
+    {
+      "key": "style.pop.01",
+      "file": "assets/candidates/audio/style-starters-v1/pop/samples/01_percussion.wav",
+      "sha256": "ac84655e482ed28665f60bb5ac1cd5a754e2916e5a17ff3a2df1d25ccd7d422e"
+    },
+    {
+      "key": "style.pop.02",
+      "file": "assets/candidates/audio/style-starters-v1/pop/samples/02_percussion.wav",
+      "sha256": "45fafba917c7648ace93f8f34322ceb2315094d92889f538a74d6f76cfbc8938"
+    },
+    {
+      "key": "style.pop.03",
+      "file": "assets/candidates/audio/style-starters-v1/pop/samples/03_percussion.wav",
+      "sha256": "4c23931a1d5f322579c9a7d97c510639a8c336b00eefa7705717ae3c739481f3"
+    },
+    {
+      "key": "style.pop.04",
+      "file": "assets/candidates/audio/style-starters-v1/pop/samples/04_percussion.wav",
+      "sha256": "031a0560dae3b56a0d479034a4dc956e08d8e199922223dd54518987fb533061"
+    },
+    {
+      "key": "style.pop.05",
+      "file": "assets/candidates/audio/style-starters-v1/pop/samples/05_percussion.wav",
+      "sha256": "467aeead8eabece0dd7c4db3cf067c1e7240a9391fc2050aa7b67e46b275da08"
+    },
+    {
+      "key": "style.pop.06",
+      "file": "assets/candidates/audio/style-starters-v1/pop/samples/06_percussion.wav",
+      "sha256": "9afc4f91c12855fd6768fc3e588ea137a4f05656f091e159e8f15cb0a9559ab8"
+    },
+    {
+      "key": "style.pop.07",
+      "file": "assets/candidates/audio/style-starters-v1/pop/samples/07_drum_cut.wav",
+      "sha256": "7df122e8540027d9584a0f4dc07f5d906bb12f745fd8ce7f49c26d152e307bb5"
+    },
+    {
+      "key": "style.pop.08",
+      "file": "assets/candidates/audio/style-starters-v1/pop/samples/08_drum_cut.wav",
+      "sha256": "95f81d5d374a7754b91f4a80fd0c27c3053436a1db4fdde6e33c6af8060dfdc7"
+    },
+    {
+      "key": "style.pop.09",
+      "file": "assets/candidates/audio/style-starters-v1/pop/samples/09_bass.wav",
+      "sha256": "52f24c6c9756763624a926780d05653d1a832d8eae9c2cfeeaff8bdc347dbab7"
+    },
+    {
+      "key": "style.pop.10",
+      "file": "assets/candidates/audio/style-starters-v1/pop/samples/10_bass.wav",
+      "sha256": "af213ee56e8260064cca33215640332d36dd129e6e196586243f6d2f388b211e"
+    },
+    {
+      "key": "style.pop.11",
+      "file": "assets/candidates/audio/style-starters-v1/pop/samples/11_guitar.wav",
+      "sha256": "42911c6a964f12edfcd3c2eb016061f9b0da17eff2a0d8f975069e7bd1269c54"
+    },
+    {
+      "key": "style.pop.12",
+      "file": "assets/candidates/audio/style-starters-v1/pop/samples/12_guitar.wav",
+      "sha256": "aacd442e658a3149493049ce831cd6c481c4963848008e6cb3597db249c12ad1"
+    },
+    {
+      "key": "style.pop.13",
+      "file": "assets/candidates/audio/style-starters-v1/pop/samples/13_piano.wav",
+      "sha256": "289754ac13a500fc16377e5233108c55a9f9b9e520ed1ae397a0efccf11c5483"
+    },
+    {
+      "key": "style.pop.14",
+      "file": "assets/candidates/audio/style-starters-v1/pop/samples/14_piano.wav",
+      "sha256": "60aa903dedc1c6f4f9739cb6606afa1a22d2782f496873a2ba0db7008af30102"
+    },
+    {
+      "key": "style.pop.15",
+      "file": "assets/candidates/audio/style-starters-v1/pop/samples/15_piano.wav",
+      "sha256": "63778542ac04cad3ddb213ce899a27817394de3eb60969e98acee543a6af7001"
+    },
+    {
+      "key": "style.pop.16",
+      "file": "assets/candidates/audio/style-starters-v1/pop/samples/16_piano.wav",
+      "sha256": "be30e9bd8be99df7981323ecd7cf7065062ed45a23190b4c7e0c32b5f7b454a4"
+    },
+    {
+      "key": "style.reggae.01",
+      "file": "assets/candidates/audio/style-starters-v1/reggae/samples/01_drum.wav",
+      "sha256": "8fdd7724aa7d3dd0cfb3b6b401b7427f74e033e5e6a807e9cc3cec033263d931"
+    },
+    {
+      "key": "style.reggae.02",
+      "file": "assets/candidates/audio/style-starters-v1/reggae/samples/02_drum.wav",
+      "sha256": "75359f5038980668bc640d3e252b56ab286b24c89c26907e640e3b3c29a188f3"
+    },
+    {
+      "key": "style.reggae.03",
+      "file": "assets/candidates/audio/style-starters-v1/reggae/samples/03_drum.wav",
+      "sha256": "c2761ca29b8b08fbe86370f4acfe0cee149513030d1dc75daa61550f8506669b"
+    },
+    {
+      "key": "style.reggae.04",
+      "file": "assets/candidates/audio/style-starters-v1/reggae/samples/04_drum.wav",
+      "sha256": "8d6612a0046dfbc710b898ed00e2f283befa018e8564d74949590f596ecd296a"
+    },
+    {
+      "key": "style.reggae.05",
+      "file": "assets/candidates/audio/style-starters-v1/reggae/samples/05_drum.wav",
+      "sha256": "fc25fe347cfee4dc2db50164c771bb91f3f08f0222310a93ae3913ab006be340"
+    },
+    {
+      "key": "style.reggae.06",
+      "file": "assets/candidates/audio/style-starters-v1/reggae/samples/06_drum.wav",
+      "sha256": "46eee838e226c75980985488a7408db8b29942bae4db1eba1c0d17abb2ae22cb"
+    },
+    {
+      "key": "style.reggae.07",
+      "file": "assets/candidates/audio/style-starters-v1/reggae/samples/07_percussion.wav",
+      "sha256": "cd16cb8681416d4dfe561ce11bb9446f9bc487b4f62004398dfe61d6a6bebcc1"
+    },
+    {
+      "key": "style.reggae.08",
+      "file": "assets/candidates/audio/style-starters-v1/reggae/samples/08_percussion.wav",
+      "sha256": "0a9ff6ca3b12c8e5b5948a483cfa8475cd2f44e389a2a212d6767bda44f088b2"
+    },
+    {
+      "key": "style.reggae.09",
+      "file": "assets/candidates/audio/style-starters-v1/reggae/samples/09_bass.wav",
+      "sha256": "11beedfe489354020ea0e8c0341a41e435e860aba658be15c435c8f9e127ba75"
+    },
+    {
+      "key": "style.reggae.10",
+      "file": "assets/candidates/audio/style-starters-v1/reggae/samples/10_bass.wav",
+      "sha256": "f6b5185a02a9de96e04930d5398ca284f7e590fed162defa1edeb8ed40103f23"
+    },
+    {
+      "key": "style.reggae.11",
+      "file": "assets/candidates/audio/style-starters-v1/reggae/samples/11_guitar.wav",
+      "sha256": "8f2a40fac9dfb814c43b3213b80495e2545fadbe390e32f14e5eb53c76376053"
+    },
+    {
+      "key": "style.reggae.12",
+      "file": "assets/candidates/audio/style-starters-v1/reggae/samples/12_guitar.wav",
+      "sha256": "5498c09ba1b774e2a1bb53cee824641e544448674dd1472cad135b38103703d6"
+    },
+    {
+      "key": "style.reggae.13",
+      "file": "assets/candidates/audio/style-starters-v1/reggae/samples/13_guitar.wav",
+      "sha256": "ea7a2e9eafcf7defaf0feb26d03a3ae790d40e2a0cc46b510ca336c20bbca588"
+    },
+    {
+      "key": "style.reggae.14",
+      "file": "assets/candidates/audio/style-starters-v1/reggae/samples/14_guitar.wav",
+      "sha256": "3c7a9b6c5052b62b716f7b1d9b24c6f37095d1fe5c173b580e72e8369f95cc93"
+    },
+    {
+      "key": "style.reggae.15",
+      "file": "assets/candidates/audio/style-starters-v1/reggae/samples/15_keys.wav",
+      "sha256": "b49dbdb90b90da98e56b6759388a3abb66c82911a0a33e7c0ab3f63be6e4b32a"
+    },
+    {
+      "key": "style.reggae.16",
+      "file": "assets/candidates/audio/style-starters-v1/reggae/samples/16_keys.wav",
+      "sha256": "5262c2141d0765fd9da510ae44bfdd43a2daafdf1d3b271f4083dc47c142e4f2"
+    },
+    {
+      "key": "style.techno.01",
+      "file": "assets/candidates/audio/style-starters-v1/techno/samples/01_kick.wav",
+      "sha256": "cae53dd2b7a9a3a6e5f0a5432d8b6ce338cfe13fef45e0d44f76e36fc9a21c70"
+    },
+    {
+      "key": "style.techno.02",
+      "file": "assets/candidates/audio/style-starters-v1/techno/samples/02_kick.wav",
+      "sha256": "333b2df95375d7af84fffb14b187b9e0555fd5ced1eddd793f3e7ed4d89a414c"
+    },
+    {
+      "key": "style.techno.03",
+      "file": "assets/candidates/audio/style-starters-v1/techno/samples/03_snare.wav",
+      "sha256": "ce333e8c6be7a3e5eaf7fb36787461a611abf1fb6afe39710c321a19ba6ff7b7"
+    },
+    {
+      "key": "style.techno.04",
+      "file": "assets/candidates/audio/style-starters-v1/techno/samples/04_snare.wav",
+      "sha256": "7d4a26d12860637c4878f95dd8747e65199fb8d061b03af354bd55e2d6dcd36f"
+    },
+    {
+      "key": "style.techno.05",
+      "file": "assets/candidates/audio/style-starters-v1/techno/samples/05_hat.wav",
+      "sha256": "6c92aecf2acf6dfd33a0afe7f7682a9f1a3488915460cf2558599f8a545c51b0"
+    },
+    {
+      "key": "style.techno.06",
+      "file": "assets/candidates/audio/style-starters-v1/techno/samples/06_hat.wav",
+      "sha256": "fae4f359ef6734a2f6842fe274a087b381ba30bed8164fd3aca3a89d221154ef"
+    },
+    {
+      "key": "style.techno.07",
+      "file": "assets/candidates/audio/style-starters-v1/techno/samples/07_clap.wav",
+      "sha256": "f70ebfa357ceaff8d9d68299ab6e0d06761da43c609d3c4966fc02082afa50e0"
+    },
+    {
+      "key": "style.techno.08",
+      "file": "assets/candidates/audio/style-starters-v1/techno/samples/08_clap.wav",
+      "sha256": "f9b86b48dafd84601fa5f0e92e8b49f81d2615958200300083e0474803c3309e"
+    },
+    {
+      "key": "style.techno.09",
+      "file": "assets/candidates/audio/style-starters-v1/techno/samples/09_bass.wav",
+      "sha256": "06082ecb3f41d5331e64d04b82abb4a178301dcdb91583eb0a3c4d7b8d576e66"
+    },
+    {
+      "key": "style.techno.10",
+      "file": "assets/candidates/audio/style-starters-v1/techno/samples/10_bass.wav",
+      "sha256": "e60ab75bfe20b5a63aa7bf5e0986a3dfce4256564b5a7675c843af0fa34a2619"
+    },
+    {
+      "key": "style.techno.11",
+      "file": "assets/candidates/audio/style-starters-v1/techno/samples/11_keys.wav",
+      "sha256": "fff0aecd4f40321596b257eb6bc01556b17d15571a02a4cbfd640ad62d0eeb2f"
+    },
+    {
+      "key": "style.techno.12",
+      "file": "assets/candidates/audio/style-starters-v1/techno/samples/12_keys.wav",
+      "sha256": "457d7634e9bd3e2c2cbbe545a0177d59f279691fb273cad38071d207a210f619"
+    },
+    {
+      "key": "style.techno.13",
+      "file": "assets/candidates/audio/style-starters-v1/techno/samples/13_keys.wav",
+      "sha256": "7ad6c888a0e87d416aedbb09c1307c42e80ce4d5fe6505b8ebb837d1eb485cf6"
+    },
+    {
+      "key": "style.techno.14",
+      "file": "assets/candidates/audio/style-starters-v1/techno/samples/14_keys.wav",
+      "sha256": "b7011ec483733c96de3562dcc8580024ae98ad278574dceb8ba6400959dd51f7"
+    },
+    {
+      "key": "style.techno.15",
+      "file": "assets/candidates/audio/style-starters-v1/techno/samples/15_fx.wav",
+      "sha256": "963ae0afb3106ba8ddf7f9e617a5ab1bc0138207e51315cd8ae75724dc00faa6"
+    },
+    {
+      "key": "style.techno.16",
+      "file": "assets/candidates/audio/style-starters-v1/techno/samples/16_fx.wav",
+      "sha256": "1c3966f5f6203cd0ac86e42b72961baf5e9835af914993cd7281e4c2c187230c"
+    },
+    {
+      "key": "style.trance.01",
+      "file": "assets/candidates/audio/style-starters-v1/trance/samples/01_kick.wav",
+      "sha256": "608333b3f35b4d6828857ae2a163b326ca1174b12b453ae883ee932a8ecfcbad"
+    },
+    {
+      "key": "style.trance.02",
+      "file": "assets/candidates/audio/style-starters-v1/trance/samples/02_kick.wav",
+      "sha256": "095e4b9ea53ffe70067562edffa8bf6ae328fa3228ab371ccbcb841c1e40717d"
+    },
+    {
+      "key": "style.trance.03",
+      "file": "assets/candidates/audio/style-starters-v1/trance/samples/03_snare.wav",
+      "sha256": "a93a3e398e82cf119057572de4de1b347b2c28cac770c091d319afec51d2eb9a"
+    },
+    {
+      "key": "style.trance.04",
+      "file": "assets/candidates/audio/style-starters-v1/trance/samples/04_snare.wav",
+      "sha256": "3127850a8208eac87d509bdc75aaebfa9aa536ede21973b90960bd50cc716baf"
+    },
+    {
+      "key": "style.trance.05",
+      "file": "assets/candidates/audio/style-starters-v1/trance/samples/05_clap.wav",
+      "sha256": "9b3f5fbf0b43da6879c710bf2485bfaf1406b015f646d6e3af9911c3fee6ce15"
+    },
+    {
+      "key": "style.trance.06",
+      "file": "assets/candidates/audio/style-starters-v1/trance/samples/06_clap.wav",
+      "sha256": "7794c9de69b0e96c4a98ca4964a408a3e12d15a5540b16eca6e57a21184d57a8"
+    },
+    {
+      "key": "style.trance.07",
+      "file": "assets/candidates/audio/style-starters-v1/trance/samples/07_percussion.wav",
+      "sha256": "cc3f1dc28ed1018678d2a86a5c0a1ba25e49b54b028725b656ee6ac6d856f598"
+    },
+    {
+      "key": "style.trance.08",
+      "file": "assets/candidates/audio/style-starters-v1/trance/samples/08_percussion.wav",
+      "sha256": "6534e01fac77f39cf3cfb243356ab9f0f80cc4cb3dc04120cdbdf9f503a30ed5"
+    },
+    {
+      "key": "style.trance.09",
+      "file": "assets/candidates/audio/style-starters-v1/trance/samples/09_bass.wav",
+      "sha256": "c580fff1b818e5335f5bd869d59e60ecc010e525fdbf05752e2ae84b6b6b3b97"
+    },
+    {
+      "key": "style.trance.10",
+      "file": "assets/candidates/audio/style-starters-v1/trance/samples/10_bass.wav",
+      "sha256": "7ecd77b32c1d83b52a3cf718dd403af352585058f35fa8f2918c7596766d81f2"
+    },
+    {
+      "key": "style.trance.11",
+      "file": "assets/candidates/audio/style-starters-v1/trance/samples/11_synth.wav",
+      "sha256": "78a24e24a36369abd1ebf5c2035528c879a1ee7467cbc480ba12846ff09afd48"
+    },
+    {
+      "key": "style.trance.12",
+      "file": "assets/candidates/audio/style-starters-v1/trance/samples/12_synth.wav",
+      "sha256": "72397e9b055b620f0df4ddadccb0e7d0eb98db456436a625f6118c6b12dcb61e"
+    },
+    {
+      "key": "style.trance.13",
+      "file": "assets/candidates/audio/style-starters-v1/trance/samples/13_synth.wav",
+      "sha256": "4d3a7b4ede116fe3fa4fe1c2a7ea2173608dcb0f20ab86029cac412a3e42f492"
+    },
+    {
+      "key": "style.trance.14",
+      "file": "assets/candidates/audio/style-starters-v1/trance/samples/14_synth.wav",
+      "sha256": "d0160719f36b4fd6aaccfd6b1e34ffaf2017dbdb0bb50551703931f742ce89bd"
+    },
+    {
+      "key": "style.trance.15",
+      "file": "assets/candidates/audio/style-starters-v1/trance/samples/15_fx.wav",
+      "sha256": "036e66ce864b2aeb3cfc3bed00e1ab8aa66527c12b7ded3c1b20a887b37c3a8d"
+    },
+    {
+      "key": "style.trance.16",
+      "file": "assets/candidates/audio/style-starters-v1/trance/samples/16_fx.wav",
+      "sha256": "e808e365df3c703d3bed9deb0441ac0b8e1aa155f5af4fcdb96aa98d292bf64c"
+    }
+  ]
+}

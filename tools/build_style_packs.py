@@ -207,6 +207,7 @@ def verify():
 
 
 def refresh_derived():
+    assert not (ROOT/'docs/evidence/style-starters/user-approval.json').exists(), 'Approved audio is frozen; create a new version for further edits'
     manifest=json.loads((DEST/'manifest.json').read_text(encoding='utf-8'))
     assert manifest['stage'].startswith('local candidate')
     bound=json.loads((ROOT/'data/content-ids.json').read_text(encoding='utf-8'))['Audio']

@@ -2,6 +2,7 @@
 
 ## Scope and sources
 
+- Before any visual work, inspect `C:/Users/slavd/OneDrive/Pictures/Assets` for user-supplied materials, textures, and models. The user adds files there over time; refresh the inventory when starting visual work. Copy every asset actually used into the repository with source provenance.
 - This is the Roblox music-making project described in `CODEX_START_HERE.md`.
 - Treat `01_Visual_Artbook.pdf`, `02_Production_Atlas.pdf`, `Asset_Production_Register.xlsx`, and `TRIPO_RUNBOOK.md` as project source material. The supplied visual board remains the visual authority. It is restored at `assets/references/needle-quay-approved-style-board.png`, with its original-attachment provenance and SHA-256 in the adjacent JSON. Use it for art direction, not as a multi-object Tripo input.
 - Keep the machine-readable asset contracts in `data/` aligned with the supplied register. Preserve canonical IDs. Treat dimensions, budgets, and visual proposals as authored project constraints, not platform limits.

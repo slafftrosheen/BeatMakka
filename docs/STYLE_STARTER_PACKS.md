@@ -41,7 +41,9 @@ Audio prepares only current pad assignments plus the three original discovery pr
 
 [Receipts](evidence/style-starters/) distinguish source tests from runtime acceptance. Catalog tests cover all 160 new IDs and save sanitization. UI checks cover sixteen visible samples, key labels, two-press replacement and stale/browse/navigation cancellation. Actual Client-to-Server testing applies all eleven kits (original plus ten styles), rejects eleven stale requests, retains notes/tempo and restores the last kit from a local-session save. Audio fixtures verify the nineteen-bank bound, eviction/destruction and stale callbacks; unconfigured IDs do not establish actual asset preload/permission behavior. Existing sixteen Contracts/Milestone groups and six-size UI checks pass. Pinned Selene/StyLua/Rojo and offline binding checks pass.
 
-Human listening, hosted audio permissions/playback and cloud rejoin remain pending. The original kitchen/yard/workshop/rain task in #7 is not closed by these genre kits.
+The user approved the ten-kit listening review and requested Roblox upload. `docs/evidence/style-starters/user-approval.json` pins the approved commit, manifest, review and all 160 sample hashes. Approved derivatives are frozen; changes require a new version. Hosted audio permissions/playback and cloud rejoin remain pending. The original kitchen/yard/workshop/rain task in #7 is not closed by these genre kits.
+
+The background Creator Dashboard uploader reached the personal CuuteFoxey audio inventory, but Chrome rejected attaching local files because the ChatGPT extension lacks "Allow access to file URLs." No audio was submitted in this attempt and no charges were incurred. Enable that permission before resuming; inspect the free upload quota before submitting.
 
 ## Reproduction
 
@@ -52,4 +54,4 @@ python -B tools/project_style_packs.py
 python -B tools/build_style_auditions.py
 ```
 
-Initial build requires the ten named archives and refuses an existing candidate destination. `--refresh-derived` is an explicit local-candidate operation; it verifies source hashes, refreshes note labels and refuses uploaded/bound style audio. It never modifies original copies. No new dependency, microphone capture, paid provider or external audio service was introduced.
+Initial build requires the ten named archives and refuses an existing candidate destination. `--refresh-derived` refuses user-approved audio as well as uploaded/bound style audio. Before approval, it verifies source hashes and refreshes note labels. It never modifies original copies. No new dependency, microphone capture, paid provider or external audio service was introduced.
