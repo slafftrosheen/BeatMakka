@@ -8,6 +8,7 @@ local Assets = require(script.Parent.AssetSpawner)
 local Kit = require(script.Parent.ModularKit)
 local Details = require(script.Parent.AssetDetails)
 local RoomBuilder = require(script.Parent.RoomBuilder)
+local Missions = require(Shared.NeighborhoodMissions)
 local WorldBuilder = {}
 
 local function label(parent, text, offset)
@@ -266,7 +267,7 @@ function WorldBuilder.build()
         anchor.Transparency = 1
         nodes[id] = {
             anchor = anchor,
-            prompt = prompt(anchor, "Preview / collect", name),
+            prompt = prompt(anchor, "Virtual sample / collect", name),
             sampleId = sampleId,
         }
         label(anchor, name, 2.5)
@@ -343,6 +344,17 @@ function WorldBuilder.build()
         false
     )
     listeningAnchor.Transparency = 1
+    for index, id in Missions.Order do
+        local indicator = part(
+            podium,
+            "Neighborhood_" .. id,
+            Vector3.new(0.3, 0.3, 0.12),
+            CFrame.new(41.3 + (index - 1) * 0.7, 5.6, 13.9),
+            Theme.Graphite,
+            false
+        )
+        indicator:SetAttribute("NeighborhoodMissionId", id)
+    end
     listeningAnchor:SetAttribute("AssetId", "I05")
     local listening = {
         anchor = listeningAnchor,

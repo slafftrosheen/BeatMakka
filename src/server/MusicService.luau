@@ -9,6 +9,8 @@ local Quest = require(ReplicatedStorage.Shared.FirstPerformanceQuest)
 local Profiles = require(script.Parent.ProfileStore)
 local ListeningSession = require(script.Parent.ListeningSession)
 local RoomService = require(script.Parent.RoomService)
+local Missions = require(ReplicatedStorage.Shared.NeighborhoodMissions)
+local Discoveries = require(ReplicatedStorage.Shared.DiscoveryCatalog)
 local MusicService = {}
 
 function MusicService.start(world)
@@ -73,6 +75,7 @@ function MusicService.start(world)
             hasSave = profile.saved ~= nil,
             finish = profile.finish,
             room = rooms:summary(player, profile),
+            neighborhood = Missions.summary(profile),
             dirty = profile.editVersion ~= profile.savedEditVersion,
             editVersion = profile.editVersion,
             restoration = if count == 3 and Book.hasNotes(profile) then 4 else count,
@@ -279,7 +282,8 @@ function MusicService.start(world)
                 player,
                 if collected
                     then "Already in your collection. Preview requested."
-                    else "Sample collected. Assign it to a pad at a workstation.",
+                    else Discoveries.ById[id].origin
+                        .. " Virtual sample collected. At a sampler, choose Sounds to assign it to a pad.",
                 node.sampleId
             )
         end)

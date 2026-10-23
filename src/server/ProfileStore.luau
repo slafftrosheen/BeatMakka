@@ -6,6 +6,7 @@ local Cosmetics = require(Shared.CosmeticCatalog)
 local Book = require(Shared.BeatBook)
 local Quest = require(Shared.FirstPerformanceQuest)
 local Rooms = require(Shared.RoomCatalog)
+local Missions = require(Shared.NeighborhoodMissions)
 
 local ProfileStore = {}
 local store
@@ -28,6 +29,7 @@ function ProfileStore.new()
         unlocked = {},
         finish = "quay",
         room = Rooms.sanitize(nil, {}),
+        neighborhood = Missions.sanitize(nil),
         saved = nil,
         storageRevision = 0,
         saveMode = if RunService:IsStudio() then "session" else "cloud",
@@ -51,6 +53,7 @@ local function capture(profile)
         unlocked = table.clone(profile.unlocked),
         finish = profile.finish,
         room = Rooms.sanitize(profile.room, profile),
+        neighborhood = Missions.sanitize(profile.neighborhood),
     }
 end
 
@@ -90,6 +93,7 @@ function ProfileStore.load(player, profile, storage)
             then data.revision
             else 0
         profile.room = Rooms.sanitize(data.room, profile)
+        profile.neighborhood = Missions.sanitize(data.neighborhood)
         profile.saved = capture(profile)
     end
     profile.ready = true
@@ -104,8 +108,10 @@ function ProfileStore.save(player, profile, storage)
     end
     profile.saving = true
     local snapshot = capture(profile)
+    snapshot.neighborhood = Missions.awarded(snapshot)
     local capturedVersion = profile.editVersion
     if profile.saveMode == "session" then
+        profile.neighborhood = Missions.merge(profile.neighborhood, snapshot.neighborhood)
         profile.saved = snapshot
         profile.savedEditVersion = capturedVersion
         profile.saving = false
@@ -143,6 +149,7 @@ function ProfileStore.save(player, profile, storage)
         return false, "A newer save exists in another server. Rejoin before saving over it."
     end
     profile.saved = snapshot
+    profile.neighborhood = Missions.merge(profile.neighborhood, snapshot.neighborhood)
     profile.savedEditVersion = capturedVersion
     profile.storageRevision = snapshot.revision
     return true, "Pattern slots, beat shelf, workshop and progress saved."
@@ -164,6 +171,7 @@ function ProfileStore.restore(profile)
     end
     local savedQuest = Quest.sanitize(profile.saved.quest)
     local preserved = hasNewDiscoveries
+        or not Missions.equal(profile.neighborhood, profile.saved.neighborhood)
         or not Rooms.equal(profile.room, Rooms.sanitize(profile.saved.room, profile))
         or profile.quest.accepted ~= savedQuest.accepted
         or profile.quest.completed ~= savedQuest.completed

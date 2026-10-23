@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "files": {
+    "source-inventory.json": {
+      "bytes": 767,
+      "sha256": "99addbc86aa9b27c923fc7f52565c285c32f62a127a7b83bae2348e9e2c504c7"
+    },
+    "studio-availability.json": {
+      "bytes": 356,
+      "sha256": "c5dd28ab79c867a12905f693aff8ab6e83fa5de02ac58e8a3856fa46d490eb43"
+    },
+    "validation.json": {
+      "bytes": 923,
+      "sha256": "8f3aa8a19ac8153b92910a7d98f2550559b365aa9e6c3ce7c54fc842c0ee3c5b"
+    }
+  }
+}

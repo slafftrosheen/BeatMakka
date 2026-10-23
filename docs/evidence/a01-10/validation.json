@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-23",
+  "baseline": "dc7a0b9e71b2b1428b15b28c35f08c1339d8740f",
+  "source_review": "completed; encoding finding corrected; no material issues reported",
+  "selene": {
+    "errors": 0,
+    "warnings": 0,
+    "parse_errors": 0
+  },
+  "stylua_check": "PASS",
+  "rojo_build": {
+    "passed": true,
+    "sha256": "5353024112910d12d278bb59a51c85c301f005cd5f8bd33c47163d906db829b6",
+    "new_modules_included": true,
+    "qa_excluded": true
+  },
+  "offline_binding_safety_tests": {
+    "passed": 6,
+    "total": 6
+  },
+  "approved_material_verifier": {
+    "passed": true,
+    "maps": 12,
+    "templates": 8,
+    "audio_preserved": 100
+  },
+  "content_ids_unchanged": true,
+  "studio_new_tests": "NOT RUN: no project open",
+  "studio_regressions": "NOT RUN for this change",
+  "visual_and_multiplayer_acceptance": "NOT VERIFIED",
+  "cloud_rejoin_and_audio": "NOT VERIFIED",
+  "issue12_close_eligible": false
+}

@@ -131,7 +131,7 @@ view = WorkshopView.new({
         effects = value
         feedback:setEnabled(value)
         if state then
-            Restoration.update(state.restoration, effects)
+            Restoration.update(state.restoration, effects, state.neighborhood)
         end
     end,
 })
@@ -191,7 +191,7 @@ connect(stateEvent.OnClientEvent, function(nextState)
             else listeningAudio:status()
     )
     view.audioStatus.Text = audio:status()
-    Restoration.update(state.restoration, effects)
+    Restoration.update(state.restoration, effects, state.neighborhood)
     appearance:apply(state)
     view.appearanceStatus.Text = appearance.status or ""
     if state.preview then
@@ -277,7 +277,7 @@ connect(RunService.Heartbeat, function(dt)
         view:tick()
         listeningView:tick()
         if state then
-            Restoration.update(state.restoration, effects)
+            Restoration.update(state.restoration, effects, state.neighborhood)
         end
         if state then
             appearance:apply(state)

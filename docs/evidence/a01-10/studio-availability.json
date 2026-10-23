@@ -1,0 +1,20 @@
+{
+  "list_studios": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"studios\":[{\"id\":\"1ae28dc4-9587-420e-a530-1beef3a77c6c\",\"name\":null}]}"
+      }
+    ],
+    "isError": false
+  },
+  "studio_state": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Place is not open"
+      }
+    ],
+    "isError": true
+  }
+}

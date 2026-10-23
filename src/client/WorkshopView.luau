@@ -11,6 +11,7 @@ local Gui = require(script.Parent.GuiFactory)
 local BeatBookView = require(script.Parent.BeatBookView)
 local PadInput = require(script.Parent.PadInput)
 local RoomSettings = require(script.Parent.RoomSettings)
+local RecorderGuide = require(script.Parent.RecorderGuide)
 local WorkshopView = {}
 WorkshopView.__index = WorkshopView
 
@@ -304,11 +305,12 @@ function WorkshopView.new(callbacks)
     libraryTitle.Size = UDim2.new(1, -8, 0, 40)
     libraryTitle.LayoutOrder = 1
     self.libraryTitle = libraryTitle
+    self.recorderGuide = RecorderGuide.new(sounds)
     local packControls = Gui.make("Frame", sounds, {
         Name = "PackControls",
         Size = UDim2.new(1, -8, 0, 96),
         BackgroundTransparency = 1,
-        LayoutOrder = 2,
+        LayoutOrder = 3,
     })
     local previous = Gui.button(packControls, "<", function()
         self:browsePack(-1)
@@ -334,7 +336,7 @@ function WorkshopView.new(callbacks)
         Name = "Collection",
         Size = UDim2.new(1, -8, 0, 512),
         BackgroundTransparency = 1,
-        LayoutOrder = 3,
+        LayoutOrder = 4,
     })
     local libraryGrid = Gui.make("UIGridLayout", library, {
         CellSize = UDim2.new(0.5, -4, 0, 48),
@@ -788,6 +790,7 @@ function WorkshopView:update(state)
     end
     self.bookView:update(state)
     self.roomSettings:update(state)
+    self.recorderGuide:update(state)
     if UserInputService.GamepadEnabled and wasOpen ~= self.panel.Visible then
         GuiService.SelectedObject = if self.panel.Visible then self.play else self.sound
     end
@@ -871,6 +874,14 @@ function WorkshopView:update(state)
                     "NEEDLE QUAY / %d of 3 sounds collected\nVisit a sampler to make your loop. Save before leaving.",
                     collected
                 )
+            if state.quest and state.quest.completed and state.neighborhood then
+                self.hudLabel.Text = if state.neighborhood.courtReady
+                    then "COURTYARD PREPARED\nKeep creating. The chapter concert is still ahead."
+                    else string.format(
+                        "NEIGHBORHOOD JOBS / %d of 3 complete\nOpen Virtual recorder in Sounds for your next job.",
+                        state.neighborhood.completed
+                    )
+            end
         end
     end
     self.status.Text = string.format(
