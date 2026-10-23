@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"navigationCancels\":true,\"restoreRequiresConfirmation\":true,\"saveLabels\":true,\"passed\":true,\"staleConfirmationRejected\":true}"
+    }
+  ],
+  "isError": false
+}

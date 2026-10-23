@@ -432,6 +432,10 @@ function MusicService.start(world)
             persist(player, profile)
             return
         elseif action == "Restore" then
+            if a ~= profile.editVersion then
+                send(player, "Slots changed. Review Restore slots again before replacing A-D.")
+                return
+            end
             if profile.saving then
                 send(player, "Wait for the current save before restoring slots.")
                 return

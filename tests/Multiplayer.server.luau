@@ -123,7 +123,10 @@ task.spawn(function()
         expect("patterns are personal", not clean.pattern.rows[1][1])
         drive(a, "Save")
         drive(a, "ClearPad", 1)
-        expect("session restore returns saved notes", drive(a, "Restore").pattern.rows[1][1])
+        expect(
+            "session restore returns saved notes",
+            drive(a, "Restore", drive(a, "Hello").editVersion).pattern.rows[1][1]
+        )
         drive(a, "Release")
         for _, spec in
             {

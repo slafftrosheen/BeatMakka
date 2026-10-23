@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"maximumPastSeconds\":0.35,\"bpms\":{\"1\":60,\"3\":180,\"2\":96},\"passed\":true,\"checks\":25}"
+    }
+  ],
+  "isError": false
+}

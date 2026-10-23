@@ -6,6 +6,7 @@ local Theme = require(Shared.Theme)
 local Catalog = require(Shared.SampleCatalog)
 local Cosmetics = require(Shared.CosmeticCatalog)
 local Atlas = require(Shared.UiAtlas)
+local Pattern = require(Shared.Pattern)
 local Gui = require(script.Parent.GuiFactory)
 local BeatBookView = require(script.Parent.BeatBookView)
 local PadInput = require(script.Parent.PadInput)
@@ -31,6 +32,7 @@ function WorkshopView.new(callbacks)
     self.screen = screen
     self.inputConnections = {}
     self.padInput = PadInput.new(function(pad)
+        self.playedPad = true
         self:selectPad(pad)
         return callbacks.tap(pad)
     end, function(pad, held)
@@ -158,6 +160,10 @@ function WorkshopView.new(callbacks)
     local function control(parent, text, action, a)
         local button = Gui.button(parent, text, function()
             if self.state and self.state.ready then
+                if action == "Save" then
+                    self.restoreConfirmation = nil
+                    self:update(self.state)
+                end
                 callbacks.command(action, if type(a) == "function" then a() else a)
             end
         end)
@@ -362,7 +368,9 @@ function WorkshopView.new(callbacks)
     clear.LayoutOrder = 4
     self.save = control(controls, "Save profile", "Save")
     self.save.LayoutOrder = 5
-    self.restore = control(controls, "Restore slots", "Restore")
+    self.restore = Gui.button(controls, "Restore slots", function()
+        self:restoreSlots()
+    end)
     self.restore.LayoutOrder = 6
     self.panelSound = Gui.button(controls, "Sound ON", toggleSound)
     self.panelSound.Name = "Sound"
@@ -451,10 +459,11 @@ function WorkshopView.new(callbacks)
         end
         header.Font = Theme.Font
         header.TextSize = 14
+        header.TextSize = if short then 12 else 14
         header.TextYAlignment = Enum.TextYAlignment.Top
         header.Text = if self.noticeUntil and os.clock() < self.noticeUntil
             then self.noticeText
-            else "MK-I / MAKE SOMETHING YOURS"
+            else self:guideText()
         local available = body.AbsoluteSize
         local side = math.max(0, math.min(available.X, available.Y))
         pads.Size = UDim2.fromOffset(side, side)
@@ -547,7 +556,16 @@ function WorkshopView:showPage(name)
             self.bookView:update(self.state)
         end
     end
+    if self.page ~= name then
+        self.restoreConfirmation = nil
+    end
     self.page = name
+    if self.state then
+        self.noticeLabel.Text = if self.noticeUntil and os.clock() < self.noticeUntil
+            then self.noticeText
+            else self:guideText()
+        self.restore.Text = if self.state.hasSave then "Restore slots" else "No saved slots"
+    end
     if name ~= "Play" then
         self:cancelInput(false)
     end
@@ -564,6 +582,61 @@ function WorkshopView:showPage(name)
     then
         GuiService.SelectedObject = self.tabs[name]
     end
+end
+
+function WorkshopView:guideText()
+    local state = self.state
+    if not state then
+        return "MK-I / MAKE SOMETHING YOURS"
+    end
+    if self.restoreConfirmation then
+        return "Restore replaces working slots A-D. Press again to confirm."
+    end
+    if self.page == "Settings" then
+        return "Save profile keeps slots A-D and your six-Beat shelf."
+    elseif self.page == "Sounds" then
+        return "Choose a sound for the selected pad. Play lets you try it."
+    elseif self.page == "Beats" then
+        return "Save to shelf keeps A-D as a Beat. Load replaces working A-D."
+    elseif state.recording then
+        return "Tap pads to record to 16 steps. Stop ends recording."
+    elseif self.page == "Steps" then
+        return "Turn on 01, 05, 09 and 13; press Play to hear your loop."
+    elseif Pattern.hasNotes(state.pattern) then
+        return "Try Play. Beats saves your A-D set to the shelf."
+    elseif self.playedPad then
+        return "Open Steps to build a loop, or Record and tap pads."
+    end
+    return "Try a pad. Sounds chooses its sound; Steps makes a loop."
+end
+
+function WorkshopView:restoreSlots()
+    local state = self.state
+    if not state or not state.ready or not state.station or not state.hasSave or state.saving then
+        return
+    end
+    local confirmation = self.restoreConfirmation
+    if
+        confirmation
+        and confirmation.editVersion == state.editVersion
+        and confirmation.station == state.station
+        and os.clock() < confirmation.expires
+    then
+        self.restoreConfirmation = nil
+        self.callbacks.command("Restore", state.editVersion)
+    else
+        self.restoreConfirmation = {
+            editVersion = state.editVersion,
+            station = state.station,
+            expires = os.clock() + 5,
+        }
+        task.delay(5, function()
+            if self.screen.Parent and self.state then
+                self:update(self.state)
+            end
+        end)
+    end
+    self:update(state)
 end
 
 function WorkshopView:updatePadLabels()
@@ -640,7 +713,24 @@ function WorkshopView:update(state)
         then "Saving..."
         elseif state.dirty then "Save profile *"
         else "Save profile"
-    self.restore.Text = if state.hasSave then "Restore slots" else "No saved slots"
+    local confirmation = self.restoreConfirmation
+    if
+        confirmation
+        and (
+            os.clock() >= confirmation.expires
+            or confirmation.editVersion ~= state.editVersion
+            or confirmation.station ~= state.station
+            or state.saving
+            or not state.hasSave
+            or not state.station
+        )
+    then
+        self.restoreConfirmation = nil
+    end
+    self.restore.Text = if self.restoreConfirmation
+        then "Replace slots A-D?"
+        elseif state.hasSave then "Restore slots"
+        else "No saved slots"
     self.rowTitle.Text = string.format(
         "%s / PAD %02d / %d BPM",
         if state.book then state.book.slots[state.book.activeSlot].label else "A",
@@ -688,11 +778,17 @@ function WorkshopView:update(state)
             elseif state.recording then "REC"
             elseif state.playing then "PLAYING"
             else "READY",
-        if state.saving then "SAVING..." elseif state.dirty then "UNSAVED" else "SAVED"
+        if state.saving
+            then "SAVING..."
+            elseif state.saveMode == "unavailable" then "TEMPORARY"
+            elseif state.dirty then "UNSAVED"
+            elseif not state.hasSave then "NEW"
+            elseif state.saveMode == "session" then "SESSION SAVED"
+            else "SAVED"
     )
     self.noticeLabel.Text = if self.noticeUntil and os.clock() < self.noticeUntil
         then self.noticeText
-        else "MK-I / MAKE SOMETHING YOURS"
+        else self:guideText()
 
     if state.notice then
         self:notice(state.notice)
