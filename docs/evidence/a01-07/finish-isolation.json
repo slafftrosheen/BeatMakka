@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"geometryPreserved\":true,\"otherStationUntouched\":true,\"finishes\":4,\"controlsUntouched\":true,\"passed\":true,\"resetAndDestroy\":true}"
+    }
+  ],
+  "isError": false
+}

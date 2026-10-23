@@ -18,3 +18,8 @@
 assets/candidates/audio/quay-found-v1/** -text whitespace=cr-at-eol
 assets/candidates/audio/quay-found-v1/licenses/*.txt -diff
 output/audio-quay-found-v1/** -text whitespace=cr-at-eol
+
+# Candidate integrity roster pins exact material source bytes.
+assets/candidates/materials/tactile-v1/** -text whitespace=cr-at-eol
+tools/build_finish_candidates.py text eol=lf
+tools/render_finish_candidates.py text eol=lf

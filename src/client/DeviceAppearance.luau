@@ -7,14 +7,22 @@ local Ids = require(Shared.ContentIds)
 local Appearance = {}
 Appearance.__index = Appearance
 
-function Appearance.new()
-    return setmetatable(
-        { originals = {}, proxyColors = {}, templates = {}, pending = {}, station = nil },
-        Appearance
-    )
+function Appearance.new(createSurface)
+    return setmetatable({
+        originals = {},
+        proxyColors = {},
+        templates = {},
+        pending = {},
+        station = nil,
+        destroyed = false,
+        createSurface = createSurface or function(maps)
+            return AssetService:CreateSurfaceAppearanceAsync(maps)
+        end,
+    }, Appearance)
 end
 
 function Appearance:reset()
+    self.status = nil
     for part, backup in self.originals do
         if part.Parent then
             local current = part:FindFirstChildOfClass("SurfaceAppearance")
@@ -38,6 +46,13 @@ function Appearance:reset()
 end
 
 function Appearance:template(finish, resolution)
+    if
+        self.destroyed
+        or not Cosmetics.Sets[finish]
+        or (resolution ~= 512 and resolution ~= 1024)
+    then
+        return nil
+    end
     local key = finish .. "_" .. tostring(resolution)
     if self.templates[key] then
         return self.templates[key]
@@ -60,18 +75,27 @@ function Appearance:template(finish, resolution)
         and type(metal) == "number"
         and not self.pending[key]
     then
-        self.pending[key] = true
+        self.pending[key] = "loading"
         task.spawn(function()
             local ok, result = pcall(function()
-                return AssetService:CreateSurfaceAppearanceAsync({
+                return self.createSurface({
                     ColorMap = Content.fromAssetId(color),
                     RoughnessMap = Content.fromAssetId(rough),
                     MetalnessMap = Content.fromAssetId(metal),
                 })
             end)
+            if self.destroyed then
+                if ok then
+                    result:Destroy()
+                end
+                return
+            end
             if ok then
                 result:SetAttribute("FinishSet", finish)
                 self.templates[key] = result
+                self.pending[key] = nil
+            else
+                self.pending[key] = "failed"
             end
             -- Keep a failed key bounded; rebinding content takes a fresh play session.
         end)
@@ -80,11 +104,19 @@ function Appearance:template(finish, resolution)
 end
 
 function Appearance:apply(state)
+    if self.destroyed then
+        return
+    end
     if self.station ~= state.station then
         self:reset()
         self.station = state.station
     end
     if not state.station then
+        return
+    end
+    if not Cosmetics.Sets[state.finish] then
+        self:reset()
+        self.status = "Finish preview unavailable: unknown finish."
         return
     end
     local root = Workspace:FindFirstChild("NeedleQuay")
@@ -94,30 +126,53 @@ function Appearance:apply(state)
     for _, model in root:GetChildren() do
         if model:GetAttribute("StationId") == state.station then
             local art = model:FindFirstChild("Art")
-            local compatible = model:GetAttribute("TextureLayout") == Cosmetics.TextureLayout
+            local layout = model:GetAttribute("TextureLayout")
             local resolution = model:GetAttribute("TextureResolution") or 1024
+            if
+                self.model ~= model
+                or self.art ~= art
+                or self.layout ~= layout
+                or self.resolution ~= resolution
+            then
+                self:reset()
+                self.model, self.art, self.layout, self.resolution = model, art, layout, resolution
+            end
+            local compatible = layout == Cosmetics.TextureLayout
+                and (resolution == 512 or resolution == 1024)
             local template = if compatible then self:template(state.finish, resolution) else nil
             self.status = if not art
                 then "Finish preview shown on the temporary device shape."
                 elseif
                     not compatible
-                then "Finish saved. This device does not support finish previews yet."
-                elseif template == nil then "Finish saved. Its texture preview is unavailable."
-                else "Shared device finish applied."
+                then "Finish selected. This device does not support finish previews yet."
+                elseif template == nil then (if self.pending[state.finish .. "_" .. tostring(
+                        resolution
+                    )] == "loading"
+                    then "Finish selected. Texture preview is loading."
+                    else "Finish selected. Its texture preview is unavailable.")
+                else "Finish preview applied to your device."
             for _, object in model:GetDescendants() do
                 if object:IsA("BasePart") and object.Name == "ArtProxy" then
                     if self.proxyColors[object] == nil then
                         self.proxyColors[object] = object.Color
                     end
                     object.Color = Cosmetics.Sets[state.finish].primary
-                elseif art and object:IsA("MeshPart") and compatible and template ~= nil then
+                elseif
+                    art
+                    and (object == art or object:IsDescendantOf(art))
+                    and object:IsA("MeshPart")
+                    and compatible
+                    and template ~= nil
+                then
                     local current = object:FindFirstChildOfClass("SurfaceAppearance")
                     if not current or current:GetAttribute("FinishSet") ~= state.finish then
                         if self.originals[object] == nil then
-                            self.originals[object] =
-                                { surface = if current then current:Clone() else nil }
+                            self.originals[object] = { surface = current }
+                            if current then
+                                current.Parent = nil
+                            end
                         end
-                        if current then
+                        if current and current.Parent then
                             current:Destroy()
                         end
                         local nextSurface = template:Clone()
@@ -129,5 +184,20 @@ function Appearance:apply(state)
             end
         end
     end
+end
+
+function Appearance:destroy()
+    if self.destroyed then
+        return
+    end
+    self.destroyed = true
+    self:reset()
+    for _, template in self.templates do
+        template:Destroy()
+    end
+    table.clear(self.templates)
+    table.clear(self.pending)
+    self.station = nil
+    self.model, self.art = nil, nil
 end
 return Appearance

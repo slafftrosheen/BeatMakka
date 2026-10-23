@@ -1,0 +1,15 @@
+{
+  "stage": "candidate neutral inspection; no art approval or Studio import",
+  "blender": "5.2.2 LTS",
+  "engine": "Cycles CPU, 12 samples, 2 threads",
+  "source": "assets/optimized/H01/H01_atlas_v1.glb",
+  "source_sha256": "7f27ff7da218c44e19fba120ab3decda47f4cbd836db0eb38d94d0882dfa15e3",
+  "generator_sha256": "e86eb1c6e9ab9a1c1a169565064dd0198bfd6c55073d9d36f79365ef384986a1",
+  "geometry_exported": false,
+  "views": [
+    "front",
+    "rear"
+  ],
+  "finishes": 4,
+  "limitations": "Housing only: deterministic pads/screens are separate. Shared UVs cannot author per-object edge wear. Neutral review does not establish dusk, gameplay-distance or human acceptance."
+}

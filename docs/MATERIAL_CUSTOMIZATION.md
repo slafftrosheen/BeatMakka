@@ -27,4 +27,6 @@ The optimized 20-model library consolidates 75 mesh objects and 79 material prim
 
 ## Uploaded bindings
 
+The A01-07 continuation adds scoped finish rendering, lifecycle checks and a separate original material candidate. See [verification and review images](A01_07_VERIFICATION.md). Production maps/bindings remain unchanged until candidate review and explicit upload acceptance.
+
 Four color sets at two sizes, two shared channels at two sizes, and two UI images account for the approved 14 images. IDs are in `data/content-ids.json`; receipts are in `docs/evidence/private-uploads`. All IDs were returned by Studio MCP. The first string-only preload check failed; a follow-up through ImageLabel instances returned Success for all 14, and the actual UI images report loaded. Final 3D PBR appearance remains pending native mesh import and visual review. Avoid duplicate uploads.

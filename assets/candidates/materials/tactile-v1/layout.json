@@ -1,0 +1,367 @@
+{
+  "id": "FZ_MaterialAtlas_v1",
+  "size_px": 1024,
+  "grid": 4,
+  "slots": [
+    {
+      "index": 0,
+      "name": "paint_primary",
+      "color": [
+        47,
+        92,
+        88
+      ],
+      "roughness": 0.62,
+      "metalness": 0,
+      "rect_px": [
+        0,
+        0,
+        256,
+        256
+      ],
+      "gutter_px": 8
+    },
+    {
+      "index": 1,
+      "name": "paint_secondary",
+      "color": [
+        111,
+        145,
+        134
+      ],
+      "roughness": 0.7,
+      "metalness": 0,
+      "rect_px": [
+        256,
+        0,
+        256,
+        256
+      ],
+      "gutter_px": 8
+    },
+    {
+      "index": 2,
+      "name": "trim",
+      "color": [
+        232,
+        216,
+        183
+      ],
+      "roughness": 0.65,
+      "metalness": 0,
+      "rect_px": [
+        512,
+        0,
+        256,
+        256
+      ],
+      "gutter_px": 8
+    },
+    {
+      "index": 3,
+      "name": "accent",
+      "color": [
+        202,
+        116,
+        83
+      ],
+      "roughness": 0.68,
+      "metalness": 0,
+      "rect_px": [
+        768,
+        0,
+        256,
+        256
+      ],
+      "gutter_px": 8
+    },
+    {
+      "index": 4,
+      "name": "amber",
+      "color": [
+        243,
+        182,
+        95
+      ],
+      "roughness": 0.46,
+      "metalness": 0,
+      "rect_px": [
+        0,
+        256,
+        256,
+        256
+      ],
+      "gutter_px": 8
+    },
+    {
+      "index": 5,
+      "name": "wood",
+      "color": [
+        121,
+        81,
+        59
+      ],
+      "roughness": 0.82,
+      "metalness": 0,
+      "rect_px": [
+        256,
+        256,
+        256,
+        256
+      ],
+      "gutter_px": 8
+    },
+    {
+      "index": 6,
+      "name": "stone",
+      "color": [
+        183,
+        156,
+        126
+      ],
+      "roughness": 0.92,
+      "metalness": 0,
+      "rect_px": [
+        512,
+        256,
+        256,
+        256
+      ],
+      "gutter_px": 8
+    },
+    {
+      "index": 7,
+      "name": "graphite",
+      "color": [
+        44,
+        48,
+        49
+      ],
+      "roughness": 0.78,
+      "metalness": 0,
+      "rect_px": [
+        768,
+        256,
+        256,
+        256
+      ],
+      "gutter_px": 8
+    },
+    {
+      "index": 8,
+      "name": "bare_metal",
+      "color": [
+        183,
+        156,
+        126
+      ],
+      "roughness": 0.4,
+      "metalness": 1,
+      "rect_px": [
+        0,
+        512,
+        256,
+        256
+      ],
+      "gutter_px": 8
+    },
+    {
+      "index": 9,
+      "name": "foliage",
+      "color": [
+        111,
+        145,
+        134
+      ],
+      "roughness": 0.8,
+      "metalness": 0,
+      "rect_px": [
+        256,
+        512,
+        256,
+        256
+      ],
+      "gutter_px": 8
+    },
+    {
+      "index": 10,
+      "name": "canvas",
+      "color": [
+        232,
+        216,
+        183
+      ],
+      "roughness": 0.94,
+      "metalness": 0,
+      "rect_px": [
+        512,
+        512,
+        256,
+        256
+      ],
+      "gutter_px": 8
+    },
+    {
+      "index": 11,
+      "name": "rubber",
+      "color": [
+        44,
+        48,
+        49
+      ],
+      "roughness": 0.96,
+      "metalness": 0,
+      "rect_px": [
+        768,
+        512,
+        256,
+        256
+      ],
+      "gutter_px": 8
+    },
+    {
+      "index": 12,
+      "name": "ceramic",
+      "color": [
+        232,
+        216,
+        183
+      ],
+      "roughness": 0.4,
+      "metalness": 0,
+      "rect_px": [
+        0,
+        768,
+        256,
+        256
+      ],
+      "gutter_px": 8
+    },
+    {
+      "index": 13,
+      "name": "leather",
+      "color": [
+        121,
+        81,
+        59
+      ],
+      "roughness": 0.84,
+      "metalness": 0,
+      "rect_px": [
+        256,
+        768,
+        256,
+        256
+      ],
+      "gutter_px": 8
+    },
+    {
+      "index": 14,
+      "name": "cloth",
+      "color": [
+        47,
+        92,
+        88
+      ],
+      "roughness": 0.96,
+      "metalness": 0,
+      "rect_px": [
+        512,
+        768,
+        256,
+        256
+      ],
+      "gutter_px": 8
+    },
+    {
+      "index": 15,
+      "name": "cloth_trim",
+      "color": [
+        202,
+        116,
+        83
+      ],
+      "roughness": 0.96,
+      "metalness": 0,
+      "rect_px": [
+        768,
+        768,
+        256,
+        256
+      ],
+      "gutter_px": 8
+    }
+  ],
+  "uv_origin": "bottom-left; PNG rectangles are top-left",
+  "sets": {
+    "quay": {
+      "label": "Workshop teal",
+      "primary": "teal",
+      "secondary": "faded",
+      "trim": "cream",
+      "accent": "coral"
+    },
+    "chalk": {
+      "label": "Warm cream",
+      "primary": "cream",
+      "secondary": "stone",
+      "trim": "teal",
+      "accent": "amber",
+      "materials": {
+        "wood": "stone",
+        "leather": "walnut",
+        "ceramic": "cream"
+      }
+    },
+    "coral": {
+      "label": "Repaired coral",
+      "primary": "coral",
+      "secondary": "cream",
+      "trim": "graphite",
+      "accent": "teal",
+      "materials": {
+        "wood": "walnut",
+        "leather": "coral",
+        "ceramic": "cream"
+      }
+    },
+    "afterhours": {
+      "label": "After hours",
+      "primary": "graphite",
+      "secondary": "teal",
+      "trim": "cream",
+      "accent": "amber",
+      "materials": {
+        "wood": "graphite",
+        "leather": "graphite",
+        "ceramic": "stone"
+      }
+    }
+  },
+  "runtime": "Swap precomposed ColorMap by set; masks are offline authoring inputs, not a Roblox shader.",
+  "entity_slots": {
+    "device": [
+      "paint_primary",
+      "paint_secondary",
+      "trim",
+      "accent",
+      "rubber",
+      "bare_metal"
+    ],
+    "item": [
+      "wood",
+      "stone",
+      "ceramic",
+      "leather",
+      "bare_metal"
+    ],
+    "character_clothing": [
+      "canvas",
+      "cloth",
+      "cloth_trim",
+      "leather",
+      "bare_metal"
+    ]
+  },
+  "character_note": "Reusable clothing tiles only. A specific character needs its own UVs, skin/face maps and rig; none are implied by this library."
+}

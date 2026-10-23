@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "maps": 12,
+  "palettes": 4,
+  "reproduced_exact_roster_files": 13,
+  "tampered_map_rejected": true,
+  "unlisted_file_rejected": true,
+  "production_layout_unchanged": true,
+  "bindings_unchanged": true,
+  "stage": "candidate only"
+}

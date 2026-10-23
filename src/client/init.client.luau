@@ -279,6 +279,7 @@ connect(RunService.Heartbeat, function(dt)
         end
         if state then
             appearance:apply(state)
+            view.appearanceStatus.Text = appearance.status or ""
         end
         local character = game:GetService("Players").LocalPlayer.Character
         local root = character and character:FindFirstChild("HumanoidRootPart")
@@ -329,5 +330,6 @@ script.Destroying:Connect(function()
     updateTouchControls()
     audio:destroy()
     listeningAudio:destroy()
+    appearance:destroy()
     view.screen:Destroy()
 end)

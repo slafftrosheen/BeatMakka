@@ -1,0 +1,37 @@
+{
+  "schema": 1,
+  "id": "tactile-v1",
+  "stage": "candidate",
+  "art_approved": false,
+  "studio_imported": false,
+  "runtime_verified": false,
+  "uploaded": false,
+  "provenance": "Original mathematical synthesis; fixed RNG seed 8000 + slot index. No third-party bitmap or paid provider.",
+  "authority": "01_Visual_Artbook.pdf pages 4, 7, 9; 02_Production_Atlas.pdf T01-T04; approved Needle Quay style board",
+  "layout": "FZ_MaterialAtlas_v1",
+  "resolutions": [
+    512,
+    1024
+  ],
+  "gutter_1024": 8,
+  "notes": "Broad wood grain, restrained handling marks, satin metal and dense matte rubber. Shared UVs cannot place convincing object-specific edge damage. No baked light or text.",
+  "generator_sha256": "6f71ddf07df6a8c3b7bdaba9f6d03b2176eb98a156ffc9072d644fd09d8de764",
+  "production_layout_sha256": "d776df1295a5fb50c99336a76a637922c17aa5cf9c2940274074a47c44ad1209",
+  "content_ids_sha256": "e45896377efa7d42c77609d89aa4cf8aca579fa30bb34ce111a1533ee6ca3133",
+  "files": {
+    "layout.json": "faa441425ecdf67987ca5c82ff607fddd186300d9d2a72c37c7319bf8cb6b0e1",
+    "sets/afterhours/atlas_basecolor.png": "6aaeb7a9690a8cde0af1bda0ff98641a5f4fab171de8709fbfa089bfa00b01cd",
+    "sets/afterhours/atlas_basecolor_512.png": "8f9f7966219199c586d6acd1721223d31dc10126c9ae0e9f1d4516d17a21c2e1",
+    "sets/chalk/atlas_basecolor.png": "b235d38700ab182503900c261636b36ea53a73f32764aee2e4c8b2d26a134acf",
+    "sets/chalk/atlas_basecolor_512.png": "f81c27e049c1eb37be5e505472346fb7fd5a616f525ab885563738348ea1d6ec",
+    "sets/coral/atlas_basecolor.png": "f6a74f787f853d9606f23f0222d9c9c6b806886da1017ee7a6c95c618c3c4883",
+    "sets/coral/atlas_basecolor_512.png": "abc6eae0507a1f4b7f1def909dcac08b557c333a2fc6f6e742dd3d84b466b6f5",
+    "sets/quay/atlas_basecolor.png": "4fcee5cdb4228c2f26317b921398958e2a95d1baeea52a17445858ca1884abf8",
+    "sets/quay/atlas_basecolor_512.png": "9b9099deb62b02ddd4bad242eeac03f98c7a524bfd1904320906892808969ed0",
+    "shared/atlas_metalness.png": "d2f1433b85dd698ac2617204c24c5384ed45d0d583916fc70b4e73451cbb966d",
+    "shared/atlas_metalness_512.png": "2f5537207895c626bad32a88d93038ebcf023221adede6d208d53ee80e7e0f22",
+    "shared/atlas_roughness.png": "72afd0c020734ea40dc55b0a41b27c5c44726173f6d295c4dcad6d02685730c5",
+    "shared/atlas_roughness_512.png": "5a147c813f208ddcbf716f99c1e9039e7184561d723151838c710ba990624512"
+  },
+  "hash_policy": "Generator and production JSON input hashes normalize CRLF to LF; candidate file roster hashes exact bytes."
+}

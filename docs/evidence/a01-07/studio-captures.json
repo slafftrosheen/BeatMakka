@@ -1,0 +1,17 @@
+{
+  "stage": "temporary local candidate inspection only",
+  "model": "H01",
+  "source_sha256": "7f27ff7da218c44e19fba120ab3decda47f4cbd836db0eb38d94d0882dfa15e3",
+  "payload_sha256": "c37e9c091b4e39daf053a8f5ce30270a6ecbd48ee48cba22651f7dc984cc5b26",
+  "candidate_manifest_sha256": "0e6372b961d2dfc06695997d98cc42295b70c4aff2980f3a818f33a112c39609",
+  "resolution": 512,
+  "maps": "four color maps; shared roughness/metalness",
+  "captures": {
+    "studio-front.jpg": "625525b08f85ec8d4ffdf27b5391b02e21cea07967d9fcb94d9840cbfbdc0b5c",
+    "studio-rear.jpg": "a53c515e0aebed52db0f9d67d3a5ee430a8ae597e544c8faecc73c65335ca8d6"
+  },
+  "temporary_models_removed": true,
+  "original_lighting_restored": true,
+  "cloud_uploads": 0,
+  "human_art_approved": false
+}
