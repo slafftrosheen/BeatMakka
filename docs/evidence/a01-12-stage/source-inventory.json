@@ -1,0 +1,24 @@
+{
+  "folder": "C:/Users/slavd/OneDrive/Pictures/Assets",
+  "entries": [
+    "400 Vintage Alpha",
+    "45 Unholy Brushes",
+    "Brush - Wood Surface",
+    "Brush Animal Ornament",
+    "ChatGPT Image Sep 30, 2026, 10_25_01 AM.png",
+    "Favelas",
+    "Stylized Brushset + alphas",
+    "Stylized Edition",
+    "Stylized Materials Library -",
+    "Wall Maker",
+    "ice_surface_alpha_defined_cracks_500x500mm_8192_16bit.tif",
+    "latvian_elements_blender_pack"
+  ],
+  "new_external_files_used": [],
+  "reused_sources": [
+    "src/shared/Theme.luau",
+    "src/client/GuiFactory.luau",
+    "existing canonical I05 podium"
+  ],
+  "stage": "source-authored native controls; not Studio/rendered/physical acceptance"
+}

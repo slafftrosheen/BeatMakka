@@ -85,6 +85,7 @@ function MusicService.start(world)
             preview = preview,
             cue = cue,
             listening = listening and listening:state(player),
+            stage = listening and listening:stageState(player),
             concert = concert and concert:state(player),
         })
     end
@@ -177,7 +178,7 @@ function MusicService.start(world)
         profiles,
         send,
         function(player)
-            listening:leave(player)
+            listening:depart(player)
             release(player)
         end,
         nearby,
@@ -243,7 +244,7 @@ function MusicService.start(world)
             )
         end)
         player.CharacterRemoving:Connect(function()
-            listening:leave(player)
+            listening:depart(player)
             release(player)
         end)
     end
@@ -252,7 +253,7 @@ function MusicService.start(world)
         join(player)
     end
     Players.PlayerRemoving:Connect(function(player)
-        listening:leave(player)
+        listening:depart(player)
         release(player)
         profiles[player] = nil
         rooms:remove(player)
@@ -273,7 +274,7 @@ function MusicService.start(world)
                 send(player, "This station is occupied. The other workbench is available to try.")
                 return
             end
-            listening:leave(player)
+            listening:depart(player)
             release(player)
             profile.station = id
             station.owner = player
@@ -340,10 +341,11 @@ function MusicService.start(world)
             return
         end
         if action == "LeaveListening" then
-            listening:leave(player)
+            listening:depart(player)
             return
         end
         if action == "Release" then
+            listening:depart(player)
             release(player)
             return
         end
@@ -354,6 +356,10 @@ function MusicService.start(world)
         end
         if action:sub(1, 7) == "Chapter" then
             concert:command(player, action, a)
+            return
+        end
+        if action:sub(1, 5) == "Stage" then
+            listening:command(player, action)
             return
         end
         local station = world.stations[profile.station]

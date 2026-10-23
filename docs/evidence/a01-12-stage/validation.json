@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-23",
+  "baseline": "752f5ac870d1a2ac39133bb1941c18548c4aab92",
+  "source_review": "completed independently; focus finding corrected and re-reviewed; final throttling/broadcast/scroll changes reviewed",
+  "stylua": "PASS",
+  "selene": {
+    "errors": 0,
+    "warnings": 0,
+    "parse_errors": 0
+  },
+  "rojo_build": {
+    "sha256": "5439fcb79029dbce1667503121e04a96dfa8f2101ad08e6a5d193604f47da824",
+    "source_scripts": 46,
+    "qa_excluded": true
+  },
+  "offline_binding_safety_tests": {
+    "passed": 6,
+    "total": 6
+  },
+  "material_verifier": {
+    "passed": true,
+    "maps": 12,
+    "templates": 8,
+    "audio_preserved": 100
+  },
+  "assets_and_content_ids_unchanged": true,
+  "new_server_contracts": "7 groups authored; NOT EXECUTED",
+  "new_client_contracts": "StageUi authored; NOT EXECUTED",
+  "studio_regressions": "NOT EXECUTED for this change: no connected instances",
+  "real_multiple_clients": "NOT EXECUTED for this change",
+  "audio_and_layout_and_controller": "NOT VERIFIED for this change",
+  "desktop_control_used": false,
+  "studio_mutations_this_turn": false,
+  "published": false,
+  "issue14_close_eligible": false
+}

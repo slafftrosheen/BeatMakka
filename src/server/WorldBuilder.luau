@@ -389,6 +389,20 @@ function WorldBuilder.build()
         prompt = prompt(listeningAnchor, "Share your loop", "Opt-in listening / 32-stud range"),
         label = label(listeningAnchor, "LISTENING COURT / IDLE", 3),
     }
+    local boardAnchor = part(
+        podium,
+        "StageBoardTarget",
+        Vector3.new(1, 2, 1),
+        CFrame.new(39, 3, 15),
+        Theme.Cream,
+        false
+    )
+    boardAnchor.Transparency = 1
+    listening.boardPrompt =
+        prompt(boardAnchor, "Courtyard stage", "Voluntary sets / prepare, listen, leave")
+    listening.boardPrompt.KeyboardKeyCode = Enum.KeyCode.G
+    listening.boardPrompt.GamepadKeyCode = Enum.KeyCode.ButtonR1
+    listening.boardPrompt.RequiresLineOfSight = false
     local court = part(
         root,
         "ListeningCourt",

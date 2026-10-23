@@ -787,7 +787,10 @@ function WorkshopView:update(state)
     if not self.panel.Visible then
         self:cancelInput(false)
     end
-    self.hud.Visible = state.station == nil and not (state.concert and state.concert.open)
+    self.hud.Visible = state.station == nil
+        and not state.listening
+        and not (state.concert and state.concert.open)
+        and not (state.stage and state.stage.open)
     self.resizeHud()
     if not wasOpen and self.panel.Visible then
         self:showPage("Play")

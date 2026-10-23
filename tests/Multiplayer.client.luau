@@ -32,6 +32,7 @@ control.Drive.OnClientEvent:Connect(function(index, action, a, b)
                         or (a == "I05" and o.Name == "ListeningTarget")
                         or (a == "Mica" and o.Name == "MicaTalkTarget")
                         or (a == "Chapter" and o.Name == "ChapterTarget")
+                        or (a == "StageBoard" and o.Name == "StageBoardTarget")
                     )
                 then
                     anchor = o

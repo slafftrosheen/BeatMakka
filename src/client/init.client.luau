@@ -11,6 +11,7 @@ local WorkshopView = require(script.WorkshopView)
 local Restoration = require(script.Restoration)
 local DeviceAppearance = require(script.DeviceAppearance)
 local ListeningView = require(script.ListeningView)
+local StageView = require(script.StageView)
 local ConcertView = require(script.ConcertView)
 local ConcertScene = require(script.ConcertScene)
 local canSend = require(script.CommandPolicy)
@@ -22,6 +23,8 @@ local stateEvent = network:WaitForChild("State")
 local audio = AudioEngine.new()
 local listeningAudio = AudioEngine.new("CourtyardListening", { musicOnly = true })
 local listeningView
+local stageView
+local updateListeningUi
 local concertView
 local concertScene = ConcertScene.new()
 local playbackKind
@@ -50,7 +53,12 @@ local touchWasEnabled
 local touchEnabledConnection
 
 local function ownsTouchControls()
-    return state and (state.station or (state.concert and state.concert.open))
+    return state
+        and (
+            state.station
+            or (state.concert and state.concert.open)
+            or (state.stage and state.stage.open)
+        )
 end
 
 local function updateTouchControls()
@@ -127,10 +135,9 @@ view = WorkshopView.new({
         audio:setMuted(value)
         listeningAudio:setMuted(value)
         if state then
-            listeningView:update(
-                state.listening,
-                if value then "MUTED / Sound control restores audio." else listeningAudio:status()
-            )
+            if updateListeningUi then
+                updateListeningUi()
+            end
         end
     end,
     effects = function(value)
@@ -146,24 +153,41 @@ connect(UserInputService.WindowFocusReleased, function()
     if state and state.concert and state.concert.open then
         send("ChapterClose")
     end
+    if state and (state.listening or (state.stage and state.stage.open)) then
+        send("StageClose")
+    end
 end)
 connect(UserInputService.TextBoxFocused, function()
     view:cancelInput(true)
 end)
 listeningView = ListeningView.new(view.screen, function()
     send("LeaveListening")
+end, function()
+    view:setMuted(not view.muted)
 end)
+stageView = StageView.new(view.screen, send, function()
+    view:setMuted(not view.muted)
+end)
+updateListeningUi = function(notice)
+    if not state then
+        return
+    end
+    local boardOpen = state.stage and state.stage.open
+    listeningView:update(
+        if boardOpen then nil else state.listening,
+        if listeningAudio.muted
+            then "MUTED / Sound control restores audio."
+            else listeningAudio:status(),
+        view.muted
+    )
+    stageView:update(state.stage, view.muted, notice, listeningAudio:status())
+end
 concertView = ConcertView.new(view.screen, send, function()
     view:setMuted(not view.muted)
 end)
 connect(listeningAudio.Changed.Event, function()
     if state then
-        listeningView:update(
-            state.listening,
-            if listeningAudio.muted
-                then "MUTED / Sound control restores audio."
-                else listeningAudio:status()
-        )
+        updateListeningUi()
     end
 end)
 view.audioStatus.Text = audio:status()
@@ -208,12 +232,7 @@ connect(stateEvent.OnClientEvent, function(nextState)
     )
     view:update(state)
     concertScene:update(state.concert)
-    listeningView:update(
-        state.listening,
-        if listeningAudio.muted
-            then "MUTED / Sound control restores audio."
-            else listeningAudio:status()
-    )
+    updateListeningUi(state.notice)
     view.audioStatus.Text = audio:status()
     Restoration.update(state.restoration, effects, state.neighborhood)
     appearance:apply(state)
@@ -302,6 +321,7 @@ connect(RunService.Heartbeat, function(dt)
         view:tick()
         listeningView:tick()
         if state then
+            stageView:update(state.stage, view.muted, nil, listeningAudio:status())
             concertView:update(
                 state.concert,
                 state.saveMode,
@@ -366,6 +386,7 @@ script.Destroying:Connect(function()
     view:cancelInput(true)
     send("Release")
     send("ChapterClose")
+    send("StageClose")
     concertScene:destroy()
     for _, connection in connections do
         connection:Disconnect()

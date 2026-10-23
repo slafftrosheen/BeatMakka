@@ -1,5 +1,6 @@
 local Workspace = game:GetService("Workspace")
 local Pattern = require(game:GetService("ReplicatedStorage").Shared.Pattern)
+local StageQueue = require(script.Parent.StageQueue)
 local ListeningSession = {}
 ListeningSession.__index = ListeningSession
 
@@ -8,11 +9,14 @@ function ListeningSession.new(podium, profiles, send, release, nearby, lifecycle
         podium = podium,
         profiles = profiles,
         send = send,
+        release = release,
         nearby = nearby,
         members = {},
         revision = 0,
         lifecycle = lifecycle or {},
     }, ListeningSession)
+    self.stage =
+        StageQueue.new(self, podium, profiles, send, release, nearby, lifecycle and lifecycle.clock)
     podium.prompt.Triggered:Connect(function(player)
         local profile = profiles[player]
         if not profile or not profile.ready or not nearby(player, podium.anchor, 11) then
@@ -34,6 +38,12 @@ function ListeningSession.new(podium, profiles, send, release, nearby, lifecycle
                 send(player, "Joined the courtyard loop. Mute or leave at any time.")
             end
         else
+            self.stage:tick()
+            if self.stage.queue[1] then
+                self.stage:open(player)
+                send(player, "A prepared set has the next turn. Use the stage board when offered.")
+                return
+            end
             local snapshot = Pattern.sanitize(profile.pattern, profile.unlocked)
             local audible = false
             for pad, row in snapshot.rows do
@@ -47,32 +57,33 @@ function ListeningSession.new(podium, profiles, send, release, nearby, lifecycle
                 send(player, "Make a loop with an unmuted step at a workshop sampler first.")
                 return
             end
-            release(player)
-            self.owner = player
-            self.pattern = snapshot
-            self.startedAt = Workspace:GetServerTimeNow() + 0.3
-            self.firstLoopEndsAt = self.startedAt
-                + Pattern.Steps * Pattern.stepDuration(snapshot.bpm)
-            self.firstBarReported = false
-            self.performanceEligible = self.lifecycle.eligible ~= nil
-                and self.lifecycle.eligible(player, snapshot) == true
-            self.revision += 1
-            local revision = self.revision
-            task.delay(self.firstLoopEndsAt - Workspace:GetServerTimeNow(), function()
-                if self.owner == player and self.revision == revision then
-                    self:reportFirstLoop()
-                end
-            end)
-            self.members[player] = true
-            podium.prompt.ActionText = "Join / leave listening"
-            podium.label.Text = "LIVE LOOP / " .. player.DisplayName
-            send(
-                player,
-                "Sharing a snapshot of your loop. Stop sharing from the listening controls."
-            )
+            self:start(player, snapshot)
         end
     end)
     return self
+end
+
+function ListeningSession:start(player, snapshot)
+    self.release(player)
+    self.owner = player
+    self.pattern = snapshot
+    self.startedAt = Workspace:GetServerTimeNow() + 0.3
+    self.firstLoopEndsAt = self.startedAt + Pattern.Steps * Pattern.stepDuration(snapshot.bpm)
+    self.firstBarReported = false
+    self.performanceEligible = self.lifecycle.eligible ~= nil
+        and self.lifecycle.eligible(player, snapshot) == true
+    self.revision += 1
+    local revision = self.revision
+    task.delay(self.firstLoopEndsAt - Workspace:GetServerTimeNow(), function()
+        if self.owner == player and self.revision == revision then
+            self:reportFirstLoop()
+        end
+    end)
+    self.members[player] = true
+    self.podium.prompt.ActionText = "Join / leave listening"
+    self.podium.label.Text = "LIVE LOOP / " .. player.DisplayName
+    self.send(player, "Sharing a snapshot of your loop. Stop sharing from the listening controls.")
+    self.stage:refresh()
 end
 
 function ListeningSession:state(player)
@@ -118,6 +129,7 @@ function ListeningSession:stop(notice)
     for player in members do
         self.send(player, notice)
     end
+    self.stage:refresh()
 end
 
 function ListeningSession:leave(player)
@@ -139,7 +151,21 @@ function ListeningSession:tick()
             self:leave(player)
         end
     end
+    self.stage:tick()
     self:reportFirstLoop()
+end
+
+function ListeningSession:openBoard(p)
+    self.stage:open(p)
+end
+function ListeningSession:stageState(p)
+    return self.stage:state(p)
+end
+function ListeningSession:command(p, action)
+    self.stage:command(p, action)
+end
+function ListeningSession:depart(p)
+    self.stage:depart(p)
 end
 
 return ListeningSession
