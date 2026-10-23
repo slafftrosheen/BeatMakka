@@ -196,6 +196,8 @@ function MusicService.start(world)
         profile.epoch = 0
         profile.tokens = 36
         profile.lastToken = os.clock()
+        profile.tapTokens = 96
+        profile.lastTapToken = profile.lastToken
         profile.lastSave = -math.huge
         profiles[player] = profile
         task.spawn(function()
@@ -274,12 +276,22 @@ function MusicService.start(world)
             return
         end
         local now = os.clock()
-        profile.tokens = math.min(36, profile.tokens + (now - profile.lastToken) * 24)
-        profile.lastToken = now
-        if profile.tokens < 1 then
-            return
+        if action == "Tap" then
+            -- Keep a dense multi-pad roll from consuming Stop/Release's budget.
+            profile.tapTokens = math.min(96, profile.tapTokens + (now - profile.lastTapToken) * 96)
+            profile.lastTapToken = now
+            if profile.tapTokens < 1 then
+                return
+            end
+            profile.tapTokens -= 1
+        else
+            profile.tokens = math.min(36, profile.tokens + (now - profile.lastToken) * 24)
+            profile.lastToken = now
+            if profile.tokens < 1 then
+                return
+            end
+            profile.tokens -= 1
         end
-        profile.tokens -= 1
         if action == "Hello" then
             send(player)
             return
@@ -385,14 +397,32 @@ function MusicService.start(world)
             if not profile.recording then
                 return
             end
-            local time = Workspace:GetServerTimeNow()
-            if time < profile.startedAt then
+            local step = Pattern.recordStep(
+                profile.pattern.bpm,
+                profile.startedAt,
+                Workspace:GetServerTimeNow(),
+                b,
+                profile.epoch
+            )
+            if not step then
                 return
             end
-            local absolute = math.floor(
-                (time - profile.startedAt) / Pattern.stepDuration(profile.pattern.bpm) + 0.5
-            )
-            profile.pattern.rows[a][absolute % 16 + 1] = true
+            if profile.pattern.rows[a][step] then
+                return
+            end
+            profile.pattern.rows[a][step] = true
+            profile.editVersion += 1
+            -- Apply notes immediately, but coalesce chord feedback into one state.
+            if not profile.pendingTapState then
+                profile.pendingTapState = true
+                task.delay(1 / 30, function()
+                    profile.pendingTapState = false
+                    if profiles[player] == profile then
+                        send(player)
+                    end
+                end)
+            end
+            return
         elseif action == "Save" then
             if profile.saving or now - profile.lastSave < 5 then
                 send(player, "Please wait a moment between saves.")
@@ -421,7 +451,6 @@ function MusicService.start(world)
             or action == "Assign"
             or action == "Bpm"
             or action == "Finish"
-            or action == "Tap"
             or action == "SelectSlot"
             or action == "ShelfLoad"
         then

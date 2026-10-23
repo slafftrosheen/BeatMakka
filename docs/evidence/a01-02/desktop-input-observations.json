@@ -1,0 +1,28 @@
+{
+  "kind": "authored summary of actual MCP tool observations, not a raw device trace",
+  "mouse": {
+    "heldBeforeRelease": true,
+    "heldAfterRelease": false,
+    "totalHits": 1,
+    "localPlaybackSubmissions": 0
+  },
+  "keyboard": {
+    "simultaneousHeldPads": [
+      1,
+      2
+    ],
+    "bothReleased": true,
+    "totalHitsAfterMouseAndChord": 3
+  },
+  "finalMouseRerun": {
+    "exactlyOneHit": true,
+    "released": true
+  },
+  "gamepadInjection": {
+    "selected": "Pad_03",
+    "activated": false,
+    "acceptance": "NOT_VERIFIED"
+  },
+  "physicalDeviceAvailable": false,
+  "acousticLatency": "NOT_MEASURED"
+}

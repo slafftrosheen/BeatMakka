@@ -27,6 +27,7 @@ local view
 local lastAbsolute = -1
 local epoch = -1
 local effects = true
+local transportInterrupted = false
 local feedback = WorldFeedback.new()
 local connections = {}
 local function connect(signal, callback)
@@ -78,23 +79,44 @@ local function send(action, a, b)
         or action == "LeaveListening"
         or (state and state.ready and state.station)
     then
+        if action == "Stop" or action == "Release" then
+            transportInterrupted = true
+            audio:stop()
+        elseif action == "Play" or action == "Record" then
+            transportInterrupted = false
+        end
         command:FireServer(action, a, b)
     end
 end
 
 local function tap(pad)
     if state and state.ready and state.station then
+        local submitted = false
+        local hitAt = Workspace:GetServerTimeNow()
         if not state.pattern.muted[pad] then
-            audio:play(state.pattern.assignments[pad])
+            submitted = audio:play(state.pattern.assignments[pad])
         end
+        local submittedAt = os.clock()
         feedback:pulse(pad, state.station)
-        send("Tap", pad)
+        if state.recording then
+            send("Tap", pad, { at = hitAt, epoch = state.epoch })
+        end
+        return submitted, submittedAt
     end
+    return false
 end
 
 view = WorkshopView.new({
     command = send,
     tap = tap,
+    interrupt = function()
+        transportInterrupted = true
+        audio:stop()
+        -- Stop also covers a Play/Record command whose reply is still in flight.
+        if state and state.ready and state.station then
+            send("Stop")
+        end
+    end,
     mute = function(value)
         audio:setMuted(value)
         listeningAudio:setMuted(value)
@@ -113,6 +135,12 @@ view = WorkshopView.new({
         end
     end,
 })
+connect(UserInputService.WindowFocusReleased, function()
+    view:cancelInput(true)
+end)
+connect(UserInputService.TextBoxFocused, function()
+    view:cancelInput(true)
+end)
 listeningView = ListeningView.new(view.screen, function()
     send("LeaveListening")
 end)
@@ -131,7 +159,10 @@ connect(audio.Changed.Event, function()
     view.audioStatus.Text = audio:status()
 end)
 connect(stateEvent.OnClientEvent, function(nextState)
-    if state and state.playing and not nextState.playing then
+    if
+        state
+        and ((state.playing and not nextState.playing) or (state.station and not nextState.station))
+    then
         audio:stop()
     end
     local nextListening = nextState.listening
@@ -141,6 +172,9 @@ connect(stateEvent.OnClientEvent, function(nextState)
         listeningEpoch = if nextListening then nextListening.epoch else -1
     end
     state = nextState
+    if not state.playing then
+        transportInterrupted = false
+    end
     if state.station or state.listening then
         -- Do not let waterfront ambience bleed into an opted-in music session.
         audio:ambient(false)
@@ -194,6 +228,7 @@ ContextActionService:BindActionAtPriority("SamplerKeyboard", function(_, inputSt
         return Enum.ContextActionResult.Pass
     end
     if inputState ~= Enum.UserInputState.Begin then
+        view.padInput:finish(input)
         return Enum.ContextActionResult.Sink
     end
     if input.KeyCode == Enum.KeyCode.Space or input.KeyCode == Enum.KeyCode.ButtonX then
@@ -205,8 +240,7 @@ ContextActionService:BindActionAtPriority("SamplerKeyboard", function(_, inputSt
     else
         for pad = 1, 16 do
             if input.KeyCode == Enum.KeyCode[Catalog.List[pad].key] then
-                view:selectPad(pad)
-                tap(pad)
+                view:beginPad(pad, input)
                 break
             end
         end
@@ -254,7 +288,7 @@ connect(RunService.Heartbeat, function(dt)
                 and (not state or (not state.station and not state.listening))
         )
     end
-    if not state or not state.playing then
+    if not state or not state.playing or transportInterrupted then
         lastAbsolute = -1
         return
     end
@@ -284,6 +318,8 @@ connect(RunService.Heartbeat, function(dt)
 end)
 
 script.Destroying:Connect(function()
+    view:cancelInput(true)
+    send("Release")
     for _, connection in connections do
         connection:Disconnect()
     end

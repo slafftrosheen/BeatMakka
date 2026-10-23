@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"total\":8,\"passed\":8,\"checks\":{\"1\":{\"name\":\"four slots retain independent notes, assignments, mutes and BPM\",\"passed\":true},\"8\":{\"name\":\"quest requires acceptance, all discoveries and the exact successfully saved quay loop\",\"passed\":true},\"3\":{\"name\":\"six shelf positions are bounded and require an unmuted note\",\"passed\":true},\"2\":{\"name\":\"shelf snapshots all slots and rejects stale overwrite/load commands\",\"passed\":true},\"5\":{\"name\":\"future schemas and corrupt revisions cannot be overwritten\",\"passed\":true},\"4\":{\"name\":\"legacy schema migrates into A and upgrades without changing namespace revision\",\"passed\":true},\"7\":{\"name\":\"restore retains new shelf, discovery and quest progress as dirty\",\"passed\":true},\"6\":{\"name\":\"failed shelf write retains dirty work, later save round-trips every position and quest\",\"passed\":true}}}"
+    }
+  ],
+  "isError": false
+}

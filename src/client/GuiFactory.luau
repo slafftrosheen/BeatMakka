@@ -32,7 +32,7 @@ function GuiFactory.label(parent, text, size, color)
     })
 end
 
-function GuiFactory.button(parent, text, callback)
+function GuiFactory.button(parent, text, callback, options)
     local button = GuiFactory.make("TextButton", parent, {
         Text = text,
         BackgroundColor3 = Theme.Teal,
@@ -59,9 +59,11 @@ function GuiFactory.button(parent, text, callback)
     button.SelectionLost:Connect(function()
         ring.Enabled = false
     end)
-    button.Activated:Connect(function()
-        GuiFactory.Cue:Fire("ui_tap")
-        callback()
+    button.Activated:Connect(function(input)
+        if not options or not options.silent then
+            GuiFactory.Cue:Fire("ui_tap")
+        end
+        callback(input)
     end)
     return button
 end

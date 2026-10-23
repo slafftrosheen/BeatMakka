@@ -8,6 +8,7 @@ local Cosmetics = require(Shared.CosmeticCatalog)
 local Atlas = require(Shared.UiAtlas)
 local Gui = require(script.Parent.GuiFactory)
 local BeatBookView = require(script.Parent.BeatBookView)
+local PadInput = require(script.Parent.PadInput)
 local WorkshopView = {}
 WorkshopView.__index = WorkshopView
 
@@ -28,6 +29,20 @@ function WorkshopView.new(callbacks)
         ScreenInsets = Enum.ScreenInsets.CoreUISafeInsets,
     })
     self.screen = screen
+    self.inputConnections = {}
+    self.padInput = PadInput.new(function(pad)
+        self:selectPad(pad)
+        return callbacks.tap(pad)
+    end, function(pad, held)
+        local button = self.pads[pad]
+        if button then
+            button:SetAttribute("Held", held)
+            button.BackgroundColor3 = if held
+                then Theme.Coral
+                elseif pad == self.selectedPad then Theme.Amber
+                else Theme.Teal
+        end
+    end)
     local hud = Gui.round(Gui.make("Frame", screen, {
         Position = UDim2.new(0, 12, 1, -112),
         Size = UDim2.new(1, -24, 0, 100),
@@ -215,9 +230,45 @@ function WorkshopView.new(callbacks)
         SortOrder = Enum.SortOrder.LayoutOrder,
     })
     for pad = 1, 16 do
-        local button = Gui.button(pads, tostring(pad), function()
-            self:selectPad(pad)
-            callbacks.tap(pad)
+        local button = Gui.button(pads, tostring(pad), function(input)
+            -- Mouse/touch already fired on begin. Activated preserves gamepad and
+            -- accessibility activation without a second hit on finger release.
+            if
+                input
+                and (
+                    input.UserInputType == Enum.UserInputType.Touch
+                    or input.UserInputType == Enum.UserInputType.MouseButton1
+                )
+            then
+                return
+            end
+            local token = {}
+            self:beginPad(pad, token)
+            self.padInput:finish(token)
+        end, { silent = true })
+        button.InputBegan:Connect(function(input)
+            if
+                input.UserInputType == Enum.UserInputType.Touch
+                or input.UserInputType == Enum.UserInputType.MouseButton1
+            then
+                if self:beginPad(pad, input) then
+                    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+                        self.mouseToken = input
+                    end
+                    local connection
+                    connection = input.Changed:Connect(function()
+                        if
+                            input.UserInputState == Enum.UserInputState.End
+                            or input.UserInputState == Enum.UserInputState.Cancel
+                        then
+                            self.padInput:finish(input)
+                            connection:Disconnect()
+                            self.inputConnections[input] = nil
+                        end
+                    end)
+                    self.inputConnections[input] = connection
+                end
+            end
         end)
         button.LayoutOrder = pad
         button.Name = string.format("Pad_%02d", pad)
@@ -338,6 +389,11 @@ function WorkshopView.new(callbacks)
     self.appearanceStatus.Size = UDim2.new(1, -8, 0, 52)
     self.appearanceStatus.AutomaticSize = Enum.AutomaticSize.Y
     self.appearanceStatus.LayoutOrder = 4
+    self.inputStatus = Gui.label(settings, "Input measurements: no hits yet.", 13)
+    self.inputStatus.Name = "InputStatus"
+    self.inputStatus.Size = UDim2.new(1, -8, 0, 72)
+    self.inputStatus.AutomaticSize = Enum.AutomaticSize.Y
+    self.inputStatus.LayoutOrder = 5
     self.status = Gui.label(panel, "Loading session...", 13)
     self.status.Name = "Status"
     self.noticeLabel = header
@@ -422,9 +478,63 @@ function WorkshopView.new(callbacks)
     end
     panel:GetPropertyChangedSignal("AbsoluteSize"):Connect(resize)
     body:GetPropertyChangedSignal("AbsoluteSize"):Connect(resize)
+    self.endedConnection = UserInputService.InputEnded:Connect(function(input)
+        self.padInput:finish(input)
+        local connection = self.inputConnections[input]
+        if connection then
+            connection:Disconnect()
+            self.inputConnections[input] = nil
+        end
+        if input.UserInputType == Enum.UserInputType.MouseButton1 and self.mouseToken then
+            self.padInput:finish(self.mouseToken)
+            local mouseConnection = self.inputConnections[self.mouseToken]
+            if mouseConnection then
+                mouseConnection:Disconnect()
+                self.inputConnections[self.mouseToken] = nil
+            end
+            self.mouseToken = nil
+        end
+    end)
+    self.viewportConnection = screen:GetPropertyChangedSignal("AbsoluteSize"):Connect(function()
+        self:cancelInput(true)
+    end)
+    screen.Destroying:Connect(function()
+        self.padInput:destroy()
+        self:cancelInput(true)
+        if self.state and self.state.station then
+            self.callbacks.command("Release")
+        end
+        self.endedConnection:Disconnect()
+        self.viewportConnection:Disconnect()
+    end)
     self:showPage("Play")
     resize()
     return self
+end
+
+function WorkshopView:beginPad(pad, token)
+    if
+        not self.state
+        or not self.state.ready
+        or not self.state.station
+        or not self.panel.Visible
+        or self.page ~= "Play"
+    then
+        return false
+    end
+    return self.padInput:begin(pad, token)
+end
+
+function WorkshopView:cancelInput(interrupted)
+    self.padInput:cancel()
+    self.mouseToken = nil
+    for _, connection in self.inputConnections do
+        connection:Disconnect()
+    end
+    table.clear(self.inputConnections)
+    if interrupted and self.callbacks.interrupt then
+        self.callbacks.interrupt()
+    end
 end
 
 function WorkshopView:showPage(name)
@@ -438,6 +548,9 @@ function WorkshopView:showPage(name)
         end
     end
     self.page = name
+    if name ~= "Play" then
+        self:cancelInput(false)
+    end
     for pageName, frame in self.pages do
         frame.Visible = pageName == name
         local tab = self.tabs[pageName]
@@ -474,7 +587,10 @@ function WorkshopView:updatePadLabels()
                     elseif pad == self.selectedPad then "SELECTED"
                     else "Tap to play"
             )
-        button.BackgroundColor3 = if pad == self.selectedPad then Theme.Amber else Theme.Teal
+        button.BackgroundColor3 = if self.padInput.held[pad]
+            then Theme.Coral
+            elseif pad == self.selectedPad then Theme.Amber
+            else Theme.Teal
         button.TextColor3 = if pad == self.selectedPad then Theme.Ink else Theme.Cream
     end
     self.libraryTitle.Text = string.format("PAD %02d / Choose a sound to assign", self.selectedPad)
@@ -500,6 +616,9 @@ function WorkshopView:update(state)
     local wasOpen = self.panel.Visible
     self.state = state
     self.panel.Visible = state.station ~= nil
+    if not self.panel.Visible then
+        self:cancelInput(false)
+    end
     self.hud.Visible = state.station == nil
     self.resizeHud()
     if not wasOpen and self.panel.Visible then
@@ -603,6 +722,20 @@ end
 
 function WorkshopView:tick()
     self.bookView:tick()
+    local metrics = self.padInput:diagnostics()
+    self.inputStatus.Text = string.format(
+        "Input: %d hits; %d local playback submissions; %d unavailable/muted. %s",
+        metrics.hits,
+        metrics.submitted,
+        metrics.unavailable,
+        if metrics.p95Ms
+            then string.format(
+                "Handler → Play submission p95 %.2f ms (last %d). Not audible latency.",
+                metrics.p95Ms,
+                metrics.measured
+            )
+            else "No audible latency measurement. Bind and verify the sound bank first."
+    )
     if self.state and self.noticeUntil and os.clock() >= self.noticeUntil then
         self.noticeUntil = nil
         self:update(self.state)

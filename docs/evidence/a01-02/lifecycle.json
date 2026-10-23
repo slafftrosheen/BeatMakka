@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"viewportCancellation\":true,\"cleanup\":true,\"passed\":true,\"hits\":3}"
+    }
+  ],
+  "isError": false
+}

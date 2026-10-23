@@ -64,4 +64,28 @@ function Pattern.position(bpm, startedAt, now)
     local absolute = math.floor((now - startedAt) / Pattern.stepDuration(bpm))
     return absolute, absolute % Pattern.Steps + 1
 end
+
+-- Client event time is accepted only within this authored recording window.
+-- No clock/tempo supplied by a client can replace the server-owned transport.
+function Pattern.recordStep(bpm, startedAt, now, event, epoch)
+    local at = now
+    if event ~= nil then
+        if
+            type(event) ~= "table"
+            or event.epoch ~= epoch
+            or type(event.at) ~= "number"
+            or event.at ~= event.at
+            or event.at < now - 0.35
+            or event.at > now + 0.05
+        then
+            return nil
+        end
+        at = math.min(event.at, now)
+    end
+    if at < startedAt then
+        return nil
+    end
+    local absolute = math.floor((at - startedAt) / Pattern.stepDuration(bpm) + 0.5)
+    return absolute % Pattern.Steps + 1
+end
 return Pattern
