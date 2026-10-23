@@ -13,6 +13,7 @@
 *.fbx binary
 *.blend binary
 *.wav binary
+*.tif binary
 
 # The audition integrity roster hashes exact provider and derived bytes.
 assets/candidates/audio/quay-found-v1/** -text whitespace=cr-at-eol
@@ -23,6 +24,8 @@ output/audio-quay-found-v1/** -text whitespace=cr-at-eol
 assets/candidates/materials/tactile-v1/** -text whitespace=cr-at-eol
 tools/build_finish_candidates.py text eol=lf
 tools/render_finish_candidates.py text eol=lf
+
+assets/candidates/materials/assets-folder-v1/** -text whitespace=cr-at-eol
 
 # Retained user audio and derived kit manifests are exact source evidence.
 assets/candidates/audio/style-starters-v1/** -text whitespace=cr-at-eol

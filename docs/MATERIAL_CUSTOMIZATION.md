@@ -29,4 +29,6 @@ The optimized 20-model library consolidates 75 mesh objects and 79 material prim
 
 The A01-07 continuation adds scoped finish rendering, lifecycle checks and a separate original material candidate. See [verification and review images](A01_07_VERIFICATION.md). Production maps/bindings remain unchanged until candidate review and explicit upload acceptance.
 
+The user Assets-folder continuation adds a separate material candidate derived from retained 16-bit wood and scratch sources, with neutral/Studio views and real-map renderer tests. See [source provenance, review and acceptance limits](A01_07_ASSETS_FOLDER.md). It preserves the same four finishes and atlas budgets; it has not replaced production bindings.
+
 Four color sets at two sizes, two shared channels at two sizes, and two UI images account for the approved 14 images. IDs are in `data/content-ids.json`; receipts are in `docs/evidence/private-uploads`. All IDs were returned by Studio MCP. The first string-only preload check failed; a follow-up through ImageLabel instances returned Success for all 14, and the actual UI images report loaded. Final 3D PBR appearance remains pending native mesh import and visual review. Avoid duplicate uploads.

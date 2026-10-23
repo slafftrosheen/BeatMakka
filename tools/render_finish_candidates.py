@@ -1,19 +1,26 @@
-"""Blender background-only neutral inspection of existing H01 candidate geometry.
+"""Blender background-only neutral inspection of existing candidate geometry.
 
 No mesh export, source edits, GPU use, foreground window or uploads.
 Usage: blender --background --threads 2 --python tools/render_finish_candidates.py
 """
 import hashlib
 import json
+import sys
 from pathlib import Path
 
 import bpy
 from mathutils import Vector
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / 'docs/evidence/a01-07/neutral'
-MAPS = ROOT / 'assets/candidates/materials/tactile-v1'
-SOURCE = ROOT / 'assets/optimized/H01/H01_atlas_v1.glb'
+candidate = sys.argv[sys.argv.index('--')+1] if '--' in sys.argv else 'tactile-v1'
+assert candidate in ('tactile-v1', 'assets-folder-v1')
+asset = sys.argv[sys.argv.index('--')+2] if '--' in sys.argv and len(sys.argv) > sys.argv.index('--')+2 else 'H01'
+assert asset in ('H01', 'P01')
+OUT = ROOT / ('docs/evidence/a01-07/neutral' if candidate == 'tactile-v1' else 'docs/evidence/a01-07-assets/neutral')
+if asset != 'H01':
+    OUT = OUT / asset
+MAPS = ROOT / 'assets/candidates/materials' / candidate
+SOURCE = ROOT / 'assets/optimized' / asset / f'{asset}_atlas_v1.glb'
 OUT.mkdir(parents=True, exist_ok=True)
 bpy.ops.wm.read_factory_settings(use_empty=True)
 bpy.ops.import_scene.gltf(filepath=str(SOURCE))
@@ -79,5 +86,6 @@ for finish in ['quay','chalk','coral','afterhours']:
     'source_sha256': hashlib.sha256(SOURCE.read_bytes()).hexdigest(),
     'generator_sha256': hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
     'geometry_exported': False, 'views': list(views), 'finishes': 4,
-    'limitations': 'Housing only: deterministic pads/screens are separate. Shared UVs cannot author per-object edge wear. Neutral review does not establish dusk, gameplay-distance or human acceptance.',
+    'candidate': candidate, 'asset': asset,
+    'limitations': 'Geometry-only material review; deterministic controls are separate. Shared UVs cannot author per-object edge wear. Neutral review does not establish dusk, gameplay-distance or human acceptance.',
 },indent=2)+'\n',encoding='utf-8')

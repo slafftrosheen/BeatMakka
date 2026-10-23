@@ -1,0 +1,17 @@
+{
+  "stage": "candidate neutral inspection; no art approval or Studio import",
+  "blender": "5.2.2 LTS",
+  "engine": "Cycles CPU, 12 samples, 2 threads",
+  "source": "assets/optimized/H01/H01_atlas_v1.glb",
+  "source_sha256": "7f27ff7da218c44e19fba120ab3decda47f4cbd836db0eb38d94d0882dfa15e3",
+  "generator_sha256": "97f7663e6ffbeef77750d7e6cf0e0f0acc88515bf974f3b37679d959c03c2f09",
+  "geometry_exported": false,
+  "views": [
+    "front",
+    "rear"
+  ],
+  "finishes": 4,
+  "candidate": "assets-folder-v1",
+  "asset": "H01",
+  "limitations": "Geometry-only material review; deterministic controls are separate. Shared UVs cannot author per-object edge wear. Neutral review does not establish dusk, gameplay-distance or human acceptance."
+}

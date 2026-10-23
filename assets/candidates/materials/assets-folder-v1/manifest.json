@@ -1,0 +1,44 @@
+{
+  "schema": 1,
+  "id": "assets-folder-v1",
+  "stage": "candidate",
+  "art_approved": false,
+  "studio_imported": false,
+  "runtime_verified": false,
+  "uploaded": false,
+  "layout": "FZ_MaterialAtlas_v1",
+  "resolutions": [
+    512,
+    1024
+  ],
+  "gutter_1024": 8,
+  "sources": "assets/sources/materials/user-assets-v1/provenance.json",
+  "source_provenance_sha256": "05bc5e6e98ac05acfbf43e9cabd9f99cef647b642687d0a95d3d72099a3d03bd",
+  "inputs": {
+    "tools/build_assets_folder_finishes.py": "8036b0487ca2389139268a8b90828965d1501102c81cba70d510fb96f1c519d9",
+    "tools/build_content_sources.py": "ee1b51a3afc397fe8b7c104f5ae43c3fcb026e525ab940ba2c1b4f7e3293905b",
+    "tools/build_finish_candidates.py": "6f71ddf07df6a8c3b7bdaba9f6d03b2176eb98a156ffc9072d644fd09d8de764",
+    "assets/production/materials/layout.json": "d776df1295a5fb50c99336a76a637922c17aa5cf9c2940274074a47c44ad1209"
+  },
+  "image_bindings_sha256": "cc95c13bfe575157d2a653071ac7b66f0f23c08770fb067aa6d06a1a3eaff3dd",
+  "processing": {
+    "wood": "16-bit linear height; crop [256,256,3840,3840], Lanczos 240px; normalize 99th percentile, subtract mean, color amplitude20/255 and roughness-.12.",
+    "handling": "16-bit scratch alpha resampled20x64; three fixed placements; paint color-12/255 and roughness+.14, metal-8/255 and+.18.",
+    "other_roles": "Existing deterministic tactile detail and palette; no normal maps, displacement, geometry, baked lighting or text."
+  },
+  "files": {
+    "layout.json": "faa441425ecdf67987ca5c82ff607fddd186300d9d2a72c37c7319bf8cb6b0e1",
+    "sets/afterhours/atlas_basecolor.png": "cfdc17cc38ee09825e8e8fbc5b66c7f63ddb6c451ac25c9bcfa00bbabadd3c21",
+    "sets/afterhours/atlas_basecolor_512.png": "0e79de899c33175372e31fd9cc0b0605682852922571ecb25341ea2ded1b3a25",
+    "sets/chalk/atlas_basecolor.png": "ca807fa10ed5f6e8abb1241fd5b7ed4caea4adbc12d3204394d01941c3a43b68",
+    "sets/chalk/atlas_basecolor_512.png": "c184103aa2c001f8c26e18139535ff3ef909e4a662aff70c86e9f013a2db31b3",
+    "sets/coral/atlas_basecolor.png": "c6bd4d35ad73253c9bda1698e01eb46a751031a17f1056b000d7896a934e6a25",
+    "sets/coral/atlas_basecolor_512.png": "ce6d0f067b0403cc5f04f602cf31c0893232c041a40300a99f476dde968530a6",
+    "sets/quay/atlas_basecolor.png": "3a8c1c74de6a310628feb7aa2cbd1042de38c1d8905764dc1b4407717275da41",
+    "sets/quay/atlas_basecolor_512.png": "890720e2b19cf2d9d3f55a429d893d0c54493019b7cdb82bb4a3352fbe033009",
+    "shared/atlas_metalness.png": "d2f1433b85dd698ac2617204c24c5384ed45d0d583916fc70b4e73451cbb966d",
+    "shared/atlas_metalness_512.png": "2f5537207895c626bad32a88d93038ebcf023221adede6d208d53ee80e7e0f22",
+    "shared/atlas_roughness.png": "7752c9e4fb0cabccf33f0ba3d26d697b6c364531ca14ccf02934c2e922e3ba5b",
+    "shared/atlas_roughness_512.png": "f7cbac79a62e6498f986591c071111710d8112b7dcbae338619552398411d277"
+  }
+}

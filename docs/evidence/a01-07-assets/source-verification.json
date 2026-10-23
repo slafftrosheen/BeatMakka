@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "sources": 2,
+  "maps": 12,
+  "reproduced_files": 14,
+  "tamper_rejected": true,
+  "unlisted_rejected": true,
+  "layout_unchanged": true,
+  "image_bindings_unchanged": true,
+  "stage": "candidate; no art approval or upload"
+}

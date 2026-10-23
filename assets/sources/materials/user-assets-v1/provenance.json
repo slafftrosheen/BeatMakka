@@ -1,0 +1,31 @@
+{
+  "source_root": "C:\\Users\\slavd\\OneDrive\\Pictures\\Assets",
+  "files": [
+    {
+      "file": "wood_fibers_06_height.tif",
+      "source_relative_to_assets": "Stylized Edition/Textures/Alphas/Wood/wood_fibers_06_height.tif",
+      "sha256": "53d0ffa528c2ef69b4e3576a9feff8404fa3b099c9680746cd938eed570fd9bf",
+      "bytes": 4282135,
+      "mode": "I;16",
+      "size": [
+        4096,
+        4096
+      ]
+    },
+    {
+      "file": "metal_scratch_01_height.tif",
+      "source_relative_to_assets": "Stylized Edition/Textures/Alphas/Metal/metal_scratch_01_height.tif",
+      "sha256": "be706ea1793f3af768c15ef94f03cf61f62cf73a6e6431321661d1c5df9c8054",
+      "bytes": 6060607,
+      "mode": "I;16",
+      "size": [
+        4096,
+        4096
+      ]
+    }
+  ],
+  "permission": "User expressly directed use of materials from their Assets folder and repository copies of everything used.",
+  "upstream_license": null,
+  "license_independently_verified": false,
+  "note": "User-provided reuse authorization; no claim that these visual assets are CC0 or freeware."
+}

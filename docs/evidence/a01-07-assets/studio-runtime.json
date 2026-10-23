@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"MaterialCandidateRuntime\":{\"borrowedTemplatesRetained\":true,\"controlAndGeometryPreserved\":true,\"finishes\":4,\"limitation\":\"Single local client; no published multiplayer or cloud persistence proof\",\"realCandidateMaps\":true,\"passed\":true,\"isolatedRenderers\":2},\"AppearanceLoading\":{\"lateDisposed\":true,\"cached\":true,\"loading\":true,\"ownedDisposed\":true,\"passed\":true,\"failureBounded\":true},\"originalLibraryRestored\":true,\"DeviceAppearance\":{\"geometryPreserved\":true,\"finishes\":4,\"controlsUntouched\":true,\"otherStationUntouched\":true,\"passed\":true,\"resetAndDestroy\":true},\"editableResourcesDisposed\":6}"
+    }
+  ],
+  "isError": false
+}

@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"Milestone\":{\"total\":8,\"passed\":8,\"checks\":[{\"name\":\"four slots retain independent notes, assignments, mutes and BPM\",\"passed\":true},{\"name\":\"shelf snapshots all slots and rejects stale overwrite/load commands\",\"passed\":true},{\"name\":\"six shelf positions are bounded and require an unmuted note\",\"passed\":true},{\"name\":\"legacy schema migrates into A and upgrades without changing namespace revision\",\"passed\":true},{\"name\":\"future schemas and corrupt revisions cannot be overwritten\",\"passed\":true},{\"name\":\"failed shelf write retains dirty work, later save round-trips every position and quest\",\"passed\":true},{\"name\":\"restore retains new shelf, discovery and quest progress as dirty\",\"passed\":true},{\"name\":\"quest requires acceptance, all discoveries and the exact successfully saved quay loop\",\"passed\":true}]},\"Contracts\":{\"total\":8,\"passed\":8,\"checks\":[{\"name\":\"sixteen independent pad rows and canonical sample assignments\",\"passed\":true},{\"name\":\"untrusted pattern sanitization and unlock enforcement\",\"passed\":true},{\"name\":\"transport phase, loop wrap and pre-roll\",\"passed\":true},{\"name\":\"session snapshot restores notes/finish and retains new discoveries dirty\",\"passed\":true},{\"name\":\"failed cloud load cannot overwrite existing data\",\"passed\":true},{\"name\":\"cloud revision conflict aborts and successful snapshot excludes newer edits\",\"passed\":true},{\"name\":\"listening requires audible snapshot, explicit opt-in, proximity and cleanup\",\"passed\":true},{\"name\":\"all 24 exact constructors and clear portal contract\",\"passed\":true}]}}"
+    }
+  ],
+  "isError": false
+}
