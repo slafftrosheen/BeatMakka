@@ -1,0 +1,22 @@
+{
+  "revision": "quay-found-v1",
+  "approved_on": "2026-10-23",
+  "approval": "Direct user correction: meant to say that i aproove",
+  "approved_scope": "Proposed four source selections after the supplied A/B review; no runtime or Roblox upload acceptance",
+  "selected": {
+    "rim": "impactWood_light_000",
+    "metal_hit": "impactMetal_light_000",
+    "vent_thump": "impactSoft_heavy_000",
+    "robot_chirp": "pepSound1"
+  },
+  "fallback": "original-synthesis-v1",
+  "rejected": [
+    "impactPlate_heavy_000",
+    "laser1"
+  ],
+  "alternatives_not_selected": [
+    "impactWood_light_002",
+    "impactMetal_light_002",
+    "twoTone1"
+  ]
+}

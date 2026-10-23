@@ -1,0 +1,626 @@
+{
+  "schema": 1,
+  "revision": "quay-found-v1-candidate",
+  "stage": "candidate",
+  "listening_approved": true,
+  "runtime_admitted": false,
+  "candidates": [
+    {
+      "id": "impactWood_light_000",
+      "canonical_id": "rim",
+      "category": "musical-pad",
+      "decision": "proposed",
+      "listening_status": "USER_APPROVED",
+      "author": "Kenney Vleugels / Kenney",
+      "pack": "impact-sounds",
+      "pack_version": "1.0",
+      "source_page": "https://kenney.nl/assets/impact-sounds",
+      "source_archive_url": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip",
+      "archive_sha256": "029d734af1582474edf3a694d1b0cebc97c1c152f2f39fa34d4c2bafc5de77f8",
+      "archive_member": "Audio/impactWood_light_000.ogg",
+      "source_file": "originals/impactWood_light_000.ogg",
+      "source_sha256": "eb45e35b4bed784d3f120de4afec4b0d6ac09d9e143cce8cfcb7d739e1b1f3c3",
+      "derived_file": "derived/impactWood_light_000.wav",
+      "derived_sha256": "3e89217590dfe0940e55087104390c414bbb911fe4ac21b9d9910b78863fc61d",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "license_file": "licenses/impact-sounds.txt",
+      "license_sha256": "b49aa9c56b04528b95913de13e506a0f7c5e807b9925db9bfef86af1f91120db",
+      "reviewed_on": "2026-10-23",
+      "credit": "Sounds by Kenney (kenney.nl), edited for Frequency Zero.",
+      "rights_assessment": {
+        "repository_redistribution": "permitted by CC0",
+        "roblox_hosting": "permitted by CC0; platform moderation/permissions still required",
+        "isolated_sampler_use": "permitted by CC0; no isolated-sample restriction stated",
+        "evidence": "Official creator page and license inside creator-distributed archive; no endorsement claimed"
+      },
+      "edits": {
+        "decode": "FFmpeg mono downmix, 44100 Hz float intermediate",
+        "dc_removed": 2.6144e-05,
+        "trim_source_frames": [
+          0,
+          11585
+        ],
+        "onset_fade_frames": 22,
+        "tail_fade_frames": 353,
+        "gain_db": -10.892013,
+        "pitch_change": false,
+        "output": "mono 44100 Hz PCM16 WAV",
+        "measurements": {
+          "duration_seconds": 0.262698,
+          "peak_dbfs": -9.0,
+          "rms_dbfs": -30.269,
+          "clipped_samples": 0
+        }
+      }
+    },
+    {
+      "id": "impactWood_light_002",
+      "canonical_id": "rim",
+      "category": "musical-pad",
+      "decision": "alternative",
+      "listening_status": "NOT_SELECTED",
+      "author": "Kenney Vleugels / Kenney",
+      "pack": "impact-sounds",
+      "pack_version": "1.0",
+      "source_page": "https://kenney.nl/assets/impact-sounds",
+      "source_archive_url": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip",
+      "archive_sha256": "029d734af1582474edf3a694d1b0cebc97c1c152f2f39fa34d4c2bafc5de77f8",
+      "archive_member": "Audio/impactWood_light_002.ogg",
+      "source_file": "originals/impactWood_light_002.ogg",
+      "source_sha256": "b183cf7a5bd783817e0e4b82af34ac6658fa1927049089dadc8b15c2ecc771dc",
+      "derived_file": "derived/impactWood_light_002.wav",
+      "derived_sha256": "5b4a2cc1fb611afa7cca6a02bff4d4c27f1dea19936c8ae488e7bc12353b117e",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "license_file": "licenses/impact-sounds.txt",
+      "license_sha256": "b49aa9c56b04528b95913de13e506a0f7c5e807b9925db9bfef86af1f91120db",
+      "reviewed_on": "2026-10-23",
+      "credit": "Sounds by Kenney (kenney.nl), edited for Frequency Zero.",
+      "rights_assessment": {
+        "repository_redistribution": "permitted by CC0",
+        "roblox_hosting": "permitted by CC0; platform moderation/permissions still required",
+        "isolated_sampler_use": "permitted by CC0; no isolated-sample restriction stated",
+        "evidence": "Official creator page and license inside creator-distributed archive; no endorsement claimed"
+      },
+      "edits": {
+        "decode": "FFmpeg mono downmix, 44100 Hz float intermediate",
+        "dc_removed": -0.000300717,
+        "trim_source_frames": [
+          0,
+          11585
+        ],
+        "onset_fade_frames": 22,
+        "tail_fade_frames": 353,
+        "gain_db": -10.88786,
+        "pitch_change": false,
+        "output": "mono 44100 Hz PCM16 WAV",
+        "measurements": {
+          "duration_seconds": 0.262698,
+          "peak_dbfs": -9.0,
+          "rms_dbfs": -30.023,
+          "clipped_samples": 0
+        }
+      }
+    },
+    {
+      "id": "impactMetal_light_000",
+      "canonical_id": "metal_hit",
+      "category": "musical-pad",
+      "decision": "proposed",
+      "listening_status": "USER_APPROVED",
+      "author": "Kenney Vleugels / Kenney",
+      "pack": "impact-sounds",
+      "pack_version": "1.0",
+      "source_page": "https://kenney.nl/assets/impact-sounds",
+      "source_archive_url": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip",
+      "archive_sha256": "029d734af1582474edf3a694d1b0cebc97c1c152f2f39fa34d4c2bafc5de77f8",
+      "archive_member": "Audio/impactMetal_light_000.ogg",
+      "source_file": "originals/impactMetal_light_000.ogg",
+      "source_sha256": "33b5e6e37c6e9d54e07bf5a89b12c76e879f40c1ea83cdd82714df1d6f9fec6d",
+      "derived_file": "derived/impactMetal_light_000.wav",
+      "derived_sha256": "b0008171944fb00e63336bfd8ca49f22157f62d33a64a440b2c41526d78cf4f0",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "license_file": "licenses/impact-sounds.txt",
+      "license_sha256": "b49aa9c56b04528b95913de13e506a0f7c5e807b9925db9bfef86af1f91120db",
+      "reviewed_on": "2026-10-23",
+      "credit": "Sounds by Kenney (kenney.nl), edited for Frequency Zero.",
+      "rights_assessment": {
+        "repository_redistribution": "permitted by CC0",
+        "roblox_hosting": "permitted by CC0; platform moderation/permissions still required",
+        "isolated_sampler_use": "permitted by CC0; no isolated-sample restriction stated",
+        "evidence": "Official creator page and license inside creator-distributed archive; no endorsement claimed"
+      },
+      "edits": {
+        "decode": "FFmpeg mono downmix, 44100 Hz float intermediate",
+        "dc_removed": -1.5957e-05,
+        "trim_source_frames": [
+          0,
+          15966
+        ],
+        "onset_fade_frames": 22,
+        "tail_fade_frames": 353,
+        "gain_db": -11.048395,
+        "pitch_change": false,
+        "output": "mono 44100 Hz PCM16 WAV",
+        "measurements": {
+          "duration_seconds": 0.362041,
+          "peak_dbfs": -9.0,
+          "rms_dbfs": -29.103,
+          "clipped_samples": 0
+        }
+      }
+    },
+    {
+      "id": "impactMetal_light_002",
+      "canonical_id": "metal_hit",
+      "category": "musical-pad",
+      "decision": "alternative",
+      "listening_status": "NOT_SELECTED",
+      "author": "Kenney Vleugels / Kenney",
+      "pack": "impact-sounds",
+      "pack_version": "1.0",
+      "source_page": "https://kenney.nl/assets/impact-sounds",
+      "source_archive_url": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip",
+      "archive_sha256": "029d734af1582474edf3a694d1b0cebc97c1c152f2f39fa34d4c2bafc5de77f8",
+      "archive_member": "Audio/impactMetal_light_002.ogg",
+      "source_file": "originals/impactMetal_light_002.ogg",
+      "source_sha256": "25a96f90a9a1f88a531e824e126f0519504625e5635e65a72e4f31611428db29",
+      "derived_file": "derived/impactMetal_light_002.wav",
+      "derived_sha256": "e60c73bd58ff993dcf2d4b7b2ce51eeef095a2e71f9d3378b89f3ac7e3c55ace",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "license_file": "licenses/impact-sounds.txt",
+      "license_sha256": "b49aa9c56b04528b95913de13e506a0f7c5e807b9925db9bfef86af1f91120db",
+      "reviewed_on": "2026-10-23",
+      "credit": "Sounds by Kenney (kenney.nl), edited for Frequency Zero.",
+      "rights_assessment": {
+        "repository_redistribution": "permitted by CC0",
+        "roblox_hosting": "permitted by CC0; platform moderation/permissions still required",
+        "isolated_sampler_use": "permitted by CC0; no isolated-sample restriction stated",
+        "evidence": "Official creator page and license inside creator-distributed archive; no endorsement claimed"
+      },
+      "edits": {
+        "decode": "FFmpeg mono downmix, 44100 Hz float intermediate",
+        "dc_removed": 5.931e-05,
+        "trim_source_frames": [
+          0,
+          10270
+        ],
+        "onset_fade_frames": 22,
+        "tail_fade_frames": 353,
+        "gain_db": -10.634748,
+        "pitch_change": false,
+        "output": "mono 44100 Hz PCM16 WAV",
+        "measurements": {
+          "duration_seconds": 0.23288,
+          "peak_dbfs": -9.0,
+          "rms_dbfs": -28.36,
+          "clipped_samples": 0
+        }
+      }
+    },
+    {
+      "id": "impactSoft_heavy_000",
+      "canonical_id": "vent_thump",
+      "category": "musical-pad",
+      "decision": "proposed",
+      "listening_status": "USER_APPROVED",
+      "author": "Kenney Vleugels / Kenney",
+      "pack": "impact-sounds",
+      "pack_version": "1.0",
+      "source_page": "https://kenney.nl/assets/impact-sounds",
+      "source_archive_url": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip",
+      "archive_sha256": "029d734af1582474edf3a694d1b0cebc97c1c152f2f39fa34d4c2bafc5de77f8",
+      "archive_member": "Audio/impactSoft_heavy_000.ogg",
+      "source_file": "originals/impactSoft_heavy_000.ogg",
+      "source_sha256": "49e7ca88743fca974bb8676ea138b751cfd8f9033b5e7af8736c2a215d6edbc1",
+      "derived_file": "derived/impactSoft_heavy_000.wav",
+      "derived_sha256": "09b12eea366c2500e1d3008f0b69afc84b3aefaff68ba7864736fde63f3ee75d",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "license_file": "licenses/impact-sounds.txt",
+      "license_sha256": "b49aa9c56b04528b95913de13e506a0f7c5e807b9925db9bfef86af1f91120db",
+      "reviewed_on": "2026-10-23",
+      "credit": "Sounds by Kenney (kenney.nl), edited for Frequency Zero.",
+      "rights_assessment": {
+        "repository_redistribution": "permitted by CC0",
+        "roblox_hosting": "permitted by CC0; platform moderation/permissions still required",
+        "isolated_sampler_use": "permitted by CC0; no isolated-sample restriction stated",
+        "evidence": "Official creator page and license inside creator-distributed archive; no endorsement claimed"
+      },
+      "edits": {
+        "decode": "FFmpeg mono downmix, 44100 Hz float intermediate",
+        "dc_removed": 0.00016328,
+        "trim_source_frames": [
+          0,
+          22923
+        ],
+        "onset_fade_frames": 22,
+        "tail_fade_frames": 353,
+        "gain_db": -11.092497,
+        "pitch_change": false,
+        "output": "mono 44100 Hz PCM16 WAV",
+        "measurements": {
+          "duration_seconds": 0.519796,
+          "peak_dbfs": -9.0,
+          "rms_dbfs": -25.439,
+          "clipped_samples": 0
+        }
+      }
+    },
+    {
+      "id": "impactPlate_heavy_000",
+      "canonical_id": "metal_hit",
+      "category": "musical-pad",
+      "decision": "excluded-heavy-plate-category",
+      "listening_status": "NOT_SELECTED",
+      "author": "Kenney Vleugels / Kenney",
+      "pack": "impact-sounds",
+      "pack_version": "1.0",
+      "source_page": "https://kenney.nl/assets/impact-sounds",
+      "source_archive_url": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip",
+      "archive_sha256": "029d734af1582474edf3a694d1b0cebc97c1c152f2f39fa34d4c2bafc5de77f8",
+      "archive_member": "Audio/impactPlate_heavy_000.ogg",
+      "source_file": "originals/impactPlate_heavy_000.ogg",
+      "source_sha256": "112d4f93ddcc370b410630f971c0f5d991856102da9c76bc5c5540d388e75aaa",
+      "derived_file": "derived/impactPlate_heavy_000.wav",
+      "derived_sha256": "4ea65a350b4b79a50d3c98701fe6b65d6ab50d41c6295cc594bc8dc3f7fc6112",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "license_file": "licenses/impact-sounds.txt",
+      "license_sha256": "b49aa9c56b04528b95913de13e506a0f7c5e807b9925db9bfef86af1f91120db",
+      "reviewed_on": "2026-10-23",
+      "credit": "Sounds by Kenney (kenney.nl), edited for Frequency Zero.",
+      "rights_assessment": {
+        "repository_redistribution": "permitted by CC0",
+        "roblox_hosting": "permitted by CC0; platform moderation/permissions still required",
+        "isolated_sampler_use": "permitted by CC0; no isolated-sample restriction stated",
+        "evidence": "Official creator page and license inside creator-distributed archive; no endorsement claimed"
+      },
+      "edits": {
+        "decode": "FFmpeg mono downmix, 44100 Hz float intermediate",
+        "dc_removed": 0.000114235,
+        "trim_source_frames": [
+          0,
+          21550
+        ],
+        "onset_fade_frames": 22,
+        "tail_fade_frames": 353,
+        "gain_db": -11.038904,
+        "pitch_change": false,
+        "output": "mono 44100 Hz PCM16 WAV",
+        "measurements": {
+          "duration_seconds": 0.488662,
+          "peak_dbfs": -9.0,
+          "rms_dbfs": -30.68,
+          "clipped_samples": 0
+        }
+      }
+    },
+    {
+      "id": "pepSound1",
+      "canonical_id": "robot_chirp",
+      "category": "musical-pad",
+      "decision": "proposed",
+      "listening_status": "USER_APPROVED",
+      "author": "Kenney Vleugels / Kenney",
+      "pack": "digital-audio",
+      "pack_version": "1.0",
+      "source_page": "https://kenney.nl/assets/digital-audio",
+      "source_archive_url": "https://kenney.nl/media/pages/assets/digital-audio/216eac4753-1677590265/kenney_digital-audio.zip",
+      "archive_sha256": "24e6ce28b76a6d8c89cff4d331e0965ff5c3de8a73c612028e9d363cc64e4f06",
+      "archive_member": "Audio/pepSound1.ogg",
+      "source_file": "originals/pepSound1.ogg",
+      "source_sha256": "f2f44effce087e47683f0fea05a71002bd8dca78fb10bf93d9f0b38d49f9590e",
+      "derived_file": "derived/pepSound1.wav",
+      "derived_sha256": "9ddfe79ae724c2e7e857b9b948621ccf2a30898adbd80e87e00ea3e2daaa6919",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "license_file": "licenses/digital-audio.txt",
+      "license_sha256": "654d24e000d1c3b2a1d2264151f49e273e8a26d24e26e9bffc2aeb48cea93815",
+      "reviewed_on": "2026-10-23",
+      "credit": "Sounds by Kenney (kenney.nl), edited for Frequency Zero.",
+      "rights_assessment": {
+        "repository_redistribution": "permitted by CC0",
+        "roblox_hosting": "permitted by CC0; platform moderation/permissions still required",
+        "isolated_sampler_use": "permitted by CC0; no isolated-sample restriction stated",
+        "evidence": "Official creator page and license inside creator-distributed archive; no endorsement claimed"
+      },
+      "edits": {
+        "decode": "FFmpeg mono downmix, 44100 Hz float intermediate",
+        "dc_removed": -7.7351e-05,
+        "trim_source_frames": [
+          2175,
+          22912
+        ],
+        "onset_fade_frames": 22,
+        "tail_fade_frames": 353,
+        "gain_db": -11.65003,
+        "pitch_change": false,
+        "output": "mono 44100 Hz PCM16 WAV",
+        "measurements": {
+          "duration_seconds": 0.470227,
+          "peak_dbfs": -12.66,
+          "rms_dbfs": -24.0,
+          "clipped_samples": 0
+        }
+      }
+    },
+    {
+      "id": "twoTone1",
+      "canonical_id": "robot_chirp",
+      "category": "musical-pad",
+      "decision": "alternative",
+      "listening_status": "NOT_SELECTED",
+      "author": "Kenney Vleugels / Kenney",
+      "pack": "digital-audio",
+      "pack_version": "1.0",
+      "source_page": "https://kenney.nl/assets/digital-audio",
+      "source_archive_url": "https://kenney.nl/media/pages/assets/digital-audio/216eac4753-1677590265/kenney_digital-audio.zip",
+      "archive_sha256": "24e6ce28b76a6d8c89cff4d331e0965ff5c3de8a73c612028e9d363cc64e4f06",
+      "archive_member": "Audio/twoTone1.ogg",
+      "source_file": "originals/twoTone1.ogg",
+      "source_sha256": "8732f14d6398407a8f1df77b986c2099cfd88f6583e1272cb60497cb2fe8da1d",
+      "derived_file": "derived/twoTone1.wav",
+      "derived_sha256": "f930714f2b0483301f610dd799998361cf1676554be82635198a97e543631cbf",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "license_file": "licenses/digital-audio.txt",
+      "license_sha256": "654d24e000d1c3b2a1d2264151f49e273e8a26d24e26e9bffc2aeb48cea93815",
+      "reviewed_on": "2026-10-23",
+      "credit": "Sounds by Kenney (kenney.nl), edited for Frequency Zero.",
+      "rights_assessment": {
+        "repository_redistribution": "permitted by CC0",
+        "roblox_hosting": "permitted by CC0; platform moderation/permissions still required",
+        "isolated_sampler_use": "permitted by CC0; no isolated-sample restriction stated",
+        "evidence": "Official creator page and license inside creator-distributed archive; no endorsement claimed"
+      },
+      "edits": {
+        "decode": "FFmpeg mono downmix, 44100 Hz float intermediate",
+        "dc_removed": -3.6701e-05,
+        "trim_source_frames": [
+          2913,
+          31640
+        ],
+        "onset_fade_frames": 22,
+        "tail_fade_frames": 353,
+        "gain_db": -9.947054,
+        "pitch_change": false,
+        "output": "mono 44100 Hz PCM16 WAV",
+        "measurements": {
+          "duration_seconds": 0.651406,
+          "peak_dbfs": -11.03,
+          "rms_dbfs": -24.0,
+          "clipped_samples": 0
+        }
+      }
+    },
+    {
+      "id": "laser1",
+      "canonical_id": "robot_chirp",
+      "category": "musical-pad",
+      "decision": "excluded-laser-category",
+      "listening_status": "NOT_SELECTED",
+      "author": "Kenney Vleugels / Kenney",
+      "pack": "digital-audio",
+      "pack_version": "1.0",
+      "source_page": "https://kenney.nl/assets/digital-audio",
+      "source_archive_url": "https://kenney.nl/media/pages/assets/digital-audio/216eac4753-1677590265/kenney_digital-audio.zip",
+      "archive_sha256": "24e6ce28b76a6d8c89cff4d331e0965ff5c3de8a73c612028e9d363cc64e4f06",
+      "archive_member": "Audio/laser1.ogg",
+      "source_file": "originals/laser1.ogg",
+      "source_sha256": "0bf468769b48a834dc1c6e38e457f2c71159b010225a9aedf84316795e8cc3e5",
+      "derived_file": "derived/laser1.wav",
+      "derived_sha256": "e8ece38e22c391f585452e9364040c773bd3adb1ca4a67e2d46699e931d82615",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "license_file": "licenses/digital-audio.txt",
+      "license_sha256": "654d24e000d1c3b2a1d2264151f49e273e8a26d24e26e9bffc2aeb48cea93815",
+      "reviewed_on": "2026-10-23",
+      "credit": "Sounds by Kenney (kenney.nl), edited for Frequency Zero.",
+      "rights_assessment": {
+        "repository_redistribution": "permitted by CC0",
+        "roblox_hosting": "permitted by CC0; platform moderation/permissions still required",
+        "isolated_sampler_use": "permitted by CC0; no isolated-sample restriction stated",
+        "evidence": "Official creator page and license inside creator-distributed archive; no endorsement claimed"
+      },
+      "edits": {
+        "decode": "FFmpeg mono downmix, 44100 Hz float intermediate",
+        "dc_removed": -0.000144052,
+        "trim_source_frames": [
+          2170,
+          47179
+        ],
+        "onset_fade_frames": 22,
+        "tail_fade_frames": 353,
+        "gain_db": -9.253825,
+        "pitch_change": false,
+        "output": "mono 44100 Hz PCM16 WAV",
+        "measurements": {
+          "duration_seconds": 1.020612,
+          "peak_dbfs": -10.038,
+          "rms_dbfs": -24.0,
+          "clipped_samples": 0
+        }
+      }
+    }
+  ],
+  "fallback": "Original synthesized 24-file library; no source or binding changed",
+  "mix_comparison": {
+    "original": {
+      "duration_seconds": 8.0,
+      "peak_dbfs": -6.884,
+      "rms_dbfs": -25.157,
+      "clipped_samples": 0,
+      "bpm": 96,
+      "bars": 2,
+      "mix_gain_db": -12.0412,
+      "includes_ui_or_ambience": false,
+      "notes": {
+        "kick": [
+          0,
+          4,
+          8,
+          12
+        ],
+        "snare": [
+          4,
+          12
+        ],
+        "closed_hat": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10,
+          12,
+          14
+        ],
+        "rim": [
+          2,
+          10
+        ],
+        "bass_c": [
+          0,
+          8
+        ],
+        "bass_eb": [
+          4
+        ],
+        "bass_g": [
+          12
+        ],
+        "metal_hit": [
+          6,
+          14
+        ],
+        "vent_thump": [
+          0
+        ],
+        "robot_chirp": [
+          15
+        ]
+      }
+    },
+    "candidate": {
+      "duration_seconds": 8.0,
+      "peak_dbfs": -6.788,
+      "rms_dbfs": -26.097,
+      "clipped_samples": 0,
+      "bpm": 96,
+      "bars": 2,
+      "mix_gain_db": -12.0412,
+      "includes_ui_or_ambience": false,
+      "notes": {
+        "kick": [
+          0,
+          4,
+          8,
+          12
+        ],
+        "snare": [
+          4,
+          12
+        ],
+        "closed_hat": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10,
+          12,
+          14
+        ],
+        "rim": [
+          2,
+          10
+        ],
+        "bass_c": [
+          0,
+          8
+        ],
+        "bass_eb": [
+          4
+        ],
+        "bass_g": [
+          12
+        ],
+        "metal_hit": [
+          6,
+          14
+        ],
+        "vent_thump": [
+          0
+        ],
+        "robot_chirp": [
+          15
+        ]
+      }
+    }
+  },
+  "canonical_file_hashes": {
+    "data/content-ids.json": "bf7a15248210c251b22bb7d33dfc2bd02db3a0172d33403585c3940167e2f239",
+    "src/shared/ContentIds.luau": "f3f515305633a649fc3520cf3402516348c6eb72e2082650d62f173ed64f02d1",
+    "src/shared/SampleCatalog.luau": "616b6d63a77f3ee018da6dc9b3e2f1ed39b65717d871e7a8aa5b8fc18cc73d75",
+    "assets/production/upload-manifest.json": "8adb669c64cd835b457f85da3de16e2806dd1de96c7fa11c7b264012b4ffb238",
+    "assets/production/audio/bass_c.wav": "61e4f3de0fd518d5f3184e9b7e7b40f574325279a929a1fd7e8348d0a58a8046",
+    "assets/production/audio/bass_eb.wav": "2f2263b10de934b8dafc499412665df6e0e924cedf784d63749fe062f17ea429",
+    "assets/production/audio/bass_g.wav": "e39dcfa3ac5cf59d4d9c5a7f841a06ccc18300d63d74f5dc6b00b96acd3c3ac7",
+    "assets/production/audio/bell.wav": "c2325a94572ed15c0d5f1b74d5cdc77893a12881db21088a28595ab6a3f4eea7",
+    "assets/production/audio/chord.wav": "10098a7c6329b2926012e2947dfb772b1e8ca646d297d6c38b7084c5175cc0b3",
+    "assets/production/audio/clap.wav": "620957faffd6389e72e4bc4e03b74f6c94ab8a032d27ebcd8c285cefa033f0c5",
+    "assets/production/audio/closed_hat.wav": "a539eaa196c8d5aeff2e77a02df5ea1d773c5f14d0392caecde2bf0033332220",
+    "assets/production/audio/high_tom.wav": "2309262b49825d700fcb3d54b0f0dbe17e8176a548b68b1e3755a8103639d4c8",
+    "assets/production/audio/kick.wav": "4c8dc34846bc857a953bd176edca6567dbd73207abd34c9c2cd4d2056913e767",
+    "assets/production/audio/low_tom.wav": "33b1cef1507f2c2fb9e4453123d016ff81ccb65343d4a53a6ecbde9e37c072f8",
+    "assets/production/audio/manifest.json": "d32f146c055a939059cab2b7a90018d8ff2c5dc335229b4a614c7d6ee346be34",
+    "assets/production/audio/metal_hit.wav": "c2f2b4b40d49116931cfe4566e8885d788e7a2b693a38053e90f9b3e907f89fe",
+    "assets/production/audio/open_hat.wav": "1bdb037bfcd91d7d2532c6c71124e35db3c47bdd6dce9c097ff58bb48317b98c",
+    "assets/production/audio/pluck.wav": "a837797565703c867e415309134ea5f41b9eab06b0044a6092d7b50a85fc807a",
+    "assets/production/audio/rim.wav": "4b4a2d4105cebcd011f984b3a1806cc827801736b9a2eca239d2ba4abfaba2eb",
+    "assets/production/audio/robot_chirp.wav": "ad587dd6e2ae8cb2f6145ea2a10fcb40cf35a31c2efff07e52a77ad9bc9381bc",
+    "assets/production/audio/shaker.wav": "da00eef741ed5a4ebc80a3ed5f4db9370ad66b4d58fd9ad60418d10ef4989f95",
+    "assets/production/audio/snare.wav": "53620a276a570a7cb9a9b0ed95cc6f1ce14bf11a4694248076d7eae8569033bc",
+    "assets/production/audio/tambourine.wav": "c31e99bf37c75aef00781775e53b5d07cc815319686b73e5ae51dd036f967646",
+    "assets/production/audio/ui_collect.wav": "6d8557d07d1351ed32f1b1cf40b6e89fdd2039a9fcd6f3193c0438e555cc2bc1",
+    "assets/production/audio/ui_error.wav": "258bb16773360140308aef47d37cbeaf6587d1f52d9c3a63133737b4ec9eb8a7",
+    "assets/production/audio/ui_save.wav": "2d866485005c6070e8acadd63ccfe65642a17c4e29037d7bdaa3f5dfc52a26da",
+    "assets/production/audio/ui_tap.wav": "280de6747c8664c8b1317ec4ee13f7f4abcfb676aed8fbbdbab8f112a2df866b",
+    "assets/production/audio/vent_thump.wav": "b7f980ff73900f63497ed9054b914b1c5b8defacc7658552e158ad3ab657eb6e",
+    "assets/production/audio/waterfront.wav": "74f7ecb9e28dbfe8662c97a620cc78dbe9c41faaa0b49decf06385eeeaceb4b0"
+  },
+  "file_hashes": {
+    "derived/impactMetal_light_000.wav": "b0008171944fb00e63336bfd8ca49f22157f62d33a64a440b2c41526d78cf4f0",
+    "derived/impactMetal_light_002.wav": "e60c73bd58ff993dcf2d4b7b2ce51eeef095a2e71f9d3378b89f3ac7e3c55ace",
+    "derived/impactPlate_heavy_000.wav": "4ea65a350b4b79a50d3c98701fe6b65d6ab50d41c6295cc594bc8dc3f7fc6112",
+    "derived/impactSoft_heavy_000.wav": "09b12eea366c2500e1d3008f0b69afc84b3aefaff68ba7864736fde63f3ee75d",
+    "derived/impactWood_light_000.wav": "3e89217590dfe0940e55087104390c414bbb911fe4ac21b9d9910b78863fc61d",
+    "derived/impactWood_light_002.wav": "5b4a2cc1fb611afa7cca6a02bff4d4c27f1dea19936c8ae488e7bc12353b117e",
+    "derived/laser1.wav": "e8ece38e22c391f585452e9364040c773bd3adb1ca4a67e2d46699e931d82615",
+    "derived/pepSound1.wav": "9ddfe79ae724c2e7e857b9b948621ccf2a30898adbd80e87e00ea3e2daaa6919",
+    "derived/twoTone1.wav": "f930714f2b0483301f610dd799998361cf1676554be82635198a97e543631cbf",
+    "licenses/CC0-1.0.reference.json": "89d25ebd46c3470c660bb8e5ea9b27d58930b5d5e517d79b8d4f9a24c2a34ba9",
+    "licenses/digital-audio.txt": "654d24e000d1c3b2a1d2264151f49e273e8a26d24e26e9bffc2aeb48cea93815",
+    "licenses/impact-sounds.txt": "b49aa9c56b04528b95913de13e506a0f7c5e807b9925db9bfef86af1f91120db",
+    "originals/impactMetal_light_000.ogg": "33b5e6e37c6e9d54e07bf5a89b12c76e879f40c1ea83cdd82714df1d6f9fec6d",
+    "originals/impactMetal_light_002.ogg": "25a96f90a9a1f88a531e824e126f0519504625e5635e65a72e4f31611428db29",
+    "originals/impactPlate_heavy_000.ogg": "112d4f93ddcc370b410630f971c0f5d991856102da9c76bc5c5540d388e75aaa",
+    "originals/impactSoft_heavy_000.ogg": "49e7ca88743fca974bb8676ea138b751cfd8f9033b5e7af8736c2a215d6edbc1",
+    "originals/impactWood_light_000.ogg": "eb45e35b4bed784d3f120de4afec4b0d6ac09d9e143cce8cfcb7d739e1b1f3c3",
+    "originals/impactWood_light_002.ogg": "b183cf7a5bd783817e0e4b82af34ac6658fa1927049089dadc8b15c2ecc771dc",
+    "originals/laser1.ogg": "0bf468769b48a834dc1c6e38e457f2c71159b010225a9aedf84316795e8cc3e5",
+    "originals/pepSound1.ogg": "f2f44effce087e47683f0fea05a71002bd8dca78fb10bf93d9f0b38d49f9590e",
+    "originals/twoTone1.ogg": "8732f14d6398407a8f1df77b986c2099cfd88f6583e1272cb60497cb2fe8da1d",
+    "selection.json": "13e1ef4675edb39e6b89ac06832ded7f678d64729f494ea5a48dc2761032a125"
+  },
+  "review_file_hashes": {
+    "candidate-pattern.wav": "94cfa5f0bea447ee3be386b753010a4e2413c07cb0466137ccb9d787979ff1e3",
+    "index.html": "c75d7e5d047e2d9dd89809a4b842083c2e553d8e818adebf2b2429134547077c",
+    "original-pattern.wav": "a58e50f2ca1dd76a1401dfd6496d65cdae9b79d4c550b7d70002fba07e3118f5"
+  },
+  "approval_record": "selection.json"
+}

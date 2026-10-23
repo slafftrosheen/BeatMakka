@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "default": "original-synthesis-v1",
+  "revisions": {
+    "original-synthesis-v1": {
+      "manifest": "assets/production/audio/manifest.json",
+      "categories": [
+        "musical-pad",
+        "ui-cue",
+        "ambience"
+      ]
+    },
+    "quay-found-v1": {
+      "inherits": "original-synthesis-v1",
+      "selection": "assets/candidates/audio/quay-found-v1/selection.json",
+      "manifest": "assets/candidates/audio/quay-found-v1/manifest.json",
+      "category": "musical-pad",
+      "selected_canonical_ids": [
+        "rim",
+        "metal_hit",
+        "vent_thump",
+        "robot_chirp"
+      ],
+      "listening_approved": true,
+      "runtime_bound": false,
+      "requires_separate_upload_receipts": true
+    }
+  }
+}

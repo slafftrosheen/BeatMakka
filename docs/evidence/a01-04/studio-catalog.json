@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"defaultPads\":16,\"catalogSamples\":19,\"audioBindings\":0,\"scope\":\"module/data contract; no CC0 runtime admission or playback claim\",\"imageBindings\":14,\"discoveryLinksPreserved\":true,\"passed\":true}"
+    }
+  ],
+  "isError": false
+}

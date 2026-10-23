@@ -1,0 +1,12 @@
+{
+  "baseline": {
+    "passed": true,
+    "candidate_count": 9,
+    "closed_roster_files": 21,
+    "canonical_files_preserved": 29,
+    "listening_approved": false,
+    "runtime_admitted": false
+  },
+  "tampered_sample_rejected": true,
+  "unlisted_file_rejected": true
+}
