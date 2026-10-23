@@ -57,4 +57,8 @@ The [audio/content readiness continuation](docs/AUDIO_CONTENT_CONTINUATION.md) r
 
 The [next playable milestone](docs/NEXT_PLAYABLE_MILESTONE.md) implements four independent pattern slots, six personal beat shelf positions and Mica's first courtyard quest. Its [Studio verification](docs/MILESTONE_VERIFICATION.md) records 16 contract groups, 26 two-client checks, the confirmation-expiry fix and phone layouts. Live published cloud persistence and audible content acceptance remain open.
 
+The [audio acceptance stage](docs/AUDIO_ACCEPTANCE_STAGE.md) records the 24-file source inspection, audition reel and proposed private test experience. Uploads, destination ownership and experience permissions remain pending.
+
+The [Alpha 01 work package](docs/ALPHA_01.md) links the 18 GitHub development tasks, audio research and the [36-page MK-I device artbook](output/artbook-alpha01/BeatMakka_MK-I_Artbook_Alpha01_RU.pdf). Its [interactive design prototype](output/artbook-alpha01/MK-I_Prototype.html) demonstrates the proposed fixed performance surface with original local audio; it is separate from Roblox runtime acceptance. Editable sources, design tokens and research references are included in the [artbook package](output/artbook-alpha01/README.md).
+
 Paid provider work is disabled until a named asset batch, current quote, and total credit cap are explicitly authorized and the offline preflight passes. See `docs/EXECUTION_BATCHES.md` and `tools/preflight_gate.py`.

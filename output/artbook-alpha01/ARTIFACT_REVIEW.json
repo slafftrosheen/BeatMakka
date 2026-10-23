@@ -1,0 +1,188 @@
+{
+  "package": "BeatMakka MK-I / Alpha 01 / design proposal v1.0",
+  "date": "2026-10-23",
+  "source_review_base": "6ed1b00830c2ca243c9d2909261fd9cc9cd7172e",
+  "scope": "Document and standalone browser design study; not Roblox acceptance",
+  "pdf": {
+    "pages": 36,
+    "visible_characters": 24138,
+    "empty_pages": [],
+    "out_of_page_characters": [],
+    "visual_review": "All pages rendered to a contact sheet; key interface spreads inspected at full size; page12 overflow corrected"
+  },
+  "browser_review": {
+    "method": "Connected in-app browser; UI actions, screenshots, read-only DOM measurements",
+    "viewports": [
+      [
+        1280,
+        720
+      ],
+      [
+        390,
+        844
+      ],
+      [
+        750,
+        381
+      ]
+    ],
+    "performance_document_scroll": "No page overflow at reviewed sizes",
+    "pad_count": 16,
+    "portrait_pad_size_css_px": [
+      81,
+      81
+    ],
+    "short_landscape_pad_size_css_px": [
+      45.25,
+      45.25
+    ],
+    "flows_observed": [
+      "PLAY → STEPS → enable two steps",
+      "SAVE → save Beat01 → local saved state",
+      "LOAD → confirmation dialog → confirm → restored project",
+      "pad hit → browser audio initialization → PLAY state",
+      "SOUNDS → choose Quay metal → Assign → Back → assigned pad",
+      "portrait STEPS → sixteen separate targets → PLAY restores pads"
+    ],
+    "phone_steps": "Separate fixed editor; sixteen targets, min-height44 CSS px; no page scroll",
+    "console_errors_observed": 0,
+    "embedded_original_wav_count": 19,
+    "physical_multitouch_and_latency": "NOT_MEASURED",
+    "audio_listening_acceptance": "NOT_CLAIMED",
+    "cloud_persistence": "NOT_CONNECTED; browser localStorage only"
+  },
+  "not_performed": [
+    "Roblox app tests/builds",
+    "cloud creation",
+    "asset uploads",
+    "provider jobs",
+    "production asset acceptance"
+  ],
+  "files": [
+    {
+      "path": "assets/mk-i-hero.png",
+      "bytes": 1949220,
+      "sha256": "d1f22141a3c2ce40aa45f1ec4a75730c8cbacb62d64c60790ddad225c2ebe60c"
+    },
+    {
+      "path": "assets/mk-i-materials.png",
+      "bytes": 2031855,
+      "sha256": "32127bf163d72389bd417ec41bdf9877b2591ef55e99271d7d6a6dbd080e1f4d"
+    },
+    {
+      "path": "assets/needle-quay-approved-style-board.json",
+      "bytes": 1008,
+      "sha256": "b4746126f34d1bfcc69563382bf9590f2ee625593aa2bc26e745b5dbc47ba6ea"
+    },
+    {
+      "path": "assets/needle-quay-approved-style-board.png",
+      "bytes": 3290138,
+      "sha256": "ed1febe208e798110905653ac6f2a60778830de00b2ff112cacf2e36c3bf3463"
+    },
+    {
+      "path": "BeatMakka_MK-I_Artbook_Alpha01_RU.pdf",
+      "bytes": 18668747,
+      "sha256": "0f7b4d99e3bc6ce408f8e409e613fc831635583fdfb8a23ac4e8e50763ac885e"
+    },
+    {
+      "path": "build_artbook.py",
+      "bytes": 56608,
+      "sha256": "e111c4296de725a8bab664cc0846effab8df4b03a15eb4866f4d922870821c4c"
+    },
+    {
+      "path": "build_prototype.py",
+      "bytes": 1185,
+      "sha256": "2cb5097fc0a534e90b0e62cca72f7298e0d7728aea7b476860cb46133b9533b2"
+    },
+    {
+      "path": "design-tokens.json",
+      "bytes": 1184,
+      "sha256": "8d534b3e148903576e4763a18d686a45ba8cee536229b2ba38b7ba3eaafde7be"
+    },
+    {
+      "path": "image-prompts.json",
+      "bytes": 3194,
+      "sha256": "71fcdbef01a0c0108cedc327ab6b23d3694c34f874e4254d8b67fbb0a42c93ff"
+    },
+    {
+      "path": "MK-I_Prototype.html",
+      "bytes": 1673017,
+      "sha256": "fb8f650e0f4c469b2a1f8ed93d02e2e8c0b1cea7e34b31624bc6e084a1d20ac7"
+    },
+    {
+      "path": "package_review.py",
+      "bytes": 3597,
+      "sha256": "4061c7c90336d90e24b9727061c0c9fbec76da45f3dfb2769a6ff91c593d5492"
+    },
+    {
+      "path": "page-index.json",
+      "bytes": 62050,
+      "sha256": "f15ea3a41236006a2591604efd75bf0cb04ed1db9c5826e64f997d4f29eb049b"
+    },
+    {
+      "path": "previews/beat-shelf.png",
+      "bytes": 148085,
+      "sha256": "c59945f452dd3afe810e51fe33e0f6bf6a38752a404a14cddc8af3502d6c8a6b"
+    },
+    {
+      "path": "previews/contact-sheet.jpg",
+      "bytes": 498037,
+      "sha256": "c96a5b577ebdf794f078522ee6274f7cf0bb552a3afbfbf56b213c3e89297b97"
+    },
+    {
+      "path": "previews/cover.png",
+      "bytes": 1196821,
+      "sha256": "8042fb5fa5cf2c25001cf2780739f5b8c2e09080737a4e2125fec7f0a91aa26f"
+    },
+    {
+      "path": "previews/handoff.png",
+      "bytes": 103577,
+      "sha256": "9327f9da08b4a05229d538ecf4a2bf02e8078f6297af1abaf47f53e253759c5c"
+    },
+    {
+      "path": "previews/load-dialog.png",
+      "bytes": 150315,
+      "sha256": "35558ee4a386ebdbfdf53d1a70ef7c9a9060f369d30cbe8147170663958802a6"
+    },
+    {
+      "path": "previews/performance.png",
+      "bytes": 114137,
+      "sha256": "08c82a3a189a50f62cd0245eee53acaa66d28b1ff6d6b752b535d4bed6e0d6c1"
+    },
+    {
+      "path": "previews/prototype-desktop.png",
+      "bytes": 86333,
+      "sha256": "f0e937b218c50ae23cd8f8478cb6be5c988c9bf6308a8c6f18fd7d44614afd84"
+    },
+    {
+      "path": "previews/prototype-phone-steps.png",
+      "bytes": 35924,
+      "sha256": "5650b7f1aa4d9b8cdba13dcc9f4607a8b2d7a976297019d8b3ad329865abca95"
+    },
+    {
+      "path": "previews/responsive.png",
+      "bytes": 141725,
+      "sha256": "368bd2d0f2b6dd0bf30618eed4b6e52fba71dcc562f0ec11ea427f81ec1e3b11"
+    },
+    {
+      "path": "previews/sounds.png",
+      "bytes": 138771,
+      "sha256": "eeb7783864428d873b4b51dbee0a130dded594effd872c8d34f76f3d64b29335"
+    },
+    {
+      "path": "prototype.template.html",
+      "bytes": 24231,
+      "sha256": "789fb1db49c7b518408f10e2f086c3396bb962569e3034cd11d982b1ce5a91fd"
+    },
+    {
+      "path": "README.md",
+      "bytes": 4575,
+      "sha256": "efdd557a74b73ccf8d9eda9348588afea9d13fd041ebbb68994bc8fd11717926"
+    },
+    {
+      "path": "SOURCE.md",
+      "bytes": 49825,
+      "sha256": "acbb721cf97a9820e34328f7ac15aa5f67c7af438f137cf021b8b460094515f2"
+    }
+  ]
+}

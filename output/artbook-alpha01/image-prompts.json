@@ -1,0 +1,32 @@
+{
+  "tool": "Built-in image_gen.imagegen",
+  "date": "2026-10-23",
+  "status": "Concept illustrations; art approval pending; no production asset acceptance",
+  "journal_note": "Prompt intent summaries retained below. They describe the generation brief and correction, not a verbatim transcript of tool arguments.",
+  "reference": "assets/needle-quay-approved-style-board.png; adjacent original provenance JSON preserved",
+  "operations": [
+    {
+      "purpose": "Device hero",
+      "prompt_intent": "Premium stylized game-art industrial design concept for BeatMakka MK-I, using the supplied approved style board as art direction. Three-quarter product view, warm teal painted metal enclosure, cream trim, amber luminous pads and screen, coral details, walnut side cheeks, tactile repaired neighborhood character. Exactly sixteen square silicone pads in four columns and four rows, display above pad area, two encoders, side control. Warm studio light, crisp material detail, simple dark background, no manufacturer logos, no long generated UI text. Artbook illustration, not a production mesh or measured drawing.",
+      "original_output": "C:/Users/slavd/.codex/generated_images/01a16541-01ad-72b2-88a1-201360480cf3/exec-093c56b6-6a4f-4e28-9f10-93ef2ea488df.png",
+      "decision": "REJECTED: only twelve pads. Not included in the delivered book."
+    },
+    {
+      "purpose": "Corrected device hero",
+      "prompt_intent": "Edit the previous MK-I hero. Replace the entire pad area with exactly four columns by four rows: sixteen clearly separate square pads. The 4x4 requirement overrides the previous housing proportions as needed. Preserve the approved warm teal, cream, amber and walnut art direction, upper display, two encoders, side control, product angle, material detail and lighting. Avoid an extra row, missing pads or three-column grid.",
+      "reference": "Rejected first hero above",
+      "original_output": "C:/Users/slavd/.codex/generated_images/01a16541-01ad-72b2-88a1-201360480cf3/exec-1d6d37b8-d728-4c17-ac22-bcaac59c8256.png",
+      "delivered": "assets/mk-i-hero.png",
+      "decision": "Selected for design review after visual inspection of the sixteen-pad grid."
+    },
+    {
+      "purpose": "Material macro",
+      "prompt_intent": "A premium close macro detail of the corrected MK-I device: warm teal painted metal edge, cream rail, softly luminous warm silicone pads, walnut side cheek, subtle fasteners, restrained believable wear and precise tactile materials. Preserve the hero's visual identity and warm light. No new typography, manufacturer branding or texture-atlas claim. Editorial game-device artbook illustration.",
+      "reference": "Corrected hero above",
+      "original_output": "C:/Users/slavd/.codex/generated_images/01a16541-01ad-72b2-88a1-201360480cf3/exec-07f89740-942c-4427-8a0f-7acbf3e4519b.png",
+      "delivered": "assets/mk-i-materials.png",
+      "decision": "Selected as concept material study; not a production texture."
+    }
+  ],
+  "deterministic_graphics": "All interface screens, numbered pads, flow diagrams, top view and finish variations were authored in vector/code. No manufacturer screenshots or logos are reproduced."
+}

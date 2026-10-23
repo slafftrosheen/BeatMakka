@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "reference_id": "Z01-approved-style-board",
+  "file": "assets/references/needle-quay-approved-style-board.png",
+  "sha256": "ed1febe208e798110905653ac6f2a60778830de00b2ff112cacf2e36c3bf3463",
+  "pixel_dimensions": [
+    1448,
+    1086
+  ],
+  "source": "Original user attachment in this project conversation; the user selected this board with \"develop with this in mind\".",
+  "original_attachment_name": "Generated image 1.png",
+  "restored_on": "2026-10-23",
+  "transformations": [],
+  "authority": "Approved visual direction only. Exact interfaces, scale, budgets and pad count follow the authored contracts.",
+  "provider_input_approved": false,
+  "provider_policy": "Do not send the whole collage to Tripo. Use a separately reviewed isolated single-object reference, current official docs and connected schema, and the existing paid-batch gate.",
+  "acceptance_scope": "No candidate, DCC, art, Studio-import or runtime asset status is promoted by restoring this reference."
+}

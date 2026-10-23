@@ -1,0 +1,62 @@
+{
+  "version": "1.0-design-proposal",
+  "palette": {
+    "paper": "F5EEDC",
+    "cream": "E8D8B7",
+    "white": "FAF4E6",
+    "ink": "162322",
+    "teal": "2F5C58",
+    "faded": "6F9186",
+    "amber": "F3B65F",
+    "coral": "CA7453",
+    "walnut": "79513B",
+    "stone": "B79C7E",
+    "graphite": "2C3031",
+    "screen": "101B1A",
+    "screen2": "203431",
+    "muted": "52645D",
+    "rule": "C9C4B2"
+  },
+  "space": [
+    8,
+    16,
+    24,
+    32
+  ],
+  "ui_font": "Gotham / GothamBold",
+  "document_fonts": "Segoe UI / Consolas",
+  "pad_grid": {
+    "columns": 4,
+    "rows": 4,
+    "canonical_order": "01 top-left → 16 bottom-right"
+  },
+  "minimum_touch_target_authored_px": 44,
+  "screens": [
+    "PLAY",
+    "STEPS",
+    "SOUNDS",
+    "BEATS"
+  ],
+  "transport": [
+    "STOP",
+    "PLAY",
+    "RECORD"
+  ],
+  "slots": [
+    "A",
+    "B",
+    "C",
+    "D"
+  ],
+  "shelf_positions": 6,
+  "H01_contract": {
+    "dimensions_studs": [
+      6,
+      1.25,
+      4
+    ],
+    "max_assembled_triangles": 4500,
+    "texture_cap": 1024
+  },
+  "prototype_status": "standalone interaction study, not Roblox runtime evidence"
+}
