@@ -1,0 +1,22 @@
+{
+  "checked_on": "2026-10-23",
+  "recorder": {
+    "url": "https://create.roblox.com/docs/reference/engine/classes/AudioRecorder.md",
+    "retrieved_via": "Studio MCP http_get",
+    "last_updated": "2026-10-22T23:20:30Z",
+    "availability": "in development and unavailable",
+    "microphone_input": "AudioDeviceInput excluded from recording",
+    "temporary_content": "current session only",
+    "recording_bound_seconds": 60
+  },
+  "other_official_sources": [
+    "https://create.roblox.com/docs/reference/engine/classes/AudioDeviceInput.md",
+    "https://create.roblox.com/docs/reference/engine/classes/AudioPlayer",
+    "https://create.roblox.com/docs/chat/voice-chat",
+    "https://create.roblox.com/docs/audio/assets"
+  ],
+  "voice_context": "eligible age-verified13+ users; live communication is separate from recording/persistence",
+  "recording_attempted": false,
+  "public_or_private_upload_performed": false,
+  "runtime_changes": false
+}

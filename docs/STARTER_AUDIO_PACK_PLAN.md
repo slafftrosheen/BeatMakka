@@ -1,5 +1,7 @@
 # Starter audio pack and real-world sound collection
 
+Continuation: [A01-04 source selection](A01_04_VERIFICATION.md) now records the user-approved four-file CC0 revision and retained A/B package. [A01-17 capability decision](A01_17_MICROPHONE_CAPABILITY.md) refreshes the microphone research with current official documentation and a non-recording Studio probe. The text below records the earlier research stage; its statements about work not yet performed are historical.
+
 Research/design sketch, 23 October 2026. This is a proposal, not asset admission or runtime acceptance. No packs were downloaded or auditioned, no uploads or cloud experience were created, and no source audio, bindings, dependencies or application code were changed. Existing audio-readiness work remains intact.
 
 ## Recommended first version

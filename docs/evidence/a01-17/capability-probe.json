@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"microphoneCreated\":false,\"universeId\":0,\"canRecordResult\":\"AudioRecorder is not enabled yet\",\"scope\":\"Edit, unparented and unwired; RecordAsync not called\",\"placeId\":0,\"audioCaptured\":false,\"engineVersion\":\"0.744.0.7441077\",\"constructible\":true,\"canRecordCallSucceeded\":false,\"methods\":{\"Clear\":\"function\",\"Stop\":\"function\",\"CanRecordAsync\":\"function\",\"RecordAsync\":\"function\",\"GetTemporaryContent\":\"function\"}}"
+    }
+  ],
+  "isError": false
+}

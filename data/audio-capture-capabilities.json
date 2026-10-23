@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "checked_on": "2026-10-23",
+  "issue": 19,
+  "decision": "defer-real-world-microphone-sampling",
+  "official_recorder_available": false,
+  "audio_device_input_recordable": false,
+  "observed_class_constructible": true,
+  "observed_can_record_error": "AudioRecorder is not enabled yet",
+  "temporary_content_is_durable_asset": false,
+  "microphone_capture_implemented": false,
+  "microphone_created_or_enabled_during_probe": false,
+  "existing_supported_flow": "developer-authored game-sound discovery I01/I02/I03",
+  "runtime_gate_added": false,
+  "specification": "docs/A01_17_MICROPHONE_CAPABILITY.md",
+  "probe": "tools/probe_audio_capture.luau",
+  "probe_receipt": "docs/evidence/a01-17/capability-probe.json",
+  "sources": [
+    "https://create.roblox.com/docs/reference/engine/classes/AudioRecorder.md",
+    "https://create.roblox.com/docs/reference/engine/classes/AudioDeviceInput.md",
+    "https://create.roblox.com/docs/reference/engine/classes/AudioPlayer",
+    "https://create.roblox.com/docs/chat/voice-chat",
+    "https://create.roblox.com/docs/audio/assets"
+  ]
+}
