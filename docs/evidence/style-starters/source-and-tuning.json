@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "packs": 10,
+  "pads": 160,
+  "source_copies": 195,
+  "derived_clipping": 0,
+  "tuned_pads": 82,
+  "maximum_measured_tuning_cents": 0.09065058387743366,
+  "keys": [
+    "A minor",
+    "A minor",
+    "D minor",
+    "A minor",
+    "A minor",
+    "A minor",
+    "D major",
+    "A minor",
+    "A minor",
+    "A minor"
+  ],
+  "archive_hashes_rechecked": 10,
+  "repo_sources_match_extracted_originals": 195
+}

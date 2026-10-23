@@ -23,3 +23,6 @@ output/audio-quay-found-v1/** -text whitespace=cr-at-eol
 assets/candidates/materials/tactile-v1/** -text whitespace=cr-at-eol
 tools/build_finish_candidates.py text eol=lf
 tools/render_finish_candidates.py text eol=lf
+
+# Retained user audio and derived kit manifests are exact source evidence.
+assets/candidates/audio/style-starters-v1/** -text whitespace=cr-at-eol

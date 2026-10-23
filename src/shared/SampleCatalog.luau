@@ -19,7 +19,21 @@ local samples = {
     { id = "vent_thump", label = "Vent thump", discovery = "I02" },
     { id = "robot_chirp", label = "Helper chirp", discovery = "I03" },
 }
-local Catalog = { List = samples, ById = {} }
+local Catalog = {
+    List = samples,
+    ById = {},
+    Packs = { { id = "quay", label = "Needle Quay", samples = table.clone(samples) } },
+    PackById = {},
+}
+for _, pack in require(script.Parent.StylePacks) do
+    table.insert(Catalog.Packs, pack)
+    for _, sample in pack.samples do
+        table.insert(samples, sample)
+    end
+end
+for _, pack in Catalog.Packs do
+    Catalog.PackById[pack.id] = pack
+end
 for _, sample in samples do
     Catalog.ById[sample.id] = sample
 end

@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"released\":true,\"stopped\":true,\"passed\":true,\"uiDestroyed\":true}"
+    }
+  ],
+  "isError": false
+}

@@ -369,6 +369,21 @@ function MusicService.start(world)
             and Catalog.isUnlocked(b, profile.unlocked)
         then
             profile.pattern.assignments[a] = b
+        elseif action == "Pack" and type(a) == "string" and #a < 32 and Catalog.PackById[a] then
+            if b ~= profile.editVersion or profile.saving then
+                send(player, "Sounds changed or saving is in progress. Review the kit again.")
+                return
+            end
+            local assignments = {}
+            for pad = 1, 16 do
+                local sample = Catalog.PackById[a].samples[pad]
+                if not sample or not Catalog.isUnlocked(sample.id, profile.unlocked) then
+                    return
+                end
+                assignments[pad] = sample.id
+            end
+            profile.pattern.assignments = assignments
+            notice = Catalog.PackById[a].label .. " kit selected. Notes and tempo kept."
         elseif action == "Finish" and type(a) == "string" and #a < 32 and Cosmetics.Sets[a] then
             profile.finish = a
         elseif action == "Bpm" and Pattern.integer(a, Pattern.MinBpm, Pattern.MaxBpm) then
@@ -453,6 +468,7 @@ function MusicService.start(world)
             or action == "MutePad"
             or action == "ClearPad"
             or action == "Assign"
+            or action == "Pack"
             or action == "Bpm"
             or action == "Finish"
             or action == "SelectSlot"

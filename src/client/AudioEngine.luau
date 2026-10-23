@@ -44,7 +44,7 @@ function AudioEngine:_syncAmbient()
 end
 
 function AudioEngine:_setState(bank, state)
-    if self.destroyed or bank.state == state then
+    if self.destroyed or bank.disposed or bank.state == state then
         return
     end
     bank.state = state
@@ -62,7 +62,7 @@ function AudioEngine:_setState(bank, state)
 end
 
 function AudioEngine:_refresh(bank)
-    if self.destroyed then
+    if self.destroyed or bank.disposed then
         return
     end
     if allLoaded(bank) then
@@ -73,19 +73,22 @@ function AudioEngine:_refresh(bank)
     end
 end
 
-function AudioEngine:_addBank(sampleId, voiceCount)
+function AudioEngine:_addBank(sampleId, voiceCount, music)
     local id = ContentIds.Audio[sampleId]
     local bank = {
         voices = {},
         cursor = 0,
         generation = 0,
         state = if id == nil then "unconfigured" else "invalid",
+        music = music == true,
+        connections = {},
     }
     self.banks[sampleId] = bank
     if not validAssetId(id) then
         return
     end
     self.configured += 1
+    bank.configured = true
     for index = 1, voiceCount do
         local voice = Instance.new("Sound")
         voice.Name = sampleId .. "_" .. tostring(index)
@@ -98,7 +101,7 @@ function AudioEngine:_addBank(sampleId, voiceCount)
     self:_setState(bank, "loading")
     for _, voice in bank.voices do
         table.insert(
-            self.connections,
+            bank.connections,
             voice:GetPropertyChangedSignal("IsLoaded"):Connect(function()
                 self:_refresh(bank)
             end)
@@ -107,12 +110,12 @@ function AudioEngine:_addBank(sampleId, voiceCount)
     end
     self:_refresh(bank)
     task.spawn(function()
-        if self.destroyed then
+        if self.destroyed or bank.disposed then
             return
         end
         local ok = pcall(function()
             ContentProvider:PreloadAsync(bank.voices, function(_, fetchStatus)
-                if self.destroyed then
+                if self.destroyed or bank.disposed then
                     return
                 end
                 bank.fetchStatus = fetchStatus.Name
@@ -125,7 +128,7 @@ function AudioEngine:_addBank(sampleId, voiceCount)
                 end
             end)
         end)
-        if self.destroyed then
+        if self.destroyed or bank.disposed then
             return
         end
         if not ok and not allLoaded(bank) then
@@ -134,6 +137,56 @@ function AudioEngine:_addBank(sampleId, voiceCount)
             self:_refresh(bank)
         end
     end)
+end
+
+function AudioEngine:_removeBank(id)
+    local bank = self.banks[id]
+    if not bank then
+        return
+    end
+    bank.disposed = true
+    bank.generation += 1
+    for _, connection in bank.connections do
+        connection:Disconnect()
+    end
+    for _, voice in bank.voices do
+        voice:Stop()
+        voice:Destroy()
+    end
+    table.clear(bank.connections)
+    table.clear(bank.voices)
+    if bank.configured then
+        self.configured -= 1
+    end
+    self.banks[id] = nil
+end
+
+function AudioEngine:setSelection(assignments)
+    if self.destroyed then
+        return
+    end
+    local wanted = {}
+    for pad = 1, 16 do
+        local id = assignments[pad]
+        wanted[if Catalog.ById[id] then id else Catalog.List[pad].id] = true
+    end
+    -- Keep only the original three discovery previews alongside active pads.
+    for _, sample in Catalog.Packs[1].samples do
+        if sample.discovery then
+            wanted[sample.id] = true
+        end
+    end
+    for id, bank in table.clone(self.banks) do
+        if bank.music and not wanted[id] then
+            self:_removeBank(id)
+        end
+    end
+    for id in wanted do
+        if not self.banks[id] then
+            self:_addBank(id, MUSIC_VOICES, true)
+        end
+    end
+    self.Changed:Fire()
 end
 
 function AudioEngine.new(groupName, options)
@@ -152,9 +205,7 @@ function AudioEngine.new(groupName, options)
     group.Volume = 0.6
     group.Parent = SoundService
     self.group = group
-    for _, sample in Catalog.List do
-        self:_addBank(sample.id, MUSIC_VOICES)
-    end
+    self:setSelection({})
     if not options.musicOnly then
         for _, id in CUES do
             self:_addBank(id, 1)
@@ -178,15 +229,18 @@ function AudioEngine:status()
     end
     local counts =
         { ready = 0, loading = 0, failed = 0, timedOut = 0, unconfigured = 0, invalid = 0 }
-    for _, sample in Catalog.List do
-        local bank = self.banks[sample.id]
-        counts[bank.state] += 1
+    local musicCount = 0
+    for _, bank in self.banks do
+        if bank.music then
+            counts[bank.state] += 1
+            musicCount += 1
+        end
     end
     local prefix = if self.muted then "Sound muted. " else ""
-    if counts.unconfigured == #Catalog.List then
+    if counts.unconfigured == musicCount then
         return prefix .. "Sound bank not configured. You can still create and save patterns."
     end
-    local parts = { string.format("Sounds %d/%d ready", counts.ready, #Catalog.List) }
+    local parts = { string.format("Sounds %d/%d ready", counts.ready, musicCount) }
     for _, item in
         {
             { "loading", "loading" },
@@ -276,10 +330,8 @@ function AudioEngine:destroy()
         connection:Disconnect()
     end
     self:_stopVoices()
-    for _, bank in self.banks do
-        for _, voice in bank.voices do
-            voice:Destroy()
-        end
+    for id in table.clone(self.banks) do
+        self:_removeBank(id)
     end
     table.clear(self.connections)
     table.clear(self.banks)

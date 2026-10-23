@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"eviction\":true,\"maxMusicBanks\":19,\"packs\":11,\"lateLoadRejected\":true,\"passed\":true,\"teardown\":true}"
+    }
+  ],
+  "isError": false
+}

@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"assignmentsRoundTrip\":true,\"packs\":10,\"samples\":160,\"passed\":true,\"legacyPreserved\":true}"
+    }
+  ],
+  "isError": false
+}

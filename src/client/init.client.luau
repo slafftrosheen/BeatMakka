@@ -172,6 +172,8 @@ connect(stateEvent.OnClientEvent, function(nextState)
         listeningEpoch = if nextListening then nextListening.epoch else -1
     end
     state = nextState
+    audio:setSelection(state.pattern.assignments)
+    listeningAudio:setSelection(if nextListening then nextListening.pattern.assignments else {})
     if not state.playing then
         transportInterrupted = false
     end

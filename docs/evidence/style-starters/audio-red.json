@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "sabuiltin_Assistant.rbxm.Assistant.Packages._Index.AssistantUI.AssistantUI.Tools.ExecuteLuauTool:126: sabuiltin_Assistant.rbxm.Assistant.Packages._Index.AssistantUI.AssistantUI.Util.CommandExecution:54: AssistantCommand:1: Players.CuuteFoxey.PlayerScripts.ModuleScript:31: Players.CuuteFoxey.PlayerScripts.ModuleScript:11: attempt to call missing method 'setSelection' of table"
+    }
+  ],
+  "isError": true
+}

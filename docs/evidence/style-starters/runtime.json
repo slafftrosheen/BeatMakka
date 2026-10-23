@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"notesAndTempoKept\":true,\"sessionRoundTrip\":true,\"kitsApplied\":11,\"passed\":true,\"staleRejected\":11}"
+    }
+  ],
+  "isError": false
+}

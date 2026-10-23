@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "audio_keys": 184,
+  "preserved_core_audio_keys": 24,
+  "style_audio_keys": 160,
+  "image_keys": 14,
+  "actual_bound_audio": 0,
+  "actual_bound_images": 14,
+  "review_files_verified": 10
+}

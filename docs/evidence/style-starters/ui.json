@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"twoPress\":true,\"staleRejected\":true,\"browseAndNavigationCancel\":true,\"filteredSamples\":16,\"passed\":true,\"keyVisible\":true}"
+    }
+  ],
+  "isError": false
+}

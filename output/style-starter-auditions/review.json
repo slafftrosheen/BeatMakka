@@ -1,0 +1,115 @@
+{
+  "stage": "Listening review pending; not hosted Roblox playback",
+  "packs": [
+    {
+      "pack": "triphop",
+      "key": "A minor",
+      "file": "triphop.wav",
+      "sha256": "8323c31764761df96b8d2e22d8fa7b0d2cfb214959ed1907eee4a8f7dd6b7f1e",
+      "seconds": 24.52138321995465,
+      "review_gain_db": -12.041199826559248,
+      "peak_dbfs": -14.565813325251654,
+      "clipped_samples": 0,
+      "arrangement_begins_seconds": 17.988049886621315
+    },
+    {
+      "pack": "dance",
+      "key": "A minor",
+      "file": "dance.wav",
+      "sha256": "faa32bc4ea3b622eae9c05c3dba37fbdc73c5f46e91f78f08b0b48f503badfbe",
+      "seconds": 21.86780045351474,
+      "review_gain_db": -12.041199826559248,
+      "peak_dbfs": -5.935794516712129,
+      "clipped_samples": 0,
+      "arrangement_begins_seconds": 17.23925170068027
+    },
+    {
+      "pack": "grunge",
+      "key": "D minor",
+      "file": "grunge.wav",
+      "sha256": "2820d47a70e4d587687564e940a75c889e0e0ce7cfa792ca37159aabda9f0636",
+      "seconds": 21.433333333333334,
+      "review_gain_db": -12.041199826559248,
+      "peak_dbfs": -15.585851193731717,
+      "clipped_samples": 0,
+      "arrangement_begins_seconds": 14.9
+    },
+    {
+      "pack": "hardtrance",
+      "key": "A minor",
+      "file": "hardtrance.wav",
+      "sha256": "13c56a93899727b5c6743b508d97cd6a70b6282ba1a0e5440440752933606df8",
+      "seconds": 23.16591836734694,
+      "review_gain_db": -12.041199826559248,
+      "peak_dbfs": -9.063189165198699,
+      "clipped_samples": 0,
+      "arrangement_begins_seconds": 18.53736961451247
+    },
+    {
+      "pack": "hiphop",
+      "key": "A minor",
+      "file": "hiphop.wav",
+      "sha256": "fa98ddfc453a8dbdcbea1574fe7ccea5acec86948d612e0046197c47bb313971",
+      "seconds": 24.079160997732426,
+      "review_gain_db": -12.041199826559248,
+      "peak_dbfs": -14.129595589811734,
+      "clipped_samples": 0,
+      "arrangement_begins_seconds": 17.54582766439909
+    },
+    {
+      "pack": "industrial",
+      "key": "A minor",
+      "file": "industrial.wav",
+      "sha256": "78abe230b961060b2cf4429aefac366c08ea85df28c578c66ca1039bdf7158cc",
+      "seconds": 19.412063492063492,
+      "review_gain_db": -12.041199826559248,
+      "peak_dbfs": -15.039690076619426,
+      "clipped_samples": 0,
+      "arrangement_begins_seconds": 14.783514739229025
+    },
+    {
+      "pack": "pop",
+      "key": "D major",
+      "file": "pop.wav",
+      "sha256": "d8ec837d406ef16bd71792ddac4a9d8ba2fab4454fb0a56e9d25a14182e95a56",
+      "seconds": 24.020861678004536,
+      "review_gain_db": -12.041199826559248,
+      "peak_dbfs": -13.523523971963973,
+      "clipped_samples": 0,
+      "arrangement_begins_seconds": 17.4875283446712
+    },
+    {
+      "pack": "reggae",
+      "key": "A minor",
+      "file": "reggae.wav",
+      "sha256": "8d42d29d2f762d02472e957133fae2e354284da17a078cc39a05798b6fe76dce",
+      "seconds": 24.580408163265307,
+      "review_gain_db": -12.041199826559248,
+      "peak_dbfs": -13.632674433978568,
+      "clipped_samples": 0,
+      "arrangement_begins_seconds": 18.047074829931972
+    },
+    {
+      "pack": "techno",
+      "key": "A minor",
+      "file": "techno.wav",
+      "sha256": "24d816865a5d04f1a1fb6cdd72277e5498c6494a8e595cb9632213f768c1e23f",
+      "seconds": 22.68174603174603,
+      "review_gain_db": -12.041199826559248,
+      "peak_dbfs": -12.395576363806267,
+      "clipped_samples": 0,
+      "arrangement_begins_seconds": 18.053197278911565
+    },
+    {
+      "pack": "trance",
+      "key": "A minor",
+      "file": "trance.wav",
+      "sha256": "5a27eb5e052e2763df7c2e564522bed978ddb4540572418668678ab71f4f70f1",
+      "seconds": 19.12702947845805,
+      "review_gain_db": -12.041199826559248,
+      "peak_dbfs": -12.339431634538261,
+      "clipped_samples": 0,
+      "arrangement_begins_seconds": 14.498480725623583
+    }
+  ]
+}

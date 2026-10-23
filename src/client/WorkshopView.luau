@@ -22,6 +22,7 @@ function WorkshopView.new(callbacks)
         samples = {},
         effects = true,
         muted = false,
+        packIndex = 1,
     }, WorkshopView)
     local screen = Gui.make("ScreenGui", Players.LocalPlayer:WaitForChild("PlayerGui"), {
         Name = "FrequencyZero",
@@ -162,6 +163,7 @@ function WorkshopView.new(callbacks)
             if self.state and self.state.ready then
                 if action == "Save" then
                     self.restoreConfirmation = nil
+                    self.packConfirmation = nil
                     self:update(self.state)
                 end
                 callbacks.command(action, if type(a) == "function" then a() else a)
@@ -301,17 +303,45 @@ function WorkshopView.new(callbacks)
     libraryTitle.Size = UDim2.new(1, -8, 0, 40)
     libraryTitle.LayoutOrder = 1
     self.libraryTitle = libraryTitle
+    local packControls = Gui.make("Frame", sounds, {
+        Name = "PackControls",
+        Size = UDim2.new(1, -8, 0, 96),
+        BackgroundTransparency = 1,
+        LayoutOrder = 2,
+    })
+    local previous = Gui.button(packControls, "<", function()
+        self:browsePack(-1)
+    end)
+    previous.Name = "PreviousKit"
+    previous.Size = UDim2.fromOffset(44, 44)
+    local nextPack = Gui.button(packControls, ">", function()
+        self:browsePack(1)
+    end)
+    nextPack.Name = "NextKit"
+    nextPack.Position = UDim2.new(1, -44, 0, 0)
+    nextPack.Size = UDim2.fromOffset(44, 44)
+    self.packLabel = Gui.label(packControls, "Needle Quay", 13)
+    self.packLabel.Position = UDim2.fromOffset(52, 0)
+    self.packLabel.Size = UDim2.new(1, -104, 0, 44)
+    self.packApply = Gui.button(packControls, "Use kit on 16 pads", function()
+        self:applyPack()
+    end)
+    self.packApply.Name = "UseKit"
+    self.packApply.Position = UDim2.fromOffset(0, 48)
+    self.packApply.Size = UDim2.new(1, 0, 0, 44)
     local library = Gui.make("Frame", sounds, {
         Name = "Collection",
         Size = UDim2.new(1, -8, 0, 512),
         BackgroundTransparency = 1,
-        LayoutOrder = 2,
+        LayoutOrder = 3,
     })
     local libraryGrid = Gui.make("UIGridLayout", library, {
         CellSize = UDim2.new(0.5, -4, 0, 48),
         CellPadding = UDim2.fromOffset(8, 8),
         SortOrder = Enum.SortOrder.LayoutOrder,
     })
+    self.library = library
+    self.libraryColumns = 2
     for index, sample in Catalog.List do
         local button = Gui.button(library, sample.label, function()
             if
@@ -480,7 +510,8 @@ function WorkshopView.new(callbacks)
         self.compactPads = smallPads
         local columns = if size.X < 480 then 2 else 3
         libraryGrid.CellSize = UDim2.new(1 / columns, -6, 0, 48)
-        library.Size = UDim2.new(1, -8, 0, math.ceil(#Catalog.List / columns) * 56)
+        self.libraryColumns = columns
+        self:filterSamples()
         if self.state then
             self:updatePadLabels()
         end
@@ -558,6 +589,10 @@ function WorkshopView:showPage(name)
     end
     if self.page ~= name then
         self.restoreConfirmation = nil
+        self.packConfirmation = nil
+        if self.packApply then
+            self:filterSamples()
+        end
     end
     self.page = name
     if self.state then
@@ -595,7 +630,7 @@ function WorkshopView:guideText()
     if self.page == "Settings" then
         return "Save profile keeps slots A-D and your six-Beat shelf."
     elseif self.page == "Sounds" then
-        return "Choose a sound for the selected pad. Play lets you try it."
+        return "Browse a kit. Choose one sound or use all 16; notes stay."
     elseif self.page == "Beats" then
         return "Save to shelf keeps A-D as a Beat. Load replaces working A-D."
     elseif state.recording then
@@ -608,6 +643,58 @@ function WorkshopView:guideText()
         return "Open Steps to build a loop, or Record and tap pads."
     end
     return "Try a pad. Sounds chooses its sound; Steps makes a loop."
+end
+
+function WorkshopView:filterSamples()
+    local pack = Catalog.Packs[self.packIndex]
+    self.packLabel.Text = pack.label
+        .. (if pack.key then " / " .. pack.key else " / Original collection")
+    self.packApply.Text = if self.packConfirmation
+        then "Replace 16 pad sounds?"
+        else "Use kit on 16 pads"
+    for id, button in self.samples do
+        local sample = Catalog.ById[id]
+        button.Visible = if pack.id == "quay" then sample.pack == nil else sample.pack == pack.id
+    end
+    self.library.Size = UDim2.new(1, -8, 0, math.ceil(#pack.samples / self.libraryColumns) * 56)
+end
+
+function WorkshopView:browsePack(delta)
+    self.packIndex = (self.packIndex - 1 + delta) % #Catalog.Packs + 1
+    self.packConfirmation = nil
+    self:filterSamples()
+end
+
+function WorkshopView:applyPack()
+    local state = self.state
+    if not state or not state.ready or not state.station or state.saving then
+        return
+    end
+    local pack = Catalog.Packs[self.packIndex]
+    local confirmation = self.packConfirmation
+    if
+        confirmation
+        and confirmation.id == pack.id
+        and confirmation.editVersion == state.editVersion
+        and confirmation.station == state.station
+        and os.clock() < confirmation.expires
+    then
+        self.packConfirmation = nil
+        self.callbacks.command("Pack", pack.id, state.editVersion)
+    else
+        self.packConfirmation = {
+            id = pack.id,
+            editVersion = state.editVersion,
+            station = state.station,
+            expires = os.clock() + 5,
+        }
+        task.delay(5, function()
+            if self.screen.Parent and self.state then
+                self:update(self.state)
+            end
+        end)
+    end
+    self:filterSamples()
 end
 
 function WorkshopView:restoreSlots()
@@ -731,6 +818,20 @@ function WorkshopView:update(state)
         then "Replace slots A-D?"
         elseif state.hasSave then "Restore slots"
         else "No saved slots"
+    local packConfirmation = self.packConfirmation
+    if
+        packConfirmation
+        and (
+            os.clock() >= packConfirmation.expires
+            or state.editVersion ~= packConfirmation.editVersion
+            or state.station ~= packConfirmation.station
+            or state.saving
+            or not state.station
+        )
+    then
+        self.packConfirmation = nil
+    end
+    self:filterSamples()
     self.rowTitle.Text = string.format(
         "%s / PAD %02d / %d BPM",
         if state.book then state.book.slots[state.book.activeSlot].label else "A",
