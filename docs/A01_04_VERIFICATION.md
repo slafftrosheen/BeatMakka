@@ -33,6 +33,6 @@ Browser interaction verified original playback starts, selecting the candidate p
 
 ## Verification and next step
 
-`python tools/prepare_cc0_audition.py --verify` verifies the complete package roster, all original/derived/license hashes, review artifact hashes, format/duration/clipping constraints, and 29 unchanged canonical source/binding files. Tampered audio bytes and an unexpected package member were both rejected in an isolated work copy; [receipt](evidence/a01-04/integrity.json).
+`python tools/prepare_cc0_audition.py --verify` verifies the complete package roster, all original/derived/license hashes, review artifact hashes, selection/registry agreement, format/duration/clipping constraints, and 29 unchanged canonical source/binding files. Tampered audio bytes and an unexpected package member were both rejected in an isolated work copy; [receipt](evidence/a01-04/integrity.json). Git line-ending normalization initially altered a provider license; byte-preserving attributes corrected it. All 25 package/review hashes were then checked against the actual Git index bytes, including original licenses and generated metadata, so a checkout retains the recorded digests.
 
 The content-selection criteria of #4 are fulfilled. No audio was uploaded by this issue. The approved optional revision remains separate from #5's already-authorized batch of 24 original sources. Admitting selected CC0 replacements to Roblox requires its own explicit source revision and real receipts, moderation, permissions and runtime/listening acceptance. Tripo spend: zero.
