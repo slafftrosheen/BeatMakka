@@ -13,3 +13,8 @@
 *.fbx binary
 *.blend binary
 *.wav binary
+
+# The audition integrity roster hashes exact provider and derived bytes.
+assets/candidates/audio/quay-found-v1/** -text
+assets/candidates/audio/quay-found-v1/licenses/*.txt -diff
+output/audio-quay-found-v1/** -text
