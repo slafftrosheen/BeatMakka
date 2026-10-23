@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-23",
+  "studios": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"studios\":[{\"id\":\"1ae28dc4-9587-420e-a530-1beef3a77c6c\",\"name\":null}]}"
+      }
+    ],
+    "isError": false
+  },
+  "state": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Place is not open"
+      }
+    ],
+    "isError": true
+  },
+  "desktop_control_used": false,
+  "project_mutations_performed": false
+}

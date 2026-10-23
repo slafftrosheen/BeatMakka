@@ -7,6 +7,7 @@ local Book = require(Shared.BeatBook)
 local Quest = require(Shared.FirstPerformanceQuest)
 local Rooms = require(Shared.RoomCatalog)
 local Missions = require(Shared.NeighborhoodMissions)
+local Chapter = require(Shared.ChapterConcert)
 
 local ProfileStore = {}
 local store
@@ -30,6 +31,7 @@ function ProfileStore.new()
         finish = "quay",
         room = Rooms.sanitize(nil, {}),
         neighborhood = Missions.sanitize(nil),
+        chapter = Chapter.sanitize(nil),
         saved = nil,
         storageRevision = 0,
         saveMode = if RunService:IsStudio() then "session" else "cloud",
@@ -54,6 +56,7 @@ local function capture(profile)
         finish = profile.finish,
         room = Rooms.sanitize(profile.room, profile),
         neighborhood = Missions.sanitize(profile.neighborhood),
+        chapter = Chapter.sanitize(profile.chapter),
     }
 end
 
@@ -94,6 +97,7 @@ function ProfileStore.load(player, profile, storage)
             else 0
         profile.room = Rooms.sanitize(data.room, profile)
         profile.neighborhood = Missions.sanitize(data.neighborhood)
+        profile.chapter = Chapter.sanitize(data.chapter)
         profile.saved = capture(profile)
     end
     profile.ready = true
@@ -171,6 +175,7 @@ function ProfileStore.restore(profile)
     end
     local savedQuest = Quest.sanitize(profile.saved.quest)
     local preserved = hasNewDiscoveries
+        or not Chapter.equal(profile.chapter, profile.saved.chapter)
         or not Missions.equal(profile.neighborhood, profile.saved.neighborhood)
         or not Rooms.equal(profile.room, Rooms.sanitize(profile.saved.room, profile))
         or profile.quest.accepted ~= savedQuest.accepted

@@ -356,6 +356,29 @@ function WorldBuilder.build()
         indicator:SetAttribute("NeighborhoodMissionId", id)
     end
     listeningAnchor:SetAttribute("AssetId", "I05")
+    local concertAnchor = part(
+        podium,
+        "ChapterTarget",
+        Vector3.new(1, 2, 1),
+        CFrame.new(45, 3, 15),
+        Theme.Cream,
+        false
+    )
+    concertAnchor.Transparency = 1
+    local concertPrompt = prompt(concertAnchor, "Chapter concert", "Solo set / your saved music")
+    concertPrompt.KeyboardKeyCode = Enum.KeyCode.F
+    concertPrompt.GamepadKeyCode = Enum.KeyCode.ButtonY
+    for _, x in { 38, 46 } do
+        local insert = part(
+            podium,
+            "ChapterLight",
+            Vector3.new(0.5, 0.5, 0.15),
+            CFrame.new(x, 5.5, 16),
+            Theme.Graphite,
+            false
+        )
+        insert:SetAttribute("ChapterLight", true)
+    end
     local listening = {
         anchor = listeningAnchor,
         prompt = prompt(listeningAnchor, "Share your loop", "Opt-in listening / 32-stud range"),
@@ -434,6 +457,7 @@ function WorldBuilder.build()
         rooms = rooms,
         discoveries = nodes,
         listening = listening,
+        concert = { anchor = concertAnchor, prompt = concertPrompt },
         quest = { anchor = talkAnchor, prompt = talkPrompt },
     }
 end

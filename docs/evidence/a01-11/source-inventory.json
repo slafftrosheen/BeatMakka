@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-23",
+  "folder": "C:\\Users\\slavd\\OneDrive\\Pictures\\Assets",
+  "entries": [
+    "400 Vintage Alpha",
+    "45 Unholy Brushes",
+    "Brush - Wood Surface",
+    "Brush Animal Ornament",
+    "ChatGPT Image Sep 30, 2026, 10_25_01 AM.png",
+    "Favelas",
+    "ice_surface_alpha_defined_cracks_500x500mm_8192_16bit.tif",
+    "latvian_elements_blender_pack",
+    "Stylized Brushset + alphas",
+    "Stylized Edition",
+    "Stylized Materials Library -",
+    "Wall Maker"
+  ],
+  "new_external_files_used": [],
+  "existing_sources": [
+    "assets/references/needle-quay-approved-style-board.png",
+    "assets/production/materials",
+    "src/shared/Theme.luau",
+    "assets/optimized/H04/H04_atlas_v1.glb",
+    "assets/optimized/H04/H04_atlas_v1.png"
+  ],
+  "visual_stage": "native chapter feedback and H04 crowd stand-ins authored; Studio and art acceptance pending"
+}

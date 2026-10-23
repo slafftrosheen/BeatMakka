@@ -65,12 +65,7 @@ function WorkshopView.new(callbacks)
     self.hudLabel.Position = UDim2.fromOffset(14, 10)
     self.hudLabel.Size = UDim2.new(1, -210, 1, -20)
     local function toggleSound()
-        self.muted = not self.muted
-        self.sound.Text = if self.muted then "Sound MUTED" else "Sound ON"
-        if self.panelSound then
-            self.panelSound.Text = self.sound.Text
-        end
-        callbacks.mute(self.muted)
+        self:setMuted(not self.muted)
     end
     self.sound = Gui.button(hud, "Sound ON", toggleSound)
     self.sound.Name = "Sound"
@@ -774,6 +769,15 @@ function WorkshopView:selectPad(pad)
     if self.state then
         self:update(self.state)
     end
+end
+
+function WorkshopView:setMuted(value)
+    self.muted = value == true
+    self.sound.Text = if self.muted then "Sound MUTED" else "Sound ON"
+    if self.panelSound then
+        self.panelSound.Text = self.sound.Text
+    end
+    self.callbacks.mute(self.muted)
 end
 
 function WorkshopView:update(state)

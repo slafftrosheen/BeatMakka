@@ -11,6 +11,9 @@ local WorkshopView = require(script.WorkshopView)
 local Restoration = require(script.Restoration)
 local DeviceAppearance = require(script.DeviceAppearance)
 local ListeningView = require(script.ListeningView)
+local ConcertView = require(script.ConcertView)
+local ConcertScene = require(script.ConcertScene)
+local canSend = require(script.CommandPolicy)
 local WorldFeedback = require(script.WorldFeedback)
 local GuiFactory = require(script.GuiFactory)
 local network = ReplicatedStorage:WaitForChild("MusicNetwork")
@@ -19,6 +22,9 @@ local stateEvent = network:WaitForChild("State")
 local audio = AudioEngine.new()
 local listeningAudio = AudioEngine.new("CourtyardListening", { musicOnly = true })
 local listeningView
+local concertView
+local concertScene = ConcertScene.new()
+local playbackKind
 local listeningAbsolute = -1
 local listeningEpoch = -1
 local appearance = DeviceAppearance.new()
@@ -74,11 +80,7 @@ end
 connect(playerGui.ChildAdded, updateTouchControls)
 
 local function send(action, a, b)
-    if
-        action == "Release"
-        or action == "LeaveListening"
-        or (state and state.ready and state.station)
-    then
+    if canSend(state, action) then
         if action == "Stop" or action == "Release" then
             transportInterrupted = true
             audio:stop()
@@ -137,12 +139,18 @@ view = WorkshopView.new({
 })
 connect(UserInputService.WindowFocusReleased, function()
     view:cancelInput(true)
+    if state and state.concert and state.concert.open then
+        send("ChapterClose")
+    end
 end)
 connect(UserInputService.TextBoxFocused, function()
     view:cancelInput(true)
 end)
 listeningView = ListeningView.new(view.screen, function()
     send("LeaveListening")
+end)
+concertView = ConcertView.new(view.screen, send, function()
+    view:setMuted(not view.muted)
 end)
 connect(listeningAudio.Changed.Event, function()
     if state then
@@ -165,25 +173,37 @@ connect(stateEvent.OnClientEvent, function(nextState)
     then
         audio:stop()
     end
-    local nextListening = nextState.listening
-    if not nextListening or nextListening.epoch ~= listeningEpoch then
+    local chapterPlayback = nextState.concert and nextState.concert.playback
+    local nextListening = chapterPlayback or nextState.listening
+    local nextKind = if chapterPlayback then "chapter" else "listening"
+    if not nextListening or nextListening.epoch ~= listeningEpoch or playbackKind ~= nextKind then
         listeningAudio:stop()
         listeningAbsolute = -1
         listeningEpoch = if nextListening then nextListening.epoch else -1
     end
+    playbackKind = nextKind
     state = nextState
     audio:setSelection(state.pattern.assignments)
     listeningAudio:setSelection(if nextListening then nextListening.pattern.assignments else {})
     if not state.playing then
         transportInterrupted = false
     end
-    if state.station or state.listening then
+    if state.station or state.listening or chapterPlayback then
         -- Do not let waterfront ambience bleed into an opted-in music session.
         audio:ambient(false)
     end
     feedback:update(state)
     updateTouchControls()
+    concertView:update(
+        state.concert,
+        state.saveMode,
+        view.muted,
+        state.notice,
+        state.saving,
+        state.dirty
+    )
     view:update(state)
+    concertScene:update(state.concert)
     listeningView:update(
         state.listening,
         if listeningAudio.muted
@@ -253,7 +273,8 @@ end, false, Enum.ContextActionPriority.High.Value, table.unpack(keys))
 local refresh = 0
 connect(RunService.Heartbeat, function(dt)
     feedback:step()
-    local session = state and state.listening
+    concertScene:step(effects)
+    local session = state and ((state.concert and state.concert.playback) or state.listening)
     if session then
         local now = Workspace:GetServerTimeNow()
         local absolute, step = Pattern.position(session.pattern.bpm, session.startedAt, now)
@@ -277,6 +298,16 @@ connect(RunService.Heartbeat, function(dt)
         view:tick()
         listeningView:tick()
         if state then
+            concertView:update(
+                state.concert,
+                state.saveMode,
+                view.muted,
+                nil,
+                state.saving,
+                state.dirty
+            )
+        end
+        if state then
             Restoration.update(state.restoration, effects, state.neighborhood)
         end
         if state then
@@ -288,7 +319,14 @@ connect(RunService.Heartbeat, function(dt)
         audio:ambient(
             root ~= nil
                 and root.Position.Z < -20
-                and (not state or (not state.station and not state.listening))
+                and (
+                    not state
+                    or (
+                        not state.station
+                        and not state.listening
+                        and not (state.concert and state.concert.playback)
+                    )
+                )
         )
     end
     if not state or not state.playing or transportInterrupted then
@@ -323,6 +361,8 @@ end)
 script.Destroying:Connect(function()
     view:cancelInput(true)
     send("Release")
+    send("ChapterClose")
+    concertScene:destroy()
     for _, connection in connections do
         connection:Disconnect()
     end

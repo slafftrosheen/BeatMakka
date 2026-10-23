@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-23",
+  "baseline": "6fc38a6e42913da244f29bf431040f8185af4246",
+  "source_review": "independent review completed; three findings corrected and re-reviewed",
+  "selene": {
+    "errors": 0,
+    "warnings": 0,
+    "parse_errors": 0
+  },
+  "stylua_check": "PASS",
+  "rojo_build": {
+    "passed": true,
+    "sha256": "c9b6b52e51af0e0d059528c66986452d0c5e76b5795fc1826277021945cbf853",
+    "chapter_modules_included": [
+      "ChapterConcert",
+      "ConcertService",
+      "ConcertView",
+      "ConcertScene",
+      "CommandPolicy"
+    ],
+    "source_count": 44,
+    "qa_excluded": true
+  },
+  "offline_binding_safety_tests": {
+    "passed": 6,
+    "total": 6
+  },
+  "approved_material_verifier": {
+    "passed": true,
+    "maps": 12,
+    "templates": 8,
+    "audio_preserved": 100
+  },
+  "content_ids_and_assets_unchanged": true,
+  "studio_new_tests": "NOT RUN: connected Studio reports Place is not open",
+  "studio_regressions": "NOT RUN for this change",
+  "visual_and_multiplayer_acceptance": "NOT VERIFIED",
+  "cloud_rejoin_and_audio": "NOT VERIFIED",
+  "issue13_close_eligible": false
+}

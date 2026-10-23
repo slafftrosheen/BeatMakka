@@ -11,6 +11,7 @@ local ListeningSession = require(script.Parent.ListeningSession)
 local RoomService = require(script.Parent.RoomService)
 local Missions = require(ReplicatedStorage.Shared.NeighborhoodMissions)
 local Discoveries = require(ReplicatedStorage.Shared.DiscoveryCatalog)
+local ConcertService = require(script.Parent.ConcertService)
 local MusicService = {}
 
 function MusicService.start(world)
@@ -25,6 +26,7 @@ function MusicService.start(world)
     network.Parent = ReplicatedStorage
     local profiles = {}
     local listening
+    local concert
 
     local function nearby(player, anchor, distance)
         local character = player.Character
@@ -83,6 +85,7 @@ function MusicService.start(world)
             preview = preview,
             cue = cue,
             listening = listening and listening:state(player),
+            concert = concert and concert:state(player),
         })
     end
 
@@ -92,6 +95,9 @@ function MusicService.start(world)
             return
         end
         local station = world.stations[profile.station]
+        if concert then
+            concert:stop(player)
+        end
         if station and station.owner == player then
             station.owner = nil
             station.label.Text = "MK-I  /  READY"
@@ -130,16 +136,16 @@ function MusicService.start(world)
     end
 
     drainQuestSave = function(player, profile)
-        if not profile.questNeedsSave or profile.saving then
+        if not profile.progressNeedsSave or profile.saving then
             return
         end
-        profile.questNeedsSave = false
+        profile.progressNeedsSave = false
         persist(
             player,
             profile,
             if profile.saveMode == "session"
-                then "First courtyard set saved for this Studio session only."
-                else "Your first courtyard set is saved."
+                then "Music and progress saved for this Studio session only."
+                else "Your music and progress are saved."
         )
     end
 
@@ -155,7 +161,7 @@ function MusicService.start(world)
             end
             profile.quest.completed = true
             profile.editVersion += 1
-            profile.questNeedsSave = true
+            profile.progressNeedsSave = true
             send(
                 player,
                 "Mica: That's our quay! Your first courtyard set is complete.",
@@ -165,6 +171,21 @@ function MusicService.start(world)
             drainQuestSave(player, profile)
         end,
     })
+
+    concert = ConcertService.new(
+        world.concert,
+        profiles,
+        send,
+        function(player)
+            listening:leave(player)
+            release(player)
+        end,
+        nearby,
+        function(player, profile)
+            profile.progressNeedsSave = true
+            drainQuestSave(player, profile)
+        end
+    )
 
     world.quest.prompt.Triggered:Connect(function(player)
         local profile = profiles[player]
@@ -329,6 +350,10 @@ function MusicService.start(world)
         if action == "Room" then
             local _, notice = rooms:change(player, profile, a, b)
             send(player, notice)
+            return
+        end
+        if action:sub(1, 7) == "Chapter" then
+            concert:command(player, action, a)
             return
         end
         local station = world.stations[profile.station]
@@ -507,6 +532,7 @@ function MusicService.start(world)
         while network.Parent do
             task.wait(1)
             listening:tick()
+            concert:tick()
             for player, profile in profiles do
                 drainQuestSave(player, profile)
                 local station = world.stations[profile.station]
