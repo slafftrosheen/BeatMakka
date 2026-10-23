@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"uploadedPads\":100,\"submissions\":600,\"packs\":[{\"pack\":\"triphop\",\"pending\":0,\"ready\":16},{\"pack\":\"dance\",\"pending\":0,\"ready\":16},{\"pack\":\"grunge\",\"pending\":0,\"ready\":16},{\"pack\":\"hardtrance\",\"pending\":0,\"ready\":16},{\"pack\":\"hiphop\",\"pending\":0,\"ready\":16},{\"pack\":\"industrial\",\"pending\":0,\"ready\":16},{\"pack\":\"pop\",\"pending\":12,\"ready\":4},{\"pack\":\"reggae\",\"pending\":16,\"ready\":0},{\"pack\":\"techno\",\"pending\":16,\"ready\":0},{\"pack\":\"trance\",\"pending\":16,\"ready\":0}],\"passed\":true,\"muted\":true}"
+    }
+  ],
+  "isError": false
+}

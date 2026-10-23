@@ -35,7 +35,7 @@ Audio prepares only current pad assignments plus the three original discovery pr
 
 [The listening page](../output/style-starter-auditions/index.html) has one complete-kit WAV per style and individual pad controls. Each complete review plays the sixteen pads in order, then a two-bar arrangement at the kit's guide tempo. Review attenuation is separate from source gain. All review mixes have zero clipped samples. No desktop/browser was opened or audio played automatically.
 
-**Real Roblox audio IDs remain unconfigured.** Catalog selection, local source files and session saves are implemented; this does not establish audible hosted playback. [The explicit style upload manifest](../data/style-upload-manifest.json) includes all 160 new keys while retaining the 24 original audio keys and fourteen image entries. Use `configure_content.py --manifest data/style-upload-manifest.json` for future real receipts; no IDs are invented and no uploads/permission grants occurred. Existing private-test/no-charge constraints still apply.
+The canonical mapping now contains 100 real style audio IDs; 60 remain unconfigured. [The explicit style upload manifest](../data/style-upload-manifest.json) includes all 160 new keys while retaining the 24 original audio keys and fourteen image entries. `python tools/configure_content.py receipt-mapping.json --write` validates both original and style rosters, merges real receipts without discarding existing bindings and rejects accidental rebinding. Regenerating the upload manifest preserves canonical IDs. Existing private-test/no-charge constraints still apply.
 
 ## Studio verification
 
@@ -43,7 +43,11 @@ Audio prepares only current pad assignments plus the three original discovery pr
 
 The user approved the ten-kit listening review and requested Roblox upload. `docs/evidence/style-starters/user-approval.json` pins the approved commit, manifest, review and all 160 sample hashes. Approved derivatives are frozen; changes require a new version. Hosted audio permissions/playback and cloud rejoin remain pending. The original kitchen/yard/workshop/rain task in #7 is not closed by these genre kits.
 
-The background Creator Dashboard uploader reached the personal CuuteFoxey audio inventory, but Chrome rejected attaching local files because the ChatGPT extension lacks "Allow access to file URLs." No audio was submitted in this attempt and no charges were incurred. Enable that permission before resuming; inspect the free upload quota before submitting.
+After the user enabled the extension's local-file permission, background Creator Dashboard uploads succeeded for **100 samples**: all 16 pads in Trip Hop, Dance, Grunge, Hard Trance, Hip Hop and Industrial, plus Pop pads 1–4. The remaining 12 Pop files failed at the quota boundary; Reggae, Techno and Trance were not submitted. The account shows **0 of 100 uploads remaining**, resetting **22 November 2026 at 12:51:51 PM** in the Dashboard's displayed time. No paid upload or automatic retry was performed.
+
+`docs/evidence/style-starters/roblox-uploads.json` records owner CuuteFoxey, user 11274985967, exact source hashes, 100 real IDs and all 60 pending files. Canonical `data/content-ids.json` and its Luau projection bind the successful uploads; the source candidate manifest remains the frozen approval snapshot. The 14 image bindings and 24 original audio keys are preserved. Those original 24 audio files still await upload.
+
+Studio MCP verified all 100 uploaded assets load in the owner's local Edit session and all 100 advance playback cursors in Client. The real AudioEngine passed 600 rapid playback submissions across those 100 pads, bounded selection, honest unconfigured states for the other 60, Stop, mute and teardown. Tests silenced their SoundGroup to avoid disturbing the user's work. Receipts are `roblox-studio-fetch.json`, `roblox-studio-client-playback.json` and `roblox-audio-engine.json` beside the upload ledger. These checks establish local owner-session engine behavior; they do not establish acoustic balance, physical latency or access in the still-uncreated private experience. No issue is closed on these results alone.
 
 ## Reproduction
 

@@ -50,6 +50,14 @@ def manifest_keys(manifest: object) -> dict[str, set[str]]:
     return allowed
 
 
+def allowed_content_keys() -> dict[str, set[str]]:
+    allowed = manifest_keys(read_json(ROOT / "assets/production/upload-manifest.json"))
+    style_keys = manifest_keys(read_json(ROOT / "data/style-upload-manifest.json"))
+    for section in SECTIONS:
+        allowed[section].update(style_keys[section])
+    return allowed
+
+
 def validate_mapping(mapping: object, allowed: dict[str, set[str]]) -> dict[str, dict[str, int]]:
     if not isinstance(mapping, dict):
         raise ValueError("A content mapping must be an object containing Audio and/or Images")
@@ -146,7 +154,7 @@ def main(argv: list[str] | None = None) -> int:
         originals = {p: p.read_bytes() if p.exists() else None for p in (canonical, runtime)}
         if originals[canonical] is None:
             raise ValueError("Canonical data/content-ids.json is missing; restore it before merging")
-        allowed = manifest_keys(read_json(ROOT / "assets/production/upload-manifest.json"))
+        allowed = allowed_content_keys()
         base_data = json.loads(originals[canonical].decode("utf-8-sig"), object_pairs_hook=unique_object)
         if not isinstance(base_data, dict) or set(base_data) != set(SECTIONS):
             raise ValueError("Canonical content-ids.json must explicitly contain Audio and Images")

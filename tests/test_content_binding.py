@@ -13,8 +13,15 @@ SPEC.loader.exec_module(binding)
 
 class ContentBindingTests(unittest.TestCase):
     def setUp(self):
-        self.allowed = binding.manifest_keys(binding.read_json(ROOT / "assets/production/upload-manifest.json"))
+        self.allowed = binding.allowed_content_keys()
         self.base = binding.validate_mapping(binding.read_json(ROOT / "data/content-ids.json"), self.allowed)
+
+    def test_original_and_style_rosters_are_allowed_without_arbitrary_keys(self):
+        self.assertEqual(len(self.allowed["Audio"]), 184)
+        self.assertIn("style.triphop.01", self.allowed["Audio"])
+        self.assertIn("style.trance.16", self.allowed["Audio"])
+        with self.assertRaises(ValueError):
+            binding.validate_mapping({"Audio": {"style.unknown.01": 1}}, self.allowed)
 
     def test_empty_audio_update_preserves_all_existing_images(self):
         incoming = binding.validate_mapping({"Audio": {}}, self.allowed)

@@ -123,7 +123,7 @@
     {
       "key": "style.triphop.01",
       "file": "assets/candidates/audio/style-starters-v1/triphop/samples/01_drum.wav",
-      "asset_id": null,
+      "asset_id": 129003629812691,
       "source_sha256": "85da707c8ad52033318df2016a285af96e7ea62c75c16367495a5c53466b3009",
       "pack": "triphop",
       "musical_key": "A minor"
@@ -131,7 +131,7 @@
     {
       "key": "style.triphop.02",
       "file": "assets/candidates/audio/style-starters-v1/triphop/samples/02_drum.wav",
-      "asset_id": null,
+      "asset_id": 97082749202843,
       "source_sha256": "73cc87759a764724bbc5713c621e2813677d5f70f48f55e2ac99224b7174ea3a",
       "pack": "triphop",
       "musical_key": "A minor"
@@ -139,7 +139,7 @@
     {
       "key": "style.triphop.03",
       "file": "assets/candidates/audio/style-starters-v1/triphop/samples/03_drum.wav",
-      "asset_id": null,
+      "asset_id": 79596936764791,
       "source_sha256": "126f1ffd04617fea31adcd3817f77e476caa44d9771c63e48ba8cd8a268c78c8",
       "pack": "triphop",
       "musical_key": "A minor"
@@ -147,7 +147,7 @@
     {
       "key": "style.triphop.04",
       "file": "assets/candidates/audio/style-starters-v1/triphop/samples/04_drum.wav",
-      "asset_id": null,
+      "asset_id": 132004274074458,
       "source_sha256": "ead545cb75be54aea718b23aeb874eb6c2cdcca63c6f95f72d677586c9cb4179",
       "pack": "triphop",
       "musical_key": "A minor"
@@ -155,7 +155,7 @@
     {
       "key": "style.triphop.05",
       "file": "assets/candidates/audio/style-starters-v1/triphop/samples/05_drum.wav",
-      "asset_id": null,
+      "asset_id": 79888839036690,
       "source_sha256": "6c98609f70aa19e328ed6228535b0ee8386396c94489f3b0b2923d5ae201212d",
       "pack": "triphop",
       "musical_key": "A minor"
@@ -163,7 +163,7 @@
     {
       "key": "style.triphop.06",
       "file": "assets/candidates/audio/style-starters-v1/triphop/samples/06_drum.wav",
-      "asset_id": null,
+      "asset_id": 140680637833286,
       "source_sha256": "d8904ca74e6273f60724c0e9ad87214517981dae438f2797cef7d4d038bd3f7c",
       "pack": "triphop",
       "musical_key": "A minor"
@@ -171,7 +171,7 @@
     {
       "key": "style.triphop.07",
       "file": "assets/candidates/audio/style-starters-v1/triphop/samples/07_drum.wav",
-      "asset_id": null,
+      "asset_id": 106676041127530,
       "source_sha256": "57cdfc861a10a04a44591802146a7ea2931acefc358f06169d7311e718c9ca5c",
       "pack": "triphop",
       "musical_key": "A minor"
@@ -179,7 +179,7 @@
     {
       "key": "style.triphop.08",
       "file": "assets/candidates/audio/style-starters-v1/triphop/samples/08_drum.wav",
-      "asset_id": null,
+      "asset_id": 72354194541143,
       "source_sha256": "cffae31ab361f62fb410d291ca4028f2b28ef6680cccf6059b8b0821ac58044f",
       "pack": "triphop",
       "musical_key": "A minor"
@@ -187,7 +187,7 @@
     {
       "key": "style.triphop.09",
       "file": "assets/candidates/audio/style-starters-v1/triphop/samples/09_guitar.wav",
-      "asset_id": null,
+      "asset_id": 110770712233690,
       "source_sha256": "3c7874bd0a48c51ab9cb8fc4cbc262fd79b317e599294399c7d585abdebd3e9d",
       "pack": "triphop",
       "musical_key": "A minor"
@@ -195,7 +195,7 @@
     {
       "key": "style.triphop.10",
       "file": "assets/candidates/audio/style-starters-v1/triphop/samples/10_guitar.wav",
-      "asset_id": null,
+      "asset_id": 137863169478194,
       "source_sha256": "8145b4cefb065d84da9aea6b2b73cb93bfd2ef26b6a376a924180c187347ee19",
       "pack": "triphop",
       "musical_key": "A minor"
@@ -203,7 +203,7 @@
     {
       "key": "style.triphop.11",
       "file": "assets/candidates/audio/style-starters-v1/triphop/samples/11_guitar.wav",
-      "asset_id": null,
+      "asset_id": 115447809175266,
       "source_sha256": "a59dc535df8cbd3356bbf2b06bda1418a4547ac3121f9cba559d0ae452a76bec",
       "pack": "triphop",
       "musical_key": "A minor"
@@ -211,7 +211,7 @@
     {
       "key": "style.triphop.12",
       "file": "assets/candidates/audio/style-starters-v1/triphop/samples/12_guitar.wav",
-      "asset_id": null,
+      "asset_id": 127746437007937,
       "source_sha256": "3339a73888ecc4e04d35b7cd096b37941030a65815b9bf06abadfba50968e23b",
       "pack": "triphop",
       "musical_key": "A minor"
@@ -219,7 +219,7 @@
     {
       "key": "style.triphop.13",
       "file": "assets/candidates/audio/style-starters-v1/triphop/samples/13_keys.wav",
-      "asset_id": null,
+      "asset_id": 136849771391537,
       "source_sha256": "11d14566e84b6e2b39cac631e2ea4b1b64f50c29a9678e4f311678da53376555",
       "pack": "triphop",
       "musical_key": "A minor"
@@ -227,7 +227,7 @@
     {
       "key": "style.triphop.14",
       "file": "assets/candidates/audio/style-starters-v1/triphop/samples/14_keys.wav",
-      "asset_id": null,
+      "asset_id": 76281174625759,
       "source_sha256": "5417f2ededc188f1e40577a89f85f707eaa13fa68b9d82707a70ad521e90ceb9",
       "pack": "triphop",
       "musical_key": "A minor"
@@ -235,7 +235,7 @@
     {
       "key": "style.triphop.15",
       "file": "assets/candidates/audio/style-starters-v1/triphop/samples/15_keys.wav",
-      "asset_id": null,
+      "asset_id": 119078008714364,
       "source_sha256": "bf536764acbcc26c4a11f779f3d5e447158d0790270ef9efd213208cf965bc8d",
       "pack": "triphop",
       "musical_key": "A minor"
@@ -243,7 +243,7 @@
     {
       "key": "style.triphop.16",
       "file": "assets/candidates/audio/style-starters-v1/triphop/samples/16_keys.wav",
-      "asset_id": null,
+      "asset_id": 85284096508610,
       "source_sha256": "0ba06ebdae4c4d1a10746bd8251adfabaeebdc09d52176178f55ed4507a1f02c",
       "pack": "triphop",
       "musical_key": "A minor"
@@ -251,7 +251,7 @@
     {
       "key": "style.dance.01",
       "file": "assets/candidates/audio/style-starters-v1/dance/samples/01_kick.wav",
-      "asset_id": null,
+      "asset_id": 70670526851560,
       "source_sha256": "c1ded79c446a325453b25e11252b34b83efac5a3bd115f50fde486fbfc65b15b",
       "pack": "dance",
       "musical_key": "A minor"
@@ -259,7 +259,7 @@
     {
       "key": "style.dance.02",
       "file": "assets/candidates/audio/style-starters-v1/dance/samples/02_kick.wav",
-      "asset_id": null,
+      "asset_id": 84325657959964,
       "source_sha256": "0c6105867429e8e666bdc69084fed20f0fa6485cd26f2cf9e2186a34dd7a0915",
       "pack": "dance",
       "musical_key": "A minor"
@@ -267,7 +267,7 @@
     {
       "key": "style.dance.03",
       "file": "assets/candidates/audio/style-starters-v1/dance/samples/03_snare.wav",
-      "asset_id": null,
+      "asset_id": 75767325885714,
       "source_sha256": "5ad740f50d492c0bdf2fbea1d8486707b93cb1bd493e459babf94b152b7bce3c",
       "pack": "dance",
       "musical_key": "A minor"
@@ -275,7 +275,7 @@
     {
       "key": "style.dance.04",
       "file": "assets/candidates/audio/style-starters-v1/dance/samples/04_snare.wav",
-      "asset_id": null,
+      "asset_id": 114992136985630,
       "source_sha256": "460d105b0f1cf2769c298e635ea2d7300cbba1525cc23dd1711bc226ed35dd2f",
       "pack": "dance",
       "musical_key": "A minor"
@@ -283,7 +283,7 @@
     {
       "key": "style.dance.05",
       "file": "assets/candidates/audio/style-starters-v1/dance/samples/05_hat.wav",
-      "asset_id": null,
+      "asset_id": 102966276713962,
       "source_sha256": "7146e060e220ef19673095f48bc099e6d4968b59617b5430557a756ccc5f5c36",
       "pack": "dance",
       "musical_key": "A minor"
@@ -291,7 +291,7 @@
     {
       "key": "style.dance.06",
       "file": "assets/candidates/audio/style-starters-v1/dance/samples/06_hat.wav",
-      "asset_id": null,
+      "asset_id": 71974827993548,
       "source_sha256": "8848b38812640fdbd9cc1d249da54d0a6d402feb2d23d9a69fcf1b00ce5a40e9",
       "pack": "dance",
       "musical_key": "A minor"
@@ -299,7 +299,7 @@
     {
       "key": "style.dance.07",
       "file": "assets/candidates/audio/style-starters-v1/dance/samples/07_clap.wav",
-      "asset_id": null,
+      "asset_id": 103670949918837,
       "source_sha256": "a7971cbfdbce0f9b7fbaa39f1f91872e37aeebb789e3aef74cca9c36462b3a78",
       "pack": "dance",
       "musical_key": "A minor"
@@ -307,7 +307,7 @@
     {
       "key": "style.dance.08",
       "file": "assets/candidates/audio/style-starters-v1/dance/samples/08_clap.wav",
-      "asset_id": null,
+      "asset_id": 132838461435067,
       "source_sha256": "a2f842eeb4c7e837da5a1d3eb13333dd721771cc1311440609013edad6eea354",
       "pack": "dance",
       "musical_key": "A minor"
@@ -315,7 +315,7 @@
     {
       "key": "style.dance.09",
       "file": "assets/candidates/audio/style-starters-v1/dance/samples/09_bass.wav",
-      "asset_id": null,
+      "asset_id": 114116558026051,
       "source_sha256": "8da14d7a52739289f2cd6bf51a8238ad13802051fa9d99ac098029a00f12346d",
       "pack": "dance",
       "musical_key": "A minor"
@@ -323,7 +323,7 @@
     {
       "key": "style.dance.10",
       "file": "assets/candidates/audio/style-starters-v1/dance/samples/10_bass.wav",
-      "asset_id": null,
+      "asset_id": 129471383414809,
       "source_sha256": "938779a07c4f87b0d92c2850190d65b350568b984ef341b20d4c59605eef30c1",
       "pack": "dance",
       "musical_key": "A minor"
@@ -331,7 +331,7 @@
     {
       "key": "style.dance.11",
       "file": "assets/candidates/audio/style-starters-v1/dance/samples/11_keys.wav",
-      "asset_id": null,
+      "asset_id": 137284565752751,
       "source_sha256": "47e928ba48d2bb56f15d70d2f8629b1178e0e6eb75cf4946c9cc0639228b6657",
       "pack": "dance",
       "musical_key": "A minor"
@@ -339,7 +339,7 @@
     {
       "key": "style.dance.12",
       "file": "assets/candidates/audio/style-starters-v1/dance/samples/12_keys.wav",
-      "asset_id": null,
+      "asset_id": 95465969537060,
       "source_sha256": "f8bd4fcf3d81b3c012e03527f68d929bcc38f9f266849ec33562749beca71912",
       "pack": "dance",
       "musical_key": "A minor"
@@ -347,7 +347,7 @@
     {
       "key": "style.dance.13",
       "file": "assets/candidates/audio/style-starters-v1/dance/samples/13_keys.wav",
-      "asset_id": null,
+      "asset_id": 83887879316068,
       "source_sha256": "0e5b1731ffbd230f0df1b3c36b60829859793b39fd6c18c34b1f2255182d223e",
       "pack": "dance",
       "musical_key": "A minor"
@@ -355,7 +355,7 @@
     {
       "key": "style.dance.14",
       "file": "assets/candidates/audio/style-starters-v1/dance/samples/14_keys.wav",
-      "asset_id": null,
+      "asset_id": 76028473720644,
       "source_sha256": "bff85b268ccca49d4ff3086ca5b71472a10280709aade14a5f0c726be0fb1f8a",
       "pack": "dance",
       "musical_key": "A minor"
@@ -363,7 +363,7 @@
     {
       "key": "style.dance.15",
       "file": "assets/candidates/audio/style-starters-v1/dance/samples/15_fx.wav",
-      "asset_id": null,
+      "asset_id": 124886067573632,
       "source_sha256": "5b722dd545fc27b82defbefe28e65b3df08ddce0493f1cfac35a3120b353bec1",
       "pack": "dance",
       "musical_key": "A minor"
@@ -371,7 +371,7 @@
     {
       "key": "style.dance.16",
       "file": "assets/candidates/audio/style-starters-v1/dance/samples/16_fx.wav",
-      "asset_id": null,
+      "asset_id": 76040203670681,
       "source_sha256": "a856d616b155e9e2355f845fe4609d7ea7113cb05a78a835df5ea5921d33edfa",
       "pack": "dance",
       "musical_key": "A minor"
@@ -379,7 +379,7 @@
     {
       "key": "style.grunge.01",
       "file": "assets/candidates/audio/style-starters-v1/grunge/samples/01_drum_cut.wav",
-      "asset_id": null,
+      "asset_id": 84187062812322,
       "source_sha256": "8276e60f45635ee1314a3f35ad0c759885f479851250c7af7d0afca32dd39363",
       "pack": "grunge",
       "musical_key": "D minor"
@@ -387,7 +387,7 @@
     {
       "key": "style.grunge.02",
       "file": "assets/candidates/audio/style-starters-v1/grunge/samples/02_drum_cut.wav",
-      "asset_id": null,
+      "asset_id": 103165560170993,
       "source_sha256": "fade35d07ac38d5e2e38f87f5c76d515c2928faaa9b4004618ca575dc6e10adc",
       "pack": "grunge",
       "musical_key": "D minor"
@@ -395,7 +395,7 @@
     {
       "key": "style.grunge.03",
       "file": "assets/candidates/audio/style-starters-v1/grunge/samples/03_drum_cut.wav",
-      "asset_id": null,
+      "asset_id": 116852035833985,
       "source_sha256": "e83b784fe066c350d2759f23b74b5086e544feed50e04bb20efbbd5a87e6afc8",
       "pack": "grunge",
       "musical_key": "D minor"
@@ -403,7 +403,7 @@
     {
       "key": "style.grunge.04",
       "file": "assets/candidates/audio/style-starters-v1/grunge/samples/04_drum_cut.wav",
-      "asset_id": null,
+      "asset_id": 113280322025664,
       "source_sha256": "ef42e27bfb2e1d855d681fd4ff0b5c7768e0000a56848edf575e868d435432de",
       "pack": "grunge",
       "musical_key": "D minor"
@@ -411,7 +411,7 @@
     {
       "key": "style.grunge.05",
       "file": "assets/candidates/audio/style-starters-v1/grunge/samples/05_percussion_cut.wav",
-      "asset_id": null,
+      "asset_id": 126992632972320,
       "source_sha256": "eb4bdf486feb097ce400d7eecacaa384446e83b9e959ed2d632e77551fd43243",
       "pack": "grunge",
       "musical_key": "D minor"
@@ -419,7 +419,7 @@
     {
       "key": "style.grunge.06",
       "file": "assets/candidates/audio/style-starters-v1/grunge/samples/06_percussion_cut.wav",
-      "asset_id": null,
+      "asset_id": 122096445512013,
       "source_sha256": "72ecbd5a7349a024fd20646cdd127d53a032f6326173f95e7c856ba28006d354",
       "pack": "grunge",
       "musical_key": "D minor"
@@ -427,7 +427,7 @@
     {
       "key": "style.grunge.07",
       "file": "assets/candidates/audio/style-starters-v1/grunge/samples/07_guitar.wav",
-      "asset_id": null,
+      "asset_id": 80131650643861,
       "source_sha256": "d5245eee1a207a3b3439c78026ede3d6fc817aa053abc0a20963a22a49734f9b",
       "pack": "grunge",
       "musical_key": "D minor"
@@ -435,7 +435,7 @@
     {
       "key": "style.grunge.08",
       "file": "assets/candidates/audio/style-starters-v1/grunge/samples/08_guitar.wav",
-      "asset_id": null,
+      "asset_id": 111183431615290,
       "source_sha256": "e5eb2bbdd29595e162f40e80f6bad641e4e784e7e9725a735d77096365d7954a",
       "pack": "grunge",
       "musical_key": "D minor"
@@ -443,7 +443,7 @@
     {
       "key": "style.grunge.09",
       "file": "assets/candidates/audio/style-starters-v1/grunge/samples/09_guitar.wav",
-      "asset_id": null,
+      "asset_id": 90552165531011,
       "source_sha256": "c4da7dab820f7c433a6f2ecdf0538b3817b644249f1ac4077db45ee5992d6eeb",
       "pack": "grunge",
       "musical_key": "D minor"
@@ -451,7 +451,7 @@
     {
       "key": "style.grunge.10",
       "file": "assets/candidates/audio/style-starters-v1/grunge/samples/10_guitar.wav",
-      "asset_id": null,
+      "asset_id": 110409074735659,
       "source_sha256": "fd922534996b549637828e131fc0e1ddc794bdd35f065150709a36d91ae2168c",
       "pack": "grunge",
       "musical_key": "D minor"
@@ -459,7 +459,7 @@
     {
       "key": "style.grunge.11",
       "file": "assets/candidates/audio/style-starters-v1/grunge/samples/11_organ.wav",
-      "asset_id": null,
+      "asset_id": 108661784818345,
       "source_sha256": "42c44880a198dee8c306954215644bf592955b7a01d0d274d48a90931750f1a6",
       "pack": "grunge",
       "musical_key": "D minor"
@@ -467,7 +467,7 @@
     {
       "key": "style.grunge.12",
       "file": "assets/candidates/audio/style-starters-v1/grunge/samples/12_organ.wav",
-      "asset_id": null,
+      "asset_id": 70516372153196,
       "source_sha256": "a969d8aeb3ded45e9d903e5a6a1e4460ffffa524779d617eeeb6741726990d0d",
       "pack": "grunge",
       "musical_key": "D minor"
@@ -475,7 +475,7 @@
     {
       "key": "style.grunge.13",
       "file": "assets/candidates/audio/style-starters-v1/grunge/samples/13_organ.wav",
-      "asset_id": null,
+      "asset_id": 120041266971846,
       "source_sha256": "d8599626550aef1093ab05f60e788717f5c59dbb9d0971300bd5f7b68034a10d",
       "pack": "grunge",
       "musical_key": "D minor"
@@ -483,7 +483,7 @@
     {
       "key": "style.grunge.14",
       "file": "assets/candidates/audio/style-starters-v1/grunge/samples/14_organ.wav",
-      "asset_id": null,
+      "asset_id": 104017187794898,
       "source_sha256": "b1871771d32e15a944b1679cdc1016eb3e9a1b8d28cbf12839ba9307f1fa6d2d",
       "pack": "grunge",
       "musical_key": "D minor"
@@ -491,7 +491,7 @@
     {
       "key": "style.grunge.15",
       "file": "assets/candidates/audio/style-starters-v1/grunge/samples/15_strings.wav",
-      "asset_id": null,
+      "asset_id": 113763455066077,
       "source_sha256": "b40b033b582c66db5f71eb3cc5e91f0beeb502daaccb75e0d2bcdd61e54319bd",
       "pack": "grunge",
       "musical_key": "D minor"
@@ -499,7 +499,7 @@
     {
       "key": "style.grunge.16",
       "file": "assets/candidates/audio/style-starters-v1/grunge/samples/16_strings.wav",
-      "asset_id": null,
+      "asset_id": 104489435871538,
       "source_sha256": "75b814821f54fc543c1b60afff2422b24ff301e8880863fd7cd25856740c67f6",
       "pack": "grunge",
       "musical_key": "D minor"
@@ -507,7 +507,7 @@
     {
       "key": "style.hardtrance.01",
       "file": "assets/candidates/audio/style-starters-v1/hardtrance/samples/01_kick.wav",
-      "asset_id": null,
+      "asset_id": 109192795179985,
       "source_sha256": "93fb8ffa60cb4368743c992c75cea521189ee07b2a69360409382670033e4d6d",
       "pack": "hardtrance",
       "musical_key": "A minor"
@@ -515,7 +515,7 @@
     {
       "key": "style.hardtrance.02",
       "file": "assets/candidates/audio/style-starters-v1/hardtrance/samples/02_kick.wav",
-      "asset_id": null,
+      "asset_id": 102509004381537,
       "source_sha256": "e9c94a8dc11fb460c30ad31be0a93b60449c565d738c35bc76a3f411307932ab",
       "pack": "hardtrance",
       "musical_key": "A minor"
@@ -523,7 +523,7 @@
     {
       "key": "style.hardtrance.03",
       "file": "assets/candidates/audio/style-starters-v1/hardtrance/samples/03_snare.wav",
-      "asset_id": null,
+      "asset_id": 81972581455654,
       "source_sha256": "1e01de1a4c4a12efddef0a388a710d08b3ea6d356da30c23c75873c17b10bc1a",
       "pack": "hardtrance",
       "musical_key": "A minor"
@@ -531,7 +531,7 @@
     {
       "key": "style.hardtrance.04",
       "file": "assets/candidates/audio/style-starters-v1/hardtrance/samples/04_snare.wav",
-      "asset_id": null,
+      "asset_id": 138109200481315,
       "source_sha256": "8778120a40585f19fde7885873b805a9f94ef90b38de2082fa55fbff3f265b28",
       "pack": "hardtrance",
       "musical_key": "A minor"
@@ -539,7 +539,7 @@
     {
       "key": "style.hardtrance.05",
       "file": "assets/candidates/audio/style-starters-v1/hardtrance/samples/05_clap.wav",
-      "asset_id": null,
+      "asset_id": 94033258194406,
       "source_sha256": "87b3233055de0d946c4f3246f91c46b275b4ea4c2fa2d9ad3271498c20a343b2",
       "pack": "hardtrance",
       "musical_key": "A minor"
@@ -547,7 +547,7 @@
     {
       "key": "style.hardtrance.06",
       "file": "assets/candidates/audio/style-starters-v1/hardtrance/samples/06_percussion.wav",
-      "asset_id": null,
+      "asset_id": 139475758537839,
       "source_sha256": "f4404af78e86cc54633b8801294e7cd043d4a439e52f3567d8317a98c80977a2",
       "pack": "hardtrance",
       "musical_key": "A minor"
@@ -555,7 +555,7 @@
     {
       "key": "style.hardtrance.07",
       "file": "assets/candidates/audio/style-starters-v1/hardtrance/samples/07_percussion.wav",
-      "asset_id": null,
+      "asset_id": 126656203906342,
       "source_sha256": "d067c57e44f4c12be0e3610678672780fe5621235056e3202ea4d5ac66f26992",
       "pack": "hardtrance",
       "musical_key": "A minor"
@@ -563,7 +563,7 @@
     {
       "key": "style.hardtrance.08",
       "file": "assets/candidates/audio/style-starters-v1/hardtrance/samples/08_percussion.wav",
-      "asset_id": null,
+      "asset_id": 94226775516976,
       "source_sha256": "c0a9901ae453386d54b973d6d5a3df099195562d8de407f61ef2ed20406a405b",
       "pack": "hardtrance",
       "musical_key": "A minor"
@@ -571,7 +571,7 @@
     {
       "key": "style.hardtrance.09",
       "file": "assets/candidates/audio/style-starters-v1/hardtrance/samples/09_bass.wav",
-      "asset_id": null,
+      "asset_id": 121571077880233,
       "source_sha256": "c110bb8ace8d0bb54469fbdd2db079b0ede6b6a1ab7f1b70da0af7a11ce56f70",
       "pack": "hardtrance",
       "musical_key": "A minor"
@@ -579,7 +579,7 @@
     {
       "key": "style.hardtrance.10",
       "file": "assets/candidates/audio/style-starters-v1/hardtrance/samples/10_bass.wav",
-      "asset_id": null,
+      "asset_id": 127344034380706,
       "source_sha256": "bc2ec90edef52be3dcba4d3587ba65c892fbd668c6c225dc40146187a1979b3f",
       "pack": "hardtrance",
       "musical_key": "A minor"
@@ -587,7 +587,7 @@
     {
       "key": "style.hardtrance.11",
       "file": "assets/candidates/audio/style-starters-v1/hardtrance/samples/11_bass.wav",
-      "asset_id": null,
+      "asset_id": 118674438190933,
       "source_sha256": "0d85a67451fa4994d10f826c7eb47e53975597613a5dbf0fea23067b5635c64e",
       "pack": "hardtrance",
       "musical_key": "A minor"
@@ -595,7 +595,7 @@
     {
       "key": "style.hardtrance.12",
       "file": "assets/candidates/audio/style-starters-v1/hardtrance/samples/12_synth.wav",
-      "asset_id": null,
+      "asset_id": 112503414357336,
       "source_sha256": "0c3ca3d298d7519203a036fdcf9dbfd9c71f5499d70814bf360953e1c720b8c2",
       "pack": "hardtrance",
       "musical_key": "A minor"
@@ -603,7 +603,7 @@
     {
       "key": "style.hardtrance.13",
       "file": "assets/candidates/audio/style-starters-v1/hardtrance/samples/13_synth.wav",
-      "asset_id": null,
+      "asset_id": 87784894595223,
       "source_sha256": "deface559a2225b028c862efdba16e069dfbd291d5fc4839bc9b7e46af62cc97",
       "pack": "hardtrance",
       "musical_key": "A minor"
@@ -611,7 +611,7 @@
     {
       "key": "style.hardtrance.14",
       "file": "assets/candidates/audio/style-starters-v1/hardtrance/samples/14_synth.wav",
-      "asset_id": null,
+      "asset_id": 132045623447569,
       "source_sha256": "02a462618ca3ede4cf7f6889eb6993dc83eb5041c3ae047c653cdaaacfe5f72a",
       "pack": "hardtrance",
       "musical_key": "A minor"
@@ -619,7 +619,7 @@
     {
       "key": "style.hardtrance.15",
       "file": "assets/candidates/audio/style-starters-v1/hardtrance/samples/15_fx.wav",
-      "asset_id": null,
+      "asset_id": 121085049218870,
       "source_sha256": "567c8f17d538ad783aa145b9ca832de7a64afbc2fd8ea58688998bb95f0d271d",
       "pack": "hardtrance",
       "musical_key": "A minor"
@@ -627,7 +627,7 @@
     {
       "key": "style.hardtrance.16",
       "file": "assets/candidates/audio/style-starters-v1/hardtrance/samples/16_fx.wav",
-      "asset_id": null,
+      "asset_id": 134335102009893,
       "source_sha256": "5c97ca1f338333f61c1341e1fcb9dd07daf338f76f8fa3341e2f45c9e64f0d12",
       "pack": "hardtrance",
       "musical_key": "A minor"
@@ -635,7 +635,7 @@
     {
       "key": "style.hiphop.01",
       "file": "assets/candidates/audio/style-starters-v1/hiphop/samples/01_drum.wav",
-      "asset_id": null,
+      "asset_id": 133982754398020,
       "source_sha256": "c72f06e09579a63ee8c14e95cdff7d6be2e11c330040bdaaa3881460ef511689",
       "pack": "hiphop",
       "musical_key": "A minor"
@@ -643,7 +643,7 @@
     {
       "key": "style.hiphop.02",
       "file": "assets/candidates/audio/style-starters-v1/hiphop/samples/02_drum.wav",
-      "asset_id": null,
+      "asset_id": 129102643319267,
       "source_sha256": "b475bcfe7ac645e8efd964e7184d5af8ccfd27f11338c281d39cb627bd822dd2",
       "pack": "hiphop",
       "musical_key": "A minor"
@@ -651,7 +651,7 @@
     {
       "key": "style.hiphop.03",
       "file": "assets/candidates/audio/style-starters-v1/hiphop/samples/03_drum.wav",
-      "asset_id": null,
+      "asset_id": 139532398191746,
       "source_sha256": "27e13792a375d885950c9bf4b96ab1c849b40cab965e9202c0e755ff5aeb1822",
       "pack": "hiphop",
       "musical_key": "A minor"
@@ -659,7 +659,7 @@
     {
       "key": "style.hiphop.04",
       "file": "assets/candidates/audio/style-starters-v1/hiphop/samples/04_drum.wav",
-      "asset_id": null,
+      "asset_id": 133156107517621,
       "source_sha256": "6edfb6692fcc9b36ac28ed37e453623ddb1728e2dd7195f507eac59549f8141b",
       "pack": "hiphop",
       "musical_key": "A minor"
@@ -667,7 +667,7 @@
     {
       "key": "style.hiphop.05",
       "file": "assets/candidates/audio/style-starters-v1/hiphop/samples/05_drum.wav",
-      "asset_id": null,
+      "asset_id": 86291019283579,
       "source_sha256": "07eb1883852254f316ad84d6c9aa93c9ef98d3dd7c008ee63c955be99e9a40bf",
       "pack": "hiphop",
       "musical_key": "A minor"
@@ -675,7 +675,7 @@
     {
       "key": "style.hiphop.06",
       "file": "assets/candidates/audio/style-starters-v1/hiphop/samples/06_drum.wav",
-      "asset_id": null,
+      "asset_id": 123376038588413,
       "source_sha256": "96cfa551f34b37d2ff8fafe5323fd95d87499981aa787dd520ea35f4a2ab9631",
       "pack": "hiphop",
       "musical_key": "A minor"
@@ -683,7 +683,7 @@
     {
       "key": "style.hiphop.07",
       "file": "assets/candidates/audio/style-starters-v1/hiphop/samples/07_drum.wav",
-      "asset_id": null,
+      "asset_id": 111121464289027,
       "source_sha256": "1a400501f29e53a5cb8746c08092836df8bd0f2827fdbcbd76ca261a43476002",
       "pack": "hiphop",
       "musical_key": "A minor"
@@ -691,7 +691,7 @@
     {
       "key": "style.hiphop.08",
       "file": "assets/candidates/audio/style-starters-v1/hiphop/samples/08_drum.wav",
-      "asset_id": null,
+      "asset_id": 127556175869742,
       "source_sha256": "d69d98ca6b8aa9bf126710e42581ca52c9317d20fbe990d2df70ab7faa6d515f",
       "pack": "hiphop",
       "musical_key": "A minor"
@@ -699,7 +699,7 @@
     {
       "key": "style.hiphop.09",
       "file": "assets/candidates/audio/style-starters-v1/hiphop/samples/09_bass.wav",
-      "asset_id": null,
+      "asset_id": 105794257736723,
       "source_sha256": "2163ff35cfd9ad91fcfa9572ad27dacd8d8e013420619bbc51182f2f83e75b4d",
       "pack": "hiphop",
       "musical_key": "A minor"
@@ -707,7 +707,7 @@
     {
       "key": "style.hiphop.10",
       "file": "assets/candidates/audio/style-starters-v1/hiphop/samples/10_bass.wav",
-      "asset_id": null,
+      "asset_id": 76443028312072,
       "source_sha256": "ef2ca35a8f8f172dc0884050a2b2796e726193b6272dee420f896e75ff1fffe1",
       "pack": "hiphop",
       "musical_key": "A minor"
@@ -715,7 +715,7 @@
     {
       "key": "style.hiphop.11",
       "file": "assets/candidates/audio/style-starters-v1/hiphop/samples/11_guitar.wav",
-      "asset_id": null,
+      "asset_id": 93003248145723,
       "source_sha256": "e608dc49e8665a43a46a861982b9113518b89717146aabc7d5ef3f26c4869fbe",
       "pack": "hiphop",
       "musical_key": "A minor"
@@ -723,7 +723,7 @@
     {
       "key": "style.hiphop.12",
       "file": "assets/candidates/audio/style-starters-v1/hiphop/samples/12_guitar.wav",
-      "asset_id": null,
+      "asset_id": 115459613966784,
       "source_sha256": "34d4c890618a925ecd32668f7d732916617afb4f62426b79f480ab573d22ae85",
       "pack": "hiphop",
       "musical_key": "A minor"
@@ -731,7 +731,7 @@
     {
       "key": "style.hiphop.13",
       "file": "assets/candidates/audio/style-starters-v1/hiphop/samples/13_keys.wav",
-      "asset_id": null,
+      "asset_id": 91100252132028,
       "source_sha256": "706819d89260e76f554430663379ef41ec5786e61b40dc60209359e848748da8",
       "pack": "hiphop",
       "musical_key": "A minor"
@@ -739,7 +739,7 @@
     {
       "key": "style.hiphop.14",
       "file": "assets/candidates/audio/style-starters-v1/hiphop/samples/14_keys.wav",
-      "asset_id": null,
+      "asset_id": 101636981276233,
       "source_sha256": "fedd1fa8c6184776d80af71b833b1c6f41675034d669a2481e708a7394fc15f5",
       "pack": "hiphop",
       "musical_key": "A minor"
@@ -747,7 +747,7 @@
     {
       "key": "style.hiphop.15",
       "file": "assets/candidates/audio/style-starters-v1/hiphop/samples/15_fx.wav",
-      "asset_id": null,
+      "asset_id": 82259290206406,
       "source_sha256": "8386f07f9baa79c15741df83a977cecf059fe62337e7c461b44b91a8d4bd6769",
       "pack": "hiphop",
       "musical_key": "A minor"
@@ -755,7 +755,7 @@
     {
       "key": "style.hiphop.16",
       "file": "assets/candidates/audio/style-starters-v1/hiphop/samples/16_fx.wav",
-      "asset_id": null,
+      "asset_id": 98622806427342,
       "source_sha256": "b031a2bc915759b6678c65e3798ecb8414d48cf6d75aaad4f17abb5bc073b3b5",
       "pack": "hiphop",
       "musical_key": "A minor"
@@ -763,7 +763,7 @@
     {
       "key": "style.industrial.01",
       "file": "assets/candidates/audio/style-starters-v1/industrial/samples/01_snare.wav",
-      "asset_id": null,
+      "asset_id": 136419459753500,
       "source_sha256": "4579d64f443872a1dc1d9311d4d96c48a70d6b106ba8781df9135d650030a178",
       "pack": "industrial",
       "musical_key": "A minor"
@@ -771,7 +771,7 @@
     {
       "key": "style.industrial.02",
       "file": "assets/candidates/audio/style-starters-v1/industrial/samples/02_snare.wav",
-      "asset_id": null,
+      "asset_id": 100259622150995,
       "source_sha256": "30a6fa0c8324bb64eb71383545eac1695108acb96c8b8fbbb792c24272c8fa92",
       "pack": "industrial",
       "musical_key": "A minor"
@@ -779,7 +779,7 @@
     {
       "key": "style.industrial.03",
       "file": "assets/candidates/audio/style-starters-v1/industrial/samples/03_snare.wav",
-      "asset_id": null,
+      "asset_id": 79441619074410,
       "source_sha256": "18ee5b8be2ce2cd28cc501300473a1c9f16effdd3ba60f5eab405675c3429df7",
       "pack": "industrial",
       "musical_key": "A minor"
@@ -787,7 +787,7 @@
     {
       "key": "style.industrial.04",
       "file": "assets/candidates/audio/style-starters-v1/industrial/samples/04_snare.wav",
-      "asset_id": null,
+      "asset_id": 76482190082919,
       "source_sha256": "4e4f21d5cd141a5272b7e23eb3fac0bee3c94cc63381a558e81763c08718d7de",
       "pack": "industrial",
       "musical_key": "A minor"
@@ -795,7 +795,7 @@
     {
       "key": "style.industrial.05",
       "file": "assets/candidates/audio/style-starters-v1/industrial/samples/05_tom.wav",
-      "asset_id": null,
+      "asset_id": 139727548017597,
       "source_sha256": "773df743c3044966c1cc92868e6ec0f1ae307608a6e44c341dcaa8344dc0a2d0",
       "pack": "industrial",
       "musical_key": "A minor"
@@ -803,7 +803,7 @@
     {
       "key": "style.industrial.06",
       "file": "assets/candidates/audio/style-starters-v1/industrial/samples/06_tom.wav",
-      "asset_id": null,
+      "asset_id": 122869501929159,
       "source_sha256": "5f8661bedd4915be0e9be1f5d9404f78e9706854b1db767f173a807e8e12f773",
       "pack": "industrial",
       "musical_key": "A minor"
@@ -811,7 +811,7 @@
     {
       "key": "style.industrial.07",
       "file": "assets/candidates/audio/style-starters-v1/industrial/samples/07_fx.wav",
-      "asset_id": null,
+      "asset_id": 104150092915997,
       "source_sha256": "ebe984d4c0eeab4f40a0a84892275ab7b239aa73a0052c6e0ef0c3dbdc8988f7",
       "pack": "industrial",
       "musical_key": "A minor"
@@ -819,7 +819,7 @@
     {
       "key": "style.industrial.08",
       "file": "assets/candidates/audio/style-starters-v1/industrial/samples/08_fx.wav",
-      "asset_id": null,
+      "asset_id": 70580427204759,
       "source_sha256": "819d2eeaeb39299f6e608fc56202e5a70ba20c8dda1e8dbe96ceccdb49ef14d1",
       "pack": "industrial",
       "musical_key": "A minor"
@@ -827,7 +827,7 @@
     {
       "key": "style.industrial.09",
       "file": "assets/candidates/audio/style-starters-v1/industrial/samples/09_fx.wav",
-      "asset_id": null,
+      "asset_id": 112185282487558,
       "source_sha256": "c5d40b855197fe3c5b5cec800d24b1bd839d26f5c263eca8bb634846321814ac",
       "pack": "industrial",
       "musical_key": "A minor"
@@ -835,7 +835,7 @@
     {
       "key": "style.industrial.10",
       "file": "assets/candidates/audio/style-starters-v1/industrial/samples/10_fx.wav",
-      "asset_id": null,
+      "asset_id": 82891919164583,
       "source_sha256": "af4a1450828498e6b7a28924ae418e2ec7ca2adef899add80d6c4b9e430e5b08",
       "pack": "industrial",
       "musical_key": "A minor"
@@ -843,7 +843,7 @@
     {
       "key": "style.industrial.11",
       "file": "assets/candidates/audio/style-starters-v1/industrial/samples/11_synth.wav",
-      "asset_id": null,
+      "asset_id": 107106015276226,
       "source_sha256": "1f622bd26892342ab2b63b140c4747ee2d8f579b296a1aa766569176b865b1a1",
       "pack": "industrial",
       "musical_key": "A minor"
@@ -851,7 +851,7 @@
     {
       "key": "style.industrial.12",
       "file": "assets/candidates/audio/style-starters-v1/industrial/samples/12_synth.wav",
-      "asset_id": null,
+      "asset_id": 101876434797998,
       "source_sha256": "aff7ef49e6379a52f76fcc96653505c9ea779668595095538f9a0cfbdafc24dd",
       "pack": "industrial",
       "musical_key": "A minor"
@@ -859,7 +859,7 @@
     {
       "key": "style.industrial.13",
       "file": "assets/candidates/audio/style-starters-v1/industrial/samples/13_synth.wav",
-      "asset_id": null,
+      "asset_id": 138845004128970,
       "source_sha256": "a5fe87aaaa918647786b374dc285156de69b78a49b6b061cf35c907baa7d83cc",
       "pack": "industrial",
       "musical_key": "A minor"
@@ -867,7 +867,7 @@
     {
       "key": "style.industrial.14",
       "file": "assets/candidates/audio/style-starters-v1/industrial/samples/14_synth.wav",
-      "asset_id": null,
+      "asset_id": 75327538916625,
       "source_sha256": "f9e422e8be66067ec24579b010ebc826e97822607e24e44f97422ed31a5bbf0f",
       "pack": "industrial",
       "musical_key": "A minor"
@@ -875,7 +875,7 @@
     {
       "key": "style.industrial.15",
       "file": "assets/candidates/audio/style-starters-v1/industrial/samples/15_percussion_cut.wav",
-      "asset_id": null,
+      "asset_id": 140114553404241,
       "source_sha256": "3fcf9ac1ff8967091d7cd405b12c927228a7ed40cd80415f4f60cce0b1742cc9",
       "pack": "industrial",
       "musical_key": "A minor"
@@ -883,7 +883,7 @@
     {
       "key": "style.industrial.16",
       "file": "assets/candidates/audio/style-starters-v1/industrial/samples/16_percussion_cut.wav",
-      "asset_id": null,
+      "asset_id": 113600193162122,
       "source_sha256": "74a0efdcf7c112632728d0719d72cb63a906004a8adde4c9769701aac226f4d3",
       "pack": "industrial",
       "musical_key": "A minor"
@@ -891,7 +891,7 @@
     {
       "key": "style.pop.01",
       "file": "assets/candidates/audio/style-starters-v1/pop/samples/01_percussion.wav",
-      "asset_id": null,
+      "asset_id": 127048242518608,
       "source_sha256": "ac84655e482ed28665f60bb5ac1cd5a754e2916e5a17ff3a2df1d25ccd7d422e",
       "pack": "pop",
       "musical_key": "D major"
@@ -899,7 +899,7 @@
     {
       "key": "style.pop.02",
       "file": "assets/candidates/audio/style-starters-v1/pop/samples/02_percussion.wav",
-      "asset_id": null,
+      "asset_id": 112698800708600,
       "source_sha256": "45fafba917c7648ace93f8f34322ceb2315094d92889f538a74d6f76cfbc8938",
       "pack": "pop",
       "musical_key": "D major"
@@ -907,7 +907,7 @@
     {
       "key": "style.pop.03",
       "file": "assets/candidates/audio/style-starters-v1/pop/samples/03_percussion.wav",
-      "asset_id": null,
+      "asset_id": 92936758259741,
       "source_sha256": "4c23931a1d5f322579c9a7d97c510639a8c336b00eefa7705717ae3c739481f3",
       "pack": "pop",
       "musical_key": "D major"
@@ -915,7 +915,7 @@
     {
       "key": "style.pop.04",
       "file": "assets/candidates/audio/style-starters-v1/pop/samples/04_percussion.wav",
-      "asset_id": null,
+      "asset_id": 98523781361547,
       "source_sha256": "031a0560dae3b56a0d479034a4dc956e08d8e199922223dd54518987fb533061",
       "pack": "pop",
       "musical_key": "D major"
