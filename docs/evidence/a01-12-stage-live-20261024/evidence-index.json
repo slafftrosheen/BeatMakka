@@ -1,0 +1,65 @@
+{
+  "schema": 1,
+  "files": {
+    "actual-controls.json": {
+      "bytes": 232,
+      "sha256": "b3818af61159af314602dfb7629e7a284b9ba36f00390089990857b6d2687621"
+    },
+    "actual-teardown.json": {
+      "bytes": 173,
+      "sha256": "da60f42dcca3be42534322f6150e428747e00b7b099ff6ccfe3635bc19395dfb"
+    },
+    "cleanup.json": {
+      "bytes": 167,
+      "sha256": "5a58cbded44db9a1578d79742f69c34de7408bff68e4789ae5bbdc7c62753490"
+    },
+    "client-contracts.json": {
+      "bytes": 671,
+      "sha256": "9f4d01df8f7b2846961390f1df9623ff0fcc31dfe7805609d4d2d1e18eb0ecd0"
+    },
+    "console.json": {
+      "bytes": 365,
+      "sha256": "9badbaaf97d5d669bcd0c40f7d4e9d69790e6e0dbb4704eab43745db460fac8e"
+    },
+    "multiplayer-final.json": {
+      "bytes": 2754,
+      "sha256": "02e55dfe4d6b91a1d754738e6e471dd544d8c0313411c38d5cbf8f80fcb894a5"
+    },
+    "multiplayer-first.json": {
+      "bytes": 525,
+      "sha256": "07f858694ffb05c92a69ef2ed163836df4e9bd11b0661b6d5300d11aa1ce64b4"
+    },
+    "multiplayer-second.json": {
+      "bytes": 1908,
+      "sha256": "0e9ea04fd139e42da50e46dc860aab95cf9f3a0161936da2bb8f7924ef478d52"
+    },
+    "server-contracts.json": {
+      "bytes": 4285,
+      "sha256": "944c293469fbfc5e6f34025eb269b518aaa1a92d3afecb566975d403b4f9eae8"
+    },
+    "source-inventory.json": {
+      "bytes": 732,
+      "sha256": "23bb5997e979691b7bff95fd7b86258966ac8d8da0798b117f7fbe8664a59576"
+    },
+    "stage-phone-landscape.jpg": {
+      "bytes": 35465,
+      "sha256": "cfef80dae80573a4e58eec0d60af1647add1ed321b46dc4e589a597552bfaca8"
+    },
+    "stage-phone-landscape.json": {
+      "bytes": 267,
+      "sha256": "582d4d49bb68c2a8eb622fc5160f7f60572fc6cb7fc41b7cdf2c267857a83459"
+    },
+    "stage-phone-portrait.jpg": {
+      "bytes": 34961,
+      "sha256": "8504a114f2ccae53dbd905fda3ca2951ad70e841c9b3785ad0b027fad5472e95"
+    },
+    "stage-phone-portrait.json": {
+      "bytes": 266,
+      "sha256": "b1f5d686205b7b4cf62721d99b15f31ca87a76f1367028a6b13f8e34f9a3b32a"
+    },
+    "validation.json": {
+      "bytes": 1959,
+      "sha256": "fb42aea2f180f3d0b33a4d1e184732fc4e92f7877a7375e4864fe11a8d34c967"
+    }
+  }
+}

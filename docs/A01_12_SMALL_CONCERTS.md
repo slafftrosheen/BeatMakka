@@ -1,5 +1,7 @@
 # Small courtyard concerts
 
+Latest: [24 October Studio acceptance](A01_12_STAGE_VERIFICATION.md) records 46 server contract groups, five client suites, the 26-check real three-client pass and actual phone-button/teardown checks. #14's listed readiness criteria pass. The source-only checkpoint below is retained as history.
+
 23 October 2026, source checkpoint from synchronized 752f5ac870d1a2ac39133bb1941c18548c4aab92. #14 remains open. Studio MCP currently lists no connected instances. None of the new contracts, UI checks or multiplayer scenarios has executed. Prior issue test results are not evidence for this change.
 
 ## First format and roles

@@ -45,10 +45,10 @@ return function()
             expect(listener.mute.AbsoluteSize.Y >= 44 and listener.leave.AbsoluteSize.Y >= 44)
             expect(view.label.TextBounds.Y <= view.label.AbsoluteSize.Y + 1)
         end
-        game.GuiService.SelectedObject = view.prepare
+        game.GuiService.SelectedObject = view.close
         view:update({ open = false, queue = {}, requesting = false, listening = false }, false)
         expect(
-            game.GuiService.SelectedObject ~= view.prepare,
+            game.GuiService.SelectedObject ~= view.close,
             "Focus remained on hidden stage control"
         )
         return { passed = true, layouts = 3, listenerMute = true, routing = true }

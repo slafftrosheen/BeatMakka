@@ -1,0 +1,63 @@
+{
+  "date": "2026-10-24",
+  "source_baseline": "ba7143f85e0a9165c11ca45c617bd0da58e50a4b",
+  "studio_id": "f145fc3c-45b9-4412-b889-3db29d20dcef",
+  "place": "small-concerts.rbxlx",
+  "place_id": 0,
+  "server_contract_groups": 46,
+  "world_entry_smoke": true,
+  "client_suites": [
+    "RecorderGuide",
+    "GrooveboxUi",
+    "RoomSettings",
+    "ConcertUi",
+    "StageUi"
+  ],
+  "real_multiplayer_clients": 3,
+  "real_multiplayer_checks": 26,
+  "real_multiplayer_passed": true,
+  "actual_controls": "Prepare, Start, Mute/unmute and Leave activated through MCP game input",
+  "actual_teardown": "Stage cleared, music preserved and audio disposed",
+  "audio": "configured style.pop.01 loaded and played on performer and listener; no acoustic measurement",
+  "failures_retained": [
+    "first: open-state reply raced fixed wait",
+    "second: three-second audio observation was shorter than load timeout"
+  ],
+  "harness_corrections": [
+    "await actual stage-open state",
+    "use existing 15-second audio load window",
+    "select enabled Leave for focus cleanup"
+  ],
+  "production_source_changes_this_batch": false,
+  "stylua": "PASS",
+  "selene": {
+    "errors": 0,
+    "warnings": 0,
+    "parse_errors": 0
+  },
+  "rojo": {
+    "source_scripts": 46,
+    "qa_excluded": true,
+    "sha256": "5439fcb79029dbce1667503121e04a96dfa8f2101ad08e6a5d193604f47da824"
+  },
+  "offline_binding_checks": 6,
+  "material_verifier": {
+    "maps": 12,
+    "templates": 8,
+    "audio_preserved": 100
+  },
+  "assets_and_ids_unchanged": true,
+  "desktop_control_used": false,
+  "published": false,
+  "qa_removed": true,
+  "final_mode": "Edit",
+  "default_viewport_restored": true,
+  "issue14_ready_to_close": true,
+  "excluded_acceptance": [
+    "original collected audio and other pending audio uploads",
+    "real cloud saves/rejoin",
+    "physical device latency/controller feel",
+    "persistent mesh/final resident art",
+    "sample-accurate sync or acoustic balance"
+  ]
+}

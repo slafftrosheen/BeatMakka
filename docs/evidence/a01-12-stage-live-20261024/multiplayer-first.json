@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"ok\":true,\"result\":{\"storage\":\"session only\",\"audio\":\"configured style sample engine playback; not acoustic latency/balance acceptance\",\"checks\":[\"two performers and an independent listener ready\",\"performer 1 claims only own instrument\",\"performer 2 claims only own instrument\"],\"clients\":3,\"count\":3,\"passed\":false,\"error\":\"ServerScriptService.StageAcceptanceServer:55: Player1 opens stage board\"}}"
+    }
+  ],
+  "isError": false
+}

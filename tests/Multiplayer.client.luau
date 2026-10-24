@@ -71,6 +71,16 @@ control.Drive.OnClientEvent:Connect(function(index, action, a, b)
             anchor.ProximityPrompt:InputHoldBegin()
             task.wait(0.35)
             anchor.ProximityPrompt:InputHoldEnd()
+            if a == "StageBoard" then
+                local openDeadline = os.clock() + 2
+                repeat
+                    if state and state.stage and state.stage.open then
+                        break
+                    end
+                    task.wait(0.05)
+                until os.clock() >= openDeadline
+                diagnostic.openConfirmed = state and state.stage and state.stage.open == true
+            end
         elseif action == "InstallFinishArt" then
             assert(not finishArtCleanup, "Finish art already installed")
             finishArtCleanup =
@@ -111,6 +121,41 @@ control.Drive.OnClientEvent:Connect(function(index, action, a, b)
                 end
             end
             diagnostic.hudVisible = game.Players.LocalPlayer.PlayerGui.FrequencyZero.HubHud.Visible
+        elseif action == "StageEvidence" or action == "LocalMuteProbe" then
+            local group = game.SoundService:FindFirstChild("CourtyardListening")
+            local gui = game.Players.LocalPlayer.PlayerGui.FrequencyZero
+            if action == "LocalMuteProbe" then
+                assert(group, "Missing listening sound group")
+                group.Volume = 0
+            end
+            diagnostic = {
+                volume = group and group.Volume,
+                boardVisible = gui.CourtyardStage.Visible,
+                compactVisible = gui.ListeningSession.Visible,
+                boardMute = gui.CourtyardStage:FindFirstChildWhichIsA("TextButton", true) ~= nil,
+                voices = {},
+            }
+            local deadline = os.clock()
+                + (if action == "StageEvidence" and state and state.listening then 15 else 0)
+            local played = false
+            repeat
+                for _, sound in game.SoundService:GetChildren() do
+                    if
+                        sound:IsA("Sound")
+                        and sound.SoundGroup == group
+                        and sound.SoundId == "rbxassetid://127048242518608"
+                    then
+                        played = played or sound.IsPlaying
+                        diagnostic.voices[sound.Name] =
+                            { loaded = sound.IsLoaded, length = sound.TimeLength }
+                    end
+                end
+                if played or os.clock() >= deadline then
+                    break
+                end
+                task.wait(0.05)
+            until false
+            diagnostic.playingObserved = played
         elseif action == "RoomEvidence" then
             diagnostic = { rooms = {}, pads = 0 }
             for _, model in workspace.NeedleQuay:GetChildren() do

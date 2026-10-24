@@ -18,7 +18,7 @@ Use native scrolling stage controls with fixed mute/leave actions, hide competin
 - [x] Extend ListeningSession with stage board state/commands and a separate StageQueue for bounded ephemeral rights. Integrate MusicService routing/world prompt without a second audio engine.
 - [x] Add StageView, listener mute and client policy/lifecycle integration; author native layout and command-routing regressions. Execution pending.
 - [x] Run pinned format/lint/build/binding/material checks and independent source review; correct/re-review controller focus and broadcast boundaries.
-- [ ] Run Studio contracts/UI/multiplayer against an identified connected project. No Studio instances are currently available.
-- [ ] Push source/evidence; keep #14 open unless actual authorized multiple-client and all other readiness criteria are verified.
+- [x] Run Studio contracts/UI/multiplayer against the identified small-concerts.rbxlx project on 24 October: 46 contract groups, world smoke, five client suites, 26 real three-client checks, actual phone controls and teardown pass. Earlier absence remains historical evidence.
+- [x] Push the source checkpoint ba7143f; prepare verified evidence for the follow-up push. #14's readiness criteria pass; other issues' audio/cloud/art gates are unchanged.
 
 No dependencies, production publishing, paid generation or desktop automation. Red/green execution is not claimed while Studio is unavailable.

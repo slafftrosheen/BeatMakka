@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"ok\":true,\"result\":{\"storage\":\"session only\",\"audio\":\"configured style sample engine playback; not acoustic latency/balance acceptance\",\"checks\":[\"two performers and an independent listener ready\",\"performer 1 claims only own instrument\",\"performer 2 claims only own instrument\",\"Player1 opens stage board: {\\\"diagnostic\\\":{\\\"enabled\\\":true,\\\"openConfirmed\\\":true,\\\"shown\\\":true,\\\"distance\\\":4.4788737297058109,\\\"target\\\":\\\"StageBoard\\\"},\\\"notice\\\":\\\"One stage. Prepare your snapshot or choose to listen. Nothing joins automatically.\\\"}\",\"Player2 opens stage board: {\\\"diagnostic\\\":{\\\"enabled\\\":true,\\\"openConfirmed\\\":true,\\\"shown\\\":true,\\\"distance\\\":7.743271350860596,\\\"target\\\":\\\"StageBoard\\\"},\\\"notice\\\":\\\"One stage. Prepare your snapshot or choose to listen. Nothing joins automatically.\\\"}\",\"Player3 opens stage board: {\\\"diagnostic\\\":{\\\"enabled\\\":true,\\\"hit\\\":\\\"Workspace.Player2.Accessory (Halloween).Handle\\\",\\\"shown\\\":true,\\\"distance\\\":8.24986743927002,\\\"target\\\":\\\"StageBoard\\\",\\\"openConfirmed\\\":true},\\\"notice\\\":\\\"One stage. Prepare your snapshot or choose to listen. Nothing joins automatically.\\\"}\",\"first preparation reserves without audio\",\"second preparation waits without audio\",\"other prepared player cannot steal turn\",\"legacy share respects reservation\",\"offered performer explicitly starts\",\"listener is not automatically subscribed\",\"listener explicitly joins copied pattern\",\"listener project remains independent\",\"configured style sample loads and plays on performer\"],\"clients\":3,\"count\":15,\"passed\":false,\"error\":\"ServerScriptService.StageAcceptanceServer:55: configured sample loads and plays on opted-in listener\"}}"
+    }
+  ],
+  "isError": false
+}
