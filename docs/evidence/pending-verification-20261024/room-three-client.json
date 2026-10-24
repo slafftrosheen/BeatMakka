@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"ok\":true,\"result\":{\"count\":20,\"checks\":[\"two owners and one visitor\",\"locked decor cannot be selected\",\"owner selects room finish\",\"owner selects fixed sign\",\"foreign target and malformed field cannot edit another room\",\"visitor cannot edit any room\",\"Player2 sees owner choices and native sign\",\"Player3 sees owner choices and native sign\",\"discovery unlocks decor independently\",\"far-away cosmetic request rejected\",\"unlocked decor selected\",\"visitor sees one bounded crate\",\"owner claims instrument before saving\",\"profile save reports session limitation\",\"music restore keeps unsaved workshop dirty\",\"instrument release retains workshop ownership\",\"death retains workshop ownership\",\"all 378 functional/navigation parts unchanged\",\"disconnect assigns cleared bay to visitor\",\"other owner's bay preserved\"],\"storage\":\"session only\",\"art\":\"deterministic placeholders; permanent import pending\",\"passed\":true,\"clients\":3}}"
+    }
+  ],
+  "isError": false
+}

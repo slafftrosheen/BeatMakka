@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "files": {
+    "open-issues.json": {
+      "bytes": 83400,
+      "sha256": "af01e110cbb4f97740dd969a93680c008f372306c9c77a0e3f99d3823e7948d0"
+    },
+    "room-three-client.json": {
+      "bytes": 1079,
+      "sha256": "dfb09adb0b68c3642d2b02d5e58ce5206190275b38cf22edd60656889e8db139"
+    },
+    "studio-status.json": {
+      "bytes": 216,
+      "sha256": "574cf87e318d514621b508a062fb90e3b0f5b888294b75dec62fbb21fd449304"
+    },
+    "summary.json": {
+      "bytes": 987,
+      "sha256": "e820a18af8aaf6de5d01dd5d001badb35e912405a0cc8990079d375c93bd58c5"
+    }
+  }
+}

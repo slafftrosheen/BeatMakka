@@ -1,0 +1,47 @@
+{
+  "date": "2026-10-24",
+  "baseline": "1a78302c20c9dce1ca0390ada7e99ef5cba5a4d3",
+  "open_task_issues": 14,
+  "umbrella_issue": 1,
+  "implemented_or_asset_prepared_waiting_acceptance": [
+    3,
+    5,
+    6,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13
+  ],
+  "needs_development_or_research": [
+    7,
+    15,
+    16,
+    17,
+    18
+  ],
+  "new_room_multiplayer_result": {
+    "passed": true,
+    "clients": 3,
+    "checks": 20,
+    "protected_parts": 378,
+    "storage": "session only",
+    "art": "placeholders"
+  },
+  "room_issue_close_eligible": false,
+  "issues_closed": [],
+  "audio_bindings": 100,
+  "image_bindings": 14,
+  "original_audio_bindings": 0,
+  "genre_uploads_pending": 60,
+  "quota_status": "Frozen 23 October receipt only; current Dashboard not re-queried",
+  "place_id": 0,
+  "universe_id": 0,
+  "stored_masters": 0,
+  "production_code_or_asset_changes": false,
+  "desktop_control_used": false,
+  "published": false,
+  "qa_removed": true,
+  "final_mode": "Edit"
+}

@@ -1,5 +1,7 @@
 # Personal workshop customization
 
+24 October update: [pending-verification audit](PENDING_VERIFICATION_2026-10-24.md) records a complete **20-check, three-client RoomAcceptance pass** against source 1a78302. Ownership, visitor limits, replicated decor, session Save/Restore, death, disconnect reassignment and 378 unchanged functional/navigation parts pass. This supersedes the earlier stalled multiplayer status below. Cloud rejoin and permanent/final room-art acceptance remain pending; #11 stays open.
+
 23 October 2026. Implementation starts from synchronized `6355d5c`. #11 remains open for real cloud rejoin and final room art acceptance. #8 remains open independently. No production publishing, paid generation, new uploads or desktop control.
 
 ## Owned space and visibility
