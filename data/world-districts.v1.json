@@ -23,32 +23,57 @@
   "firstDistrictStops": [
     {
       "id": "P1",
-      "name": "Rusty Workshop",
+      "name": "Dockside Exchange",
       "activity": "sequencing and rhythm",
-      "existingBinding": "I01 metal_hit, metal_pulse"
+      "existingBinding": "I01 metal_hit at Dockside Exchange; metal_pulse remains legacy mission evidence",
+      "previous_display_name": "Rusty Workshop",
+      "environment_stop_id": "NQ-STOP-01",
+      "building_ids": [
+        "NQ-BLD-08",
+        "NQ-BLD-13"
+      ]
     },
     {
       "id": "P2",
-      "name": "Vinyl Corner",
-      "activity": "listen/preview/assign, history of a sound",
-      "existingBinding": "H03 + MK-I sample browser"
+      "name": "Repair Alley",
+      "activity": "repair ventilation; sequencing and A/B rhythm variation",
+      "existingBinding": "I02 vent_thump; canonical runtime mission vent_duet is unchanged",
+      "previous_display_name": "Vinyl Corner",
+      "environment_stop_id": "NQ-STOP-02",
+      "building_ids": [
+        "NQ-BLD-03",
+        "NQ-BLD-09"
+      ]
     },
     {
       "id": "P3",
-      "name": "Harbor Market",
-      "activity": "prepare stage/chores/collaboration",
-      "existingBinding": "StageQueue where supported, NPC solo fallback mandatory"
+      "name": "Vinyl Market",
+      "activity": "listen/preview/assign; sort music and save to Beat Shelf; optional performance",
+      "existingBinding": "H06 Needle Records + H03; existing StageQueue where supported",
+      "previous_display_name": "Harbor Market",
+      "environment_stop_id": "NQ-STOP-03",
+      "building_ids": [
+        "NQ-BLD-02",
+        "NQ-BLD-04"
+      ]
     },
     {
       "id": "P4",
-      "name": "Echo Pier",
+      "name": "Breakwater Steps",
       "activity": "virtual acoustics/world sound collection",
-      "existingBinding": "I02 vent_thump; I03 robot_chirp; waterfront ambience is not pad audio"
+      "existingBinding": "I03 robot_chirp; helper_reply remains legacy mission evidence",
+      "previous_display_name": "Echo Pier",
+      "environment_stop_id": "NQ-STOP-04",
+      "building_ids": [
+        "NQ-BLD-05",
+        "NQ-BLD-12"
+      ]
     }
   ],
   "finale": {
-    "name": "The Lighthouse Club",
-    "implementation": "proposed art/venue wrapper reusing existing six-phase courtyard ChapterConcert"
+    "name": "The Lantern Room",
+    "implementation": "proposed art/venue wrapper reusing existing six-phase courtyard ChapterConcert",
+    "previous_display_name": "The Lighthouse Club"
   },
   "verifiedRepoStatusAt": "2026-10-24",
   "soundStatus": {
@@ -67,7 +92,8 @@
     "docs/A01_11_CHAPTER_CONCERT.md",
     "docs/A01_12_STAGE_VERIFICATION.md",
     "output/artbook-alpha01/README.md",
-    "assets/references/needle-quay-approved-style-board.json"
+    "assets/references/needle-quay-approved-style-board.json",
+    "docs/needle-quay/environment-production-register-v1.0-source.ru.md"
   ],
   "districts": [
     {
@@ -411,5 +437,6 @@
       ],
       "accent": "#B2A168"
     }
-  ]
+  ],
+  "environmentRegistry": "data/needle-quay-environment.v1.json"
 }

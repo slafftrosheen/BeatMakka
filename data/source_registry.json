@@ -135,5 +135,22 @@
       "checked_on": "2026-10-22",
       "notes": "Official read-only documentation MCP is available for OpenAI/Codex product questions. It is not a Tripo API proxy and does not authenticate to Tripo."
     }
+  ],
+  "environment_supplement_sources": [
+    {
+      "path": "docs/needle-quay/environment-production-register-v1.0-source.ru.md",
+      "sha256": "08492c1f6189b40aa3b8bd3eaee7a836d45785467096ad0002d59bae32056303",
+      "authority": "User supplied production register v1.0; 2026-10-24 user requested registration, two sheets and blockout"
+    },
+    {
+      "path": "BeatMakka_World_v2/docs/DEMO_DEVELOPMENT_PLAN_RU.md",
+      "sha256": "7f85019759c426a5e709cb6e5b1dfe882a8da104d6768b2509df07c629a5a061",
+      "authority": "World Artbook v2 companion; canonical venue names, parking and van concepts"
+    },
+    {
+      "path": "assets/references/needle-quay-approved-style-board.png",
+      "sha256": "ed1febe208e798110905653ac6f2a60778830de00b2ff112cacf2e36c3bf3463",
+      "authority": "Visual direction only"
+    }
   ]
 }

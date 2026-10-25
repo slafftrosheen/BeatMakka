@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="760" viewBox="0 0 980 760">
+<rect width="980" height="760" fill="#eee5d1"/>
+<style>text{font-family:Arial,sans-serif;fill:#162322}.small{font-size:11px}.label{font-size:12px;font-weight:bold}</style>
+<text x="40" y="40" font-size="25" font-weight="bold">NEEDLE QUAY / DISTRICT BLOCKOUT</text>
+<text x="40" y="63" font-size="12">13 buildings · 4 parking anchors · 7 NPC locations · -Z is north · proposed layout, not runtime acceptance</text>
+<rect x="70.0" y="61.0" width="840" height="28" fill="#b7a78d"/>
+<rect x="70.0" y="261.0" width="840" height="28" fill="#b7a78d"/>
+<rect x="70.0" y="421.0" width="840" height="28" fill="#b7a78d"/>
+<rect x="66.0" y="75.0" width="28" height="360" fill="#b7a78d"/>
+<rect x="886.0" y="75.0" width="28" height="360" fill="#b7a78d"/>
+<rect x="686.0" y="75.0" width="28" height="360" fill="#b7a78d"/>
+<rect x="166.0" y="75.0" width="16" height="200.0" fill="#b7a78d"/>
+<rect x="446.0" y="515.0" width="88" height="60" rx="3" fill="#6f9186" stroke="#2f5c58"/>
+<text x="490.0" y="549.0" text-anchor="middle" class="label">01</text>
+<path d="M 485.0 515.0 l 5 -6 l 5 6" fill="#ca7453"/>
+<rect x="338.0" y="339.0" width="64" height="32" rx="3" fill="#6f9186" stroke="#2f5c58"/>
+<text x="370.0" y="359.0" text-anchor="middle" class="label">02</text>
+<path d="M 365.0 339.0 l 5 -6 l 5 6" fill="#ca7453"/>
+<rect x="198.0" y="121.0" width="64" height="48" rx="3" fill="#6f9186" stroke="#2f5c58"/>
+<text x="230.0" y="149.0" text-anchor="middle" class="label">03</text>
+<path d="M 225.0 121.0 l 5 -6 l 5 6" fill="#ca7453"/>
+<rect x="462.0" y="325.0" width="96" height="60" rx="3" fill="#6f9186" stroke="#2f5c58"/>
+<text x="510.0" y="359.0" text-anchor="middle" class="label">04</text>
+<path d="M 505.0 325.0 l 5 -6 l 5 6" fill="#ca7453"/>
+<rect x="824.0" y="529.0" width="32" height="32" rx="3" fill="#6f9186" stroke="#2f5c58"/>
+<text x="840.0" y="549.0" text-anchor="middle" class="label">05</text>
+<path d="M 835.0 529.0 l 5 -6 l 5 6" fill="#ca7453"/>
+<rect x="342.0" y="519.0" width="36" height="32" rx="3" fill="#d2bda0" stroke="#2f5c58"/>
+<text x="360.0" y="539.0" text-anchor="middle" class="label">06</text>
+<path d="M 355.0 519.0 l 5 -6 l 5 6" fill="#ca7453"/>
+<rect x="122.0" y="523.0" width="36" height="24" rx="3" fill="#d2bda0" stroke="#2f5c58"/>
+<text x="140.0" y="539.0" text-anchor="middle" class="label">07</text>
+<path d="M 135.0 523.0 l 5 -6 l 5 6" fill="#ca7453"/>
+<rect x="124.0" y="343.0" width="32" height="24" rx="3" fill="#d2bda0" stroke="#2f5c58"/>
+<text x="140.0" y="359.0" text-anchor="middle" class="label">08</text>
+<path d="M 135.0 343.0 l 5 -6 l 5 6" fill="#ca7453"/>
+<rect x="296.0" y="125.0" width="68" height="40" rx="3" fill="#d2bda0" stroke="#2f5c58"/>
+<text x="330.0" y="149.0" text-anchor="middle" class="label">09</text>
+<path d="M 325.0 125.0 l 5 -6 l 5 6" fill="#ca7453"/>
+<rect x="582.0" y="129.0" width="76" height="32" rx="3" fill="#d2bda0" stroke="#2f5c58"/>
+<text x="620.0" y="149.0" text-anchor="middle" class="label">10</text>
+<path d="M 615.0 129.0 l 5 -6 l 5 6" fill="#ca7453"/>
+<rect x="762.0" y="129.0" width="36" height="32" rx="3" fill="#d2bda0" stroke="#2f5c58"/>
+<text x="780.0" y="149.0" text-anchor="middle" class="label">11</text>
+<path d="M 775.0 129.0 l 5 -6 l 5 6" fill="#ca7453"/>
+<rect x="758.0" y="533.0" width="24" height="24" rx="3" fill="#d2bda0" stroke="#2f5c58"/>
+<text x="770.0" y="549.0" text-anchor="middle" class="label">12</text>
+<path d="M 765.0 533.0 l 5 -6 l 5 6" fill="#ca7453"/>
+<rect x="180.0" y="333.0" width="60" height="44" rx="3" fill="#d2bda0" stroke="#2f5c58"/>
+<text x="210.0" y="359.0" text-anchor="middle" class="label">13</text>
+<path d="M 205.0 333.0 l 5 -6 l 5 6" fill="#ca7453"/>
+<rect x="122" y="467" width="56" height="36" fill="none" stroke="#ca7453" stroke-width="2"/>
+<text x="150" y="489" text-anchor="middle" class="label">P1</text>
+<rect x="202" y="207" width="56" height="36" fill="none" stroke="#ca7453" stroke-width="2"/>
+<text x="230" y="229" text-anchor="middle" class="label">P2</text>
+<rect x="352" y="207" width="56" height="36" fill="none" stroke="#ca7453" stroke-width="2"/>
+<text x="380" y="229" text-anchor="middle" class="label">P3</text>
+<rect x="782" y="467" width="56" height="36" fill="none" stroke="#ca7453" stroke-width="2"/>
+<text x="810" y="489" text-anchor="middle" class="label">P4</text>
+<circle cx="120" cy="457" r="3" fill="#ca7453"/>
+<circle cx="210" cy="105" r="3" fill="#ca7453"/>
+<circle cx="350" cy="323" r="3" fill="#ca7453"/>
+<circle cx="548" cy="309" r="3" fill="#ca7453"/>
+<circle cx="864" cy="519" r="3" fill="#ca7453"/>
+<circle cx="466" cy="503" r="3" fill="#ca7453"/>
+<circle cx="346" cy="509" r="3" fill="#ca7453"/>
+<rect x="45" y="665" width="890" height="73" fill="#e8d8b7"/>
+<text x="55" y="681" class="small">01 The Lantern Room (44 × 30 × 26)</text>
+<text x="55" y="693" class="small">02 Needle Records (32 × 16 × 24)</text>
+<text x="55" y="705" class="small">03 Morrow Repairs (32 × 24 × 19)</text>
+<text x="55" y="717" class="small">04 Harbor Market Hall (48 × 30 × 16)</text>
+<text x="55" y="729" class="small">05 Signal House (16 × 16 × 26)</text>
+<text x="350" y="681" class="small">06 Warm Current Café (18 × 16 × 13)</text>
+<text x="350" y="693" class="small">07 North Slip Ferry Office (18 × 12 × 11)</text>
+<text x="350" y="705" class="small">08 Quay Supply & Tackle (16 × 12 × 10)</text>
+<text x="350" y="717" class="small">09 Cinder Cold Storage (34 × 20 × 16)</text>
+<text x="350" y="729" class="small">10 Quayside Flats (38 × 16 × 26)</text>
+<text x="645" y="681" class="small">11 Tidewash Laundry (18 × 16 × 14)</text>
+<text x="645" y="693" class="small">12 Relay Substation (12 × 12 × 11)</text>
+<text x="645" y="705" class="small">13 Dockline Depot (30 × 22 × 20)</text>
+</svg>

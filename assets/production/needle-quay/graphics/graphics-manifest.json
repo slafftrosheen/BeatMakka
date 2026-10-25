@@ -1,0 +1,1460 @@
+{
+  "base_designs": [
+    {
+      "id": "NQ-SGN-01",
+      "kind": "sign",
+      "subject": "The Lantern Room",
+      "placement": "NQ-BLD-01",
+      "unique_composition": true,
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-SGN-01.png",
+      "source": "assets/production/needle-quay/graphics/NQ-SGN-01.svg",
+      "sha256": "7ab97b97253973207dd4571d4ac88ded3b2374a395c5bb4793f3d6b1d4214335",
+      "art_approved": false,
+      "width": 512,
+      "height": 256,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "uploaded": false
+    },
+    {
+      "id": "NQ-SGN-02",
+      "kind": "sign",
+      "subject": "Needle Records",
+      "placement": "NQ-BLD-02",
+      "unique_composition": true,
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-SGN-02.png",
+      "source": "assets/production/needle-quay/graphics/NQ-SGN-02.svg",
+      "sha256": "c70a1ad52203ebc0f021ce3a91f1b8f90f9960c46e8d98edbbbf3497d84f556b",
+      "art_approved": false,
+      "width": 512,
+      "height": 256,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "uploaded": false
+    },
+    {
+      "id": "NQ-SGN-03",
+      "kind": "sign",
+      "subject": "Morrow Repairs",
+      "placement": "NQ-BLD-03",
+      "unique_composition": true,
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-SGN-03.png",
+      "source": "assets/production/needle-quay/graphics/NQ-SGN-03.svg",
+      "sha256": "c46a72395682c8a7d1ae2c4ee255c503bd0d3e19c6e4889ff3ba90cd4153d0a5",
+      "art_approved": false,
+      "width": 512,
+      "height": 256,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "uploaded": false
+    },
+    {
+      "id": "NQ-SGN-04",
+      "kind": "sign",
+      "subject": "Harbor Market Hall",
+      "placement": "NQ-BLD-04",
+      "unique_composition": true,
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-SGN-04.png",
+      "source": "assets/production/needle-quay/graphics/NQ-SGN-04.svg",
+      "sha256": "1e78e512a33d76066cbf220f7159c523bb6fc3e37bd4d91ef46fca2a9ea81e43",
+      "art_approved": false,
+      "width": 512,
+      "height": 256,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "uploaded": false
+    },
+    {
+      "id": "NQ-SGN-05",
+      "kind": "sign",
+      "subject": "Signal House",
+      "placement": "NQ-BLD-05",
+      "unique_composition": true,
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-SGN-05.png",
+      "source": "assets/production/needle-quay/graphics/NQ-SGN-05.svg",
+      "sha256": "f44717abc58c86e8e596976b7639327e85b2c6869af9828f7950e8ca8da24abc",
+      "art_approved": false,
+      "width": 512,
+      "height": 256,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "uploaded": false
+    },
+    {
+      "id": "NQ-SGN-06",
+      "kind": "sign",
+      "subject": "Warm Current Café",
+      "placement": "NQ-BLD-06",
+      "unique_composition": false,
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-SGN-06.png",
+      "source": "assets/production/needle-quay/graphics/NQ-SGN-06.svg",
+      "sha256": "4dd981e846d6cde9353dcebb3cca82e489f8c604a246b90a01b8ae43f50633ac",
+      "art_approved": false,
+      "width": 512,
+      "height": 256,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "uploaded": false
+    },
+    {
+      "id": "NQ-SGN-07",
+      "kind": "sign",
+      "subject": "North Slip Ferry Office",
+      "placement": "NQ-BLD-07",
+      "unique_composition": false,
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-SGN-07.png",
+      "source": "assets/production/needle-quay/graphics/NQ-SGN-07.svg",
+      "sha256": "3f58ffd7cddf3d13a832e6daec6361446da50d99ea43c6738f64c05551a6df94",
+      "art_approved": false,
+      "width": 512,
+      "height": 256,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "uploaded": false
+    },
+    {
+      "id": "NQ-SGN-08",
+      "kind": "sign",
+      "subject": "Quay Supply & Tackle",
+      "placement": "NQ-BLD-08",
+      "unique_composition": false,
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-SGN-08.png",
+      "source": "assets/production/needle-quay/graphics/NQ-SGN-08.svg",
+      "sha256": "5041d7729b0c3c6d878e537f06e00a9b9a7daffcc135cf553afb7823cca9f341",
+      "art_approved": false,
+      "width": 512,
+      "height": 256,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "uploaded": false
+    },
+    {
+      "id": "NQ-SGN-09",
+      "kind": "sign",
+      "subject": "Cinder Cold Storage",
+      "placement": "NQ-BLD-09",
+      "unique_composition": false,
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-SGN-09.png",
+      "source": "assets/production/needle-quay/graphics/NQ-SGN-09.svg",
+      "sha256": "e0e362f0088f2e9898d704b9567ba82675c6a11b1ba6b469f767a8de7ef368f7",
+      "art_approved": false,
+      "width": 512,
+      "height": 256,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "uploaded": false
+    },
+    {
+      "id": "NQ-SGN-10",
+      "kind": "sign",
+      "subject": "Quayside Flats",
+      "placement": "NQ-BLD-10",
+      "unique_composition": false,
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-SGN-10.png",
+      "source": "assets/production/needle-quay/graphics/NQ-SGN-10.svg",
+      "sha256": "78ac95776927b9f6a066b60ebb4dccdd971bb3e02d8048ebcfd0dc12b652109b",
+      "art_approved": false,
+      "width": 512,
+      "height": 256,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "uploaded": false
+    },
+    {
+      "id": "NQ-SGN-11",
+      "kind": "sign",
+      "subject": "Tidewash Laundry",
+      "placement": "NQ-BLD-11",
+      "unique_composition": false,
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-SGN-11.png",
+      "source": "assets/production/needle-quay/graphics/NQ-SGN-11.svg",
+      "sha256": "5a38f9c7491bcf9176f188053eb583b628748b44167373dd868868a54f70d3a2",
+      "art_approved": false,
+      "width": 512,
+      "height": 256,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "uploaded": false
+    },
+    {
+      "id": "NQ-SGN-12",
+      "kind": "sign",
+      "subject": "Relay Substation",
+      "placement": "NQ-BLD-12",
+      "unique_composition": false,
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-SGN-12.png",
+      "source": "assets/production/needle-quay/graphics/NQ-SGN-12.svg",
+      "sha256": "f995a31de7d3ba4c101ca6c93cd0d150870b5b19fdf878502517435ae1c6095c",
+      "art_approved": false,
+      "width": 512,
+      "height": 256,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "uploaded": false
+    },
+    {
+      "id": "NQ-SGN-13",
+      "kind": "sign",
+      "subject": "Dockline Depot",
+      "placement": "NQ-BLD-13",
+      "unique_composition": false,
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-SGN-13.png",
+      "source": "assets/production/needle-quay/graphics/NQ-SGN-13.svg",
+      "sha256": "97895230db47c531ae1f0baa21a2a46890165496fd7584f4cd22344591a1763e",
+      "art_approved": false,
+      "width": 512,
+      "height": 256,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "uploaded": false
+    },
+    {
+      "id": "NQ-WAY-01",
+      "kind": "wayfinding",
+      "subject": "Waterfront",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-WAY-01.png",
+      "source": "assets/production/needle-quay/graphics/NQ-WAY-01.svg",
+      "sha256": "019d84e1e970025637eb3594c70bf7c266b0b4c0707b13660e8a5343d9642e3f",
+      "art_approved": false,
+      "width": 512,
+      "height": 256,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "uploaded": false
+    },
+    {
+      "id": "NQ-WAY-02",
+      "kind": "wayfinding",
+      "subject": "Market",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-WAY-02.png",
+      "source": "assets/production/needle-quay/graphics/NQ-WAY-02.svg",
+      "sha256": "014c713024f639bea8647a9295ab9c112883ad3eb8f5b7271d57de150a406550",
+      "art_approved": false,
+      "width": 512,
+      "height": 256,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "uploaded": false
+    },
+    {
+      "id": "NQ-WAY-03",
+      "kind": "wayfinding",
+      "subject": "Club",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-WAY-03.png",
+      "source": "assets/production/needle-quay/graphics/NQ-WAY-03.svg",
+      "sha256": "22f36ca77a90761d0045d23955e910bb561c7971913c58d114aefe42cc915e0d",
+      "art_approved": false,
+      "width": 512,
+      "height": 256,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "uploaded": false
+    },
+    {
+      "id": "NQ-WAY-04",
+      "kind": "wayfinding",
+      "subject": "Workshop",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-WAY-04.png",
+      "source": "assets/production/needle-quay/graphics/NQ-WAY-04.svg",
+      "sha256": "e2fba3f3561fdbc67025503226b1c49504a3c6cbbf670882a64978023159402e",
+      "art_approved": false,
+      "width": 512,
+      "height": 256,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "uploaded": false
+    },
+    {
+      "id": "NQ-WAY-05",
+      "kind": "wayfinding",
+      "subject": "Parking venues",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-WAY-05.png",
+      "source": "assets/production/needle-quay/graphics/NQ-WAY-05.svg",
+      "sha256": "d4c150ef559098991cbe22a6abbed70f347923fb606a3cd7ea319b25cf56a7da",
+      "art_approved": false,
+      "width": 512,
+      "height": 256,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "uploaded": false
+    },
+    {
+      "id": "NQ-WAY-06",
+      "kind": "wayfinding",
+      "subject": "Signal House",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-WAY-06.png",
+      "source": "assets/production/needle-quay/graphics/NQ-WAY-06.svg",
+      "sha256": "f990af787bc16effd7374088662b9bbab2dbcbeb1940456eb39f2db2d5aa57e3",
+      "art_approved": false,
+      "width": 512,
+      "height": 256,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "uploaded": false
+    },
+    {
+      "id": "POST-01",
+      "kind": "poster",
+      "subject": "Lantern Room old concert",
+      "variants": "Faded/new where justified; variants are not separate base counts",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/POST-01.png",
+      "source": "assets/production/needle-quay/graphics/POST-01.svg",
+      "sha256": "b2115ff6ef2441b2759c4472a5c5a6c1751556ff7048c1b1e20026d8e4ca9175",
+      "art_approved": false,
+      "width": 512,
+      "height": 768,
+      "faded_source": "assets/production/needle-quay/graphics/POST-01-faded.svg",
+      "alpha_range": [
+        255,
+        255
+      ],
+      "uploaded": false
+    },
+    {
+      "id": "POST-02",
+      "kind": "poster",
+      "subject": "Vinyl Swap",
+      "variants": "Faded/new where justified; variants are not separate base counts",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/POST-02.png",
+      "source": "assets/production/needle-quay/graphics/POST-02.svg",
+      "sha256": "427cff6c7cb7a14bdb0369c17d2647e0b439cb73bb13fade5c86ec8f07b9832c",
+      "art_approved": false,
+      "width": 512,
+      "height": 768,
+      "faded_source": "assets/production/needle-quay/graphics/POST-02-faded.svg",
+      "alpha_range": [
+        255,
+        255
+      ],
+      "uploaded": false
+    },
+    {
+      "id": "POST-03",
+      "kind": "poster",
+      "subject": "Repair Day",
+      "variants": "Faded/new where justified; variants are not separate base counts",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/POST-03.png",
+      "source": "assets/production/needle-quay/graphics/POST-03.svg",
+      "sha256": "776f991cc2aca227adf10e3ffcec7b38d0a48308de674c0494434312e42aaa81",
+      "art_approved": false,
+      "width": 512,
+      "height": 768,
+      "faded_source": "assets/production/needle-quay/graphics/POST-03-faded.svg",
+      "alpha_range": [
+        255,
+        255
+      ],
+      "uploaded": false
+    },
+    {
+      "id": "POST-04",
+      "kind": "poster",
+      "subject": "Quay Sessions",
+      "variants": "Faded/new where justified; variants are not separate base counts",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/POST-04.png",
+      "source": "assets/production/needle-quay/graphics/POST-04.svg",
+      "sha256": "9a2657eacf069fb5950c2fc9ffa4270615f7310e9eecafa874e2009119878104",
+      "art_approved": false,
+      "width": 512,
+      "height": 768,
+      "faded_source": "assets/production/needle-quay/graphics/POST-04-faded.svg",
+      "alpha_range": [
+        255,
+        255
+      ],
+      "uploaded": false
+    },
+    {
+      "id": "POST-05",
+      "kind": "poster",
+      "subject": "Radio Broadcast Night",
+      "variants": "Faded/new where justified; variants are not separate base counts",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/POST-05.png",
+      "source": "assets/production/needle-quay/graphics/POST-05.svg",
+      "sha256": "b90c679ff209422706c7bd796f2bb4b1873bd11505ca1ed9df92584a1656592c",
+      "art_approved": false,
+      "width": 512,
+      "height": 768,
+      "faded_source": "assets/production/needle-quay/graphics/POST-05-faded.svg",
+      "alpha_range": [
+        255,
+        255
+      ],
+      "uploaded": false
+    },
+    {
+      "id": "POST-06",
+      "kind": "poster",
+      "subject": "Dockworkers Jam",
+      "variants": "Faded/new where justified; variants are not separate base counts",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/POST-06.png",
+      "source": "assets/production/needle-quay/graphics/POST-06.svg",
+      "sha256": "4cc7e69bd8379cb33af5395cbe16582a2ababb93074c399093172ac73182da09",
+      "art_approved": false,
+      "width": 512,
+      "height": 768,
+      "faded_source": "assets/production/needle-quay/graphics/POST-06-faded.svg",
+      "alpha_range": [
+        255,
+        255
+      ],
+      "uploaded": false
+    },
+    {
+      "id": "POST-07",
+      "kind": "poster",
+      "subject": "Community Market Day",
+      "variants": "Faded/new where justified; variants are not separate base counts",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/POST-07.png",
+      "source": "assets/production/needle-quay/graphics/POST-07.svg",
+      "sha256": "8c9381e45f95d39877fe38948cdeaa1a2723f646a6802c487acc54556c6dc8c7",
+      "art_approved": false,
+      "width": 512,
+      "height": 768,
+      "faded_source": "assets/production/needle-quay/graphics/POST-07-faded.svg",
+      "alpha_range": [
+        255,
+        255
+      ],
+      "uploaded": false
+    },
+    {
+      "id": "POST-08",
+      "kind": "poster",
+      "subject": "Lost Frequencies",
+      "variants": "Faded/new where justified; variants are not separate base counts",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/POST-08.png",
+      "source": "assets/production/needle-quay/graphics/POST-08.svg",
+      "sha256": "fe9eec413a2c88123f619cf3e1ab9a135b50ca7c240aabf0c6a8e802ea5d8187",
+      "art_approved": false,
+      "width": 512,
+      "height": 768,
+      "faded_source": "assets/production/needle-quay/graphics/POST-08-faded.svg",
+      "alpha_range": [
+        255,
+        255
+      ],
+      "uploaded": false
+    },
+    {
+      "id": "GRA-01",
+      "kind": "transparent_graffiti",
+      "subject": "RUST CAN SING",
+      "placement": "Dock warehouses",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/GRA-01.png",
+      "source": "assets/production/needle-quay/graphics/GRA-01.png",
+      "sha256": "77767e6dbbc32265cbdaca3460a8334f744c5476a013698a6be5ca1ec86c89fc",
+      "art_approved": false,
+      "width": 1536,
+      "height": 1024,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "uploaded": false,
+      "provenance": "assets/production/needle-quay/graffiti-prompts.json"
+    },
+    {
+      "id": "GRA-02",
+      "kind": "transparent_graffiti",
+      "subject": "ONE MORE SONG",
+      "placement": "Club approach",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/GRA-02.png",
+      "source": "assets/production/needle-quay/graphics/GRA-02.png",
+      "sha256": "ba1773664601daa26162e1d7fbad7048cfc972c6e169d0d2200ab083ec5b000c",
+      "art_approved": false,
+      "width": 1536,
+      "height": 1024,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "uploaded": false,
+      "provenance": "assets/production/needle-quay/graffiti-prompts.json"
+    },
+    {
+      "id": "GRA-03",
+      "kind": "transparent_graffiti",
+      "subject": "KEEP THE QUAY PLAYING",
+      "placement": "Main street wall",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/GRA-03.png",
+      "source": "assets/production/needle-quay/graphics/GRA-03.png",
+      "sha256": "8802fe8fd3e9669f4aef140bb51f5bf0b78ca3e0ee00cb1285f836423e2f7115",
+      "art_approved": false,
+      "width": 2172,
+      "height": 724,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "uploaded": false,
+      "provenance": "assets/production/needle-quay/graffiti-prompts.json"
+    },
+    {
+      "id": "GRA-04",
+      "kind": "transparent_graffiti",
+      "subject": "LOW TIDE / HIGH NOTES",
+      "placement": "Waterfront",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/GRA-04.png",
+      "source": "assets/production/needle-quay/graphics/GRA-04.png",
+      "sha256": "0b19d4d335a1aafe87284c82ac46536435e1bf02d38b959cbf4fea4818950236",
+      "art_approved": false,
+      "width": 1774,
+      "height": 887,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "uploaded": false,
+      "provenance": "assets/production/needle-quay/graffiti-prompts.json"
+    },
+    {
+      "id": "GRA-05",
+      "kind": "transparent_graffiti",
+      "subject": "Soundwave becomes sea wave",
+      "placement": "Breakwater",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/GRA-05.png",
+      "source": "assets/production/needle-quay/graphics/GRA-05.png",
+      "sha256": "ad034509d5bbcd3f1494e71450aec94c35f6bea336ba86b25b7c5fe069cfd615",
+      "art_approved": false,
+      "width": 1774,
+      "height": 887,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "uploaded": false,
+      "provenance": "assets/production/needle-quay/graffiti-prompts.json"
+    },
+    {
+      "id": "GRA-06",
+      "kind": "transparent_graffiti",
+      "subject": "Abstract helper robot",
+      "placement": "Signal House",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/GRA-06.png",
+      "source": "assets/production/needle-quay/graphics/GRA-06.png",
+      "sha256": "df366aa41be8ec0b2a380a19577be0a11b86ef9ae08c9bbf786d811ad142f967",
+      "art_approved": false,
+      "width": 1346,
+      "height": 1168,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "uploaded": false,
+      "provenance": "assets/production/needle-quay/graffiti-prompts.json"
+    },
+    {
+      "id": "GRA-07",
+      "kind": "transparent_graffiti",
+      "subject": "Hands passing vinyl",
+      "placement": "Market",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/GRA-07.png",
+      "source": "assets/production/needle-quay/graphics/GRA-07.png",
+      "sha256": "06384ad80b5a69efa2c529dc227022a3a35ec6ca26a8a6eda53d4829f8619478",
+      "art_approved": false,
+      "width": 1536,
+      "height": 1024,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "uploaded": false,
+      "provenance": "assets/production/needle-quay/graffiti-prompts.json"
+    },
+    {
+      "id": "GRA-08",
+      "kind": "transparent_graffiti",
+      "subject": "Old radio-frequency symbol",
+      "placement": "Technical alley",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/GRA-08.png",
+      "source": "assets/production/needle-quay/graphics/GRA-08.png",
+      "sha256": "43f157f17def45884fc94a185014885ad2c6f3616c6438db21e9cd953613c943",
+      "art_approved": false,
+      "width": 1285,
+      "height": 1224,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "uploaded": false,
+      "provenance": "assets/production/needle-quay/graffiti-prompts.json"
+    },
+    {
+      "id": "GRA-09",
+      "kind": "transparent_graffiti",
+      "subject": "Miniature music stickers and tags",
+      "placement": "Windows, bins, crates",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/GRA-09.png",
+      "source": "assets/production/needle-quay/graphics/GRA-09.png",
+      "sha256": "160041e3636d06b9a3570c4e01c66603876949233cdbb624d45565015d4cc4df",
+      "art_approved": false,
+      "width": 1536,
+      "height": 1024,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "uploaded": false,
+      "provenance": "assets/production/needle-quay/graffiti-prompts.json"
+    },
+    {
+      "id": "GRA-10",
+      "kind": "transparent_graffiti",
+      "subject": "District history mural",
+      "placement": "Lantern Room side wall",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/GRA-10.png",
+      "source": "assets/production/needle-quay/graphics/GRA-10.png",
+      "sha256": "e9fd466490684ffce030cd3e6d4be9941a969dfc47d336d17cd3362e0c2535f3",
+      "art_approved": false,
+      "width": 2048,
+      "height": 768,
+      "alpha_range": [
+        0,
+        254
+      ],
+      "uploaded": false,
+      "provenance": "assets/production/needle-quay/graffiti-prompts.json"
+    },
+    {
+      "id": "NQ-DOCK-01",
+      "kind": "service_decal",
+      "subject": "Pier number",
+      "id_origin": "Allocated by this production batch within source pack names",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        128,
+        256
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-DOCK-01.png",
+      "source": "assets/production/needle-quay/graphics/NQ-DOCK-01.svg",
+      "sha256": "09536ea04fd97931a6340cc444a54261bbf47d18c13b21dfe6f2000036d313f7",
+      "art_approved": false,
+      "width": 256,
+      "height": 256,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "uploaded": false
+    },
+    {
+      "id": "NQ-DOCK-02",
+      "kind": "service_decal",
+      "subject": "Loading arrow",
+      "id_origin": "Allocated by this production batch within source pack names",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        128,
+        256
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-DOCK-02.png",
+      "source": "assets/production/needle-quay/graphics/NQ-DOCK-02.svg",
+      "sha256": "8333c807ff88373cf8bae64ef5680df70f6f34caeef41cc1fbd12e0082abbff7",
+      "art_approved": false,
+      "width": 256,
+      "height": 256,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "uploaded": false
+    },
+    {
+      "id": "NQ-DOCK-03",
+      "kind": "service_decal",
+      "subject": "Cargo inventory label",
+      "id_origin": "Allocated by this production batch within source pack names",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        128,
+        256
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-DOCK-03.png",
+      "source": "assets/production/needle-quay/graphics/NQ-DOCK-03.svg",
+      "sha256": "b18b88e9d730cfb019925043e8b4640183421a269fb9b55a04c1f49b8fc75c62",
+      "art_approved": false,
+      "width": 256,
+      "height": 256,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "uploaded": false
+    },
+    {
+      "id": "NQ-DOCK-04",
+      "kind": "service_decal",
+      "subject": "Mooring number",
+      "id_origin": "Allocated by this production batch within source pack names",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        128,
+        256
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-DOCK-04.png",
+      "source": "assets/production/needle-quay/graphics/NQ-DOCK-04.svg",
+      "sha256": "8328fe71650cb014b04fd5336aed776c1bc76ed09ebde472d199dfb6900ae9e6",
+      "art_approved": false,
+      "width": 256,
+      "height": 256,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "uploaded": false
+    },
+    {
+      "id": "NQ-DOCK-05",
+      "kind": "service_decal",
+      "subject": "Yellow-cream parking line",
+      "id_origin": "Allocated by this production batch within source pack names",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        128,
+        256
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-DOCK-05.png",
+      "source": "assets/production/needle-quay/graphics/NQ-DOCK-05.svg",
+      "sha256": "c346a1a1a473c9e582250b40a021641b99bcd25450db6412ec86aa4f1cf144a2",
+      "art_approved": false,
+      "width": 256,
+      "height": 256,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "uploaded": false
+    },
+    {
+      "id": "NQ-DOCK-06",
+      "kind": "service_decal",
+      "subject": "Ramp boundary",
+      "id_origin": "Allocated by this production batch within source pack names",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        128,
+        256
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-DOCK-06.png",
+      "source": "assets/production/needle-quay/graphics/NQ-DOCK-06.svg",
+      "sha256": "48e4484b0c6588272715864c2d12528bda196ebff60e055d3a54cdc4520c2a92",
+      "art_approved": false,
+      "width": 256,
+      "height": 256,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "uploaded": false
+    },
+    {
+      "id": "NQ-WORKSHOP-01",
+      "kind": "service_decal",
+      "subject": "Electrical warning",
+      "id_origin": "Allocated by this production batch within source pack names",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        128,
+        256
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-WORKSHOP-01.png",
+      "source": "assets/production/needle-quay/graphics/NQ-WORKSHOP-01.svg",
+      "sha256": "996a594b741bb098434f519db2092e46e67a21b367d68d88c8f78c93bfabcfb7",
+      "art_approved": false,
+      "width": 256,
+      "height": 256,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "uploaded": false
+    },
+    {
+      "id": "NQ-WORKSHOP-02",
+      "kind": "service_decal",
+      "subject": "Tool inventory label",
+      "id_origin": "Allocated by this production batch within source pack names",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        128,
+        256
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-WORKSHOP-02.png",
+      "source": "assets/production/needle-quay/graphics/NQ-WORKSHOP-02.svg",
+      "sha256": "27739f5deecaa5ffc3a4e29997f7ddae4f1206c4dd8f7c2f7d31246a357e4e1a",
+      "art_approved": false,
+      "width": 256,
+      "height": 256,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "uploaded": false
+    },
+    {
+      "id": "NQ-WORKSHOP-03",
+      "kind": "service_decal",
+      "subject": "Service panel",
+      "id_origin": "Allocated by this production batch within source pack names",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        128,
+        256
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-WORKSHOP-03.png",
+      "source": "assets/production/needle-quay/graphics/NQ-WORKSHOP-03.svg",
+      "sha256": "5732eb7261d85cac155f25addcf496f48d43331bf094379bad739aacc91d06fa",
+      "art_approved": false,
+      "width": 256,
+      "height": 256,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "uploaded": false
+    },
+    {
+      "id": "NQ-WORKSHOP-04",
+      "kind": "service_decal",
+      "subject": "Vent airflow arrow",
+      "id_origin": "Allocated by this production batch within source pack names",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        128,
+        256
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-WORKSHOP-04.png",
+      "source": "assets/production/needle-quay/graphics/NQ-WORKSHOP-04.svg",
+      "sha256": "9678d947bb9447378165b50bf01b630268f1a0569a37674728de93e7ceca7a00",
+      "art_approved": false,
+      "width": 256,
+      "height": 256,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "uploaded": false
+    },
+    {
+      "id": "NQ-WORKSHOP-05",
+      "kind": "service_decal",
+      "subject": "Repair inspection label",
+      "id_origin": "Allocated by this production batch within source pack names",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        128,
+        256
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-WORKSHOP-05.png",
+      "source": "assets/production/needle-quay/graphics/NQ-WORKSHOP-05.svg",
+      "sha256": "02c61a09515e9879de5ee5fe7b92ede6d9bbd086d0aa3cfd0aa578c906aa20e8",
+      "art_approved": false,
+      "width": 256,
+      "height": 256,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "uploaded": false
+    },
+    {
+      "id": "NQ-MUSIC-01",
+      "kind": "service_decal",
+      "subject": "Amplifier label",
+      "id_origin": "Allocated by this production batch within source pack names",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        128,
+        256
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-MUSIC-01.png",
+      "source": "assets/production/needle-quay/graphics/NQ-MUSIC-01.svg",
+      "sha256": "3a2041031b5d93153a92fda8639cddaaee1ee4c150a3933d69a12b7211ad27a8",
+      "art_approved": false,
+      "width": 256,
+      "height": 256,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "uploaded": false
+    },
+    {
+      "id": "NQ-MUSIC-02",
+      "kind": "service_decal",
+      "subject": "Vinyl category symbol",
+      "id_origin": "Allocated by this production batch within source pack names",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        128,
+        256
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-MUSIC-02.png",
+      "source": "assets/production/needle-quay/graphics/NQ-MUSIC-02.svg",
+      "sha256": "dedf3cb4933a08713b2bf6e17383871f70d8b9dc04eef055f49233ad4c664ecf",
+      "art_approved": false,
+      "width": 256,
+      "height": 256,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "uploaded": false
+    },
+    {
+      "id": "NQ-MUSIC-03",
+      "kind": "service_decal",
+      "subject": "Speaker inventory label",
+      "id_origin": "Allocated by this production batch within source pack names",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        128,
+        256
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-MUSIC-03.png",
+      "source": "assets/production/needle-quay/graphics/NQ-MUSIC-03.svg",
+      "sha256": "a779046afac6faeba862227c5cd4980a5e7e40f83f0d3322fa2f525e91abb341",
+      "art_approved": false,
+      "width": 256,
+      "height": 256,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "uploaded": false
+    },
+    {
+      "id": "NQ-MUSIC-04",
+      "kind": "service_decal",
+      "subject": "Stage cable marking",
+      "id_origin": "Allocated by this production batch within source pack names",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        128,
+        256
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-MUSIC-04.png",
+      "source": "assets/production/needle-quay/graphics/NQ-MUSIC-04.svg",
+      "sha256": "4fe5e9e0c322f58ae3c514bcd6566a68563674339d546d1ce8aa222a5d9a720f",
+      "art_approved": false,
+      "width": 256,
+      "height": 256,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "uploaded": false
+    },
+    {
+      "id": "NQ-MUSIC-05",
+      "kind": "service_decal",
+      "subject": "Van music sticker",
+      "id_origin": "Allocated by this production batch within source pack names",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        128,
+        256
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-MUSIC-05.png",
+      "source": "assets/production/needle-quay/graphics/NQ-MUSIC-05.svg",
+      "sha256": "423c50a05aa5a4bf6ecb548d9083c69e5d84cb5aa9fb983671336820e1e179fc",
+      "art_approved": false,
+      "width": 256,
+      "height": 256,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "uploaded": false
+    },
+    {
+      "id": "NQ-SIGNAL-01",
+      "kind": "service_decal",
+      "subject": "Radio dial",
+      "id_origin": "Allocated by this production batch within source pack names",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        128,
+        256
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-SIGNAL-01.png",
+      "source": "assets/production/needle-quay/graphics/NQ-SIGNAL-01.svg",
+      "sha256": "88248788d46b7dc89ae71f71c6a3dd56a70743257da3be233ef5910e1b858cf3",
+      "art_approved": false,
+      "width": 256,
+      "height": 256,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "uploaded": false
+    },
+    {
+      "id": "NQ-SIGNAL-02",
+      "kind": "service_decal",
+      "subject": "Cable route",
+      "id_origin": "Allocated by this production batch within source pack names",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        128,
+        256
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-SIGNAL-02.png",
+      "source": "assets/production/needle-quay/graphics/NQ-SIGNAL-02.svg",
+      "sha256": "042217e6a225e35ce10ad84e3820846e5dc6a88e5f9c3b7a2276da9bf4538d03",
+      "art_approved": false,
+      "width": 256,
+      "height": 256,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "uploaded": false
+    },
+    {
+      "id": "NQ-SIGNAL-03",
+      "kind": "service_decal",
+      "subject": "Relay number",
+      "id_origin": "Allocated by this production batch within source pack names",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        128,
+        256
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-SIGNAL-03.png",
+      "source": "assets/production/needle-quay/graphics/NQ-SIGNAL-03.svg",
+      "sha256": "d3d8452b57ad272e42b52f601c84918b3429b94d9607e68f9d03155f7a25dd38",
+      "art_approved": false,
+      "width": 256,
+      "height": 256,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "uploaded": false
+    },
+    {
+      "id": "NQ-SIGNAL-04",
+      "kind": "service_decal",
+      "subject": "Signal state symbol",
+      "id_origin": "Allocated by this production batch within source pack names",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        128,
+        256
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-SIGNAL-04.png",
+      "source": "assets/production/needle-quay/graphics/NQ-SIGNAL-04.svg",
+      "sha256": "cad4b5f9d1b269ebcd111bbd342a227d24772469214af562eb50e3b928a24d4d",
+      "art_approved": false,
+      "width": 256,
+      "height": 256,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "uploaded": false
+    },
+    {
+      "id": "NQ-COMMUNITY-01",
+      "kind": "service_decal",
+      "subject": "Market stall number",
+      "id_origin": "Allocated by this production batch within source pack names",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        128,
+        256
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-COMMUNITY-01.png",
+      "source": "assets/production/needle-quay/graphics/NQ-COMMUNITY-01.svg",
+      "sha256": "eecdb1dcfb1d060840f5ebd56e99e516def2bcd44b16e939c636048da2bb9a0a",
+      "art_approved": false,
+      "width": 256,
+      "height": 256,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "uploaded": false
+    },
+    {
+      "id": "NQ-COMMUNITY-02",
+      "kind": "service_decal",
+      "subject": "Goods label",
+      "id_origin": "Allocated by this production batch within source pack names",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        128,
+        256
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-COMMUNITY-02.png",
+      "source": "assets/production/needle-quay/graphics/NQ-COMMUNITY-02.svg",
+      "sha256": "9d2fe3e60f867717c53d07cd014fe0f495e09d956dbd564228dc4ab4071a5466",
+      "art_approved": false,
+      "width": 256,
+      "height": 256,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "uploaded": false
+    },
+    {
+      "id": "NQ-COMMUNITY-03",
+      "kind": "service_decal",
+      "subject": "Community notice frame",
+      "id_origin": "Allocated by this production batch within source pack names",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        128,
+        256
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-COMMUNITY-03.png",
+      "source": "assets/production/needle-quay/graphics/NQ-COMMUNITY-03.svg",
+      "sha256": "748d27d323f0288005c658e53097f9af06f947db2b7d642e092c71f1e9d1c1cd",
+      "art_approved": false,
+      "width": 256,
+      "height": 256,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "uploaded": false
+    },
+    {
+      "id": "NQ-COMMUNITY-04",
+      "kind": "service_decal",
+      "subject": "Quest marker backing",
+      "id_origin": "Allocated by this production batch within source pack names",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        128,
+        256
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-COMMUNITY-04.png",
+      "source": "assets/production/needle-quay/graphics/NQ-COMMUNITY-04.svg",
+      "sha256": "f0708459f17032b6d094f492ceef4111522c9a2302e81bbd899c6b6f67952e64",
+      "art_approved": false,
+      "width": 256,
+      "height": 256,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "uploaded": false
+    }
+  ],
+  "count": 61,
+  "poster_variants": 8,
+  "variant_naming": "POST-01-faded through POST-08-faded",
+  "note": "Original display masters; graffiti has real alpha with some translucent spray halos. No gameplay instructions baked into these textures."
+}

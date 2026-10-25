@@ -176,7 +176,13 @@
         "acceptance": "One modular shell, not a fused diorama; 24 x 20 usable interior; doorway and camera clearances pass."
       },
       "runtime_implementation": "docs/WORKSHOP_MILESTONE.md",
-      "runtime_status": "Implemented source; Studio/runtime acceptance pending"
+      "runtime_status": "Implemented source; Studio/runtime acceptance pending",
+      "environment_reference": {
+        "building_id": "NQ-BLD-02",
+        "name": "Needle Records",
+        "contract_changed": false,
+        "proposed_envelope_status": "Unresolved; see supplemental environment registry"
+      }
     },
     {
       "id": "M01",
@@ -1957,5 +1963,6 @@
       },
       "source_deliverable": "assets/production/audio/manifest.json"
     }
-  ]
+  ],
+  "supplemental_environment_registry": "data/needle-quay-environment.v1.json"
 }

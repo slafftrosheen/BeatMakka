@@ -1,0 +1,23 @@
+{
+  "completedAt": "2026-10-25T14:11:17.086Z",
+  "destination": {
+    "assetId": "nq_npc_naya",
+    "version": "1.0.0"
+  },
+  "evidence": {
+    "blenderNormalizationPerformed": false,
+    "gpuImportTestPerformed": false,
+    "humanVisualReviewPerformed": false,
+    "modelBytesCopiedAndHashed": true,
+    "policyValidationCompleted": true,
+    "staticInspectionCompleted": true
+  },
+  "manifestSha256": "6f4c0a45aa871d24044437a790cf05152bea990cb5ccd6897a3e348b20ba87d7",
+  "packageId": "pkg_4be76333976071259798ba18",
+  "schema": "game_dev.package_receipt.v1",
+  "source": {
+    "bytes": 384452,
+    "fileName": "NQ-NPC-NAYA.glb",
+    "sha256": "c4ab4f7cd047738fa70e8586118514d92196b5ff293d57c6943e942d293b28f6"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "schema": "game_dev.result.v1",
+  "operation": "asset.inspect",
+  "ok": true,
+  "data": {
+    "filePath": "C:\\Users\\slavd\\BeatMaka\\assets\\production\\needle-quay\\models\\NQ-NPC-IVO\\NQ-NPC-IVO.glb",
+    "fileBytes": 395296,
+    "generator": "glTF-Transform v4.5.1",
+    "meshCount": 35,
+    "primitiveCount": 35,
+    "vertexCount": 6585,
+    "triangleCount": 5520,
+    "undrawnMeshCount": 0,
+    "undrawnPrimitiveCount": 0,
+    "undrawnTriangleCount": 0,
+    "sceneGraphFallback": false,
+    "materialCount": 6,
+    "textureCount": 0,
+    "textureResolutions": [],
+    "boundingBox": {
+      "min": [
+        -1.5861999988555908,
+        0,
+        -0.8359999656677246
+      ],
+      "max": [
+        1.5861999988555908,
+        6.654999732971191,
+        0.8359999656677246
+      ],
+      "sizeMeters": [
+        3.1723999977111816,
+        6.654999732971191,
+        1.6719999313354492
+      ]
+    },
+    "boundingBoxEmpty": false,
+    "hasUVs": true,
+    "hasNormals": true,
+    "hasTangents": false,
+    "pbr": {
+      "hasBaseColorTexture": false,
+      "hasMetallicRoughnessTexture": false,
+      "hasNormalTexture": false,
+      "hasOcclusionTexture": false,
+      "hasEmissiveTexture": false
+    },
+    "animationCount": 0,
+    "hasSkin": true,
+    "warnings": [
+      "no base colour texture on any material: the asset is untextured and will read as flat colour"
+    ]
+  }
+}

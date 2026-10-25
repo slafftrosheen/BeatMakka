@@ -1,0 +1,299 @@
+{
+  "date": "2026-10-25",
+  "generator": "built-in image_gen",
+  "prompt_file": "assets/concepts/needle-quay/prompts-06-13.json",
+  "prompt_sha256": "59404ce4bb9c4b11837b27b011ad43a6878df6aa1e11fc730180546f4e68a10e",
+  "source_request": "Сделать concept sheets восьми supporting buildings",
+  "repository_sha": "c7ce5d4b3e9fe5d32f4723f3829eda402f654fc7",
+  "references": [
+    {
+      "path": "assets/references/needle-quay-approved-style-board.png",
+      "sha256": "ed1febe208e798110905653ac6f2a60778830de00b2ff112cacf2e36c3bf3463",
+      "role": "approved visual direction"
+    },
+    {
+      "path": "assets/concepts/needle-quay/NQ-BLD-01-lantern-room-v1.png",
+      "sha256": "8d25a58af19e040ddf55aed1da1ca63c1bb625048d489cc5aab08a3b65b42766",
+      "role": "sheet layout/style reference only"
+    }
+  ],
+  "contract_source": "data/needle-quay-environment.v1.json",
+  "contract_snapshot": [
+    {
+      "id": "NQ-BLD-06",
+      "name": "Warm Current Café",
+      "proposed_dimensions_wdh_studs": [
+        18,
+        16,
+        13
+      ],
+      "access": "Facade only; no full demo interior",
+      "sign_id": "NQ-SGN-06"
+    },
+    {
+      "id": "NQ-BLD-07",
+      "name": "North Slip Ferry Office",
+      "proposed_dimensions_wdh_studs": [
+        18,
+        12,
+        11
+      ],
+      "access": "Facade only; no full demo interior",
+      "sign_id": "NQ-SGN-07"
+    },
+    {
+      "id": "NQ-BLD-08",
+      "name": "Quay Supply & Tackle",
+      "proposed_dimensions_wdh_studs": [
+        16,
+        12,
+        10
+      ],
+      "access": "Facade only; no full demo interior",
+      "sign_id": "NQ-SGN-08"
+    },
+    {
+      "id": "NQ-BLD-09",
+      "name": "Cinder Cold Storage",
+      "proposed_dimensions_wdh_studs": [
+        34,
+        20,
+        16
+      ],
+      "access": "Facade only; no full demo interior",
+      "sign_id": "NQ-SGN-09"
+    },
+    {
+      "id": "NQ-BLD-10",
+      "name": "Quayside Flats",
+      "proposed_dimensions_wdh_studs": [
+        38,
+        16,
+        26
+      ],
+      "access": "Facade only; no full demo interior",
+      "sign_id": "NQ-SGN-10"
+    },
+    {
+      "id": "NQ-BLD-11",
+      "name": "Tidewash Laundry",
+      "proposed_dimensions_wdh_studs": [
+        18,
+        16,
+        14
+      ],
+      "access": "Facade only; no full demo interior",
+      "sign_id": "NQ-SGN-11"
+    },
+    {
+      "id": "NQ-BLD-12",
+      "name": "Relay Substation",
+      "proposed_dimensions_wdh_studs": [
+        12,
+        12,
+        11
+      ],
+      "access": "Facade only; no full demo interior",
+      "sign_id": "NQ-SGN-12"
+    },
+    {
+      "id": "NQ-BLD-13",
+      "name": "Dockline Depot",
+      "proposed_dimensions_wdh_studs": [
+        30,
+        22,
+        20
+      ],
+      "access": "Facade only; no full demo interior",
+      "sign_id": "NQ-SGN-13"
+    }
+  ],
+  "outputs": [
+    {
+      "id": "NQ-BLD-06",
+      "name": "Warm Current Café",
+      "path": "assets/concepts/needle-quay/NQ-BLD-06-warm-current-cafe-v1.png",
+      "sha256": "4a95ac4656c04420b76f6c35379f2694162a7b01540e4343d352b64e6c506267",
+      "bytes": 2362399,
+      "dimensions_wdh_studs": [
+        18,
+        16,
+        13
+      ],
+      "stage": "CONCEPT_CANDIDATE",
+      "art_approved": false,
+      "dcc_clean": false,
+      "studio_imported": false,
+      "runtime_verified": false,
+      "visual_review_notes": [
+        "Cafe serving ledge and Nell Fen location dot; rooftop height callouts are illustrative and must include chimney/plant at exact construction."
+      ]
+    },
+    {
+      "id": "NQ-BLD-07",
+      "name": "North Slip Ferry Office",
+      "path": "assets/concepts/needle-quay/NQ-BLD-07-north-slip-ferry-office-v1.png",
+      "sha256": "6051dc4d57e4261953d39ec33c324b0c5f2047fd0a43d3f2404fdea278c3c6be",
+      "bytes": 2718114,
+      "dimensions_wdh_studs": [
+        18,
+        12,
+        11
+      ],
+      "stage": "CONCEPT_CANDIDATE",
+      "art_approved": false,
+      "dcc_clean": false,
+      "studio_imported": false,
+      "runtime_verified": false,
+      "visual_review_notes": [
+        "Ticket hatch, separate door, clock and route-board bracket; no travel service or playable interior implied."
+      ]
+    },
+    {
+      "id": "NQ-BLD-08",
+      "name": "Quay Supply & Tackle",
+      "path": "assets/concepts/needle-quay/NQ-BLD-08-quay-supply-tackle-v1.png",
+      "sha256": "4d2575059e8bc57af05409d9face9bd21178f5772db65ded147cc1e8ae7dfc4d",
+      "bytes": 2662440,
+      "dimensions_wdh_studs": [
+        16,
+        12,
+        10
+      ],
+      "stage": "CONCEPT_CANDIDATE",
+      "art_approved": false,
+      "dcc_clean": false,
+      "studio_imported": false,
+      "runtime_verified": false,
+      "visual_review_notes": [
+        "Low tackle storefront with rope/crate/window details; exterior dressing not counted as authored props."
+      ]
+    },
+    {
+      "id": "NQ-BLD-09",
+      "name": "Cinder Cold Storage",
+      "path": "assets/concepts/needle-quay/NQ-BLD-09-cinder-cold-storage-v1.png",
+      "sha256": "00cef33f7bf0516865d082c827cb2ef27ab6463ac1abc59869262c58af9cf7ab",
+      "bytes": 2741581,
+      "dimensions_wdh_studs": [
+        34,
+        20,
+        16
+      ],
+      "stage": "CONCEPT_CANDIDATE",
+      "art_approved": false,
+      "dcc_clean": false,
+      "studio_imported": false,
+      "runtime_verified": false,
+      "visual_review_notes": [
+        "Refrigeration warehouse and pipe/door module direction; no new I02 or assignable sound asset."
+      ]
+    },
+    {
+      "id": "NQ-BLD-10",
+      "name": "Quayside Flats",
+      "path": "assets/concepts/needle-quay/NQ-BLD-10-quayside-flats-v1.png",
+      "sha256": "456928018fc737498ae959f993a5f3c66c78262a422f861573b75a16f3a91925",
+      "bytes": 2451899,
+      "dimensions_wdh_studs": [
+        38,
+        16,
+        26
+      ],
+      "stage": "CONCEPT_CANDIDATE",
+      "art_approved": false,
+      "dcc_clean": false,
+      "studio_imported": false,
+      "runtime_verified": false,
+      "visual_review_notes": [
+        "Two-storey facade target; closed ground shops and residential windows, no apartment interiors."
+      ]
+    },
+    {
+      "id": "NQ-BLD-11",
+      "name": "Tidewash Laundry",
+      "path": "assets/concepts/needle-quay/NQ-BLD-11-tidewash-laundry-v1.png",
+      "sha256": "239be48463f71bac3f2eecc32932c067682f5fd45c645041a8f228b8b6432863",
+      "bytes": 2691061,
+      "dimensions_wdh_studs": [
+        18,
+        16,
+        14
+      ],
+      "stage": "CONCEPT_CANDIDATE",
+      "art_approved": false,
+      "dcc_clean": false,
+      "studio_imported": false,
+      "runtime_verified": false,
+      "visual_review_notes": [
+        "Scenic washer-window design, not a playable laundrette, animation or accepted audio."
+      ]
+    },
+    {
+      "id": "NQ-BLD-12",
+      "name": "Relay Substation",
+      "path": "assets/concepts/needle-quay/NQ-BLD-12-relay-substation-v1.png",
+      "sha256": "1ac1afe9323a12b80812a7df01f22302c3c1be3f9a2441818584dd46eeaaa370",
+      "bytes": 2547608,
+      "dimensions_wdh_studs": [
+        12,
+        12,
+        11
+      ],
+      "stage": "CONCEPT_CANDIDATE",
+      "art_approved": false,
+      "dcc_clean": false,
+      "studio_imported": false,
+      "runtime_verified": false,
+      "visual_review_notes": [
+        "Low relay utility building, external cabinet/light targets; no duplicate Signal House antenna."
+      ]
+    },
+    {
+      "id": "NQ-BLD-13",
+      "name": "Dockline Depot",
+      "path": "assets/concepts/needle-quay/NQ-BLD-13-dockline-depot-v1.png",
+      "sha256": "32f2720c0a4994454cae774e4919d655ee47e11caffd24b38b5ab53a48936824",
+      "bytes": 2649073,
+      "dimensions_wdh_studs": [
+        30,
+        22,
+        20
+      ],
+      "stage": "CONCEPT_CANDIDATE",
+      "art_approved": false,
+      "dcc_clean": false,
+      "studio_imported": false,
+      "runtime_verified": false,
+      "visual_review_notes": [
+        "Single-volume depot, separate site ramp/crates, loading-door and frame reuse direction."
+      ]
+    }
+  ],
+  "review_kind": "AGENT_VISUAL_CONCEPT_REVIEW_NOT_HUMAN_ART_APPROVAL",
+  "source_authority": "docs/needle-quay/environment-production-register-v1.0-source.ru.md",
+  "acceptance_note": "Generated views and measurement arrows are illustrative. Final height includes roof dressing; exact pivots, modular joins, collision, moving parts and localization require deterministic construction. No production stage is promoted.",
+  "inventory_refreshed": "2026-10-25",
+  "inventory": "docs/needle-quay/supplied-assets-inventory-2026-10-25.json",
+  "inventory_file_count": 6343,
+  "external_materials_models_used": [],
+  "tripo_calls": 0,
+  "tripo_credits_spent": 0,
+  "tests_run": false,
+  "blockout_modified": false,
+  "gameplay_modified": false,
+  "uploads": 0,
+  "published": false,
+  "committed": false,
+  "pushed": false,
+  "corrections_applied": [
+    {
+      "id": "NQ-BLD-06",
+      "change": "Total-height arrows now reach highest chimney cap; unchanged 18x16x13 authored envelope."
+    },
+    {
+      "id": "NQ-BLD-10",
+      "change": "MAT-10 caption corrected from Amber Metal to Amber Glass."
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "completedAt": "2026-10-25T14:11:14.400Z",
+  "destination": {
+    "assetId": "nq_npc_ivo",
+    "version": "1.0.0"
+  },
+  "evidence": {
+    "blenderNormalizationPerformed": false,
+    "gpuImportTestPerformed": false,
+    "humanVisualReviewPerformed": false,
+    "modelBytesCopiedAndHashed": true,
+    "policyValidationCompleted": true,
+    "staticInspectionCompleted": true
+  },
+  "manifestSha256": "5491f10ea7c3215283e28e4bc24de944b561484cdc0679c068ee92f95fddbb02",
+  "packageId": "pkg_13b96116670bbb211420dd61",
+  "schema": "game_dev.package_receipt.v1",
+  "source": {
+    "bytes": 395296,
+    "fileName": "NQ-NPC-IVO.glb",
+    "sha256": "1422a955ebf279b6a6262890d5e824a08ebc565eae4b419efc8d6dafad95b422"
+  }
+}

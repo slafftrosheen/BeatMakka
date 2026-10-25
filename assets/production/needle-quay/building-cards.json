@@ -1,0 +1,1230 @@
+{
+  "buildings": [
+    {
+      "id": "NQ-BLD-01",
+      "name": "The Lantern Room",
+      "concept": "assets/concepts/needle-quay/NQ-BLD-01-lantern-room-v1.png",
+      "model": {
+        "id": "NQ-BLD-01",
+        "name": "The Lantern Room",
+        "source": "assets/production/needle-quay/models/NQ-BLD-01/NQ-BLD-01.blend",
+        "glb": "assets/production/needle-quay/models/NQ-BLD-01/NQ-BLD-01.glb",
+        "sha256": "1ae95c5e35c57dca8bb9c397ea7594f90a05f2e207aa2e72bf80f5985a359d27",
+        "triangles": 6084,
+        "mesh_objects": 57,
+        "bone_count": 0,
+        "bounds_xyz_blender": [
+          44.125,
+          30.969999313354492,
+          26.0
+        ],
+        "units": "1 local source unit = 1 authored stud; verify importer unit settings",
+        "previews": [
+          "assets/production/needle-quay/models/NQ-BLD-01/neutral.png",
+          "assets/production/needle-quay/models/NQ-BLD-01/front.png",
+          "assets/production/needle-quay/models/NQ-BLD-01/side.png",
+          "assets/production/needle-quay/models/NQ-BLD-01/top.png"
+        ],
+        "stage": "DETERMINISTIC_3D_CANDIDATE",
+        "dcc_clean_accepted": false,
+        "art_approved": false,
+        "studio_imported": false,
+        "runtime_verified": false
+      },
+      "before": "Marquee unlit; closed stage dressing; Ronan waits in lobby.",
+      "after": "Amber marquee inserts on; stage cable dressing cleared; six concert phase lights remain separate.",
+      "interaction": "Lobby conversation, stage trigger, right-side service opening",
+      "modules": [
+        "40x6 lobby zone",
+        "40x14 hall zone",
+        "28x6 stage",
+        "6-stud service opening",
+        "front portal",
+        "separate marquee/light inserts"
+      ],
+      "materials": [
+        "MAT-01",
+        "MAT-02",
+        "MAT-03",
+        "MAT-05",
+        "MAT-08",
+        "MAT-10"
+      ],
+      "graphics": {
+        "sign": "NQ-SGN-01",
+        "sign_face": "front -Z; separate sign plane",
+        "poster": "POST-01",
+        "poster_face": "front-side notice panel; outside doorway",
+        "graffiti": "GRA-01",
+        "graffiti_face": "right exterior wall; separate plane and alpha review"
+      },
+      "anchors_studs": {
+        "coordinate_space": "Roblox layout coordinates X,Y,Z; front -Z; proposals, not runtime bindings",
+        "entrance": [
+          0,
+          0,
+          80.0
+        ],
+        "npc": [
+          -4,
+          0,
+          77.0
+        ],
+        "sound": [
+          4,
+          4,
+          79.0
+        ],
+        "interaction": [
+          5,
+          2,
+          78.0
+        ]
+      },
+      "collision": "Reuse native Part collision proxies. Visual meshes/decal planes noncollidable. Supporting shells closed; four market stalls keep open aisle. No auto hull covering hero doorway.",
+      "lod": "Near: all authored meshes. Medium: hide bolts/brick courses/crates. Far: existing envelope proxy and sign silhouette. Explicit transition distances and draw calls need device profiling; no invented performance pass.",
+      "reuse": "Soft bevels, repeated frame/sill/cornice objects; consolidate palette UVs after final art approval.",
+      "dimensions_wdh_studs": [
+        44,
+        30,
+        26
+      ],
+      "dressing_bounds_note": "Measured model bounds include awnings/handles/cornices beyond core footprint; see model-manifest. Reserve exterior setback; no claim that all dressing fits core envelope.",
+      "quests": [
+        "NQ-Q11",
+        "NQ-Q12"
+      ],
+      "stage": "FULL_DESIGN_CARD_WITH_LOCAL_3D_CANDIDATE"
+    },
+    {
+      "id": "NQ-BLD-02",
+      "name": "Needle Records",
+      "concept": "assets/concepts/needle-quay/NQ-BLD-02-needle-records-v1.png",
+      "model": {
+        "id": "NQ-BLD-02",
+        "name": "Needle Records",
+        "source": "assets/production/needle-quay/models/NQ-BLD-02/NQ-BLD-02.blend",
+        "glb": "assets/production/needle-quay/models/NQ-BLD-02/NQ-BLD-02.glb",
+        "sha256": "f139949b2431fe2c6cf51f96b2cea42d823299ecab1fb63206a5e0e7ee3d1484",
+        "triangles": 6144,
+        "mesh_objects": 64,
+        "bone_count": 0,
+        "bounds_xyz_blender": [
+          32.125,
+          18.524999618530273,
+          24.0
+        ],
+        "units": "1 local source unit = 1 authored stud; verify importer unit settings",
+        "previews": [
+          "assets/production/needle-quay/models/NQ-BLD-02/neutral.png",
+          "assets/production/needle-quay/models/NQ-BLD-02/front.png",
+          "assets/production/needle-quay/models/NQ-BLD-02/side.png",
+          "assets/production/needle-quay/models/NQ-BLD-02/top.png"
+        ],
+        "stage": "DETERMINISTIC_3D_CANDIDATE",
+        "dcc_clean_accepted": false,
+        "art_approved": false,
+        "studio_imported": false,
+        "runtime_verified": false
+      },
+      "before": "Faded poster and unsorted record-bin dressing.",
+      "after": "New poster and sorted bins; listening light enabled.",
+      "interaction": "Front door, left sorting counter, right Beat Shelf/listening nook",
+      "modules": [
+        "canonical H06 32x16x24 envelope",
+        "30x14 maximum clear interior design zone",
+        "5x3x3 record bins",
+        "4x3x2 listening nook",
+        "shared awning stripes"
+      ],
+      "materials": [
+        "MAT-01",
+        "MAT-02",
+        "MAT-03",
+        "MAT-07",
+        "MAT-10"
+      ],
+      "graphics": {
+        "sign": "NQ-SGN-02",
+        "sign_face": "front -Z; separate sign plane",
+        "poster": "POST-02",
+        "poster_face": "front-side notice panel; outside doorway",
+        "graffiti": "GRA-02",
+        "graffiti_face": "right exterior wall; separate plane and alpha review"
+      },
+      "anchors_studs": {
+        "coordinate_space": "Roblox layout coordinates X,Y,Z; front -Z; proposals, not runtime bindings",
+        "entrance": [
+          -60,
+          0,
+          -8.0
+        ],
+        "npc": [
+          -64,
+          0,
+          -11.0
+        ],
+        "sound": [
+          -56,
+          4,
+          -9.0
+        ],
+        "interaction": [
+          -55,
+          2,
+          -10.0
+        ]
+      },
+      "collision": "Reuse native Part collision proxies. Visual meshes/decal planes noncollidable. Supporting shells closed; four market stalls keep open aisle. No auto hull covering hero doorway.",
+      "lod": "Near: all authored meshes. Medium: hide bolts/brick courses/crates. Far: existing envelope proxy and sign silhouette. Explicit transition distances and draw calls need device profiling; no invented performance pass.",
+      "reuse": "Soft bevels, repeated frame/sill/cornice objects; consolidate palette UVs after final art approval.",
+      "dimensions_wdh_studs": [
+        32,
+        16,
+        24
+      ],
+      "dressing_bounds_note": "Measured model bounds include awnings/handles/cornices beyond core footprint; see model-manifest. Reserve exterior setback; no claim that all dressing fits core envelope.",
+      "quests": [
+        "NQ-Q06",
+        "NQ-Q07"
+      ],
+      "stage": "FULL_DESIGN_CARD_WITH_LOCAL_3D_CANDIDATE"
+    },
+    {
+      "id": "NQ-BLD-03",
+      "name": "Morrow Repairs",
+      "concept": "assets/concepts/needle-quay/NQ-BLD-03-morrow-repairs-v1.png",
+      "model": {
+        "id": "NQ-BLD-03",
+        "name": "Morrow Repairs",
+        "source": "assets/production/needle-quay/models/NQ-BLD-03/NQ-BLD-03.blend",
+        "glb": "assets/production/needle-quay/models/NQ-BLD-03/NQ-BLD-03.glb",
+        "sha256": "10a7e3b757f45200c3ce357b18f71c516e9da19eb009fea5b97fd15d4e12c755",
+        "triangles": 4764,
+        "mesh_objects": 49,
+        "bone_count": 0,
+        "bounds_xyz_blender": [
+          32.125,
+          25.125,
+          19.0
+        ],
+        "units": "1 local source unit = 1 authored stud; verify importer unit settings",
+        "previews": [
+          "assets/production/needle-quay/models/NQ-BLD-03/neutral.png",
+          "assets/production/needle-quay/models/NQ-BLD-03/front.png",
+          "assets/production/needle-quay/models/NQ-BLD-03/side.png",
+          "assets/production/needle-quay/models/NQ-BLD-03/top.png"
+        ],
+        "stage": "DETERMINISTIC_3D_CANDIDATE",
+        "dcc_clean_accepted": false,
+        "art_approved": false,
+        "studio_imported": false,
+        "runtime_verified": false
+      },
+      "before": "P16 fan stationary, service leaf parked, muted work lamp.",
+      "after": "P16 fan rotation enabled by personal progress; service bay clear; amber work lamp on.",
+      "interaction": "Front-right P16/I02 vent, left workbench, sliding leaf travel zone",
+      "modules": [
+        "10x3x3 bench",
+        "canonical 3x3x2 P16 target",
+        "separate door leaf",
+        "18-stud rail",
+        "fan rim and blades"
+      ],
+      "materials": [
+        "MAT-01",
+        "MAT-02",
+        "MAT-03",
+        "MAT-08",
+        "MAT-12"
+      ],
+      "graphics": {
+        "sign": "NQ-SGN-03",
+        "sign_face": "front -Z; separate sign plane",
+        "poster": "POST-03",
+        "poster_face": "front-side notice panel; outside doorway",
+        "graffiti": "GRA-03",
+        "graffiti_face": "right exterior wall; separate plane and alpha review"
+      },
+      "anchors_studs": {
+        "coordinate_space": "Roblox layout coordinates X,Y,Z; front -Z; proposals, not runtime bindings",
+        "entrance": [
+          -130,
+          0,
+          -117.0
+        ],
+        "npc": [
+          -134,
+          0,
+          -120.0
+        ],
+        "sound": [
+          -126,
+          4,
+          -118.0
+        ],
+        "interaction": [
+          -125,
+          2,
+          -119.0
+        ]
+      },
+      "collision": "Reuse native Part collision proxies. Visual meshes/decal planes noncollidable. Supporting shells closed; four market stalls keep open aisle. No auto hull covering hero doorway.",
+      "lod": "Near: all authored meshes. Medium: hide bolts/brick courses/crates. Far: existing envelope proxy and sign silhouette. Explicit transition distances and draw calls need device profiling; no invented performance pass.",
+      "reuse": "Soft bevels, repeated frame/sill/cornice objects; consolidate palette UVs after final art approval.",
+      "dimensions_wdh_studs": [
+        32,
+        24,
+        19
+      ],
+      "dressing_bounds_note": "Measured model bounds include awnings/handles/cornices beyond core footprint; see model-manifest. Reserve exterior setback; no claim that all dressing fits core envelope.",
+      "quests": [
+        "NQ-Q04",
+        "NQ-Q05"
+      ],
+      "stage": "FULL_DESIGN_CARD_WITH_LOCAL_3D_CANDIDATE"
+    },
+    {
+      "id": "NQ-BLD-04",
+      "name": "Harbor Market Hall",
+      "concept": "assets/concepts/needle-quay/NQ-BLD-04-harbor-market-hall-v1.png",
+      "model": {
+        "id": "NQ-BLD-04",
+        "name": "Harbor Market Hall",
+        "source": "assets/production/needle-quay/models/NQ-BLD-04/NQ-BLD-04.blend",
+        "glb": "assets/production/needle-quay/models/NQ-BLD-04/NQ-BLD-04.glb",
+        "sha256": "4aadce21fc74893630b3178939ca75c3692c55daa0c7850d8329935924890f15",
+        "triangles": 6264,
+        "mesh_objects": 58,
+        "bone_count": 0,
+        "bounds_xyz_blender": [
+          48.05000305175781,
+          30.774999618530273,
+          16.0
+        ],
+        "units": "1 local source unit = 1 authored stud; verify importer unit settings",
+        "previews": [
+          "assets/production/needle-quay/models/NQ-BLD-04/neutral.png",
+          "assets/production/needle-quay/models/NQ-BLD-04/front.png",
+          "assets/production/needle-quay/models/NQ-BLD-04/side.png",
+          "assets/production/needle-quay/models/NQ-BLD-04/top.png"
+        ],
+        "stage": "DETERMINISTIC_3D_CANDIDATE",
+        "dcc_clean_accepted": false,
+        "art_approved": false,
+        "studio_imported": false,
+        "runtime_verified": false
+      },
+      "before": "Four stalls open for trade; performance nook occupied by removable crates.",
+      "after": "Same four stalls; nook cleared; festive poster and amber lighting.",
+      "interaction": "Sana at front-left; open central aisle; separate rear performance nook",
+      "modules": [
+        "four 8x3x4 counters",
+        "four 9x5 canopies",
+        "12x6 performance nook",
+        "corner roof columns"
+      ],
+      "materials": [
+        "MAT-01",
+        "MAT-03",
+        "MAT-07",
+        "MAT-11"
+      ],
+      "graphics": {
+        "sign": "NQ-SGN-04",
+        "sign_face": "front -Z; separate sign plane",
+        "poster": "POST-04",
+        "poster_face": "front-side notice panel; outside doorway",
+        "graffiti": "GRA-04",
+        "graffiti_face": "right exterior wall; separate plane and alpha review"
+      },
+      "anchors_studs": {
+        "coordinate_space": "Roblox layout coordinates X,Y,Z; front -Z; proposals, not runtime bindings",
+        "entrance": [
+          10,
+          0,
+          -15.0
+        ],
+        "npc": [
+          6,
+          0,
+          -18.0
+        ],
+        "sound": [
+          14,
+          4,
+          -16.0
+        ],
+        "interaction": [
+          15,
+          2,
+          -17.0
+        ]
+      },
+      "collision": "Reuse native Part collision proxies. Visual meshes/decal planes noncollidable. Supporting shells closed; four market stalls keep open aisle. No auto hull covering hero doorway.",
+      "lod": "Near: all authored meshes. Medium: hide bolts/brick courses/crates. Far: existing envelope proxy and sign silhouette. Explicit transition distances and draw calls need device profiling; no invented performance pass.",
+      "reuse": "Soft bevels, repeated frame/sill/cornice objects; consolidate palette UVs after final art approval.",
+      "dimensions_wdh_studs": [
+        48,
+        30,
+        16
+      ],
+      "dressing_bounds_note": "Measured model bounds include awnings/handles/cornices beyond core footprint; see model-manifest. Reserve exterior setback; no claim that all dressing fits core envelope.",
+      "quests": [
+        "NQ-Q08"
+      ],
+      "stage": "FULL_DESIGN_CARD_WITH_LOCAL_3D_CANDIDATE"
+    },
+    {
+      "id": "NQ-BLD-05",
+      "name": "Signal House",
+      "concept": "assets/concepts/needle-quay/NQ-BLD-05-signal-house-v1.png",
+      "model": {
+        "id": "NQ-BLD-05",
+        "name": "Signal House",
+        "source": "assets/production/needle-quay/models/NQ-BLD-05/NQ-BLD-05.blend",
+        "glb": "assets/production/needle-quay/models/NQ-BLD-05/NQ-BLD-05.glb",
+        "sha256": "c1b13c2c824dbc71d432e6ea0bd36c07250d6baf9adc220cabc391311ffb9080",
+        "triangles": 1848,
+        "mesh_objects": 18,
+        "bone_count": 0,
+        "bounds_xyz_blender": [
+          16.200000762939453,
+          19.024999618530273,
+          26.0
+        ],
+        "units": "1 local source unit = 1 authored stud; verify importer unit settings",
+        "previews": [
+          "assets/production/needle-quay/models/NQ-BLD-05/neutral.png",
+          "assets/production/needle-quay/models/NQ-BLD-05/front.png",
+          "assets/production/needle-quay/models/NQ-BLD-05/side.png",
+          "assets/production/needle-quay/models/NQ-BLD-05/top.png"
+        ],
+        "stage": "DETERMINISTIC_3D_CANDIDATE",
+        "dcc_clean_accepted": false,
+        "art_approved": false,
+        "studio_imported": false,
+        "runtime_verified": false
+      },
+      "before": "Signal window dim; radio icon silent; console available outside.",
+      "after": "Amber insert on; antenna indicator active; breakwater light restored.",
+      "interaction": "Console fixed on front (-Z), right-hand side; I03 accessible without entering solid shell",
+      "modules": [
+        "16x16 radio shell",
+        "mast within total 26 height",
+        "separate crossbar",
+        "5x3x2 external desk",
+        "round signal insert"
+      ],
+      "materials": [
+        "MAT-01",
+        "MAT-02",
+        "MAT-08",
+        "MAT-09",
+        "MAT-10"
+      ],
+      "graphics": {
+        "sign": "NQ-SGN-05",
+        "sign_face": "front -Z; separate sign plane",
+        "poster": "POST-05",
+        "poster_face": "front-side notice panel; outside doorway",
+        "graffiti": "GRA-05",
+        "graffiti_face": "right exterior wall; separate plane and alpha review"
+      },
+      "anchors_studs": {
+        "coordinate_space": "Roblox layout coordinates X,Y,Z; front -Z; proposals, not runtime bindings",
+        "entrance": [
+          175,
+          0,
+          87.0
+        ],
+        "npc": [
+          171,
+          0,
+          84.0
+        ],
+        "sound": [
+          179,
+          4,
+          86.0
+        ],
+        "interaction": [
+          180,
+          2,
+          85.0
+        ]
+      },
+      "collision": "Reuse native Part collision proxies. Visual meshes/decal planes noncollidable. Supporting shells closed; four market stalls keep open aisle. No auto hull covering hero doorway.",
+      "lod": "Near: all authored meshes. Medium: hide bolts/brick courses/crates. Far: existing envelope proxy and sign silhouette. Explicit transition distances and draw calls need device profiling; no invented performance pass.",
+      "reuse": "Soft bevels, repeated frame/sill/cornice objects; consolidate palette UVs after final art approval.",
+      "dimensions_wdh_studs": [
+        16,
+        16,
+        26
+      ],
+      "dressing_bounds_note": "Measured model bounds include awnings/handles/cornices beyond core footprint; see model-manifest. Reserve exterior setback; no claim that all dressing fits core envelope.",
+      "quests": [
+        "NQ-Q09",
+        "NQ-Q10"
+      ],
+      "stage": "FULL_DESIGN_CARD_WITH_LOCAL_3D_CANDIDATE"
+    },
+    {
+      "id": "NQ-BLD-06",
+      "name": "Warm Current Café",
+      "concept": "assets/concepts/needle-quay/NQ-BLD-06-warm-current-cafe-v1.png",
+      "model": {
+        "id": "NQ-BLD-06",
+        "name": "Warm Current Café",
+        "source": "assets/production/needle-quay/models/NQ-BLD-06/NQ-BLD-06.blend",
+        "glb": "assets/production/needle-quay/models/NQ-BLD-06/NQ-BLD-06.glb",
+        "sha256": "f58c23d6e6866f0a0c4b3e3f5bb76f128c990197d18f3ef70f357c7d400a5a1a",
+        "triangles": 3600,
+        "mesh_objects": 36,
+        "bone_count": 0,
+        "bounds_xyz_blender": [
+          18.125,
+          17.72853660583496,
+          13.0
+        ],
+        "units": "1 local source unit = 1 authored stud; verify importer unit settings",
+        "previews": [
+          "assets/production/needle-quay/models/NQ-BLD-06/neutral.png",
+          "assets/production/needle-quay/models/NQ-BLD-06/front.png",
+          "assets/production/needle-quay/models/NQ-BLD-06/side.png",
+          "assets/production/needle-quay/models/NQ-BLD-06/top.png"
+        ],
+        "stage": "DETERMINISTIC_3D_CANDIDATE",
+        "dcc_clean_accepted": false,
+        "art_approved": false,
+        "studio_imported": false,
+        "runtime_verified": false
+      },
+      "before": "Faded poster; dim local fixture; loose exterior crate dressing.",
+      "after": "New poster; amber fixture enabled; clear exterior path.",
+      "interaction": "Short exterior interaction at front (-Z); closed scenic shell.",
+      "modules": [
+        "closed facade volume",
+        "shared door/frame/sill",
+        "roof trim",
+        "separate sign and fixture",
+        "reuse warehouse/residential/port kit"
+      ],
+      "materials": [
+        "MAT-01",
+        "MAT-02",
+        "MAT-03",
+        "MAT-06",
+        "MAT-08",
+        "MAT-10"
+      ],
+      "graphics": {
+        "sign": "NQ-SGN-06",
+        "sign_face": "front -Z; separate sign plane",
+        "poster": "POST-06",
+        "poster_face": "front-side notice panel; outside doorway",
+        "graffiti": "GRA-06",
+        "graffiti_face": "right exterior wall; separate plane and alpha review"
+      },
+      "anchors_studs": {
+        "coordinate_space": "Roblox layout coordinates X,Y,Z; front -Z; proposals, not runtime bindings",
+        "entrance": [
+          -65,
+          0,
+          82.0
+        ],
+        "npc": [
+          -69,
+          0,
+          79.0
+        ],
+        "sound": [
+          -61,
+          4,
+          81.0
+        ],
+        "interaction": [
+          -60,
+          2,
+          80.0
+        ]
+      },
+      "collision": "Reuse native Part collision proxies. Visual meshes/decal planes noncollidable. Supporting shells closed; four market stalls keep open aisle. No auto hull covering hero doorway.",
+      "lod": "Near: all authored meshes. Medium: hide bolts/brick courses/crates. Far: existing envelope proxy and sign silhouette. Explicit transition distances and draw calls need device profiling; no invented performance pass.",
+      "reuse": "Soft bevels, repeated frame/sill/cornice objects; consolidate palette UVs after final art approval.",
+      "dimensions_wdh_studs": [
+        18,
+        16,
+        13
+      ],
+      "dressing_bounds_note": "Measured model bounds include awnings/handles/cornices beyond core footprint; see model-manifest. Reserve exterior setback; no claim that all dressing fits core envelope.",
+      "quests": [],
+      "stage": "FULL_DESIGN_CARD_WITH_LOCAL_3D_CANDIDATE"
+    },
+    {
+      "id": "NQ-BLD-07",
+      "name": "North Slip Ferry Office",
+      "concept": "assets/concepts/needle-quay/NQ-BLD-07-north-slip-ferry-office-v1.png",
+      "model": {
+        "id": "NQ-BLD-07",
+        "name": "North Slip Ferry Office",
+        "source": "assets/production/needle-quay/models/NQ-BLD-07/NQ-BLD-07.blend",
+        "glb": "assets/production/needle-quay/models/NQ-BLD-07/NQ-BLD-07.glb",
+        "sha256": "96913d2012cb28a9c205b65268bace9aa0a0401355d55f3f80ab68a6d8969ba9",
+        "triangles": 3600,
+        "mesh_objects": 36,
+        "bone_count": 0,
+        "bounds_xyz_blender": [
+          18.125,
+          13.728536605834961,
+          11.0
+        ],
+        "units": "1 local source unit = 1 authored stud; verify importer unit settings",
+        "previews": [
+          "assets/production/needle-quay/models/NQ-BLD-07/neutral.png",
+          "assets/production/needle-quay/models/NQ-BLD-07/front.png",
+          "assets/production/needle-quay/models/NQ-BLD-07/side.png",
+          "assets/production/needle-quay/models/NQ-BLD-07/top.png"
+        ],
+        "stage": "DETERMINISTIC_3D_CANDIDATE",
+        "dcc_clean_accepted": false,
+        "art_approved": false,
+        "studio_imported": false,
+        "runtime_verified": false
+      },
+      "before": "Faded poster; dim local fixture; loose exterior crate dressing.",
+      "after": "New poster; amber fixture enabled; clear exterior path.",
+      "interaction": "Short exterior interaction at front (-Z); closed scenic shell.",
+      "modules": [
+        "closed facade volume",
+        "shared door/frame/sill",
+        "roof trim",
+        "separate sign and fixture",
+        "reuse warehouse/residential/port kit"
+      ],
+      "materials": [
+        "MAT-01",
+        "MAT-02",
+        "MAT-03",
+        "MAT-06",
+        "MAT-08",
+        "MAT-10"
+      ],
+      "graphics": {
+        "sign": "NQ-SGN-07",
+        "sign_face": "front -Z; separate sign plane",
+        "poster": "POST-07",
+        "poster_face": "front-side notice panel; outside doorway",
+        "graffiti": "GRA-07",
+        "graffiti_face": "right exterior wall; separate plane and alpha review"
+      },
+      "anchors_studs": {
+        "coordinate_space": "Roblox layout coordinates X,Y,Z; front -Z; proposals, not runtime bindings",
+        "entrance": [
+          -175,
+          0,
+          84.0
+        ],
+        "npc": [
+          -179,
+          0,
+          81.0
+        ],
+        "sound": [
+          -171,
+          4,
+          83.0
+        ],
+        "interaction": [
+          -170,
+          2,
+          82.0
+        ]
+      },
+      "collision": "Reuse native Part collision proxies. Visual meshes/decal planes noncollidable. Supporting shells closed; four market stalls keep open aisle. No auto hull covering hero doorway.",
+      "lod": "Near: all authored meshes. Medium: hide bolts/brick courses/crates. Far: existing envelope proxy and sign silhouette. Explicit transition distances and draw calls need device profiling; no invented performance pass.",
+      "reuse": "Soft bevels, repeated frame/sill/cornice objects; consolidate palette UVs after final art approval.",
+      "dimensions_wdh_studs": [
+        18,
+        12,
+        11
+      ],
+      "dressing_bounds_note": "Measured model bounds include awnings/handles/cornices beyond core footprint; see model-manifest. Reserve exterior setback; no claim that all dressing fits core envelope.",
+      "quests": [],
+      "stage": "FULL_DESIGN_CARD_WITH_LOCAL_3D_CANDIDATE"
+    },
+    {
+      "id": "NQ-BLD-08",
+      "name": "Quay Supply & Tackle",
+      "concept": "assets/concepts/needle-quay/NQ-BLD-08-quay-supply-tackle-v1.png",
+      "model": {
+        "id": "NQ-BLD-08",
+        "name": "Quay Supply & Tackle",
+        "source": "assets/production/needle-quay/models/NQ-BLD-08/NQ-BLD-08.blend",
+        "glb": "assets/production/needle-quay/models/NQ-BLD-08/NQ-BLD-08.glb",
+        "sha256": "4bd40967a446e152f9df62788bd61fc1389b80d2c1bc8491982e6d612bb35c54",
+        "triangles": 3696,
+        "mesh_objects": 36,
+        "bone_count": 0,
+        "bounds_xyz_blender": [
+          16.125,
+          14.424999237060547,
+          10.0
+        ],
+        "units": "1 local source unit = 1 authored stud; verify importer unit settings",
+        "previews": [
+          "assets/production/needle-quay/models/NQ-BLD-08/neutral.png",
+          "assets/production/needle-quay/models/NQ-BLD-08/front.png",
+          "assets/production/needle-quay/models/NQ-BLD-08/side.png",
+          "assets/production/needle-quay/models/NQ-BLD-08/top.png"
+        ],
+        "stage": "DETERMINISTIC_3D_CANDIDATE",
+        "dcc_clean_accepted": false,
+        "art_approved": false,
+        "studio_imported": false,
+        "runtime_verified": false
+      },
+      "before": "Faded poster; dim local fixture; loose exterior crate dressing.",
+      "after": "New poster; amber fixture enabled; clear exterior path.",
+      "interaction": "Short exterior interaction at front (-Z); closed scenic shell.",
+      "modules": [
+        "closed facade volume",
+        "shared door/frame/sill",
+        "roof trim",
+        "separate sign and fixture",
+        "reuse warehouse/residential/port kit"
+      ],
+      "materials": [
+        "MAT-01",
+        "MAT-02",
+        "MAT-03",
+        "MAT-06",
+        "MAT-08",
+        "MAT-10"
+      ],
+      "graphics": {
+        "sign": "NQ-SGN-08",
+        "sign_face": "front -Z; separate sign plane",
+        "poster": "POST-08",
+        "poster_face": "front-side notice panel; outside doorway",
+        "graffiti": "GRA-08",
+        "graffiti_face": "right exterior wall; separate plane and alpha review"
+      },
+      "anchors_studs": {
+        "coordinate_space": "Roblox layout coordinates X,Y,Z; front -Z; proposals, not runtime bindings",
+        "entrance": [
+          -175,
+          0,
+          -6.0
+        ],
+        "npc": [
+          -179,
+          0,
+          -9.0
+        ],
+        "sound": [
+          -171,
+          4,
+          -7.0
+        ],
+        "interaction": [
+          -170,
+          2,
+          -8.0
+        ]
+      },
+      "collision": "Reuse native Part collision proxies. Visual meshes/decal planes noncollidable. Supporting shells closed; four market stalls keep open aisle. No auto hull covering hero doorway.",
+      "lod": "Near: all authored meshes. Medium: hide bolts/brick courses/crates. Far: existing envelope proxy and sign silhouette. Explicit transition distances and draw calls need device profiling; no invented performance pass.",
+      "reuse": "Soft bevels, repeated frame/sill/cornice objects; consolidate palette UVs after final art approval.",
+      "dimensions_wdh_studs": [
+        16,
+        12,
+        10
+      ],
+      "dressing_bounds_note": "Measured model bounds include awnings/handles/cornices beyond core footprint; see model-manifest. Reserve exterior setback; no claim that all dressing fits core envelope.",
+      "quests": [
+        "NQ-Q01",
+        "NQ-Q02",
+        "NQ-Q03"
+      ],
+      "stage": "FULL_DESIGN_CARD_WITH_LOCAL_3D_CANDIDATE"
+    },
+    {
+      "id": "NQ-BLD-09",
+      "name": "Cinder Cold Storage",
+      "concept": "assets/concepts/needle-quay/NQ-BLD-09-cinder-cold-storage-v1.png",
+      "model": {
+        "id": "NQ-BLD-09",
+        "name": "Cinder Cold Storage",
+        "source": "assets/production/needle-quay/models/NQ-BLD-09/NQ-BLD-09.blend",
+        "glb": "assets/production/needle-quay/models/NQ-BLD-09/NQ-BLD-09.glb",
+        "sha256": "43534200e44a22ea41e6c997a0d324d4b0276879ce395b2cd729e69a97c6e127",
+        "triangles": 3516,
+        "mesh_objects": 37,
+        "bone_count": 0,
+        "bounds_xyz_blender": [
+          34.67500305175781,
+          20.774999618530273,
+          16.0
+        ],
+        "units": "1 local source unit = 1 authored stud; verify importer unit settings",
+        "previews": [
+          "assets/production/needle-quay/models/NQ-BLD-09/neutral.png",
+          "assets/production/needle-quay/models/NQ-BLD-09/front.png",
+          "assets/production/needle-quay/models/NQ-BLD-09/side.png",
+          "assets/production/needle-quay/models/NQ-BLD-09/top.png"
+        ],
+        "stage": "DETERMINISTIC_3D_CANDIDATE",
+        "dcc_clean_accepted": false,
+        "art_approved": false,
+        "studio_imported": false,
+        "runtime_verified": false
+      },
+      "before": "Faded poster; dim local fixture; loose exterior crate dressing.",
+      "after": "New poster; amber fixture enabled; clear exterior path.",
+      "interaction": "Short exterior interaction at front (-Z); closed scenic shell.",
+      "modules": [
+        "closed facade volume",
+        "shared door/frame/sill",
+        "roof trim",
+        "separate sign and fixture",
+        "reuse warehouse/residential/port kit"
+      ],
+      "materials": [
+        "MAT-01",
+        "MAT-02",
+        "MAT-03",
+        "MAT-06",
+        "MAT-08",
+        "MAT-10"
+      ],
+      "graphics": {
+        "sign": "NQ-SGN-09",
+        "sign_face": "front -Z; separate sign plane",
+        "poster": "POST-01",
+        "poster_face": "front-side notice panel; outside doorway",
+        "graffiti": "GRA-09",
+        "graffiti_face": "right exterior wall; separate plane and alpha review"
+      },
+      "anchors_studs": {
+        "coordinate_space": "Roblox layout coordinates X,Y,Z; front -Z; proposals, not runtime bindings",
+        "entrance": [
+          -80,
+          0,
+          -115.0
+        ],
+        "npc": [
+          -84,
+          0,
+          -118.0
+        ],
+        "sound": [
+          -76,
+          4,
+          -116.0
+        ],
+        "interaction": [
+          -75,
+          2,
+          -117.0
+        ]
+      },
+      "collision": "Reuse native Part collision proxies. Visual meshes/decal planes noncollidable. Supporting shells closed; four market stalls keep open aisle. No auto hull covering hero doorway.",
+      "lod": "Near: all authored meshes. Medium: hide bolts/brick courses/crates. Far: existing envelope proxy and sign silhouette. Explicit transition distances and draw calls need device profiling; no invented performance pass.",
+      "reuse": "Soft bevels, repeated frame/sill/cornice objects; consolidate palette UVs after final art approval.",
+      "dimensions_wdh_studs": [
+        34,
+        20,
+        16
+      ],
+      "dressing_bounds_note": "Measured model bounds include awnings/handles/cornices beyond core footprint; see model-manifest. Reserve exterior setback; no claim that all dressing fits core envelope.",
+      "quests": [
+        "NQ-Q04",
+        "NQ-Q05"
+      ],
+      "stage": "FULL_DESIGN_CARD_WITH_LOCAL_3D_CANDIDATE"
+    },
+    {
+      "id": "NQ-BLD-10",
+      "name": "Quayside Flats",
+      "concept": "assets/concepts/needle-quay/NQ-BLD-10-quayside-flats-v1.png",
+      "model": {
+        "id": "NQ-BLD-10",
+        "name": "Quayside Flats",
+        "source": "assets/production/needle-quay/models/NQ-BLD-10/NQ-BLD-10.blend",
+        "glb": "assets/production/needle-quay/models/NQ-BLD-10/NQ-BLD-10.glb",
+        "sha256": "d707ead24603f5a8c443156486a752ea983206e39e64e2156c06ff160e6eba09",
+        "triangles": 4524,
+        "mesh_objects": 49,
+        "bone_count": 0,
+        "bounds_xyz_blender": [
+          38.125,
+          17.125,
+          26.0
+        ],
+        "units": "1 local source unit = 1 authored stud; verify importer unit settings",
+        "previews": [
+          "assets/production/needle-quay/models/NQ-BLD-10/neutral.png",
+          "assets/production/needle-quay/models/NQ-BLD-10/front.png",
+          "assets/production/needle-quay/models/NQ-BLD-10/side.png",
+          "assets/production/needle-quay/models/NQ-BLD-10/top.png"
+        ],
+        "stage": "DETERMINISTIC_3D_CANDIDATE",
+        "dcc_clean_accepted": false,
+        "art_approved": false,
+        "studio_imported": false,
+        "runtime_verified": false
+      },
+      "before": "Faded poster; dim local fixture; loose exterior crate dressing.",
+      "after": "New poster; amber fixture enabled; clear exterior path.",
+      "interaction": "Short exterior interaction at front (-Z); closed scenic shell.",
+      "modules": [
+        "closed facade volume",
+        "shared door/frame/sill",
+        "roof trim",
+        "separate sign and fixture",
+        "reuse warehouse/residential/port kit"
+      ],
+      "materials": [
+        "MAT-01",
+        "MAT-02",
+        "MAT-03",
+        "MAT-06",
+        "MAT-08",
+        "MAT-10"
+      ],
+      "graphics": {
+        "sign": "NQ-SGN-10",
+        "sign_face": "front -Z; separate sign plane",
+        "poster": "POST-02",
+        "poster_face": "front-side notice panel; outside doorway",
+        "graffiti": "GRA-10",
+        "graffiti_face": "right exterior wall; separate plane and alpha review"
+      },
+      "anchors_studs": {
+        "coordinate_space": "Roblox layout coordinates X,Y,Z; front -Z; proposals, not runtime bindings",
+        "entrance": [
+          65,
+          0,
+          -113.0
+        ],
+        "npc": [
+          61,
+          0,
+          -116.0
+        ],
+        "sound": [
+          69,
+          4,
+          -114.0
+        ],
+        "interaction": [
+          70,
+          2,
+          -115.0
+        ]
+      },
+      "collision": "Reuse native Part collision proxies. Visual meshes/decal planes noncollidable. Supporting shells closed; four market stalls keep open aisle. No auto hull covering hero doorway.",
+      "lod": "Near: all authored meshes. Medium: hide bolts/brick courses/crates. Far: existing envelope proxy and sign silhouette. Explicit transition distances and draw calls need device profiling; no invented performance pass.",
+      "reuse": "Soft bevels, repeated frame/sill/cornice objects; consolidate palette UVs after final art approval.",
+      "dimensions_wdh_studs": [
+        38,
+        16,
+        26
+      ],
+      "dressing_bounds_note": "Measured model bounds include awnings/handles/cornices beyond core footprint; see model-manifest. Reserve exterior setback; no claim that all dressing fits core envelope.",
+      "quests": [],
+      "stage": "FULL_DESIGN_CARD_WITH_LOCAL_3D_CANDIDATE"
+    },
+    {
+      "id": "NQ-BLD-11",
+      "name": "Tidewash Laundry",
+      "concept": "assets/concepts/needle-quay/NQ-BLD-11-tidewash-laundry-v1.png",
+      "model": {
+        "id": "NQ-BLD-11",
+        "name": "Tidewash Laundry",
+        "source": "assets/production/needle-quay/models/NQ-BLD-11/NQ-BLD-11.blend",
+        "glb": "assets/production/needle-quay/models/NQ-BLD-11/NQ-BLD-11.glb",
+        "sha256": "546e5e1f18d412be36809b23582c529c68b4adbdbc6865062ed21ac36980adfc",
+        "triangles": 3756,
+        "mesh_objects": 41,
+        "bone_count": 0,
+        "bounds_xyz_blender": [
+          18.125,
+          16.774999618530273,
+          14.0
+        ],
+        "units": "1 local source unit = 1 authored stud; verify importer unit settings",
+        "previews": [
+          "assets/production/needle-quay/models/NQ-BLD-11/neutral.png",
+          "assets/production/needle-quay/models/NQ-BLD-11/front.png",
+          "assets/production/needle-quay/models/NQ-BLD-11/side.png",
+          "assets/production/needle-quay/models/NQ-BLD-11/top.png"
+        ],
+        "stage": "DETERMINISTIC_3D_CANDIDATE",
+        "dcc_clean_accepted": false,
+        "art_approved": false,
+        "studio_imported": false,
+        "runtime_verified": false
+      },
+      "before": "Faded poster; dim local fixture; loose exterior crate dressing.",
+      "after": "New poster; amber fixture enabled; clear exterior path.",
+      "interaction": "Short exterior interaction at front (-Z); closed scenic shell.",
+      "modules": [
+        "closed facade volume",
+        "shared door/frame/sill",
+        "roof trim",
+        "separate sign and fixture",
+        "reuse warehouse/residential/port kit"
+      ],
+      "materials": [
+        "MAT-01",
+        "MAT-02",
+        "MAT-03",
+        "MAT-06",
+        "MAT-08",
+        "MAT-10"
+      ],
+      "graphics": {
+        "sign": "NQ-SGN-11",
+        "sign_face": "front -Z; separate sign plane",
+        "poster": "POST-03",
+        "poster_face": "front-side notice panel; outside doorway",
+        "graffiti": "GRA-01",
+        "graffiti_face": "right exterior wall; separate plane and alpha review"
+      },
+      "anchors_studs": {
+        "coordinate_space": "Roblox layout coordinates X,Y,Z; front -Z; proposals, not runtime bindings",
+        "entrance": [
+          145,
+          0,
+          -113.0
+        ],
+        "npc": [
+          141,
+          0,
+          -116.0
+        ],
+        "sound": [
+          149,
+          4,
+          -114.0
+        ],
+        "interaction": [
+          150,
+          2,
+          -115.0
+        ]
+      },
+      "collision": "Reuse native Part collision proxies. Visual meshes/decal planes noncollidable. Supporting shells closed; four market stalls keep open aisle. No auto hull covering hero doorway.",
+      "lod": "Near: all authored meshes. Medium: hide bolts/brick courses/crates. Far: existing envelope proxy and sign silhouette. Explicit transition distances and draw calls need device profiling; no invented performance pass.",
+      "reuse": "Soft bevels, repeated frame/sill/cornice objects; consolidate palette UVs after final art approval.",
+      "dimensions_wdh_studs": [
+        18,
+        16,
+        14
+      ],
+      "dressing_bounds_note": "Measured model bounds include awnings/handles/cornices beyond core footprint; see model-manifest. Reserve exterior setback; no claim that all dressing fits core envelope.",
+      "quests": [],
+      "stage": "FULL_DESIGN_CARD_WITH_LOCAL_3D_CANDIDATE"
+    },
+    {
+      "id": "NQ-BLD-12",
+      "name": "Relay Substation",
+      "concept": "assets/concepts/needle-quay/NQ-BLD-12-relay-substation-v1.png",
+      "model": {
+        "id": "NQ-BLD-12",
+        "name": "Relay Substation",
+        "source": "assets/production/needle-quay/models/NQ-BLD-12/NQ-BLD-12.blend",
+        "glb": "assets/production/needle-quay/models/NQ-BLD-12/NQ-BLD-12.glb",
+        "sha256": "d917c50e8edb8be3b9306f2a5cc08836218820b8ead117c9dedef2498159c3ff",
+        "triangles": 3384,
+        "mesh_objects": 34,
+        "bone_count": 0,
+        "bounds_xyz_blender": [
+          12.125,
+          13.424999237060547,
+          11.0
+        ],
+        "units": "1 local source unit = 1 authored stud; verify importer unit settings",
+        "previews": [
+          "assets/production/needle-quay/models/NQ-BLD-12/neutral.png",
+          "assets/production/needle-quay/models/NQ-BLD-12/front.png",
+          "assets/production/needle-quay/models/NQ-BLD-12/side.png",
+          "assets/production/needle-quay/models/NQ-BLD-12/top.png"
+        ],
+        "stage": "DETERMINISTIC_3D_CANDIDATE",
+        "dcc_clean_accepted": false,
+        "art_approved": false,
+        "studio_imported": false,
+        "runtime_verified": false
+      },
+      "before": "Faded poster; dim local fixture; loose exterior crate dressing.",
+      "after": "New poster; amber fixture enabled; clear exterior path.",
+      "interaction": "Short exterior interaction at front (-Z); closed scenic shell.",
+      "modules": [
+        "closed facade volume",
+        "shared door/frame/sill",
+        "roof trim",
+        "separate sign and fixture",
+        "reuse warehouse/residential/port kit"
+      ],
+      "materials": [
+        "MAT-01",
+        "MAT-02",
+        "MAT-03",
+        "MAT-06",
+        "MAT-08",
+        "MAT-10"
+      ],
+      "graphics": {
+        "sign": "NQ-SGN-12",
+        "sign_face": "front -Z; separate sign plane",
+        "poster": "POST-04",
+        "poster_face": "front-side notice panel; outside doorway",
+        "graffiti": "GRA-02",
+        "graffiti_face": "right exterior wall; separate plane and alpha review"
+      },
+      "anchors_studs": {
+        "coordinate_space": "Roblox layout coordinates X,Y,Z; front -Z; proposals, not runtime bindings",
+        "entrance": [
+          140,
+          0,
+          89.0
+        ],
+        "npc": [
+          136,
+          0,
+          86.0
+        ],
+        "sound": [
+          144,
+          4,
+          88.0
+        ],
+        "interaction": [
+          145,
+          2,
+          87.0
+        ]
+      },
+      "collision": "Reuse native Part collision proxies. Visual meshes/decal planes noncollidable. Supporting shells closed; four market stalls keep open aisle. No auto hull covering hero doorway.",
+      "lod": "Near: all authored meshes. Medium: hide bolts/brick courses/crates. Far: existing envelope proxy and sign silhouette. Explicit transition distances and draw calls need device profiling; no invented performance pass.",
+      "reuse": "Soft bevels, repeated frame/sill/cornice objects; consolidate palette UVs after final art approval.",
+      "dimensions_wdh_studs": [
+        12,
+        12,
+        11
+      ],
+      "dressing_bounds_note": "Measured model bounds include awnings/handles/cornices beyond core footprint; see model-manifest. Reserve exterior setback; no claim that all dressing fits core envelope.",
+      "quests": [
+        "NQ-Q10"
+      ],
+      "stage": "FULL_DESIGN_CARD_WITH_LOCAL_3D_CANDIDATE"
+    },
+    {
+      "id": "NQ-BLD-13",
+      "name": "Dockline Depot",
+      "concept": "assets/concepts/needle-quay/NQ-BLD-13-dockline-depot-v1.png",
+      "model": {
+        "id": "NQ-BLD-13",
+        "name": "Dockline Depot",
+        "source": "assets/production/needle-quay/models/NQ-BLD-13/NQ-BLD-13.blend",
+        "glb": "assets/production/needle-quay/models/NQ-BLD-13/NQ-BLD-13.glb",
+        "sha256": "15a6947a8f3dc3e90872d9b41902b19d865ad18aac98fa32315049e1ebf6570c",
+        "triangles": 3648,
+        "mesh_objects": 40,
+        "bone_count": 0,
+        "bounds_xyz_blender": [
+          31.061031341552734,
+          22.774999618530273,
+          19.825000762939453
+        ],
+        "units": "1 local source unit = 1 authored stud; verify importer unit settings",
+        "previews": [
+          "assets/production/needle-quay/models/NQ-BLD-13/neutral.png",
+          "assets/production/needle-quay/models/NQ-BLD-13/front.png",
+          "assets/production/needle-quay/models/NQ-BLD-13/side.png",
+          "assets/production/needle-quay/models/NQ-BLD-13/top.png"
+        ],
+        "stage": "DETERMINISTIC_3D_CANDIDATE",
+        "dcc_clean_accepted": false,
+        "art_approved": false,
+        "studio_imported": false,
+        "runtime_verified": false
+      },
+      "before": "Faded poster; dim local fixture; loose exterior crate dressing.",
+      "after": "New poster; amber fixture enabled; clear exterior path.",
+      "interaction": "Short exterior interaction at front (-Z); closed scenic shell.",
+      "modules": [
+        "closed facade volume",
+        "shared door/frame/sill",
+        "roof trim",
+        "separate sign and fixture",
+        "reuse warehouse/residential/port kit"
+      ],
+      "materials": [
+        "MAT-01",
+        "MAT-02",
+        "MAT-03",
+        "MAT-06",
+        "MAT-08",
+        "MAT-10"
+      ],
+      "graphics": {
+        "sign": "NQ-SGN-13",
+        "sign_face": "front -Z; separate sign plane",
+        "poster": "POST-05",
+        "poster_face": "front-side notice panel; outside doorway",
+        "graffiti": "GRA-03",
+        "graffiti_face": "right exterior wall; separate plane and alpha review"
+      },
+      "anchors_studs": {
+        "coordinate_space": "Roblox layout coordinates X,Y,Z; front -Z; proposals, not runtime bindings",
+        "entrance": [
+          -140,
+          0,
+          -11.0
+        ],
+        "npc": [
+          -144,
+          0,
+          -14.0
+        ],
+        "sound": [
+          -136,
+          4,
+          -12.0
+        ],
+        "interaction": [
+          -135,
+          2,
+          -13.0
+        ]
+      },
+      "collision": "Reuse native Part collision proxies. Visual meshes/decal planes noncollidable. Supporting shells closed; four market stalls keep open aisle. No auto hull covering hero doorway.",
+      "lod": "Near: all authored meshes. Medium: hide bolts/brick courses/crates. Far: existing envelope proxy and sign silhouette. Explicit transition distances and draw calls need device profiling; no invented performance pass.",
+      "reuse": "Soft bevels, repeated frame/sill/cornice objects; consolidate palette UVs after final art approval.",
+      "dimensions_wdh_studs": [
+        30,
+        22,
+        20
+      ],
+      "dressing_bounds_note": "Measured model bounds include awnings/handles/cornices beyond core footprint; see model-manifest. Reserve exterior setback; no claim that all dressing fits core envelope.",
+      "quests": [
+        "NQ-Q01",
+        "NQ-Q02",
+        "NQ-Q03"
+      ],
+      "stage": "FULL_DESIGN_CARD_WITH_LOCAL_3D_CANDIDATE"
+    }
+  ],
+  "H06_resolution": {
+    "decision": "Retain canonical 32x16x24; propose maximum clear interior 30x14; reject incompatible legacy 24x20 interior for this candidate",
+    "contract_changed": false,
+    "requires_final_layout_review": true
+  },
+  "morrow": "P16 discovery attachment remains canonical 3x3x2; decorative circular rim is separate",
+  "signal_console_face": "front -Z, right side",
+  "market": "exactly four stalls; open center, distinct performance nook"
+}

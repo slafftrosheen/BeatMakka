@@ -1,0 +1,14 @@
+{
+  "acceptanceStage": "DETERMINISTIC_3D_CANDIDATE",
+  "authoring": "[redacted]",
+  "billableProviderCalls": 0,
+  "origin": "imported",
+  "schema": "game_dev.asset_provenance.v1",
+  "source": {
+    "bytes": 343740,
+    "fileName": "NQ-BLD-03.glb",
+    "sha256": "10a7e3b757f45200c3ce357b18f71c516e9da19eb009fea5b97fd15d4e12c755"
+  },
+  "sourceBlend": "assets/production/needle-quay/models/NQ-BLD-03/NQ-BLD-03.blend",
+  "sourceRegister": "data/needle-quay-environment.v1.json"
+}

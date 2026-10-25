@@ -1,0 +1,23 @@
+{
+  "kind": "DETERMINISTIC_AUTHORING_RECEIPT_NOT_TEST_OR_RUNTIME_EVIDENCE",
+  "register": "data/needle-quay-environment.v1.json",
+  "register_sha256": "bfc5ede663a5d66089611e21bf40a87cef2f534de274f2ddb6a788791b9a3073",
+  "model": "assets/blockouts/needle-quay/NeedleQuayEnvironmentBlockout.rbxmx",
+  "model_sha256": "07bab001b3e2259151552ce39867fe88f2850b07e65564aec5146c4b0332d11e",
+  "part_count": 270,
+  "instance_count": 484,
+  "buildings": 13,
+  "parking_anchors": 4,
+  "npc_location_markers": 7,
+  "canonical_H06_dimensions": [
+    32,
+    16,
+    24
+  ],
+  "studio_connection": "Not connected at authoring start; see docs/needle-quay/studio-delivery.json for actual delivery",
+  "runtime_quests_implemented": false,
+  "tripo_calls": 0,
+  "tripo_credits_spent": 0,
+  "tests_run": false,
+  "build_command": "rojo build needle-quay.blockout.project.json --output output/needle-quay/NeedleQuayEnvironmentBlockout-v1.rbxlx"
+}

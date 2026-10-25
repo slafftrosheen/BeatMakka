@@ -1,0 +1,68 @@
+{
+  "date": "2026-10-25",
+  "tool": "built-in image_gen",
+  "transparent_background": true,
+  "stage": "NEW_ART_CANDIDATES_NOT_COVERED_BY_EARLIER_APPROVAL",
+  "prompts": [
+    {
+      "id": "GRA-01",
+      "name": "RUST CAN SING",
+      "path": "assets/production/needle-quay/graphics/GRA-01.png",
+      "prompt": "Original game street-art decal for BeatMakka Needle Quay. Bold hand-painted dockworker lettering, rust-coral and cream, chunky angular strokes, a tiny singing metal bolt icon integrated. Text EXACTLY 'RUST CAN SING'. Transparent background, genuine alpha; isolated paint only, NO wall, brick, paper, rectangular background, photographed scene, frame or cast shadow. Clean usable alpha edges, deliberate sparse chipped paint at edges, no illegible filler text. High-quality stylized hand-painted mural design, controlled warm port palette. Content centered with alpha margin on all sides, full motif uncropped. This is standalone decal artwork, not a mockup. Different resident's hand from other designs, but same district palette."
+    },
+    {
+      "id": "GRA-02",
+      "name": "ONE MORE SONG",
+      "path": "assets/production/needle-quay/graphics/GRA-02.png",
+      "prompt": "Original game street-art decal for BeatMakka Needle Quay. Gentle flowing community hand lettering, cream and amber with subtle teal outline, small sound-note curves, warm hopeful mood. Text EXACTLY 'ONE MORE SONG'. Transparent background, genuine alpha; isolated paint only, NO wall, brick, paper, rectangular background, photographed scene, frame or cast shadow. Clean usable alpha edges, deliberate sparse chipped paint at edges, no illegible filler text. High-quality stylized hand-painted mural design, controlled warm port palette. Content centered with alpha margin on all sides, full motif uncropped. This is standalone decal artwork, not a mockup. Different resident's hand from other designs, but same district palette."
+    },
+    {
+      "id": "GRA-03",
+      "name": "KEEP THE QUAY PLAYING",
+      "path": "assets/production/needle-quay/graphics/GRA-03.png",
+      "prompt": "Original game street-art decal for BeatMakka Needle Quay. Wide lively civic mural lettering, dusty coral filled broad letters with teal drop shadow and cream highlights, slightly different confident local painter hand. Text EXACTLY 'KEEP THE QUAY PLAYING'. Transparent background, genuine alpha; isolated paint only, NO wall, brick, paper, rectangular background, photographed scene, frame or cast shadow. Clean usable alpha edges, deliberate sparse chipped paint at edges, no illegible filler text. High-quality stylized hand-painted mural design, controlled warm port palette. Content centered with alpha margin on all sides, full motif uncropped. This is standalone decal artwork, not a mockup. Different resident's hand from other designs, but same district palette."
+    },
+    {
+      "id": "GRA-04",
+      "name": "LOW TIDE / HIGH NOTES",
+      "path": "assets/production/needle-quay/graphics/GRA-04.png",
+      "prompt": "Original game street-art decal for BeatMakka Needle Quay. Two-line playful dockside lettering, teal sea-wave baseline, cream and coral letters, simple amber music-note accent. Text EXACTLY 'LOW TIDE' on first line and 'HIGH NOTES' on second, a small slash between. Transparent background, genuine alpha; isolated paint only, NO wall, brick, paper, rectangular background, photographed scene, frame or cast shadow. Clean usable alpha edges, deliberate sparse chipped paint at edges, no illegible filler text. High-quality stylized hand-painted mural design, controlled warm port palette. Content centered with alpha margin on all sides, full motif uncropped. This is standalone decal artwork, not a mockup. Different resident's hand from other designs, but same district palette."
+    },
+    {
+      "id": "GRA-05",
+      "name": "Soundwave becomes sea wave",
+      "path": "assets/production/needle-quay/graphics/GRA-05.png",
+      "prompt": "Original game street-art decal for BeatMakka Needle Quay. Wordless horizontal original street-art motif: a bold teal audio waveform smoothly becomes a curling sea wave, cream and dusty coral highlights, confident hand-painted broad strokes. No words. Transparent background, genuine alpha; isolated paint only, NO wall, brick, paper, rectangular background, photographed scene, frame or cast shadow. Clean usable alpha edges, deliberate sparse chipped paint at edges, no illegible filler text. High-quality stylized hand-painted mural design, controlled warm port palette. Content centered with alpha margin on all sides, full motif uncropped. This is standalone decal artwork, not a mockup. Different resident's hand from other designs, but same district palette."
+    },
+    {
+      "id": "GRA-06",
+      "name": "Helper robot abstraction",
+      "path": "assets/production/needle-quay/graphics/GRA-06.png",
+      "prompt": "Original game street-art decal for BeatMakka Needle Quay. Wordless original local artist's abstract tribute to a small friendly boxy wheeled maintenance robot: cream square head with two simple amber eye slits, teal simple body, coral gear marks. Flat street mural, NOT a new H04 character model or realistic portrait; broad playful stencil, no words. Transparent background, genuine alpha; isolated paint only, NO wall, brick, paper, rectangular background, photographed scene, frame or cast shadow. Clean usable alpha edges, deliberate sparse chipped paint at edges, no illegible filler text. High-quality stylized hand-painted mural design, controlled warm port palette. Content centered with alpha margin on all sides, full motif uncropped. This is standalone decal artwork, not a mockup. Different resident's hand from other designs, but same district palette."
+    },
+    {
+      "id": "GRA-07",
+      "name": "Passing vinyl",
+      "path": "assets/production/needle-quay/graphics/GRA-07.png",
+      "prompt": "Original game street-art decal for BeatMakka Needle Quay. Wordless hopeful community mural of two simplified hands passing a plain black/graphite vinyl record with dusty coral blank center, cream and teal hands/sleeves, warm broad screenprinted street-art style, no real cover design or text. Transparent background, genuine alpha; isolated paint only, NO wall, brick, paper, rectangular background, photographed scene, frame or cast shadow. Clean usable alpha edges, deliberate sparse chipped paint at edges, no illegible filler text. High-quality stylized hand-painted mural design, controlled warm port palette. Content centered with alpha margin on all sides, full motif uncropped. This is standalone decal artwork, not a mockup. Different resident's hand from other designs, but same district palette."
+    },
+    {
+      "id": "GRA-08",
+      "name": "Old radio frequency",
+      "path": "assets/production/needle-quay/graphics/GRA-08.png",
+      "prompt": "Original game street-art decal for BeatMakka Needle Quay. Wordless retro radio-frequency street emblem: cream central antenna glyph, teal concentric partial signal arcs, dusty coral frequency tick marks, hand-stencilled irregularity, broad clear lines, no new logo or words. Transparent background, genuine alpha; isolated paint only, NO wall, brick, paper, rectangular background, photographed scene, frame or cast shadow. Clean usable alpha edges, deliberate sparse chipped paint at edges, no illegible filler text. High-quality stylized hand-painted mural design, controlled warm port palette. Content centered with alpha margin on all sides, full motif uncropped. This is standalone decal artwork, not a mockup. Different resident's hand from other designs, but same district palette."
+    },
+    {
+      "id": "GRA-09",
+      "name": "Music sticker set",
+      "path": "assets/production/needle-quay/graphics/GRA-09.png",
+      "prompt": "Original game street-art decal for BeatMakka Needle Quay. An original transparent atlas of twelve small separate music stickers/tags with generous clear gaps: waveform, note, vinyl, tiny amp, headphone outline, drumstick pair, sound star, quay anchor-note, cassette, cable curl, abstract beat grid, radio arc. Cream/teal/coral/amber palette, varying hand-drawn shapes; no words, no real brands; twelve elements are ONE sticker-atlas design. Transparent background, genuine alpha; isolated paint only, NO wall, brick, paper, rectangular background, photographed scene, frame or cast shadow. Clean usable alpha edges, deliberate sparse chipped paint at edges, no illegible filler text. High-quality stylized hand-painted mural design, controlled warm port palette. Content centered with alpha margin on all sides, full motif uncropped. This is standalone decal artwork, not a mockup. Different resident's hand from other designs, but same district palette."
+    },
+    {
+      "id": "GRA-10",
+      "name": "History of the quay",
+      "path": "assets/production/needle-quay/graphics/GRA-10.png",
+      "prompt": "Original game street-art decal for BeatMakka Needle Quay. Wordless wide community history mural, low busy port skyline at left evolves through tools, plain vinyl record and small stage into a warm communal music gathering at right. Simplified anonymous chunky human silhouettes, teal/cream/walnut/coral/amber only, broad controlled shapes, no copyrighted characters or logos, no words. Transparent background, genuine alpha; isolated paint only, NO wall, brick, paper, rectangular background, photographed scene, frame or cast shadow. Clean usable alpha edges, deliberate sparse chipped paint at edges, no illegible filler text. High-quality stylized hand-painted mural design, controlled warm port palette. Content centered with alpha margin on all sides, full motif uncropped. This is standalone decal artwork, not a mockup. Different resident's hand from other designs, but same district palette."
+    }
+  ]
+}

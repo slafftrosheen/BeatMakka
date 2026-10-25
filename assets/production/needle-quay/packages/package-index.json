@@ -1,0 +1,147 @@
+{
+  "packages": [
+    {
+      "id": "NQ-BLD-01",
+      "package": "assets/production/needle-quay/packages/nq_bld_01/1.0.0",
+      "package_id": "pkg_648a0fb9b8c0bf3f45f75b7d",
+      "integrity_verified": true,
+      "policy": "game-dev static UV/normal/finite-geometry checks plus CLI defaults; not a new project triangle budget or engine acceptance"
+    },
+    {
+      "id": "NQ-BLD-02",
+      "package": "assets/production/needle-quay/packages/nq_bld_02/1.0.0",
+      "package_id": "pkg_2a16f9cba58505cdac038c06",
+      "integrity_verified": true,
+      "policy": "game-dev static UV/normal/finite-geometry checks plus CLI defaults; not a new project triangle budget or engine acceptance"
+    },
+    {
+      "id": "NQ-BLD-03",
+      "package": "assets/production/needle-quay/packages/nq_bld_03/1.0.0",
+      "package_id": "pkg_df7e4879094663cb4d23a87c",
+      "integrity_verified": true,
+      "policy": "game-dev static UV/normal/finite-geometry checks plus CLI defaults; not a new project triangle budget or engine acceptance"
+    },
+    {
+      "id": "NQ-BLD-04",
+      "package": "assets/production/needle-quay/packages/nq_bld_04/1.0.0",
+      "package_id": "pkg_28bf2c25b64501963f6a9034",
+      "integrity_verified": true,
+      "policy": "game-dev static UV/normal/finite-geometry checks plus CLI defaults; not a new project triangle budget or engine acceptance"
+    },
+    {
+      "id": "NQ-BLD-05",
+      "package": "assets/production/needle-quay/packages/nq_bld_05/1.0.0",
+      "package_id": "pkg_db6b593ebbe658b340e330c7",
+      "integrity_verified": true,
+      "policy": "game-dev static UV/normal/finite-geometry checks plus CLI defaults; not a new project triangle budget or engine acceptance"
+    },
+    {
+      "id": "NQ-BLD-06",
+      "package": "assets/production/needle-quay/packages/nq_bld_06/1.0.0",
+      "package_id": "pkg_278bbb14147912bbaf84b1d7",
+      "integrity_verified": true,
+      "policy": "game-dev static UV/normal/finite-geometry checks plus CLI defaults; not a new project triangle budget or engine acceptance"
+    },
+    {
+      "id": "NQ-BLD-07",
+      "package": "assets/production/needle-quay/packages/nq_bld_07/1.0.0",
+      "package_id": "pkg_b63857df190115b0ceca03ea",
+      "integrity_verified": true,
+      "policy": "game-dev static UV/normal/finite-geometry checks plus CLI defaults; not a new project triangle budget or engine acceptance"
+    },
+    {
+      "id": "NQ-BLD-08",
+      "package": "assets/production/needle-quay/packages/nq_bld_08/1.0.0",
+      "package_id": "pkg_c77e81d4448a23e60c5f838f",
+      "integrity_verified": true,
+      "policy": "game-dev static UV/normal/finite-geometry checks plus CLI defaults; not a new project triangle budget or engine acceptance"
+    },
+    {
+      "id": "NQ-BLD-09",
+      "package": "assets/production/needle-quay/packages/nq_bld_09/1.0.0",
+      "package_id": "pkg_1db348af487505d5414bf655",
+      "integrity_verified": true,
+      "policy": "game-dev static UV/normal/finite-geometry checks plus CLI defaults; not a new project triangle budget or engine acceptance"
+    },
+    {
+      "id": "NQ-BLD-10",
+      "package": "assets/production/needle-quay/packages/nq_bld_10/1.0.0",
+      "package_id": "pkg_24ead091043062771b620503",
+      "integrity_verified": true,
+      "policy": "game-dev static UV/normal/finite-geometry checks plus CLI defaults; not a new project triangle budget or engine acceptance"
+    },
+    {
+      "id": "NQ-BLD-11",
+      "package": "assets/production/needle-quay/packages/nq_bld_11/1.0.0",
+      "package_id": "pkg_77e4f5cd4914219bd6fa3c18",
+      "integrity_verified": true,
+      "policy": "game-dev static UV/normal/finite-geometry checks plus CLI defaults; not a new project triangle budget or engine acceptance"
+    },
+    {
+      "id": "NQ-BLD-12",
+      "package": "assets/production/needle-quay/packages/nq_bld_12/1.0.0",
+      "package_id": "pkg_8b808f0a08b16f3215537f7f",
+      "integrity_verified": true,
+      "policy": "game-dev static UV/normal/finite-geometry checks plus CLI defaults; not a new project triangle budget or engine acceptance"
+    },
+    {
+      "id": "NQ-BLD-13",
+      "package": "assets/production/needle-quay/packages/nq_bld_13/1.0.0",
+      "package_id": "pkg_68553217f69da1e1b0e69a92",
+      "integrity_verified": true,
+      "policy": "game-dev static UV/normal/finite-geometry checks plus CLI defaults; not a new project triangle budget or engine acceptance"
+    },
+    {
+      "id": "NQ-NPC-TORI",
+      "package": "assets/production/needle-quay/packages/nq_npc_tori/1.0.0",
+      "package_id": "pkg_7eca4f4669081b240b38f3c4",
+      "integrity_verified": true,
+      "policy": "game-dev static UV/normal/finite-geometry checks plus CLI defaults; not a new project triangle budget or engine acceptance"
+    },
+    {
+      "id": "NQ-NPC-IVO",
+      "package": "assets/production/needle-quay/packages/nq_npc_ivo/1.0.0",
+      "package_id": "pkg_13b96116670bbb211420dd61",
+      "integrity_verified": true,
+      "policy": "game-dev static UV/normal/finite-geometry checks plus CLI defaults; not a new project triangle budget or engine acceptance"
+    },
+    {
+      "id": "NQ-NPC-NAYA",
+      "package": "assets/production/needle-quay/packages/nq_npc_naya/1.0.0",
+      "package_id": "pkg_4be76333976071259798ba18",
+      "integrity_verified": true,
+      "policy": "game-dev static UV/normal/finite-geometry checks plus CLI defaults; not a new project triangle budget or engine acceptance"
+    },
+    {
+      "id": "NQ-NPC-SANA",
+      "package": "assets/production/needle-quay/packages/nq_npc_sana/1.0.0",
+      "package_id": "pkg_a97a0cb257db7f90178321f6",
+      "integrity_verified": true,
+      "policy": "game-dev static UV/normal/finite-geometry checks plus CLI defaults; not a new project triangle budget or engine acceptance"
+    },
+    {
+      "id": "NQ-NPC-RONAN",
+      "package": "assets/production/needle-quay/packages/nq_npc_ronan/1.0.0",
+      "package_id": "pkg_704781a29eaec8fda08cc6a1",
+      "integrity_verified": true,
+      "policy": "game-dev static UV/normal/finite-geometry checks plus CLI defaults; not a new project triangle budget or engine acceptance"
+    },
+    {
+      "id": "NQ-NPC-NELL",
+      "package": "assets/production/needle-quay/packages/nq_npc_nell/1.0.0",
+      "package_id": "pkg_fe2adff1af72a01434022d15",
+      "integrity_verified": true,
+      "policy": "game-dev static UV/normal/finite-geometry checks plus CLI defaults; not a new project triangle budget or engine acceptance"
+    },
+    {
+      "id": "H04",
+      "package": "assets/production/needle-quay/packages/h04/1.0.0",
+      "package_id": "pkg_8c765dd067a1c59da65246c0",
+      "integrity_verified": true,
+      "policy": "game-dev static UV/normal/finite-geometry checks plus CLI defaults; not a new project triangle budget or engine acceptance"
+    }
+  ],
+  "license": "LicenseRef-BeatMakka-Private",
+  "runtime_verified": false,
+  "roblox_uploads": 0
+}

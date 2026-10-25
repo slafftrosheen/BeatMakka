@@ -1,0 +1,23 @@
+{
+  "completedAt": "2026-10-25T14:11:28.700Z",
+  "destination": {
+    "assetId": "h04",
+    "version": "1.0.0"
+  },
+  "evidence": {
+    "blenderNormalizationPerformed": false,
+    "gpuImportTestPerformed": false,
+    "humanVisualReviewPerformed": false,
+    "modelBytesCopiedAndHashed": true,
+    "policyValidationCompleted": true,
+    "staticInspectionCompleted": true
+  },
+  "manifestSha256": "434d78238cceb0800cc70069ad7c68f19c2a547ce7500111a79a661f7fd7d00d",
+  "packageId": "pkg_8c765dd067a1c59da65246c0",
+  "schema": "game_dev.package_receipt.v1",
+  "source": {
+    "bytes": 209336,
+    "fileName": "H04_atlas_v1.glb",
+    "sha256": "8046e7baf00797212a970b03acc55118471d0bb9d4bf54871533bc2e6181dc22"
+  }
+}

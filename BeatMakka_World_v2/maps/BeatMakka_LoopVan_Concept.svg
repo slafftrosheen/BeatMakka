@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2600" height="1360" viewBox="0 0 2600 1360"><defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#152D2E"/><stop offset="1" stop-color="#1B4545"/></linearGradient><linearGradient id="metal" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#FAF4E6"/><stop offset="1" stop-color="#C6B89B"/></linearGradient><linearGradient id="teal" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#527E72"/><stop offset="1" stop-color="#274D4B"/></linearGradient></defs>
+<rect width="2600" height="1360" rx="35" fill="url(#bg)"/>
+<text x="100" y="126" font-family="DejaVu Sans" font-size="70" font-weight="800" fill="#F5EEDC">LOOPVAN-01</text>
+<text x="104" y="178" font-family="DejaVu Sans" font-size="32" fill="#D6C9AC">ДОМ · СТУДИЯ · МОБИЛЬНАЯ СЦЕНА</text>
+<path d="M110 1030 H2460" stroke="#C5BCA6" stroke-width="11" stroke-linecap="round"/>
+<path d="M255 906 Q245 760 300 680 L475 480 Q555 424 690 424 L1820 424 Q2065 441 2125 653 L2195 766 V915 Z" fill="url(#metal)" stroke="#172E2D" stroke-width="21"/>
+<path d="M344 730 L525 501 H731 V730Z" fill="#2E585B" stroke="#2F4E4E" stroke-width="14"/>
+<path d="M772 487 H1360 V710 H772Z" fill="#CFE2DB" stroke="#355F5E" stroke-width="18"/>
+<path d="M1370 487 H1794 Q1930 495 1990 630 V710 H1370Z" fill="#AEC8C1" stroke="#355F5E" stroke-width="18"/>
+<path d="M255 758 H2190 V872 H255 Z" fill="#2F5C58"/>
+<path d="M650 775 H2030" stroke="#CA7453" stroke-width="28" stroke-linecap="round"/>
+<path d="M2080 758 V880" stroke="#F3B65F" stroke-width="17"/>
+<circle cx="603" cy="954" r="148" fill="#1E2528" stroke="#B4A58A" stroke-width="23"/>
+<circle cx="603" cy="954" r="80" fill="#879893" stroke="#E8D8B7" stroke-width="23"/>
+<circle cx="1813" cy="954" r="148" fill="#1E2528" stroke="#B4A58A" stroke-width="23"/>
+<circle cx="1813" cy="954" r="80" fill="#879893" stroke="#E8D8B7" stroke-width="23"/>
+<path d="M760 435 L1440 300 L1950 348" fill="none" stroke="#F3B65F" stroke-width="22" stroke-linecap="round"/>
+<path d="M1440 300 L1375 432" stroke="#FAF4E6" stroke-width="10" stroke-dasharray="15 13"/>
+<path d="M1960 349 V710" stroke="#E8D8B7" stroke-width="13"/>
+<path d="M1110 904 L1530 904 L1460 1065 L1100 1065Z" fill="#79513B" stroke="#E8D8B7" stroke-width="12"/>
+<circle cx="1045" cy="823" r="75" fill="#152F30" stroke="#F3B65F" stroke-width="10"/>
+<circle cx="1045" cy="823" r="20" fill="#CA7453"/>
+<circle cx="1045" cy="823" r="48" fill="none" stroke="#F5EEDC" stroke-width="4" opacity=".4"/>
+<text x="1180" y="831" font-family="DejaVu Sans" font-size="56" font-weight="800" fill="#FAF4E6">BEATMAKKA</text>
+<rect x="950" y="378" width="210" height="54" rx="12" fill="#F3B65F" stroke="#162322" stroke-width="10"/>
+<rect x="1520" y="344" width="250" height="77" rx="14" fill="#2C3031" stroke="#E8D8B7" stroke-width="13"/>
+<circle cx="1596" cy="383" r="21" fill="#9EB4A7"/>
+<circle cx="1688" cy="383" r="21" fill="#9EB4A7"/>
+<path d="M1062 372 V288" stroke="#F3B65F" stroke-width="12"/>
+<circle cx="1062" cy="283" r="25" fill="#F3B65F"/>
+<path d="M1050 286 L790 241" stroke="#F3B65F" stroke-width="5" stroke-dasharray="16 10" fill="none"/>
+<text x="384" y="235" font-family="DejaVu Sans" font-size="29" fill="#FAF4E6">Радиомачта: сюжетный ретранслятор</text>
+<path d="M1660 350 L1980 275" stroke="#F3B65F" stroke-width="5" stroke-dasharray="16 10" fill="none"/>
+<text x="1960" y="226" font-family="DejaVu Sans" font-size="29" fill="#FAF4E6">Быстрая концертная установка</text>
+<path d="M1480 985 L1840 1165" stroke="#F3B65F" stroke-width="5" stroke-dasharray="16 10" fill="none"/>
+<text x="1850" y="1198" font-family="DejaVu Sans" font-size="29" fill="#FAF4E6">Откидная мини-сцена</text>
+<path d="M850 680 L520 1080" stroke="#F3B65F" stroke-width="5" stroke-dasharray="16 10" fill="none"/>
+<text x="278" y="1160" font-family="DejaVu Sans" font-size="29" fill="#FAF4E6">Рабочее место MK-I внутри</text>
+<path d="M1820 505 L2170 454" stroke="#F3B65F" stroke-width="5" stroke-dasharray="16 10" fill="none"/>
+<text x="2190" y="451" font-family="DejaVu Sans" font-size="29" fill="#FAF4E6">Обзорный отсек</text>
+<text x="110" y="1310" font-family="DejaVu Sans" font-size="24" fill="#AFC7B9">ART CONCEPT · STOP-TO-STOP TRAVEL IN DEMO · NOT A PHYSICS-DRIVEN CAR</text>
+</svg>

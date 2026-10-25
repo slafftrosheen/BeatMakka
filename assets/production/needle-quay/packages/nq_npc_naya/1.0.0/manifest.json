@@ -1,0 +1,44 @@
+{
+  "assetId": "nq_npc_naya",
+  "description": "Local Needle Quay candidate; no production art/Studio/runtime promotion",
+  "displayName": "nq-npc-naya",
+  "files": [
+    {
+      "bytes": 384452,
+      "kind": "model",
+      "path": "model.glb",
+      "sha256": "c4ab4f7cd047738fa70e8586118514d92196b5ff293d57c6943e942d293b28f6"
+    },
+    {
+      "bytes": 1472,
+      "kind": "metadata",
+      "path": "metadata.json",
+      "sha256": "f8bc4deb2201ba93475709a1114b653945aae7535c5fde2c0340a204346fa6c6"
+    },
+    {
+      "bytes": 484,
+      "kind": "provenance",
+      "path": "provenance.json",
+      "sha256": "0f472c3fa199d395c921b57648395b7e42a15fd81afaf5cc6354c2831483c305"
+    },
+    {
+      "bytes": 2671,
+      "kind": "validation",
+      "path": "validation.json",
+      "sha256": "b6e656f456af6a275404f294294a0d69d71663c59b3774d19ce9d381bc62b676"
+    }
+  ],
+  "license": "LicenseRef-BeatMakka-Private",
+  "model": "model.glb",
+  "packageId": "pkg_4be76333976071259798ba18",
+  "provenance": {
+    "origin": "imported"
+  },
+  "schema": "game_dev.asset_package.v1",
+  "validation": {
+    "errorCount": 0,
+    "passed": true,
+    "warningCount": 0
+  },
+  "version": "1.0.0"
+}

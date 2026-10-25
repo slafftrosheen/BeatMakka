@@ -18,6 +18,8 @@
 
 ## Roblox and asset acceptance
 
+- **User deployment policy, 2026-10-25:** keep all assets local and in Git. Do not upload any assets, images, models, textures, audio, or places to Roblox, and do not publish/update an Experience from the current testing account. Local Studio inspection/testing may use existing permitted bindings. Deployment will later use the user-designated adult account, under fresh explicit deployment authorization; do not infer account eligibility, monetization rights, or upload consent from this plan.
+
 - Build exact controls, interfaces, modular joins, pivots, and collision deterministically in code/DCC. Use Tripo only for an isolated, reviewed candidate shape.
 - Never create CI workflows, publish production assets, or introduce a runtime Tripo dependency without a direct user request.
 - Keep asset IDs, permissions, importer warnings, measured geometry/maps, and Studio/runtime evidence truthful and traceable.
@@ -27,4 +29,4 @@
 
 - Use the project-pinned tools from the repository root with Rokit.
 - Do not add dependencies unless the project needs them. Do not add test suites or run them unless the user asks for tests or verification.
-- Do not commit or push unless the user explicitly requests it.
+- Do not commit or push unless the user explicitly requests it. The 2026-10-25 instruction to keep the current asset-production results local and on Git authorizes scoped Git preservation of this production work; preserve unrelated in-progress gameplay changes separately.

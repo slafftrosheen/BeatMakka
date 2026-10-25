@@ -1,0 +1,54 @@
+{
+  "schema": "game_dev.result.v1",
+  "operation": "asset.inspect",
+  "ok": true,
+  "data": {
+    "filePath": "C:\\Users\\slavd\\BeatMaka\\assets\\production\\needle-quay\\models\\NQ-NPC-NAYA\\NQ-NPC-NAYA.glb",
+    "fileBytes": 384452,
+    "generator": "glTF-Transform v4.5.1",
+    "meshCount": 34,
+    "primitiveCount": 34,
+    "vertexCount": 6369,
+    "triangleCount": 5412,
+    "undrawnMeshCount": 0,
+    "undrawnPrimitiveCount": 0,
+    "undrawnTriangleCount": 0,
+    "sceneGraphFallback": false,
+    "materialCount": 6,
+    "textureCount": 0,
+    "textureResolutions": [],
+    "boundingBox": {
+      "min": [
+        -1.5306665897369385,
+        0,
+        -0.7093333005905151
+      ],
+      "max": [
+        1.5306665897369385,
+        5.646666526794434,
+        0.7093333005905151
+      ],
+      "sizeMeters": [
+        3.061333179473877,
+        5.646666526794434,
+        1.4186666011810303
+      ]
+    },
+    "boundingBoxEmpty": false,
+    "hasUVs": true,
+    "hasNormals": true,
+    "hasTangents": false,
+    "pbr": {
+      "hasBaseColorTexture": false,
+      "hasMetallicRoughnessTexture": false,
+      "hasNormalTexture": false,
+      "hasOcclusionTexture": false,
+      "hasEmissiveTexture": false
+    },
+    "animationCount": 0,
+    "hasSkin": true,
+    "warnings": [
+      "no base colour texture on any material: the asset is untextured and will read as flat colour"
+    ]
+  }
+}

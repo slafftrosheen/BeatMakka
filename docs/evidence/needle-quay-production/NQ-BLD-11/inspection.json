@@ -1,0 +1,54 @@
+{
+  "schema": "game_dev.result.v1",
+  "operation": "asset.inspect",
+  "ok": true,
+  "data": {
+    "filePath": "C:\\Users\\slavd\\BeatMaka\\assets\\production\\needle-quay\\models\\NQ-BLD-11\\NQ-BLD-11.glb",
+    "fileBytes": 268912,
+    "generator": "glTF-Transform v4.5.1",
+    "meshCount": 41,
+    "primitiveCount": 41,
+    "vertexCount": 7368,
+    "triangleCount": 3756,
+    "undrawnMeshCount": 0,
+    "undrawnPrimitiveCount": 0,
+    "undrawnTriangleCount": 0,
+    "sceneGraphFallback": false,
+    "materialCount": 10,
+    "textureCount": 0,
+    "textureResolutions": [],
+    "boundingBox": {
+      "min": [
+        -9.024999797344208,
+        0,
+        -8.024999797344208
+      ],
+      "max": [
+        9.100000202655792,
+        14,
+        8.750000193715096
+      ],
+      "sizeMeters": [
+        18.125,
+        14,
+        16.774999991059303
+      ]
+    },
+    "boundingBoxEmpty": false,
+    "hasUVs": true,
+    "hasNormals": true,
+    "hasTangents": false,
+    "pbr": {
+      "hasBaseColorTexture": false,
+      "hasMetallicRoughnessTexture": false,
+      "hasNormalTexture": false,
+      "hasOcclusionTexture": false,
+      "hasEmissiveTexture": false
+    },
+    "animationCount": 0,
+    "hasSkin": false,
+    "warnings": [
+      "no base colour texture on any material: the asset is untextured and will read as flat colour"
+    ]
+  }
+}

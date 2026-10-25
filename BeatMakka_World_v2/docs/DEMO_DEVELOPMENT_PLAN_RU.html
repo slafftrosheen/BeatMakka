@@ -1,0 +1,530 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><title>BeatMakka — Needle Quay Implementation Plan</title>
+<style>
+@font-face{font-family:D;src:url('file:///usr/share/fonts/truetype/dejavu/DejaVuSans.ttf')}
+@font-face{font-family:D;src:url('file:///usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf');font-weight:700}
+@page{size:A4;margin:20mm 18mm 20mm 18mm;@top-left{content:'BEATMAKKA  /  WORLD v2';color:#53736b;font-family:D;font-size:8pt;font-weight:700}@top-right{content:'NEEDLE QUAY  /  DEMO PLAN';color:#53736b;font-family:D;font-size:8pt}@bottom-right{content:'PAGE ' counter(page);color:#49665e;font-family:D;font-size:8pt}@bottom-left{content:'DESIGN SPEC  ·  24 OCT 2026';color:#49665e;font-family:D;font-size:8pt}}
+*{box-sizing:border-box}
+body{font-family:D,Arial,sans-serif;font-size:9.7pt;color:#162322;line-height:1.58;background:#fff}
+.cover{page-break-after:always;position:relative;min-height:242mm;background:#142B2D;border-radius:15px;padding:22mm 16mm;color:#F5EEDC;overflow:hidden;}
+.cover h1{font-size:34pt;line-height:1.06;color:#F5EEDC;letter-spacing:-1px;margin:20mm 0 5mm}
+.cover .sub{font-size:16pt;color:#F3B65F;font-weight:700}
+.cover .desc{font-size:12.5pt;color:#E8D8B7;max-width:134mm;line-height:1.6}
+.cover .pill{display:inline-block;border:1px solid #68897c;border-radius:25px;padding:4px 13px;font-size:8.7pt;margin-right:9px;background:#284744}
+.cover .foot{position:absolute;bottom:13mm;left:16mm;font-size:9pt;color:#a4b9ad}
+.cover img{width:100%;margin-top:12mm;border-radius:10px;border:1px solid #809a89}
+h1{font-size:23pt;line-height:1.17;color:#2F5C58;margin-top:0;letter-spacing:-.4px}
+h2{font-size:16pt;line-height:1.26;margin:13mm 0 4mm;color:#2F5C58;page-break-after:avoid;border-bottom:1.5pt solid #E0D5B9;padding-bottom:2mm}
+h3{font-size:11.8pt;line-height:1.3;margin:8mm 0 2.5mm;color:#895A41;page-break-after:avoid}
+p{margin:0 0 4mm;orphans:3;widows:3;}
+strong{color:#1c4341}
+a{color:#B35E49;text-decoration:none}
+blockquote{background:#E9F0E9;border-left:5px solid #F3B65F;padding:4mm 5mm;margin:6mm 0;border-radius:5px;page-break-inside:avoid}
+blockquote p{margin:0;color:#253f3d;font-weight:700}
+table{border-collapse:collapse;width:100%;margin:5mm 0 6mm;font-size:8pt;table-layout:fixed}
+th{background:#2F5C58;color:#F5EEDC;padding:3mm 2.1mm;text-align:left;line-height:1.4;overflow-wrap:anywhere}
+td{border-bottom:1px solid #D9E0D8;padding:2.6mm 2.1mm;vertical-align:top;line-height:1.45;overflow-wrap:anywhere}
+tr:nth-child(even) td{background:#F2F4EF}
+tr{page-break-inside:avoid} thead{display:table-header-group}
+ul,ol{margin:1.5mm 0 5mm 7mm;padding-left:5mm}
+li{margin-bottom:1.5mm;orphans:2;widows:2}
+code{font-family:'DejaVu Sans Mono',monospace;font-size:8.4pt;color:#BD5D42;background:#F7F5EF;padding:0.5pt 2pt;border-radius:2px;overflow-wrap:anywhere}
+pre{background:#172D30;color:#E9EEE7;border-radius:9px;padding:4mm;white-space:pre-wrap;overflow-wrap:anywhere;font-size:7.9pt;line-height:1.35;page-break-inside:avoid}
+pre code{font-size:7.9pt;color:#F5EEDC;background:transparent;padding:0}
+hr{border:0;border-top:1px solid #c8d6cb;margin:9mm 0}
+.first h1{display:none}
+.status{background:#ECF0EB;border-left:4px solid #CA7453;padding:3mm 4mm;font-size:8.2pt;border-radius:5px}
+</style></head><body>
+<section class="cover"><div class="pill">ALPHA 01 CONTINUATION</div><div class="pill">DISTRICT NQ</div><h1>NEEDLE QUAY</h1><p class="sub">Подробный план следующей разработки демо-района</p><p class="desc">Один живой район. Фургон-студия. Четыре парковки и настоящий игровой путь от первого бита к финальному концерту — с личным прогрессом и добровольным мультиплеером.</p><img src="file:///mnt/data/BeatMakka_World_v2/maps/BeatMakka_Needle_Quay_Demo_Map.png" alt="Схема первого района"/><p class="foot">World Design v2.0 · 24 октября 2026 · концепт и техническое планирование, не код-релиз</p></section>
+<section class="first"><h1>BeatMakka / Frequency Zero — World v2.0</h1>
+<h2>Технический план демо-района Needle Quay</h2>
+<p><strong>Версия:</strong> World Design v2.0 · 24 октября 2026<br />
+<strong>Объект разработки:</strong> один законченный playable vertical slice, а не публикация всего города.<br />
+<strong>Источники:</strong> репозиторий <code>slafftrosheen/BeatMakka</code>, его <code>main</code> и проверенные описания Alpha 01 на 24.10.2026.<br />
+<strong>Статус этого документа:</strong> новый проектный план. В нём <strong>не утверждается</strong>, что фургон, большая карта и новые парковки уже реализованы в Roblox.</p>
+<blockquote>
+<p>Основное решение: игроку принадлежит передвижной фургон-студия. Все районы — совместные пространства, но сохранения, открытые звуки, задания, внешность фургона и сюжетный прогресс принадлежат конкретному игроку. Никто не обязан собирать зрителей, покупать предметы или играть с другими, чтобы закончить историю района.</p>
+</blockquote>
+<h2>1. Краткое решение: что мы строим</h2>
+<p><strong>Внешняя игра:</strong> Resonance City — город, где культуры не стало не после войны, а из-за долгого увлечения бесконечным потреблением готового контента. Люди разучились доводить свои проекты до конца, чинить общие места, слушать друг друга и делать музыку сами. Это системная проблема среды и привычек, <strong>не обвинение детей</strong> и не морализаторство. Город жив, не является постапокалиптическими руинами. В нём по-прежнему есть дороги, дома и жители, но витрины закрыты, концертные площадки пустуют и радиосеть почти не передаёт человеческие выступления.</p>
+<p><strong>Цель игрока:</strong> найти звуки, собрать собственные ритмы, возвращать общественные пространства, помогать людям и вновь запускать городские концерты. Игрок впервые получает старый <strong>LoopVan-01</strong> и помощь робота <strong>Mica</strong> (существующий H04). Студия в фургоне заменяет постоянный домашний record shop; существующий магазин/мастерская H06 остаётся <strong>общественной точкой</strong>, а не вторым персональным домом.</p>
+<p><strong>Город:</strong> 11 видимых на старте силуэтов районов, из которых Needle Quay доступен; остальные закрыты «туманом сигнала». Уже доступные базовые жанровые наборы не отбираются только потому, что соответствующий район закрыт. Открытие районов даёт сюжет, уникальные environmental sounds, площадки, модификации и музыкальные приёмы.</p>
+<p><strong>Демо Needle Quay:</strong> связанный маршрут через четыре подготовленные концертные парковки — Dockside Exchange, Repair Alley, Vinyl Market, Breakwater Steps — и финальный клуб The Lantern Room. На каждой парковке есть собственная простая проблема сообщества, самостоятельный короткий соло-путь и возможность добровольного выступления для других игроков. Финальный концерт использует имеющийся шестистадийный chapter encounter.</p>
+<p><strong>Завершённое демо:</strong> новый игрок без подсказок разработчика может прибыть в гавань, получить первые звуки, создать несколько шагов, сохранить бит, проехать/переместиться между четырьмя остановками, провести мини-концерты, войти в клуб, завершить главу, выйти и вернуться без потери прогресса. Социальное участие улучшает эмоцию, но не является обязательным сюжетным gate.</p>
+<h2>2. Зафиксированная исходная база — НЕ реализовать повторно</h2>
+<table>
+<thead>
+<tr>
+  <th>Уже существующее в репозитории</th>
+  <th>Текущее подтверждение и граница</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Фиксированные 16 пэдов 4×4, 16 шагов, 60–180 BPM, четыре паттерна A–D</td>
+  <td>Реальные контрактные/Studio проверки; физический multitouch, latency и контроллер требуют отдельной приёмки.</td>
+</tr>
+<tr>
+  <td>Шесть shelf-позиций, версия сохранённых снимков, dirty/saving/restore</td>
+  <td>Параллельные записи, старые схемы и конфликты проверены в mock/session, <strong>не</strong> в реальной private DataStore.</td>
+</tr>
+<tr>
+  <td>Mica, три находки I01/I02/I03, короткие миссии</td>
+  <td>Локальные сетевые/многопользовательские проверки есть; исходные звуки не имеют подтверждённого hosted-playback.</td>
+</tr>
+<tr>
+  <td>Courtyard, I05 podium, opt-in snapshot listening, малая концертная очередь</td>
+  <td>#14 закрыта после 26 проверок на трёх клиентах; <strong>это не настоящий совместный jam</strong> с одновременным редактированием дорожек.</td>
+</tr>
+<tr>
+  <td>Шестистадийный сюжетный концерт и реакция толпы</td>
+  <td>Логическая последовательность работает, но финальное NPC-art, понятность для новичка, реальная облачная долговечность — открыты.</td>
+</tr>
+<tr>
+  <td>Две персональные workshop bays, четыре finishes <code>quay/chalk/coral/afterhours</code>, sign/decor</td>
+  <td>20 проверок на трёх клиентах прошли; клиенты видят свои права. Room art и cloud rejoin ещё не приняты.</td>
+</tr>
+<tr>
+  <td>Модульный мир, 74 canonical package IDs, source/optimized GLB candidates</td>
+  <td>Mapping источников есть, но многие артисты/rigs ещё <strong>не</strong> импортированы постоянно в Studio. Не смешивать DCC-clean и runtime-verified.</td>
+</tr>
+<tr>
+  <td>Десять жанровых китов ×16 и исходный банк на 16 пэдов</td>
+  <td>Оформлены 160 производных WAV и исходные копии; только <strong>100</strong> жанровых аудио-ID сконфигурированы, <strong>60</strong> ждут загрузки. Исходные 24 (19+4 UI+ambience) ещё ждут cloud import.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Источники истины:</strong> <a href="https://github.com/slafftrosheen/BeatMakka/issues/1">общая Alpha 01 issue</a>, <a href="https://github.com/slafftrosheen/BeatMakka/blob/main/docs/PENDING_VERIFICATION_2026-10-24.md">проверка открытых задач</a>, <a href="https://github.com/slafftrosheen/BeatMakka/blob/main/docs/STYLE_STARTER_PACKS.md">файлы 11 банков</a>, <a href="https://github.com/slafftrosheen/BeatMakka/blob/main/docs/MATERIAL_CUSTOMIZATION.md">материалы</a> и <a href="https://github.com/slafftrosheen/BeatMakka/blob/main/docs/IMPLEMENTATION_COVERAGE.md">схема всех 74 пакетов</a>.</p>
+<h3>Отдельные ограничения для релиза</h3>
+<ol>
+<li>Студийный <code>PlaceId=0/UniverseId=0</code> и локальное session storage <strong>не подтверждают</strong> работу опубликованной приватной experience. Обязателен отдельный испытательный экземпляр и реальные exit/rejoin receipts.</li>
+<li>Владелец аудио, permissions, moderation, asset IDs и слуховая приёмка должны быть зарегистрированы. Успешный muted cursor не подтверждает то, что аудитория действительно слышит сэмплы.</li>
+<li>Нативный импорт постоянных GLB/rigs, сохранение/reopen и артефакты Roblox Studio — отдельный gate. Placeholder и EditableMesh inspection не эквивалентны production mesh.</li>
+<li>Roblox <code>AudioRecorder</code> по проверке проекта от 23 октября был не включён. <strong>Запись микрофона и сохранение живого детского аудио не запланированы.</strong> Виртуальный рекордер назначает только разрешённые авторские/лицензированные звуки игрового мира.</li>
+<li>Для пользовательских архивов жанров указанное пользователем freeware-право сохранено в манифестах, но не является независимой проверкой лицензии на распространение отдельных сэмплов. До коммерческой публикации права нужно подтвердить.</li>
+</ol>
+<h2>3. Каноническая география и музыкальные районы</h2>
+<p>Изменение карты не требует одновременно создавать 11 геометрических районов в Roblox. В демо рендерится только <code>NQ</code>; остальные присутствуют в <strong>data-driven registry</strong> и UI как заблокированные силуэты. Все названия ниже — новая арт-дирекция, не готовые Place/asset IDs.</p>
+<table>
+<thead>
+<tr>
+  <th style="text-align:right">№</th>
+  <th>DistrictID</th>
+  <th>Район</th>
+  <th>Стилевой банк</th>
+  <th>Отличительный мир / образовательная тема</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td style="text-align:right">01</td>
+  <td><code>NQ</code></td>
+  <td><strong>Needle Quay</strong> / Старая гавань</td>
+  <td>Original starter</td>
+  <td>Порт, дерево, металл, вода; ритм, инструмент и труд по общему делу. <strong>Первое демо.</strong></td>
+</tr>
+<tr>
+  <td style="text-align:right">02</td>
+  <td><code>VC</code></td>
+  <td>Velvet Canals / Бархатные каналы</td>
+  <td>Trip Hop</td>
+  <td>Дождевые каналы, старые кинобудки, тихие кафе; слушать нюансы и делать паузу.</td>
+</tr>
+<tr>
+  <td style="text-align:right">03</td>
+  <td><code>MS</code></td>
+  <td>Motion Square / Площадь движения</td>
+  <td>Dance</td>
+  <td>Танцевальная площадь и павильоны; повтор, структура, энергия, уважение к партнёру.</td>
+</tr>
+<tr>
+  <td style="text-align:right">04</td>
+  <td><code>BA</code></td>
+  <td>Broken Amp Row / Улица старых усилителей</td>
+  <td>Grunge</td>
+  <td>Гаражи и студии; ошибаться, пробовать, находить собственный характер.</td>
+</tr>
+<tr>
+  <td style="text-align:right">05</td>
+  <td><code>HS</code></td>
+  <td>Hyperspan / Высотная магистраль</td>
+  <td>Hard Trance</td>
+  <td>Эстакады и световые линии; темп, повтор, концентрация и переходы.</td>
+</tr>
+<tr>
+  <td style="text-align:right">06</td>
+  <td><code>RB</code></td>
+  <td>Rhythm Borough / Ритм-квартал</td>
+  <td>Hip Hop</td>
+  <td>Муралы, дворы, сцены; рифма, семплинг, культурное самовыражение.</td>
+</tr>
+<tr>
+  <td style="text-align:right">07</td>
+  <td><code>IF</code></td>
+  <td>Iron Bell Works / Железные мастерские</td>
+  <td>Industrial</td>
+  <td>Механизмы, кузницы, башни; физика звука, порядок и безопасность.</td>
+</tr>
+<tr>
+  <td style="text-align:right">08</td>
+  <td><code>SA</code></td>
+  <td>Starlight Arcade / Аркада звёздного света</td>
+  <td>Pop</td>
+  <td>Кино, витрины, аркады; мелодия, простая форма, эмоции.</td>
+</tr>
+<tr>
+  <td style="text-align:right">09</td>
+  <td><code>SS</code></td>
+  <td>Sunward Strand / Солнечный берег</td>
+  <td>Reggae</td>
+  <td>Пляж, набережные, свободные площадки; offbeat, слушание и сотрудничество.</td>
+</tr>
+<tr>
+  <td style="text-align:right">10</td>
+  <td><code>CW</code></td>
+  <td>Circuit Ward / Схемный район</td>
+  <td>Techno</td>
+  <td>Лаборатории и трансформаторы; последовательности, алгоритмы и циклы.</td>
+</tr>
+<tr>
+  <td style="text-align:right">11</td>
+  <td><code>AH</code></td>
+  <td>Aurora Heights / Высоты Авроры</td>
+  <td>Trance</td>
+  <td>Склоны, обсерватория, вечернее небо; длинная музыкальная форма и изменение темы.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Правило визуала:</strong> любой район читается как часть одного города — матовый окрашенный металл, сливочный пластик, дерево, камень, chunky bevels, локальное свечение amber и аккуратный coral. Жанр меняет географию/силуэты/акценты/ритм света, но <strong>не</strong> превращает проект в 11 несовместимых игр.</p>
+<h3>Правила начальной карты</h3>
+<ul>
+<li><code>Locked</code> — видны только название/контур/характерный силуэт, внутри тёмная заливка, замок, отсутствует возможность телепорта.</li>
+<li><code>SignalFound</code> — появляется фрагмент радиоволны, короткая музыкальная открытка, но новая игровая зона пока недоступна. Предпочтительно доступно после финала NQ.</li>
+<li><code>Unlocked</code> — сервер подтверждает открытие и разрешает перемещение; загрузка/стриминг запускаются только для района, в который игрок реально входит.</li>
+<li><code>Restored</code> — личная глава завершена, локальные признаки жизни и выступления видны игроку; в общем хабе можно показывать нейтральную версию среды, чтобы чужой прогресс не менял твою историю.</li>
+<li>Нет «социального налога»: не требуется пять посетителей, число лайков, донат, публичный чат, непрерывное присутствие в игре или оплата.</li>
+</ul>
+<h2>4. Фургон LOOPVAN-01: не косметика, а главный интерфейс мира</h2>
+<h3>Четыре режима в одном объекте</h3>
+<table>
+<thead>
+<tr>
+  <th>Режим</th>
+  <th>Что видит игрок</th>
+  <th>Правила</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>Travel</strong></td>
+  <td>Карта района, доступные парковки и анимация переезда</td>
+  <td>Для демо <strong>переход между фиксированными точками с мягким fade</strong> вместо физической управляемой машины. Не нужен новый сетевой vehicle solver.</td>
+</tr>
+<tr>
+  <td><strong>Home</strong></td>
+  <td>Небольшая персональная внутренняя студия: MK-I, shelf, образцы/коллекция, декор</td>
+  <td>Вход по кнопке, доступ владельцу; посетители только по явному приглашению в будущем. В первом демо допускается отдельно инстанцируемый интерьер в том же Place, но только если он не ломает isolation.</td>
+</tr>
+<tr>
+  <td><strong>Sample Lab</strong></td>
+  <td>Прослушать → сравнить → назначить на пэд; визуал волны/ритма/огибающей</td>
+  <td>Начать с preauthored permitted samples. Физический микрофон, произвольный WAV upload и сохранение нового звука с клиента отсутствуют.</td>
+</tr>
+<tr>
+  <td><strong>Stage</strong></td>
+  <td>Разложенная сцена, выступление, дворовая реакция и очередь слушателей</td>
+  <td>Reuse <code>ListeningSession</code> и <code>StageQueue</code>, без второй аудиосистемы. При входе других игроков только opt-in.</td>
+</tr>
+</tbody>
+</table>
+<h3>Предложенная конструкция как art target, не техническое ТЗ на существующую модель</h3>
+<ul>
+<li>Внешние габариты концепта: <strong>22×9×10 studs</strong>. Передвижение — stop-to-stop, статическое позиционирование и короткий монтаж/сворачивание. Габариты уточнить в Roblox с камерами.</li>
+<li>Площадка стоянки: целевой clearance <strong>28×18 studs</strong>, минимум 6 studs непрерывного свободного маршрута до сцены и основных prompts; проверить на реальном аватаре.</li>
+<li>Откидная сцена, выдвижной тент и радиомачта — отдельные именованные rigid targets; без тяжёлой физики, подвесок и R15-ригования корпуса.</li>
+<li>Материалы: <code>FZ_MaterialAtlas_v1</code>, подготовленная четвёрка отделок. Старые ключи <code>quay/chalk/coral/afterhours</code> сохраняются как <strong>варианты фургона</strong>, а не переименовываются в невалидные строки.</li>
+<li>Графика: символ музыкальной дорожки/пластинки, накладной декор; UI и игровые команды не выпекаются в текстуру. Владелец может менять заранее одобренные вывески и позиции декора, не писать произвольный текст.</li>
+</ul>
+<h3>Миграция record shop → van (без потери текущей функциональности)</h3>
+<p><code>H06</code> и существующие две workshop bays нельзя просто удалить: они участвуют в <code>WorldBuilder</code>, <code>Rooms</code>, Mica, station ownership, сохранениях и тестах. Выполнить через <strong>адаптер</strong>:</p>
+<ol>
+<li>Зафиксировать текущие schema 1/2 fixtures и имена <code>room</code>, <code>finish</code>, <code>sign</code>, <code>decor</code>, <code>StationId</code>, <code>RoomStationId</code>. Прежде чем менять код, воспроизвести сейчас проходящие Contracts/Milestone/Rooms и 3-client checks.</li>
+<li><code>H06</code> оставить общественным record shop / sound library / repair location. <strong>Убрать из лора роль постоянного дома</strong>, не убирать функциональные I01–I05 или музыкальные станции.</li>
+<li>Завести <code>VanService</code> с сессионными <code>parkingId</code>, <code>isDeployed</code>, <code>ownerUserId</code>, <code>lifecycleVersion</code> и серверным разрешением размещения. Не сохранять world position как ownership.</li>
+<li>Добавить <code>van</code> в профиль отдельным, строго валидируемым объектом (finish/sign/decor/unlocks). Для старых профилей маппить <code>room</code>-косметику в <code>van</code> один раз, <strong>сохранять исходные поля до миграционного acceptance</strong>. Никакой повторной выдачи награды/вещи только по словам клиента.</li>
+<li>Выбрать явно стратегию схемы (вероятнее <code>schema=3</code>) с миграцией, downgrade/rollback protection. Не писать старым сервером несовместимую схему. Нужен staging DataStore и реальный rejoin-тест #10 перед развёртыванием.</li>
+<li>Декор старой публичной мастерской либо остаётся локальным каталожным демонстрационным набором, либо становится нейтральным. <strong>Содержимое beat shelf не переносится в другой DataStore</strong>: это те же четыре A–D, шесть сохранённых проектов, discoveries и progress.</li>
+<li>Потребители косметики используют <code>AppearanceCatalog</code> и <code>VanAppearanceRenderer</code> (новые модули), а не делают неограниченное сканирование модели по именам. Без сдвига 16 пэдов и input targets.</li>
+</ol>
+<h2>5. Четыре парковки Needle Quay: компактная постановка</h2>
+<p>Каждая точка содержит: <code>ParkingAnchor</code>, <code>VehicleSlot</code>, <code>NpcEncounter</code>, один понятный <code>QuestRecipe</code>, <code>SampleDiscovery</code> (может быть повторно используемым звуком), <code>MiniStage</code>, локальную аудиторию NPC и персональную <code>RestorationView</code>. <strong>Парковка открывается не количеством зрителей, а проверенным действием в квесте.</strong></p>
+<h3>P1 · Dockside Exchange — Портовый обмен</h3>
+<p><strong>Сцена:</strong> старый причал и погрузочная площадка. Работники хотят запустить грузовой ритм: сигнальный знак, деревянные ящики, небольшой погрузочный механизм. <strong>NPC:</strong> Тори, смотрительница причала (рабочее имя). <strong>Задача:</strong> помочь расставить инструменты по назначению, найти знак I01 <code>metal_hit</code>, выстроить простой четырёхдольный цикл и сыграть его хотя бы один такт. <strong>Навык:</strong> порядок, забота о рабочем месте, регулярность. <strong>Музыкальный результат:</strong> металлический акцент поверх kick/hat. <strong>Восстановление:</strong> открывается киоск и слышна первая местная радиопередача. <strong>Co-op:</strong> игроки могут обменяться короткими ответными фразами, но один участник проходит сам.</p>
+<h3>P2 · Repair Alley — Переулок мастерских</h3>
+<p><strong>Сцена:</strong> вентиляция и ремонтная мастерская. <strong>NPC:</strong> механик Иво (рабочее имя). <strong>Задача:</strong> собрать простую причинно-следственную цепочку «источник → удар → вибрация → звук», найти I02 <code>vent_thump</code>, сравнить тембр лёгкого/тяжёлого удара, добавить вариацию к исходному паттерну. <strong>Навык:</strong> эксперименты и доведение до конца, без школьного теста. <strong>Музыкальный результат:</strong> новый low-percussion слой. <strong>Восстановление:</strong> оживает мастерская, её лампы реагируют на бит. <strong>Co-op:</strong> один играет ритм, другой выбирает контрастный ответ (только после отдельного реализованного jam; в демо — поочерёдно через queue).</p>
+<h3>P3 · Vinyl Market — Виниловый рынок</h3>
+<p><strong>Сцена:</strong> уличный рынок пластинок, местный обмен творческими работами. <strong>NPC:</strong> продавщица Ная (рабочее имя). <strong>Задача:</strong> разложить коллекцию по группам «ритм / бас / мелодия», собрать понятную комбинацию на 16 пэдов и сохранить A/B-версию без потери исходника. Игрок слышит небольшой Trip Hop-мотив как <strong>превью соседнего Velvet Canals</strong>, не обязанный открывать весь район. <strong>Навык:</strong> классификация, взаимопомощь, авторство. <strong>Восстановление:</strong> открывается магазин пластинок. <strong>Co-op:</strong> короткий добровольный back-to-back мини-концерт; не онлайн-рейтинги.</p>
+<h3>P4 · Breakwater Steps — Ступени волнореза</h3>
+<p><strong>Сцена:</strong> вода, огни маяка и подсказки Мики. <strong>NPC:</strong> Mica с уже каноническим I03 <code>robot_chirp</code>. <strong>Задача:</strong> отличить фон/пульс/мелодический сигнал; построить «вопрос-ответ» между двумя паттернами, выдержать паузу и закончить мини-сет. <strong>Навык:</strong> внимательное слушание и терпение. <strong>Музыкальный результат:</strong> роботический короткий отклик, вариация с паузами. <strong>Восстановление:</strong> загорается локальный ретранслятор, появляется финальная подсказка клуба.</p>
+<h3>Концерт главы · The Lantern Room</h3>
+<p><strong>Антагонист-конфликт:</strong> управляющий клуба <strong>Хранитель Паузы</strong> (не злодей): он боится снова подвести людей и не верит, что дети способны подготовить настоящее выступление. Его нужно не победить громкостью, а <strong>показать подготовленный собственный сет и поддержку местных жителей</strong>. Форма: 6 фаз существующего chapter concert (подготовка, ритм, бас, вариация, участие жителей, финальный подъём) с возможностью разные музыкальные решения. Прежний механизм учитывает персональные сохранённые действия, а не точное совпадение с чужим треком. В конце клуб открывается, район становится <code>Restored</code>, радиосеть передаёт первый сигнал в другие районы. Локальная NPC-аудитория работает даже при одном игроке. Социальный концерт — опциональное продолжение.</p>
+<h2>6. Музыкальная система: 11 банков и развитие без paywall</h2>
+<p><strong>11 банков = 1 Original starter (16 базовых пэдов) + 10 стилей × 16 = 176 музыкальных слотов.</strong> Число слотов — не число разрешённых/загруженных звуков Roblox. <code>Original starter</code> также содержит отдельные discovery-сэмплы, UI cues и ambience — всего подготовлено 24 оригинальных аудиофайла, но не все они отображаются как музыкальные пэды.</p>
+<p><strong>Точный реестр:</strong> Trip Hop, Dance, Grunge, Hard Trance, Hip Hop, Industrial, Pop, Reggae, Techno, Trance. В оригинальном репо частоты/ключи: Trip Hop 90 Am; Dance 140 Am; Grunge 90 Dm; Hard Trance 140 Am; Hip Hop 90 Am; Industrial 140 Am; Pop 90 D major; Reggae 90 Am; Techno 140 Am; Trance 140 Am. Эти BPM — темпы демонстрации паков, <strong>выбор стиля не должен переписывать BPM игрока</strong>.</p>
+<h3>Три источника доступных звуков</h3>
+<ol>
+<li><strong>Starter inventory:</strong> минимум рабочий kick/snare/hat/bass из подготовленного и действительно допущенного набора; жанры представлены сразу через безопасные доступные базовые примеры, но нельзя заставить клиента проигрывать пока не загруженный звук. Демоверсия не должна зависеть от 60 pending genre uploads. Концепт «все основы открыты» не означает «все 176 файлов доступны в Roblox прямо сейчас».</li>
+<li><strong>World discovery:</strong> I01/I02/I03 и новые авторские environmental samples принадлежат объектам мира. Виртуальный «рекордер» даёт <code>Preview → Collect → Assign</code>, а не микрофонный PCM; записывать личную речь или требовать внешнюю загрузку нельзя.</li>
+<li><strong>Sound Lab / Synth basics:</strong> очень ограниченные демонстрации source waveform, огибающей (attack/decay) и частоты; <strong>в первой версии используем заранее подготовленные варианты с известными Audio IDs</strong>. Если Roblox API позволяет применить EQ/gain/PlaybackSpeed к существующему Sound, интерфейс честно показывает, что это изменение воспроизведения, а не создание нового WAV. Настоящий осциллятор/экспорт только после отдельного технического research.</li>
+</ol>
+<p>Новые rewards <strong>добавляются</strong> в personal unlocked catalog, не заменяют существующий style-kit mapping, старые saved patterns или canonical discovery IDs. Предусмотреть <code>sampleVersion</code>, <code>sourceKitId</code>, <code>grantedByMission</code>, <code>licenseState</code> и отказ, если hosted asset не доступен.</p>
+<h3>Звуковая безопасность / rights</h3>
+<p>Использовать реальные <code>rbxassetid</code> только с проверенным владельцем, moderation и grant именно тестовой experience. Никаких guessed IDs. Повторная загрузка при недостоверном исходе запрещена; прослушивание затуханий/onset/pops/clipping/headroom в полных паттернах. Полученные из архивов «freeware» файлы требуют отдельного коммерческого/libraries-redistribution review. Загруженные 100 genre IDs не подтверждают 24 оригинала и остальные 60.</p>
+<h2>7. Мультиплеер: один город, разные истории</h2>
+<ul>
+<li><strong>Сервер</strong> контролирует право парковки, размещение фургона, доступ к личным данным, выдачу находок, сохранение/версию и общие stage-session события.</li>
+<li><strong>Клиент</strong> рендерит персональную степень восстановления, играет собственное audio, показывает карту, выполняет безопасный preview и поддерживает mute/leave. Простые shared props реплицируются без переноса всех личных прогресс-эффектов на других игроков.</li>
+<li><strong>Точки парковки</strong> физически общие. Если слот занят, игрок может подождать или использовать реплицируемый личный визуал парковки в заранее определённом соседнем сокете. Нельзя телепортировать чужой фургон или занять чужое место через client-supplied OwnerId.</li>
+<li><strong>Слушание</strong> только после opt-in. Существующие <code>ListeningSession</code>/<code>StageQueue</code> переиспользуются; snapshot share ≠ live independent tracks. Функцию jam двух грувбоксов (#15) оставить после демо или реализовать как явно отделённый эксперимент. Не обещать 3–5 одновременных музыкантов до замеров.</li>
+<li><strong>Аудитория</strong> безопасна для соло: NPC, локальное освещение, статический fallback Effects OFF. Отсутствие других игроков не может заблокировать главы или начисление reward.</li>
+<li><strong>Детская безопасность:</strong> пользовательские аудиозаписи/произвольные названия/соц-рейтинг не нужны; использовать каталожные тексты и Roblox moderation/permissions, не выводить по умолчанию голосовой чат.</li>
+</ul>
+<h2>8. Предлагаемая архитектура Luau (новые модули)</h2>
+<p>Пути ниже — <strong>предлагаемые изменения</strong>, не заявления о наличии файлов.</p>
+<table>
+<thead>
+<tr>
+  <th>Новый модуль</th>
+  <th>Назначение</th>
+  <th>Должен переиспользовать</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>src/shared/DistrictRegistry.luau</code></td>
+  <td>11 неизменяемых ID/стилей, unlocked states, metadata</td>
+  <td><code>data/assets.json</code>, <code>src/shared/SampleCatalog.luau</code></td>
+</tr>
+<tr>
+  <td><code>src/shared/ParkingContracts.luau</code></td>
+  <td>схемы серверных команд/ответов, диапазоны, ограничения</td>
+  <td>существующие <code>MusicService</code> remote validation</td>
+</tr>
+<tr>
+  <td><code>src/shared/QuestRecipes.luau</code></td>
+  <td>4 остановки и stepwise rule graph, задания независимо от presentation</td>
+  <td><code>src/shared/FirstPerformanceQuest.luau</code></td>
+</tr>
+<tr>
+  <td><code>src/server/VanService.luau</code></td>
+  <td>claims, parking ownership, teleport-to-stop, teardown</td>
+  <td><code>src/server/MusicService.luau</code>, <code>WorldBuilder</code></td>
+</tr>
+<tr>
+  <td><code>src/server/WorldProgressService.luau</code></td>
+  <td>personal unlocks, restoration/mission rewards, versioning</td>
+  <td><code>src/server/ProfileStore.luau</code></td>
+</tr>
+<tr>
+  <td><code>src/server/ParkingSession.luau</code></td>
+  <td>4 stage anchors с одному общему protocol</td>
+  <td><code>src/server/ListeningSession.luau</code>, <code>StageQueue</code></td>
+</tr>
+<tr>
+  <td><code>src/client/CityMapView.luau</code></td>
+  <td>map/fog/status/no open-place fake</td>
+  <td>существующий Theme/UI navigation</td>
+</tr>
+<tr>
+  <td><code>src/client/VanView.luau</code></td>
+  <td>interior/decor/navigation home UX</td>
+  <td><code>src/client/WorkshopView.luau</code>, <code>BeatBookView</code>, cosmetic catalog</td>
+</tr>
+<tr>
+  <td><code>src/client/SoundLabView.luau</code></td>
+  <td>source preview/assignment/EQ concept</td>
+  <td><code>src/client/AudioEngine.luau</code></td>
+</tr>
+<tr>
+  <td><code>src/client/PersonalRestoration.luau</code></td>
+  <td>visual state per user w/ Effects OFF</td>
+  <td><code>src/client/Restoration.luau</code>, <code>WorldFeedback.luau</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Не создавать второй</strong> sound transport, editable beat book, save namespace, Mica quest или portable MPC UI. Простейший правильный путь — переназначать существующую MK-I <code>StationId</code> на выбранную точку фургона и сохранять единый аудиодвижок. Различать <code>ParkingId</code>, <code>VanId</code>, <code>StationId</code>, <code>RoomStationId</code> явно, чтобы не повторить баг collisions идентификаторов.</p>
+<h3>Модель данных и команды — эскиз контракта</h3>
+<pre><code class="language-luau">-- Concept contract; not copied from current production.
+type DistrictState = &quot;Locked&quot; | &quot;SignalFound&quot; | &quot;Unlocked&quot; | &quot;Restored&quot;
+type VanAppearance = {
+    finish: &quot;quay&quot; | &quot;chalk&quot; | &quot;coral&quot; | &quot;afterhours&quot;,
+    signId: string, -- catalog-validated only
+    decorIds: {string}, -- catalog-validated and bounded
+}
+type WorldProfileV3 = {
+    schema: 3,
+    -- all existing A-D, shelf 1..6, quests, discoveries and revisions retained
+    van: VanAppearance,
+    districtStates: {[string]: DistrictState},
+    parkingCompletions: {[string]: boolean},
+    unlockedSampleIds: {string},
+}
+-- Client submits only wanted parking ID. Server resolves actor, range,
+-- quest state, lifecycle and any reservation. No client OwnerId/coords.
+-- ParkRequest( parkingId: string, expectedVersion: number )
+-- ConcertJoin( stageId: string )
+-- SampleCollect( discoveryId: string )
+</code></pre>
+<p><strong>Atomicity:</strong> ставить unlock/quest reward только при подтверждённом server-authoritative saved objective и удачном <code>ProfileStore</code> commit. Пока cloud write не прошёл, UI обязан говорить «сеанс / не сохранено» и не присваивать долговечную награду. На disconnect нужна idempotent release любых reservations.</p>
+<h2>9. Производственный конвейер моделей и материалов</h2>
+<p>Новый пакет — концептуальные <code>V01</code>–<code>V09</code>, <strong>не существующие canonical IDs</strong>: V01 van body, V02 fold-out stage, V03 awning, V04 cabin interior, V05 radio mast, V06 parking anchors (4 sockets), V07 club external, V08 club interior, V09 radio map terminals. Нельзя без миграции присваивать им <code>H01…H06</code> или менять значения I01..I05. Каждый новый asset оформлять в register с dimensions, pivot, material slots, collision proxy, LOD, texture budget, owner, status, hashes и Studio import receipt.</p>
+<p><strong>Reuse по приоритету:</strong></p>
+<ul>
+<li><code>H01</code> MK-I, <code>H02</code> динамики, <code>H03</code> винил, <code>H04</code> Mica, <code>H05</code> фонари; <code>H06</code> магазин — оставить.</li>
+<li><code>M01–M18</code> — каркас архитектуры, навесы, лестницы, ограждения, пандусы, роллеты, вывески.</li>
+<li><code>P01–P16</code> — рабочая мебель, стулья, crate, полки, кабели, фонари, plant и vent.</li>
+<li><code>I01–I05</code> — discovery/meta/podium канонические; на каждой остановке ставить ссылки или sockets, а не клонировать ID с новыми значениями.</li>
+<li><code>W01–W04</code> — courtyard, waterfront, skyline, bridge backdrop; <code>T01–T04</code> материалы, <code>G01–G04</code> графика, <code>A01–A05</code> реакции, <code>F01–F04</code> свет/FX, <code>U01–U04</code> UI, <code>S01–S04</code> звук.</li>
+</ul>
+<p><strong>Формальная лесенка:</strong> <code>candidate → DCC-clean → art-approved → Studio-imported → runtime-verified</code>. Наличие GLB или изображения в артбуке не повышает стадию. Общая существующая палитра <code>quay/chalk/coral/afterhours</code>; 1024/512 и layout <code>FZ_MaterialAtlas_v1</code>, 4×4 atlas 16 slots; H01 остаётся в 6×1.25×4 studs / ≤4500 assembled triangles. Новая модель фургона получает <strong>свой</strong> обоснованный triangle budget после реального профилирования, не наследует лимит H01.</p>
+<p><strong>Карта — UI и география:</strong> приложенная SVG/PNG представляет художественную схему. Не использовать pixel coordinates плаката как Roblox <code>Vector3</code> или floor plan. Дороги физического района и реальный масштаб строятся отдельным whitebox и утверждаются по фактическому проходу/камерам.</p>
+<h2>10. Девять последовательных рабочих батчей для Codex</h2>
+<p>Это <strong>batched coding</strong>: сначала связанный пакет изменений → локальные статические проверки → один Play/Studio интеграционный заход → фиксы → итоговая сборка. <strong>Не делать build после каждой мелкой правки.</strong> Никаких платных генераций, публикаций или CI; новую private experience использовать только по уже подтверждённым полномочиям и доступной поддерживаемой процедуре.</p>
+<h3>B0 · Freeze baseline / контракты и миграционный протокол (P0)</h3>
+<p><strong>Объём:</strong> inventory current <code>main</code>, сохранить IDs/data/quest regressions, сравнить карты H06/workshops/stages; оформить status matrix всех текущих assets и паков, зафиксировать неразрушающее migration decision. <strong>Изменяемое:</strong> только docs/tests и план интерфейсов. <strong>Tests:</strong> Selene, StyLua, Rojo, existing 46 server groups+5 client suites (если они доступны в текущем Place), content-binding checks. <strong>Done:</strong> зафиксированный baseline без изменения gameplay, compatibility table, список реально импортированных MeshParts, известные blockers #5/#9/#10.</p>
+<h3>B1 · District registry + стартовая закрытая карта (P0)</h3>
+<p><strong>Объём:</strong> implement registry и <code>CityMapView</code>, server opens NQ only; 10 silhouettes locked; region IDs stable; state test and UI in phone/tablet/desktop. <strong>Code:</strong> <code>DistrictRegistry.luau</code>, <code>WorldProgressService.luau</code> scaffold, <code>CityMapView.luau</code>, <code>WorldBuilder</code> map anchor. <strong>Done:</strong> карта показывает 11 районов; попытка войти в Locked отвергается сервером; доступ к ранее выбранному звуку не блокируется картой; цвета согласованы с artbook.</p>
+<h3>B2 · LoopVan vertical slice + legacy room adapter (P0)</h3>
+<p><strong>Объём:</strong> один 3D van proxy, 4 подготовленных parking sockets, личный интерьер, вход/выход, привязка существующей MK-I, аппаратный transport без дублирования; migration dry run cosmetics. <strong>Code:</strong> <code>VanService</code>, <code>VanView</code>, <code>WorldBuilder</code>, profile migration fixtures, ownership tests. <strong>Done:</strong> два игрока обладают разными van instances, не меняют друг друга, не блокируют existing H06, возвращаются к своим A–D/beat shelf, disconnect cleanup idempotent. Реальный cloud persistence — отдельно в B7.</p>
+<h3>B3 · Parking anchors + малая сцена (P0)</h3>
+<p><strong>Объём:</strong> P1–P4 только как anchors, stage deployment/collapse, limit one active mini-performance per anchor with queue policy; reuse <code>ListeningSession</code>/<code>StageQueue</code>. <strong>Code:</strong> <code>ParkingContracts</code>, <code>ParkingSession</code>, stage UI adapter. <strong>Done:</strong> no mandatory listeners, join/mute/leave работают; чужой Session не захватывается, stale action reject, разрыв связи очищает очередь. Three-client Studio integration с 2 performers + listener; latency claims пока не делаем.</p>
+<h3>B4 · P1/P2 playable mission chain + virtual sound capture (P0)</h3>
+<p><strong>Объём:</strong> перенести существующие I01/I02 в постановочные сцены, quest receipts только после сохранённого бита, source preview and collect, teaching hint 1–2 actions. <strong>Code:</strong> <code>QuestRecipes</code>, <code>WorldProgressService</code>, <code>SampleCatalog</code> adapter, <code>SoundLabView</code> minimal. <strong>Done:</strong> один новый игрок создаёт A/B и показывает две находки; незаслуженные reward и client forged sample blocked; Mica quest не потерял eligibility; hearing/effects-off fallback.</p>
+<h3>B5 · P3/P4 + личная реставрация (P1)</h3>
+<p><strong>Объём:</strong> Vinyl Market, Breakwater, I03, variations/call-response, четыре читаемых локальных состояния, 4 mini concerts with replay; no penalty for leaving. <strong>Code:</strong> <code>PersonalRestoration</code> using existing <code>Restoration</code>/<code>WorldFeedback</code>, locale strings. <strong>Done:</strong> соло четырёх точек ≤ приблизительно 35–50 минут первый проход (цель UX, не измеренный факт); skip/rejoin не теряет earned progress; другой игрок не получает твои stage effects.</p>
+<h3>B6 · Finale “The Lantern Room” / радиосигнал (P1)</h3>
+<p><strong>Объём:</strong> взять существующий six-phase <code>ChapterConcert</code> и привязать его к новому клубу после четырёх parking completions. Конфликт с Хранителем Паузы, NPC crowd/local light, gentle tutorial. <strong>Done:</strong> любой непустой творческий сет с освоенными действиями может закончить главу; существует intro/timeout/leave/rejoin/replay; no popularity gate; исходный Mica courtyard quest and separate voluntary stage regressions pass.</p>
+<h3>B7 · Import, private hosted audio, DataStore и визуальная приёмка (release gate)</h3>
+<p><strong>Объём:</strong> durable import van/master/club/shelf, UV/pivot/collision/rig receipts, 24 original sounds + remaining styles when quota allows; moderation/grants; new private experience, <code>PlaceId/UniverseId</code>, schema-3 cloud migration/rollback; реальный exit/rejoin. <strong>Done:</strong> actual reports and owner records, 14 original image bindings preserved; mesh survives Studio reopen; no profile loss; original musical moments <strong>audible</strong>. <strong>Невыполнимость отдельных upload операций не разрешает фальшивое закрытие</strong> — в отчёте ставить blocked.</p>
+<h3>B8 · Real-player playtest, accessibility, perf, demo sign-off (release gate)</h3>
+<p><strong>Объём:</strong> 3 независимых новичка (ориентир 7–12 лет и взрослый), хотя бы один реальный touch device + desktop, поездки, stage, sound discovery, rejoin; mobile landscape/portrait UI, FPS/memory/audio input and safe mix. <strong>Done:</strong> реальные сценарии и наблюдения, устранённые critical blockers, пользователь понимает свои музыкальные действия и результат; доступен реверс version migration; чеклист acceptance подписан. Не маркировать демо <code>ship-ready</code> раньше этого.</p>
+<h2>11. Обязательная матрица тестирования и критериев</h2>
+<table>
+<thead>
+<tr>
+  <th>Сценарий</th>
+  <th>Автоматические проверки</th>
+  <th>Человек / устройство</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>11 districts / fog</td>
+  <td>correct IDs, locked action denied, no hidden world load</td>
+  <td>карта читается на телефоне, выбор района понятен</td>
+</tr>
+<tr>
+  <td>Van owner / parking</td>
+  <td>ID/range/death/leave ownership, idempotent cleanup, 2–3 clients</td>
+  <td>камера, выход, транспорт не мешает touch controls</td>
+</tr>
+<tr>
+  <td>Save &amp; schema migration</td>
+  <td>schema1→2→3, future schema protected, conflicting/reordered saves, dirty remains</td>
+  <td>реальный cloud exit/rejoin в private experience</td>
+</tr>
+<tr>
+  <td>4 story checkpoints</td>
+  <td>early/duplicate mission action blocked, rewards saved exactly once</td>
+  <td>ребёнок понимает причинно-следственную связь</td>
+</tr>
+<tr>
+  <td>Sampler/audio</td>
+  <td>transport state, 16 pads, 4 slots, shelf, Stop/mute/teardown, 600 hits regression</td>
+  <td>timing/feel/sound balance на устройстве, не muted cursor</td>
+</tr>
+<tr>
+  <td>Mini stages</td>
+  <td>queue cap/expire, owner only, opt-in, range disconnect</td>
+  <td>другой игрок может уйти в один клик</td>
+</tr>
+<tr>
+  <td>Finale</td>
+  <td>six phases, gameplay earned save, no audience required, Effects OFF</td>
+  <td>читаемая реакция толпы и клуба, эмоциональное завершение</td>
+</tr>
+<tr>
+  <td>Art / meshes</td>
+  <td>source hashes, pivots, atlas layout, native imported geometry, NoCollide</td>
+  <td>close/far/dusk look, Studio save and reopen</td>
+</tr>
+<tr>
+  <td>Privacy/rights</td>
+  <td>no untrusted mic/WAV path; catalog text only; asset grants</td>
+  <td>kid safety and terms review, rights provenance signed</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Предлагаемые UX/performance targets для B8, не измеренные показатели:</strong> не менее 30 FPS как минимально приемлемый целевой уровень на согласованном среднем мобильном устройстве с low-quality fallback; touch targets ≥44 logical px; все основные действия доступны без горизонтального скролла 4×4; audio timing/latency измерять на конкретных устройствах, бюджет фиксировать по результатам базового теста, а не объявлять «sample-accurate».</p>
+<p><strong>Regression gate каждого батча:</strong> если изменён один из <code>AudioEngine</code>, <code>ProfileStore</code>, <code>ListeningSession</code>, <code>MusicService</code>, <code>WorkshopView</code>, <code>WorldBuilder</code>, требуется повторный запуск соответствующих старых контрактов. Снимки доказательств всегда помечать источником: source / Studio fixture / real clients / published private cloud / human/device. Не заменять последнее первым.</p>
+<h2>12. Визуальные пакеты для производства</h2>
+<p>Собрать реестр работ на основе 74 existing IDs и нового <code>V01–V09</code> концепта. Минимальный first-demo art acceptance: видимый van shell и открывающийся тент, простая interior, четыре чётких парковочных модуля, четыре NPC silhouettes/expressions, портовый набор вывесок, The Lantern Room фасад/сцена, town-state light before/after, карту в двух состояниях. Анимации без процедурных physics: body lights, cone pulses, Mica head motion, stationary audience emotes, van awning rigid transforms. Ресайкл 4 текущих finishes; не заказывать 11 отдельных стилевых библиотек 3D для первого демо.</p>
+<p><strong>Один источник истины:</strong> <code>docs/district_register.json</code> (в этом пакете) + actual <code>data/assets.json</code> репозитория. SVG/PNG — дизайн-референс, а не поставка игрового <code>WorldBuilder</code>.</p>
+<h2>13. Риски и решения до первого большого coding batch</h2>
+<table>
+<thead>
+<tr>
+  <th>Риск</th>
+  <th>Влияние</th>
+  <th>Решение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Cloud ID=0, session-only</td>
+  <td>невозможно доказать сохранение сюжета</td>
+  <td>обязательный private test B7; не делать production rollout вслепую</td>
+</tr>
+<tr>
+  <td>Original sounds не загружены</td>
+  <td>сцены проходят логически, но не слышно игру</td>
+  <td><code>AudioReadiness</code> gate; первую приёмку проводить с реально доступными IDs; очередь/лимиты проверять актуально</td>
+</tr>
+<tr>
+  <td>Жанровые архивы без издательского текста лицензии</td>
+  <td>IP риск для сэмплера</td>
+  <td>получить source/rightsholder explicit permission или заменить на авторские CC0/синтез</td>
+</tr>
+<tr>
+  <td>Permanent meshes не импортированы</td>
+  <td>стык артбука и игры не подтверждён</td>
+  <td>native import/reopen receipts, fallback зафиксирован</td>
+</tr>
+<tr>
+  <td>Фургон физически управляется</td>
+  <td>усложнение сетевой физики/collision</td>
+  <td><strong>не делать</strong> free-drive до vertical slice; fixed-location transitions</td>
+</tr>
+<tr>
+  <td>Игроки мешают сюжетному прогрессу</td>
+  <td>социальный griefing</td>
+  <td>server personal story isolation, no crowd gate, bounded queue, private stage UI</td>
+</tr>
+<tr>
+  <td>Сложность для новичков</td>
+  <td>потеря музыкального фокуса</td>
+  <td>одно действие/один звук/одна цель за раз, нельзя читать стену текста</td>
+</tr>
+<tr>
+  <td>Проект разрастается до 11 районов</td>
+  <td>демо не доходит до playable finish</td>
+  <td>создавать картографический registry и 1 finished district, остальное только silhouettes</td>
+</tr>
+</tbody>
+</table>
+<h2>14. Итоговая Definition of Done для демо</h2>
+<p><strong>Нужно одновременно:</strong> (1) первый игрок может играть в первый момент с реальным звуком; (2) фургон и четыре парковки работают без потери текущего инструментального ядра; (3) все парковки имеют осмысленные задания и выступление; (4) финал клуба завершает только NQ, карта показывает будущие районы; (5) работа в одиночку полностью достаточна; (6) посещающие игроки не меняют чужую музыку/прогресс; (7) звук, meshes и cloud сохранения реально приняты; (8) mobile/keyboard, teardown и культурно-возрастная понятность проверены; (9) один полированный проход визуально соответствует утверждённому style board.</p>
+<p><strong>Открытые решения, допускающие быстрое продолжение:</strong> финальное маркетинговое название Resonance City vs BeatMakka можно заменить без смены <code>DistrictID</code>; имена четырёх новых NPC рабочие; настоящие 3D габариты van подтвердить в whitebox. <strong>Не открытые для произвольного изменения:</strong> 11 точных банков, 16 pad layout, текущие sample/discovery IDs, четыре сохранённых паттерна и шесть shelf, приватность progress, отсутствие обязательного co-op, общий визуальный язык.</p>
+<hr />
+<p><strong>Файлы пакета:</strong> <code>../maps/BeatMakka_City_Map_Initial_Locked.png</code>, <code>../maps/BeatMakka_City_Map_District_Master.png</code>, <code>../maps/BeatMakka_Needle_Quay_Demo_Map.png</code>, <code>../maps/BeatMakka_LoopVan_Concept.png</code>, <code>district_register.json</code> и <code>../BeatMakka_World_Artbook_v2_RU.pdf</code>. Все эти файлы проектные; описания прежних пройденных тестов взяты из документов репозитория, а не выполнены заново при создании артбука.</p>
+</section>
+</body></html>

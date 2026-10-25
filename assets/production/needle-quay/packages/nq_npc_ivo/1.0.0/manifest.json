@@ -1,0 +1,44 @@
+{
+  "assetId": "nq_npc_ivo",
+  "description": "Local Needle Quay candidate; no production art/Studio/runtime promotion",
+  "displayName": "nq-npc-ivo",
+  "files": [
+    {
+      "bytes": 395296,
+      "kind": "model",
+      "path": "model.glb",
+      "sha256": "1422a955ebf279b6a6262890d5e824a08ebc565eae4b419efc8d6dafad95b422"
+    },
+    {
+      "bytes": 1471,
+      "kind": "metadata",
+      "path": "metadata.json",
+      "sha256": "fac04150eb215bf0398e9c19f92290a533fbe12b0f06fccef22a1f593761b255"
+    },
+    {
+      "bytes": 481,
+      "kind": "provenance",
+      "path": "provenance.json",
+      "sha256": "7bc3fd46dff00c0115f78c4a05476843d29e8c4f1c69f85a871c5d2e77a4b7e2"
+    },
+    {
+      "bytes": 2671,
+      "kind": "validation",
+      "path": "validation.json",
+      "sha256": "1e995ef7c20df4868c4b14a3b82104420722504fd2bf9b10600ad519ab60bf58"
+    }
+  ],
+  "license": "LicenseRef-BeatMakka-Private",
+  "model": "model.glb",
+  "packageId": "pkg_13b96116670bbb211420dd61",
+  "provenance": {
+    "origin": "imported"
+  },
+  "schema": "game_dev.asset_package.v1",
+  "validation": {
+    "errorCount": 0,
+    "passed": true,
+    "warningCount": 0
+  },
+  "version": "1.0.0"
+}

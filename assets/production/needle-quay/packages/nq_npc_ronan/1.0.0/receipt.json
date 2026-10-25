@@ -1,0 +1,23 @@
+{
+  "completedAt": "2026-10-25T14:11:22.904Z",
+  "destination": {
+    "assetId": "nq_npc_ronan",
+    "version": "1.0.0"
+  },
+  "evidence": {
+    "blenderNormalizationPerformed": false,
+    "gpuImportTestPerformed": false,
+    "humanVisualReviewPerformed": false,
+    "modelBytesCopiedAndHashed": true,
+    "policyValidationCompleted": true,
+    "staticInspectionCompleted": true
+  },
+  "manifestSha256": "ef92d33f177d94aa856e97b07673bcda448f41c874dbc385a30a5c01ece033aa",
+  "packageId": "pkg_704781a29eaec8fda08cc6a1",
+  "schema": "game_dev.package_receipt.v1",
+  "source": {
+    "bytes": 395276,
+    "fileName": "NQ-NPC-RONAN.glb",
+    "sha256": "2cafa88ca944dfe61d14a2bc500ee667eb5c2d701fdd8406d7e6a0c3b5cf65fa"
+  }
+}

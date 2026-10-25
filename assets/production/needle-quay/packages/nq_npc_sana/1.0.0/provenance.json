@@ -1,0 +1,14 @@
+{
+  "acceptanceStage": "DETERMINISTIC_3D_CANDIDATE",
+  "authoring": "[redacted]",
+  "billableProviderCalls": 0,
+  "origin": "imported",
+  "schema": "game_dev.asset_provenance.v1",
+  "source": {
+    "bytes": 381492,
+    "fileName": "NQ-NPC-SANA.glb",
+    "sha256": "fd85f152bb86f867facc5f37f44ee32970342999ac99a8e421ffdc1bbd8fb73a"
+  },
+  "sourceBlend": "assets/production/needle-quay/models/NQ-NPC-SANA/NQ-NPC-SANA.blend",
+  "sourceRegister": "data/needle-quay-environment.v1.json"
+}

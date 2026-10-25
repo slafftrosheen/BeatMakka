@@ -1,0 +1,8 @@
+LicenseRef-BeatMakka-Private
+
+Private project asset package. This metadata does not grant public reuse,
+redistribution, sublicensing, or rights in third-party reference materials.
+Preserved user-supplied materials retain their original rights and provenance.
+Generated and deterministic candidate assets are retained for this project;
+this package makes no claim of exclusive copyright in generated imagery.
+No Roblox upload or deployment permission is granted by this package.

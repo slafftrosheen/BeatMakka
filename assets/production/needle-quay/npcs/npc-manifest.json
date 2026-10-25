@@ -1,0 +1,303 @@
+{
+  "npcs": [
+    {
+      "name": "Tori",
+      "location": "Dockside Exchange",
+      "silhouette": "Broad vest, rolled sleeves, tool belt",
+      "role": "Practical dock master; hears work rhythms",
+      "identity_status": "EXISTING_WORLD_V2",
+      "canonical_asset_id": null,
+      "stage": "LOCAL_DESIGN_AND_RIG_CANDIDATE",
+      "production_model": "assets/production/needle-quay/models/NQ-NPC-TORI/NQ-NPC-TORI.glb",
+      "model": {
+        "id": "NQ-NPC-TORI",
+        "name": "Tori",
+        "source": "assets/production/needle-quay/models/NQ-NPC-TORI/NQ-NPC-TORI.blend",
+        "glb": "assets/production/needle-quay/models/NQ-NPC-TORI/NQ-NPC-TORI.glb",
+        "sha256": "cff5f50585096f835355e06cc6768aca5ea7e4912cf60a4b42f978481720ee1f",
+        "triangles": 5520,
+        "mesh_objects": 35,
+        "bone_count": 15,
+        "bounds_xyz_blender": [
+          3.431666612625122,
+          1.469333291053772,
+          5.84833288192749
+        ],
+        "units": "1 local source unit = 1 authored stud; verify importer unit settings",
+        "previews": [
+          "assets/production/needle-quay/models/NQ-NPC-TORI/neutral.png",
+          "assets/production/needle-quay/models/NQ-NPC-TORI/front.png",
+          "assets/production/needle-quay/models/NQ-NPC-TORI/side.png",
+          "assets/production/needle-quay/models/NQ-NPC-TORI/top.png"
+        ],
+        "stage": "DETERMINISTIC_3D_CANDIDATE",
+        "dcc_clean_accepted": false,
+        "art_approved": false,
+        "studio_imported": false,
+        "runtime_verified": false
+      },
+      "design": "assets/production/needle-quay/npcs/TORI-design.png",
+      "provenance": "assets/production/needle-quay/npc-design-prompts.json",
+      "animation_contract": [
+        "idle: subtle breathing and head turn",
+        "talk: small right hand gesture",
+        "work: role-specific upper body motion"
+      ],
+      "rig_scope": "15-bone rigid-part candidate; animation clips and Humanoid import not accepted"
+    },
+    {
+      "name": "Ivo",
+      "location": "Morrow Repairs",
+      "silhouette": "Tall slim body, work jacket, goggles",
+      "role": "Mechanic and sound experimenter",
+      "identity_status": "EXISTING_WORLD_V2",
+      "canonical_asset_id": null,
+      "stage": "LOCAL_DESIGN_AND_RIG_CANDIDATE",
+      "production_model": "assets/production/needle-quay/models/NQ-NPC-IVO/NQ-NPC-IVO.glb",
+      "model": {
+        "id": "NQ-NPC-IVO",
+        "name": "Ivo",
+        "source": "assets/production/needle-quay/models/NQ-NPC-IVO/NQ-NPC-IVO.blend",
+        "glb": "assets/production/needle-quay/models/NQ-NPC-IVO/NQ-NPC-IVO.glb",
+        "sha256": "1422a955ebf279b6a6262890d5e824a08ebc565eae4b419efc8d6dafad95b422",
+        "triangles": 5520,
+        "mesh_objects": 35,
+        "bone_count": 15,
+        "bounds_xyz_blender": [
+          3.1723999977111816,
+          1.6719999313354492,
+          6.654999732971191
+        ],
+        "units": "1 local source unit = 1 authored stud; verify importer unit settings",
+        "previews": [
+          "assets/production/needle-quay/models/NQ-NPC-IVO/neutral.png",
+          "assets/production/needle-quay/models/NQ-NPC-IVO/front.png",
+          "assets/production/needle-quay/models/NQ-NPC-IVO/side.png",
+          "assets/production/needle-quay/models/NQ-NPC-IVO/top.png"
+        ],
+        "stage": "DETERMINISTIC_3D_CANDIDATE",
+        "dcc_clean_accepted": false,
+        "art_approved": false,
+        "studio_imported": false,
+        "runtime_verified": false
+      },
+      "design": "assets/production/needle-quay/npcs/IVO-design.png",
+      "provenance": "assets/production/needle-quay/npc-design-prompts.json",
+      "animation_contract": [
+        "idle: subtle breathing and head turn",
+        "talk: small right hand gesture",
+        "work: role-specific upper body motion"
+      ],
+      "rig_scope": "15-bone rigid-part candidate; animation clips and Humanoid import not accepted"
+    },
+    {
+      "name": "Naya",
+      "location": "Needle Records",
+      "silhouette": "Oversized sweater, bright vinyl bag",
+      "role": "Music archivist",
+      "identity_status": "EXISTING_WORLD_V2",
+      "canonical_asset_id": null,
+      "stage": "LOCAL_DESIGN_AND_RIG_CANDIDATE",
+      "production_model": "assets/production/needle-quay/models/NQ-NPC-NAYA/NQ-NPC-NAYA.glb",
+      "model": {
+        "id": "NQ-NPC-NAYA",
+        "name": "Naya",
+        "source": "assets/production/needle-quay/models/NQ-NPC-NAYA/NQ-NPC-NAYA.blend",
+        "glb": "assets/production/needle-quay/models/NQ-NPC-NAYA/NQ-NPC-NAYA.glb",
+        "sha256": "c4ab4f7cd047738fa70e8586118514d92196b5ff293d57c6943e942d293b28f6",
+        "triangles": 5412,
+        "mesh_objects": 34,
+        "bone_count": 15,
+        "bounds_xyz_blender": [
+          3.061333417892456,
+          1.4186666011810303,
+          5.646666526794434
+        ],
+        "units": "1 local source unit = 1 authored stud; verify importer unit settings",
+        "previews": [
+          "assets/production/needle-quay/models/NQ-NPC-NAYA/neutral.png",
+          "assets/production/needle-quay/models/NQ-NPC-NAYA/front.png",
+          "assets/production/needle-quay/models/NQ-NPC-NAYA/side.png",
+          "assets/production/needle-quay/models/NQ-NPC-NAYA/top.png"
+        ],
+        "stage": "DETERMINISTIC_3D_CANDIDATE",
+        "dcc_clean_accepted": false,
+        "art_approved": false,
+        "studio_imported": false,
+        "runtime_verified": false
+      },
+      "design": "assets/production/needle-quay/npcs/NAYA-design.png",
+      "provenance": "assets/production/needle-quay/npc-design-prompts.json",
+      "animation_contract": [
+        "idle: subtle breathing and head turn",
+        "talk: small right hand gesture",
+        "work: role-specific upper body motion"
+      ],
+      "rig_scope": "15-bone rigid-part candidate; animation clips and Humanoid import not accepted"
+    },
+    {
+      "name": "Sana Bell",
+      "location": "Harbor Market Hall",
+      "silhouette": "Large bag, order clipboard, coral accents",
+      "role": "Market coordinator",
+      "identity_status": "PROPOSED_IN_REGISTER_V1",
+      "canonical_asset_id": null,
+      "stage": "LOCAL_DESIGN_AND_RIG_CANDIDATE",
+      "production_model": "assets/production/needle-quay/models/NQ-NPC-SANA/NQ-NPC-SANA.glb",
+      "model": {
+        "id": "NQ-NPC-SANA",
+        "name": "Sana Bell",
+        "source": "assets/production/needle-quay/models/NQ-NPC-SANA/NQ-NPC-SANA.blend",
+        "glb": "assets/production/needle-quay/models/NQ-NPC-SANA/NQ-NPC-SANA.glb",
+        "sha256": "fd85f152bb86f867facc5f37f44ee32970342999ac99a8e421ffdc1bbd8fb73a",
+        "triangles": 5412,
+        "mesh_objects": 34,
+        "bone_count": 15,
+        "bounds_xyz_blender": [
+          3.1899337768554688,
+          1.4946668148040771,
+          5.949167728424072
+        ],
+        "units": "1 local source unit = 1 authored stud; verify importer unit settings",
+        "previews": [
+          "assets/production/needle-quay/models/NQ-NPC-SANA/neutral.png",
+          "assets/production/needle-quay/models/NQ-NPC-SANA/front.png",
+          "assets/production/needle-quay/models/NQ-NPC-SANA/side.png",
+          "assets/production/needle-quay/models/NQ-NPC-SANA/top.png"
+        ],
+        "stage": "DETERMINISTIC_3D_CANDIDATE",
+        "dcc_clean_accepted": false,
+        "art_approved": false,
+        "studio_imported": false,
+        "runtime_verified": false
+      },
+      "design": "assets/production/needle-quay/npcs/SANA-design.png",
+      "provenance": "assets/production/needle-quay/npc-design-prompts.json",
+      "animation_contract": [
+        "idle: subtle breathing and head turn",
+        "talk: small right hand gesture",
+        "work: role-specific upper body motion"
+      ],
+      "rig_scope": "15-bone rigid-part candidate; animation clips and Humanoid import not accepted"
+    },
+    {
+      "name": "Mica",
+      "location": "Van and Signal House",
+      "silhouette": "Preserve H04 canonical robot design",
+      "role": "Canonical guide; no Mika rename",
+      "identity_status": "CANONICAL_H04",
+      "canonical_asset_id": "H04",
+      "stage": "EXISTING_CANONICAL_REUSED",
+      "production_model": "assets/optimized/H04/H04_atlas_v1.glb",
+      "model": {
+        "id": "H04",
+        "name": "Mica",
+        "source": "assets/cleaned/H04/H04_maintenance_helper_robot.blend",
+        "glb": "assets/optimized/H04/H04_atlas_v1.glb",
+        "stage": "EXISTING_CANONICAL_ASSET_REUSED_NO_REDESIGN",
+        "art_acceptance": "See existing H04 evidence; no new promotion"
+      },
+      "design": null,
+      "provenance": "Existing canonical H04 source; unchanged",
+      "animation_contract": [
+        "idle: subtle breathing and head turn",
+        "talk: small right hand gesture",
+        "work: role-specific upper body motion"
+      ],
+      "rig_scope": "Existing H04 contract retained"
+    },
+    {
+      "name": "Ronan Wren",
+      "location": "The Lantern Room",
+      "silhouette": "Long coat, keys, subdued tones, tired posture",
+      "role": "Keeper of the Pause; disillusioned host, not enemy",
+      "identity_status": "PROPOSED_IN_REGISTER_V1",
+      "canonical_asset_id": null,
+      "stage": "LOCAL_DESIGN_AND_RIG_CANDIDATE",
+      "production_model": "assets/production/needle-quay/models/NQ-NPC-RONAN/NQ-NPC-RONAN.glb",
+      "model": {
+        "id": "NQ-NPC-RONAN",
+        "name": "Ronan Wren",
+        "source": "assets/production/needle-quay/models/NQ-NPC-RONAN/NQ-NPC-RONAN.blend",
+        "glb": "assets/production/needle-quay/models/NQ-NPC-RONAN/NQ-NPC-RONAN.glb",
+        "sha256": "2cafa88ca944dfe61d14a2bc500ee667eb5c2d701fdd8406d7e6a0c3b5cf65fa",
+        "triangles": 5520,
+        "mesh_objects": 35,
+        "bone_count": 15,
+        "bounds_xyz_blender": [
+          3.254999876022339,
+          1.5959997177124023,
+          6.352499961853027
+        ],
+        "units": "1 local source unit = 1 authored stud; verify importer unit settings",
+        "previews": [
+          "assets/production/needle-quay/models/NQ-NPC-RONAN/neutral.png",
+          "assets/production/needle-quay/models/NQ-NPC-RONAN/front.png",
+          "assets/production/needle-quay/models/NQ-NPC-RONAN/side.png",
+          "assets/production/needle-quay/models/NQ-NPC-RONAN/top.png"
+        ],
+        "stage": "DETERMINISTIC_3D_CANDIDATE",
+        "dcc_clean_accepted": false,
+        "art_approved": false,
+        "studio_imported": false,
+        "runtime_verified": false
+      },
+      "design": "assets/production/needle-quay/npcs/RONAN-design.png",
+      "provenance": "assets/production/needle-quay/npc-design-prompts.json",
+      "animation_contract": [
+        "idle: subtle breathing and head turn",
+        "talk: small right hand gesture",
+        "work: role-specific upper body motion"
+      ],
+      "rig_scope": "15-bone rigid-part candidate; animation clips and Humanoid import not accepted"
+    },
+    {
+      "name": "Nell Fen",
+      "location": "Warm Current Café",
+      "silhouette": "Apron, broad silhouette, mug and notes",
+      "role": "Cafe host and local news",
+      "identity_status": "PROPOSED_IN_REGISTER_V1",
+      "canonical_asset_id": null,
+      "stage": "LOCAL_DESIGN_AND_RIG_CANDIDATE",
+      "production_model": "assets/production/needle-quay/models/NQ-NPC-NELL/NQ-NPC-NELL.glb",
+      "model": {
+        "id": "NQ-NPC-NELL",
+        "name": "Nell Fen",
+        "source": "assets/production/needle-quay/models/NQ-NPC-NELL/NQ-NPC-NELL.blend",
+        "glb": "assets/production/needle-quay/models/NQ-NPC-NELL/NQ-NPC-NELL.glb",
+        "sha256": "f5a9c6e8703cec82315b01a8a87ac33095a3cdf373937a5775dcf1af19276e1e",
+        "triangles": 5412,
+        "mesh_objects": 34,
+        "bone_count": 15,
+        "bounds_xyz_blender": [
+          3.4580001831054688,
+          1.444000005722046,
+          5.747500419616699
+        ],
+        "units": "1 local source unit = 1 authored stud; verify importer unit settings",
+        "previews": [
+          "assets/production/needle-quay/models/NQ-NPC-NELL/neutral.png",
+          "assets/production/needle-quay/models/NQ-NPC-NELL/front.png",
+          "assets/production/needle-quay/models/NQ-NPC-NELL/side.png",
+          "assets/production/needle-quay/models/NQ-NPC-NELL/top.png"
+        ],
+        "stage": "DETERMINISTIC_3D_CANDIDATE",
+        "dcc_clean_accepted": false,
+        "art_approved": false,
+        "studio_imported": false,
+        "runtime_verified": false
+      },
+      "design": "assets/production/needle-quay/npcs/NELL-design.png",
+      "provenance": "assets/production/needle-quay/npc-design-prompts.json",
+      "animation_contract": [
+        "idle: subtle breathing and head turn",
+        "talk: small right hand gesture",
+        "work: role-specific upper body motion"
+      ],
+      "rig_scope": "15-bone rigid-part candidate; animation clips and Humanoid import not accepted"
+    }
+  ],
+  "new_designs": 6,
+  "canonical_reuse": 1,
+  "new_animations_exported": 0
+}

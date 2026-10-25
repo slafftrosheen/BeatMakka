@@ -1,0 +1,14 @@
+{
+  "acceptanceStage": "DETERMINISTIC_3D_CANDIDATE",
+  "authoring": "[redacted]",
+  "billableProviderCalls": 0,
+  "origin": "imported",
+  "schema": "game_dev.asset_provenance.v1",
+  "source": {
+    "bytes": 393932,
+    "fileName": "NQ-NPC-TORI.glb",
+    "sha256": "cff5f50585096f835355e06cc6768aca5ea7e4912cf60a4b42f978481720ee1f"
+  },
+  "sourceBlend": "assets/production/needle-quay/models/NQ-NPC-TORI/NQ-NPC-TORI.blend",
+  "sourceRegister": "data/needle-quay-environment.v1.json"
+}

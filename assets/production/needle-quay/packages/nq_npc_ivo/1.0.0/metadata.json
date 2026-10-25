@@ -1,0 +1,56 @@
+{
+  "assetId": "nq_npc_ivo",
+  "description": "Local Needle Quay candidate; no production art/Studio/runtime promotion",
+  "displayName": "nq-npc-ivo",
+  "inspection": {
+    "animationCount": 0,
+    "boundingBox": {
+      "max": [
+        1.5861999988555908,
+        6.654999732971191,
+        0.8359999656677246
+      ],
+      "min": [
+        -1.5861999988555908,
+        0,
+        -0.8359999656677246
+      ],
+      "sizeMeters": [
+        3.1723999977111816,
+        6.654999732971191,
+        1.6719999313354492
+      ]
+    },
+    "boundingBoxEmpty": false,
+    "fileBytes": 395296,
+    "filePath": "model.glb",
+    "generator": "glTF-Transform v4.5.1",
+    "hasNormals": true,
+    "hasSkin": true,
+    "hasTangents": false,
+    "hasUVs": true,
+    "materialCount": 6,
+    "meshCount": 35,
+    "pbr": {
+      "hasBaseColorTexture": false,
+      "hasEmissiveTexture": false,
+      "hasMetallicRoughnessTexture": false,
+      "hasNormalTexture": false,
+      "hasOcclusionTexture": false
+    },
+    "primitiveCount": 35,
+    "sceneGraphFallback": false,
+    "textureCount": 0,
+    "textureResolutions": [],
+    "triangleCount": 5520,
+    "undrawnMeshCount": 0,
+    "undrawnPrimitiveCount": 0,
+    "undrawnTriangleCount": 0,
+    "vertexCount": 6585,
+    "warnings": [
+      "no base colour texture on any material: the asset is untextured and will read as flat colour"
+    ]
+  },
+  "license": "LicenseRef-BeatMakka-Private",
+  "schema": "game_dev.asset_metadata.v1"
+}

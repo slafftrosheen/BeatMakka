@@ -1,0 +1,578 @@
+{
+  "version": "world-artbook-v2-concept",
+  "city": "Resonance City",
+  "game": "Frequency Zero / BeatMakka",
+  "district_count": 11,
+  "sound_bank_count": 11,
+  "kits_per_district_rule": "16 base pads per source bank, district rewards add to optional library without overwriting canonical IDs",
+  "initial_unlocked": [
+    "NQ"
+  ],
+  "districts": [
+    {
+      "id": "NQ",
+      "number": 1,
+      "name": "Needle Quay",
+      "ru": "Старая гавань",
+      "kit": "Original starter",
+      "focus": "Ритм, поиск звука, ответственность",
+      "accent": "#F3B65F",
+      "unlock": "START",
+      "motif": "⚓",
+      "design_stage": "CONCEPT",
+      "coords_illustrative": [
+        330,
+        1290
+      ],
+      "polygon_illustrative": [
+        [
+          587.2,
+          1280.7
+        ],
+        [
+          418.8,
+          918.7
+        ],
+        [
+          111.8,
+          922.9
+        ],
+        [
+          105.0,
+          980.0
+        ],
+        [
+          144.0,
+          1390.0
+        ],
+        [
+          410.0,
+          1580.0
+        ],
+        [
+          446.1,
+          1592.7
+        ],
+        [
+          587.2,
+          1280.7
+        ]
+      ]
+    },
+    {
+      "id": "VC",
+      "number": 2,
+      "name": "Velvet Canals",
+      "ru": "Бархатные каналы",
+      "kit": "Trip Hop",
+      "focus": "Тишина, внимательное слушание",
+      "accent": "#9D839C",
+      "unlock": "LATER",
+      "motif": "◌",
+      "design_stage": "CONCEPT",
+      "coords_illustrative": [
+        760,
+        1090
+      ],
+      "polygon_illustrative": [
+        [
+          418.8,
+          918.7
+        ],
+        [
+          587.2,
+          1280.7
+        ],
+        [
+          1016.5,
+          1291.7
+        ],
+        [
+          1035.4,
+          1036.9
+        ],
+        [
+          841.5,
+          848.8
+        ],
+        [
+          476.0,
+          872.2
+        ],
+        [
+          418.8,
+          918.7
+        ]
+      ]
+    },
+    {
+      "id": "MS",
+      "number": 3,
+      "name": "Motion Square",
+      "ru": "Площадь движения",
+      "kit": "Dance",
+      "focus": "Структура, движение и энергия",
+      "accent": "#DAA668",
+      "unlock": "LATER",
+      "motif": "◆",
+      "design_stage": "CONCEPT",
+      "coords_illustrative": [
+        1300,
+        1130
+      ],
+      "polygon_illustrative": [
+        [
+          1232.6,
+          1631.2
+        ],
+        [
+          1440.0,
+          1680.0
+        ],
+        [
+          1514.7,
+          1657.6
+        ],
+        [
+          1603.1,
+          862.5
+        ],
+        [
+          1514.3,
+          798.7
+        ],
+        [
+          1444.5,
+          793.7
+        ],
+        [
+          1035.4,
+          1036.9
+        ],
+        [
+          1016.5,
+          1291.7
+        ],
+        [
+          1232.6,
+          1631.2
+        ]
+      ]
+    },
+    {
+      "id": "BA",
+      "number": 4,
+      "name": "Broken Amp Row",
+      "ru": "Улица старых усилителей",
+      "kit": "Grunge",
+      "focus": "Неидеальность и самовыражение",
+      "accent": "#B77D70",
+      "unlock": "LATER",
+      "motif": "▱",
+      "design_stage": "CONCEPT",
+      "coords_illustrative": [
+        730,
+        620
+      ],
+      "polygon_illustrative": [
+        [
+          476.0,
+          872.2
+        ],
+        [
+          841.5,
+          848.8
+        ],
+        [
+          1010.1,
+          427.1
+        ],
+        [
+          946.2,
+          206.8
+        ],
+        [
+          840.0,
+          229.0
+        ],
+        [
+          588.2,
+          215.1
+        ],
+        [
+          476.0,
+          872.2
+        ]
+      ]
+    },
+    {
+      "id": "HS",
+      "number": 5,
+      "name": "Hyperspan",
+      "ru": "Высотная магистраль",
+      "kit": "Hard Trance",
+      "focus": "Повторение, темп и концентрация",
+      "accent": "#87AFC8",
+      "unlock": "LATER",
+      "motif": "⌁",
+      "design_stage": "CONCEPT",
+      "coords_illustrative": [
+        1760,
+        490
+      ],
+      "polygon_illustrative": [
+        [
+          1603.1,
+          862.5
+        ],
+        [
+          2151.0,
+          799.9
+        ],
+        [
+          2160.0,
+          680.0
+        ],
+        [
+          2118.9,
+          531.6
+        ],
+        [
+          1586.8,
+          204.2
+        ],
+        [
+          1514.3,
+          798.7
+        ],
+        [
+          1603.1,
+          862.5
+        ]
+      ]
+    },
+    {
+      "id": "RB",
+      "number": 6,
+      "name": "Rhythm Borough",
+      "ru": "Ритм-квартал",
+      "kit": "Hip Hop",
+      "focus": "Рифма, импровизация и команда",
+      "accent": "#CA7453",
+      "unlock": "LATER",
+      "motif": "◎",
+      "design_stage": "CONCEPT",
+      "coords_illustrative": [
+        1080,
+        760
+      ],
+      "polygon_illustrative": [
+        [
+          1035.4,
+          1036.9
+        ],
+        [
+          1444.5,
+          793.7
+        ],
+        [
+          1010.1,
+          427.1
+        ],
+        [
+          841.5,
+          848.8
+        ],
+        [
+          1035.4,
+          1036.9
+        ]
+      ]
+    },
+    {
+      "id": "IF",
+      "number": 7,
+      "name": "Iron Bell Works",
+      "ru": "Железные мастерские",
+      "kit": "Industrial",
+      "focus": "Физика звука, механизм и такт",
+      "accent": "#B89C73",
+      "unlock": "LATER",
+      "motif": "⚙",
+      "design_stage": "CONCEPT",
+      "coords_illustrative": [
+        320,
+        550
+      ],
+      "polygon_illustrative": [
+        [
+          418.8,
+          918.7
+        ],
+        [
+          476.0,
+          872.2
+        ],
+        [
+          588.2,
+          215.1
+        ],
+        [
+          460.0,
+          208.0
+        ],
+        [
+          180.0,
+          350.0
+        ],
+        [
+          111.8,
+          922.9
+        ],
+        [
+          418.8,
+          918.7
+        ]
+      ]
+    },
+    {
+      "id": "SA",
+      "number": 8,
+      "name": "Starlight Arcade",
+      "ru": "Аркада звёздного света",
+      "kit": "Pop",
+      "focus": "Мелодия, эмоции и выразительность",
+      "accent": "#E5A1AD",
+      "unlock": "LATER",
+      "motif": "★",
+      "design_stage": "CONCEPT",
+      "coords_illustrative": [
+        1840,
+        1190
+      ],
+      "polygon_illustrative": [
+        [
+          1603.1,
+          862.5
+        ],
+        [
+          1514.7,
+          1657.6
+        ],
+        [
+          1740.0,
+          1590.0
+        ],
+        [
+          2020.0,
+          1430.0
+        ],
+        [
+          2130.0,
+          1080.0
+        ],
+        [
+          2151.0,
+          799.9
+        ],
+        [
+          1603.1,
+          862.5
+        ]
+      ]
+    },
+    {
+      "id": "SS",
+      "number": 9,
+      "name": "Sunward Strand",
+      "ru": "Солнечный берег",
+      "kit": "Reggae",
+      "focus": "Offbeat, пространство и дружба",
+      "accent": "#D5B76B",
+      "unlock": "LATER",
+      "motif": "☀",
+      "design_stage": "CONCEPT",
+      "coords_illustrative": [
+        750,
+        1480
+      ],
+      "polygon_illustrative": [
+        [
+          1016.5,
+          1291.7
+        ],
+        [
+          587.2,
+          1280.7
+        ],
+        [
+          446.1,
+          1592.7
+        ],
+        [
+          780.0,
+          1710.0
+        ],
+        [
+          1100.0,
+          1600.0
+        ],
+        [
+          1232.6,
+          1631.2
+        ],
+        [
+          1016.5,
+          1291.7
+        ]
+      ]
+    },
+    {
+      "id": "CW",
+      "number": 10,
+      "name": "Circuit Ward",
+      "ru": "Схемный район",
+      "kit": "Techno",
+      "focus": "Последовательности и системы",
+      "accent": "#69B2A7",
+      "unlock": "LATER",
+      "motif": "⬡",
+      "design_stage": "CONCEPT",
+      "coords_illustrative": [
+        1350,
+        440
+      ],
+      "polygon_illustrative": [
+        [
+          1010.1,
+          427.1
+        ],
+        [
+          1444.5,
+          793.7
+        ],
+        [
+          1514.3,
+          798.7
+        ],
+        [
+          1586.8,
+          204.2
+        ],
+        [
+          1579.3,
+          183.8
+        ],
+        [
+          1520.0,
+          182.0
+        ],
+        [
+          1170.0,
+          160.0
+        ],
+        [
+          946.2,
+          206.8
+        ],
+        [
+          1010.1,
+          427.1
+        ]
+      ]
+    },
+    {
+      "id": "AH",
+      "number": 11,
+      "name": "Aurora Heights",
+      "ru": "Высоты Авроры",
+      "kit": "Trance",
+      "focus": "Длинная форма и развитие идеи",
+      "accent": "#B2A6C9",
+      "unlock": "LATER",
+      "motif": "✦",
+      "design_stage": "CONCEPT",
+      "coords_illustrative": [
+        1920,
+        230
+      ],
+      "polygon_illustrative": [
+        [
+          1586.8,
+          204.2
+        ],
+        [
+          2118.9,
+          531.6
+        ],
+        [
+          2070.0,
+          355.0
+        ],
+        [
+          1785.0,
+          190.0
+        ],
+        [
+          1579.3,
+          183.8
+        ],
+        [
+          1586.8,
+          204.2
+        ]
+      ]
+    }
+  ],
+  "demo_parking_sites": [
+    {
+      "id": "P1",
+      "en": "DOCKSIDE EXCHANGE",
+      "ru": "Портовый обмен",
+      "lesson": "Ритм и забота об инструментах",
+      "xy": [
+        440,
+        1260
+      ],
+      "sound": "I01 · metal_hit",
+      "badge": "01"
+    },
+    {
+      "id": "P2",
+      "en": "REPAIR ALLEY",
+      "ru": "Переулок мастерских",
+      "lesson": "Исследование звука и причин",
+      "xy": [
+        970,
+        620
+      ],
+      "sound": "I02 · vent_thump",
+      "badge": "02"
+    },
+    {
+      "id": "P3",
+      "en": "VINYL MARKET",
+      "ru": "Виниловый рынок",
+      "lesson": "Сотрудничество и структура",
+      "xy": [
+        1840,
+        950
+      ],
+      "sound": "доп. звуки · Trip Hop",
+      "badge": "03"
+    },
+    {
+      "id": "P4",
+      "en": "BREAKWATER STEPS",
+      "ru": "Ступени волнореза",
+      "lesson": "Слушание и вариации",
+      "xy": [
+        1370,
+        1510
+      ],
+      "sound": "I03 · robot_chirp",
+      "badge": "04"
+    }
+  ],
+  "status": "ART-DIRECTION ONLY; not imported or shipped"
+}

@@ -1,0 +1,23 @@
+{
+  "completedAt": "2026-10-25T14:11:11.731Z",
+  "destination": {
+    "assetId": "nq_npc_tori",
+    "version": "1.0.0"
+  },
+  "evidence": {
+    "blenderNormalizationPerformed": false,
+    "gpuImportTestPerformed": false,
+    "humanVisualReviewPerformed": false,
+    "modelBytesCopiedAndHashed": true,
+    "policyValidationCompleted": true,
+    "staticInspectionCompleted": true
+  },
+  "manifestSha256": "d349636f269e198b68c443c3f8c81b8bc86c288c2f3790d24a4be84b55af5eaf",
+  "packageId": "pkg_7eca4f4669081b240b38f3c4",
+  "schema": "game_dev.package_receipt.v1",
+  "source": {
+    "bytes": 393932,
+    "fileName": "NQ-NPC-TORI.glb",
+    "sha256": "cff5f50585096f835355e06cc6768aca5ea7e4912cf60a4b42f978481720ee1f"
+  }
+}

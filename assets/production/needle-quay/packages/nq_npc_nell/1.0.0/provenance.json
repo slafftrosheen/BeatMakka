@@ -1,0 +1,14 @@
+{
+  "acceptanceStage": "DETERMINISTIC_3D_CANDIDATE",
+  "authoring": "[redacted]",
+  "billableProviderCalls": 0,
+  "origin": "imported",
+  "schema": "game_dev.asset_provenance.v1",
+  "source": {
+    "bytes": 381500,
+    "fileName": "NQ-NPC-NELL.glb",
+    "sha256": "f5a9c6e8703cec82315b01a8a87ac33095a3cdf373937a5775dcf1af19276e1e"
+  },
+  "sourceBlend": "assets/production/needle-quay/models/NQ-NPC-NELL/NQ-NPC-NELL.blend",
+  "sourceRegister": "data/needle-quay-environment.v1.json"
+}

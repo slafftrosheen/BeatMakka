@@ -1,0 +1,186 @@
+{
+  "schema": "game_dev.result.v1",
+  "operation": "doctor",
+  "ok": true,
+  "data": {
+    "schema": "game_dev.doctor.v1",
+    "version": "1.5.1",
+    "workflow": "generic-capture",
+    "healthy": true,
+    "checks": [
+      {
+        "id": "platform",
+        "required": true,
+        "status": "pass",
+        "detail": "win32 x64"
+      },
+      {
+        "id": "node-runtime",
+        "required": true,
+        "status": "pass",
+        "detail": "v22.23.2",
+        "nextStep": "Use Node.js 22.5 or newer, then rerun doctor.",
+        "evidence": {
+          "executable": "C:\\Users\\slavd\\AppData\\Local\\hermes\\node\\node.exe",
+          "minimum": "22.5.0 (node:sqlite catalog)"
+        }
+      },
+      {
+        "id": "workspace",
+        "required": true,
+        "status": "pass",
+        "detail": "C:\\Users\\slavd\\BeatMaka\\work\\game-dev",
+        "nextStep": "Select an absolute writable asset workspace.",
+        "evidence": {
+          "jobsDir": "C:\\Users\\slavd\\BeatMaka\\work\\game-dev\\.jobs",
+          "durableJobsDir": "C:\\Users\\slavd\\BeatMaka\\work\\game-dev\\.game-dev\\jobs",
+          "packagesDir": "C:\\Users\\slavd\\BeatMaka\\work\\game-dev\\.game-dev\\packages",
+          "catalogPath": "C:\\Users\\slavd\\BeatMaka\\work\\game-dev\\.game-dev\\catalog.sqlite3",
+          "runsDir": "C:\\Users\\slavd\\BeatMaka\\work\\game-dev\\.game-dev\\runs"
+        }
+      },
+      {
+        "id": "tripo-credential",
+        "required": false,
+        "status": "unavailable",
+        "detail": "not configured; optional for local workflows"
+      },
+      {
+        "id": "leonardo-credential",
+        "required": false,
+        "status": "unavailable",
+        "detail": "not configured; optional for local workflows"
+      },
+      {
+        "id": "blender",
+        "required": false,
+        "status": "pass",
+        "detail": "Executable bytes verified; version and runtime behavior have not been checked.",
+        "nextStep": "Review the executable, then use game-dev tool configure blender --executable ABSOLUTE_PATH --confirm; see docs/tool-setup.md.",
+        "evidence": {
+          "source": "discovered",
+          "code": "verified",
+          "digestPinned": false,
+          "processLaunched": false,
+          "versionChecked": false,
+          "executable": "C:\\Program Files\\Blender Foundation\\Blender 5.2\\blender.exe",
+          "resolvedExecutable": "C:\\Program Files\\Blender Foundation\\Blender 5.2\\blender.exe",
+          "sha256": "f141a3c5754500e6f84361099a4cd53f0bb7662b6a0d2cfaaa8fbb63e92234a0"
+        }
+      },
+      {
+        "id": "basisu",
+        "required": false,
+        "status": "unavailable",
+        "detail": "No explicit executable selection is configured.",
+        "nextStep": "Review the executable, then use game-dev tool configure basisu --executable ABSOLUTE_PATH --confirm; see docs/tool-setup.md.",
+        "evidence": {
+          "source": "none",
+          "code": "not-configured",
+          "digestPinned": false,
+          "processLaunched": false,
+          "versionChecked": false
+        }
+      },
+      {
+        "id": "coacd-python",
+        "required": false,
+        "status": "unavailable",
+        "detail": "No explicit executable selection is configured.",
+        "nextStep": "Review the executable, then use game-dev tool configure coacd-python --executable ABSOLUTE_PATH --confirm; see docs/tool-setup.md.",
+        "evidence": {
+          "source": "none",
+          "code": "not-configured",
+          "digestPinned": false,
+          "processLaunched": false,
+          "versionChecked": false
+        }
+      },
+      {
+        "id": "blender-normalizer",
+        "required": false,
+        "status": "pass",
+        "detail": "C:\\Users\\slavd\\AppData\\Local\\GameDevelopmentStudio\\cli\\node_modules\\@theisegoria\\game-development-studio\\scripts\\blender_normalize.py",
+        "nextStep": "Reinstall from a checksum-verified release artifact; keep the current workspace."
+      },
+      {
+        "id": "blender-usd-exporter",
+        "required": false,
+        "status": "pass",
+        "detail": "C:\\Users\\slavd\\AppData\\Local\\GameDevelopmentStudio\\cli\\node_modules\\@theisegoria\\game-development-studio\\scripts\\blender_usd_export.py",
+        "nextStep": "Reinstall from a checksum-verified release artifact; keep the current workspace."
+      },
+      {
+        "id": "usdzip",
+        "required": false,
+        "status": "unavailable",
+        "detail": "optional USDZ archiver not present on this platform"
+      },
+      {
+        "id": "sqlite-catalog-runtime",
+        "required": true,
+        "status": "pass",
+        "detail": "node:sqlite is available"
+      },
+      {
+        "id": "codex-skills",
+        "required": false,
+        "status": "warning",
+        "detail": "C:\\Users\\slavd\\.codex\\skills",
+        "evidence": {
+          "skills": [
+            {
+              "name": "game-development-studio",
+              "installed": false
+            },
+            {
+              "name": "game-asset-production",
+              "installed": false
+            },
+            {
+              "name": "game-asset-vendoring",
+              "installed": false
+            },
+            {
+              "name": "game-visual-debugging",
+              "installed": false
+            },
+            {
+              "name": "game-performance-optimization",
+              "installed": false
+            }
+          ]
+        },
+        "nextStep": "Optional: install the packaged skill bundle using game-dev skill install all --confirm."
+      },
+      {
+        "id": "helper-version",
+        "required": true,
+        "status": "pass",
+        "detail": "1.5.1",
+        "evidence": {
+          "executable": "C:\\Users\\slavd\\AppData\\Local\\GameDevelopmentStudio\\cli\\node_modules\\@theisegoria\\game-development-studio\\dist\\cli.js",
+          "appVersion": "not supplied",
+          "expectedVersion": "not supplied"
+        },
+        "nextStep": "Inspect the resolved game-dev executable on PATH and use the intended checksum-verified release."
+      },
+      {
+        "id": "metal-evidence",
+        "required": false,
+        "status": "unavailable",
+        "detail": "Metal capture requires macOS",
+        "nextStep": "Review the separate Metal capture workflow and its launch approval before running it."
+      },
+      {
+        "id": "generic-sample",
+        "required": true,
+        "status": "pass",
+        "detail": "C:\\Users\\slavd\\AppData\\Local\\GameDevelopmentStudio\\cli\\node_modules\\@theisegoria\\game-development-studio\\adapters\\generic-sample\\capture.mjs",
+        "nextStep": "Follow docs/quickstart.md to capture, verify, and compare the packaged generic sample without a compiler or provider credentials."
+      }
+    ],
+    "processLaunched": false,
+    "evidenceCeiling": "Doctor proves local configuration and bounded executable-byte discovery only. It does not prove tool versions, provider authentication, paid generation, Blender/CoACD/Basis output, GPU capture, pixels, signing, notarization, or human review."
+  }
+}

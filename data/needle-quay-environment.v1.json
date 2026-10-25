@@ -1,0 +1,2272 @@
+{
+  "schema_version": 1,
+  "version": "1.0",
+  "date": "2026-10-24",
+  "title": "BeatMakka — Needle Quay: Buildings, Characters & Street Art, Vol. 01",
+  "kind": "ENVIRONMENT_PRODUCTION_SPEC_AND_BLOCKOUT_NOT_RUNTIME_ACCEPTANCE",
+  "source_file": "docs/needle-quay/environment-production-register-v1.0-source.ru.md",
+  "source_sha256": "08492c1f6189b40aa3b8bd3eaee7a836d45785467096ad0002d59bae32056303",
+  "canonical_asset_registry": "data/assets.json",
+  "canonical_workbook": "Asset_Production_Register.xlsx",
+  "district_id": "N00",
+  "district_artbook_alias": "NQ",
+  "visual_authority": "assets/references/needle-quay-approved-style-board.png",
+  "authored_constraints_not_platform_limits": true,
+  "tripo_authorized_credits": 0,
+  "buildings": [
+    {
+      "id": "NQ-BLD-01",
+      "name": "The Lantern Room",
+      "tier": "hero",
+      "priority": "P0",
+      "proposed_dimensions_wdh_studs": [
+        44,
+        30,
+        26
+      ],
+      "blockout_dimensions_wdh_studs": [
+        44,
+        30,
+        26
+      ],
+      "blockout_center_xz_studs": [
+        0,
+        95
+      ],
+      "front": "-Z",
+      "blockout_pivot": "footprint floor-center; canonical asset pivots remain unchanged",
+      "npc_names": [
+        "Ronan Wren"
+      ],
+      "quest_ids": [
+        "NQ-Q11",
+        "NQ-Q12"
+      ],
+      "sign_id": "NQ-SGN-01",
+      "access": "Lobby, compact hall and stage",
+      "stage": "LOCAL_3D_CANDIDATE_CONCEPT_APPROVED_SEPARATELY",
+      "art_approved": false,
+      "studio_imported": false,
+      "runtime_verified": false,
+      "triangle_budget": null,
+      "budget_note": "No new production triangle budget supplied; do not infer platform limits or authorization.",
+      "concept_sheet": "assets/concepts/needle-quay/NQ-BLD-01-lantern-room-v1.png",
+      "concept_art_approved": true,
+      "concept_sheet_status": "ART_APPROVED_CONCEPT",
+      "concept_approval_receipt": "docs/needle-quay/ART_APPROVAL_2026-10-25.json",
+      "production_geometry_art_approved": false,
+      "production_card": "assets/production/needle-quay/building-cards.json#NQ-BLD-01",
+      "production_model": "assets/production/needle-quay/models/NQ-BLD-01/NQ-BLD-01.glb",
+      "production_source": "assets/production/needle-quay/models/NQ-BLD-01/NQ-BLD-01.blend"
+    },
+    {
+      "id": "NQ-BLD-02",
+      "name": "Needle Records",
+      "tier": "hero",
+      "priority": "P0",
+      "proposed_dimensions_wdh_studs": [
+        24,
+        18,
+        19
+      ],
+      "blockout_dimensions_wdh_studs": [
+        32,
+        16,
+        24
+      ],
+      "blockout_center_xz_studs": [
+        -60,
+        0
+      ],
+      "front": "-Z",
+      "blockout_pivot": "footprint floor-center; canonical asset pivots remain unchanged",
+      "npc_names": [
+        "Naya"
+      ],
+      "quest_ids": [
+        "NQ-Q06",
+        "NQ-Q07"
+      ],
+      "sign_id": "NQ-SGN-02",
+      "access": "Accessible compact sales floor; upper floor decorative",
+      "stage": "LOCAL_3D_CANDIDATE_CONCEPT_APPROVED_SEPARATELY",
+      "art_approved": false,
+      "studio_imported": false,
+      "runtime_verified": false,
+      "triangle_budget": null,
+      "budget_note": "No new production triangle budget supplied; do not infer platform limits or authorization.",
+      "canonical_asset_id": "H06",
+      "canonical_contract_dimensions_wdh_studs": [
+        32,
+        16,
+        24
+      ],
+      "canonical_pivot": "Front-left floor grid corner",
+      "dimension_resolution": "OPEN: proposed 24x18x19 conflicts with canonical 32x16x24 and legacy 24x20 usable-interior requirement; do not rescale H06. Blockout uses canonical envelope.",
+      "concept_sheet": "assets/concepts/needle-quay/NQ-BLD-02-needle-records-v1.png",
+      "concept_art_approved": true,
+      "concept_sheet_status": "ART_APPROVED_CONCEPT",
+      "concept_approval_receipt": "docs/needle-quay/ART_APPROVAL_2026-10-25.json",
+      "production_geometry_art_approved": false,
+      "production_card": "assets/production/needle-quay/building-cards.json#NQ-BLD-02",
+      "production_model": "assets/production/needle-quay/models/NQ-BLD-02/NQ-BLD-02.glb",
+      "production_source": "assets/production/needle-quay/models/NQ-BLD-02/NQ-BLD-02.blend"
+    },
+    {
+      "id": "NQ-BLD-03",
+      "name": "Morrow Repairs",
+      "tier": "hero",
+      "priority": "P0",
+      "proposed_dimensions_wdh_studs": [
+        32,
+        24,
+        19
+      ],
+      "blockout_dimensions_wdh_studs": [
+        32,
+        24,
+        19
+      ],
+      "blockout_center_xz_studs": [
+        -130,
+        -105
+      ],
+      "front": "-Z",
+      "blockout_pivot": "footprint floor-center; canonical asset pivots remain unchanged",
+      "npc_names": [
+        "Ivo"
+      ],
+      "quest_ids": [
+        "NQ-Q04",
+        "NQ-Q05"
+      ],
+      "sign_id": "NQ-SGN-03",
+      "access": "Front work area and one working mechanism",
+      "stage": "LOCAL_3D_CANDIDATE_CONCEPT_APPROVED_SEPARATELY",
+      "art_approved": false,
+      "studio_imported": false,
+      "runtime_verified": false,
+      "triangle_budget": null,
+      "budget_note": "No new production triangle budget supplied; do not infer platform limits or authorization.",
+      "concept_sheet": "assets/concepts/needle-quay/NQ-BLD-03-morrow-repairs-v1.png",
+      "concept_sheet_date": "2026-10-25",
+      "concept_sheet_status": "ART_APPROVED_CONCEPT",
+      "concept_art_approved": true,
+      "concept_approval_receipt": "docs/needle-quay/ART_APPROVAL_2026-10-25.json",
+      "production_geometry_art_approved": false,
+      "production_card": "assets/production/needle-quay/building-cards.json#NQ-BLD-03",
+      "production_model": "assets/production/needle-quay/models/NQ-BLD-03/NQ-BLD-03.glb",
+      "production_source": "assets/production/needle-quay/models/NQ-BLD-03/NQ-BLD-03.blend"
+    },
+    {
+      "id": "NQ-BLD-04",
+      "name": "Harbor Market Hall",
+      "tier": "hero",
+      "priority": "P0",
+      "proposed_dimensions_wdh_studs": [
+        48,
+        30,
+        16
+      ],
+      "blockout_dimensions_wdh_studs": [
+        48,
+        30,
+        16
+      ],
+      "blockout_center_xz_studs": [
+        10,
+        0
+      ],
+      "front": "-Z",
+      "blockout_pivot": "footprint floor-center; canonical asset pivots remain unchanged",
+      "npc_names": [
+        "Sana Bell",
+        "Naya"
+      ],
+      "quest_ids": [
+        "NQ-Q08"
+      ],
+      "sign_id": "NQ-SGN-04",
+      "access": "Open ground level, four modular stalls",
+      "stage": "LOCAL_3D_CANDIDATE_CONCEPT_APPROVED_SEPARATELY",
+      "art_approved": false,
+      "studio_imported": false,
+      "runtime_verified": false,
+      "triangle_budget": null,
+      "budget_note": "No new production triangle budget supplied; do not infer platform limits or authorization.",
+      "concept_sheet": "assets/concepts/needle-quay/NQ-BLD-04-harbor-market-hall-v1.png",
+      "concept_sheet_date": "2026-10-25",
+      "concept_sheet_status": "ART_APPROVED_CONCEPT",
+      "concept_art_approved": true,
+      "concept_approval_receipt": "docs/needle-quay/ART_APPROVAL_2026-10-25.json",
+      "production_geometry_art_approved": false,
+      "production_card": "assets/production/needle-quay/building-cards.json#NQ-BLD-04",
+      "production_model": "assets/production/needle-quay/models/NQ-BLD-04/NQ-BLD-04.glb",
+      "production_source": "assets/production/needle-quay/models/NQ-BLD-04/NQ-BLD-04.blend"
+    },
+    {
+      "id": "NQ-BLD-05",
+      "name": "Signal House",
+      "tier": "hero",
+      "priority": "P0",
+      "proposed_dimensions_wdh_studs": [
+        16,
+        16,
+        26
+      ],
+      "blockout_dimensions_wdh_studs": [
+        16,
+        16,
+        26
+      ],
+      "blockout_center_xz_studs": [
+        175,
+        95
+      ],
+      "front": "-Z",
+      "blockout_pivot": "footprint floor-center; canonical asset pivots remain unchanged",
+      "npc_names": [
+        "Mica"
+      ],
+      "quest_ids": [
+        "NQ-Q09",
+        "NQ-Q10"
+      ],
+      "sign_id": "NQ-SGN-05",
+      "access": "Exterior and one accessible control desk",
+      "stage": "LOCAL_3D_CANDIDATE_CONCEPT_APPROVED_SEPARATELY",
+      "art_approved": false,
+      "studio_imported": false,
+      "runtime_verified": false,
+      "triangle_budget": null,
+      "budget_note": "No new production triangle budget supplied; do not infer platform limits or authorization.",
+      "concept_sheet": "assets/concepts/needle-quay/NQ-BLD-05-signal-house-v1.png",
+      "concept_sheet_date": "2026-10-25",
+      "concept_sheet_status": "ART_APPROVED_CONCEPT",
+      "concept_art_approved": true,
+      "concept_approval_receipt": "docs/needle-quay/ART_APPROVAL_2026-10-25.json",
+      "production_geometry_art_approved": false,
+      "production_card": "assets/production/needle-quay/building-cards.json#NQ-BLD-05",
+      "production_model": "assets/production/needle-quay/models/NQ-BLD-05/NQ-BLD-05.glb",
+      "production_source": "assets/production/needle-quay/models/NQ-BLD-05/NQ-BLD-05.blend"
+    },
+    {
+      "id": "NQ-BLD-06",
+      "name": "Warm Current Café",
+      "tier": "supporting",
+      "priority": "UNSPECIFIED_IN_SOURCE",
+      "proposed_dimensions_wdh_studs": [
+        18,
+        16,
+        13
+      ],
+      "blockout_dimensions_wdh_studs": [
+        18,
+        16,
+        13
+      ],
+      "blockout_center_xz_studs": [
+        -65,
+        90
+      ],
+      "front": "-Z",
+      "blockout_pivot": "footprint floor-center; canonical asset pivots remain unchanged",
+      "npc_names": [
+        "Nell Fen"
+      ],
+      "quest_ids": [],
+      "sign_id": "NQ-SGN-06",
+      "access": "Facade only; no full demo interior",
+      "stage": "LOCAL_3D_CANDIDATE_CONCEPT_APPROVED_SEPARATELY",
+      "art_approved": false,
+      "studio_imported": false,
+      "runtime_verified": false,
+      "triangle_budget": null,
+      "budget_note": "No new production triangle budget supplied; do not infer platform limits or authorization.",
+      "concept_sheet": "assets/concepts/needle-quay/NQ-BLD-06-warm-current-cafe-v1.png",
+      "concept_sheet_date": "2026-10-25",
+      "concept_sheet_status": "ART_APPROVED_CONCEPT",
+      "concept_art_approved": true,
+      "concept_approval_receipt": "docs/needle-quay/ART_APPROVAL_2026-10-25.json",
+      "production_geometry_art_approved": false,
+      "production_card": "assets/production/needle-quay/building-cards.json#NQ-BLD-06",
+      "production_model": "assets/production/needle-quay/models/NQ-BLD-06/NQ-BLD-06.glb",
+      "production_source": "assets/production/needle-quay/models/NQ-BLD-06/NQ-BLD-06.blend"
+    },
+    {
+      "id": "NQ-BLD-07",
+      "name": "North Slip Ferry Office",
+      "tier": "supporting",
+      "priority": "UNSPECIFIED_IN_SOURCE",
+      "proposed_dimensions_wdh_studs": [
+        18,
+        12,
+        11
+      ],
+      "blockout_dimensions_wdh_studs": [
+        18,
+        12,
+        11
+      ],
+      "blockout_center_xz_studs": [
+        -175,
+        90
+      ],
+      "front": "-Z",
+      "blockout_pivot": "footprint floor-center; canonical asset pivots remain unchanged",
+      "npc_names": [],
+      "quest_ids": [],
+      "sign_id": "NQ-SGN-07",
+      "access": "Facade only; no full demo interior",
+      "stage": "LOCAL_3D_CANDIDATE_CONCEPT_APPROVED_SEPARATELY",
+      "art_approved": false,
+      "studio_imported": false,
+      "runtime_verified": false,
+      "triangle_budget": null,
+      "budget_note": "No new production triangle budget supplied; do not infer platform limits or authorization.",
+      "concept_sheet": "assets/concepts/needle-quay/NQ-BLD-07-north-slip-ferry-office-v1.png",
+      "concept_sheet_date": "2026-10-25",
+      "concept_sheet_status": "ART_APPROVED_CONCEPT",
+      "concept_art_approved": true,
+      "concept_approval_receipt": "docs/needle-quay/ART_APPROVAL_2026-10-25.json",
+      "production_geometry_art_approved": false,
+      "production_card": "assets/production/needle-quay/building-cards.json#NQ-BLD-07",
+      "production_model": "assets/production/needle-quay/models/NQ-BLD-07/NQ-BLD-07.glb",
+      "production_source": "assets/production/needle-quay/models/NQ-BLD-07/NQ-BLD-07.blend"
+    },
+    {
+      "id": "NQ-BLD-08",
+      "name": "Quay Supply & Tackle",
+      "tier": "supporting",
+      "priority": "UNSPECIFIED_IN_SOURCE",
+      "proposed_dimensions_wdh_studs": [
+        16,
+        12,
+        10
+      ],
+      "blockout_dimensions_wdh_studs": [
+        16,
+        12,
+        10
+      ],
+      "blockout_center_xz_studs": [
+        -175,
+        0
+      ],
+      "front": "-Z",
+      "blockout_pivot": "footprint floor-center; canonical asset pivots remain unchanged",
+      "npc_names": [
+        "Tori"
+      ],
+      "quest_ids": [
+        "NQ-Q01",
+        "NQ-Q02",
+        "NQ-Q03"
+      ],
+      "sign_id": "NQ-SGN-08",
+      "access": "Facade only; no full demo interior",
+      "stage": "LOCAL_3D_CANDIDATE_CONCEPT_APPROVED_SEPARATELY",
+      "art_approved": false,
+      "studio_imported": false,
+      "runtime_verified": false,
+      "triangle_budget": null,
+      "budget_note": "No new production triangle budget supplied; do not infer platform limits or authorization.",
+      "concept_sheet": "assets/concepts/needle-quay/NQ-BLD-08-quay-supply-tackle-v1.png",
+      "concept_sheet_date": "2026-10-25",
+      "concept_sheet_status": "ART_APPROVED_CONCEPT",
+      "concept_art_approved": true,
+      "concept_approval_receipt": "docs/needle-quay/ART_APPROVAL_2026-10-25.json",
+      "production_geometry_art_approved": false,
+      "production_card": "assets/production/needle-quay/building-cards.json#NQ-BLD-08",
+      "production_model": "assets/production/needle-quay/models/NQ-BLD-08/NQ-BLD-08.glb",
+      "production_source": "assets/production/needle-quay/models/NQ-BLD-08/NQ-BLD-08.blend"
+    },
+    {
+      "id": "NQ-BLD-09",
+      "name": "Cinder Cold Storage",
+      "tier": "supporting",
+      "priority": "UNSPECIFIED_IN_SOURCE",
+      "proposed_dimensions_wdh_studs": [
+        34,
+        20,
+        16
+      ],
+      "blockout_dimensions_wdh_studs": [
+        34,
+        20,
+        16
+      ],
+      "blockout_center_xz_studs": [
+        -80,
+        -105
+      ],
+      "front": "-Z",
+      "blockout_pivot": "footprint floor-center; canonical asset pivots remain unchanged",
+      "npc_names": [],
+      "quest_ids": [
+        "NQ-Q04",
+        "NQ-Q05"
+      ],
+      "sign_id": "NQ-SGN-09",
+      "access": "Facade only; no full demo interior",
+      "stage": "LOCAL_3D_CANDIDATE_CONCEPT_APPROVED_SEPARATELY",
+      "art_approved": false,
+      "studio_imported": false,
+      "runtime_verified": false,
+      "triangle_budget": null,
+      "budget_note": "No new production triangle budget supplied; do not infer platform limits or authorization.",
+      "concept_sheet": "assets/concepts/needle-quay/NQ-BLD-09-cinder-cold-storage-v1.png",
+      "concept_sheet_date": "2026-10-25",
+      "concept_sheet_status": "ART_APPROVED_CONCEPT",
+      "concept_art_approved": true,
+      "concept_approval_receipt": "docs/needle-quay/ART_APPROVAL_2026-10-25.json",
+      "production_geometry_art_approved": false,
+      "production_card": "assets/production/needle-quay/building-cards.json#NQ-BLD-09",
+      "production_model": "assets/production/needle-quay/models/NQ-BLD-09/NQ-BLD-09.glb",
+      "production_source": "assets/production/needle-quay/models/NQ-BLD-09/NQ-BLD-09.blend"
+    },
+    {
+      "id": "NQ-BLD-10",
+      "name": "Quayside Flats",
+      "tier": "supporting",
+      "priority": "UNSPECIFIED_IN_SOURCE",
+      "proposed_dimensions_wdh_studs": [
+        38,
+        16,
+        26
+      ],
+      "blockout_dimensions_wdh_studs": [
+        38,
+        16,
+        26
+      ],
+      "blockout_center_xz_studs": [
+        65,
+        -105
+      ],
+      "front": "-Z",
+      "blockout_pivot": "footprint floor-center; canonical asset pivots remain unchanged",
+      "npc_names": [],
+      "quest_ids": [],
+      "sign_id": "NQ-SGN-10",
+      "access": "Facade only; no full demo interior",
+      "stage": "LOCAL_3D_CANDIDATE_CONCEPT_APPROVED_SEPARATELY",
+      "art_approved": false,
+      "studio_imported": false,
+      "runtime_verified": false,
+      "triangle_budget": null,
+      "budget_note": "No new production triangle budget supplied; do not infer platform limits or authorization.",
+      "concept_sheet": "assets/concepts/needle-quay/NQ-BLD-10-quayside-flats-v1.png",
+      "concept_sheet_date": "2026-10-25",
+      "concept_sheet_status": "ART_APPROVED_CONCEPT",
+      "concept_art_approved": true,
+      "concept_approval_receipt": "docs/needle-quay/ART_APPROVAL_2026-10-25.json",
+      "production_geometry_art_approved": false,
+      "production_card": "assets/production/needle-quay/building-cards.json#NQ-BLD-10",
+      "production_model": "assets/production/needle-quay/models/NQ-BLD-10/NQ-BLD-10.glb",
+      "production_source": "assets/production/needle-quay/models/NQ-BLD-10/NQ-BLD-10.blend"
+    },
+    {
+      "id": "NQ-BLD-11",
+      "name": "Tidewash Laundry",
+      "tier": "supporting",
+      "priority": "UNSPECIFIED_IN_SOURCE",
+      "proposed_dimensions_wdh_studs": [
+        18,
+        16,
+        14
+      ],
+      "blockout_dimensions_wdh_studs": [
+        18,
+        16,
+        14
+      ],
+      "blockout_center_xz_studs": [
+        145,
+        -105
+      ],
+      "front": "-Z",
+      "blockout_pivot": "footprint floor-center; canonical asset pivots remain unchanged",
+      "npc_names": [],
+      "quest_ids": [],
+      "sign_id": "NQ-SGN-11",
+      "access": "Facade only; no full demo interior",
+      "stage": "LOCAL_3D_CANDIDATE_CONCEPT_APPROVED_SEPARATELY",
+      "art_approved": false,
+      "studio_imported": false,
+      "runtime_verified": false,
+      "triangle_budget": null,
+      "budget_note": "No new production triangle budget supplied; do not infer platform limits or authorization.",
+      "concept_sheet": "assets/concepts/needle-quay/NQ-BLD-11-tidewash-laundry-v1.png",
+      "concept_sheet_date": "2026-10-25",
+      "concept_sheet_status": "ART_APPROVED_CONCEPT",
+      "concept_art_approved": true,
+      "concept_approval_receipt": "docs/needle-quay/ART_APPROVAL_2026-10-25.json",
+      "production_geometry_art_approved": false,
+      "production_card": "assets/production/needle-quay/building-cards.json#NQ-BLD-11",
+      "production_model": "assets/production/needle-quay/models/NQ-BLD-11/NQ-BLD-11.glb",
+      "production_source": "assets/production/needle-quay/models/NQ-BLD-11/NQ-BLD-11.blend"
+    },
+    {
+      "id": "NQ-BLD-12",
+      "name": "Relay Substation",
+      "tier": "supporting",
+      "priority": "UNSPECIFIED_IN_SOURCE",
+      "proposed_dimensions_wdh_studs": [
+        12,
+        12,
+        11
+      ],
+      "blockout_dimensions_wdh_studs": [
+        12,
+        12,
+        11
+      ],
+      "blockout_center_xz_studs": [
+        140,
+        95
+      ],
+      "front": "-Z",
+      "blockout_pivot": "footprint floor-center; canonical asset pivots remain unchanged",
+      "npc_names": [
+        "Mica"
+      ],
+      "quest_ids": [
+        "NQ-Q10"
+      ],
+      "sign_id": "NQ-SGN-12",
+      "access": "Facade only; no full demo interior",
+      "stage": "LOCAL_3D_CANDIDATE_CONCEPT_APPROVED_SEPARATELY",
+      "art_approved": false,
+      "studio_imported": false,
+      "runtime_verified": false,
+      "triangle_budget": null,
+      "budget_note": "No new production triangle budget supplied; do not infer platform limits or authorization.",
+      "concept_sheet": "assets/concepts/needle-quay/NQ-BLD-12-relay-substation-v1.png",
+      "concept_sheet_date": "2026-10-25",
+      "concept_sheet_status": "ART_APPROVED_CONCEPT",
+      "concept_art_approved": true,
+      "concept_approval_receipt": "docs/needle-quay/ART_APPROVAL_2026-10-25.json",
+      "production_geometry_art_approved": false,
+      "production_card": "assets/production/needle-quay/building-cards.json#NQ-BLD-12",
+      "production_model": "assets/production/needle-quay/models/NQ-BLD-12/NQ-BLD-12.glb",
+      "production_source": "assets/production/needle-quay/models/NQ-BLD-12/NQ-BLD-12.blend"
+    },
+    {
+      "id": "NQ-BLD-13",
+      "name": "Dockline Depot",
+      "tier": "supporting",
+      "priority": "UNSPECIFIED_IN_SOURCE",
+      "proposed_dimensions_wdh_studs": [
+        30,
+        22,
+        20
+      ],
+      "blockout_dimensions_wdh_studs": [
+        30,
+        22,
+        20
+      ],
+      "blockout_center_xz_studs": [
+        -140,
+        0
+      ],
+      "front": "-Z",
+      "blockout_pivot": "footprint floor-center; canonical asset pivots remain unchanged",
+      "npc_names": [
+        "Tori"
+      ],
+      "quest_ids": [
+        "NQ-Q01",
+        "NQ-Q02",
+        "NQ-Q03"
+      ],
+      "sign_id": "NQ-SGN-13",
+      "access": "Facade only; no full demo interior",
+      "stage": "LOCAL_3D_CANDIDATE_CONCEPT_APPROVED_SEPARATELY",
+      "art_approved": false,
+      "studio_imported": false,
+      "runtime_verified": false,
+      "triangle_budget": null,
+      "budget_note": "No new production triangle budget supplied; do not infer platform limits or authorization.",
+      "concept_sheet": "assets/concepts/needle-quay/NQ-BLD-13-dockline-depot-v1.png",
+      "concept_sheet_date": "2026-10-25",
+      "concept_sheet_status": "ART_APPROVED_CONCEPT",
+      "concept_art_approved": true,
+      "concept_approval_receipt": "docs/needle-quay/ART_APPROVAL_2026-10-25.json",
+      "production_geometry_art_approved": false,
+      "production_card": "assets/production/needle-quay/building-cards.json#NQ-BLD-13",
+      "production_model": "assets/production/needle-quay/models/NQ-BLD-13/NQ-BLD-13.glb",
+      "production_source": "assets/production/needle-quay/models/NQ-BLD-13/NQ-BLD-13.blend"
+    }
+  ],
+  "stops": [
+    {
+      "id": "NQ-STOP-01",
+      "existing_parking_id": "P1",
+      "name": "Dockside Exchange",
+      "center_xz_studs": [
+        -170,
+        65
+      ],
+      "parking_clearance_wd_studs": [
+        28,
+        18
+      ],
+      "building_ids": [
+        "NQ-BLD-08",
+        "NQ-BLD-13"
+      ],
+      "npcs": [
+        "Tori"
+      ],
+      "sample_bindings": [
+        "I01"
+      ],
+      "quest_ids": [
+        "NQ-Q00",
+        "NQ-Q01",
+        "NQ-Q02",
+        "NQ-Q03"
+      ],
+      "route_width_target_studs": 6,
+      "stage": "STATIC_LAYOUT_ANCHOR_NO_VAN_SERVICE"
+    },
+    {
+      "id": "NQ-STOP-02",
+      "existing_parking_id": "P2",
+      "name": "Repair Alley",
+      "center_xz_studs": [
+        -130,
+        -65
+      ],
+      "parking_clearance_wd_studs": [
+        28,
+        18
+      ],
+      "building_ids": [
+        "NQ-BLD-03",
+        "NQ-BLD-09"
+      ],
+      "npcs": [
+        "Ivo"
+      ],
+      "sample_bindings": [
+        "I02"
+      ],
+      "quest_ids": [
+        "NQ-Q04",
+        "NQ-Q05"
+      ],
+      "route_width_target_studs": 6,
+      "stage": "STATIC_LAYOUT_ANCHOR_NO_VAN_SERVICE"
+    },
+    {
+      "id": "NQ-STOP-03",
+      "existing_parking_id": "P3",
+      "name": "Vinyl Market",
+      "center_xz_studs": [
+        -55,
+        -65
+      ],
+      "parking_clearance_wd_studs": [
+        28,
+        18
+      ],
+      "building_ids": [
+        "NQ-BLD-02",
+        "NQ-BLD-04"
+      ],
+      "npcs": [
+        "Naya",
+        "Sana Bell"
+      ],
+      "sample_bindings": [],
+      "quest_ids": [
+        "NQ-Q06",
+        "NQ-Q07",
+        "NQ-Q08"
+      ],
+      "route_width_target_studs": 6,
+      "stage": "STATIC_LAYOUT_ANCHOR_NO_VAN_SERVICE"
+    },
+    {
+      "id": "NQ-STOP-04",
+      "existing_parking_id": "P4",
+      "name": "Breakwater Steps",
+      "center_xz_studs": [
+        160,
+        65
+      ],
+      "parking_clearance_wd_studs": [
+        28,
+        18
+      ],
+      "building_ids": [
+        "NQ-BLD-05",
+        "NQ-BLD-12"
+      ],
+      "npcs": [
+        "Mica"
+      ],
+      "sample_bindings": [
+        "I03"
+      ],
+      "quest_ids": [
+        "NQ-Q09",
+        "NQ-Q10"
+      ],
+      "route_width_target_studs": 6,
+      "stage": "STATIC_LAYOUT_ANCHOR_NO_VAN_SERVICE"
+    }
+  ],
+  "npcs": [
+    {
+      "name": "Tori",
+      "location": "Dockside Exchange",
+      "silhouette": "Broad vest, rolled sleeves, tool belt",
+      "role": "Practical dock master; hears work rhythms",
+      "identity_status": "EXISTING_WORLD_V2",
+      "canonical_asset_id": null,
+      "stage": "LOCAL_DESIGN_AND_RIG_CANDIDATE",
+      "production_model": "assets/production/needle-quay/models/NQ-NPC-TORI/NQ-NPC-TORI.glb"
+    },
+    {
+      "name": "Ivo",
+      "location": "Morrow Repairs",
+      "silhouette": "Tall slim body, work jacket, goggles",
+      "role": "Mechanic and sound experimenter",
+      "identity_status": "EXISTING_WORLD_V2",
+      "canonical_asset_id": null,
+      "stage": "LOCAL_DESIGN_AND_RIG_CANDIDATE",
+      "production_model": "assets/production/needle-quay/models/NQ-NPC-IVO/NQ-NPC-IVO.glb"
+    },
+    {
+      "name": "Naya",
+      "location": "Needle Records",
+      "silhouette": "Oversized sweater, bright vinyl bag",
+      "role": "Music archivist",
+      "identity_status": "EXISTING_WORLD_V2",
+      "canonical_asset_id": null,
+      "stage": "LOCAL_DESIGN_AND_RIG_CANDIDATE",
+      "production_model": "assets/production/needle-quay/models/NQ-NPC-NAYA/NQ-NPC-NAYA.glb"
+    },
+    {
+      "name": "Sana Bell",
+      "location": "Harbor Market Hall",
+      "silhouette": "Large bag, order clipboard, coral accents",
+      "role": "Market coordinator",
+      "identity_status": "PROPOSED_IN_REGISTER_V1",
+      "canonical_asset_id": null,
+      "stage": "LOCAL_DESIGN_AND_RIG_CANDIDATE",
+      "production_model": "assets/production/needle-quay/models/NQ-NPC-SANA/NQ-NPC-SANA.glb"
+    },
+    {
+      "name": "Mica",
+      "location": "Van and Signal House",
+      "silhouette": "Preserve H04 canonical robot design",
+      "role": "Canonical guide; no Mika rename",
+      "identity_status": "CANONICAL_H04",
+      "canonical_asset_id": "H04",
+      "stage": "EXISTING_CANONICAL_REUSED",
+      "production_model": "assets/optimized/H04/H04_atlas_v1.glb"
+    },
+    {
+      "name": "Ronan Wren",
+      "location": "The Lantern Room",
+      "silhouette": "Long coat, keys, subdued tones, tired posture",
+      "role": "Keeper of the Pause; disillusioned host, not enemy",
+      "identity_status": "PROPOSED_IN_REGISTER_V1",
+      "canonical_asset_id": null,
+      "stage": "LOCAL_DESIGN_AND_RIG_CANDIDATE",
+      "production_model": "assets/production/needle-quay/models/NQ-NPC-RONAN/NQ-NPC-RONAN.glb"
+    },
+    {
+      "name": "Nell Fen",
+      "location": "Warm Current Café",
+      "silhouette": "Apron, broad silhouette, mug and notes",
+      "role": "Cafe host and local news",
+      "identity_status": "PROPOSED_IN_REGISTER_V1",
+      "canonical_asset_id": null,
+      "stage": "LOCAL_DESIGN_AND_RIG_CANDIDATE",
+      "production_model": "assets/production/needle-quay/models/NQ-NPC-NELL/NQ-NPC-NELL.glb"
+    }
+  ],
+  "quests": [
+    {
+      "id": "NQ-Q00",
+      "name": "The Van Arrives",
+      "npc": "Mica",
+      "result": "Meet the studio van",
+      "implementation_status": "SPECIFICATION_ONLY_NOT_NEW_RUNTIME_QUEST",
+      "optional_performance": false,
+      "requires_human_audience": false,
+      "requires_microphone": false,
+      "progress_scope": "personal server-authoritative; runtime integration pending",
+      "design_building": null,
+      "completion_contract": "Interact with van tutorial anchor",
+      "geometry_anchor": "LOOPVAN-01 tutorial marker",
+      "world_state_contract": "Personal client presentation from server-owned saved progress; no global completion propagation",
+      "sound_contract": "existing composition playback / role ambience; no new audio license or upload implied",
+      "failure_recovery": "Cancel/rejoin preserves prior committed steps; replay presentation idempotently; optional performance never gates progress",
+      "acceptance": "DESIGN_SPECIFIED; not implemented or runtime verified"
+    },
+    {
+      "id": "NQ-Q01",
+      "name": "Make Room for Music",
+      "npc": "Tori",
+      "result": "Clear the pier performance area",
+      "implementation_status": "SPECIFICATION_ONLY_NOT_NEW_RUNTIME_QUEST",
+      "optional_performance": false,
+      "requires_human_audience": false,
+      "requires_microphone": false,
+      "progress_scope": "personal server-authoritative; runtime integration pending",
+      "design_building": "NQ-BLD-07",
+      "completion_contract": "Interact with three removable dock dressing targets",
+      "geometry_anchor": "Short exterior interaction at front (-Z); closed scenic shell.",
+      "world_state_contract": "Personal client presentation from server-owned saved progress; no global completion propagation",
+      "sound_contract": "existing composition playback / role ambience; no new audio license or upload implied",
+      "failure_recovery": "Cancel/rejoin preserves prior committed steps; replay presentation idempotently; optional performance never gates progress",
+      "acceptance": "DESIGN_SPECIFIED; not implemented or runtime verified"
+    },
+    {
+      "id": "NQ-Q02",
+      "name": "Rhythm in the Metal",
+      "npc": "Tori",
+      "result": "Collect I01 and create a four-step beat",
+      "implementation_status": "SPECIFICATION_ONLY_NOT_NEW_RUNTIME_QUEST",
+      "optional_performance": false,
+      "requires_human_audience": false,
+      "requires_microphone": false,
+      "progress_scope": "personal server-authoritative; runtime integration pending",
+      "design_building": "NQ-BLD-07",
+      "completion_contract": "Unlock I01 and author four active beat steps",
+      "geometry_anchor": "Short exterior interaction at front (-Z); closed scenic shell.",
+      "world_state_contract": "Personal client presentation from server-owned saved progress; no global completion propagation",
+      "sound_contract": "I01 / dock metal",
+      "failure_recovery": "Cancel/rejoin preserves prior committed steps; replay presentation idempotently; optional performance never gates progress",
+      "acceptance": "DESIGN_SPECIFIED; not implemented or runtime verified"
+    },
+    {
+      "id": "NQ-Q03",
+      "name": "First Dockside Jam",
+      "npc": "Tori",
+      "result": "Optional first public performance",
+      "implementation_status": "SPECIFICATION_ONLY_NOT_NEW_RUNTIME_QUEST",
+      "optional_performance": true,
+      "requires_human_audience": false,
+      "requires_microphone": false,
+      "progress_scope": "personal server-authoritative; runtime integration pending",
+      "design_building": "NQ-BLD-07",
+      "completion_contract": "Accept performance invitation or skip without progression penalty",
+      "geometry_anchor": "Short exterior interaction at front (-Z); closed scenic shell.",
+      "world_state_contract": "Personal client presentation from server-owned saved progress; no global completion propagation",
+      "sound_contract": "I01 / dock metal",
+      "failure_recovery": "Cancel/rejoin preserves prior committed steps; replay presentation idempotently; optional performance never gates progress",
+      "acceptance": "DESIGN_SPECIFIED; not implemented or runtime verified"
+    },
+    {
+      "id": "NQ-Q04",
+      "name": "The Vent Has a Pulse",
+      "npc": "Ivo",
+      "result": "Repair ventilation and collect I02",
+      "implementation_status": "SPECIFICATION_ONLY_NOT_NEW_RUNTIME_QUEST",
+      "optional_performance": false,
+      "requires_human_audience": false,
+      "requires_microphone": false,
+      "progress_scope": "personal server-authoritative; runtime integration pending",
+      "design_building": "NQ-BLD-03",
+      "completion_contract": "Repair P16 then unlock I02",
+      "geometry_anchor": "Front-right P16/I02 vent, left workbench, sliding leaf travel zone",
+      "world_state_contract": "Personal client presentation from server-owned saved progress; no global completion propagation",
+      "sound_contract": "I02 / vent pulse",
+      "failure_recovery": "Cancel/rejoin preserves prior committed steps; replay presentation idempotently; optional performance never gates progress",
+      "acceptance": "DESIGN_SPECIFIED; not implemented or runtime verified"
+    },
+    {
+      "id": "NQ-Q05",
+      "name": "One Beat, Two Ways",
+      "npc": "Ivo",
+      "result": "Create A/B variations",
+      "implementation_status": "SPECIFICATION_ONLY_NOT_NEW_RUNTIME_QUEST",
+      "optional_performance": false,
+      "requires_human_audience": false,
+      "requires_microphone": false,
+      "progress_scope": "personal server-authoritative; runtime integration pending",
+      "design_building": "NQ-BLD-03",
+      "completion_contract": "Save distinct A and B patterns",
+      "geometry_anchor": "Front-right P16/I02 vent, left workbench, sliding leaf travel zone",
+      "world_state_contract": "Personal client presentation from server-owned saved progress; no global completion propagation",
+      "sound_contract": "I02 / vent pulse",
+      "failure_recovery": "Cancel/rejoin preserves prior committed steps; replay presentation idempotently; optional performance never gates progress",
+      "acceptance": "DESIGN_SPECIFIED; not implemented or runtime verified"
+    },
+    {
+      "id": "NQ-Q06",
+      "name": "Records Remember",
+      "npc": "Naya",
+      "result": "Sort and match musical materials",
+      "implementation_status": "SPECIFICATION_ONLY_NOT_NEW_RUNTIME_QUEST",
+      "optional_performance": false,
+      "requires_human_audience": false,
+      "requires_microphone": false,
+      "progress_scope": "personal server-authoritative; runtime integration pending",
+      "design_building": "NQ-BLD-02",
+      "completion_contract": "Match three authored record tags",
+      "geometry_anchor": "Front door, left sorting counter, right Beat Shelf/listening nook",
+      "world_state_contract": "Personal client presentation from server-owned saved progress; no global completion propagation",
+      "sound_contract": "existing composition playback / role ambience; no new audio license or upload implied",
+      "failure_recovery": "Cancel/rejoin preserves prior committed steps; replay presentation idempotently; optional performance never gates progress",
+      "acceptance": "DESIGN_SPECIFIED; not implemented or runtime verified"
+    },
+    {
+      "id": "NQ-Q07",
+      "name": "Keep Your Sound",
+      "npc": "Naya",
+      "result": "Save composition to Beat Shelf",
+      "implementation_status": "SPECIFICATION_ONLY_NOT_NEW_RUNTIME_QUEST",
+      "optional_performance": false,
+      "requires_human_audience": false,
+      "requires_microphone": false,
+      "progress_scope": "personal server-authoritative; runtime integration pending",
+      "design_building": "NQ-BLD-02",
+      "completion_contract": "Persist composition in existing Beat Shelf contract",
+      "geometry_anchor": "Front door, left sorting counter, right Beat Shelf/listening nook",
+      "world_state_contract": "Personal client presentation from server-owned saved progress; no global completion propagation",
+      "sound_contract": "existing composition playback / role ambience; no new audio license or upload implied",
+      "failure_recovery": "Cancel/rejoin preserves prior committed steps; replay presentation idempotently; optional performance never gates progress",
+      "acceptance": "DESIGN_SPECIFIED; not implemented or runtime verified"
+    },
+    {
+      "id": "NQ-Q08",
+      "name": "Market Is Listening",
+      "npc": "Sana Bell",
+      "result": "Prepare the market for a concert",
+      "implementation_status": "SPECIFICATION_ONLY_NOT_NEW_RUNTIME_QUEST",
+      "optional_performance": false,
+      "requires_human_audience": false,
+      "requires_microphone": false,
+      "progress_scope": "personal server-authoritative; runtime integration pending",
+      "design_building": "NQ-BLD-04",
+      "completion_contract": "Clear performance nook without moving any of four stalls",
+      "geometry_anchor": "Sana at front-left; open central aisle; separate rear performance nook",
+      "world_state_contract": "Personal client presentation from server-owned saved progress; no global completion propagation",
+      "sound_contract": "existing composition playback / role ambience; no new audio license or upload implied",
+      "failure_recovery": "Cancel/rejoin preserves prior committed steps; replay presentation idempotently; optional performance never gates progress",
+      "acceptance": "DESIGN_SPECIFIED; not implemented or runtime verified"
+    },
+    {
+      "id": "NQ-Q09",
+      "name": "Signal, Not Noise",
+      "npc": "Mica",
+      "result": "Collect I03 and answer a rhythmic prompt",
+      "implementation_status": "SPECIFICATION_ONLY_NOT_NEW_RUNTIME_QUEST",
+      "optional_performance": false,
+      "requires_human_audience": false,
+      "requires_microphone": false,
+      "progress_scope": "personal server-authoritative; runtime integration pending",
+      "design_building": "NQ-BLD-05",
+      "completion_contract": "Unlock I03 then submit matching rhythmic pattern",
+      "geometry_anchor": "Console fixed on front (-Z), right-hand side; I03 accessible without entering solid shell",
+      "world_state_contract": "Personal client presentation from server-owned saved progress; no global completion propagation",
+      "sound_contract": "I03 / radio response",
+      "failure_recovery": "Cancel/rejoin preserves prior committed steps; replay presentation idempotently; optional performance never gates progress",
+      "acceptance": "DESIGN_SPECIFIED; not implemented or runtime verified"
+    },
+    {
+      "id": "NQ-Q10",
+      "name": "Light the Breakwater",
+      "npc": "Mica",
+      "result": "Restore the local radio signal",
+      "implementation_status": "SPECIFICATION_ONLY_NOT_NEW_RUNTIME_QUEST",
+      "optional_performance": false,
+      "requires_human_audience": false,
+      "requires_microphone": false,
+      "progress_scope": "personal server-authoritative; runtime integration pending",
+      "design_building": "NQ-BLD-05",
+      "completion_contract": "Commit personal radio-restored flag",
+      "geometry_anchor": "Console fixed on front (-Z), right-hand side; I03 accessible without entering solid shell",
+      "world_state_contract": "Personal client presentation from server-owned saved progress; no global completion propagation",
+      "sound_contract": "I03 / radio response",
+      "failure_recovery": "Cancel/rejoin preserves prior committed steps; replay presentation idempotently; optional performance never gates progress",
+      "acceptance": "DESIGN_SPECIFIED; not implemented or runtime verified"
+    },
+    {
+      "id": "NQ-Q11",
+      "name": "Open the Lantern Room",
+      "npc": "Ronan Wren",
+      "result": "Speak to Ronan and prepare the stage",
+      "implementation_status": "SPECIFICATION_ONLY_NOT_NEW_RUNTIME_QUEST",
+      "optional_performance": false,
+      "requires_human_audience": false,
+      "requires_microphone": false,
+      "progress_scope": "personal server-authoritative; runtime integration pending",
+      "design_building": "NQ-BLD-01",
+      "completion_contract": "Complete Ronan conversation then stage-ready flag",
+      "geometry_anchor": "Lobby conversation, stage trigger, right-side service opening",
+      "world_state_contract": "Personal client presentation from server-owned saved progress; no global completion propagation",
+      "sound_contract": "existing composition playback / role ambience; no new audio license or upload implied",
+      "failure_recovery": "Cancel/rejoin preserves prior committed steps; replay presentation idempotently; optional performance never gates progress",
+      "acceptance": "DESIGN_SPECIFIED; not implemented or runtime verified"
+    },
+    {
+      "id": "NQ-Q12",
+      "name": "The Quay Plays Again",
+      "npc": "Ronan Wren and residents",
+      "result": "Six-phase chapter concert and personal district restoration",
+      "implementation_status": "SPECIFICATION_ONLY_NOT_NEW_RUNTIME_QUEST",
+      "optional_performance": false,
+      "requires_human_audience": false,
+      "requires_microphone": false,
+      "progress_scope": "personal server-authoritative; runtime integration pending",
+      "design_building": "NQ-BLD-01",
+      "completion_contract": "Advance six concert phases from personal server-owned completion events",
+      "geometry_anchor": "Lobby conversation, stage trigger, right-side service opening",
+      "world_state_contract": "Personal client presentation from server-owned saved progress; no global completion propagation",
+      "sound_contract": "existing composition playback / role ambience; no new audio license or upload implied",
+      "failure_recovery": "Cancel/rejoin preserves prior committed steps; replay presentation idempotently; optional performance never gates progress",
+      "acceptance": "DESIGN_SPECIFIED; not implemented or runtime verified",
+      "concert_phases": [
+        "arrival / resident gathering",
+        "dock rhythm",
+        "repair pulse A/B",
+        "vinyl motif",
+        "radio response",
+        "ensemble / restoration"
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "id": "MAT-01",
+      "name": "Faded Teal Metal",
+      "atlas": "FZ_MaterialAtlas_v1",
+      "atlas_slot": "paint_primary",
+      "palette_key": "teal",
+      "mapping_status": "Shared atlas reuse plus procedural DCC finish; final UV bake pending for brick/brass",
+      "stage": "LOCAL_PROCEDURAL_MATERIAL_CANDIDATE",
+      "production_source": "assets/production/needle-quay/materials/NeedleQuayMaterialLibrary.blend",
+      "preview": "assets/production/needle-quay/materials/MAT-01.png"
+    },
+    {
+      "id": "MAT-02",
+      "name": "Cream Painted Trim",
+      "atlas": "FZ_MaterialAtlas_v1",
+      "atlas_slot": "trim",
+      "palette_key": "cream",
+      "mapping_status": "Shared atlas reuse plus procedural DCC finish; final UV bake pending for brick/brass",
+      "stage": "LOCAL_PROCEDURAL_MATERIAL_CANDIDATE",
+      "production_source": "assets/production/needle-quay/materials/NeedleQuayMaterialLibrary.blend",
+      "preview": "assets/production/needle-quay/materials/MAT-02.png"
+    },
+    {
+      "id": "MAT-03",
+      "name": "Warm Walnut",
+      "atlas": "FZ_MaterialAtlas_v1",
+      "atlas_slot": "wood",
+      "palette_key": "walnut",
+      "mapping_status": "Shared atlas reuse plus procedural DCC finish; final UV bake pending for brick/brass",
+      "stage": "LOCAL_PROCEDURAL_MATERIAL_CANDIDATE",
+      "production_source": "assets/production/needle-quay/materials/NeedleQuayMaterialLibrary.blend",
+      "preview": "assets/production/needle-quay/materials/MAT-03.png"
+    },
+    {
+      "id": "MAT-04",
+      "name": "Dock Timber",
+      "atlas": "FZ_MaterialAtlas_v1",
+      "atlas_slot": "wood",
+      "palette_key": "walnut",
+      "mapping_status": "Shared atlas reuse plus procedural DCC finish; final UV bake pending for brick/brass",
+      "stage": "LOCAL_PROCEDURAL_MATERIAL_CANDIDATE",
+      "production_source": "assets/production/needle-quay/materials/NeedleQuayMaterialLibrary.blend",
+      "preview": "assets/production/needle-quay/materials/MAT-04.png"
+    },
+    {
+      "id": "MAT-05",
+      "name": "Sea-Worn Brick",
+      "atlas": "FZ_MaterialAtlas_v1",
+      "atlas_slot": "stone",
+      "palette_key": "stone",
+      "mapping_status": "Shared atlas reuse plus procedural DCC finish; final UV bake pending for brick/brass",
+      "stage": "LOCAL_PROCEDURAL_MATERIAL_CANDIDATE",
+      "production_source": "assets/production/needle-quay/materials/NeedleQuayMaterialLibrary.blend",
+      "preview": "assets/production/needle-quay/materials/MAT-05.png"
+    },
+    {
+      "id": "MAT-06",
+      "name": "Quay Concrete",
+      "atlas": "FZ_MaterialAtlas_v1",
+      "atlas_slot": "stone",
+      "palette_key": "stone",
+      "mapping_status": "Shared atlas reuse plus procedural DCC finish; final UV bake pending for brick/brass",
+      "stage": "LOCAL_PROCEDURAL_MATERIAL_CANDIDATE",
+      "production_source": "assets/production/needle-quay/materials/NeedleQuayMaterialLibrary.blend",
+      "preview": "assets/production/needle-quay/materials/MAT-06.png"
+    },
+    {
+      "id": "MAT-07",
+      "name": "Dusty Coral Enamel",
+      "atlas": "FZ_MaterialAtlas_v1",
+      "atlas_slot": "accent",
+      "palette_key": "coral",
+      "mapping_status": "Shared atlas reuse plus procedural DCC finish; final UV bake pending for brick/brass",
+      "stage": "LOCAL_PROCEDURAL_MATERIAL_CANDIDATE",
+      "production_source": "assets/production/needle-quay/materials/NeedleQuayMaterialLibrary.blend",
+      "preview": "assets/production/needle-quay/materials/MAT-07.png"
+    },
+    {
+      "id": "MAT-08",
+      "name": "Dark Cast Iron",
+      "atlas": "FZ_MaterialAtlas_v1",
+      "atlas_slot": "graphite",
+      "palette_key": "graphite",
+      "mapping_status": "Shared atlas reuse plus procedural DCC finish; final UV bake pending for brick/brass",
+      "stage": "LOCAL_PROCEDURAL_MATERIAL_CANDIDATE",
+      "production_source": "assets/production/needle-quay/materials/NeedleQuayMaterialLibrary.blend",
+      "preview": "assets/production/needle-quay/materials/MAT-08.png"
+    },
+    {
+      "id": "MAT-09",
+      "name": "Oxidized Brass",
+      "atlas": "FZ_MaterialAtlas_v1",
+      "atlas_slot": "bare_metal",
+      "palette_key": "stone",
+      "mapping_status": "Shared atlas reuse plus procedural DCC finish; final UV bake pending for brick/brass",
+      "stage": "LOCAL_PROCEDURAL_MATERIAL_CANDIDATE",
+      "production_source": "assets/production/needle-quay/materials/NeedleQuayMaterialLibrary.blend",
+      "preview": "assets/production/needle-quay/materials/MAT-09.png"
+    },
+    {
+      "id": "MAT-10",
+      "name": "Amber Glass",
+      "atlas": "FZ_MaterialAtlas_v1",
+      "atlas_slot": "amber",
+      "palette_key": "amber",
+      "mapping_status": "Shared atlas reuse plus procedural DCC finish; final UV bake pending for brick/brass",
+      "stage": "LOCAL_PROCEDURAL_MATERIAL_CANDIDATE",
+      "production_source": "assets/production/needle-quay/materials/NeedleQuayMaterialLibrary.blend",
+      "preview": "assets/production/needle-quay/materials/MAT-10.png"
+    },
+    {
+      "id": "MAT-11",
+      "name": "Canvas & Awning",
+      "atlas": "FZ_MaterialAtlas_v1",
+      "atlas_slot": "canvas",
+      "palette_key": "cream",
+      "mapping_status": "Shared atlas reuse plus procedural DCC finish; final UV bake pending for brick/brass",
+      "stage": "LOCAL_PROCEDURAL_MATERIAL_CANDIDATE",
+      "production_source": "assets/production/needle-quay/materials/NeedleQuayMaterialLibrary.blend",
+      "preview": "assets/production/needle-quay/materials/MAT-11.png"
+    },
+    {
+      "id": "MAT-12",
+      "name": "Graphite Rubber",
+      "atlas": "FZ_MaterialAtlas_v1",
+      "atlas_slot": "rubber",
+      "palette_key": "graphite",
+      "mapping_status": "Shared atlas reuse plus procedural DCC finish; final UV bake pending for brick/brass",
+      "stage": "LOCAL_PROCEDURAL_MATERIAL_CANDIDATE",
+      "production_source": "assets/production/needle-quay/materials/NeedleQuayMaterialLibrary.blend",
+      "preview": "assets/production/needle-quay/materials/MAT-12.png"
+    }
+  ],
+  "graphics": [
+    {
+      "id": "NQ-SGN-01",
+      "kind": "sign",
+      "subject": "The Lantern Room",
+      "placement": "NQ-BLD-01",
+      "unique_composition": true,
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-SGN-01.png",
+      "source": "assets/production/needle-quay/graphics/NQ-SGN-01.svg",
+      "sha256": "7ab97b97253973207dd4571d4ac88ded3b2374a395c5bb4793f3d6b1d4214335",
+      "art_approved": false
+    },
+    {
+      "id": "NQ-SGN-02",
+      "kind": "sign",
+      "subject": "Needle Records",
+      "placement": "NQ-BLD-02",
+      "unique_composition": true,
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-SGN-02.png",
+      "source": "assets/production/needle-quay/graphics/NQ-SGN-02.svg",
+      "sha256": "c70a1ad52203ebc0f021ce3a91f1b8f90f9960c46e8d98edbbbf3497d84f556b",
+      "art_approved": false
+    },
+    {
+      "id": "NQ-SGN-03",
+      "kind": "sign",
+      "subject": "Morrow Repairs",
+      "placement": "NQ-BLD-03",
+      "unique_composition": true,
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-SGN-03.png",
+      "source": "assets/production/needle-quay/graphics/NQ-SGN-03.svg",
+      "sha256": "c46a72395682c8a7d1ae2c4ee255c503bd0d3e19c6e4889ff3ba90cd4153d0a5",
+      "art_approved": false
+    },
+    {
+      "id": "NQ-SGN-04",
+      "kind": "sign",
+      "subject": "Harbor Market Hall",
+      "placement": "NQ-BLD-04",
+      "unique_composition": true,
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-SGN-04.png",
+      "source": "assets/production/needle-quay/graphics/NQ-SGN-04.svg",
+      "sha256": "1e78e512a33d76066cbf220f7159c523bb6fc3e37bd4d91ef46fca2a9ea81e43",
+      "art_approved": false
+    },
+    {
+      "id": "NQ-SGN-05",
+      "kind": "sign",
+      "subject": "Signal House",
+      "placement": "NQ-BLD-05",
+      "unique_composition": true,
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-SGN-05.png",
+      "source": "assets/production/needle-quay/graphics/NQ-SGN-05.svg",
+      "sha256": "f44717abc58c86e8e596976b7639327e85b2c6869af9828f7950e8ca8da24abc",
+      "art_approved": false
+    },
+    {
+      "id": "NQ-SGN-06",
+      "kind": "sign",
+      "subject": "Warm Current Café",
+      "placement": "NQ-BLD-06",
+      "unique_composition": false,
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-SGN-06.png",
+      "source": "assets/production/needle-quay/graphics/NQ-SGN-06.svg",
+      "sha256": "4dd981e846d6cde9353dcebb3cca82e489f8c604a246b90a01b8ae43f50633ac",
+      "art_approved": false
+    },
+    {
+      "id": "NQ-SGN-07",
+      "kind": "sign",
+      "subject": "North Slip Ferry Office",
+      "placement": "NQ-BLD-07",
+      "unique_composition": false,
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-SGN-07.png",
+      "source": "assets/production/needle-quay/graphics/NQ-SGN-07.svg",
+      "sha256": "3f58ffd7cddf3d13a832e6daec6361446da50d99ea43c6738f64c05551a6df94",
+      "art_approved": false
+    },
+    {
+      "id": "NQ-SGN-08",
+      "kind": "sign",
+      "subject": "Quay Supply & Tackle",
+      "placement": "NQ-BLD-08",
+      "unique_composition": false,
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-SGN-08.png",
+      "source": "assets/production/needle-quay/graphics/NQ-SGN-08.svg",
+      "sha256": "5041d7729b0c3c6d878e537f06e00a9b9a7daffcc135cf553afb7823cca9f341",
+      "art_approved": false
+    },
+    {
+      "id": "NQ-SGN-09",
+      "kind": "sign",
+      "subject": "Cinder Cold Storage",
+      "placement": "NQ-BLD-09",
+      "unique_composition": false,
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-SGN-09.png",
+      "source": "assets/production/needle-quay/graphics/NQ-SGN-09.svg",
+      "sha256": "e0e362f0088f2e9898d704b9567ba82675c6a11b1ba6b469f767a8de7ef368f7",
+      "art_approved": false
+    },
+    {
+      "id": "NQ-SGN-10",
+      "kind": "sign",
+      "subject": "Quayside Flats",
+      "placement": "NQ-BLD-10",
+      "unique_composition": false,
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-SGN-10.png",
+      "source": "assets/production/needle-quay/graphics/NQ-SGN-10.svg",
+      "sha256": "78ac95776927b9f6a066b60ebb4dccdd971bb3e02d8048ebcfd0dc12b652109b",
+      "art_approved": false
+    },
+    {
+      "id": "NQ-SGN-11",
+      "kind": "sign",
+      "subject": "Tidewash Laundry",
+      "placement": "NQ-BLD-11",
+      "unique_composition": false,
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-SGN-11.png",
+      "source": "assets/production/needle-quay/graphics/NQ-SGN-11.svg",
+      "sha256": "5a38f9c7491bcf9176f188053eb583b628748b44167373dd868868a54f70d3a2",
+      "art_approved": false
+    },
+    {
+      "id": "NQ-SGN-12",
+      "kind": "sign",
+      "subject": "Relay Substation",
+      "placement": "NQ-BLD-12",
+      "unique_composition": false,
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-SGN-12.png",
+      "source": "assets/production/needle-quay/graphics/NQ-SGN-12.svg",
+      "sha256": "f995a31de7d3ba4c101ca6c93cd0d150870b5b19fdf878502517435ae1c6095c",
+      "art_approved": false
+    },
+    {
+      "id": "NQ-SGN-13",
+      "kind": "sign",
+      "subject": "Dockline Depot",
+      "placement": "NQ-BLD-13",
+      "unique_composition": false,
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-SGN-13.png",
+      "source": "assets/production/needle-quay/graphics/NQ-SGN-13.svg",
+      "sha256": "97895230db47c531ae1f0baa21a2a46890165496fd7584f4cd22344591a1763e",
+      "art_approved": false
+    },
+    {
+      "id": "NQ-WAY-01",
+      "kind": "wayfinding",
+      "subject": "Waterfront",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-WAY-01.png",
+      "source": "assets/production/needle-quay/graphics/NQ-WAY-01.svg",
+      "sha256": "019d84e1e970025637eb3594c70bf7c266b0b4c0707b13660e8a5343d9642e3f",
+      "art_approved": false
+    },
+    {
+      "id": "NQ-WAY-02",
+      "kind": "wayfinding",
+      "subject": "Market",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-WAY-02.png",
+      "source": "assets/production/needle-quay/graphics/NQ-WAY-02.svg",
+      "sha256": "014c713024f639bea8647a9295ab9c112883ad3eb8f5b7271d57de150a406550",
+      "art_approved": false
+    },
+    {
+      "id": "NQ-WAY-03",
+      "kind": "wayfinding",
+      "subject": "Club",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-WAY-03.png",
+      "source": "assets/production/needle-quay/graphics/NQ-WAY-03.svg",
+      "sha256": "22f36ca77a90761d0045d23955e910bb561c7971913c58d114aefe42cc915e0d",
+      "art_approved": false
+    },
+    {
+      "id": "NQ-WAY-04",
+      "kind": "wayfinding",
+      "subject": "Workshop",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-WAY-04.png",
+      "source": "assets/production/needle-quay/graphics/NQ-WAY-04.svg",
+      "sha256": "e2fba3f3561fdbc67025503226b1c49504a3c6cbbf670882a64978023159402e",
+      "art_approved": false
+    },
+    {
+      "id": "NQ-WAY-05",
+      "kind": "wayfinding",
+      "subject": "Parking venues",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-WAY-05.png",
+      "source": "assets/production/needle-quay/graphics/NQ-WAY-05.svg",
+      "sha256": "d4c150ef559098991cbe22a6abbed70f347923fb606a3cd7ea319b25cf56a7da",
+      "art_approved": false
+    },
+    {
+      "id": "NQ-WAY-06",
+      "kind": "wayfinding",
+      "subject": "Signal House",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-WAY-06.png",
+      "source": "assets/production/needle-quay/graphics/NQ-WAY-06.svg",
+      "sha256": "f990af787bc16effd7374088662b9bbab2dbcbeb1940456eb39f2db2d5aa57e3",
+      "art_approved": false
+    },
+    {
+      "id": "POST-01",
+      "kind": "poster",
+      "subject": "Lantern Room old concert",
+      "variants": "Faded/new where justified; variants are not separate base counts",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/POST-01.png",
+      "source": "assets/production/needle-quay/graphics/POST-01.svg",
+      "sha256": "b2115ff6ef2441b2759c4472a5c5a6c1751556ff7048c1b1e20026d8e4ca9175",
+      "art_approved": false
+    },
+    {
+      "id": "POST-02",
+      "kind": "poster",
+      "subject": "Vinyl Swap",
+      "variants": "Faded/new where justified; variants are not separate base counts",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/POST-02.png",
+      "source": "assets/production/needle-quay/graphics/POST-02.svg",
+      "sha256": "427cff6c7cb7a14bdb0369c17d2647e0b439cb73bb13fade5c86ec8f07b9832c",
+      "art_approved": false
+    },
+    {
+      "id": "POST-03",
+      "kind": "poster",
+      "subject": "Repair Day",
+      "variants": "Faded/new where justified; variants are not separate base counts",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/POST-03.png",
+      "source": "assets/production/needle-quay/graphics/POST-03.svg",
+      "sha256": "776f991cc2aca227adf10e3ffcec7b38d0a48308de674c0494434312e42aaa81",
+      "art_approved": false
+    },
+    {
+      "id": "POST-04",
+      "kind": "poster",
+      "subject": "Quay Sessions",
+      "variants": "Faded/new where justified; variants are not separate base counts",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/POST-04.png",
+      "source": "assets/production/needle-quay/graphics/POST-04.svg",
+      "sha256": "9a2657eacf069fb5950c2fc9ffa4270615f7310e9eecafa874e2009119878104",
+      "art_approved": false
+    },
+    {
+      "id": "POST-05",
+      "kind": "poster",
+      "subject": "Radio Broadcast Night",
+      "variants": "Faded/new where justified; variants are not separate base counts",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/POST-05.png",
+      "source": "assets/production/needle-quay/graphics/POST-05.svg",
+      "sha256": "b90c679ff209422706c7bd796f2bb4b1873bd11505ca1ed9df92584a1656592c",
+      "art_approved": false
+    },
+    {
+      "id": "POST-06",
+      "kind": "poster",
+      "subject": "Dockworkers Jam",
+      "variants": "Faded/new where justified; variants are not separate base counts",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/POST-06.png",
+      "source": "assets/production/needle-quay/graphics/POST-06.svg",
+      "sha256": "4cc7e69bd8379cb33af5395cbe16582a2ababb93074c399093172ac73182da09",
+      "art_approved": false
+    },
+    {
+      "id": "POST-07",
+      "kind": "poster",
+      "subject": "Community Market Day",
+      "variants": "Faded/new where justified; variants are not separate base counts",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/POST-07.png",
+      "source": "assets/production/needle-quay/graphics/POST-07.svg",
+      "sha256": "8c9381e45f95d39877fe38948cdeaa1a2723f646a6802c487acc54556c6dc8c7",
+      "art_approved": false
+    },
+    {
+      "id": "POST-08",
+      "kind": "poster",
+      "subject": "Lost Frequencies",
+      "variants": "Faded/new where justified; variants are not separate base counts",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/POST-08.png",
+      "source": "assets/production/needle-quay/graphics/POST-08.svg",
+      "sha256": "fe9eec413a2c88123f619cf3e1ab9a135b50ca7c240aabf0c6a8e802ea5d8187",
+      "art_approved": false
+    },
+    {
+      "id": "GRA-01",
+      "kind": "transparent_graffiti",
+      "subject": "RUST CAN SING",
+      "placement": "Dock warehouses",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/GRA-01.png",
+      "source": "assets/production/needle-quay/graphics/GRA-01.png",
+      "sha256": "77767e6dbbc32265cbdaca3460a8334f744c5476a013698a6be5ca1ec86c89fc",
+      "art_approved": false
+    },
+    {
+      "id": "GRA-02",
+      "kind": "transparent_graffiti",
+      "subject": "ONE MORE SONG",
+      "placement": "Club approach",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/GRA-02.png",
+      "source": "assets/production/needle-quay/graphics/GRA-02.png",
+      "sha256": "ba1773664601daa26162e1d7fbad7048cfc972c6e169d0d2200ab083ec5b000c",
+      "art_approved": false
+    },
+    {
+      "id": "GRA-03",
+      "kind": "transparent_graffiti",
+      "subject": "KEEP THE QUAY PLAYING",
+      "placement": "Main street wall",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/GRA-03.png",
+      "source": "assets/production/needle-quay/graphics/GRA-03.png",
+      "sha256": "8802fe8fd3e9669f4aef140bb51f5bf0b78ca3e0ee00cb1285f836423e2f7115",
+      "art_approved": false
+    },
+    {
+      "id": "GRA-04",
+      "kind": "transparent_graffiti",
+      "subject": "LOW TIDE / HIGH NOTES",
+      "placement": "Waterfront",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/GRA-04.png",
+      "source": "assets/production/needle-quay/graphics/GRA-04.png",
+      "sha256": "0b19d4d335a1aafe87284c82ac46536435e1bf02d38b959cbf4fea4818950236",
+      "art_approved": false
+    },
+    {
+      "id": "GRA-05",
+      "kind": "transparent_graffiti",
+      "subject": "Soundwave becomes sea wave",
+      "placement": "Breakwater",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/GRA-05.png",
+      "source": "assets/production/needle-quay/graphics/GRA-05.png",
+      "sha256": "ad034509d5bbcd3f1494e71450aec94c35f6bea336ba86b25b7c5fe069cfd615",
+      "art_approved": false
+    },
+    {
+      "id": "GRA-06",
+      "kind": "transparent_graffiti",
+      "subject": "Abstract helper robot",
+      "placement": "Signal House",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/GRA-06.png",
+      "source": "assets/production/needle-quay/graphics/GRA-06.png",
+      "sha256": "df366aa41be8ec0b2a380a19577be0a11b86ef9ae08c9bbf786d811ad142f967",
+      "art_approved": false
+    },
+    {
+      "id": "GRA-07",
+      "kind": "transparent_graffiti",
+      "subject": "Hands passing vinyl",
+      "placement": "Market",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/GRA-07.png",
+      "source": "assets/production/needle-quay/graphics/GRA-07.png",
+      "sha256": "06384ad80b5a69efa2c529dc227022a3a35ec6ca26a8a6eda53d4829f8619478",
+      "art_approved": false
+    },
+    {
+      "id": "GRA-08",
+      "kind": "transparent_graffiti",
+      "subject": "Old radio-frequency symbol",
+      "placement": "Technical alley",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/GRA-08.png",
+      "source": "assets/production/needle-quay/graphics/GRA-08.png",
+      "sha256": "43f157f17def45884fc94a185014885ad2c6f3616c6438db21e9cd953613c943",
+      "art_approved": false
+    },
+    {
+      "id": "GRA-09",
+      "kind": "transparent_graffiti",
+      "subject": "Miniature music stickers and tags",
+      "placement": "Windows, bins, crates",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/GRA-09.png",
+      "source": "assets/production/needle-quay/graphics/GRA-09.png",
+      "sha256": "160041e3636d06b9a3570c4e01c66603876949233cdbb624d45565015d4cc4df",
+      "art_approved": false
+    },
+    {
+      "id": "GRA-10",
+      "kind": "transparent_graffiti",
+      "subject": "District history mural",
+      "placement": "Lantern Room side wall",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        512
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/GRA-10.png",
+      "source": "assets/production/needle-quay/graphics/GRA-10.png",
+      "sha256": "e9fd466490684ffce030cd3e6d4be9941a969dfc47d336d17cd3362e0c2535f3",
+      "art_approved": false
+    },
+    {
+      "id": "NQ-DOCK-01",
+      "kind": "service_decal",
+      "subject": "Pier number",
+      "id_origin": "Allocated by this production batch within source pack names",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        128,
+        256
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-DOCK-01.png",
+      "source": "assets/production/needle-quay/graphics/NQ-DOCK-01.svg",
+      "sha256": "09536ea04fd97931a6340cc444a54261bbf47d18c13b21dfe6f2000036d313f7",
+      "art_approved": false
+    },
+    {
+      "id": "NQ-DOCK-02",
+      "kind": "service_decal",
+      "subject": "Loading arrow",
+      "id_origin": "Allocated by this production batch within source pack names",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        128,
+        256
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-DOCK-02.png",
+      "source": "assets/production/needle-quay/graphics/NQ-DOCK-02.svg",
+      "sha256": "8333c807ff88373cf8bae64ef5680df70f6f34caeef41cc1fbd12e0082abbff7",
+      "art_approved": false
+    },
+    {
+      "id": "NQ-DOCK-03",
+      "kind": "service_decal",
+      "subject": "Cargo inventory label",
+      "id_origin": "Allocated by this production batch within source pack names",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        128,
+        256
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-DOCK-03.png",
+      "source": "assets/production/needle-quay/graphics/NQ-DOCK-03.svg",
+      "sha256": "b18b88e9d730cfb019925043e8b4640183421a269fb9b55a04c1f49b8fc75c62",
+      "art_approved": false
+    },
+    {
+      "id": "NQ-DOCK-04",
+      "kind": "service_decal",
+      "subject": "Mooring number",
+      "id_origin": "Allocated by this production batch within source pack names",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        128,
+        256
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-DOCK-04.png",
+      "source": "assets/production/needle-quay/graphics/NQ-DOCK-04.svg",
+      "sha256": "8328fe71650cb014b04fd5336aed776c1bc76ed09ebde472d199dfb6900ae9e6",
+      "art_approved": false
+    },
+    {
+      "id": "NQ-DOCK-05",
+      "kind": "service_decal",
+      "subject": "Yellow-cream parking line",
+      "id_origin": "Allocated by this production batch within source pack names",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        128,
+        256
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-DOCK-05.png",
+      "source": "assets/production/needle-quay/graphics/NQ-DOCK-05.svg",
+      "sha256": "c346a1a1a473c9e582250b40a021641b99bcd25450db6412ec86aa4f1cf144a2",
+      "art_approved": false
+    },
+    {
+      "id": "NQ-DOCK-06",
+      "kind": "service_decal",
+      "subject": "Ramp boundary",
+      "id_origin": "Allocated by this production batch within source pack names",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        128,
+        256
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-DOCK-06.png",
+      "source": "assets/production/needle-quay/graphics/NQ-DOCK-06.svg",
+      "sha256": "48e4484b0c6588272715864c2d12528bda196ebff60e055d3a54cdc4520c2a92",
+      "art_approved": false
+    },
+    {
+      "id": "NQ-WORKSHOP-01",
+      "kind": "service_decal",
+      "subject": "Electrical warning",
+      "id_origin": "Allocated by this production batch within source pack names",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        128,
+        256
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-WORKSHOP-01.png",
+      "source": "assets/production/needle-quay/graphics/NQ-WORKSHOP-01.svg",
+      "sha256": "996a594b741bb098434f519db2092e46e67a21b367d68d88c8f78c93bfabcfb7",
+      "art_approved": false
+    },
+    {
+      "id": "NQ-WORKSHOP-02",
+      "kind": "service_decal",
+      "subject": "Tool inventory label",
+      "id_origin": "Allocated by this production batch within source pack names",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        128,
+        256
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-WORKSHOP-02.png",
+      "source": "assets/production/needle-quay/graphics/NQ-WORKSHOP-02.svg",
+      "sha256": "27739f5deecaa5ffc3a4e29997f7ddae4f1206c4dd8f7c2f7d31246a357e4e1a",
+      "art_approved": false
+    },
+    {
+      "id": "NQ-WORKSHOP-03",
+      "kind": "service_decal",
+      "subject": "Service panel",
+      "id_origin": "Allocated by this production batch within source pack names",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        128,
+        256
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-WORKSHOP-03.png",
+      "source": "assets/production/needle-quay/graphics/NQ-WORKSHOP-03.svg",
+      "sha256": "5732eb7261d85cac155f25addcf496f48d43331bf094379bad739aacc91d06fa",
+      "art_approved": false
+    },
+    {
+      "id": "NQ-WORKSHOP-04",
+      "kind": "service_decal",
+      "subject": "Vent airflow arrow",
+      "id_origin": "Allocated by this production batch within source pack names",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        128,
+        256
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-WORKSHOP-04.png",
+      "source": "assets/production/needle-quay/graphics/NQ-WORKSHOP-04.svg",
+      "sha256": "9678d947bb9447378165b50bf01b630268f1a0569a37674728de93e7ceca7a00",
+      "art_approved": false
+    },
+    {
+      "id": "NQ-WORKSHOP-05",
+      "kind": "service_decal",
+      "subject": "Repair inspection label",
+      "id_origin": "Allocated by this production batch within source pack names",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        128,
+        256
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-WORKSHOP-05.png",
+      "source": "assets/production/needle-quay/graphics/NQ-WORKSHOP-05.svg",
+      "sha256": "02c61a09515e9879de5ee5fe7b92ede6d9bbd086d0aa3cfd0aa578c906aa20e8",
+      "art_approved": false
+    },
+    {
+      "id": "NQ-MUSIC-01",
+      "kind": "service_decal",
+      "subject": "Amplifier label",
+      "id_origin": "Allocated by this production batch within source pack names",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        128,
+        256
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-MUSIC-01.png",
+      "source": "assets/production/needle-quay/graphics/NQ-MUSIC-01.svg",
+      "sha256": "3a2041031b5d93153a92fda8639cddaaee1ee4c150a3933d69a12b7211ad27a8",
+      "art_approved": false
+    },
+    {
+      "id": "NQ-MUSIC-02",
+      "kind": "service_decal",
+      "subject": "Vinyl category symbol",
+      "id_origin": "Allocated by this production batch within source pack names",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        128,
+        256
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-MUSIC-02.png",
+      "source": "assets/production/needle-quay/graphics/NQ-MUSIC-02.svg",
+      "sha256": "dedf3cb4933a08713b2bf6e17383871f70d8b9dc04eef055f49233ad4c664ecf",
+      "art_approved": false
+    },
+    {
+      "id": "NQ-MUSIC-03",
+      "kind": "service_decal",
+      "subject": "Speaker inventory label",
+      "id_origin": "Allocated by this production batch within source pack names",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        128,
+        256
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-MUSIC-03.png",
+      "source": "assets/production/needle-quay/graphics/NQ-MUSIC-03.svg",
+      "sha256": "a779046afac6faeba862227c5cd4980a5e7e40f83f0d3322fa2f525e91abb341",
+      "art_approved": false
+    },
+    {
+      "id": "NQ-MUSIC-04",
+      "kind": "service_decal",
+      "subject": "Stage cable marking",
+      "id_origin": "Allocated by this production batch within source pack names",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        128,
+        256
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-MUSIC-04.png",
+      "source": "assets/production/needle-quay/graphics/NQ-MUSIC-04.svg",
+      "sha256": "4fe5e9e0c322f58ae3c514bcd6566a68563674339d546d1ce8aa222a5d9a720f",
+      "art_approved": false
+    },
+    {
+      "id": "NQ-MUSIC-05",
+      "kind": "service_decal",
+      "subject": "Van music sticker",
+      "id_origin": "Allocated by this production batch within source pack names",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        128,
+        256
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-MUSIC-05.png",
+      "source": "assets/production/needle-quay/graphics/NQ-MUSIC-05.svg",
+      "sha256": "423c50a05aa5a4bf6ecb548d9083c69e5d84cb5aa9fb983671336820e1e179fc",
+      "art_approved": false
+    },
+    {
+      "id": "NQ-SIGNAL-01",
+      "kind": "service_decal",
+      "subject": "Radio dial",
+      "id_origin": "Allocated by this production batch within source pack names",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        128,
+        256
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-SIGNAL-01.png",
+      "source": "assets/production/needle-quay/graphics/NQ-SIGNAL-01.svg",
+      "sha256": "88248788d46b7dc89ae71f71c6a3dd56a70743257da3be233ef5910e1b858cf3",
+      "art_approved": false
+    },
+    {
+      "id": "NQ-SIGNAL-02",
+      "kind": "service_decal",
+      "subject": "Cable route",
+      "id_origin": "Allocated by this production batch within source pack names",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        128,
+        256
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-SIGNAL-02.png",
+      "source": "assets/production/needle-quay/graphics/NQ-SIGNAL-02.svg",
+      "sha256": "042217e6a225e35ce10ad84e3820846e5dc6a88e5f9c3b7a2276da9bf4538d03",
+      "art_approved": false
+    },
+    {
+      "id": "NQ-SIGNAL-03",
+      "kind": "service_decal",
+      "subject": "Relay number",
+      "id_origin": "Allocated by this production batch within source pack names",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        128,
+        256
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-SIGNAL-03.png",
+      "source": "assets/production/needle-quay/graphics/NQ-SIGNAL-03.svg",
+      "sha256": "d3d8452b57ad272e42b52f601c84918b3429b94d9607e68f9d03155f7a25dd38",
+      "art_approved": false
+    },
+    {
+      "id": "NQ-SIGNAL-04",
+      "kind": "service_decal",
+      "subject": "Signal state symbol",
+      "id_origin": "Allocated by this production batch within source pack names",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        128,
+        256
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-SIGNAL-04.png",
+      "source": "assets/production/needle-quay/graphics/NQ-SIGNAL-04.svg",
+      "sha256": "cad4b5f9d1b269ebcd111bbd342a227d24772469214af562eb50e3b928a24d4d",
+      "art_approved": false
+    },
+    {
+      "id": "NQ-COMMUNITY-01",
+      "kind": "service_decal",
+      "subject": "Market stall number",
+      "id_origin": "Allocated by this production batch within source pack names",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        128,
+        256
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-COMMUNITY-01.png",
+      "source": "assets/production/needle-quay/graphics/NQ-COMMUNITY-01.svg",
+      "sha256": "eecdb1dcfb1d060840f5ebd56e99e516def2bcd44b16e939c636048da2bb9a0a",
+      "art_approved": false
+    },
+    {
+      "id": "NQ-COMMUNITY-02",
+      "kind": "service_decal",
+      "subject": "Goods label",
+      "id_origin": "Allocated by this production batch within source pack names",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        128,
+        256
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-COMMUNITY-02.png",
+      "source": "assets/production/needle-quay/graphics/NQ-COMMUNITY-02.svg",
+      "sha256": "9d2fe3e60f867717c53d07cd014fe0f495e09d956dbd564228dc4ab4071a5466",
+      "art_approved": false
+    },
+    {
+      "id": "NQ-COMMUNITY-03",
+      "kind": "service_decal",
+      "subject": "Community notice frame",
+      "id_origin": "Allocated by this production batch within source pack names",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        128,
+        256
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-COMMUNITY-03.png",
+      "source": "assets/production/needle-quay/graphics/NQ-COMMUNITY-03.svg",
+      "sha256": "748d27d323f0288005c658e53097f9af06f947db2b7d642e092c71f1e9d1c1cd",
+      "art_approved": false
+    },
+    {
+      "id": "NQ-COMMUNITY-04",
+      "kind": "service_decal",
+      "subject": "Quest marker backing",
+      "id_origin": "Allocated by this production batch within source pack names",
+      "stage": "LOCAL_GRAPHIC_CANDIDATE",
+      "gameplay_text": "Runtime/localized UI overlay; never generated into gameplay textures",
+      "texture_guidance_px": [
+        128,
+        256
+      ],
+      "production_asset_id": null,
+      "png": "assets/production/needle-quay/graphics/NQ-COMMUNITY-04.png",
+      "source": "assets/production/needle-quay/graphics/NQ-COMMUNITY-04.svg",
+      "sha256": "f0708459f17032b6d094f492ceef4111522c9a2302e81bbd899c6b6f67952e64",
+      "art_approved": false
+    }
+  ],
+  "graphics_counts": {
+    "signs": 13,
+    "wayfinding": 6,
+    "posters": 8,
+    "graffiti": 10,
+    "service_decals": 24,
+    "base_designs": 61
+  },
+  "environment_kits": [
+    "Modular warehouses",
+    "Residential facades",
+    "Port structures",
+    "Distant waterfront silhouette"
+  ],
+  "building_sheet_checklist": [
+    "Colored isometric concept",
+    "Front/side/top views",
+    "Dimensioned blockout in studs",
+    "Module/reuse plan",
+    "Material IDs and facade graphics",
+    "NPC/entrance/interaction/sound positions",
+    "Before/after restoration",
+    "Collision/LOD/reuse notes",
+    "3D source, Studio export, neutral preview"
+  ],
+  "checklist_policy": "Source phrase 4 of 9 ready has no evidence; no completed gates inherited. Concept artwork views are not precision construction drawings.",
+  "restoration_policy": "Personal client presentation from server-owned progress; geometry reused. No global completion state in blockout.",
+  "production_sequence": [
+    "Blockout and streets",
+    "Five hero concept sheets, first two in this batch",
+    "Modular environment and seven NPC silhouettes",
+    "Texture and Graphic Bible",
+    "Artbook and gameplay acceptance"
+  ],
+  "van": {
+    "id": "LOOPVAN-01",
+    "concept_package_alias": "V01",
+    "dimensions_length_width_height_studs": [
+      22,
+      9,
+      10
+    ],
+    "stage": "STATIC_PROXY_NO_VEHICLE_OR_OWNERSHIP",
+    "parking_ids": [
+      "P1",
+      "P2",
+      "P3",
+      "P4"
+    ]
+  },
+  "open_conflicts": [
+    {
+      "id": "H06-envelope",
+      "status": "OPEN",
+      "details": "Canonical 32x16x24 versus proposed 24x18x19. Existing 24x20 usable interior also exceeds canonical 16 depth. Keep canonical contract unchanged; resolve before DCC/art approval."
+    }
+  ],
+  "acceptance": {
+    "candidate": "concepts/blockout authored in this batch",
+    "dcc_clean": false,
+    "art_approved": false,
+    "studio_imported": false,
+    "runtime_verified": false
+  },
+  "source_stage": "DESIGN_REGISTER_V1",
+  "hero_concept_sheet_count": 5,
+  "hero_concept_index": "docs/needle-quay/HERO_SHEETS.md",
+  "supporting_concept_sheet_count": 8,
+  "building_concept_sheet_count": 13,
+  "supporting_concept_index": "docs/needle-quay/SUPPORTING_SHEETS_06_13.md",
+  "hero_agent_review": "docs/needle-quay/HERO_REVIEW_2026-10-25.md",
+  "concept_art_approval": {
+    "approved": true,
+    "date": "2026-10-25",
+    "receipt": "docs/needle-quay/ART_APPROVAL_2026-10-25.json",
+    "count": 13,
+    "scope": "Concept illustrations and art direction; production-asset acceptance stays separate"
+  },
+  "production_delivery": {
+    "date": "2026-10-25",
+    "kind": "FULL_REGISTER_DESIGN_VISUALIZATION_AND_LOCAL_ASSET_CANDIDATES",
+    "buildings": 13,
+    "npcs": 7,
+    "materials": 12,
+    "graphics": 61,
+    "quests_designed": 13,
+    "runtime_verified": false,
+    "roblox_uploads": 0,
+    "tripo_calls": 0
+  }
+}

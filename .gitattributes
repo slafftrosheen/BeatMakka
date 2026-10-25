@@ -30,3 +30,10 @@ assets/candidates/materials/assets-folder-v1/** -text whitespace=cr-at-eol
 
 # Retained user audio and derived kit manifests are exact source evidence.
 assets/candidates/audio/style-starters-v1/** -text whitespace=cr-at-eol
+
+# Needle Quay provenance/package manifests hash exact retained source bytes.
+assets/production/needle-quay/** -text whitespace=cr-at-eol
+assets/blockouts/needle-quay/** -text whitespace=cr-at-eol
+assets/concepts/needle-quay/** -text whitespace=cr-at-eol
+docs/needle-quay/environment-production-register-v1.0-source.ru.md -text whitespace=cr-at-eol
+BeatMakka_World_v2/** -text whitespace=-blank-at-eol,cr-at-eol

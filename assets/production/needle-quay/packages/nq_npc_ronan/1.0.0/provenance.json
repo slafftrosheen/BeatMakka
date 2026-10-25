@@ -1,0 +1,14 @@
+{
+  "acceptanceStage": "DETERMINISTIC_3D_CANDIDATE",
+  "authoring": "[redacted]",
+  "billableProviderCalls": 0,
+  "origin": "imported",
+  "schema": "game_dev.asset_provenance.v1",
+  "source": {
+    "bytes": 395276,
+    "fileName": "NQ-NPC-RONAN.glb",
+    "sha256": "2cafa88ca944dfe61d14a2bc500ee667eb5c2d701fdd8406d7e6a0c3b5cf65fa"
+  },
+  "sourceBlend": "assets/production/needle-quay/models/NQ-NPC-RONAN/NQ-NPC-RONAN.blend",
+  "sourceRegister": "data/needle-quay-environment.v1.json"
+}

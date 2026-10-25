@@ -9,6 +9,8 @@ tripo-out/
 node_modules/
 __pycache__/
 Packages/
+!assets/production/needle-quay/packages/
+!assets/production/needle-quay/packages/**
 ServerPackages/
 DevPackages/
 
@@ -28,3 +30,4 @@ desktop.ini
 
 # Roblox Studio lock files
 *.rbxl.lock
+*.rbxlx.lock

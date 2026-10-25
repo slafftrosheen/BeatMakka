@@ -1,0 +1,1996 @@
+{
+  "date": "2026-10-25",
+  "files": [
+    {
+      "path": "assets/production/needle-quay/building-cards.json",
+      "bytes": 47705,
+      "sha256": "4a08c6c8d87e08ea1022468c6a9e54c5ea252cc0ac6e23ad254f7d894f33e28f"
+    },
+    {
+      "path": "assets/production/needle-quay/graffiti-prompts.json",
+      "bytes": 9835,
+      "sha256": "850172e2782557c11b22951fcb8efc823cdff4c5edfb585782f773c13ef3ed37"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/GRA-01.png",
+      "bytes": 2715161,
+      "sha256": "77767e6dbbc32265cbdaca3460a8334f744c5476a013698a6be5ca1ec86c89fc"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/GRA-02.png",
+      "bytes": 2623905,
+      "sha256": "ba1773664601daa26162e1d7fbad7048cfc972c6e169d0d2200ab083ec5b000c"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/GRA-03.png",
+      "bytes": 2443407,
+      "sha256": "8802fe8fd3e9669f4aef140bb51f5bf0b78ca3e0ee00cb1285f836423e2f7115"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/GRA-04.png",
+      "bytes": 2232977,
+      "sha256": "0b19d4d335a1aafe87284c82ac46536435e1bf02d38b959cbf4fea4818950236"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/GRA-05.png",
+      "bytes": 1486692,
+      "sha256": "ad034509d5bbcd3f1494e71450aec94c35f6bea336ba86b25b7c5fe069cfd615"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/GRA-06.png",
+      "bytes": 1876355,
+      "sha256": "df366aa41be8ec0b2a380a19577be0a11b86ef9ae08c9bbf786d811ad142f967"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/GRA-07.png",
+      "bytes": 1852716,
+      "sha256": "06384ad80b5a69efa2c529dc227022a3a35ec6ca26a8a6eda53d4829f8619478"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/GRA-08.png",
+      "bytes": 1659218,
+      "sha256": "43f157f17def45884fc94a185014885ad2c6f3616c6438db21e9cd953613c943"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/GRA-09.png",
+      "bytes": 2365301,
+      "sha256": "160041e3636d06b9a3570c4e01c66603876949233cdbb624d45565015d4cc4df"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/GRA-10.png",
+      "bytes": 2574505,
+      "sha256": "e9fd466490684ffce030cd3e6d4be9941a969dfc47d336d17cd3362e0c2535f3"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/graphics-manifest.json",
+      "bytes": 50337,
+      "sha256": "45fe920d235a9d068f31c143c0785afdc3a49871958bf095cd40d30d66891c22"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-COMMUNITY-01.png",
+      "bytes": 8153,
+      "sha256": "eecdb1dcfb1d060840f5ebd56e99e516def2bcd44b16e939c636048da2bb9a0a"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-COMMUNITY-01.svg",
+      "bytes": 691,
+      "sha256": "d3ac6c805dae7ac1741737ac315fa2dd32c4eb09ec275d4a2e8aede64a6450ea"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-COMMUNITY-02.png",
+      "bytes": 7668,
+      "sha256": "9d2fe3e60f867717c53d07cd014fe0f495e09d956dbd564228dc4ab4071a5466"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-COMMUNITY-02.svg",
+      "bytes": 683,
+      "sha256": "ff932361b1449522440fe5ff74a82e8b60d53c4e317d883d46771e30d5c420f5"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-COMMUNITY-03.png",
+      "bytes": 9328,
+      "sha256": "748d27d323f0288005c658e53097f9af06f947db2b7d642e092c71f1e9d1c1cd"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-COMMUNITY-03.svg",
+      "bytes": 821,
+      "sha256": "92189dcbe6f46c46062be038f91fbf067eb0603353e44146c8c79e1db7cf0d63"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-COMMUNITY-04.png",
+      "bytes": 4783,
+      "sha256": "f0708459f17032b6d094f492ceef4111522c9a2302e81bbd899c6b6f67952e64"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-COMMUNITY-04.svg",
+      "bytes": 642,
+      "sha256": "f4529f97176aa1c2701522cca08e29bf1009a5a5c02beb4b564fb5209c8b8350"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-DOCK-01.png",
+      "bytes": 6755,
+      "sha256": "09536ea04fd97931a6340cc444a54261bbf47d18c13b21dfe6f2000036d313f7"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-DOCK-01.svg",
+      "bytes": 678,
+      "sha256": "4bce38e80785764ca6a5ce4845ccec0875ce911c1e7c779dcd433a9481ccb01e"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-DOCK-02.png",
+      "bytes": 6649,
+      "sha256": "8333c807ff88373cf8bae64ef5680df70f6f34caeef41cc1fbd12e0082abbff7"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-DOCK-02.svg",
+      "bytes": 628,
+      "sha256": "ea2f8fc56d0331c75bcba83161392f58e29708293241609e324c35a68f85197a"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-DOCK-03.png",
+      "bytes": 8739,
+      "sha256": "b18b88e9d730cfb019925043e8b4640183421a269fb9b55a04c1f49b8fc75c62"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-DOCK-03.svg",
+      "bytes": 815,
+      "sha256": "8157d90a98aca4334539d8f09b6edd12049c687c9f28d26d2f98e740a8afcd5b"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-DOCK-04.png",
+      "bytes": 7676,
+      "sha256": "8328fe71650cb014b04fd5336aed776c1bc76ed09ebde472d199dfb6900ae9e6"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-DOCK-04.svg",
+      "bytes": 681,
+      "sha256": "fd266b9f3d6821767673973b82e177e0e65a7c9f65ceb1f84579f9c19b0c6619"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-DOCK-05.png",
+      "bytes": 9121,
+      "sha256": "c346a1a1a473c9e582250b40a021641b99bcd25450db6412ec86aa4f1cf144a2"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-DOCK-05.svg",
+      "bytes": 870,
+      "sha256": "bec333678a3df57b373bf6d31e9241f26f3be209176ce92daa8e251fb8bbd124"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-DOCK-06.png",
+      "bytes": 7933,
+      "sha256": "48e4484b0c6588272715864c2d12528bda196ebff60e055d3a54cdc4520c2a92"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-DOCK-06.svg",
+      "bytes": 731,
+      "sha256": "12c826b5a463be6ba3fe856c7ba226ee3c4b53bfbc4857abefb73c79fe4f160e"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-MUSIC-01.png",
+      "bytes": 6973,
+      "sha256": "3a2041031b5d93153a92fda8639cddaaee1ee4c150a3933d69a12b7211ad27a8"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-MUSIC-01.svg",
+      "bytes": 683,
+      "sha256": "db9776650bffdc69e6e74d104beb9396b7007c2af082eb0df4a19ced65baeca7"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-MUSIC-02.png",
+      "bytes": 9906,
+      "sha256": "dedf3cb4933a08713b2bf6e17383871f70d8b9dc04eef055f49233ad4c664ecf"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-MUSIC-02.svg",
+      "bytes": 820,
+      "sha256": "1d28c8319dce9520a406553f931c3d3681b8a70d25fd6d69ae0bb2621de20b53"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-MUSIC-03.png",
+      "bytes": 8880,
+      "sha256": "a779046afac6faeba862227c5cd4980a5e7e40f83f0d3322fa2f525e91abb341"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-MUSIC-03.svg",
+      "bytes": 818,
+      "sha256": "38c48bffad8f4de2675d826bcf222509461b06a974ab36e474bf124cb5cc6fcb"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-MUSIC-04.png",
+      "bytes": 7992,
+      "sha256": "4fe5e9e0c322f58ae3c514bcd6566a68563674339d546d1ce8aa222a5d9a720f"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-MUSIC-04.svg",
+      "bytes": 687,
+      "sha256": "700136c3a30ff78323a348e68babe7635914db372ef9c040fd31aec4fd1121c3"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-MUSIC-05.png",
+      "bytes": 8085,
+      "sha256": "423c50a05aa5a4bf6ecb548d9083c69e5d84cb5aa9fb983671336820e1e179fc"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-MUSIC-05.svg",
+      "bytes": 685,
+      "sha256": "642348301f34f7860b386a34cc9ca10dffeeb22317f317ff065075b43cb79e63"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-SGN-01.png",
+      "bytes": 12688,
+      "sha256": "7ab97b97253973207dd4571d4ac88ded3b2374a395c5bb4793f3d6b1d4214335"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-SGN-01.svg",
+      "bytes": 851,
+      "sha256": "22e09977c7edd027e64cc98c1bb5ef072137edee49560b8e358081c820886bc1"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-SGN-02.png",
+      "bytes": 13748,
+      "sha256": "c70a1ad52203ebc0f021ce3a91f1b8f90f9960c46e8d98edbbbf3497d84f556b"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-SGN-02.svg",
+      "bytes": 773,
+      "sha256": "8c5bb8d0837e339c3805ef30003728d647a7f156b794933dbd6361dea0d7b6a2"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-SGN-03.png",
+      "bytes": 13029,
+      "sha256": "c46a72395682c8a7d1ae2c4ee255c503bd0d3e19c6e4889ff3ba90cd4153d0a5"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-SGN-03.svg",
+      "bytes": 749,
+      "sha256": "9ac6188d909150df9cffe8f40c1096cb494e06e83007207fc94dac8fd4317b50"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-SGN-04.png",
+      "bytes": 12712,
+      "sha256": "1e78e512a33d76066cbf220f7159c523bb6fc3e37bd4d91ef46fca2a9ea81e43"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-SGN-04.svg",
+      "bytes": 734,
+      "sha256": "0d2ef44ed39d1338834b4b58653eb30bef375f8a5ad54b0205ebe8aab8824dff"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-SGN-05.png",
+      "bytes": 12171,
+      "sha256": "f44717abc58c86e8e596976b7639327e85b2c6869af9828f7950e8ca8da24abc"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-SGN-05.svg",
+      "bytes": 756,
+      "sha256": "444ddda4ca866fdc15354b01a1ef332f3e788a8d4e2696e59b662c902a07822a"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-SGN-06.png",
+      "bytes": 14179,
+      "sha256": "4dd981e846d6cde9353dcebb3cca82e489f8c604a246b90a01b8ae43f50633ac"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-SGN-06.svg",
+      "bytes": 1470,
+      "sha256": "426e633a25c3b87e61f5a40c7f9ddfed76d6adad299b96a186e73a4f860e4e43"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-SGN-07.png",
+      "bytes": 14326,
+      "sha256": "3f58ffd7cddf3d13a832e6daec6361446da50d99ea43c6738f64c05551a6df94"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-SGN-07.svg",
+      "bytes": 1475,
+      "sha256": "ce669061bc63b7dc59b4bbbbd2ffc669a20e97b0ddeb27753be15faa6a08d987"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-SGN-08.png",
+      "bytes": 14350,
+      "sha256": "5041d7729b0c3c6d878e537f06e00a9b9a7daffcc135cf553afb7823cca9f341"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-SGN-08.svg",
+      "bytes": 1476,
+      "sha256": "187cb50c291a759da941c959c67955a5bc7de5de3877fd0e43939a02f3ef6df7"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-SGN-09.png",
+      "bytes": 14400,
+      "sha256": "e0e362f0088f2e9898d704b9567ba82675c6a11b1ba6b469f767a8de7ef368f7"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-SGN-09.svg",
+      "bytes": 1471,
+      "sha256": "b92fde0a56256abdc6eee5f8ae5ab5bb0a6527acbbf47c153b39a0055adcc06f"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-SGN-10.png",
+      "bytes": 13148,
+      "sha256": "78ac95776927b9f6a066b60ebb4dccdd971bb3e02d8048ebcfd0dc12b652109b"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-SGN-10.svg",
+      "bytes": 1466,
+      "sha256": "a142b5d83a04320aecfe75a6c90ebadaa4f10b3103288c8666d62d54a6f6f3e1"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-SGN-11.png",
+      "bytes": 13608,
+      "sha256": "5a38f9c7491bcf9176f188053eb583b628748b44167373dd868868a54f70d3a2"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-SGN-11.svg",
+      "bytes": 1468,
+      "sha256": "fa4d61c10840e73bcb891eb843734e7add6ed24f6def2dde192f505bcb4ac3a9"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-SGN-12.png",
+      "bytes": 13607,
+      "sha256": "f995a31de7d3ba4c101ca6c93cd0d150870b5b19fdf878502517435ae1c6095c"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-SGN-12.svg",
+      "bytes": 1468,
+      "sha256": "6a201d7fa5aa63220db6e89fccb64c26937c976903657943f6c29f8bc9872ba6"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-SGN-13.png",
+      "bytes": 13066,
+      "sha256": "97895230db47c531ae1f0baa21a2a46890165496fd7584f4cd22344591a1763e"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-SGN-13.svg",
+      "bytes": 1466,
+      "sha256": "cc0a165a0ce5fe529270516d6cd320aff31b37002456dfa757153e04423c57d4"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-SIGNAL-01.png",
+      "bytes": 6560,
+      "sha256": "88248788d46b7dc89ae71f71c6a3dd56a70743257da3be233ef5910e1b858cf3"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-SIGNAL-01.svg",
+      "bytes": 679,
+      "sha256": "8aa5f503c2c179c4a341f37b6608620be23a8ffeb6acbc540dbde8a94545f991"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-SIGNAL-02.png",
+      "bytes": 6306,
+      "sha256": "042217e6a225e35ce10ad84e3820846e5dc6a88e5f9c3b7a2276da9bf4538d03"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-SIGNAL-02.svg",
+      "bytes": 628,
+      "sha256": "1c03ab8f7e977edd6e5e2f3f49ebf65cac81cc832e8ec7212d1f6eca7c124e9a"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-SIGNAL-03.png",
+      "bytes": 7859,
+      "sha256": "d3d8452b57ad272e42b52f601c84918b3429b94d9607e68f9d03155f7a25dd38"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-SIGNAL-03.svg",
+      "bytes": 681,
+      "sha256": "54579f1b2549b1fa5a6e1b6a5c7054ba2f88723e7cce742d159f8ffaa8c7d00d"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-SIGNAL-04.png",
+      "bytes": 7164,
+      "sha256": "cad4b5f9d1b269ebcd111bbd342a227d24772469214af562eb50e3b928a24d4d"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-SIGNAL-04.svg",
+      "bytes": 658,
+      "sha256": "8cb26c82cf2cb0ae3518b2e23ee13e5b1472bb5d96cd480f21db6f1b4fdc8d6a"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-WAY-01.png",
+      "bytes": 10312,
+      "sha256": "019d84e1e970025637eb3594c70bf7c266b0b4c0707b13660e8a5343d9642e3f"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-WAY-01.svg",
+      "bytes": 514,
+      "sha256": "aa4817986b83aa1a3d12d65c8ccdc599c717f0c615069c19255685ce994f2424"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-WAY-02.png",
+      "bytes": 9073,
+      "sha256": "014c713024f639bea8647a9295ab9c112883ad3eb8f5b7271d57de150a406550"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-WAY-02.svg",
+      "bytes": 510,
+      "sha256": "6ff4b6d11fd1058bcbb1d25b6b2fc54254df133abd786f2e2bb714b46704489d"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-WAY-03.png",
+      "bytes": 8317,
+      "sha256": "22f36ca77a90761d0045d23955e910bb561c7971913c58d114aefe42cc915e0d"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-WAY-03.svg",
+      "bytes": 508,
+      "sha256": "51a08061f16351899d3c6d9c4251c729edaabba2f3ac9f5add76ba244de9bcb7"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-WAY-04.png",
+      "bytes": 10078,
+      "sha256": "e2fba3f3561fdbc67025503226b1c49504a3c6cbbf670882a64978023159402e"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-WAY-04.svg",
+      "bytes": 512,
+      "sha256": "88c457c43555090711805e4e4966c2ebb40212b5b6c6f38c03800c9ff06044d0"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-WAY-05.png",
+      "bytes": 11161,
+      "sha256": "d4c150ef559098991cbe22a6abbed70f347923fb606a3cd7ea319b25cf56a7da"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-WAY-05.svg",
+      "bytes": 518,
+      "sha256": "7ebb577a57a1a26d539843c6241bf8b530a5ae843f0606c537c5c9fc56e36cf7"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-WAY-06.png",
+      "bytes": 10544,
+      "sha256": "f990af787bc16effd7374088662b9bbab2dbcbeb1940456eb39f2db2d5aa57e3"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-WAY-06.svg",
+      "bytes": 516,
+      "sha256": "d9800efe693041caff33821526f259747df387594bb2fbc94b7604f281894c08"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-WORKSHOP-01.png",
+      "bytes": 8898,
+      "sha256": "996a594b741bb098434f519db2092e46e67a21b367d68d88c8f78c93bfabcfb7"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-WORKSHOP-01.svg",
+      "bytes": 740,
+      "sha256": "b508505be4f1250b3b619a646a6fb0df659ef59406ba59743746063246ce214e"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-WORKSHOP-02.png",
+      "bytes": 8474,
+      "sha256": "27739f5deecaa5ffc3a4e29997f7ddae4f1206c4dd8f7c2f7d31246a357e4e1a"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-WORKSHOP-02.svg",
+      "bytes": 818,
+      "sha256": "40de79a6ea70696e54fdcd6e341c53873bffe3a3af0c06d0e40a2e45720e803e"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-WORKSHOP-03.png",
+      "bytes": 8199,
+      "sha256": "5732eb7261d85cac155f25addcf496f48d43331bf094379bad739aacc91d06fa"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-WORKSHOP-03.svg",
+      "bytes": 684,
+      "sha256": "fcaf3ec8c5cb764abdcda21acabb1b1ee41862b43e711404560f2eaca558761e"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-WORKSHOP-04.png",
+      "bytes": 7591,
+      "sha256": "9678d947bb9447378165b50bf01b630268f1a0569a37674728de93e7ceca7a00"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-WORKSHOP-04.svg",
+      "bytes": 637,
+      "sha256": "04aa4889bab83b8eef2c38b8712ab2cb45e1cf0637b81ce8dd8200ee59078b17"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-WORKSHOP-05.png",
+      "bytes": 8957,
+      "sha256": "02c61a09515e9879de5ee5fe7b92ede6d9bbd086d0aa3cfd0aa578c906aa20e8"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/NQ-WORKSHOP-05.svg",
+      "bytes": 821,
+      "sha256": "018ff50c9a05265cea0e25517bbd7a48ee6b7a9bb88b287d984d985fb936c361"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/POST-01-faded.png",
+      "bytes": 35727,
+      "sha256": "fc02661fd5e81d36d4d956b44bf75c8e56ddcf879914d7b11a350f3fb9b95f28"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/POST-01-faded.svg",
+      "bytes": 1068,
+      "sha256": "21b541f4ecbfb1b4339148604b689546ccdf0e33695842ca20139dddbe1bc7ba"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/POST-01.png",
+      "bytes": 37869,
+      "sha256": "b2115ff6ef2441b2759c4472a5c5a6c1751556ff7048c1b1e20026d8e4ca9175"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/POST-01.svg",
+      "bytes": 1068,
+      "sha256": "0bd71c1dcf9b8e993019c3c0c749cd4739733be428dcd75abb8425de395d208d"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/POST-02-faded.png",
+      "bytes": 45072,
+      "sha256": "8c6a5469b2ee84e085e9b8a0f75e2bb691e48a6683309fdee6aafc4416eb0579"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/POST-02-faded.svg",
+      "bytes": 4702,
+      "sha256": "954837f5e07f19e92d895114fdc04702ba5fd4f049809f353121eff255812063"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/POST-02.png",
+      "bytes": 47061,
+      "sha256": "427cff6c7cb7a14bdb0369c17d2647e0b439cb73bb13fade5c86ec8f07b9832c"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/POST-02.svg",
+      "bytes": 4702,
+      "sha256": "e83bebc24072665d085b9c0f94af0ab484c986b8795fc6c592ea75270454a491"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/POST-03-faded.png",
+      "bytes": 27082,
+      "sha256": "547830c355251ead3c6cd850d5efb2573df242ec9f029fbc495ed50f849c3d71"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/POST-03-faded.svg",
+      "bytes": 1483,
+      "sha256": "ae94667f86331b2901c8bed5c73223bdbbc646b278f5e7fe618a5ca054e97f8f"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/POST-03.png",
+      "bytes": 28643,
+      "sha256": "776f991cc2aca227adf10e3ffcec7b38d0a48308de674c0494434312e42aaa81"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/POST-03.svg",
+      "bytes": 1483,
+      "sha256": "2c6eb447bd426a4ac3fdb55f4b4d0409feaf58f51242e49966bc68ebcf62627c"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/POST-04-faded.png",
+      "bytes": 36789,
+      "sha256": "77b70ec7e67804b4c7aee4b270ff903a0d9100b319a3add99c2e146b5e91d821"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/POST-04-faded.svg",
+      "bytes": 1069,
+      "sha256": "ac3a299e94b8a1ac5d5383ff5ac2672499e71a8a3975c3838c760933cf9bab3d"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/POST-04.png",
+      "bytes": 39038,
+      "sha256": "9a2657eacf069fb5950c2fc9ffa4270615f7310e9eecafa874e2009119878104"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/POST-04.svg",
+      "bytes": 1069,
+      "sha256": "841462bd0c105f1505f04387ff46ae8bfbaeef6c5be377ee2dfe8c074703872d"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/POST-05-faded.png",
+      "bytes": 49157,
+      "sha256": "57853758af178c6f57ac6c6fa1eabdf6c52e31985a247536a708a49ad3f25ffe"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/POST-05-faded.svg",
+      "bytes": 4840,
+      "sha256": "558be84219142000752169537c2f76e9bf2bcd734926a20f8463c3d3328232d3"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/POST-05.png",
+      "bytes": 51419,
+      "sha256": "b90c679ff209422706c7bd796f2bb4b1873bd11505ca1ed9df92584a1656592c"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/POST-05.svg",
+      "bytes": 4840,
+      "sha256": "5b879708ad41fc86c38fb298527321c68038088214e4353f7c0098725e2f2ef2"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/POST-06-faded.png",
+      "bytes": 30310,
+      "sha256": "f6c86e7e79126fef8495ebdb21b7e2e1536947dbf683131280cc1198fe5c58ee"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/POST-06-faded.svg",
+      "bytes": 1488,
+      "sha256": "39633748dc632df2a00c31c318ca91091b3c614f6937e7f4c46c96f2a4fb9655"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/POST-06.png",
+      "bytes": 32122,
+      "sha256": "4cc7e69bd8379cb33af5395cbe16582a2ababb93074c399093172ac73182da09"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/POST-06.svg",
+      "bytes": 1488,
+      "sha256": "90ce67ac51fc93aca8016ec3a1752bc45be344cbe3495aa7d8ba8c56ee4264cd"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/POST-07-faded.png",
+      "bytes": 38693,
+      "sha256": "5caf8d2dbb0f1cd1f6cd53abf5b61ed00bed8605159b2710d46f65db2946a81c"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/POST-07-faded.svg",
+      "bytes": 1203,
+      "sha256": "80ef64c2741e5b1b2a15e2792dafcb086027414539babbcfd156d05def30a87d"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/POST-07.png",
+      "bytes": 41057,
+      "sha256": "8c9381e45f95d39877fe38948cdeaa1a2723f646a6802c487acc54556c6dc8c7"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/POST-07.svg",
+      "bytes": 1203,
+      "sha256": "e04525bb493626a7bba60b3d4ebe7f76de211da71bf5ddac0712de0ec3a1ddb7"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/POST-08-faded.png",
+      "bytes": 47351,
+      "sha256": "b08169e131e0c1959ee1461d621b4e7e66bda3f332d57e251bbe819d8ba6cf50"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/POST-08-faded.svg",
+      "bytes": 4708,
+      "sha256": "28a842b6df8e286490b269abae7270b17285650909ad785939e8f515950b5596"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/POST-08.png",
+      "bytes": 49381,
+      "sha256": "fe9eec413a2c88123f619cf3e1ab9a135b50ca7c240aabf0c6a8e802ea5d8187"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/POST-08.svg",
+      "bytes": 4708,
+      "sha256": "0303ef0d7adac60efc698829959b226a1ca4d849f9f2418fb14559b9b669cd9f"
+    },
+    {
+      "path": "assets/production/needle-quay/graphics/vector-manifest.json",
+      "bytes": 23774,
+      "sha256": "374a6aaad7a863391bdc655c2516e4b52d65f64e112acbc1afb77491f07f824f"
+    },
+    {
+      "path": "assets/production/needle-quay/LICENSE.txt",
+      "bytes": 478,
+      "sha256": "970a93b981e9aa477b26189f16b84caf313178ec201b4f993f0c02e372422857"
+    },
+    {
+      "path": "assets/production/needle-quay/materials/MAT-01.png",
+      "bytes": 171515,
+      "sha256": "354526cc2d5b7f8422d02f17178c7780fcd0351d54d37f19c0d46f9636f3e15e"
+    },
+    {
+      "path": "assets/production/needle-quay/materials/MAT-02.png",
+      "bytes": 170337,
+      "sha256": "042d461bd6b610a67fec39cf2830c2b3bd36210de069d2277d4fd3d3491b0c98"
+    },
+    {
+      "path": "assets/production/needle-quay/materials/MAT-03.png",
+      "bytes": 159307,
+      "sha256": "c712acc30805089676720d813d6812de66c69f514ee7e773a229393b6e75b1cb"
+    },
+    {
+      "path": "assets/production/needle-quay/materials/MAT-04.png",
+      "bytes": 159307,
+      "sha256": "2a6bf85d9fe9027270548ad586f824522a0228117ef2bbf165c7bbce5cd93fa9"
+    },
+    {
+      "path": "assets/production/needle-quay/materials/MAT-05.png",
+      "bytes": 195685,
+      "sha256": "9762ca4926f0b81e119b1a346b111e85b59e5d86d65dc3ae4fabe9a77906a9ac"
+    },
+    {
+      "path": "assets/production/needle-quay/materials/MAT-06.png",
+      "bytes": 169110,
+      "sha256": "07105bed6e57df04a5ab25d119e39b8927b6d65ea45d4741ede0dcfe08fa0484"
+    },
+    {
+      "path": "assets/production/needle-quay/materials/MAT-07.png",
+      "bytes": 172676,
+      "sha256": "0d9425024895b8a6a98c7bbdfb33eb451bb557fef062ef25245fa6655aceb055"
+    },
+    {
+      "path": "assets/production/needle-quay/materials/MAT-08.png",
+      "bytes": 156664,
+      "sha256": "bf09c0112ef30c152048785e8952105ac982bc4b2880b48584ebf08254cc7c8b"
+    },
+    {
+      "path": "assets/production/needle-quay/materials/MAT-09.png",
+      "bytes": 197653,
+      "sha256": "7c21cafa1ed16e92b8900f932a6a6e3e05802e54a74f4c116db70012ad371f41"
+    },
+    {
+      "path": "assets/production/needle-quay/materials/MAT-10.png",
+      "bytes": 180132,
+      "sha256": "30d944cf2bac8c1401d6535f1325061e3be8229f97d2392e3c074ca14735188d"
+    },
+    {
+      "path": "assets/production/needle-quay/materials/MAT-11.png",
+      "bytes": 178939,
+      "sha256": "20baf762a332bd717f9551b7e5bcf9fa41f6da2812eefe78cd6ce2374fe5aaf6"
+    },
+    {
+      "path": "assets/production/needle-quay/materials/MAT-12.png",
+      "bytes": 153042,
+      "sha256": "126ff0ff83eaa409f69eb0bebb28e80a67ffdaab4644cd8488fcf8c60297cea2"
+    },
+    {
+      "path": "assets/production/needle-quay/materials/material-manifest.json",
+      "bytes": 8550,
+      "sha256": "03f5cbd19a0173b05ed324786e4b772e95774082701d2330b7ac3d56bea68cd8"
+    },
+    {
+      "path": "assets/production/needle-quay/materials/NeedleQuayMaterialLibrary.blend",
+      "bytes": 155989,
+      "sha256": "f8aaa668b0146d85792e5e235abbf8d99590f167e1ae7ee12c47d64ffc68684b"
+    },
+    {
+      "path": "assets/production/needle-quay/models/model-manifest.json",
+      "bytes": 21092,
+      "sha256": "c04d86dfb6ca545ef665f5ad708e44835271e0421a01e3bcbbd1edbc0dc90cd3"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-01/front.png",
+      "bytes": 137485,
+      "sha256": "a67e6577936ba4f5422b4532a5aa8cf33f88fbb79e36585b7f896db98ede027e"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-01/neutral.png",
+      "bytes": 202574,
+      "sha256": "26bbf50e22d3349ddea2b6cfc780a12da05b90be760c33bfe217d3de2d05119e"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-01/NQ-BLD-01.blend",
+      "bytes": 160250,
+      "sha256": "95833bc35eb4e6187199e09a6034eb5aae707ba276f1ca358ab92a6fdba57b94"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-01/NQ-BLD-01.glb",
+      "bytes": 387032,
+      "sha256": "1ae95c5e35c57dca8bb9c397ea7594f90a05f2e207aa2e72bf80f5985a359d27"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-01/side.png",
+      "bytes": 123628,
+      "sha256": "fd07a81e69c9cdbc96d2553e4eea79133686cf562a4f1108619d87c340c924ae"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-01/top.png",
+      "bytes": 133128,
+      "sha256": "e8c12a772bb8872e7e06af6eee6a183aaca33d14fc8ef737a1b2915d4d74d5bc"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-02/front.png",
+      "bytes": 159992,
+      "sha256": "1275bcdc4f5893199d3d3298f034afa592dfea00867fd8ea9253be351a8e505f"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-02/neutral.png",
+      "bytes": 209166,
+      "sha256": "1c718a73042510849aba55164de25c879248e0ae8d921d1d0ee9ace11165cd90"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-02/NQ-BLD-02.blend",
+      "bytes": 165165,
+      "sha256": "31eb652ce1269a196dcf95859dc1b95b3612248932f248f4696bb25afb5be169"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-02/NQ-BLD-02.glb",
+      "bytes": 440692,
+      "sha256": "f139949b2431fe2c6cf51f96b2cea42d823299ecab1fb63206a5e0e7ee3d1484"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-02/side.png",
+      "bytes": 128148,
+      "sha256": "04c7be85df8c3dd94a04caa05549a86b7d0267522d3bb222676ec5f0504d9ed7"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-02/top.png",
+      "bytes": 124035,
+      "sha256": "132116d6e3d1fe88c57db24ac4d1b3eee7199b172f3131f97d2d20ad7e26acd2"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-03/front.png",
+      "bytes": 137225,
+      "sha256": "688f8abaf74d28204cd1c97cbfd6b1a115f18bef221fc909b3a13df598facedd"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-03/neutral.png",
+      "bytes": 205258,
+      "sha256": "55f1be15d343d67235796ece17f540a32d990ccf3847a4334e900432619d07f2"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-03/NQ-BLD-03.blend",
+      "bytes": 171323,
+      "sha256": "c90f765385b5aff92eb33d38dc838310650f8b5b7e32ed7b139184cfae328cec"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-03/NQ-BLD-03.glb",
+      "bytes": 343740,
+      "sha256": "10a7e3b757f45200c3ce357b18f71c516e9da19eb009fea5b97fd15d4e12c755"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-03/side.png",
+      "bytes": 126228,
+      "sha256": "494998ecd8a8cd88954aed7b9a3abf7bae4bff29ac94e8087bbb8f397a3450eb"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-03/top.png",
+      "bytes": 141354,
+      "sha256": "c769249c1612672be75dc06bd0d85770a6ffd133f61a22f147cba22b4cd79aeb"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-04/front.png",
+      "bytes": 101427,
+      "sha256": "3d8da35406b91d6260cb3169f62c5a7cfe450f63f40f237d2cb8fd6f23802044"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-04/neutral.png",
+      "bytes": 147915,
+      "sha256": "c455c310cf6b38019a5092a0660d94adcbdf0f68dbb456f11f07a392ef8d9e51"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-04/NQ-BLD-04.blend",
+      "bytes": 172675,
+      "sha256": "e86524bd2634757396ca8f6a02102419a25bfff1d7a526cdf2a9b0241d5d681b"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-04/NQ-BLD-04.glb",
+      "bytes": 442836,
+      "sha256": "4aadce21fc74893630b3178939ca75c3692c55daa0c7850d8329935924890f15"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-04/side.png",
+      "bytes": 88041,
+      "sha256": "43fce07858c2845cc2a7a4743a089b150f5f7f66d8f5f57c6764f1c67b1d122d"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-04/top.png",
+      "bytes": 123884,
+      "sha256": "cf6018c5e3f23da774b883bd4c12b5a9b1446e9dac2f34225514679bc8ac5ae4"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-05/front.png",
+      "bytes": 132234,
+      "sha256": "d8ef61c27343a946dc4c1d042332a324ce0cec9b3aee9a1d2eff0b817c57b44f"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-05/neutral.png",
+      "bytes": 165780,
+      "sha256": "3b65c541f902f3f0c30b14bee9dff7aa8de954db0a76177419107d4f4ced448b"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-05/NQ-BLD-05.blend",
+      "bytes": 166913,
+      "sha256": "89e03839affcb17063d0126f87142c6c6a6c71cc6fe4380b5bd9a7dc6b7deed2"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-05/NQ-BLD-05.glb",
+      "bytes": 132188,
+      "sha256": "c1b13c2c824dbc71d432e6ea0bd36c07250d6baf9adc220cabc391311ffb9080"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-05/side.png",
+      "bytes": 126186,
+      "sha256": "70defb4151f9516b60c3753177d37790e97cea2474d9b299472742e50ba5a53b"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-05/top.png",
+      "bytes": 117826,
+      "sha256": "51a40e82c1057d2e0092f0963368167d5abf6edd1cfe527325ac57675080f8ba"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-06/front.png",
+      "bytes": 153808,
+      "sha256": "70225627b5e7aaddbcb1627903ced6f2048fb539a23d61e11235dfb553f62488"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-06/neutral.png",
+      "bytes": 231657,
+      "sha256": "1ec1d31bf0ae54b9a1a426b722b7c7883d3991061d9c43875c5a549a0952cf18"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-06/NQ-BLD-06.blend",
+      "bytes": 188655,
+      "sha256": "a56e3ec5291ee290831f40c8df17576509e266deb549777c082933337238022d"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-06/NQ-BLD-06.glb",
+      "bytes": 258908,
+      "sha256": "f58c23d6e6866f0a0c4b3e3f5bb76f128c990197d18f3ef70f357c7d400a5a1a"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-06/side.png",
+      "bytes": 144546,
+      "sha256": "d3cf70279b97cbf215a6b865965363d3986d0a10c915154abe1559370e07f65a"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-06/top.png",
+      "bytes": 164621,
+      "sha256": "0176a488c61e6995041aeeb676746e00a44b3609866e897c2326dc8af1df9103"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-07/front.png",
+      "bytes": 140898,
+      "sha256": "fe1c55fb7b7a9b67b1eb300cfac7d7d976a57f9172b4b224b4116c54e84d8843"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-07/neutral.png",
+      "bytes": 195596,
+      "sha256": "ef0f16f478f4a1e7843cf8a6e610aa7956548d455fa93628cf6a07776a24c7d3"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-07/NQ-BLD-07.blend",
+      "bytes": 200311,
+      "sha256": "5420e12500e47389dfc2f60bfba2ea75281e2bab0040597bfcfaef3d17ef2e5e"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-07/NQ-BLD-07.glb",
+      "bytes": 258868,
+      "sha256": "96913d2012cb28a9c205b65268bace9aa0a0401355d55f3f80ab68a6d8969ba9"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-07/side.png",
+      "bytes": 122061,
+      "sha256": "7320450e7a5a1b03f6bbc41ac427f3660d97cb12d97bfaac049f3a192187432a"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-07/top.png",
+      "bytes": 141383,
+      "sha256": "9cdaf87010eb7faf6bc11f552d2e471ff845d189d1cc634f849179e8f4662dd1"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-08/front.png",
+      "bytes": 144925,
+      "sha256": "8fb1cf80107b9b52e78c3f2b9e32fd5248f2f2603b094f5ef7437a78107a3ac3"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-08/neutral.png",
+      "bytes": 208603,
+      "sha256": "6871cd4a07f8cd54d6b329fb973fe8e9c68b32b783638ae52d42dffc93ef19ca"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-08/NQ-BLD-08.blend",
+      "bytes": 210742,
+      "sha256": "92d2cdb56dfa5146e5a4a2ecbda7a8c4449f951b70f44fd7aeadb455864e8d04"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-08/NQ-BLD-08.glb",
+      "bytes": 265784,
+      "sha256": "4bd40967a446e152f9df62788bd61fc1389b80d2c1bc8491982e6d612bb35c54"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-08/side.png",
+      "bytes": 130586,
+      "sha256": "3580ba409ad5336d6486e662bbd549e7e4ebaab4f178aff49d668fe7f7fc5529"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-08/top.png",
+      "bytes": 155145,
+      "sha256": "8012d1c2cd9acf6e3b84c56b04c4336425090f3f97daa330a9c11551a4624edf"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-09/front.png",
+      "bytes": 120454,
+      "sha256": "be86c0463b5139c871ad8b5d295f16a150b9cc34da14ba23c67d503d87532c3c"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-09/neutral.png",
+      "bytes": 169893,
+      "sha256": "614bf7afd901fc0406e904bfedacc449d531301917959adb067cc48e25060f38"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-09/NQ-BLD-09.blend",
+      "bytes": 217691,
+      "sha256": "17d29313f1bb79db52c9586c57dfcf99181e5fed6baf6a650c22074f74ec579b"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-09/NQ-BLD-09.glb",
+      "bytes": 253372,
+      "sha256": "43534200e44a22ea41e6c997a0d324d4b0276879ce395b2cd729e69a97c6e127"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-09/side.png",
+      "bytes": 106459,
+      "sha256": "a040fbf0d6505fa4f1b305248807887e0af31070a17325a302ae1376169bb52f"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-09/top.png",
+      "bytes": 123770,
+      "sha256": "07970db31bfe6a93e76124ba16e7e4ce57ac88bc3cb2df631b6bb789dece1e5c"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-10/front.png",
+      "bytes": 145331,
+      "sha256": "29a22acb7609f0390b7d73c91d78815df380e750593dec32ee3e755a1dd1865e"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-10/neutral.png",
+      "bytes": 186701,
+      "sha256": "ea22248a844d302c79570d16c8042eae106f8ce8ab9cad93b4ef8d5825c1fd0d"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-10/NQ-BLD-10.blend",
+      "bytes": 232061,
+      "sha256": "c8a2be1988d784481f86c5cecaba6b504b394d8ecf224606b2d4b8e5ac0ff24b"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-10/NQ-BLD-10.glb",
+      "bytes": 329004,
+      "sha256": "d707ead24603f5a8c443156486a752ea983206e39e64e2156c06ff160e6eba09"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-10/side.png",
+      "bytes": 114863,
+      "sha256": "9f26a9b94b22bb969c82d6d1449ddecc83bc9030904219cc004cb6c226fc2f05"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-10/top.png",
+      "bytes": 109844,
+      "sha256": "d3a0eada7c8e33ce6d7b8faf1125ee20c5fde46c1efcb7f40e0418a8327f4d85"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-11/front.png",
+      "bytes": 164998,
+      "sha256": "29f66de0003f4f347527f69550e0dee381e72ab49ebbfd3bd68a4898f815be43"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-11/neutral.png",
+      "bytes": 241737,
+      "sha256": "4f99d036a21893e9b7c8c425dd3f4483f1d9f4656b0413d8b0da6499b9eefae0"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-11/NQ-BLD-11.blend",
+      "bytes": 240592,
+      "sha256": "cd1cf90ec90dd01eac7fd7d6e8057d9d075043b01f91a2818a1dc74e42168752"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-11/NQ-BLD-11.glb",
+      "bytes": 268912,
+      "sha256": "546e5e1f18d412be36809b23582c529c68b4adbdbc6865062ed21ac36980adfc"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-11/side.png",
+      "bytes": 150524,
+      "sha256": "b67d830daa4dea5011b9da179e55706269891bb7c512e4a10f670721f221d41c"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-11/top.png",
+      "bytes": 160557,
+      "sha256": "6c3ee380f42e4b0aeb68570f922ed5093ffdf77abfc632a054643d82cd97e12c"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-12/front.png",
+      "bytes": 159389,
+      "sha256": "884ab1c50fcfa982a78c7d013b38512a578d0cf4cd931bc3f669a7ea56c13826"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-12/neutral.png",
+      "bytes": 234739,
+      "sha256": "51e11d03f04e3f3c1810914ba021d66c6e35aa3cca80ad58931e1425acacc9e3"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-12/NQ-BLD-12.blend",
+      "bytes": 245148,
+      "sha256": "d4f083648a1d85d58b79abf64beac6e713a7b0b690faab4d9f977c8c1e76ef6b"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-12/NQ-BLD-12.glb",
+      "bytes": 243344,
+      "sha256": "d917c50e8edb8be3b9306f2a5cc08836218820b8ead117c9dedef2498159c3ff"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-12/side.png",
+      "bytes": 157758,
+      "sha256": "0064ad297431f400818c662cd48e95d89967dfb5c931068a0e84c1e1bc964495"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-12/top.png",
+      "bytes": 158571,
+      "sha256": "a35ae7d7503e25d546efa7b5d03548c6576582e7667246b901b50b98147d4812"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-13/front.png",
+      "bytes": 144371,
+      "sha256": "b488c73a57d333bf57acca594baa1da7c85175835ec66b3b1528d09e7cdc04a9"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-13/neutral.png",
+      "bytes": 217007,
+      "sha256": "92968e75eca2b6028662cb2b6377c51acc84355e04b401a7071a57456f8a05ef"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-13/NQ-BLD-13.blend",
+      "bytes": 259592,
+      "sha256": "215c66aa80a4332d2c5a11817956a4aedd4d0619a80affb90488c2958f366eef"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-13/NQ-BLD-13.glb",
+      "bytes": 265616,
+      "sha256": "15a6947a8f3dc3e90872d9b41902b19d865ad18aac98fa32315049e1ebf6570c"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-13/side.png",
+      "bytes": 131973,
+      "sha256": "b51a6b7cd1348fd0589f3fc184c821cddd6d9c46fe67fa901afbcdc1472935d1"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-BLD-13/top.png",
+      "bytes": 142317,
+      "sha256": "817a7d91d2251c8dd73d1b23cdeafddfb7c1359a8225fdfb06f2a941e8b350ab"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-NPC-IVO/front.png",
+      "bytes": 127146,
+      "sha256": "0dd87447036c44a7e2aa371b95f3d8e816facad00ce8823ee104362458dd2137"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-NPC-IVO/neutral.png",
+      "bytes": 123677,
+      "sha256": "d151d5f56d5aee62e303e445c2f38f48bd934e7ed7978da4ecda13e749060b52"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-NPC-IVO/NQ-NPC-IVO.blend",
+      "bytes": 301590,
+      "sha256": "540437506527a6e74c129939763128668ac8dbabb057fc023c6fc945f5d15970"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-NPC-IVO/NQ-NPC-IVO.glb",
+      "bytes": 395296,
+      "sha256": "1422a955ebf279b6a6262890d5e824a08ebc565eae4b419efc8d6dafad95b422"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-NPC-IVO/side.png",
+      "bytes": 106928,
+      "sha256": "a6a571c1193fb3eccb9b2f680ba9d5b3aacaeee8ffc9c7e9f511973f9d13a091"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-NPC-IVO/top.png",
+      "bytes": 76151,
+      "sha256": "b7df601e0c26d92a805fcc8ed948f7b534dbe3a076fd04dc8b175b8bd47c8543"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-NPC-NAYA/front.png",
+      "bytes": 130022,
+      "sha256": "8f7e8391c072b0362a6edcb6ae72d5bf39084965256669226bcf8bb066269925"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-NPC-NAYA/neutral.png",
+      "bytes": 126785,
+      "sha256": "5e67438181c0ea7e03e986689b9704d6f18494d799221251818ef28872bccefe"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-NPC-NAYA/NQ-NPC-NAYA.blend",
+      "bytes": 309223,
+      "sha256": "aebed4524a74ab5e58d0b59d6071b0e561430bbc46f944bc9c8a6cba886db344"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-NPC-NAYA/NQ-NPC-NAYA.glb",
+      "bytes": 384452,
+      "sha256": "c4ab4f7cd047738fa70e8586118514d92196b5ff293d57c6943e942d293b28f6"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-NPC-NAYA/side.png",
+      "bytes": 107188,
+      "sha256": "2752d52642c0d4375a19664b211fc4ecf06bbd7a0a63ad5e6db4f4050d0f70e6"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-NPC-NAYA/top.png",
+      "bytes": 78179,
+      "sha256": "360e65975ad85459879cd96751b44c2eb26ccf36d17e76d502b1f9a8a3c087d2"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-NPC-NELL/front.png",
+      "bytes": 131834,
+      "sha256": "17e7894d54f0293bf45c6f87b47712ad73866f0b34e75a725d5dee4dce0e89ab"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-NPC-NELL/neutral.png",
+      "bytes": 130501,
+      "sha256": "e3a1c0086e22efe58e834aabb00f65dd6a26d2cefb3abcd8053c9892bdd70ec9"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-NPC-NELL/NQ-NPC-NELL.blend",
+      "bytes": 325667,
+      "sha256": "9d936e70d04265904875eacbe37e74d682a39f0c161ed2045bbba50d96158067"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-NPC-NELL/NQ-NPC-NELL.glb",
+      "bytes": 381500,
+      "sha256": "f5a9c6e8703cec82315b01a8a87ac33095a3cdf373937a5775dcf1af19276e1e"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-NPC-NELL/side.png",
+      "bytes": 109050,
+      "sha256": "1b722db34848751386da5f5090713f52f3089c019c025bd849827e67a481cc3b"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-NPC-NELL/top.png",
+      "bytes": 79140,
+      "sha256": "63d16714d913603c9e2d80cfa82baa593857b51d44804db22dcb28a3dcb68697"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-NPC-RONAN/front.png",
+      "bytes": 128858,
+      "sha256": "d412d545145c2579d72c74ea8eb00400f3fad95f5b289cb31684b5328f8650b4"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-NPC-RONAN/neutral.png",
+      "bytes": 124197,
+      "sha256": "5a9d8425700c6792be03cf7dfdedda09757bb4591f96f2bab343507356ba0f4f"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-NPC-RONAN/NQ-NPC-RONAN.blend",
+      "bytes": 322347,
+      "sha256": "8dee42f39bf1750a6f995105d143fb13774a04603c4c3f46a79f7c22b5528a94"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-NPC-RONAN/NQ-NPC-RONAN.glb",
+      "bytes": 395276,
+      "sha256": "2cafa88ca944dfe61d14a2bc500ee667eb5c2d701fdd8406d7e6a0c3b5cf65fa"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-NPC-RONAN/side.png",
+      "bytes": 109405,
+      "sha256": "1f3aa79f06f2e15a9403e88ee5a29fa1c90b1abb2fc3fcc10912bfdd7a69a081"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-NPC-RONAN/top.png",
+      "bytes": 77825,
+      "sha256": "be0c3f18d783fb87ae68016e58f3ef303cbfe9f02b43d2d1a125f1a0517fd4e9"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-NPC-SANA/front.png",
+      "bytes": 130297,
+      "sha256": "0d70ed9bf1df6381ef40e7b98984be5958830578e38f38a0bc824fb045c65785"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-NPC-SANA/neutral.png",
+      "bytes": 126613,
+      "sha256": "fc00550ce3fa2486fc03bd25b692282fcf316694d37467366f2bad8af28a3baf"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-NPC-SANA/NQ-NPC-SANA.blend",
+      "bytes": 313779,
+      "sha256": "bda888f152e6ba30ff2433b7ce4cfe221a527ee15cf5f90fbb2fcfde4f689b79"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-NPC-SANA/NQ-NPC-SANA.glb",
+      "bytes": 381492,
+      "sha256": "fd85f152bb86f867facc5f37f44ee32970342999ac99a8e421ffdc1bbd8fb73a"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-NPC-SANA/side.png",
+      "bytes": 107536,
+      "sha256": "ff8e1fcc9df6fb05d77d91e0d203865b7d3025b748afb3c8043bc9d072779280"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-NPC-SANA/top.png",
+      "bytes": 77948,
+      "sha256": "56b275ebf2377be842f78c1b756c53df9bc58d14017626ffe51ed3de979266bc"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-NPC-TORI/front.png",
+      "bytes": 132996,
+      "sha256": "87269f0bfeb8741b911836a8c83c1126c4cb788dd803c52bce67340e3ed1b8b5"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-NPC-TORI/neutral.png",
+      "bytes": 131574,
+      "sha256": "a95c1cc165d1a2e1dad12747bdf9c4b37bf79772cd75ee3679d5f23de6b3a258"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-NPC-TORI/NQ-NPC-TORI.blend",
+      "bytes": 294360,
+      "sha256": "d379dceef405fa4ab018ef3a51b98ea804d4e5d007cdcdb838561ff411490b18"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-NPC-TORI/NQ-NPC-TORI.glb",
+      "bytes": 393932,
+      "sha256": "cff5f50585096f835355e06cc6768aca5ea7e4912cf60a4b42f978481720ee1f"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-NPC-TORI/side.png",
+      "bytes": 108755,
+      "sha256": "bd410d85fd34452322a1d697f81eb30caaf7ee0153b3c3b5fdf4c0d207fd6d3a"
+    },
+    {
+      "path": "assets/production/needle-quay/models/NQ-NPC-TORI/top.png",
+      "bytes": 79357,
+      "sha256": "1ddc41565a01ed5e958dbdd0f2026062560de6178d4feab6fe9e2e5d2a2c6c3c"
+    },
+    {
+      "path": "assets/production/needle-quay/npc-design-prompts.json",
+      "bytes": 8718,
+      "sha256": "9b4aba1f371c085e5c8810214b8cc5ecd2f33e003321cc8b9d04a8c121f47435"
+    },
+    {
+      "path": "assets/production/needle-quay/npcs/IVO-design.png",
+      "bytes": 1775387,
+      "sha256": "273294b53c165c94f754aefb63262d4387ac0e037e5ff975e706c767b2a8cc6e"
+    },
+    {
+      "path": "assets/production/needle-quay/npcs/NAYA-design.png",
+      "bytes": 2009779,
+      "sha256": "d047232cdd000449539caca02611d96e31e5768ed039876a4747f36471ee4e26"
+    },
+    {
+      "path": "assets/production/needle-quay/npcs/NELL-design.png",
+      "bytes": 1794671,
+      "sha256": "23a2cedb07a8a58989ffe2fc00fee6c0bba23c9b7c825c1390d64ed9c1f4ad74"
+    },
+    {
+      "path": "assets/production/needle-quay/npcs/npc-manifest.json",
+      "bytes": 13282,
+      "sha256": "dcef4e95c0c7cf15e753361d817f1defa015d861754a328ce9157d141891a55e"
+    },
+    {
+      "path": "assets/production/needle-quay/npcs/RONAN-design.png",
+      "bytes": 1921568,
+      "sha256": "1d5f550ee16971aa17fe0191fa30d547ec4a4b457de91f6c1e5366c84833e9a8"
+    },
+    {
+      "path": "assets/production/needle-quay/npcs/SANA-design.png",
+      "bytes": 1916415,
+      "sha256": "b323a1c8978b8a1ad3a06d629df1f0df3e9293b94014a0efa41a711ab9979dcb"
+    },
+    {
+      "path": "assets/production/needle-quay/npcs/TORI-design.png",
+      "bytes": 1737114,
+      "sha256": "a2df75f8556c9e88eba30fa0df2e41bc7c7eaf9556a2c02600e24ff7f09bb8f6"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/h04/1.0.0/manifest.json",
+      "bytes": 1167,
+      "sha256": "434d78238cceb0800cc70069ad7c68f19c2a547ce7500111a79a661f7fd7d00d"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/h04/1.0.0/metadata.json",
+      "bytes": 1556,
+      "sha256": "839e354459f8d790f15794e30241264eef1521c301fb61ea85c92d132526c55f"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/h04/1.0.0/model.glb",
+      "bytes": 209336,
+      "sha256": "8046e7baf00797212a970b03acc55118471d0bb9d4bf54871533bc2e6181dc22"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/h04/1.0.0/provenance.json",
+      "bytes": 489,
+      "sha256": "280ad91fa51fa491c8d4980d191319bf641655e212a9566eddfcbfeaec0a85bd"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/h04/1.0.0/receipt.json",
+      "bytes": 711,
+      "sha256": "3e52f8024f6f1bff8c55503edc7f936e337d98a59daf89bafdd880a778c97392"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/h04/1.0.0/validation.json",
+      "bytes": 3226,
+      "sha256": "6aca7a81502f9d5d7320a1255e145bb82246d9322635f5dc8f7b99fcd1eadb16"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_01/1.0.0/manifest.json",
+      "bytes": 1179,
+      "sha256": "a411050205077d94962f87a3e393e3a8ac676c76fd2bce0c81544f1bd0ec7ba3"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_01/1.0.0/metadata.json",
+      "bytes": 1430,
+      "sha256": "547a9af48aebd0c0e79b5afaa6236c04f4e9ffe7c363c8131b1817128c371eb0"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_01/1.0.0/model.glb",
+      "bytes": 387032,
+      "sha256": "1ae95c5e35c57dca8bb9c397ea7594f90a05f2e207aa2e72bf80f5985a359d27"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_01/1.0.0/provenance.json",
+      "bytes": 478,
+      "sha256": "932f9d9b186a9c5e7b598e43aac46b53093b21fe4371b491c8d32ef6fbce45f0"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_01/1.0.0/receipt.json",
+      "bytes": 714,
+      "sha256": "85355762b2fc7940477ebc0e918dcdfec54364b3b3156b49a4b33ed9fb5020a4"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_01/1.0.0/validation.json",
+      "bytes": 2677,
+      "sha256": "5f4213e045bdac5a6e160adbc8d69effaf8e8efffd3048959e2dfeecc30b344f"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_02/1.0.0/manifest.json",
+      "bytes": 1179,
+      "sha256": "167868ad07743dbb67db793bd9755d28ec9b155050f60d97bd8a556fe0286b08"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_02/1.0.0/metadata.json",
+      "bytes": 1429,
+      "sha256": "9c2e34fbd6ef9400ecbc790a5779879dfc82724557dd9a448d1567e69c576c85"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_02/1.0.0/model.glb",
+      "bytes": 440692,
+      "sha256": "f139949b2431fe2c6cf51f96b2cea42d823299ecab1fb63206a5e0e7ee3d1484"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_02/1.0.0/provenance.json",
+      "bytes": 478,
+      "sha256": "f1112ff9d2d642a53b197548608935ac0c2575da66de1b60cc794b3c931ee64e"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_02/1.0.0/receipt.json",
+      "bytes": 714,
+      "sha256": "a1d5ebecd9f622d7ce11b1e92a12572b44834b05a8e152c435299be1b32ceb74"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_02/1.0.0/validation.json",
+      "bytes": 2677,
+      "sha256": "587d5daa3bc6a09895a8120f32693f64b0f891e3de948347ea535059b67aef50"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_03/1.0.0/manifest.json",
+      "bytes": 1179,
+      "sha256": "e8dc8fc058a340491c0619c8cc29102b2f8a556124f6c200a423681939b917ce"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_03/1.0.0/metadata.json",
+      "bytes": 1429,
+      "sha256": "b02752509f7441b8c21a9d5cf6770b6a14110548da5b8a25d7ceeed856fe0a0c"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_03/1.0.0/model.glb",
+      "bytes": 343740,
+      "sha256": "10a7e3b757f45200c3ce357b18f71c516e9da19eb009fea5b97fd15d4e12c755"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_03/1.0.0/provenance.json",
+      "bytes": 478,
+      "sha256": "87584179eab3426d565dfcdfd907dcbec546d6424873a9037279cc0befec4bd6"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_03/1.0.0/receipt.json",
+      "bytes": 714,
+      "sha256": "334ac7b6d9c125ab9a44fa890237e7d212e602bee462e635c9006f5ba4d0bc41"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_03/1.0.0/validation.json",
+      "bytes": 2677,
+      "sha256": "c8ac37b4bbe07d2bdf4c3d63c854edbd7d961e88154336f85569f452a6834d1b"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_04/1.0.0/manifest.json",
+      "bytes": 1179,
+      "sha256": "bb9459a6ef7d25a178f9fdd352a5e06b82260b0a582346f8dd7d8339504998a2"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_04/1.0.0/metadata.json",
+      "bytes": 1440,
+      "sha256": "b18ee988693fafa6e0bb51cf0fe100033d1aec89db64acd7461bbdc3172133fc"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_04/1.0.0/model.glb",
+      "bytes": 442836,
+      "sha256": "4aadce21fc74893630b3178939ca75c3692c55daa0c7850d8329935924890f15"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_04/1.0.0/provenance.json",
+      "bytes": 478,
+      "sha256": "c2a1015bb704d60879798af897b163531a9e25c0ef2abe41332f4f3ddc01d23b"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_04/1.0.0/receipt.json",
+      "bytes": 714,
+      "sha256": "b96c67f66d2080d55c031ab277ca8edb4d0dab04fbf1e0dd1a0474b250222274"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_04/1.0.0/validation.json",
+      "bytes": 2676,
+      "sha256": "c691259e53b07d8f08d9d058adaedaaae48dc28a2d000757ff9438e5a35bf153"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_05/1.0.0/manifest.json",
+      "bytes": 1179,
+      "sha256": "5f3b052f61dbc48775decdd5892530384bda5c5064e82899c77be61350de0414"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_05/1.0.0/metadata.json",
+      "bytes": 1421,
+      "sha256": "9995a974b2ad7d0e29e3441fb0180e4d5cd1588dc798660797f9549eea6ebcb8"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_05/1.0.0/model.glb",
+      "bytes": 132188,
+      "sha256": "c1b13c2c824dbc71d432e6ea0bd36c07250d6baf9adc220cabc391311ffb9080"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_05/1.0.0/provenance.json",
+      "bytes": 478,
+      "sha256": "2d13ed6c249507a95dd1acc1084057c7b29b0a768780685a0f79401fd0b8d805"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_05/1.0.0/receipt.json",
+      "bytes": 714,
+      "sha256": "adf788e937631ca38eb1409f6f16b0208a1752daee0caaa4cee7e5e42657cc73"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_05/1.0.0/validation.json",
+      "bytes": 2676,
+      "sha256": "c2b8559405efc55e243bf1c6714e4a89df9243e7a825beded25506219f94b175"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_06/1.0.0/manifest.json",
+      "bytes": 1179,
+      "sha256": "8a51b5dff280e18d707ba93d5cd751536973aa598e9abd2ae3df3b7c8251bae6"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_06/1.0.0/metadata.json",
+      "bytes": 1422,
+      "sha256": "dc810c6ca4c15983845d5237135035673da4fb86757f2f43f44a169e0591b6c1"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_06/1.0.0/model.glb",
+      "bytes": 258908,
+      "sha256": "f58c23d6e6866f0a0c4b3e3f5bb76f128c990197d18f3ef70f357c7d400a5a1a"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_06/1.0.0/provenance.json",
+      "bytes": 478,
+      "sha256": "f4b298bc4f4524dff2d262b105154eaff41e5219ee26fcce01dfbf0d1b9d50f0"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_06/1.0.0/receipt.json",
+      "bytes": 714,
+      "sha256": "a6187c071d3665133369d36b11e9e84092e6623745319ff3dcdd5fd185a671a0"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_06/1.0.0/validation.json",
+      "bytes": 2677,
+      "sha256": "d943527704a48ab4d7503e8ec687b178c69229c0e8ee1dc1fed002b9fb42dba8"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_07/1.0.0/manifest.json",
+      "bytes": 1179,
+      "sha256": "46f8045aad363deaa8da12acb2a200aa005e164ae7fc93880e1bb1c0bb1702c2"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_07/1.0.0/metadata.json",
+      "bytes": 1424,
+      "sha256": "8035222974887b26f727b5d0059d92f2c03abb666fb55361483091c9e15c0757"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_07/1.0.0/model.glb",
+      "bytes": 258868,
+      "sha256": "96913d2012cb28a9c205b65268bace9aa0a0401355d55f3f80ab68a6d8969ba9"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_07/1.0.0/provenance.json",
+      "bytes": 478,
+      "sha256": "baf60a878343183ccd25a69ba70018664f114fedd2571b28042d574a7f31a901"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_07/1.0.0/receipt.json",
+      "bytes": 714,
+      "sha256": "b43466839093d526d6673291ce629de84be50f55bcd109a978d9ca6660255b3e"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_07/1.0.0/validation.json",
+      "bytes": 2677,
+      "sha256": "4ceadb6174b1c42f244d8e93ee0ab8c3204f9804499f7a710daa0c7a0f48f0c7"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_08/1.0.0/manifest.json",
+      "bytes": 1179,
+      "sha256": "4929bfc63a94db725ec3bbd79c29e5d39c436fc2944a514b4456fc1718d0e96c"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_08/1.0.0/metadata.json",
+      "bytes": 1424,
+      "sha256": "0bc08a1a7586518a77955c6924288b11135629852b114b3a4478d292f9a3a050"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_08/1.0.0/model.glb",
+      "bytes": 265784,
+      "sha256": "4bd40967a446e152f9df62788bd61fc1389b80d2c1bc8491982e6d612bb35c54"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_08/1.0.0/provenance.json",
+      "bytes": 478,
+      "sha256": "626356811f83870b72d6f1237ecca519a6d2844948be2fb77f606e5cf2e5f693"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_08/1.0.0/receipt.json",
+      "bytes": 714,
+      "sha256": "c488b03957575b418fe60b9bfc4f4feb808f94c93776e9dd78542521c0c03898"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_08/1.0.0/validation.json",
+      "bytes": 2677,
+      "sha256": "2eac25bf6ffb1a5c95d8ed1ebeebf6b0f412e132ec8dc2405873dab98810ed49"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_09/1.0.0/manifest.json",
+      "bytes": 1179,
+      "sha256": "a8094fd1ff4a7c2a79956e151856eb1cd6dac08d85652001a76d471cbe1099b2"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_09/1.0.0/metadata.json",
+      "bytes": 1439,
+      "sha256": "470701943602fad4d45c35717c14f57ef3af72a38923d0c17902f3a61cd28147"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_09/1.0.0/model.glb",
+      "bytes": 253372,
+      "sha256": "43534200e44a22ea41e6c997a0d324d4b0276879ce395b2cd729e69a97c6e127"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_09/1.0.0/provenance.json",
+      "bytes": 478,
+      "sha256": "1d79c722c92063668f9970779b8d1e6be563813b6e1d283d6454dd0ddd8ee31e"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_09/1.0.0/receipt.json",
+      "bytes": 714,
+      "sha256": "261cad27da27f643bbb82490e939ee728f89be847694d403c29ca3388bf618df"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_09/1.0.0/validation.json",
+      "bytes": 2676,
+      "sha256": "6f63ac35820afdba5ffb3251a3ef6685a6e0fa6392a8846ce31bfe9eaabc0651"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_10/1.0.0/manifest.json",
+      "bytes": 1179,
+      "sha256": "b0748a3cda6db243ac3f7639476a44c3fab17b1d471fd5ccd379474f0831b6d9"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_10/1.0.0/metadata.json",
+      "bytes": 1426,
+      "sha256": "798bec5b22c718ddb0fc82dc3d12d6110c6299602dba13429d512a809ba06b72"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_10/1.0.0/model.glb",
+      "bytes": 329004,
+      "sha256": "d707ead24603f5a8c443156486a752ea983206e39e64e2156c06ff160e6eba09"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_10/1.0.0/provenance.json",
+      "bytes": 478,
+      "sha256": "81390cefb48113c0b58df100e45e9d96ebd5c010928437feafb1ae75d9b203af"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_10/1.0.0/receipt.json",
+      "bytes": 714,
+      "sha256": "e0ce5f209b56eb0fb643a9432403ef5e793602982d97cb09d80a7c9fd976bb13"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_10/1.0.0/validation.json",
+      "bytes": 2676,
+      "sha256": "7dfb5879b3f2dea4bec87b0df32c97f44efe9927c42037f738948519b1075ee5"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_11/1.0.0/manifest.json",
+      "bytes": 1179,
+      "sha256": "c4345a6dd57e4078a1d857bcca342bbef50a70ce10c6be4f078de9151b5643f8"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_11/1.0.0/metadata.json",
+      "bytes": 1425,
+      "sha256": "bc018349435c82eb5cdcfef5cb0e387977a2304af5b4d7dcc1775fc714635b49"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_11/1.0.0/model.glb",
+      "bytes": 268912,
+      "sha256": "546e5e1f18d412be36809b23582c529c68b4adbdbc6865062ed21ac36980adfc"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_11/1.0.0/provenance.json",
+      "bytes": 478,
+      "sha256": "3542ffd7d028b74d21be04a0f68a035c00b602768d6a844aa7e048b76d731848"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_11/1.0.0/receipt.json",
+      "bytes": 714,
+      "sha256": "58b4523ca250dfcefdcb12524eaa28b1b6ef1fbe85d4a13e36861bc6b348341b"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_11/1.0.0/validation.json",
+      "bytes": 2677,
+      "sha256": "94a890ea92c7c2b46e49e065b8383a4786a09f2186357c2de54ba0b36a8b7900"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_12/1.0.0/manifest.json",
+      "bytes": 1179,
+      "sha256": "8fb25bb43d94339210a0a92287f4930d87753ccc0336556854d7254c269f0fe8"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_12/1.0.0/metadata.json",
+      "bytes": 1424,
+      "sha256": "b127b8c26bd786e2002bfd5ae7b16848da022a1bf8f5839fa78e8495fcfe60dc"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_12/1.0.0/model.glb",
+      "bytes": 243344,
+      "sha256": "d917c50e8edb8be3b9306f2a5cc08836218820b8ead117c9dedef2498159c3ff"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_12/1.0.0/provenance.json",
+      "bytes": 478,
+      "sha256": "7a51b6266beb5ece6bda9b19b4128c8917e4262e25cf5bafdb011bbd7a8fc9e1"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_12/1.0.0/receipt.json",
+      "bytes": 714,
+      "sha256": "336b5400cb82afb04350d2fe8ce43457c3ea12bf51341803c1a3837fa52073cd"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_12/1.0.0/validation.json",
+      "bytes": 2676,
+      "sha256": "b964d1fff6ec54b6c82eafa444842fd5f17b06a5afa9b3e7ed4219bd5123f799"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_13/1.0.0/manifest.json",
+      "bytes": 1179,
+      "sha256": "e897edc276c62e1bb730b031154378b25764b44f231963bd5f7486f2c62c16aa"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_13/1.0.0/metadata.json",
+      "bytes": 1470,
+      "sha256": "caee261e05da539c3d0ae78277132ce133941841958b8cebaa3cefb096d4289c"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_13/1.0.0/model.glb",
+      "bytes": 265616,
+      "sha256": "15a6947a8f3dc3e90872d9b41902b19d865ad18aac98fa32315049e1ebf6570c"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_13/1.0.0/provenance.json",
+      "bytes": 478,
+      "sha256": "8f2c4dc9ae87eb872f7964820bfd5047927e25fa438b6a1d068fadb35fe916f1"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_13/1.0.0/receipt.json",
+      "bytes": 714,
+      "sha256": "7b07be4547c4c42009c002c3588a12c80666939d85155711cd0d14cf3b420fd3"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_bld_13/1.0.0/validation.json",
+      "bytes": 2677,
+      "sha256": "dcb61b5eccb2b20d40973a5709f75e049684b8bc00dbe703ac9d698f7d539ff1"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_npc_ivo/1.0.0/manifest.json",
+      "bytes": 1181,
+      "sha256": "5491f10ea7c3215283e28e4bc24de944b561484cdc0679c068ee92f95fddbb02"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_npc_ivo/1.0.0/metadata.json",
+      "bytes": 1471,
+      "sha256": "fac04150eb215bf0398e9c19f92290a533fbe12b0f06fccef22a1f593761b255"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_npc_ivo/1.0.0/model.glb",
+      "bytes": 395296,
+      "sha256": "1422a955ebf279b6a6262890d5e824a08ebc565eae4b419efc8d6dafad95b422"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_npc_ivo/1.0.0/provenance.json",
+      "bytes": 481,
+      "sha256": "7bc3fd46dff00c0115f78c4a05476843d29e8c4f1c69f85a871c5d2e77a4b7e2"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_npc_ivo/1.0.0/receipt.json",
+      "bytes": 716,
+      "sha256": "aa455c0be0a46fcac51cf13b2ffd366d2d49764241004e13cfe8489309024272"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_npc_ivo/1.0.0/validation.json",
+      "bytes": 2671,
+      "sha256": "1e995ef7c20df4868c4b14a3b82104420722504fd2bf9b10600ad519ab60bf58"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_npc_naya/1.0.0/manifest.json",
+      "bytes": 1183,
+      "sha256": "6f4c0a45aa871d24044437a790cf05152bea990cb5ccd6897a3e348b20ba87d7"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_npc_naya/1.0.0/metadata.json",
+      "bytes": 1472,
+      "sha256": "f8bc4deb2201ba93475709a1114b653945aae7535c5fde2c0340a204346fa6c6"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_npc_naya/1.0.0/model.glb",
+      "bytes": 384452,
+      "sha256": "c4ab4f7cd047738fa70e8586118514d92196b5ff293d57c6943e942d293b28f6"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_npc_naya/1.0.0/provenance.json",
+      "bytes": 484,
+      "sha256": "0f472c3fa199d395c921b57648395b7e42a15fd81afaf5cc6354c2831483c305"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_npc_naya/1.0.0/receipt.json",
+      "bytes": 718,
+      "sha256": "f83af49678f57843e16781748d8e0d7b896b68b7e18d424028c7947bcdc62cb5"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_npc_naya/1.0.0/validation.json",
+      "bytes": 2671,
+      "sha256": "b6e656f456af6a275404f294294a0d69d71663c59b3774d19ce9d381bc62b676"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_npc_nell/1.0.0/manifest.json",
+      "bytes": 1183,
+      "sha256": "58cca22afea3e6810b4cfa48f910bf788fee28d2a939a234d83d946b4695ff17"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_npc_nell/1.0.0/metadata.json",
+      "bytes": 1470,
+      "sha256": "17ae992d607ed9cc60a573fce8fa781b4e1ddb9d03c099c6d740779061da4d08"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_npc_nell/1.0.0/model.glb",
+      "bytes": 381500,
+      "sha256": "f5a9c6e8703cec82315b01a8a87ac33095a3cdf373937a5775dcf1af19276e1e"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_npc_nell/1.0.0/provenance.json",
+      "bytes": 484,
+      "sha256": "b449583c12ad315efd50d0ac1470b1f1b894a392986f9f07b585565e2da30d39"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_npc_nell/1.0.0/receipt.json",
+      "bytes": 718,
+      "sha256": "fc066f9579aaa59cce7be70a020caa61f01ebfdda2d8cc283176acf39fb59458"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_npc_nell/1.0.0/validation.json",
+      "bytes": 2671,
+      "sha256": "57f3c25f815ed06804a75ec8128c26ecc12fcab7b062ed70a99a58f41ddc4bfe"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_npc_ronan/1.0.0/manifest.json",
+      "bytes": 1185,
+      "sha256": "ef92d33f177d94aa856e97b07673bcda448f41c874dbc385a30a5c01ece033aa"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_npc_ronan/1.0.0/metadata.json",
+      "bytes": 1471,
+      "sha256": "b29d7867e3ce626dab9cae0e74bf9b60faa8244057e9d38d328a7ce9b02be84f"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_npc_ronan/1.0.0/model.glb",
+      "bytes": 395276,
+      "sha256": "2cafa88ca944dfe61d14a2bc500ee667eb5c2d701fdd8406d7e6a0c3b5cf65fa"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_npc_ronan/1.0.0/provenance.json",
+      "bytes": 487,
+      "sha256": "7313985af46150ddc761719fbcfb0227ffd12f7b262fe60b4d5ca005769c4305"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_npc_ronan/1.0.0/receipt.json",
+      "bytes": 720,
+      "sha256": "7a6103f3ce5fc9134713184848e7b21f83a28e164dc72c1a510a2d30ab5556de"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_npc_ronan/1.0.0/validation.json",
+      "bytes": 2671,
+      "sha256": "59e5b14d73ee48c7f3464a9b7f9f166d0c661a82a14ce864f385ee477a1ee347"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_npc_sana/1.0.0/manifest.json",
+      "bytes": 1183,
+      "sha256": "d8807ce3aa9cf1d5041227a69b638520760c65f40bbe7a1136a94bf1cad3fb82"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_npc_sana/1.0.0/metadata.json",
+      "bytes": 1470,
+      "sha256": "c86ce743b43dcf5c75b0f5670d159b670a17d3d9fb8adb526d7d3936dcdd1719"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_npc_sana/1.0.0/model.glb",
+      "bytes": 381492,
+      "sha256": "fd85f152bb86f867facc5f37f44ee32970342999ac99a8e421ffdc1bbd8fb73a"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_npc_sana/1.0.0/provenance.json",
+      "bytes": 484,
+      "sha256": "7cdb1764f7f55f04082af5411a11e6bda9cb4a1d29af4029f9970f99e0da7c0e"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_npc_sana/1.0.0/receipt.json",
+      "bytes": 718,
+      "sha256": "e434b8d57296ceb447362f284ceb3f5b8455db16a3c2763724be2c81514ec847"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_npc_sana/1.0.0/validation.json",
+      "bytes": 2671,
+      "sha256": "25f29670d8a7227ab4878a4623418f27e351f9588f4a7869193d0fce7f347dbf"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_npc_tori/1.0.0/manifest.json",
+      "bytes": 1183,
+      "sha256": "d349636f269e198b68c443c3f8c81b8bc86c288c2f3790d24a4be84b55af5eaf"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_npc_tori/1.0.0/metadata.json",
+      "bytes": 1465,
+      "sha256": "aea0138b7ef9199cf373118031b14cbc696208f900ae95f82e801e94e751f1ef"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_npc_tori/1.0.0/model.glb",
+      "bytes": 393932,
+      "sha256": "cff5f50585096f835355e06cc6768aca5ea7e4912cf60a4b42f978481720ee1f"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_npc_tori/1.0.0/provenance.json",
+      "bytes": 484,
+      "sha256": "484582bb59fc9f38bcb44a1e8a0ad4203bf27166074d47e70d2178c3c8d1790a"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_npc_tori/1.0.0/receipt.json",
+      "bytes": 718,
+      "sha256": "5c39c64ddcbdea4244ba6968133e3d7c1ddf367e942f2b5a788da0386a2eed79"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/nq_npc_tori/1.0.0/validation.json",
+      "bytes": 2671,
+      "sha256": "f253d34225b5bba607f1a79fb4e1b70913b7f0b9baee0f320cdf2064f34d8fdf"
+    },
+    {
+      "path": "assets/production/needle-quay/packages/package-index.json",
+      "bytes": 7079,
+      "sha256": "8493e7cb97861c6483ef52453d252848239fc1c754b1c35bd0bba52d6304c711"
+    },
+    {
+      "path": "assets/production/needle-quay/quest-world-contracts.json",
+      "bytes": 14621,
+      "sha256": "fab3016120f1d6224451fdcd74b3a7763b2d1fd796d9ac33734caece098a3d11"
+    },
+    {
+      "path": "assets/production/needle-quay/site/after.png",
+      "bytes": 1586174,
+      "sha256": "ffb4aa7bacedb14ce8be88acc4bd3c419f9afbe985e2d0198c07a985630fce06"
+    },
+    {
+      "path": "assets/production/needle-quay/site/before.png",
+      "bytes": 1584046,
+      "sha256": "28b793b91f5483ed71745ed3f292765adc46e2810f010eef52e87eb41738ae19"
+    },
+    {
+      "path": "assets/production/needle-quay/site/NeedleQuayDistrict.blend",
+      "bytes": 763573,
+      "sha256": "02a70610a425e16afff5eec02693d803f46546887bcd89e062ec4c127a2c7a08"
+    },
+    {
+      "path": "assets/production/needle-quay/site/plan.png",
+      "bytes": 1515971,
+      "sha256": "cd3a240eccc7ff6b63701af7c790bc8a2c50b8340223fbec4ade54ca7a6f47e5"
+    },
+    {
+      "path": "assets/production/needle-quay/site/README.md",
+      "bytes": 337,
+      "sha256": "a40ee350647b8455cc49dc31d42890d7226689c09ada3083eae83853926c9942"
+    }
+  ],
+  "count": 397,
+  "bytes": 69849133,
+  "stage": "LOCAL_CANDIDATES_WITH_COMPLETE_DESIGN_REGISTER",
+  "art_approval_receipt": "docs/needle-quay/ART_APPROVAL_2026-10-25.json",
+  "roblox_uploads": 0,
+  "billable_provider_calls": 0
+}

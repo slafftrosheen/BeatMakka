@@ -1,0 +1,118 @@
+{
+  "date": "2026-10-25",
+  "authority": "Direct human user message in this chat",
+  "user_quote": "aproved all previous artbooks,finish all initial tasks",
+  "scope": "Previously delivered artbooks and all 13 building concept sheets: visual design/art direction approval.",
+  "approved_artbooks": [
+    {
+      "path": "01_Visual_Artbook.pdf",
+      "sha256": "596526821d23869b7e92ab0b1d7643aadc596303edc3a9a3d888a09087383496"
+    },
+    {
+      "path": "02_Production_Atlas.pdf",
+      "sha256": "70f8d7462526b01b04c576f0d9343ea28b40ba327bc619f0e101264d7465bd12"
+    },
+    {
+      "path": "BeatMakka_World_v2/BeatMakka_World_Artbook_v2_RU.pdf",
+      "sha256": "0ab9dade9cf7be3f873c41ab1cc6edf5ba54a0883bf675a43f31f273cc862a07"
+    },
+    {
+      "path": "BeatMakka_World_v2/BeatMakka_Needle_Quay_Development_Plan_RU.pdf",
+      "sha256": "a2e108f93447047d0c4765e83da96e674c389229653f71a377f8547892478ccf"
+    }
+  ],
+  "approved_concepts": [
+    {
+      "path": "assets/concepts/needle-quay/NQ-BLD-01-lantern-room-v1.png",
+      "sha256": "8d25a58af19e040ddf55aed1da1ca63c1bb625048d489cc5aab08a3b65b42766",
+      "id": "NQ-BLD-01",
+      "name": "The Lantern Room"
+    },
+    {
+      "path": "assets/concepts/needle-quay/NQ-BLD-02-needle-records-v1.png",
+      "sha256": "4aeb7e45f3c6830e36cb75fba016e0bf0ffdf34e16bcb94124dbb01b3c6d51c7",
+      "id": "NQ-BLD-02",
+      "name": "Needle Records"
+    },
+    {
+      "path": "assets/concepts/needle-quay/NQ-BLD-03-morrow-repairs-v1.png",
+      "sha256": "92a97be01119232ee731ae5a451344e8e8bf1c3f2156d4f0ff2a6b62ab218459",
+      "id": "NQ-BLD-03",
+      "name": "Morrow Repairs"
+    },
+    {
+      "path": "assets/concepts/needle-quay/NQ-BLD-04-harbor-market-hall-v1.png",
+      "sha256": "d29e1df8eb96a617f3aa2efce766e0f0556b7a84b9eafb9b8a3f23567d800b99",
+      "id": "NQ-BLD-04",
+      "name": "Harbor Market Hall"
+    },
+    {
+      "path": "assets/concepts/needle-quay/NQ-BLD-05-signal-house-v1.png",
+      "sha256": "d80d09e1b1bb7e22205fc33fb6936ba1bb25685c3ee9249f2d9033783a7451ad",
+      "id": "NQ-BLD-05",
+      "name": "Signal House"
+    },
+    {
+      "path": "assets/concepts/needle-quay/NQ-BLD-06-warm-current-cafe-v1.png",
+      "sha256": "4a95ac4656c04420b76f6c35379f2694162a7b01540e4343d352b64e6c506267",
+      "id": "NQ-BLD-06",
+      "name": "Warm Current Café"
+    },
+    {
+      "path": "assets/concepts/needle-quay/NQ-BLD-07-north-slip-ferry-office-v1.png",
+      "sha256": "6051dc4d57e4261953d39ec33c324b0c5f2047fd0a43d3f2404fdea278c3c6be",
+      "id": "NQ-BLD-07",
+      "name": "North Slip Ferry Office"
+    },
+    {
+      "path": "assets/concepts/needle-quay/NQ-BLD-08-quay-supply-tackle-v1.png",
+      "sha256": "4d2575059e8bc57af05409d9face9bd21178f5772db65ded147cc1e8ae7dfc4d",
+      "id": "NQ-BLD-08",
+      "name": "Quay Supply & Tackle"
+    },
+    {
+      "path": "assets/concepts/needle-quay/NQ-BLD-09-cinder-cold-storage-v1.png",
+      "sha256": "00cef33f7bf0516865d082c827cb2ef27ab6463ac1abc59869262c58af9cf7ab",
+      "id": "NQ-BLD-09",
+      "name": "Cinder Cold Storage"
+    },
+    {
+      "path": "assets/concepts/needle-quay/NQ-BLD-10-quayside-flats-v1.png",
+      "sha256": "456928018fc737498ae959f993a5f3c66c78262a422f861573b75a16f3a91925",
+      "id": "NQ-BLD-10",
+      "name": "Quayside Flats"
+    },
+    {
+      "path": "assets/concepts/needle-quay/NQ-BLD-11-tidewash-laundry-v1.png",
+      "sha256": "239be48463f71bac3f2eecc32932c067682f5fd45c645041a8f228b8b6432863",
+      "id": "NQ-BLD-11",
+      "name": "Tidewash Laundry"
+    },
+    {
+      "path": "assets/concepts/needle-quay/NQ-BLD-12-relay-substation-v1.png",
+      "sha256": "1ac1afe9323a12b80812a7df01f22302c3c1be3f9a2441818584dd46eeaaa370",
+      "id": "NQ-BLD-12",
+      "name": "Relay Substation"
+    },
+    {
+      "path": "assets/concepts/needle-quay/NQ-BLD-13-dockline-depot-v1.png",
+      "sha256": "32f2720c0a4994454cae774e4919d655ee47e11caffd24b38b5ab53a48936824",
+      "id": "NQ-BLD-13",
+      "name": "Dockline Depot"
+    }
+  ],
+  "approved_style_board": {
+    "path": "assets/references/needle-quay-approved-style-board.png",
+    "sha256": "ed1febe208e798110905653ac6f2a60778830de00b2ff112cacf2e36c3bf3463"
+  },
+  "stage_effect": "Concepts are art-approved. Original image footers and generation provenance remain historical snapshots. This receipt supplies the subsequent approval event.",
+  "production_geometry_acceptance": false,
+  "dcc_clean_acceptance": false,
+  "runtime_acceptance": false,
+  "studio_asset_import_acceptance": false,
+  "tripo_budget_authorized": false,
+  "tripo_credit_cap": 0,
+  "publishing_authorized": false,
+  "commit_push_authorized": false,
+  "conflicting_dimensions": "No silent contract migration: H06 remains canonical 32x16x24; art approval does not mathematically reconcile contradictory 24x18x19 concept / 24x20 legacy interior."
+}

@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-24",
+  "generator": "built-in image_gen",
+  "prompt_file": "assets/concepts/needle-quay/prompts.json",
+  "reference": "assets/references/needle-quay-approved-style-board.png",
+  "reference_sha256": "ed1febe208e798110905653ac6f2a60778830de00b2ff112cacf2e36c3bf3463",
+  "source_request": "docs/needle-quay/environment-production-register-v1.0-source.ru.md",
+  "source_request_sha256": "08492c1f6189b40aa3b8bd3eaee7a836d45785467096ad0002d59bae32056303",
+  "stage": "CONCEPT_CANDIDATE",
+  "art_approved": false,
+  "tripo_input_approved": false,
+  "dcc_clean": false,
+  "outputs": [
+    {
+      "path": "assets/concepts/needle-quay/NQ-BLD-01-lantern-room-v1.png",
+      "sha256": "8d25a58af19e040ddf55aed1da1ca63c1bb625048d489cc5aab08a3b65b42766"
+    },
+    {
+      "path": "assets/concepts/needle-quay/NQ-BLD-02-needle-records-v1.png",
+      "sha256": "4aeb7e45f3c6830e36cb75fba016e0bf0ffdf34e16bcb94124dbb01b3c6d51c7"
+    }
+  ],
+  "review_notes": [
+    "No production mesh or precision drawing acceptance from illustrated views.",
+    "Needle Records regenerated text correction: canonical H06 reference is 32x16x24; proposed envelope 24x18x19 remains unresolved.",
+    "Lantern sheet roof dressing is concept-only; exact height budget is enforced by later authored geometry."
+  ],
+  "supplied_assets": {
+    "inventory": "docs/needle-quay/supplied-assets-inventory-2026-10-24.json",
+    "file_count": 6343,
+    "used_external_materials_models": [],
+    "used_reference_already_vendored": true
+  },
+  "source_documents": [
+    {
+      "path": "01_Visual_Artbook.pdf",
+      "sha256": "596526821d23869b7e92ab0b1d7643aadc596303edc3a9a3d888a09087383496"
+    },
+    {
+      "path": "02_Production_Atlas.pdf",
+      "sha256": "70f8d7462526b01b04c576f0d9343ea28b40ba327bc619f0e101264d7465bd12"
+    },
+    {
+      "path": "Asset_Production_Register.xlsx",
+      "sha256": "62a48c5ced5642a4c1ccba54d47b277ff39aa1384999d44cc43e94c1e15e46d3"
+    },
+    {
+      "path": "TRIPO_RUNBOOK.md",
+      "sha256": "934e207b38f5542c0ac3290d5fc85f1d26a57feb371e528d7cab8863c471259a"
+    },
+    {
+      "path": "BeatMakka_World_v2/BeatMakka_World_Artbook_v2_RU.pdf",
+      "sha256": "0ab9dade9cf7be3f873c41ab1cc6edf5ba54a0883bf675a43f31f273cc862a07"
+    }
+  ]
+}

@@ -1,6 +1,8 @@
 # WORLD ATLAS v1 — Resonance City / BeatMakka
 **24 October 2026. Design proposal; not a playable-world release.**
 
+**Environment update:** the user-supplied Environment Production Register v1.0 and World Artbook v2 venue names supersede the earlier display names in the first-district section. Current details: [Needle Quay environment](needle-quay/README.md), `data/needle-quay-environment.v1.json`. Existing district/parking IDs remain stable.
+
 ## Authority and names
 The current repository README names the experience **Frequency Zero**; **BeatMakka** remains the project/product name. **Resonance City** is a working name for the city, not a renamed existing game. **Needle Quay** is the canonical first neighborhood and approved visual setting. “Old Harbor” is a narrative description only.
 
@@ -37,11 +39,11 @@ Future districts differ by street function, silhouettes, architectural landmarks
 
 ## Needle Quay / first district
 Four authored **performance parking nodes**, not arbitrary simulated vehicle slots:
-- **P1 Rusty Workshop** — mechanism sequencing, Mica, metal sound `I01`; build on `metal_pulse`.
-- **P2 Vinyl Corner** — H03 vinyl crate, Preview → Assign, story/listening task.
-- **P3 Harbor Market** — stage preparation, responsibility and cooperation with **mandatory NPC solo fallback**.
-- **P4 Echo Pier** — virtual environmental recorder with `I02`, `I03` and existing water *ambience*; do not call the ambience an assignable sample without an asset.
-- **The Lighthouse Club** — final chapter art target, building on the **already implemented six-phase courtyard ChapterConcert**, not a claim that the Lighthouse geometry exists.
+- **P1 Dockside Exchange** — Tori, dock preparation, `I01 metal_hit`, first beat and optional performance; keep legacy `metal_pulse` evidence separate from new quest acceptance.
+- **P2 Repair Alley** — Ivo, Morrow Repairs and Cinder Cold Storage, `I02 vent_thump`, ventilation repair and A/B variation.
+- **P3 Vinyl Market** — Needle Records and Harbor Market Hall, Naya and Sana Bell, music sorting, saving to Beat Shelf and stage preparation with **mandatory NPC solo fallback**.
+- **P4 Breakwater Steps** — Mica, Signal House and Relay Substation, `I03 robot_chirp`, call/response and local signal restoration. Water ambience is not an assignable sample without an asset.
+- **The Lantern Room** — final chapter art target, reusing the **already implemented six-phase courtyard ChapterConcert**. A separate blockout exists; final production venue/runtime quest integration remains pending.
 
 **The Roamer** is the working name for a personalized mobile van/studio/home. Existing workshop owner/visitor controls and MK-I/Beat Shelf should be reused inside it. Demo parking travel is an authored safe transition with server verification, not multiplayer vehicle physics.
 

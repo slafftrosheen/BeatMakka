@@ -1,0 +1,126 @@
+{
+  "date": "2026-10-25",
+  "generator": "built-in image_gen",
+  "use_case": "stylized-concept",
+  "prompt_file": "assets/concepts/needle-quay/prompts-03-05.json",
+  "prompt_sha256": "a0262199e9f64a0f1bd2cf4e8a27edb632c04c0e282ff541a006f7d7ab15c24f",
+  "source_request": "Continue hero sheets for Morrow Repairs, Harbor Market Hall and Signal House in the same style.",
+  "repository_sha": "c7ce5d4b3e9fe5d32f4723f3829eda402f654fc7",
+  "references": [
+    {
+      "path": "assets/references/needle-quay-approved-style-board.png",
+      "sha256": "ed1febe208e798110905653ac6f2a60778830de00b2ff112cacf2e36c3bf3463",
+      "role": "visual authority"
+    },
+    {
+      "path": "assets/concepts/needle-quay/NQ-BLD-01-lantern-room-v1.png",
+      "sha256": "8d25a58af19e040ddf55aed1da1ca63c1bb625048d489cc5aab08a3b65b42766",
+      "role": "sheet layout and style continuity; not art approval"
+    }
+  ],
+  "contract_source": "data/needle-quay-environment.v1.json",
+  "contract_snapshot": [
+    {
+      "id": "NQ-BLD-03",
+      "name": "Morrow Repairs",
+      "proposed_dimensions_wdh_studs": [
+        32,
+        24,
+        19
+      ],
+      "npc_names": [
+        "Ivo"
+      ],
+      "quest_ids": [
+        "NQ-Q04",
+        "NQ-Q05"
+      ]
+    },
+    {
+      "id": "NQ-BLD-04",
+      "name": "Harbor Market Hall",
+      "proposed_dimensions_wdh_studs": [
+        48,
+        30,
+        16
+      ],
+      "npc_names": [
+        "Sana Bell",
+        "Naya"
+      ],
+      "quest_ids": [
+        "NQ-Q08"
+      ]
+    },
+    {
+      "id": "NQ-BLD-05",
+      "name": "Signal House",
+      "proposed_dimensions_wdh_studs": [
+        16,
+        16,
+        26
+      ],
+      "npc_names": [
+        "Mica"
+      ],
+      "quest_ids": [
+        "NQ-Q09",
+        "NQ-Q10"
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "id": "NQ-BLD-03",
+      "path": "assets/concepts/needle-quay/NQ-BLD-03-morrow-repairs-v1.png",
+      "sha256": "92a97be01119232ee731ae5a451344e8e8bf1c3f2156d4f0ff2a6b62ab218459",
+      "stage": "CONCEPT_CANDIDATE",
+      "art_approved": false,
+      "dcc_clean": false,
+      "studio_imported": false,
+      "runtime_verified": false
+    },
+    {
+      "id": "NQ-BLD-04",
+      "path": "assets/concepts/needle-quay/NQ-BLD-04-harbor-market-hall-v1.png",
+      "sha256": "d29e1df8eb96a617f3aa2efce766e0f0556b7a84b9eafb9b8a3f23567d800b99",
+      "stage": "CONCEPT_CANDIDATE",
+      "art_approved": false,
+      "dcc_clean": false,
+      "studio_imported": false,
+      "runtime_verified": false
+    },
+    {
+      "id": "NQ-BLD-05",
+      "path": "assets/concepts/needle-quay/NQ-BLD-05-signal-house-v1.png",
+      "sha256": "d80d09e1b1bb7e22205fc33fb6936ba1bb25685c3ee9249f2d9033783a7451ad",
+      "stage": "CONCEPT_CANDIDATE",
+      "art_approved": false,
+      "dcc_clean": false,
+      "studio_imported": false,
+      "runtime_verified": false
+    }
+  ],
+  "review": {
+    "kind": "VISUAL_CONCEPT_REVIEW_NOT_ENGINEERING_ACCEPTANCE",
+    "notes": [
+      "Morrow: sliding door, front work zone, vent detail I02 and Before/After shown. Exact mechanism must preserve the I02/P16 canonical binding.",
+      "Market: corrected solid roof top-view to semi-open framing and four canopy modules; floor plan labels four stalls with a clear central aisle and a separate performance nook.",
+      "Signal House: envelope marked 16x16x26 including antenna; exterior console, round signal window and Mica/H04 location dot, no redesigned robot.",
+      "Illustrated views, inset proportions and dimension arrows require exact DCC/layout work before construction approval."
+    ]
+  },
+  "supplied_assets": {
+    "inventory": "docs/needle-quay/supplied-assets-inventory-2026-10-25.json",
+    "file_count": 6343,
+    "used_external_materials_models": [],
+    "used_references_already_vendored": true
+  },
+  "tripo_calls": 0,
+  "tripo_credits_spent": 0,
+  "tests_run": false,
+  "uploads": 0,
+  "published": false,
+  "committed": false,
+  "pushed": false
+}

@@ -1,0 +1,44 @@
+{
+  "assetId": "nq_npc_ronan",
+  "description": "Local Needle Quay candidate; no production art/Studio/runtime promotion",
+  "displayName": "nq-npc-ronan",
+  "files": [
+    {
+      "bytes": 395276,
+      "kind": "model",
+      "path": "model.glb",
+      "sha256": "2cafa88ca944dfe61d14a2bc500ee667eb5c2d701fdd8406d7e6a0c3b5cf65fa"
+    },
+    {
+      "bytes": 1471,
+      "kind": "metadata",
+      "path": "metadata.json",
+      "sha256": "b29d7867e3ce626dab9cae0e74bf9b60faa8244057e9d38d328a7ce9b02be84f"
+    },
+    {
+      "bytes": 487,
+      "kind": "provenance",
+      "path": "provenance.json",
+      "sha256": "7313985af46150ddc761719fbcfb0227ffd12f7b262fe60b4d5ca005769c4305"
+    },
+    {
+      "bytes": 2671,
+      "kind": "validation",
+      "path": "validation.json",
+      "sha256": "59e5b14d73ee48c7f3464a9b7f9f166d0c661a82a14ce864f385ee477a1ee347"
+    }
+  ],
+  "license": "LicenseRef-BeatMakka-Private",
+  "model": "model.glb",
+  "packageId": "pkg_704781a29eaec8fda08cc6a1",
+  "provenance": {
+    "origin": "imported"
+  },
+  "schema": "game_dev.asset_package.v1",
+  "validation": {
+    "errorCount": 0,
+    "passed": true,
+    "warningCount": 0
+  },
+  "version": "1.0.0"
+}

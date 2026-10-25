@@ -1,0 +1,45 @@
+{
+  "date": "2026-10-25",
+  "tool": "built-in image_gen",
+  "reference": "assets/references/needle-quay-approved-style-board.png",
+  "stage": "NEW_CHARACTER_DESIGN_CANDIDATES",
+  "mica": "Reuse canonical H04, not generated",
+  "prompts": [
+    {
+      "id": "NQ-NPC-TORI",
+      "name": "Tori",
+      "path": "assets/production/needle-quay/npcs/TORI-design.png",
+      "prompt": "Use case stylized-concept. Character modeling reference sheet for BeatMakka Needle Quay. ONE named character Tori. Broad sturdy practical dock master, warm medium brown skin, short dark curly hair, wide faded teal work vest over cream rolled-up sleeves, walnut trousers, broad tool belt, substantial work boots; approachable capable adult, no weapon. Match the supplied approved world board's soft chunky stylized 3D game-art language and warm teal/cream/walnut/coral palette, gentle broad bevel-like shapes and restrained details. Full-body FRONT A-POSE, SIDE, BACK and small 3/4 relaxed portrait, all exactly same outfit/proportions/face/hair. Neutral off-white backdrop, orthographic-looking practical modeling views with no dramatic perspective, legs and arms separate, simple readable low-poly-friendly hands and boots. Adult family-friendly Roblox-adjacent game proportions, slightly larger head, not photorealistic and not copied franchise character. Title 'Tori' and small 'CHARACTER DESIGN CANDIDATE'. Sparse palette swatches and separate small named accessory inset. No background scene, no other characters, no logos, no tattoos, no fantasy armor. Do not redesign Mica. These are new candidate character designs, not final rigs."
+    },
+    {
+      "id": "NQ-NPC-IVO",
+      "name": "Ivo",
+      "path": "assets/production/needle-quay/npcs/IVO-design.png",
+      "prompt": "Use case stylized-concept. Character modeling reference sheet for BeatMakka Needle Quay. ONE named character Ivo. Tall thin enthusiastic adult mechanic, light warm skin, tousled brown hair, cream protective goggles on forehead, faded teal work jacket, dusty coral scarf tucked safely, slim walnut work trousers, broad sturdy boots, small wrench prop separately. Match the supplied approved world board's soft chunky stylized 3D game-art language and warm teal/cream/walnut/coral palette, gentle broad bevel-like shapes and restrained details. Full-body FRONT A-POSE, SIDE, BACK and small 3/4 relaxed portrait, all exactly same outfit/proportions/face/hair. Neutral off-white backdrop, orthographic-looking practical modeling views with no dramatic perspective, legs and arms separate, simple readable low-poly-friendly hands and boots. Adult family-friendly Roblox-adjacent game proportions, slightly larger head, not photorealistic and not copied franchise character. Title 'Ivo' and small 'CHARACTER DESIGN CANDIDATE'. Sparse palette swatches and separate small named accessory inset. No background scene, no other characters, no logos, no tattoos, no fantasy armor. Do not redesign Mica. These are new candidate character designs, not final rigs."
+    },
+    {
+      "id": "NQ-NPC-NAYA",
+      "name": "Naya",
+      "path": "assets/production/needle-quay/npcs/NAYA-design.png",
+      "prompt": "Use case stylized-concept. Character modeling reference sheet for BeatMakka Needle Quay. ONE named character Naya. Music archivist adult woman, deep warm skin, softly rounded silhouette, short textured hair, oversized cream sweater with teal cuffs, walnut skirt/trousers, bright dusty coral crossbody vinyl-record bag, plain record sleeve as separate prop, thoughtful curious face. Match the supplied approved world board's soft chunky stylized 3D game-art language and warm teal/cream/walnut/coral palette, gentle broad bevel-like shapes and restrained details. Full-body FRONT A-POSE, SIDE, BACK and small 3/4 relaxed portrait, all exactly same outfit/proportions/face/hair. Neutral off-white backdrop, orthographic-looking practical modeling views with no dramatic perspective, legs and arms separate, simple readable low-poly-friendly hands and boots. Adult family-friendly Roblox-adjacent game proportions, slightly larger head, not photorealistic and not copied franchise character. Title 'Naya' and small 'CHARACTER DESIGN CANDIDATE'. Sparse palette swatches and separate small named accessory inset. No background scene, no other characters, no logos, no tattoos, no fantasy armor. Do not redesign Mica. These are new candidate character designs, not final rigs."
+    },
+    {
+      "id": "NQ-NPC-SANA",
+      "name": "Sana Bell",
+      "path": "assets/production/needle-quay/npcs/SANA-design.png",
+      "prompt": "Use case stylized-concept. Character modeling reference sheet for BeatMakka Needle Quay. ONE named character Sana Bell. Friendly confident adult woman market coordinator, warm olive skin, medium broad silhouette, dark hair tied in simple low bun, dusty coral practical overshirt over cream blouse, teal trousers, large walnut market satchel, order clipboard separately, energetic welcoming posture. Match the supplied approved world board's soft chunky stylized 3D game-art language and warm teal/cream/walnut/coral palette, gentle broad bevel-like shapes and restrained details. Full-body FRONT A-POSE, SIDE, BACK and small 3/4 relaxed portrait, all exactly same outfit/proportions/face/hair. Neutral off-white backdrop, orthographic-looking practical modeling views with no dramatic perspective, legs and arms separate, simple readable low-poly-friendly hands and boots. Adult family-friendly Roblox-adjacent game proportions, slightly larger head, not photorealistic and not copied franchise character. Title 'Sana Bell' and small 'CHARACTER DESIGN CANDIDATE'. Sparse palette swatches and separate small named accessory inset. No background scene, no other characters, no logos, no tattoos, no fantasy armor. Do not redesign Mica. These are new candidate character designs, not final rigs."
+    },
+    {
+      "id": "NQ-NPC-RONAN",
+      "name": "Ronan Wren",
+      "path": "assets/production/needle-quay/npcs/RONAN-design.png",
+      "prompt": "Use case stylized-concept. Character modeling reference sheet for BeatMakka Needle Quay. ONE named character Ronan Wren. Older adult man music-venue caretaker, light warm skin, graying hair, tired but kind face, long graphite coat with muted teal lining, cream shirt, walnut trousers, key ring at belt, slightly stooped relaxed silhouette; not villainous, no weapon. Match the supplied approved world board's soft chunky stylized 3D game-art language and warm teal/cream/walnut/coral palette, gentle broad bevel-like shapes and restrained details. Full-body FRONT A-POSE, SIDE, BACK and small 3/4 relaxed portrait, all exactly same outfit/proportions/face/hair. Neutral off-white backdrop, orthographic-looking practical modeling views with no dramatic perspective, legs and arms separate, simple readable low-poly-friendly hands and boots. Adult family-friendly Roblox-adjacent game proportions, slightly larger head, not photorealistic and not copied franchise character. Title 'Ronan Wren' and small 'CHARACTER DESIGN CANDIDATE'. Sparse palette swatches and separate small named accessory inset. No background scene, no other characters, no logos, no tattoos, no fantasy armor. Do not redesign Mica. These are new candidate character designs, not final rigs."
+    },
+    {
+      "id": "NQ-NPC-NELL",
+      "name": "Nell Fen",
+      "path": "assets/production/needle-quay/npcs/NELL-design.png",
+      "prompt": "Use case stylized-concept. Character modeling reference sheet for BeatMakka Needle Quay. ONE named character Nell Fen. Warm adult cafe host woman, broad cozy silhouette, warm tan skin, short wavy gray-brown hair, cream apron over muted teal dress and dusty coral scarf, walnut shoes, small mug and handwritten-notes board as separate props, kind welcoming face. Match the supplied approved world board's soft chunky stylized 3D game-art language and warm teal/cream/walnut/coral palette, gentle broad bevel-like shapes and restrained details. Full-body FRONT A-POSE, SIDE, BACK and small 3/4 relaxed portrait, all exactly same outfit/proportions/face/hair. Neutral off-white backdrop, orthographic-looking practical modeling views with no dramatic perspective, legs and arms separate, simple readable low-poly-friendly hands and boots. Adult family-friendly Roblox-adjacent game proportions, slightly larger head, not photorealistic and not copied franchise character. Title 'Nell Fen' and small 'CHARACTER DESIGN CANDIDATE'. Sparse palette swatches and separate small named accessory inset. No background scene, no other characters, no logos, no tattoos, no fantasy armor. Do not redesign Mica. These are new candidate character designs, not final rigs."
+    }
+  ]
+}

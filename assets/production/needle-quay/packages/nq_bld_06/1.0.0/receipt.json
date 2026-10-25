@@ -1,0 +1,23 @@
+{
+  "completedAt": "2026-10-25T14:10:26.332Z",
+  "destination": {
+    "assetId": "nq_bld_06",
+    "version": "1.0.0"
+  },
+  "evidence": {
+    "blenderNormalizationPerformed": false,
+    "gpuImportTestPerformed": false,
+    "humanVisualReviewPerformed": false,
+    "modelBytesCopiedAndHashed": true,
+    "policyValidationCompleted": true,
+    "staticInspectionCompleted": true
+  },
+  "manifestSha256": "8a51b5dff280e18d707ba93d5cd751536973aa598e9abd2ae3df3b7c8251bae6",
+  "packageId": "pkg_278bbb14147912bbaf84b1d7",
+  "schema": "game_dev.package_receipt.v1",
+  "source": {
+    "bytes": 258908,
+    "fileName": "NQ-BLD-06.glb",
+    "sha256": "f58c23d6e6866f0a0c4b3e3f5bb76f128c990197d18f3ef70f357c7d400a5a1a"
+  }
+}

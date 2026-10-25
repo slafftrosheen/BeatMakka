@@ -1,0 +1,69 @@
+{
+  "assetId": "h04",
+  "description": "Local Needle Quay candidate; no production art/Studio/runtime promotion",
+  "displayName": "h04",
+  "inspection": {
+    "animationCount": 0,
+    "boundingBox": {
+      "max": [
+        1.75,
+        4,
+        1.5
+      ],
+      "min": [
+        -1.75,
+        0,
+        -1.5
+      ],
+      "sizeMeters": [
+        3.5,
+        4,
+        3
+      ]
+    },
+    "boundingBoxEmpty": false,
+    "fileBytes": 209336,
+    "filePath": "model.glb",
+    "generator": "glTF-Transform v4.5.1",
+    "hasNormals": true,
+    "hasSkin": false,
+    "hasTangents": false,
+    "hasUVs": true,
+    "materialCount": 1,
+    "meshCount": 1,
+    "pbr": {
+      "hasBaseColorTexture": true,
+      "hasEmissiveTexture": false,
+      "hasMetallicRoughnessTexture": true,
+      "hasNormalTexture": false,
+      "hasOcclusionTexture": false
+    },
+    "primitiveCount": 1,
+    "sceneGraphFallback": false,
+    "textureCount": 2,
+    "textureResolutions": [
+      {
+        "bytes": 31183,
+        "height": 1024,
+        "mimeType": "image/png",
+        "name": "atlas_basecolor",
+        "width": 1024
+      },
+      {
+        "bytes": 16211,
+        "height": 1024,
+        "mimeType": "image/png",
+        "name": "atlas_metalness-atlas_roughness",
+        "width": 1024
+      }
+    ],
+    "triangleCount": 3400,
+    "undrawnMeshCount": 0,
+    "undrawnPrimitiveCount": 0,
+    "undrawnTriangleCount": 0,
+    "vertexCount": 4373,
+    "warnings": []
+  },
+  "license": "LicenseRef-BeatMakka-Private",
+  "schema": "game_dev.asset_metadata.v1"
+}

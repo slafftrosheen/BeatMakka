@@ -1,0 +1,31 @@
+{
+  "created_at": "2026-10-24",
+  "version": "2.0",
+  "pdfs": [
+    {
+      "file": "BeatMakka_World_Artbook_v2_RU.pdf",
+      "pages": 32,
+      "valid": true,
+      "content": "searchable or image-forward, no blank sheets"
+    },
+    {
+      "file": "BeatMakka_Needle_Quay_Development_Plan_RU.pdf",
+      "pages": 18,
+      "valid": true,
+      "content": "searchable or image-forward, no blank sheets"
+    }
+  ],
+  "district_count": 11,
+  "initial_unlocked": [
+    "NQ"
+  ],
+  "parking_count": 4,
+  "maps_png": 5,
+  "maps_svg": 5,
+  "status": "DELIVERED ART DIRECTION ONLY; NO REPOSITORY PUSH, STUDIO BUILD, AUDIO UPLOAD, OR PUBLICATION",
+  "limitations": [
+    "Existing approved MK-I 36-page PDF remains authoritative for exact device layout; this is an updated world-focused companion.",
+    "All new names, maps, van and parkings are design proposal, not Roblox runtime evidence.",
+    "Audio and mesh/cloud release gates remain open."
+  ]
+}

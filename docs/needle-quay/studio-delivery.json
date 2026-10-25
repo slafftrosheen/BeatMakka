@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-24",
+  "kind": "LOCAL_STUDIO_EDIT_DELIVERY_NOT_RUNTIME_TEST",
+  "studio_id": "41452c6e-7e8f-4adf-81d1-7371f57ed88f",
+  "scene": "output/needle-quay/NeedleQuayEnvironmentBlockout-v1.rbxlx",
+  "repository_sha": "c7ce5d4b3e9fe5d32f4723f3829eda402f654fc7",
+  "mode": "Edit",
+  "native_open": true,
+  "final_revision_open": true,
+  "read_only_scene_inspection": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"scene\":\"NeedleQuayEnvironmentBlockout-v1.rbxlx\",\"breakwaterSideAccess\":true,\"canonicalShop\":\"H06\",\"placeId\":0,\"canonicalShopDimensions\":\"[32, 16, 24]\",\"parking\":4,\"buildings\":13,\"pierSideAccess\":true,\"root\":\"NeedleQuayEnvironmentBlockout\",\"parts\":270}"
+      }
+    ],
+    "isError": false
+  },
+  "final_capture": "assets/blockouts/needle-quay/studio-plan.png",
+  "earlier_revision_capture": "assets/blockouts/needle-quay/studio-lantern.png",
+  "native_production_mesh_import": false,
+  "studio_save_reopen_test": false,
+  "avatar_route_playtest": false,
+  "runtime_quest_acceptance": false,
+  "tests_run": false,
+  "tripo_calls": 0,
+  "tripo_credits_spent": 0,
+  "uploads": 0,
+  "published": false,
+  "commit": false,
+  "push": false
+}

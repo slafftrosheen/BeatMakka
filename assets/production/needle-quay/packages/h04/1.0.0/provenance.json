@@ -1,0 +1,14 @@
+{
+  "acceptanceStage": "EXISTING_CANONICAL_ASSET_REUSED_NO_REDESIGN",
+  "authoring": "[redacted]",
+  "billableProviderCalls": 0,
+  "origin": "imported",
+  "schema": "game_dev.asset_provenance.v1",
+  "source": {
+    "bytes": 209336,
+    "fileName": "H04_atlas_v1.glb",
+    "sha256": "8046e7baf00797212a970b03acc55118471d0bb9d4bf54871533bc2e6181dc22"
+  },
+  "sourceBlend": "assets/cleaned/H04/H04_maintenance_helper_robot.blend",
+  "sourceRegister": "data/needle-quay-environment.v1.json"
+}

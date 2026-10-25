@@ -1,0 +1,59 @@
+{
+  "schema": "game_dev.result.v1",
+  "operation": "package.verify",
+  "ok": true,
+  "data": {
+    "schema": "game_dev.package_verification.v1",
+    "packagePath": "C:\\Users\\slavd\\BeatMaka\\assets\\production\\needle-quay\\packages\\nq_bld_07\\1.0.0",
+    "manifest": {
+      "assetId": "nq_bld_07",
+      "description": "Local Needle Quay candidate; no production art/Studio/runtime promotion",
+      "displayName": "nq-bld-07",
+      "files": [
+        {
+          "bytes": 258868,
+          "kind": "model",
+          "path": "model.glb",
+          "sha256": "96913d2012cb28a9c205b65268bace9aa0a0401355d55f3f80ab68a6d8969ba9"
+        },
+        {
+          "bytes": 1424,
+          "kind": "metadata",
+          "path": "metadata.json",
+          "sha256": "8035222974887b26f727b5d0059d92f2c03abb666fb55361483091c9e15c0757"
+        },
+        {
+          "bytes": 478,
+          "kind": "provenance",
+          "path": "provenance.json",
+          "sha256": "baf60a878343183ccd25a69ba70018664f114fedd2571b28042d574a7f31a901"
+        },
+        {
+          "bytes": 2677,
+          "kind": "validation",
+          "path": "validation.json",
+          "sha256": "4ceadb6174b1c42f244d8e93ee0ab8c3204f9804499f7a710daa0c7a0f48f0c7"
+        }
+      ],
+      "license": "LicenseRef-BeatMakka-Private",
+      "model": "model.glb",
+      "packageId": "pkg_b63857df190115b0ceca03ea",
+      "provenance": {
+        "origin": "imported"
+      },
+      "schema": "game_dev.asset_package.v1",
+      "validation": {
+        "errorCount": 0,
+        "passed": true,
+        "warningCount": 0
+      },
+      "version": "1.0.0"
+    },
+    "hashesVerified": true,
+    "evidence": {
+      "packageBytesVerified": true,
+      "gpuImportTestPerformed": false,
+      "humanVisualReviewPerformed": false
+    }
+  }
+}

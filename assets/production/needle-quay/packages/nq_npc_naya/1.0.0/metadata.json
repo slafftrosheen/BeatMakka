@@ -1,0 +1,56 @@
+{
+  "assetId": "nq_npc_naya",
+  "description": "Local Needle Quay candidate; no production art/Studio/runtime promotion",
+  "displayName": "nq-npc-naya",
+  "inspection": {
+    "animationCount": 0,
+    "boundingBox": {
+      "max": [
+        1.5306665897369385,
+        5.646666526794434,
+        0.7093333005905151
+      ],
+      "min": [
+        -1.5306665897369385,
+        0,
+        -0.7093333005905151
+      ],
+      "sizeMeters": [
+        3.061333179473877,
+        5.646666526794434,
+        1.4186666011810303
+      ]
+    },
+    "boundingBoxEmpty": false,
+    "fileBytes": 384452,
+    "filePath": "model.glb",
+    "generator": "glTF-Transform v4.5.1",
+    "hasNormals": true,
+    "hasSkin": true,
+    "hasTangents": false,
+    "hasUVs": true,
+    "materialCount": 6,
+    "meshCount": 34,
+    "pbr": {
+      "hasBaseColorTexture": false,
+      "hasEmissiveTexture": false,
+      "hasMetallicRoughnessTexture": false,
+      "hasNormalTexture": false,
+      "hasOcclusionTexture": false
+    },
+    "primitiveCount": 34,
+    "sceneGraphFallback": false,
+    "textureCount": 0,
+    "textureResolutions": [],
+    "triangleCount": 5412,
+    "undrawnMeshCount": 0,
+    "undrawnPrimitiveCount": 0,
+    "undrawnTriangleCount": 0,
+    "vertexCount": 6369,
+    "warnings": [
+      "no base colour texture on any material: the asset is untextured and will read as flat colour"
+    ]
+  },
+  "license": "LicenseRef-BeatMakka-Private",
+  "schema": "game_dev.asset_metadata.v1"
+}

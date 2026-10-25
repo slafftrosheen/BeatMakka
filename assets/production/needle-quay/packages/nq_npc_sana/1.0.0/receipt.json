@@ -1,0 +1,23 @@
+{
+  "completedAt": "2026-10-25T14:11:20.173Z",
+  "destination": {
+    "assetId": "nq_npc_sana",
+    "version": "1.0.0"
+  },
+  "evidence": {
+    "blenderNormalizationPerformed": false,
+    "gpuImportTestPerformed": false,
+    "humanVisualReviewPerformed": false,
+    "modelBytesCopiedAndHashed": true,
+    "policyValidationCompleted": true,
+    "staticInspectionCompleted": true
+  },
+  "manifestSha256": "d8807ce3aa9cf1d5041227a69b638520760c65f40bbe7a1136a94bf1cad3fb82",
+  "packageId": "pkg_a97a0cb257db7f90178321f6",
+  "schema": "game_dev.package_receipt.v1",
+  "source": {
+    "bytes": 381492,
+    "fileName": "NQ-NPC-SANA.glb",
+    "sha256": "fd85f152bb86f867facc5f37f44ee32970342999ac99a8e421ffdc1bbd8fb73a"
+  }
+}

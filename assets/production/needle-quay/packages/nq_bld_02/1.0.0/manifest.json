@@ -1,0 +1,44 @@
+{
+  "assetId": "nq_bld_02",
+  "description": "Local Needle Quay candidate; no production art/Studio/runtime promotion",
+  "displayName": "nq-bld-02",
+  "files": [
+    {
+      "bytes": 440692,
+      "kind": "model",
+      "path": "model.glb",
+      "sha256": "f139949b2431fe2c6cf51f96b2cea42d823299ecab1fb63206a5e0e7ee3d1484"
+    },
+    {
+      "bytes": 1429,
+      "kind": "metadata",
+      "path": "metadata.json",
+      "sha256": "9c2e34fbd6ef9400ecbc790a5779879dfc82724557dd9a448d1567e69c576c85"
+    },
+    {
+      "bytes": 478,
+      "kind": "provenance",
+      "path": "provenance.json",
+      "sha256": "f1112ff9d2d642a53b197548608935ac0c2575da66de1b60cc794b3c931ee64e"
+    },
+    {
+      "bytes": 2677,
+      "kind": "validation",
+      "path": "validation.json",
+      "sha256": "587d5daa3bc6a09895a8120f32693f64b0f891e3de948347ea535059b67aef50"
+    }
+  ],
+  "license": "LicenseRef-BeatMakka-Private",
+  "model": "model.glb",
+  "packageId": "pkg_2a16f9cba58505cdac038c06",
+  "provenance": {
+    "origin": "imported"
+  },
+  "schema": "game_dev.asset_package.v1",
+  "validation": {
+    "errorCount": 0,
+    "passed": true,
+    "warningCount": 0
+  },
+  "version": "1.0.0"
+}

@@ -1,0 +1,13 @@
+{
+  "date": "2026-10-25",
+  "pdf": "output/needle-quay/BeatMakka_Needle_Quay_Environment_Quest_Artbook_Vol01.pdf",
+  "pages": 91,
+  "bytes": 23318312,
+  "sha256": "8942fa5039f7b329428848b78252ce5a4ee1bb6bcad4f2e552572af4166c6101",
+  "approved_concept_sheets": 13,
+  "npc_models_produced_by_book": 6,
+  "standalone_graphics_produced_by_book": 61,
+  "approval_receipt": "docs/needle-quay/ART_APPROVAL_2026-10-25.json",
+  "source_register": "data/needle-quay-environment.v1.json",
+  "runtime_acceptance": false
+}

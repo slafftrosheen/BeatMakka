@@ -1,6 +1,8 @@
 # Needle Quay — demo implementation batches (WORLD v1)
 **24 October 2026. Codex/Roblox Studio handoff. Design package, no runtime claims.**
 
+**Superseding environment supplement:** use [Environment Production Register v1.0](needle-quay/README.md) and `data/needle-quay-environment.v1.json` for building/venue names, materials, NPC and quest production scope. Parking IDs P1–P4 are retained, respectively Dockside Exchange, Repair Alley, Vinyl Market, Breakwater Steps; the finale is The Lantern Room. The older Rusty Workshop/Vinyl Corner/Echo Pier/Lighthouse wording below describes the previous proposal, not current canonical display names. The separate blockout scene does not implement B01–B08 gameplay.
+
 ## Target playable experience
 A new player sees eleven mapped city districts but can only enter **Needle Quay**. They can immediately play the real **MK-I 4×4** and save to **Beat Shelf ×6**; use a personal customizable van **The Roamer** as their home, choose one of four authored parking venues, complete four meaningful solo-capable story activities, collect the existing I01–I03 virtual sound sources, prepare a saved beat and finish the existing **six-phase** chapter in a Lighthouse-themed club. Other players may voluntarily watch or join queued mini-performances. The player's map and restoration are personal; public venues are shared.
 

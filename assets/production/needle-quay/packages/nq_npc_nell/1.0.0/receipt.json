@@ -1,0 +1,23 @@
+{
+  "completedAt": "2026-10-25T14:11:25.760Z",
+  "destination": {
+    "assetId": "nq_npc_nell",
+    "version": "1.0.0"
+  },
+  "evidence": {
+    "blenderNormalizationPerformed": false,
+    "gpuImportTestPerformed": false,
+    "humanVisualReviewPerformed": false,
+    "modelBytesCopiedAndHashed": true,
+    "policyValidationCompleted": true,
+    "staticInspectionCompleted": true
+  },
+  "manifestSha256": "58cca22afea3e6810b4cfa48f910bf788fee28d2a939a234d83d946b4695ff17",
+  "packageId": "pkg_fe2adff1af72a01434022d15",
+  "schema": "game_dev.package_receipt.v1",
+  "source": {
+    "bytes": 381500,
+    "fileName": "NQ-NPC-NELL.glb",
+    "sha256": "f5a9c6e8703cec82315b01a8a87ac33095a3cdf373937a5775dcf1af19276e1e"
+  }
+}

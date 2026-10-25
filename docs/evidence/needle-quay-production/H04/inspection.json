@@ -1,0 +1,67 @@
+{
+  "schema": "game_dev.result.v1",
+  "operation": "asset.inspect",
+  "ok": true,
+  "data": {
+    "filePath": "C:\\Users\\slavd\\BeatMaka\\assets\\optimized\\H04\\H04_atlas_v1.glb",
+    "fileBytes": 209336,
+    "generator": "glTF-Transform v4.5.1",
+    "meshCount": 1,
+    "primitiveCount": 1,
+    "vertexCount": 4373,
+    "triangleCount": 3400,
+    "undrawnMeshCount": 0,
+    "undrawnPrimitiveCount": 0,
+    "undrawnTriangleCount": 0,
+    "sceneGraphFallback": false,
+    "materialCount": 1,
+    "textureCount": 2,
+    "textureResolutions": [
+      {
+        "name": "atlas_basecolor",
+        "width": 1024,
+        "height": 1024,
+        "mimeType": "image/png",
+        "bytes": 31183
+      },
+      {
+        "name": "atlas_metalness-atlas_roughness",
+        "width": 1024,
+        "height": 1024,
+        "mimeType": "image/png",
+        "bytes": 16211
+      }
+    ],
+    "boundingBox": {
+      "min": [
+        -1.75,
+        0,
+        -1.5
+      ],
+      "max": [
+        1.75,
+        4,
+        1.5
+      ],
+      "sizeMeters": [
+        3.5,
+        4,
+        3
+      ]
+    },
+    "boundingBoxEmpty": false,
+    "hasUVs": true,
+    "hasNormals": true,
+    "hasTangents": false,
+    "pbr": {
+      "hasBaseColorTexture": true,
+      "hasMetallicRoughnessTexture": true,
+      "hasNormalTexture": false,
+      "hasOcclusionTexture": false,
+      "hasEmissiveTexture": false
+    },
+    "animationCount": 0,
+    "hasSkin": false,
+    "warnings": []
+  }
+}
