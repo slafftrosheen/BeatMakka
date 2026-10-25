@@ -31,3 +31,6 @@ desktop.ini
 # Roblox Studio lock files
 *.rbxl.lock
 *.rbxlx.lock
+
+# Raw local copy of the losslessly archived oversized supplied model
+/assets/low_poly_city_pack.glb

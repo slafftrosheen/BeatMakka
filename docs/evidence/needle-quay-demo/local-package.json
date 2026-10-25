@@ -1,0 +1,9 @@
+{
+  "package": "output/needle-quay-demo/NeedleQuay-Local-Demo.zip",
+  "bytes": 37474095,
+  "sha256": "eb6e6736d25246ebbc2835703c65381dadc89b784b4335407a425f895a90cc6c",
+  "companion_files": 546,
+  "place_sha256": "c04514add605a799534ae7650e049da5676a058d5fdaed8c9e973ad7dc990525",
+  "uploads": 0,
+  "tripo_spend": 0
+}

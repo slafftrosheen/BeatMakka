@@ -2,7 +2,10 @@ local SoundService = game:GetService("SoundService")
 local ContentProvider = game:GetService("ContentProvider")
 local Shared = game:GetService("ReplicatedStorage").Shared
 local ContentIds = require(Shared.ContentIds)
+local LocalContent = require(Shared.LocalContent)
+local RunService = game:GetService("RunService")
 local Catalog = require(Shared.SampleCatalog)
+local PadVoiceProcessor = require(script.Parent.PadVoiceProcessor)
 local AudioEngine = {}
 AudioEngine.__index = AudioEngine
 
@@ -75,6 +78,7 @@ end
 
 function AudioEngine:_addBank(sampleId, voiceCount, music)
     local id = ContentIds.Audio[sampleId]
+    local localUri = if RunService:IsStudio() then LocalContent.Audio[sampleId] else nil
     local bank = {
         voices = {},
         cursor = 0,
@@ -84,7 +88,7 @@ function AudioEngine:_addBank(sampleId, voiceCount, music)
         connections = {},
     }
     self.banks[sampleId] = bank
-    if not validAssetId(id) then
+    if not localUri and not validAssetId(id) then
         return
     end
     self.configured += 1
@@ -92,7 +96,7 @@ function AudioEngine:_addBank(sampleId, voiceCount, music)
     for index = 1, voiceCount do
         local voice = Instance.new("Sound")
         voice.Name = sampleId .. "_" .. tostring(index)
-        voice.SoundId = "rbxassetid://" .. string.format("%.0f", id)
+        voice.SoundId = localUri or ("rbxassetid://" .. string.format("%.0f", id))
         voice.Volume = if sampleId == "waterfront" then 0.12 else 0.7
         voice.Looped = sampleId == "waterfront"
         voice.SoundGroup = self.group
@@ -161,21 +165,52 @@ function AudioEngine:_removeBank(id)
     self.banks[id] = nil
 end
 
-function AudioEngine:setSelection(assignments)
+function AudioEngine:setSelection(assignments, mask)
     if self.destroyed then
         return
     end
     local wanted = {}
     for pad = 1, 16 do
+        if
+            (mask ~= nil and not mask[pad]) or (self.strictSelection and assignments[pad] == nil)
+        then
+            continue
+        end
         local id = assignments[pad]
         wanted[if Catalog.ById[id] then id else Catalog.List[pad].id] = true
     end
-    -- Keep only the original three discovery previews alongside active pads.
+    if self.worldPreview then
+        for _, id in { "kick", "closed_hat", "pluck" } do
+            wanted[id] = true
+        end
+    end
+    -- Keep the three discovery previews alongside active pads.
     for _, sample in Catalog.Packs[1].samples do
-        if sample.discovery then
+        if not self.strictSelection and sample.discovery then
             wanted[sample.id] = true
         end
     end
+    local unchanged = self.selection ~= nil
+    if unchanged then
+        for id in wanted do
+            if not self.selection[id] then
+                unchanged = false
+                break
+            end
+        end
+        if unchanged then
+            for id in self.selection do
+                if not wanted[id] then
+                    unchanged = false
+                    break
+                end
+            end
+        end
+    end
+    if unchanged then
+        return
+    end
+    self.selection = wanted
     for id, bank in table.clone(self.banks) do
         if bank.music and not wanted[id] then
             self:_removeBank(id)
@@ -183,7 +218,7 @@ function AudioEngine:setSelection(assignments)
     end
     for id in wanted do
         if not self.banks[id] then
-            self:_addBank(id, MUSIC_VOICES, true)
+            self:_addBank(id, self.musicVoices, true)
         end
     end
     self.Changed:Fire()
@@ -200,12 +235,17 @@ function AudioEngine.new(groupName, options)
         Changed = Instance.new("BindableEvent"),
     }, AudioEngine)
     options = options or {}
+    self.strictSelection = options.strictSelection == true
+    self.musicVoices = if options.jamTrack then 2 else MUSIC_VOICES
+    self.volume = if options.jamTrack then 0.05 else 0.6
     local group = Instance.new("SoundGroup")
     group.Name = groupName or "PersonalSampler"
-    group.Volume = 0.6
+    group.Volume = self.volume
     group.Parent = SoundService
     self.group = group
-    self:setSelection({})
+    self.worldPreview = options.musicOnly ~= true
+    self.processor = PadVoiceProcessor.new(group)
+    self:setSelection({}, if self.strictSelection then {} else nil)
     if not options.musicOnly then
         for _, id in CUES do
             self:_addBank(id, 1)
@@ -265,7 +305,7 @@ function AudioEngine:ambient(enabled)
     return self:_syncAmbient()
 end
 
-function AudioEngine:play(id)
+function AudioEngine:play(id, settings, pad)
     local bank = self.banks[id]
     if self.destroyed or self.muted or not bank or bank.state ~= "ready" or id == "waterfront" then
         return false
@@ -287,11 +327,13 @@ function AudioEngine:play(id)
     bank.cursor = index
     voice:Stop()
     voice.TimePosition = 0
+    self.processor:prepare(voice, settings, pad)
     voice:Play()
     return true
 end
 
 function AudioEngine:_stopVoices()
+    self.processor:stop()
     for _, bank in self.banks do
         for _, voice in bank.voices do
             voice:Stop()
@@ -304,7 +346,7 @@ function AudioEngine:setMuted(value)
         return
     end
     self.muted = value == true
-    self.group.Volume = if self.muted then 0 else 0.6
+    self.group.Volume = if self.muted then 0 else self.volume
     if self.muted then
         self:_stopVoices()
     else
@@ -335,6 +377,7 @@ function AudioEngine:destroy()
     end
     table.clear(self.connections)
     table.clear(self.banks)
+    self.processor:destroy()
     self.group:Destroy()
     self.Changed:Destroy()
 end

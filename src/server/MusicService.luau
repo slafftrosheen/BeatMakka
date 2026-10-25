@@ -12,6 +12,8 @@ local RoomService = require(script.Parent.RoomService)
 local Missions = require(ReplicatedStorage.Shared.NeighborhoodMissions)
 local Discoveries = require(ReplicatedStorage.Shared.DiscoveryCatalog)
 local ConcertService = require(script.Parent.ConcertService)
+local JamService = require(script.Parent.JamService)
+local QuayDemoService = require(script.Parent.QuayDemoService)
 local MusicService = {}
 
 function MusicService.start(world)
@@ -27,6 +29,8 @@ function MusicService.start(world)
     local profiles = {}
     local listening
     local concert
+    local jam
+    local quay
 
     local function nearby(player, anchor, distance)
         local character = player.Character
@@ -87,6 +91,8 @@ function MusicService.start(world)
             listening = listening and listening:state(player),
             stage = listening and listening:stageState(player),
             concert = concert and concert:state(player),
+            jam = jam and jam:state(player),
+            quay = quay and quay:summary(player, profile),
         })
     end
 
@@ -96,6 +102,9 @@ function MusicService.start(world)
             return
         end
         local station = world.stations[profile.station]
+        if jam then
+            jam:leave(player)
+        end
         if concert then
             concert:stop(player)
         end
@@ -188,6 +197,17 @@ function MusicService.start(world)
         end
     )
 
+    jam = JamService.new(world.stations, profiles, send, function(player)
+        listening:depart(player)
+        concert:stop(player)
+    end, nearby)
+    task.spawn(function()
+        while network.Parent do
+            task.wait(0.1)
+            jam:tick()
+        end
+    end)
+
     world.quest.prompt.Triggered:Connect(function(player)
         local profile = profiles[player]
         if not profile or not profile.ready or not nearby(player, world.quest.anchor, 9) then
@@ -215,6 +235,52 @@ function MusicService.start(world)
         end
     end)
 
+    local function enterStation(player, id)
+        local profile = profiles[player]
+        local station = world.stations[id]
+        if
+            not profile
+            or not profile.ready
+            or not station
+            or not nearby(player, station.anchor, 11)
+        then
+            return
+        end
+        if station.owner and station.owner ~= player then
+            send(player, "This station is occupied. The other workbench is available to try.")
+            return
+        end
+        listening:depart(player)
+        release(player)
+        profile.station = id
+        station.owner = player
+        station.label.Text = "MK-I  /  " .. player.DisplayName
+        station.prompt.ActionText = "Occupied"
+        send(player, "Select a pad, then add steps. Space plays your loop.")
+    end
+    quay = QuayDemoService.new(
+        world,
+        profiles,
+        rooms,
+        send,
+        function(player)
+            listening:depart(player)
+            release(player)
+        end,
+        nearby,
+        persist,
+        enterStation,
+        function(player)
+            concert:open(player)
+        end
+    )
+    task.spawn(function()
+        while world.root.Parent do
+            task.wait(1)
+            quay:tick()
+        end
+    end)
+
     local function join(player)
         if profiles[player] then
             return
@@ -236,6 +302,7 @@ function MusicService.start(world)
                 return
             end
             rooms:assign(player, profile)
+            quay:arrive(player, profile, true)
             send(
                 player,
                 if profile.loadFailed
@@ -247,20 +314,43 @@ function MusicService.start(world)
             listening:depart(player)
             release(player)
         end)
+        player.CharacterAdded:Connect(function()
+            if profile.ready then
+                quay:arrive(player, profile, false)
+            end
+        end)
     end
     Players.PlayerAdded:Connect(join)
     for _, player in Players:GetPlayers() do
         join(player)
     end
     Players.PlayerRemoving:Connect(function(player)
+        quay:flush(player)
         listening:depart(player)
         release(player)
         profiles[player] = nil
+        quay:remove(player)
         rooms:remove(player)
         for visitor, profile in profiles do
             if profile.ready and rooms:assign(visitor, profile) then
                 send(visitor)
             end
+        end
+    end)
+    game:BindToClose(function()
+        for player in profiles do
+            quay:flush(player)
+        end
+        local deadline = os.clock() + 25
+        while os.clock() < deadline do
+            local saving = false
+            for _, profile in profiles do
+                saving = saving or profile.saving or profile.progressNeedsSave == true
+            end
+            if not saving then
+                break
+            end
+            task.wait(0.1)
         end
     end)
 
@@ -354,6 +444,14 @@ function MusicService.start(world)
             send(player, notice)
             return
         end
+        if action:sub(1, 4) == "Quay" then
+            quay:command(player, action, a)
+            return
+        end
+        if action:sub(1, 3) == "Jam" then
+            jam:command(player, action, a)
+            return
+        end
         if action:sub(1, 7) == "Chapter" then
             concert:command(player, action, a)
             return
@@ -368,6 +466,13 @@ function MusicService.start(world)
             return
         end
         local notice
+        if jam.members[player] and (action == "Play" or action == "Record" or action == "Tap") then
+            send(
+                player,
+                "The jam owns playback. Edit notes, then publish; leave the jam for solo play."
+            )
+            return
+        end
         if action == "SelectSlot" and Pattern.integer(a, 1, Book.SlotCount) then
             Book.select(profile, a)
             profile.playing = false
@@ -412,6 +517,31 @@ function MusicService.start(world)
             profile.epoch += 1
         elseif action == "Step" and Pattern.integer(a, 1, 16) and Pattern.integer(b, 1, 16) then
             profile.pattern.rows[a][b] = not profile.pattern.rows[a][b]
+        elseif action == "PadPreset" and Pattern.integer(a, 1, 16) and type(b) == "string" then
+            local sound = require(game.ReplicatedStorage.Shared.PadSound).preset(
+                profile.pattern.sounds[a],
+                b,
+                profile.pattern.bpm
+            )
+            if not sound then
+                return
+            end
+            profile.pattern.sounds[a] = sound
+        elseif action == "PadSound" and Pattern.integer(a, 1, 16) and type(b) == "table" then
+            local Sound = require(game.ReplicatedStorage.Shared.PadSound)
+            if
+                type(b.key) ~= "string"
+                or not Sound.Spec[b.key]
+                or type(b.value) ~= "number"
+                or b.value ~= b.value
+                or math.abs(b.value) == math.huge
+            then
+                return
+            end
+            profile.pattern.sounds = profile.pattern.sounds or {}
+            local sound = Sound.sanitize(profile.pattern.sounds[a])
+            sound[b.key] = b.value
+            profile.pattern.sounds[a] = Sound.sanitize(sound)
         elseif action == "MutePad" and Pattern.integer(a, 1, 16) then
             profile.pattern.muted[a] = not profile.pattern.muted[a]
         elseif action == "ClearPad" and Pattern.integer(a, 1, 16) then
@@ -520,6 +650,8 @@ function MusicService.start(world)
         end
         if
             action == "Step"
+            or action == "PadSound"
+            or action == "PadPreset"
             or action == "MutePad"
             or action == "ClearPad"
             or action == "Assign"

@@ -3,6 +3,7 @@ local Pattern = require(script.Parent.Pattern)
 local Book = require(script.Parent.BeatBook)
 local Samples = require(script.Parent.SampleCatalog)
 local Missions = require(script.Parent.NeighborhoodMissions)
+local Quay = require(script.Parent.QuayProgress)
 local Chapter = {
     Hints = {
         "Choose an audible pad to introduce your rhythm.",
@@ -60,7 +61,10 @@ local function parts(pattern, ordinaryOnly)
 end
 
 function Chapter.start(profile, shelf, now)
-    if not Missions.summary(profile).courtReady or not Pattern.integer(shelf, 1, 6) then
+    if
+        not (Missions.summary(profile).courtReady or Quay.readyForFinale(profile))
+        or not Pattern.integer(shelf, 1, 6)
+    then
         return nil,
             "Prepare the neighborhood jobs and Mica's first courtyard set before this concert."
     end
@@ -192,7 +196,7 @@ function Chapter.summary(profile, session, open)
     local phase = if session then session.phase else 0
     return {
         open = open == true,
-        eligible = Missions.summary(profile).courtReady,
+        eligible = Missions.summary(profile).courtReady or Quay.readyForFinale(profile),
         checkpoint = ledger.checkpoint,
         completed = ledger.completed,
         phase = phase,

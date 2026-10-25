@@ -1,4 +1,5 @@
 local Catalog = require(script.Parent.SampleCatalog)
+local PadSound = require(script.Parent.PadSound)
 local Pattern = { Pads = 16, Steps = 16, MinBpm = 60, MaxBpm = 180 }
 
 function Pattern.integer(value, minimum, maximum)
@@ -10,11 +11,12 @@ function Pattern.integer(value, minimum, maximum)
 end
 
 function Pattern.new()
-    local pattern = { bpm = 96, rows = {}, assignments = {}, muted = {} }
+    local pattern = { bpm = 96, rows = {}, assignments = {}, muted = {}, sounds = {} }
     for pad = 1, 16 do
         pattern.rows[pad] = table.create(16, false)
         pattern.assignments[pad] = Catalog.List[pad].id
         pattern.muted[pad] = false
+        pattern.sounds[pad] = PadSound.sanitize(nil)
     end
     return pattern
 end
@@ -28,6 +30,8 @@ function Pattern.sanitize(raw, unlocked)
         result.bpm = raw.bpm
     end
     for pad = 1, 16 do
+        result.sounds[pad] =
+            PadSound.sanitize(if type(raw.sounds) == "table" then raw.sounds[pad] else nil)
         if type(raw.rows) == "table" and type(raw.rows[pad]) == "table" then
             for step = 1, 16 do
                 result.rows[pad][step] = raw.rows[pad][step] == true

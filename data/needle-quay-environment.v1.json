@@ -2268,5 +2268,12 @@
     "runtime_verified": false,
     "roblox_uploads": 0,
     "tripo_calls": 0
+  },
+  "local_demo_integration": {
+    "manifest": "data/needle-quay-demo.v1.json",
+    "date": "2026-10-25",
+    "art_approved": true,
+    "scope": "N00 local demo; earlier design-register stage fields are historical, not current runtime status",
+    "evidence": "docs/evidence/needle-quay-demo/final-local-art.json"
   }
 }

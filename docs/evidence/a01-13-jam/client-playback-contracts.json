@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"staleIgnored\":true,\"boundaryStallCounted\":true,\"leaveCleanup\":true,\"latePhraseDeferred\":true,\"passed\":true,\"voiceAndMuteBound\":true}"
+    }
+  ],
+  "isError": false
+}

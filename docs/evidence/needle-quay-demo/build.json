@@ -1,0 +1,13 @@
+{
+  "date": "2026-10-25",
+  "project": "default.project.json",
+  "output": "output/needle-quay-demo/NeedleQuay-Demo.rbxlx",
+  "bytes": 484178,
+  "sha256": "545125df5ec61302caae0e3d1071fe950221b21b2cf7943614ca675680f47db6",
+  "rojo": "7.7.0",
+  "billable_operations": 0,
+  "roblox_uploads": 0,
+  "published": false,
+  "includes_preexisting_local_jam_changes": true,
+  "git_commit_created": false
+}

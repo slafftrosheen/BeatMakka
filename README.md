@@ -2,6 +2,8 @@
 
 Frequency Zero is a Roblox music-making game built around a playable sampler and a cozy creative neighborhood. The proposed first zone is Needle Quay. The instrument and creation loop lead; the world supports them.
 
+The [Needle Quay local demo](docs/needle-quay/LOCAL_DEMO_2026-10-25.md) integrates the district map, four parking venues, personal Roamers, thirteen activities and the six-phase finale. Run `output/needle-quay-demo/Launch-NeedleQuay.ps1` to install the checksum-checked local content and open Studio. Final art is accepted: exact meshes replace the visible proxies, with local PBR finishes and 184 WAV bindings. Multiplayer, real-device and cloud rejoin acceptance remain separate.
+
 The project starts as a file-system-first Luau project. Roblox Studio is the place/runtime editor, Rojo syncs local source into Studio, and Rokit pins project tools. Blender is the DCC for authored geometry and cleanup. Tripo is an optional offline asset-production route; it is not a game runtime dependency.
 
 ## Requirements
@@ -62,3 +64,5 @@ The [audio acceptance stage](docs/AUDIO_ACCEPTANCE_STAGE.md) records the 24-file
 The [Alpha 01 work package](docs/ALPHA_01.md) links the 18 GitHub development tasks, audio research and the [36-page MK-I device artbook](output/artbook-alpha01/BeatMakka_MK-I_Artbook_Alpha01_RU.pdf). Its [interactive design prototype](output/artbook-alpha01/MK-I_Prototype.html) demonstrates the proposed fixed performance surface with original local audio; it is separate from Roblox runtime acceptance. Editable sources, design tokens and research references are included in the [artbook package](output/artbook-alpha01/README.md).
 
 Paid provider work is disabled until a named asset batch, current quote, and total credit cap are explicitly authorized and the offline preflight passes. See `docs/EXECUTION_BATCHES.md` and `tools/preflight_gate.py`.
+
+Large supplied source models that exceed GitHub file limits are retained as verified gzip archives. Restore the city model with python tools/restore_supplied_asset.py low_poly_city_pack; SHA-256 and source size are checked before writing the original filename.

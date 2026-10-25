@@ -2,6 +2,10 @@
   "name": "FrequencyZero",
   "tree": {
     "$className": "DataModel",
+    "Lighting": {
+      "$className": "Lighting",
+      "$properties": { "Technology": "Future", "LightingStyle": "Realistic", "PrioritizeLightingQuality": true }
+    },
     "Workspace": {
       "$ignoreUnknownInstances": true,
       "$properties": { "StreamingEnabled": true }
@@ -32,6 +36,7 @@
     },
     "StarterPlayer": {
       "StarterPlayerScripts": {
+        "LocalContentLoading": { "$path": "src/local-loading.client.luau" },
         "Client": {
           "$path": "src/client"
         }

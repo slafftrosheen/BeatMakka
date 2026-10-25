@@ -56,6 +56,11 @@ function Appearance:template(finish, resolution)
     if self.templates[key] then
         return self.templates[key]
     end
+    local localLibrary = ReplicatedStorage:FindFirstChild("LocalAppearanceLibrary")
+    local localTemplate = localLibrary and localLibrary:FindFirstChild(key)
+    if localTemplate then
+        return localTemplate
+    end
     local library = ReplicatedStorage:FindFirstChild("AppearanceLibrary")
     local prepared = library and library:FindFirstChild(key)
     if

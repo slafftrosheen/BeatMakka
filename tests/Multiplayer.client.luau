@@ -6,6 +6,8 @@ end
 control.Report:FireServer(0, true, "Client started")
 local network = game:GetService("ReplicatedStorage"):WaitForChild("MusicNetwork")
 local state
+local stateMessages, maxStateBytes = 0, 0
+local lastNotice
 local finishArtCleanup
 local visiblePrompts = {}
 local promptService = game:GetService("ProximityPromptService")
@@ -16,12 +18,43 @@ promptService.PromptHidden:Connect(function(prompt)
     visiblePrompts[prompt] = nil
 end)
 network.State.OnClientEvent:Connect(function(s)
+    if s.notice then
+        lastNotice = s.notice
+    end
+    stateMessages += 1
+    maxStateBytes = math.max(maxStateBytes, #game.HttpService:JSONEncode(s))
     state = s
 end)
 control.Drive.OnClientEvent:Connect(function(index, action, a, b)
+    lastNotice = nil
     local ok, result = pcall(function()
         local diagnostic
-        if action == "Prompt" then
+        if action == "JamProbe" then
+            diagnostic =
+                game.Players.LocalPlayer.PlayerScripts:WaitForChild("JamTiming", 3):Invoke()
+            diagnostic.stateMessages, diagnostic.maxStateBytes = stateMessages, maxStateBytes
+        elseif action == "JamRaw" then
+            network.Command:FireServer(a, b)
+        elseif action == "JamDelayed" then
+            local packet = {
+                generation = state.jam.generation,
+                revision = state.jam.revision,
+                at = workspace:GetServerTimeNow(),
+            }
+            task.wait(0.5)
+            network.Command:FireServer(a, packet)
+            local deadline = os.clock() + 2
+            while not lastNotice and os.clock() < deadline do
+                task.wait(0.05)
+            end
+        elseif action == "JamJoin" or action == "JamPublish" or action == "JamTempo" then
+            network.Command:FireServer(action, {
+                generation = state.jam.generation,
+                revision = state.jam.revision,
+                at = workspace:GetServerTimeNow(),
+                value = a,
+            })
+        elseif action == "Prompt" then
             local anchor
             for _, o in workspace.NeedleQuay:GetDescendants() do
                 if
@@ -186,6 +219,8 @@ control.Drive.OnClientEvent:Connect(function(index, action, a, b)
         end
         task.wait(0.25)
         if state then
+            diagnostic = diagnostic or {}
+            diagnostic.lastNotice = lastNotice
             state._qa = diagnostic
         end
         return state

@@ -1,0 +1,12 @@
+{
+  "assets": [
+    {
+      "source": "assets/low_poly_city_pack.glb",
+      "archive": "assets/low_poly_city_pack.glb.gz",
+      "bytes": 151451804,
+      "sha256": "d5b619b9f57bc5ec9f2c4bdf375b1c45d708253934591b85aa15cc5f697bc331",
+      "archive_sha256": "0ad07c9bbbdb26faf9c3ec83c2369ed33e126cd98b96e61f1f74490a8199cda0",
+      "format": "gzip"
+    }
+  ]
+}

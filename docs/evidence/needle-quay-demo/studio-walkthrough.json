@@ -1,0 +1,79 @@
+{
+  "date": "2026-10-25",
+  "scope": "Single-client local Studio command-path walkthrough with assisted avatar placement; not a test suite, novice playthrough, audio acceptance or multiplayer qualification",
+  "studio_id": "d27d05d3-b2e0-490f-a014-586b1196c6a3",
+  "quests_completed": [
+    "NQ-Q00",
+    "NQ-Q01",
+    "NQ-Q02",
+    "NQ-Q03",
+    "NQ-Q04",
+    "NQ-Q05",
+    "NQ-Q06",
+    "NQ-Q07",
+    "NQ-Q08",
+    "NQ-Q09",
+    "NQ-Q10",
+    "NQ-Q11",
+    "NQ-Q12"
+  ],
+  "concert_checkpoint": 6,
+  "concert_server_time_waits": true,
+  "progress_flags_injected": false,
+  "save": {
+    "mode": "session",
+    "hasSave": true,
+    "dirty": false,
+    "saving": false
+  },
+  "invalid_order": {
+    "repair3_before_repair1": 0,
+    "wrong_first_record_tag": 0
+  },
+  "respawn": {
+    "parking": "P4",
+    "position": [
+      610,
+      3.15,
+      78
+    ],
+    "native_spawn": "RoamerRespawn1"
+  },
+  "actual_ui_click": {
+    "action": "NearbyActivity",
+    "result": "Station_1"
+  },
+  "scene": {
+    "buildings": 13,
+    "npc_models": 7,
+    "base_parts": 1032,
+    "market_solid_blocker": false
+  },
+  "unbound_audio": [
+    "metal_hit",
+    "vent_thump",
+    "robot_chirp"
+  ],
+  "existing_warning": "rbxassetid://203785492: Asset type does not match requested type",
+  "new_script_errors_after_fixes": 0,
+  "not_run": [
+    "test suites",
+    "two independent players",
+    "real phone",
+    "gamepad",
+    "cloud rejoin",
+    "human listening",
+    "uncoached playthrough"
+  ],
+  "art_stage": "NATIVE_PRESENTATION_PROXY",
+  "deployment": {
+    "place_id": 0,
+    "universe_id": 0,
+    "uploads": 0,
+    "published": false
+  },
+  "tripo": {
+    "billable_operations": 0,
+    "spent_credits": 0
+  }
+}

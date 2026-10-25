@@ -12,6 +12,7 @@ local BeatBookView = require(script.Parent.BeatBookView)
 local PadInput = require(script.Parent.PadInput)
 local RoomSettings = require(script.Parent.RoomSettings)
 local RecorderGuide = require(script.Parent.RecorderGuide)
+local SampleEditor = require(script.Parent.SampleEditor)
 local WorkshopView = {}
 WorkshopView.__index = WorkshopView
 
@@ -206,6 +207,17 @@ function WorkshopView.new(callbacks)
     local performance = page("Play", false)
     local sequencer = page("Steps", false)
     local sounds = page("Sounds", true)
+    self.sampleEditor = SampleEditor.new(sounds, function(key, value)
+        callbacks.command("PadSound", self.selectedPad, { key = key, value = value })
+    end, function(pad, settings)
+        if callbacks.preview then
+            return callbacks.preview(pad, settings)
+        end
+    end, function(pad)
+        self:selectPad(pad)
+    end, function(name)
+        callbacks.command("PadPreset", self.selectedPad, name)
+    end)
     local beats = page("Beats", true)
     local settings = page("Settings", true)
     local pads = Gui.make("Frame", performance, {
@@ -275,6 +287,26 @@ function WorkshopView.new(callbacks)
                 end
             end
         end)
+        Gui.make("UIGradient", button, {
+            Rotation = 90,
+            Color = ColorSequence.new(Color3.new(1, 1, 1), Color3.fromRGB(175, 193, 189)),
+        })
+        Gui.make("UIStroke", button, {
+            Color = Theme.Ink,
+            Thickness = 2,
+            Transparency = 0.35,
+            ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
+        })
+        Gui.round(
+            Gui.make("Frame", button, {
+                Name = "PadLed",
+                Position = UDim2.new(1, -14, 0, 8),
+                Size = UDim2.fromOffset(6, 6),
+                BackgroundColor3 = Theme.Amber,
+                BorderSizePixel = 0,
+            }),
+            3
+        )
         button.LayoutOrder = pad
         button.Name = string.format("Pad_%02d", pad)
         self.pads[pad] = button
@@ -415,6 +447,9 @@ function WorkshopView.new(callbacks)
     end)
     self.finish.Name = "Finish"
     self.finish.LayoutOrder = 9
+    local jam = control(controls, "Two-player jam", "JamOpen")
+    jam.Name = "Jam"
+    jam.LayoutOrder = 10
     self.audioStatus = Gui.label(settings, "Audio loading...", 13)
     self.audioStatus.Name = "AudioStatus"
     self.audioStatus.Size = UDim2.new(1, -8, 0, 52)
@@ -593,6 +628,9 @@ function WorkshopView:showPage(name)
             self:filterSamples()
         end
     end
+    if self.sampleEditor then
+        self.sampleEditor.drag = nil
+    end
     self.page = name
     if self.state then
         self.noticeLabel.Text = if self.noticeUntil and os.clock() < self.noticeUntil
@@ -629,7 +667,7 @@ function WorkshopView:guideText()
     if self.page == "Settings" then
         return "Save profile keeps slots A-D and your six-Beat shelf."
     elseif self.page == "Sounds" then
-        return "Browse a kit. Choose one sound or use all 16; notes stay."
+        return "Sculpt your pad above; browse the sound library below. Your notes stay."
     elseif self.page == "Beats" then
         return "Save to shelf keeps A-D as a Beat. Load replaces working A-D."
     elseif state.recording then
@@ -751,6 +789,11 @@ function WorkshopView:updatePadLabels()
             elseif pad == self.selectedPad then Theme.Amber
             else Theme.Teal
         button.TextColor3 = if pad == self.selectedPad then Theme.Ink else Theme.Cream
+        button.PadLed.BackgroundColor3 = if p.muted[pad]
+            then Theme.FadedTeal
+            elseif pad == self.selectedPad then Theme.Coral
+            else Theme.Amber
+        button.PadLed.BackgroundTransparency = if pad == self.selectedPad then 0 else 0.5
     end
     self.libraryTitle.Text = string.format("PAD %02d / Choose a sound to assign", self.selectedPad)
 end
@@ -788,6 +831,7 @@ function WorkshopView:update(state)
         self:cancelInput(false)
     end
     self.hud.Visible = state.station == nil
+        and not (state.quay and state.quay.open)
         and not state.listening
         and not (state.concert and state.concert.open)
         and not (state.stage and state.stage.open)
@@ -798,6 +842,7 @@ function WorkshopView:update(state)
     self.bookView:update(state)
     self.roomSettings:update(state)
     self.recorderGuide:update(state)
+    self.sampleEditor:update(state, self.selectedPad)
     if UserInputService.GamepadEnabled and wasOpen ~= self.panel.Visible then
         GuiService.SelectedObject = if self.panel.Visible then self.play else self.sound
     end
@@ -881,7 +926,17 @@ function WorkshopView:update(state)
                     "NEEDLE QUAY / %d of 3 sounds collected\nVisit a sampler to make your loop. Save before leaving.",
                     collected
                 )
-            if state.quest and state.quest.completed and state.neighborhood then
+            if state.quay then
+                local completed = 0
+                for _, done in state.quay.progress.completed do
+                    if done then
+                        completed += 1
+                    end
+                end
+                self.hudLabel.Text = "NEEDLE QUAY / "
+                    .. completed
+                    .. "/13 activities\nMeet the neighbors at the marked stops. QUAY / MAP opens your route and journal."
+            elseif state.quest and state.quest.completed and state.neighborhood then
                 self.hudLabel.Text = if state.neighborhood.courtReady
                     then (if state.concert and state.concert.completed
                         then "NEIGHBORHOOD SECTION COMPLETE\nKeep creating. Other chapters are still ahead."

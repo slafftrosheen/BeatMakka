@@ -7,6 +7,8 @@ local Shared = ReplicatedStorage:WaitForChild("Shared")
 local Pattern = require(Shared.Pattern)
 local Catalog = require(Shared.SampleCatalog)
 local AudioEngine = require(script.AudioEngine)
+local JamPlayback = require(script.JamPlayback)
+local JamView = require(script.JamView)
 local WorkshopView = require(script.WorkshopView)
 local Restoration = require(script.Restoration)
 local DeviceAppearance = require(script.DeviceAppearance)
@@ -17,11 +19,20 @@ local ConcertScene = require(script.ConcertScene)
 local canSend = require(script.CommandPolicy)
 local WorldFeedback = require(script.WorldFeedback)
 local GuiFactory = require(script.GuiFactory)
-local network = ReplicatedStorage:WaitForChild("MusicNetwork")
+local network = ReplicatedStorage:WaitForChild("MusicNetwork", 120)
+assert(network, "Needle Quay did not finish loading")
+local localMaterials = require(script.LocalMaterials).new()
+local neighbors = require(script.QuayNeighbors).new()
+local skinnedNeighbors = require(script.SkinnedNeighbors).new()
+local quayLife = require(script.QuayLife).new()
+local quayView = require(script.QuayDemoView).new()
 local command = network:WaitForChild("Command")
 local stateEvent = network:WaitForChild("State")
 local audio = AudioEngine.new()
-local listeningAudio = AudioEngine.new("CourtyardListening", { musicOnly = true })
+local listeningAudio =
+    AudioEngine.new("CourtyardListening", { musicOnly = true, strictSelection = true })
+local jamAudio = JamPlayback.new()
+local jamView
 local listeningView
 local stageView
 local updateListeningUi
@@ -93,6 +104,20 @@ connect(playerGui.ChildAdded, updateTouchControls)
 
 local function send(action, a, b)
     if canSend(state, action) then
+        if action == "JamJoin" or action == "JamPublish" or action == "JamTempo" then
+            local jam = state and state.jam
+            if not jam then
+                return
+            end
+            a = {
+                generation = jam.generation,
+                revision = jam.revision,
+                at = Workspace:GetServerTimeNow(),
+                value = if action == "JamTempo" and jam.session
+                    then math.clamp(jam.session.bpm + (a or 0), 60, 180)
+                    else nil,
+            }
+        end
         if action == "Stop" or action == "Release" then
             transportInterrupted = true
             audio:stop()
@@ -105,10 +130,18 @@ end
 
 local function tap(pad)
     if state and state.ready and state.station then
+        if state.jam and state.jam.active then
+            feedback:pulse(pad, state.station)
+            return false
+        end
         local submitted = false
         local hitAt = Workspace:GetServerTimeNow()
         if not state.pattern.muted[pad] then
-            submitted = audio:play(state.pattern.assignments[pad])
+            submitted = audio:play(
+                state.pattern.assignments[pad],
+                state.pattern.sounds and state.pattern.sounds[pad],
+                pad
+            )
         end
         local submittedAt = os.clock()
         feedback:pulse(pad, state.station)
@@ -123,6 +156,20 @@ end
 view = WorkshopView.new({
     command = send,
     tap = tap,
+    preview = function(pad, settings)
+        if state and state.station and state.pattern then
+            local played = audio:play(state.pattern.assignments[pad], settings, pad)
+            if not played then
+                view:notice(
+                    if audio.muted
+                        then "Sound is muted. Unmute in Settings to audition."
+                        else "This sample is still loading. Try audition again in a moment."
+                )
+            end
+            return played
+        end
+        return false
+    end,
     interrupt = function()
         transportInterrupted = true
         audio:stop()
@@ -134,6 +181,10 @@ view = WorkshopView.new({
     mute = function(value)
         audio:setMuted(value)
         listeningAudio:setMuted(value)
+        jamAudio:setMuted(value)
+        if jamView and state then
+            jamView:update(state.jam, value)
+        end
         if state then
             if updateListeningUi then
                 updateListeningUi()
@@ -142,6 +193,9 @@ view = WorkshopView.new({
     end,
     effects = function(value)
         effects = value
+        neighbors.enabled = value
+        quayLife.enabled = value
+        quayView:setEffects(value)
         feedback:setEnabled(value)
         if state then
             Restoration.update(state.restoration, effects, state.neighborhood)
@@ -156,6 +210,9 @@ connect(UserInputService.WindowFocusReleased, function()
     if state and (state.listening or (state.stage and state.stage.open)) then
         send("StageClose")
     end
+    if state and state.jam and (state.jam.active or state.jam.open) then
+        send("JamLeave")
+    end
 end)
 connect(UserInputService.TextBoxFocused, function()
     view:cancelInput(true)
@@ -166,6 +223,9 @@ end, function()
     view:setMuted(not view.muted)
 end)
 stageView = StageView.new(view.screen, send, function()
+    view:setMuted(not view.muted)
+end)
+jamView = JamView.new(view.screen, send, function()
     view:setMuted(not view.muted)
 end)
 updateListeningUi = function(notice)
@@ -211,6 +271,8 @@ connect(stateEvent.OnClientEvent, function(nextState)
     end
     playbackKind = nextKind
     state = nextState
+    quayLife.progress = nextState.quay and nextState.quay.progress
+    jamAudio:accept(state.jam, Workspace:GetServerTimeNow())
     audio:setSelection(state.pattern.assignments)
     listeningAudio:setSelection(if nextListening then nextListening.pattern.assignments else {})
     if not state.playing then
@@ -231,18 +293,22 @@ connect(stateEvent.OnClientEvent, function(nextState)
         state.dirty
     )
     view:update(state)
+    if state.jam and state.jam.open then
+        view.panel.Visible = false
+    end
+    jamView:update(state.jam, view.muted, state.notice)
     concertScene:update(state.concert)
     updateListeningUi(state.notice)
     view.audioStatus.Text = audio:status()
     Restoration.update(state.restoration, effects, state.neighborhood)
     appearance:apply(state)
     view.appearanceStatus.Text = appearance.status or ""
-    if state.preview then
+    if state.preview and not (state.jam and state.jam.active) then
         local sample = Catalog.ById[state.preview]
         if sample and sample.discovery then
             feedback:discovery(sample.discovery)
+            audio:play("ui_collect")
         end
-        audio:play("ui_collect")
         if not audio:play(state.preview) then
             view:notice(
                 if audio.muted
@@ -258,6 +324,8 @@ end)
 command:FireServer("Hello")
 
 local keys = {
+    Enum.KeyCode.J,
+    Enum.KeyCode.ButtonR2,
     Enum.KeyCode.Space,
     Enum.KeyCode.T,
     Enum.KeyCode.ButtonX,
@@ -272,11 +340,30 @@ ContextActionService:BindActionAtPriority("SamplerKeyboard", function(_, inputSt
     if UserInputService:GetFocusedTextBox() or not state or not state.station then
         return Enum.ContextActionResult.Pass
     end
+    if state.jam and state.jam.open then
+        if
+            inputState == Enum.UserInputState.Begin
+            and (input.KeyCode == Enum.KeyCode.J or input.KeyCode == Enum.KeyCode.ButtonR2)
+        then
+            send("JamHide")
+            return Enum.ContextActionResult.Sink
+        end
+        if
+            inputState == Enum.UserInputState.Begin
+            and (input.KeyCode == Enum.KeyCode.ButtonB or input.KeyCode == Enum.KeyCode.Escape)
+        then
+            send("JamHide")
+            return Enum.ContextActionResult.Sink
+        end
+        return Enum.ContextActionResult.Pass
+    end
     if inputState ~= Enum.UserInputState.Begin then
         view.padInput:finish(input)
         return Enum.ContextActionResult.Sink
     end
-    if input.KeyCode == Enum.KeyCode.Space or input.KeyCode == Enum.KeyCode.ButtonX then
+    if input.KeyCode == Enum.KeyCode.J or input.KeyCode == Enum.KeyCode.ButtonR2 then
+        send("JamOpen")
+    elseif input.KeyCode == Enum.KeyCode.Space or input.KeyCode == Enum.KeyCode.ButtonX then
         send("Play")
     elseif input.KeyCode == Enum.KeyCode.T or input.KeyCode == Enum.KeyCode.ButtonY then
         send("Record")
@@ -295,6 +382,7 @@ end, false, Enum.ContextActionPriority.High.Value, table.unpack(keys))
 
 local refresh = 0
 connect(RunService.Heartbeat, function(dt)
+    jamAudio:step(Workspace:GetServerTimeNow())
     feedback:step()
     concertScene:step(effects)
     local session = state and ((state.concert and state.concert.playback) or state.listening)
@@ -308,7 +396,11 @@ connect(RunService.Heartbeat, function(dt)
             if lateness < math.min(0.08, duration * 0.8) then
                 for pad = 1, Pattern.Pads do
                     if session.pattern.rows[pad][step] and not session.pattern.muted[pad] then
-                        listeningAudio:play(session.pattern.assignments[pad])
+                        listeningAudio:play(
+                            session.pattern.assignments[pad],
+                            session.pattern.sounds and session.pattern.sounds[pad],
+                            pad
+                        )
                         feedback:pulse(pad, "Courtyard")
                     end
                 end
@@ -321,6 +413,7 @@ connect(RunService.Heartbeat, function(dt)
         view:tick()
         listeningView:tick()
         if state then
+            jamView:update(state.jam, view.muted)
             stageView:update(state.stage, view.muted, nil, listeningAudio:status())
             concertView:update(
                 state.concert,
@@ -342,7 +435,7 @@ connect(RunService.Heartbeat, function(dt)
         local root = character and character:FindFirstChild("HumanoidRootPart")
         audio:ambient(
             root ~= nil
-                and root.Position.Z < -20
+                and ((root.Position.X > 220 and root.Position.Z > 65) or (root.Position.X < 220 and root.Position.Z < -20))
                 and (
                     not state
                     or (
@@ -373,7 +466,11 @@ connect(RunService.Heartbeat, function(dt)
         if lateness < math.min(0.08, Pattern.stepDuration(state.pattern.bpm) * 0.8) then
             for pad = 1, 16 do
                 if state.pattern.rows[pad][step] and not state.pattern.muted[pad] then
-                    audio:play(state.pattern.assignments[pad])
+                    audio:play(
+                        state.pattern.assignments[pad],
+                        state.pattern.sounds and state.pattern.sounds[pad],
+                        pad
+                    )
                     feedback:pulse(pad, state.station)
                 end
             end
@@ -383,6 +480,11 @@ connect(RunService.Heartbeat, function(dt)
 end)
 
 script.Destroying:Connect(function()
+    localMaterials:destroy()
+    neighbors:destroy()
+    quayLife:destroy()
+    skinnedNeighbors:destroy()
+    quayView:destroy()
     view:cancelInput(true)
     send("Release")
     send("ChapterClose")
@@ -397,6 +499,8 @@ script.Destroying:Connect(function()
     updateTouchControls()
     audio:destroy()
     listeningAudio:destroy()
+    jamAudio:destroy()
     appearance:destroy()
+    view.sampleEditor:destroy()
     view.screen:Destroy()
 end)

@@ -1,4 +1,5 @@
 local Pattern = require(script.Parent.Pattern)
+local PadSound = require(script.Parent.PadSound)
 local Book = { SlotCount = 4, ShelfCapacity = 6, SlotLabels = { "A", "B", "C", "D" } }
 
 function Book.sanitizeSlots(raw, unlocked)
@@ -130,6 +131,9 @@ function Book.samePattern(a, b)
     end
     for pad = 1, Pattern.Pads do
         if a.assignments[pad] ~= b.assignments[pad] or a.muted[pad] ~= b.muted[pad] then
+            return false
+        end
+        if not PadSound.same(a.sounds and a.sounds[pad], b.sounds and b.sounds[pad]) then
             return false
         end
         for step = 1, Pattern.Steps do

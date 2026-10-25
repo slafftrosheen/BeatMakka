@@ -15,19 +15,21 @@ function Service.new(podium, profiles, send, release, nearby, changed)
         opened = {},
     }, Service)
     podium.prompt.Triggered:Connect(function(player)
-        local profile = profiles[player]
-        if profile and profile.ready and nearby(player, podium.anchor, 11) then
-            if not self.sessions[player] then
-                self.release(player)
-            end
-            self.opened[player] = true
-            send(
-                player,
-                "Your chapter concert is solo-friendly. Your working music stays unchanged."
-            )
-        end
+        self:open(player)
     end)
     return self
+end
+
+function Service:open(player)
+    local profile = self.profiles[player]
+    if not profile or not profile.ready or not self.nearby(player, self.podium.anchor, 11) then
+        return
+    end
+    if not self.sessions[player] then
+        self.release(player)
+    end
+    self.opened[player] = true
+    self.send(player, "Your chapter concert is solo-friendly. Your working music stays unchanged.")
 end
 
 function Service:state(player)

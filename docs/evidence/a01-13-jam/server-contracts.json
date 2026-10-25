@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"count\":7,\"passed\":true,\"checks\":[\"snapshot owns data and accepts only bounded compatible configured kits\",\"boundary scheduling and request freshness are finite and future\",\"two owners share one timeline without replacing personal data\",\"only own track and conductor can propose, pending snapshots stay immutable\",\"tempo rebases atomically at boundary and late base cannot overwrite it\",\"departure transfers conductor without resetting survivor or accepting old generation\",\"closed commands do not broadcast and station loss removes rights\"]}"
+    }
+  ],
+  "isError": false
+}

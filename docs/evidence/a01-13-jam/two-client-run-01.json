@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"ok\":true,\"result\":{\"storage\":\"session only\",\"measurements\":[],\"count\":3,\"checks\":[\"participant 1 claims only own sampler\",\"participant 2 claims only own sampler\",\"first owns track and keeps sampler; solo transport stopped\"],\"clients\":2,\"error\":\"ServerScriptService.JamAcceptanceServer:55: second queues on shared timeline with independent data\",\"passed\":false,\"measurement\":\"Studio clock and audio-submission timing; not physical/acoustic latency\"}}"
+    }
+  ],
+  "isError": false
+}

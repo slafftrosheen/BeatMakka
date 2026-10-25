@@ -38,6 +38,13 @@ function Life.new()
         local t = os.clock()
         for _, entry in self.entries do
             local near = (camera.CFrame.Position - entry.base.Position).Magnitude < 160
+            local active = self.enabled
+                and near
+                and (not entry.fan or (self.progress and self.progress.completed["NQ-Q04"]))
+            if not active and not entry.active then
+                continue
+            end
+            entry.active = active
             local cf = entry.base
             if self.enabled and near then
                 if entry.fan then

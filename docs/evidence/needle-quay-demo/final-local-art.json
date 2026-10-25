@@ -1,0 +1,76 @@
+{
+  "date": "2026-10-25",
+  "studio": "NeedleQuay-LocalArt.rbxlx",
+  "scope": "Local Studio inspection; no test suite or cloud acceptance",
+  "assets": 40,
+  "mesh_parts": 407,
+  "rendered_triangles_including_instances": 196490,
+  "source_unique_triangles": 112436,
+  "visible_proxies": 0,
+  "buildings": 13,
+  "npc_models": 7,
+  "exported_mesh_bounds_checked": 281,
+  "mesh_bounds_failures": [],
+  "van_extent_xyz_studs": [
+    22,
+    10,
+    9
+  ],
+  "local_pbr_templates": 8,
+  "local_pbr_surfaces": 138,
+  "npc_joint_motion_observed": true,
+  "audio_total": 184,
+  "audio_loaded": 184,
+  "audio_failed": [],
+  "discovery_playback": {
+    "metal_hit": {
+      "playing": true,
+      "position": 0.128,
+      "length": 1.2
+    },
+    "vent_thump": {
+      "playing": true,
+      "position": 0.149,
+      "length": 0.65
+    },
+    "robot_chirp": {
+      "playing": true,
+      "position": 0.128,
+      "length": 0.65
+    }
+  },
+  "human_listening_claimed": false,
+  "source_sign_graphics": 13,
+  "installed_files": 546,
+  "launcher_install_only": "PASS",
+  "new_script_errors": [],
+  "existing_content_warning": "rbxassetid://203785492 Asset type does not match requested type",
+  "prior_gameplay_evidence": "docs/evidence/needle-quay-demo/studio-walkthrough.json",
+  "uploads": 0,
+  "tripo_spend": 0,
+  "not_run": [
+    "automated test suites",
+    "two independent clients",
+    "real phone/gamepad",
+    "cloud save/rejoin",
+    "uncoached user playthrough"
+  ],
+  "sign_graphics_render_loaded": 13,
+  "final_place": "output/needle-quay-demo/NeedleQuay-Local-Final.rbxlx",
+  "fresh_package_reopen": {
+    "studio_id": "992a549f-0add-4def-9202-522187332fe3",
+    "assets": 40,
+    "mesh_parts": 407,
+    "visible_proxies": 0,
+    "pbr_ready": true,
+    "active_sounds_loaded": 157,
+    "active_sounds_total": 157,
+    "new_script_errors": []
+  },
+  "local_art_commits": [
+    "b0f5f34",
+    "df0b916"
+  ],
+  "gameplay_committed": false,
+  "pushed": false
+}
