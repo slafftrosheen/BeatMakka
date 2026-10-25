@@ -1,0 +1,22 @@
+{
+  "captured_at": "2026-10-25T20:07:38.672229+00:00",
+  "asset_definitions_loaded": 65,
+  "asset_definitions_expected": 65,
+  "local_pbr_ready": true,
+  "human_skin_instances_ready": 10,
+  "unique_source_triangles": 230623,
+  "companion_files": 722,
+  "audio_bindings": 184,
+  "capture_quality": "Automatic",
+  "full_quest_replay": false,
+  "new_test_suite_run": false,
+  "uploads": 0,
+  "additional_provider_spend": 0,
+  "art_acceptance": "IN_REVIEW",
+  "screenshots": [
+    "van.png",
+    "records.png",
+    "cafe.png",
+    "market.png"
+  ]
+}

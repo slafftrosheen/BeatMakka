@@ -1,25 +1,6 @@
 {
   "assets": [
     {
-      "id": "LOOPVAN-01",
-      "source": "assets/production/needle-quay/models/user-adapted/LOOPVAN-01.blend",
-      "original": "assets/classic_vw_combi_van__stylized_asset.glb",
-      "original_sha256": "da31450d144f2a90dceea6d304d54d9d4ee535953747a33add01883826c5d40f",
-      "dimensions_wdh": [
-        22,
-        9,
-        10
-      ],
-      "source_triangles": 500000,
-      "triangles": 15996,
-      "material_keys": {
-        "Material.001": "supplied_van_0"
-      },
-      "kind": "vehicle",
-      "selection": null,
-      "stage": "DCC_ADAPTED_PENDING_LOCAL_VISUAL_REVIEW"
-    },
-    {
       "id": "NQ-MIDI-01",
       "source": "assets/production/needle-quay/models/user-adapted/NQ-MIDI-01.blend",
       "original": "assets/midi_controller_keyboard.glb",
@@ -294,12 +275,212 @@
       "kind": "supplied",
       "selection": "shelf_",
       "stage": "DCC_ADAPTED_PENDING_LOCAL_VISUAL_REVIEW"
+    },
+    {
+      "id": "LOOPVAN-01",
+      "source": "assets/production/needle-quay/models/user-adapted/LOOPVAN-01.blend",
+      "original": "assets/generic_civil_service_vehicles_pack.glb",
+      "original_sha256": "7a02f1d46d9f4bdf7268d7737445e6fd08a98c44371a289d89aef6c4d7a78e31",
+      "dimensions_wdh": [
+        22,
+        9,
+        10
+      ],
+      "source_triangles": 6005,
+      "triangles": 7625,
+      "material_keys": {},
+      "kind": "vehicle",
+      "selection": "postvan_",
+      "stage": "DCC_ADAPTED_PENDING_LOCAL_VISUAL_REVIEW"
+    },
+    {
+      "id": "NQ-CAKE-01",
+      "source": "assets/production/needle-quay/models/user-adapted/NQ-CAKE-01.blend",
+      "original": "assets/cake.glb",
+      "original_sha256": "48fe0e62a0b3d433f113c64971dfaad4ffa3efbf3146bc4910b482f63ff5b68f",
+      "dimensions_wdh": [
+        1.7,
+        1.7,
+        0.85
+      ],
+      "source_triangles": 4184,
+      "triangles": 1800,
+      "material_keys": {},
+      "kind": "supplied",
+      "selection": "Whole_Cheesecake_0",
+      "stage": "DCC_ADAPTED_PENDING_LOCAL_VISUAL_REVIEW"
+    },
+    {
+      "id": "NQ-CAKE-02",
+      "source": "assets/production/needle-quay/models/user-adapted/NQ-CAKE-02.blend",
+      "original": "assets/cake.glb",
+      "original_sha256": "48fe0e62a0b3d433f113c64971dfaad4ffa3efbf3146bc4910b482f63ff5b68f",
+      "dimensions_wdh": [
+        0.8,
+        1,
+        0.65
+      ],
+      "source_triangles": 612,
+      "triangles": 612,
+      "material_keys": {},
+      "kind": "supplied",
+      "selection": "Slice_Strawberry_Cream_0",
+      "stage": "DCC_ADAPTED_PENDING_LOCAL_VISUAL_REVIEW"
+    },
+    {
+      "id": "NQ-UTILITY-01",
+      "source": "assets/production/needle-quay/models/user-adapted/NQ-UTILITY-01.blend",
+      "original": "assets/electrical_boxes.glb",
+      "original_sha256": "21d9cdc3955e14f203e1cdfa28c8f3ecb6294a967341ec3e42a6b090c1174c74",
+      "dimensions_wdh": [
+        1.4,
+        0.5,
+        2.3
+      ],
+      "source_triangles": 110,
+      "triangles": 110,
+      "material_keys": {
+        "electrical_boxes": "supplied_utility_0"
+      },
+      "kind": "supplied",
+      "selection": "modular-box-02_",
+      "stage": "DCC_ADAPTED_PENDING_LOCAL_VISUAL_REVIEW"
+    },
+    {
+      "id": "NQ-PRODUCE-01",
+      "source": "assets/production/needle-quay/models/user-adapted/NQ-PRODUCE-01.blend",
+      "original": "assets/potato_sacks.glb",
+      "original_sha256": "5ea1856f8df54aa241abc56f9fd4e4315ec2425fc9605ed31f7780186bb35184",
+      "dimensions_wdh": [
+        4,
+        2.8,
+        3.1
+      ],
+      "source_triangles": 39686,
+      "triangles": 2799,
+      "material_keys": {
+        "PotatoSacks__unified_baked_PBR": "supplied_produce_0"
+      },
+      "kind": "supplied",
+      "selection": null,
+      "stage": "DCC_ADAPTED_PENDING_LOCAL_VISUAL_REVIEW"
+    },
+    {
+      "id": "NQ-COFFEE-01",
+      "source": "assets/production/needle-quay/models/user-adapted/NQ-COFFEE-01.blend",
+      "original": "assets/food_collection_-_game_ready.glb",
+      "original_sha256": "9c7a5ccee0e066a323ac5810149948e0210992591a43d847d4e4683a17733341",
+      "dimensions_wdh": [
+        0.65,
+        0.4,
+        1
+      ],
+      "source_triangles": 12,
+      "triangles": 12,
+      "material_keys": {
+        "Asset": "supplied_groceries_0"
+      },
+      "kind": "supplied",
+      "selection": "SM_Coffee_Box_01_",
+      "stage": "DCC_ADAPTED_PENDING_LOCAL_VISUAL_REVIEW"
+    },
+    {
+      "id": "NQ-MILK-01",
+      "source": "assets/production/needle-quay/models/user-adapted/NQ-MILK-01.blend",
+      "original": "assets/food_collection_-_game_ready.glb",
+      "original_sha256": "9c7a5ccee0e066a323ac5810149948e0210992591a43d847d4e4683a17733341",
+      "dimensions_wdh": [
+        0.5,
+        0.5,
+        1.15
+      ],
+      "source_triangles": 494,
+      "triangles": 494,
+      "material_keys": {
+        "Asset": "supplied_groceries_0"
+      },
+      "kind": "supplied",
+      "selection": "SM_Milk_Bottle_01_",
+      "stage": "DCC_ADAPTED_PENDING_LOCAL_VISUAL_REVIEW"
+    },
+    {
+      "id": "NQ-VINYL-01",
+      "source": "assets/production/needle-quay/models/user-adapted/NQ-VINYL-01.blend",
+      "original": "assets/vinyls_1.glb",
+      "original_sha256": "2fc0dfa97a6fde5932b2fecd7ca079039515d6679f47d37f7fe3cd36daedb081",
+      "dimensions_wdh": [
+        2.3,
+        2.3,
+        0.045
+      ],
+      "source_triangles": 1436,
+      "triangles": 1436,
+      "material_keys": {
+        "vinyl": "supplied_vinyl_0"
+      },
+      "kind": "supplied",
+      "selection": "Object_157",
+      "stage": "DCC_ADAPTED_PENDING_LOCAL_VISUAL_REVIEW"
+    },
+    {
+      "id": "NQ-ROCK-01",
+      "source": "assets/production/needle-quay/models/user-adapted/NQ-ROCK-01.blend",
+      "original": "assets/stylised_rocks_asset_pack.glb",
+      "original_sha256": "e3324794d340e76da6c9dd6866adfb917515242f72b3e739fb263e2f6679177f",
+      "dimensions_wdh": [
+        7,
+        5,
+        4
+      ],
+      "source_triangles": 470,
+      "triangles": 470,
+      "material_keys": {
+        "M_Desert_Rock": "supplied_shore_rock_0"
+      },
+      "kind": "supplied",
+      "selection": "Desert_Rock1_",
+      "stage": "DCC_ADAPTED_PENDING_LOCAL_VISUAL_REVIEW"
+    },
+    {
+      "id": "NQ-ROCK-02",
+      "source": "assets/production/needle-quay/models/user-adapted/NQ-ROCK-02.blend",
+      "original": "assets/stylised_rocks_asset_pack.glb",
+      "original_sha256": "e3324794d340e76da6c9dd6866adfb917515242f72b3e739fb263e2f6679177f",
+      "dimensions_wdh": [
+        9,
+        6,
+        5
+      ],
+      "source_triangles": 774,
+      "triangles": 774,
+      "material_keys": {
+        "M_Desert_Rock": "supplied_shore_rock_0"
+      },
+      "kind": "supplied",
+      "selection": "Desert_Rock7_",
+      "stage": "DCC_ADAPTED_PENDING_LOCAL_VISUAL_REVIEW"
+    },
+    {
+      "id": "NQ-ROCK-03",
+      "source": "assets/production/needle-quay/models/user-adapted/NQ-ROCK-03.blend",
+      "original": "assets/stylised_rocks_asset_pack.glb",
+      "original_sha256": "e3324794d340e76da6c9dd6866adfb917515242f72b3e739fb263e2f6679177f",
+      "dimensions_wdh": [
+        6,
+        5,
+        3.5
+      ],
+      "source_triangles": 554,
+      "triangles": 554,
+      "material_keys": {
+        "M_Desert_Rock": "supplied_shore_rock_0"
+      },
+      "kind": "supplied",
+      "selection": "Desert_Rock14_",
+      "stage": "DCC_ADAPTED_PENDING_LOCAL_VISUAL_REVIEW"
     }
   ],
   "materials": {
-    "supplied_van_0": {
-      "color": "assets/production/needle-quay/user-model-maps/supplied_van_0_color.png"
-    },
     "supplied_midi_0": {
       "color": "assets/production/needle-quay/user-model-maps/supplied_midi_0_color.png"
     },
@@ -338,6 +519,21 @@
     },
     "supplied_furniture_1": {
       "color": "assets/production/needle-quay/user-model-maps/supplied_furniture_1_color.png"
+    },
+    "supplied_utility_0": {
+      "color": "assets/production/needle-quay/user-model-maps/supplied_utility_0_color.png"
+    },
+    "supplied_produce_0": {
+      "color": "assets/production/needle-quay/user-model-maps/supplied_produce_0_color.png"
+    },
+    "supplied_groceries_0": {
+      "color": "assets/production/needle-quay/user-model-maps/supplied_groceries_0_color.png"
+    },
+    "supplied_vinyl_0": {
+      "color": "assets/production/needle-quay/user-model-maps/supplied_vinyl_0_color.png"
+    },
+    "supplied_shore_rock_0": {
+      "color": "assets/production/needle-quay/user-model-maps/supplied_shore_rock_0_color.png"
     }
   },
   "source_authority": "User supplied these repository-root GLBs and authorized local adaptation; originals retained.",

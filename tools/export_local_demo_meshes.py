@@ -25,7 +25,8 @@ for n in report['npcs']:
     refined=ROOT/'assets/production/needle-quay/models/refined'/(n['id']+'.blend')
     if n['id'] != 'H04': sources.append((n['id'], str(refined.relative_to(ROOT)).replace('\\','/') if refined.exists() else n['source'], 'npc', None))
 for a in optimized['assets']:
-    sources.append((a['id'], a['output'], 'asset', a['texture_size']))
+    polished=ROOT/'assets/production/needle-quay/models/refined'/(a['id']+'.blend')
+    sources.append((a['id'],polished.relative_to(ROOT).as_posix(),'polished_prop',None) if polished.exists() else (a['id'], a['output'], 'asset', a['texture_size']))
 van=ROOT/'assets/production/needle-quay/models/refined/LOOPVAN-01.blend'
 sources.append(('LOOPVAN-01', van.relative_to(ROOT).as_posix() if van.exists() else 'assets/production/needle-quay/models/LOOPVAN-01/LOOPVAN-01.blend', 'vehicle', None))
 tree=ROOT/'assets/production/needle-quay/models/refined/NQ-SCENERY-TREE.blend'

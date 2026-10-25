@@ -56,6 +56,12 @@ function Library.build()
             mesh.CanCollide, mesh.CanTouch, mesh.CanQuery = false, false, false
             mesh.CFrame = CFrame.new(Vector3.new(table.unpack(entry.center)))
             mesh.Color = Color3.new(table.unpack(entry.color))
+            if entry.name == "Glass" then
+                mesh.Material = Enum.Material.Glass
+                mesh.Reflectance = 0.12
+            elseif entry.name == "Brass" then
+                mesh.Material = Enum.Material.Metal
+            end
             if entry.surface_family == "light" then
                 mesh.Material = if entry.size[2] < 2
                     then Enum.Material.Neon

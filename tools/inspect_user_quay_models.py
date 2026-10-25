@@ -1,9 +1,12 @@
 """Render local user-supplied models and record geometry before adapting them."""
-import bpy,json,hashlib
+import bpy,json,hashlib,sys
 from pathlib import Path
 from mathutils import Vector,Matrix
 R=Path(__file__).resolve().parents[1];O=R/'work/user-model-previews';O.mkdir(parents=True,exist_ok=True)
 files=['classic_vw_combi_van__stylized_asset.glb','city_game_ready_free.glb','barber_shop_-_stylised.glb','low_poly_tavern_interior.glb','low_poly_stage.glb','midi_controller_keyboard.glb','vef_m557_radio.glb']
+if '--' in sys.argv:
+ files=sys.argv[sys.argv.index('--')+1:]
+ O=R/'work/fresh-user-previews';O.mkdir(parents=True,exist_ok=True)
 report=[]
 for name in files:
  bpy.ops.wm.read_factory_settings(use_empty=True);bpy.ops.import_scene.gltf(filepath=str(R/'assets'/name));objects=[o for o in bpy.context.scene.objects if o.type=='MESH']

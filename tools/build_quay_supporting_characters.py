@@ -7,7 +7,7 @@ import bpy,math,json,numpy as np
 from pathlib import Path
 from mathutils import Vector
 R=Path(__file__).resolve().parents[1];D=R/'assets/production/needle-quay/models/refined';M=R/'assets/production/needle-quay/character-maps'
-palette=[(.88,.80,.63,1),(.27,.46,.44,1),(.87,.36,.25,1),(.26,.15,.10,1),(.67,.48,.24,1),(.30,.23,.19,1),(.43,.34,.28,1),(.12,.14,.14,1)]
+palette=[(.88,.80,.63,1),(.27,.46,.44,1),(.87,.36,.25,1),(.26,.15,.10,1),(.67,.48,.24,1),(.30,.23,.19,1),(.55,.53,.48,1),(.12,.14,.14,1)]
 for slug,height,width in [('SANA',5.9,.93),('NELL',5.7,1.06)]:
  bpy.ops.wm.open_mainfile(filepath=str(D/'NQ-NPC-TORI.blend'));rig=next(o for o in bpy.context.scene.objects if o.type=='ARMATURE');body=next(o for o in bpy.context.scene.objects if o.type=='MESH');ratio=height/5.8
  for v in body.data.vertices:v.co=Vector((v.co.x*ratio*width,v.co.y*ratio,v.co.z*ratio))
@@ -25,7 +25,7 @@ for slug,height,width in [('SANA',5.9,.93),('NELL',5.7,1.06)]:
    elif .54<z<.75:category='jacket'
   else:
    if .36<z<.76 and x>.13:category='teal'
-   elif z>.79 and (z>.92 or at.y>0 or x>.11):category='hair'
+   elif z>.79:category='hair'
   if not category:continue
   pts=np.array([uv.data[i].uv[:] for i in t.loops])*1023;x0,y0=np.maximum(0,np.floor(pts.min(axis=0)).astype(int));x1,y1=np.minimum(1023,np.ceil(pts.max(axis=0)).astype(int));yy,xx=np.mgrid[y0:y1+1,x0:x1+1];a,b,c=pts;den=(b[1]-c[1])*(a[0]-c[0])+(c[0]-b[0])*(a[1]-c[1])
   if abs(den)<1e-8:continue
@@ -102,10 +102,12 @@ for slug,height,width in [('SANA',5.9,.93),('NELL',5.7,1.06)]:
   panel('CreamApronSkirt',[(.20,.244,.145),(.31,.21,.13),(.44,.17,.11)],(math.radians(205),math.radians(335)),0,'LowerTorso')
   panel('ApronBib',[(.445,.17,.115),(.55,.168,.113),(.68,.15,.10)],(math.radians(220),math.radians(320)),0,'UpperTorso')
   box('ApronWaistTie',(0,-.115,.445),(.33,.025,.035),0)
-  for sign in (-1,1):box('ApronPocket',(sign*.07,-.14,.32),(.12,.018,.10),0)
+  for sign in (-1,1):
+   pocket=box('ApronPocket',(sign*.07,-.14,.32),(.12,.008,.10),0)
+   pocket.rotation_euler.z=sign*.12
   curve('CoralNeckerchief',[(-.07,-.01,.73),(0,-.09,.71),(.07,-.015,.73)],.016,2,'UpperTorso')
   curve('ScarfTail',[(.07,-.08,.71),(.10,-.11,.65),(.085,-.12,.62)],.012,2,'UpperTorso')
-  ellipsoid('SoftGrayHairCrown',(0,.018,.93),(.13,.105,.068),6)
+  ellipsoid('SoftGrayHairCrown',(0,.018,.93),(.14,.11,.075),6)
   for i in range(3):curve('SoftGrayHairWave',[(-.07+i*.04,-.045,.96),(-.09+i*.04,-.10,.93),(-.11+i*.04,-.11,.89)],.012,6,'Head')
  bpy.ops.wm.save_as_mainfile(filepath=str(D/('NQ-NPC-'+slug+'.blend')))
  (D/('NQ-NPC-'+slug+'.json')).write_text(json.dumps({'id':'NQ-NPC-'+slug,'base':'NQ-NPC-TORI.blend','source_design':f'assets/production/needle-quay/npcs/{slug}-design.png','generator':'tools/build_quay_supporting_characters.py','height_studs':height,'provider_spend':0,'stage':'DCC_AUTHORED_CHARACTER_REVISION_PENDING_ART_REVIEW','art_approved':False},indent=2))

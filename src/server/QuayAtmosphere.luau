@@ -103,10 +103,10 @@ function World.build(scene)
     end
     local atmosphere = Instance.new("Atmosphere")
     atmosphere.Name = "QuayHaze"
-    atmosphere.Density, atmosphere.Offset = 0.28, 0.15
-    atmosphere.Color = Color3.fromRGB(245, 211, 181)
+    atmosphere.Density, atmosphere.Offset = 0.2, 0.1
+    atmosphere.Color = Color3.fromRGB(219, 207, 217)
     atmosphere.Decay = Color3.fromRGB(126, 112, 142)
-    atmosphere.Haze, atmosphere.Glare = 1.4, 0.22
+    atmosphere.Haze, atmosphere.Glare = 0.7, 0.12
     atmosphere.Parent = Lighting
     local grade = Instance.new("ColorCorrectionEffect")
     grade.Name = "QuayGrade"
@@ -261,6 +261,20 @@ function World.build(scene)
             end
         end
     end
+    for index = 1, 20 do
+        local x = -220 + index * 22
+        if math.abs(x + 165) > 12 and math.abs(x + 120) > 12 and math.abs(x - 100) > 12 then
+            Assets.place(
+                art,
+                string.format("NQ-ROCK-%02d", 1 + index % 3),
+                CFrame.new(OFFSET + Vector3.new(x, -4, 155 + index % 3))
+                    * CFrame.Angles(0, index * 1.2, 0),
+                Vector3.one,
+                Theme.Stone,
+                false
+            )
+        end
+    end
     -- Buildings keep their envelopes; the frontages gain usable thresholds and stories.
     for index, spec in Geometry do
         local x, z = spec.center[1], spec.center[2]
@@ -283,11 +297,46 @@ function World.build(scene)
                     art,
                     "WarmShopWindow",
                     Vector3.new(w / 5 - 0.15, 4.8, 0.08),
-                    OFFSET + Vector3.new(x + side * w / 3, 6.3, front - 0.44),
-                    Color3.fromRGB(172, 119, 62),
+                    OFFSET + Vector3.new(x + side * w / 3, 6.3, front - 0.64),
+                    Color3.fromRGB(231, 180, 113),
                     Enum.Material.Glass
                 )
-                glass.Transparency = 0.32
+                glass.Transparency = 0.2
+                local glow = block(
+                    art,
+                    "WarmWindowInterior",
+                    glass.Size,
+                    glass.Position + Vector3.new(0, 0, 0.03),
+                    Color3.fromRGB(148, 99, 54),
+                    Enum.Material.Neon
+                )
+                local wash = Instance.new("SurfaceLight")
+                wash.Face = Enum.NormalId.Front
+                wash.Color = Color3.fromRGB(255, 191, 117)
+                wash.Brightness, wash.Range, wash.Angle = 0.3, 7, 110
+                wash.Parent = glow
+                for row = 1, 2 do
+                    block(
+                        art,
+                        "WindowDisplayShelf",
+                        Vector3.new(w / 5 - 0.3, 0.1, 0.13),
+                        glass.Position + Vector3.new(0, row * 1.5 - 2.1, -0.09),
+                        Theme.Walnut,
+                        Enum.Material.Wood
+                    )
+                    for item = 1, 3 do
+                        block(
+                            art,
+                            "WindowDisplaySleeve",
+                            Vector3.new(0.65, 0.85, 0.05),
+                            glass.Position + Vector3.new((item - 2) * 0.85, row * 1.5 - 1.65, -0.07),
+                            if item == 1
+                                then Theme.Coral
+                                elseif item == 2 then Theme.Cream
+                                else Theme.Teal
+                        )
+                    end
+                end
                 block(
                     art,
                     "WindowTransom",
@@ -348,6 +397,30 @@ function World.build(scene)
         task.wait()
     end
     -- Dense, authored record-shop vignette from the approved board.
+    for _, spec in { Geometry[2], Geometry[6] } do
+        local x, z = spec.center[1], spec.center[2]
+        local w, d, h = table.unpack(spec.dimensions)
+        for _, side in { -1, 1 } do
+            for tier = 0, 4 do
+                local vine = Assets.place(
+                    art,
+                    "P12",
+                    CFrame.new(
+                        OFFSET
+                            + Vector3.new(
+                                x + side * (w / 2 - 0.7) + math.sin(tier * 1.7) * 0.3,
+                                h - 1 - tier * 1.2,
+                                z - d / 2 - 0.45
+                            )
+                    ) * CFrame.Angles(0, tier, math.pi),
+                    Vector3.new(1, 1, 1),
+                    Theme.Teal,
+                    false
+                )
+                vine:ScaleTo(0.28 + (tier % 2) * 0.07)
+            end
+        end
+    end
     local shop = Geometry[2]
     local sx, sz = shop.center[1], shop.center[2] - shop.dimensions[2] / 2
     for _, dx in { -11, 10 } do
@@ -359,10 +432,45 @@ function World.build(scene)
             Theme.Walnut,
             false
         )
+        for sleeve = 1, 7 do
+            local cover = block(
+                art,
+                "CrateRecordSleeve",
+                Vector3.new(2.25, 2.25, 0.065),
+                OFFSET + Vector3.new(sx + dx, 2.6 + (sleeve % 3) * 0.08, sz - 4.5 + sleeve * 0.2),
+                if sleeve % 3 == 0
+                    then Theme.Teal
+                    elseif sleeve % 3 == 1 then Theme.Coral
+                    else Theme.Cream
+            )
+            cover.CFrame *= CFrame.Angles(math.rad(-6), 0, math.rad((sleeve % 3 - 1) * 3))
+            if sleeve == 1 then
+                local disc = block(
+                    art,
+                    "SleeveVinylGraphic",
+                    Vector3.new(0.025, 1.3, 1.3),
+                    cover.Position,
+                    Theme.Graphite
+                )
+                disc.Shape = Enum.PartType.Cylinder
+                disc.CFrame = cover.CFrame
+                    * CFrame.new(0, 0.1, -0.05)
+                    * CFrame.Angles(0, math.pi / 2, 0)
+                local label = block(
+                    art,
+                    "VinylCenterLabel",
+                    Vector3.new(0.03, 0.38, 0.38),
+                    cover.Position,
+                    Theme.Cream
+                )
+                label.Shape = Enum.PartType.Cylinder
+                label.CFrame = disc.CFrame * CFrame.new(-0.02, 0, 0)
+            end
+        end
         Assets.place(
             art,
             "P02",
-            CFrame.new(OFFSET + Vector3.new(sx + dx + 3, 0.35, sz - 4.5)),
+            CFrame.new(OFFSET + Vector3.new(sx + (if dx > 0 then 6 else dx + 3), 0.35, sz - 4.5)),
             Vector3.new(2, 3, 2),
             Theme.Walnut,
             false
@@ -506,8 +614,104 @@ function World.build(scene)
                 false
             )
         end
-        block(art, "Cup", Vector3.new(0.4, 0.55, 0.4), at + Vector3.new(0.5, 3.2, 0), Theme.Cream)
+        Assets.place(
+            art,
+            if dx < 0 then "NQ-CAKE-01" else "NQ-CAKE-02",
+            CFrame.new(at + Vector3.new(0, 2.72, 0)),
+            Vector3.one,
+            Theme.Cream,
+            false
+        )
+        local cup = block(
+            art,
+            "CeramicCup",
+            Vector3.new(0.5, 0.6, 0.6),
+            at + Vector3.new(1, 2.99, 0),
+            Theme.Cream
+        )
+        cup.Shape = Enum.PartType.Cylinder
+        cup.CFrame *= CFrame.Angles(0, 0, math.pi / 2)
+        local coffee = block(
+            art,
+            "CoffeeSurface",
+            Vector3.new(0.025, 0.48, 0.48),
+            cup.Position + Vector3.new(0, 0.26, 0),
+            Theme.Walnut
+        )
+        coffee.Shape = Enum.PartType.Cylinder
+        coffee.CFrame *= CFrame.Angles(0, 0, math.pi / 2)
+        Assets.place(
+            art,
+            "NQ-MILK-01",
+            CFrame.new(at + Vector3.new(-1, 2.72, 0.4)),
+            Vector3.one,
+            Theme.Cream,
+            false
+        )
     end
+    for _, dx in { -13, 15 } do
+        Assets.place(
+            art,
+            "NQ-PRODUCE-01",
+            CFrame.new(OFFSET + Vector3.new(10 + dx, 0.35, -20)),
+            Vector3.one,
+            Theme.Walnut,
+            false
+        )
+    end
+    for i = 1, 4 do
+        Assets.place(
+            art,
+            "NQ-COFFEE-01",
+            CFrame.new(OFFSET + Vector3.new(-60 + i * 0.75, 3.5, 81)),
+            Vector3.one,
+            Theme.Cream,
+            false
+        )
+    end
+    block(
+        art,
+        "CafeServingLedge",
+        Vector3.new(3.9, 0.25, 1.1),
+        OFFSET + Vector3.new(-58.125, 3.36, 81),
+        Theme.Walnut,
+        Enum.Material.Wood
+    )
+    for _, x in { -59.6, -56.65 } do
+        block(
+            art,
+            "CafeLedgeSupport",
+            Vector3.new(0.18, 3.2, 0.18),
+            OFFSET + Vector3.new(x, 1.72, 81),
+            Theme.Teal,
+            Enum.Material.Metal
+        )
+    end
+    for _, spec in { Geometry[2], Geometry[3], Geometry[6], Geometry[9] } do
+        Assets.place(
+            art,
+            "NQ-UTILITY-01",
+            CFrame.new(
+                OFFSET
+                    + Vector3.new(
+                        spec.center[1] + spec.dimensions[1] / 2 - 2,
+                        2.2,
+                        spec.center[2] - spec.dimensions[2] / 2 - 0.3
+                    )
+            ),
+            Vector3.one,
+            Theme.Teal,
+            false
+        )
+    end
+    Assets.place(
+        art,
+        "NQ-VINYL-01",
+        CFrame.new(OFFSET + Vector3.new(sx + 8, 3.35, sz + 3)),
+        Vector3.one,
+        Theme.Graphite,
+        false
+    )
     -- Greenery clusters soften the industrial silhouettes without random tiny clutter.
     for _, position in
         {

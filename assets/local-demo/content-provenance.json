@@ -1356,33 +1356,33 @@
   },
   {
     "source": "assets/production/needle-quay/sky/bk.png",
-    "file": "sky/bk_4e877074fb97.png",
-    "sha256": "4e877074fb97c8d0f81e06bebcfa2dfb5d6cd30c558a51f1c031d237f0c2dc92"
+    "file": "sky/bk_440e1974e582.png",
+    "sha256": "440e1974e582b6818832e4be02243b1e596e497f063d817e8cf41e7294687a37"
   },
   {
     "source": "assets/production/needle-quay/sky/dn.png",
-    "file": "sky/dn_3d4b0c312d9b.png",
-    "sha256": "3d4b0c312d9b388325204ae44ce4538a71480c6bed33e5ad4ca1606a8003d4dc"
+    "file": "sky/dn_3f106d1b9fcf.png",
+    "sha256": "3f106d1b9fcf485795b88a91277816ce7386bbb167d4d7831eec82179098fda5"
   },
   {
     "source": "assets/production/needle-quay/sky/ft.png",
-    "file": "sky/ft_9a3a80d334ac.png",
-    "sha256": "9a3a80d334ac692d7dee1fb8593ed4e023f26ac36c66bd38912baad097e271f7"
+    "file": "sky/ft_0bd800a0ef84.png",
+    "sha256": "0bd800a0ef8414694ce46562096d4df4a7b3df97dbbe88be0ab80e42fa83d83c"
   },
   {
     "source": "assets/production/needle-quay/sky/lf.png",
-    "file": "sky/lf_d7b2eb281826.png",
-    "sha256": "d7b2eb2818265c95ceab6e9c02254e32841fc992f16edd5941b00f12b5361a6b"
+    "file": "sky/lf_e26e89d68307.png",
+    "sha256": "e26e89d683070397fd414ec9489a75cc57de9005d9d632c3ad487949b63b1b7a"
   },
   {
     "source": "assets/production/needle-quay/sky/rt.png",
-    "file": "sky/rt_a12b9f7beea5.png",
-    "sha256": "a12b9f7beea5db3a018232b1706d3d671e67ceeb615f92b6efbf7bced6ea3163"
+    "file": "sky/rt_e2fd91b8b1ca.png",
+    "sha256": "e2fd91b8b1ca3704ec9a7bb9dc0d02548abd3b00d95bf321206ac152cbda95e5"
   },
   {
     "source": "assets/production/needle-quay/sky/up.png",
-    "file": "sky/up_9da2750d610c.png",
-    "sha256": "9da2750d610c8b3f3db6ede9edc823a8b191cd57b3ff3a76d865b6eb82ddc947"
+    "file": "sky/up_930c92334e42.png",
+    "sha256": "930c92334e429634b39925391619621114e3bc7ba54f85b9b2c1d3647f063723"
   },
   {
     "source": "assets/production/needle-quay/character-maps/ivo_color.png",
@@ -1416,8 +1416,8 @@
   },
   {
     "source": "assets/production/needle-quay/character-maps/nell_color.png",
-    "file": "materials/character_nell_color_5f1578a5d66f.png",
-    "sha256": "5f1578a5d66f69873d94a18793eab71ab00ea5c64117ae7387b9b095d8561429"
+    "file": "materials/character_nell_color_0b718b989ee7.png",
+    "sha256": "0b718b989ee775124d020d1a09d1811a027dfa0469e2da67c256efc87574db7f"
   },
   {
     "source": "assets/production/needle-quay/character-maps/nell_normal.png",
@@ -1446,8 +1446,8 @@
   },
   {
     "source": "assets/production/needle-quay/character-maps/sana_color.png",
-    "file": "materials/character_sana_color_ce6db8dae0ee.png",
-    "sha256": "ce6db8dae0eef660c8f2351c24155ad7b9bb30ecc7309d28cbae43aeb8c21734"
+    "file": "materials/character_sana_color_e6d3a6452546.png",
+    "sha256": "e6d3a6452546b8f7aee9de2579db249b3f38d3d68b2e323fc5d762a6182767a5"
   },
   {
     "source": "assets/production/needle-quay/character-maps/sana_normal.png",
@@ -1473,11 +1473,6 @@
     "source": "assets/production/needle-quay/character-maps/tori_rough.png",
     "file": "materials/character_tori_rough_52c9e855ccbe.png",
     "sha256": "52c9e855ccbed61b2e18b536a943c36b665ff2fbd71e500fec8038356369835b"
-  },
-  {
-    "source": "assets/production/needle-quay/user-model-maps/supplied_van_0_color.png",
-    "file": "materials/supplied_van_0_color_7ffc29fc8166.png",
-    "sha256": "7ffc29fc816601723f602e462b57ca6a17a21bc199003b9c892fecbdfbdc167c"
   },
   {
     "source": "assets/production/needle-quay/user-model-maps/supplied_midi_0_color.png",
@@ -1508,6 +1503,31 @@
     "source": "assets/production/needle-quay/user-model-maps/supplied_furniture_0_color.png",
     "file": "materials/supplied_furniture_0_color_c76a378e66b5.png",
     "sha256": "c76a378e66b58dab3fd0cddc4207188ca331ee27029da030ef2a9315358201d6"
+  },
+  {
+    "source": "assets/production/needle-quay/user-model-maps/supplied_utility_0_color.png",
+    "file": "materials/supplied_utility_0_color_7f21c3c769e0.png",
+    "sha256": "7f21c3c769e0963dfa92af35b8c2449480553e618af5921a2a058e66f28e7546"
+  },
+  {
+    "source": "assets/production/needle-quay/user-model-maps/supplied_produce_0_color.png",
+    "file": "materials/supplied_produce_0_color_42930ed7e086.png",
+    "sha256": "42930ed7e086c5849ada6867807d8334b02a9045aa46fa9efd8e00d9cf46c8cb"
+  },
+  {
+    "source": "assets/production/needle-quay/user-model-maps/supplied_groceries_0_color.png",
+    "file": "materials/supplied_groceries_0_color_a87fef3b82c1.png",
+    "sha256": "a87fef3b82c13f4c167ef6031561eca778a0e384878932810ca1bd72b98e2875"
+  },
+  {
+    "source": "assets/production/needle-quay/user-model-maps/supplied_vinyl_0_color.png",
+    "file": "materials/supplied_vinyl_0_color_33243e5b37d6.png",
+    "sha256": "33243e5b37d66f895f38ed27b699695baf057ecb3008dd3ae67abc333e80d6a6"
+  },
+  {
+    "source": "assets/production/needle-quay/user-model-maps/supplied_shore_rock_0_color.png",
+    "file": "materials/supplied_shore_rock_0_color_5d487c894514.png",
+    "sha256": "5d487c894514ecc0f4fedc8ee518c01e351355f16363ac55af297bda7a905134"
   },
   {
     "source": "assets/production/materials/sets/quay/atlas_basecolor_512.png",

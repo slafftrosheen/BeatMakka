@@ -1,0 +1,14 @@
+{
+  "id": "P12",
+  "triangles": 468,
+  "budget": 550,
+  "dimensions_wdh": [
+    3,
+    3,
+    4
+  ],
+  "source_authority": "Approved Needle Quay board and Production Atlas",
+  "generator": "tools/polish_quay_hero_props.py",
+  "stage": "DCC_CLEAN_PENDING_ART_REVIEW",
+  "uploads": 0
+}
