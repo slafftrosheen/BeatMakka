@@ -1,0 +1,209 @@
+{
+  "date": "2026-10-25",
+  "authority": "Direct user instruction in this chat",
+  "statement": "finish al local tasks,replace proxies,final art is accepted,everything is confirmed,go on",
+  "scope": "Final local demo art; no Roblox upload or publishing authorization",
+  "assets": [
+    {
+      "id": "NQ-BLD-01",
+      "source": "assets/production/needle-quay/models/NQ-BLD-01/NQ-BLD-01.blend",
+      "sha256": "95833bc35eb4e6187199e09a6034eb5aae707ba276f1ca358ab92a6fdba57b94"
+    },
+    {
+      "id": "NQ-BLD-02",
+      "source": "assets/production/needle-quay/models/NQ-BLD-02/NQ-BLD-02.blend",
+      "sha256": "31eb652ce1269a196dcf95859dc1b95b3612248932f248f4696bb25afb5be169"
+    },
+    {
+      "id": "NQ-BLD-03",
+      "source": "assets/production/needle-quay/models/NQ-BLD-03/NQ-BLD-03.blend",
+      "sha256": "c90f765385b5aff92eb33d38dc838310650f8b5b7e32ed7b139184cfae328cec"
+    },
+    {
+      "id": "NQ-BLD-04",
+      "source": "assets/production/needle-quay/models/NQ-BLD-04/NQ-BLD-04.blend",
+      "sha256": "e86524bd2634757396ca8f6a02102419a25bfff1d7a526cdf2a9b0241d5d681b"
+    },
+    {
+      "id": "NQ-BLD-05",
+      "source": "assets/production/needle-quay/models/NQ-BLD-05/NQ-BLD-05.blend",
+      "sha256": "89e03839affcb17063d0126f87142c6c6a6c71cc6fe4380b5bd9a7dc6b7deed2"
+    },
+    {
+      "id": "NQ-BLD-06",
+      "source": "assets/production/needle-quay/models/NQ-BLD-06/NQ-BLD-06.blend",
+      "sha256": "a56e3ec5291ee290831f40c8df17576509e266deb549777c082933337238022d"
+    },
+    {
+      "id": "NQ-BLD-07",
+      "source": "assets/production/needle-quay/models/NQ-BLD-07/NQ-BLD-07.blend",
+      "sha256": "5420e12500e47389dfc2f60bfba2ea75281e2bab0040597bfcfaef3d17ef2e5e"
+    },
+    {
+      "id": "NQ-BLD-08",
+      "source": "assets/production/needle-quay/models/NQ-BLD-08/NQ-BLD-08.blend",
+      "sha256": "92d2cdb56dfa5146e5a4a2ecbda7a8c4449f951b70f44fd7aeadb455864e8d04"
+    },
+    {
+      "id": "NQ-BLD-09",
+      "source": "assets/production/needle-quay/models/NQ-BLD-09/NQ-BLD-09.blend",
+      "sha256": "17d29313f1bb79db52c9586c57dfcf99181e5fed6baf6a650c22074f74ec579b"
+    },
+    {
+      "id": "NQ-BLD-10",
+      "source": "assets/production/needle-quay/models/NQ-BLD-10/NQ-BLD-10.blend",
+      "sha256": "c8a2be1988d784481f86c5cecaba6b504b394d8ecf224606b2d4b8e5ac0ff24b"
+    },
+    {
+      "id": "NQ-BLD-11",
+      "source": "assets/production/needle-quay/models/NQ-BLD-11/NQ-BLD-11.blend",
+      "sha256": "cd1cf90ec90dd01eac7fd7d6e8057d9d075043b01f91a2818a1dc74e42168752"
+    },
+    {
+      "id": "NQ-BLD-12",
+      "source": "assets/production/needle-quay/models/NQ-BLD-12/NQ-BLD-12.blend",
+      "sha256": "d4f083648a1d85d58b79abf64beac6e713a7b0b690faab4d9f977c8c1e76ef6b"
+    },
+    {
+      "id": "NQ-BLD-13",
+      "source": "assets/production/needle-quay/models/NQ-BLD-13/NQ-BLD-13.blend",
+      "sha256": "215c66aa80a4332d2c5a11817956a4aedd4d0619a80affb90488c2958f366eef"
+    },
+    {
+      "id": "NQ-NPC-TORI",
+      "source": "assets/production/needle-quay/models/NQ-NPC-TORI/NQ-NPC-TORI.blend",
+      "sha256": "d379dceef405fa4ab018ef3a51b98ea804d4e5d007cdcdb838561ff411490b18"
+    },
+    {
+      "id": "NQ-NPC-IVO",
+      "source": "assets/production/needle-quay/models/NQ-NPC-IVO/NQ-NPC-IVO.blend",
+      "sha256": "540437506527a6e74c129939763128668ac8dbabb057fc023c6fc945f5d15970"
+    },
+    {
+      "id": "NQ-NPC-NAYA",
+      "source": "assets/production/needle-quay/models/NQ-NPC-NAYA/NQ-NPC-NAYA.blend",
+      "sha256": "aebed4524a74ab5e58d0b59d6071b0e561430bbc46f944bc9c8a6cba886db344"
+    },
+    {
+      "id": "NQ-NPC-SANA",
+      "source": "assets/production/needle-quay/models/NQ-NPC-SANA/NQ-NPC-SANA.blend",
+      "sha256": "bda888f152e6ba30ff2433b7ce4cfe221a527ee15cf5f90fbb2fcfde4f689b79"
+    },
+    {
+      "id": "NQ-NPC-RONAN",
+      "source": "assets/production/needle-quay/models/NQ-NPC-RONAN/NQ-NPC-RONAN.blend",
+      "sha256": "8dee42f39bf1750a6f995105d143fb13774a04603c4c3f46a79f7c22b5528a94"
+    },
+    {
+      "id": "NQ-NPC-NELL",
+      "source": "assets/production/needle-quay/models/NQ-NPC-NELL/NQ-NPC-NELL.blend",
+      "sha256": "9d936e70d04265904875eacbe37e74d682a39f0c161ed2045bbba50d96158067"
+    },
+    {
+      "id": "H01",
+      "source": "assets/optimized/H01/H01_atlas_v1.glb",
+      "sha256": "7f27ff7da218c44e19fba120ab3decda47f4cbd836db0eb38d94d0882dfa15e3"
+    },
+    {
+      "id": "H02",
+      "source": "assets/optimized/H02/H02_atlas_v1.glb",
+      "sha256": "42be1c3b9abe84d237e80d530b3913a6e3424132d9faa72e4fcb84e96785476f"
+    },
+    {
+      "id": "H03",
+      "source": "assets/optimized/H03/H03_atlas_v1.glb",
+      "sha256": "eaf6e8e42300da9e23a082946d28b7e60d2671617bcde3561949c67d61be6c4b"
+    },
+    {
+      "id": "H04",
+      "source": "assets/optimized/H04/H04_atlas_v1.glb",
+      "sha256": "8046e7baf00797212a970b03acc55118471d0bb9d4bf54871533bc2e6181dc22"
+    },
+    {
+      "id": "H05",
+      "source": "assets/optimized/H05/H05_atlas_v1.glb",
+      "sha256": "2a3928024f2c9bac4b69440a9d0ff63e2922efdd7861a27e2d62138d7c501458"
+    },
+    {
+      "id": "P01",
+      "source": "assets/optimized/P01/P01_atlas_v1.glb",
+      "sha256": "74bd5136fc1edc27d7c603c6834d6eee0386dd2044bde58a32128228588473cd"
+    },
+    {
+      "id": "P02",
+      "source": "assets/optimized/P02/P02_atlas_v1.glb",
+      "sha256": "7eb023c02c9f0ae729a68991b9cbb7287a06897ffbd0369ceea7292ebb3ce577"
+    },
+    {
+      "id": "P03",
+      "source": "assets/optimized/P03/P03_atlas_v1.glb",
+      "sha256": "fae0b7a9533b975f44351409b4287c43386394b860fb3600ec76fa3d0a1933b8"
+    },
+    {
+      "id": "P04",
+      "source": "assets/optimized/P04/P04_atlas_v1.glb",
+      "sha256": "7350fd652073bc70f5894250f0295bec97e8b6fe6fee6145dbbfc06bdf24dcb6"
+    },
+    {
+      "id": "P05",
+      "source": "assets/optimized/P05/P05_atlas_v1.glb",
+      "sha256": "da4285ddf0ed582e78f7916373ee822dd543b5776eaf69a62eab6e484a1077ff"
+    },
+    {
+      "id": "P06",
+      "source": "assets/optimized/P06/P06_atlas_v1.glb",
+      "sha256": "a444e66bb48f211934382701f2c79b29fc2bc4a326112528732db62170d67c30"
+    },
+    {
+      "id": "P07",
+      "source": "assets/optimized/P07/P07_atlas_v1.glb",
+      "sha256": "20d0c0f357554b5a6fc5c8d13d3bf8b34700125bd49e9634f59e21c961fad0ef"
+    },
+    {
+      "id": "P11",
+      "source": "assets/optimized/P11/P11_atlas_v1.glb",
+      "sha256": "909512b057494018c3c1cd0025b46b1f94aa04c6d6a8ec90e67031af07dfcf3d"
+    },
+    {
+      "id": "P12",
+      "source": "assets/optimized/P12/P12_atlas_v1.glb",
+      "sha256": "9421a35dafdec9b5cc621b60872ced5b904a7af6c85d5a51181b90986aa18b9c"
+    },
+    {
+      "id": "P13",
+      "source": "assets/optimized/P13/P13_atlas_v1.glb",
+      "sha256": "6a2c6a0cf8b2c3a6840671b690c6425d098d11c42c61f5f608ba5ff02c3f763a"
+    },
+    {
+      "id": "P14",
+      "source": "assets/optimized/P14/P14_atlas_v1.glb",
+      "sha256": "d7fac77f423088161016b32f2446775b984d582b3a5e98db7f13c2845610bd14"
+    },
+    {
+      "id": "P16",
+      "source": "assets/optimized/P16/P16_atlas_v1.glb",
+      "sha256": "9e0dc1f0a74e2bb0502ae0aae24b5c821ed1c71b5e9fc1979cffa2371fc5c335"
+    },
+    {
+      "id": "I01",
+      "source": "assets/optimized/I01/I01_atlas_v1.glb",
+      "sha256": "e8ea8d33cb38472335ba808c5d788591f3597a6eaa60d78f7432848674b25e97"
+    },
+    {
+      "id": "I04",
+      "source": "assets/optimized/I04/I04_atlas_v1.glb",
+      "sha256": "af6c82c9ae33d67e8b6dad754b07c7fd31482e65316ae3738fd2e705ba81ccf0"
+    },
+    {
+      "id": "I05",
+      "source": "assets/optimized/I05/I05_atlas_v1.glb",
+      "sha256": "eba7e2a952e18b5a92e1a05684bf94e59c78264467869a9f856bc993194bc18a"
+    },
+    {
+      "id": "LOOPVAN-01",
+      "source": "assets/production/needle-quay/models/LOOPVAN-01/LOOPVAN-01.blend",
+      "sha256": "8d70137d6aea82f0748dae68081416057274ecc8a6f3b65713d3ca9336801b17"
+    }
+  ],
+  "note": "LOOPVAN-01 is the deterministic completion of the existing approved vehicle design, fitted to 22x9x10 studs. The user approval is not substituted for technical evidence."
+}
