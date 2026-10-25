@@ -1,0 +1,27 @@
+{
+  "id": "NQ-NPC-IVO",
+  "source": "assets/candidates/needle-quay-characters/tripo-out/needle-quay-ivo-textured-texture-a902d201/model.glb",
+  "source_sha256": "8e28a02f8de30fe02b9ec340240ff3b182ea4ae11cb4ff48692e5e9b9d513afd",
+  "height_studs": 6.6,
+  "triangles": 4080,
+  "bones": [
+    "LowerTorso",
+    "UpperTorso",
+    "Head",
+    "LeftUpperArm",
+    "LeftLowerArm",
+    "LeftHand",
+    "LeftUpperLeg",
+    "LeftLowerLeg",
+    "LeftFoot",
+    "RightUpperArm",
+    "RightLowerArm",
+    "RightHand",
+    "RightUpperLeg",
+    "RightLowerLeg",
+    "RightFoot"
+  ],
+  "source_skinning": "distance-weighted R15 candidate; deformation review pending",
+  "studio_animation": "dominant triangle groups; restrained rigid idle",
+  "art_approved": false
+}

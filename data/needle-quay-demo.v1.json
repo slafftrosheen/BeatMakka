@@ -1,0 +1,53 @@
+{
+  "schema": 1,
+  "date": "2026-10-25",
+  "district": "N00",
+  "canonical_environment": "data/needle-quay-environment.v1.json",
+  "canonical_assets": "data/assets.json",
+  "status": "LOCAL_ARTBOOK_REVISION_IN_REVIEW",
+  "place": "output/needle-quay-demo/NeedleQuay-Artbook-Pass.rbxlx",
+  "runtime_sources": [
+    "src/server/NeedleQuayDemoWorld.luau",
+    "src/server/QuayDemoService.luau",
+    "src/shared/QuayProgress.luau",
+    "src/client/QuayDemoView.luau"
+  ],
+  "parking_ids": [
+    "P1",
+    "P2",
+    "P3",
+    "P4"
+  ],
+  "quest_ids": [
+    "NQ-Q00",
+    "NQ-Q01",
+    "NQ-Q02",
+    "NQ-Q03",
+    "NQ-Q04",
+    "NQ-Q05",
+    "NQ-Q06",
+    "NQ-Q07",
+    "NQ-Q08",
+    "NQ-Q09",
+    "NQ-Q10",
+    "NQ-Q11",
+    "NQ-Q12"
+  ],
+  "personal_workshop_capacity": 2,
+  "second_demo_parking_bay_offset_studs": [
+    32,
+    0,
+    0
+  ],
+  "geometry_stage": "LOCAL_IMPORTED_ARTBOOK_REVISION",
+  "final_art_approved": false,
+  "roblox_meshes_uploaded": false,
+  "evidence": "docs/evidence/needle-quay-demo/studio-walkthrough.json",
+  "limitations": "docs/needle-quay/ARTBOOK_REVISION_2026-10-25.md",
+  "local_art_evidence": "docs/evidence/needle-quay-artbook-pass/local-scene.json",
+  "launcher": "output/needle-quay-demo/Launch-NeedleQuay.ps1",
+  "package": "output/needle-quay-demo/NeedleQuay-Artbook-Pass.zip",
+  "audio_route": "184 local WAV bindings; cloud ContentIds unchanged",
+  "previous_art_approval": "docs/needle-quay/FINAL_LOCAL_ART_APPROVAL_2026-10-25.json",
+  "acceptance_note": "Earlier final-art status was rejected by the user; this revision requires visual acceptance."
+}

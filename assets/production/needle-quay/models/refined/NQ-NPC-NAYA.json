@@ -1,0 +1,27 @@
+{
+  "id": "NQ-NPC-NAYA",
+  "source": "assets/candidates/needle-quay-characters/tripo-out/needle-quay-naya-textured-textur-c71c9000/model.glb",
+  "source_sha256": "29eb09f7384a3dc88a5811f12ce721ff5f2928a3c16d19232576604a0c71bab3",
+  "height_studs": 5.6,
+  "triangles": 4016,
+  "bones": [
+    "LowerTorso",
+    "UpperTorso",
+    "Head",
+    "LeftUpperArm",
+    "LeftLowerArm",
+    "LeftHand",
+    "LeftUpperLeg",
+    "LeftLowerLeg",
+    "LeftFoot",
+    "RightUpperArm",
+    "RightLowerArm",
+    "RightHand",
+    "RightUpperLeg",
+    "RightLowerLeg",
+    "RightFoot"
+  ],
+  "source_skinning": "distance-weighted R15 candidate; deformation review pending",
+  "studio_animation": "dominant triangle groups; restrained rigid idle",
+  "art_approved": false
+}

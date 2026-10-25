@@ -1,0 +1,13 @@
+{
+  "checked_at": "2026-10-25T18:00:56.139177+00:00",
+  "verified": true,
+  "sources": [
+    "https://platform.tripo3d.ai/docs/generation",
+    "https://platform.tripo3d.ai/docs/billing",
+    "https://docs.tripo3d.ai/get-started/pricing.html"
+  ],
+  "model": "P1-20260311",
+  "image_geometry_credits": 40,
+  "schema": "tripo 0.7.2 make --dry-run",
+  "incompatible_topology_fields": []
+}

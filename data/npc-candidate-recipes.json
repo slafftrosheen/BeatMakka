@@ -1,0 +1,64 @@
+{
+  "contracts": [
+    {
+      "id": "NQ-NPC-TORI",
+      "source_model": "assets/production/needle-quay/models/NQ-NPC-TORI/NQ-NPC-TORI.glb",
+      "candidate_face_cap": 4000,
+      "full_asset_triangle_cap": 10000,
+      "operation": "image-to-model",
+      "model": "P1-20260311",
+      "parameters": {
+        "texture": false,
+        "pbr": false,
+        "export_uv": true
+      },
+      "reference_path": "references/production/characters/TORI-front.png",
+      "status": "CANDIDATE_REPLACEMENT_NOT_ART_APPROVED"
+    },
+    {
+      "id": "NQ-NPC-IVO",
+      "source_model": "assets/production/needle-quay/models/NQ-NPC-IVO/NQ-NPC-IVO.glb",
+      "candidate_face_cap": 4000,
+      "full_asset_triangle_cap": 10000,
+      "operation": "image-to-model",
+      "model": "P1-20260311",
+      "parameters": {
+        "texture": false,
+        "pbr": false,
+        "export_uv": true
+      },
+      "reference_path": "references/production/characters/IVO-front.png",
+      "status": "CANDIDATE_REPLACEMENT_NOT_ART_APPROVED"
+    },
+    {
+      "id": "NQ-NPC-NAYA",
+      "source_model": "assets/production/needle-quay/models/NQ-NPC-NAYA/NQ-NPC-NAYA.glb",
+      "candidate_face_cap": 4000,
+      "full_asset_triangle_cap": 10000,
+      "operation": "image-to-model",
+      "model": "P1-20260311",
+      "parameters": {
+        "texture": false,
+        "pbr": false,
+        "export_uv": true
+      },
+      "reference_path": "references/production/characters/NAYA-front.png",
+      "status": "CANDIDATE_REPLACEMENT_NOT_ART_APPROVED"
+    },
+    {
+      "id": "NQ-NPC-RONAN",
+      "source_model": "assets/production/needle-quay/models/NQ-NPC-RONAN/NQ-NPC-RONAN.glb",
+      "candidate_face_cap": 4000,
+      "full_asset_triangle_cap": 10000,
+      "operation": "image-to-model",
+      "model": "P1-20260311",
+      "parameters": {
+        "texture": false,
+        "pbr": false,
+        "export_uv": true
+      },
+      "reference_path": "references/production/characters/RONAN-front.png",
+      "status": "CANDIDATE_REPLACEMENT_NOT_ART_APPROVED"
+    }
+  ]
+}

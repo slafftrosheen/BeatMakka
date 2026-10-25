@@ -1,0 +1,12 @@
+{
+  "checked_at": "2026-10-25T18:22:59.275885+00:00",
+  "verified": true,
+  "cli": "0.7.2",
+  "region": "ov",
+  "balance_credits": 60,
+  "account_check": {
+    "balance_checked": true,
+    "balance_credits": 60
+  },
+  "credential_values_recorded": false
+}

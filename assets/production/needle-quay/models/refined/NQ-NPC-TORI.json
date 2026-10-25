@@ -1,0 +1,27 @@
+{
+  "id": "NQ-NPC-TORI",
+  "source": "assets/candidates/needle-quay-characters/tripo-out/needle-quay-tori-textured-textur-67f75efd/model.glb",
+  "source_sha256": "be28ab39058a1e86d38a4a3a9e467a4e15c39dff8161cd744d01c212202fb5ac",
+  "height_studs": 5.8,
+  "triangles": 3992,
+  "bones": [
+    "LowerTorso",
+    "UpperTorso",
+    "Head",
+    "LeftUpperArm",
+    "LeftLowerArm",
+    "LeftHand",
+    "LeftUpperLeg",
+    "LeftLowerLeg",
+    "LeftFoot",
+    "RightUpperArm",
+    "RightLowerArm",
+    "RightHand",
+    "RightUpperLeg",
+    "RightLowerLeg",
+    "RightFoot"
+  ],
+  "source_skinning": "distance-weighted R15 candidate; deformation review pending",
+  "studio_animation": "dominant triangle groups; restrained rigid idle",
+  "art_approved": false
+}

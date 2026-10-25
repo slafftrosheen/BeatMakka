@@ -1,0 +1,173 @@
+{
+  "source": "User-supplied BD_StyleMat(JPG) library",
+  "maps": [
+    {
+      "family": "brick",
+      "channel": "color",
+      "original": "C:\\Users\\slavd\\OneDrive\\Pictures\\Assets\\Stylized Materials Library -\\BD_StyleMat(JPG)\\textures\\Wall_5\\Wall_5_basecolor.jpg",
+      "vendored": "assets/sources/user-materials/quay-environment/Wall_5/Wall_5_basecolor.jpg",
+      "source_sha256": "6645554a55c7524c2fed6ea44edae26b5b18a9148396e5eadd34b057e9b21de9",
+      "output": "assets/production/needle-quay/surface-tiles/brick_color.png",
+      "output_sha256": "fa90cb27ee05ffe7f45959d27ad6f7464ada71a91e8e1e573a19861cca0a4524"
+    },
+    {
+      "family": "brick",
+      "channel": "normal",
+      "original": "C:\\Users\\slavd\\OneDrive\\Pictures\\Assets\\Stylized Materials Library -\\BD_StyleMat(JPG)\\textures\\Wall_5\\Wall_5_normal.jpg",
+      "vendored": "assets/sources/user-materials/quay-environment/Wall_5/Wall_5_normal.jpg",
+      "source_sha256": "e3b279ebf61ec1550714b4fa1a91df387c3d55b25bc5d34b7f91dff7e34eda48",
+      "output": "assets/production/needle-quay/surface-tiles/brick_normal.png",
+      "output_sha256": "8bb779624613995ba5fa40899f19c42ebb15b9ddaa21ceb30ccbdc57e715a7cb"
+    },
+    {
+      "family": "brick",
+      "channel": "rough",
+      "original": "C:\\Users\\slavd\\OneDrive\\Pictures\\Assets\\Stylized Materials Library -\\BD_StyleMat(JPG)\\textures\\Wall_5\\Wall_5_roughness.jpg",
+      "vendored": "assets/sources/user-materials/quay-environment/Wall_5/Wall_5_roughness.jpg",
+      "source_sha256": "1224d075359b7f4a431548094b3d4ce2ae9012d6a0c954f012bd83f947825d5d",
+      "output": "assets/production/needle-quay/surface-tiles/brick_rough.png",
+      "output_sha256": "0666bac802c9aaa5c1d21f575235f5d175d6d44ad0424848551ec613a2eea21f"
+    },
+    {
+      "family": "plaster",
+      "channel": "color",
+      "original": "C:\\Users\\slavd\\OneDrive\\Pictures\\Assets\\Stylized Materials Library -\\BD_StyleMat(JPG)\\textures\\Wall_3\\Wall_3_basecolor.jpg",
+      "vendored": "assets/sources/user-materials/quay-environment/Wall_3/Wall_3_basecolor.jpg",
+      "source_sha256": "d17a2cdb7165a09ed0b1cdc4f97b3cda211586255592f07f573dae3791f4c11c",
+      "output": "assets/production/needle-quay/surface-tiles/plaster_color.png",
+      "output_sha256": "f342f36fd8fdb65face22b74025244fd1299f246e9da2ea5c2cfa8d5a61119f5"
+    },
+    {
+      "family": "plaster",
+      "channel": "normal",
+      "original": "C:\\Users\\slavd\\OneDrive\\Pictures\\Assets\\Stylized Materials Library -\\BD_StyleMat(JPG)\\textures\\Wall_3\\Wall_3_normal.jpg",
+      "vendored": "assets/sources/user-materials/quay-environment/Wall_3/Wall_3_normal.jpg",
+      "source_sha256": "ff4b5e6511695c957e9e61bdbac57c08a2494f2ff787fb8991945181c68f36bc",
+      "output": "assets/production/needle-quay/surface-tiles/plaster_normal.png",
+      "output_sha256": "fb3b1173a956094cb8dc3585b756f17653e9974e1129c604ae8601c221823e1b"
+    },
+    {
+      "family": "plaster",
+      "channel": "rough",
+      "original": "C:\\Users\\slavd\\OneDrive\\Pictures\\Assets\\Stylized Materials Library -\\BD_StyleMat(JPG)\\textures\\Wall_3\\Wall_3_roughness.jpg",
+      "vendored": "assets/sources/user-materials/quay-environment/Wall_3/Wall_3_roughness.jpg",
+      "source_sha256": "e4303dc515c34085ed4c1e4a24a6acacc6a8fae8c65c74d99a4153d4853b799e",
+      "output": "assets/production/needle-quay/surface-tiles/plaster_rough.png",
+      "output_sha256": "8cb68d4004f93f13df0ccf7dacbe8b51857c1428183f002b03fd9c38c1767080"
+    },
+    {
+      "family": "wood",
+      "channel": "color",
+      "original": "C:\\Users\\slavd\\OneDrive\\Pictures\\Assets\\Stylized Materials Library -\\BD_StyleMat(JPG)\\textures\\Wood_6\\Wood_6_basecolor_1.jpg",
+      "vendored": "assets/sources/user-materials/quay-environment/Wood_6/Wood_6_basecolor_1.jpg",
+      "source_sha256": "228790013e9d371d2d2a208178b780ba2a812f6e57087460d125c438d945ea3a",
+      "output": "assets/production/needle-quay/surface-tiles/wood_color.png",
+      "output_sha256": "bbf988c41a2339b446d025b70e7d226beff2cce1c23e6ea1ec370058c9a85e00"
+    },
+    {
+      "family": "wood",
+      "channel": "normal",
+      "original": "C:\\Users\\slavd\\OneDrive\\Pictures\\Assets\\Stylized Materials Library -\\BD_StyleMat(JPG)\\textures\\Wood_6\\Wood_6_normal.jpg",
+      "vendored": "assets/sources/user-materials/quay-environment/Wood_6/Wood_6_normal.jpg",
+      "source_sha256": "0785b048999dc06bd52230b6a5abcdd866602caf54794e9bc85f3c468d2e58d5",
+      "output": "assets/production/needle-quay/surface-tiles/wood_normal.png",
+      "output_sha256": "9f5d38305081b365646ad95b3322314ca445de4f3ecd219cb04236dfbdd40b92"
+    },
+    {
+      "family": "wood",
+      "channel": "rough",
+      "original": "C:\\Users\\slavd\\OneDrive\\Pictures\\Assets\\Stylized Materials Library -\\BD_StyleMat(JPG)\\textures\\Wood_6\\Wood_6_roughness.jpg",
+      "vendored": "assets/sources/user-materials/quay-environment/Wood_6/Wood_6_roughness.jpg",
+      "source_sha256": "4d733fe68b1cca6241901de133fb7b094b71716db07565171d12bab57c2a7bb0",
+      "output": "assets/production/needle-quay/surface-tiles/wood_rough.png",
+      "output_sha256": "42a602bd8a4edbb1149dd358b13a35320124008c121ea32e21f1b9e012e8ce97"
+    },
+    {
+      "family": "stone",
+      "channel": "color",
+      "original": "C:\\Users\\slavd\\OneDrive\\Pictures\\Assets\\Stylized Materials Library -\\BD_StyleMat(JPG)\\textures\\floor_tiles_1\\Stone_brick_1_basecolor.jpg",
+      "vendored": "assets/sources/user-materials/quay-environment/floor_tiles_1/Stone_brick_1_basecolor.jpg",
+      "source_sha256": "70f0612d9c7fecbd6205dacb90e5f06bb37a722d8eb8da895094c781a477d1e5",
+      "output": "assets/production/needle-quay/surface-tiles/stone_color.png",
+      "output_sha256": "664914c7835adbc8f82401a67c5dfe252932f7321ef8988a865c311a11825510"
+    },
+    {
+      "family": "stone",
+      "channel": "normal",
+      "original": "C:\\Users\\slavd\\OneDrive\\Pictures\\Assets\\Stylized Materials Library -\\BD_StyleMat(JPG)\\textures\\floor_tiles_1\\Stone_brick_1_normal.jpg",
+      "vendored": "assets/sources/user-materials/quay-environment/floor_tiles_1/Stone_brick_1_normal.jpg",
+      "source_sha256": "51067d58d5bb908284f0f096d2db63de4b4a952a59912b25504dc586bba7beab",
+      "output": "assets/production/needle-quay/surface-tiles/stone_normal.png",
+      "output_sha256": "8aad3f5657a3940cc76639abf9ed6201a0f77dcc73ee2cece5003cfa05dbafe4"
+    },
+    {
+      "family": "stone",
+      "channel": "rough",
+      "original": "C:\\Users\\slavd\\OneDrive\\Pictures\\Assets\\Stylized Materials Library -\\BD_StyleMat(JPG)\\textures\\floor_tiles_1\\Stone_brick_1_roughness.jpg",
+      "vendored": "assets/sources/user-materials/quay-environment/floor_tiles_1/Stone_brick_1_roughness.jpg",
+      "source_sha256": "19f94b2c3702ec23dba746f3aefd7587c1457827242cbe9f66b56927b62aae6c",
+      "output": "assets/production/needle-quay/surface-tiles/stone_rough.png",
+      "output_sha256": "cbcd42d63dfa5da13ae41f6e62f60b940f4a7e9ab5d31006ce7438682a094185"
+    },
+    {
+      "family": "canvas",
+      "channel": "color",
+      "original": "C:\\Users\\slavd\\OneDrive\\Pictures\\Assets\\Stylized Materials Library -\\BD_StyleMat(JPG)\\textures\\Fabric_1\\Fabric_1_basecolor.jpg",
+      "vendored": "assets/sources/user-materials/quay-environment/Fabric_1/Fabric_1_basecolor.jpg",
+      "source_sha256": "5782a77affd8b4bcaf17a3dcc93c6af55840d575462774cdca7e3837b3cf35c1",
+      "output": "assets/production/needle-quay/surface-tiles/canvas_color.png",
+      "output_sha256": "48c90ffc4e3f1417c0e2b5b8da78aa4562696f1b8eec65b2959d20a9390cd301"
+    },
+    {
+      "family": "canvas",
+      "channel": "normal",
+      "original": "C:\\Users\\slavd\\OneDrive\\Pictures\\Assets\\Stylized Materials Library -\\BD_StyleMat(JPG)\\textures\\Fabric_1\\Fabric_1_normal.jpg",
+      "vendored": "assets/sources/user-materials/quay-environment/Fabric_1/Fabric_1_normal.jpg",
+      "source_sha256": "56069cad950fdcb909ea4f3b3268a3d3e49f4b3636c06c48708d5ed3be16a07c",
+      "output": "assets/production/needle-quay/surface-tiles/canvas_normal.png",
+      "output_sha256": "90459b7a0f33f618d6455be21e122ed95288326cee9d0778f65b960d101a09b2"
+    },
+    {
+      "family": "canvas",
+      "channel": "rough",
+      "original": "C:\\Users\\slavd\\OneDrive\\Pictures\\Assets\\Stylized Materials Library -\\BD_StyleMat(JPG)\\textures\\Fabric_1\\Fabric_1_roughness.jpg",
+      "vendored": "assets/sources/user-materials/quay-environment/Fabric_1/Fabric_1_roughness.jpg",
+      "source_sha256": "eedb7e014c1da631f4ec8a0d6776245849a68403602b4645ef777de7be7f113b",
+      "output": "assets/production/needle-quay/surface-tiles/canvas_rough.png",
+      "output_sha256": "0d4fe9e5ec576dbf6edad302b97bbd338b8148da088fd29a8a394d23fae90e62"
+    },
+    {
+      "family": "metal",
+      "channel": "color",
+      "original": "C:\\Users\\slavd\\OneDrive\\Pictures\\Assets\\Stylized Materials Library -\\BD_StyleMat(JPG)\\textures\\metal_3_D\\metal_3_D_baseColor.jpg",
+      "vendored": "assets/sources/user-materials/quay-environment/metal_3_D/metal_3_D_baseColor.jpg",
+      "source_sha256": "69350ebbba0e5a5273a9f0da1a6c01ce7cbdf496553a210d921a91378704b6fd",
+      "output": "assets/production/needle-quay/surface-tiles/metal_color.png",
+      "output_sha256": "fdeeed165aed3c7d75a7eaa4a91c8a2b71eb8170017a65a42c56beccddc20f8d"
+    },
+    {
+      "family": "metal",
+      "channel": "normal",
+      "original": "C:\\Users\\slavd\\OneDrive\\Pictures\\Assets\\Stylized Materials Library -\\BD_StyleMat(JPG)\\textures\\metal_3_D\\metal_3_D_normal.jpg",
+      "vendored": "assets/sources/user-materials/quay-environment/metal_3_D/metal_3_D_normal.jpg",
+      "source_sha256": "f3c15d198783591e94664e5b4c97cb429531f3063387926b20c16df5f9249fbb",
+      "output": "assets/production/needle-quay/surface-tiles/metal_normal.png",
+      "output_sha256": "54d0e2b939b467b55fbeca2899506231674c30ab04242c3941a4f21573eae6ef"
+    },
+    {
+      "family": "metal",
+      "channel": "rough",
+      "original": "C:\\Users\\slavd\\OneDrive\\Pictures\\Assets\\Stylized Materials Library -\\BD_StyleMat(JPG)\\textures\\metal_3_D\\metal_3_D_roughness.jpg",
+      "vendored": "assets/sources/user-materials/quay-environment/metal_3_D/metal_3_D_roughness.jpg",
+      "source_sha256": "ff2c5c3633eb6a974ecae54e7611617aec1ce15951e34eeaf5d5319a0c3f7bc8",
+      "output": "assets/production/needle-quay/surface-tiles/metal_rough.png",
+      "output_sha256": "bb15859b7c311033aa133872a5c7ec51d2ee60a08bb7307fd69952d1626eec7b"
+    }
+  ],
+  "target_resolution": {
+    "color": 512,
+    "normal": 256,
+    "rough": 256
+  },
+  "uploaded": false
+}

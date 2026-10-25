@@ -1,0 +1,6 @@
+{
+  "source_design": "assets/production/needle-quay/npcs/NAYA-design.png",
+  "isolated_reference": "references/production/characters/NAYA-front.png",
+  "method": "image_gen faithful single-character extraction",
+  "sha256": "bab4d0f54fbc549d1d97ec27a8e383ac00e2c9a005c6078f16623805d1191080"
+}

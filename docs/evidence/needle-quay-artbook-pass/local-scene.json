@@ -1,0 +1,26 @@
+{
+  "captured_at": "2026-10-25T19:10:04.600218+00:00",
+  "studio_id": "36a2e885-579a-4017-8082-ced1f919e1a6",
+  "loaded_asset_definitions": 55,
+  "expected_asset_definitions": 55,
+  "local_pbr_ready": true,
+  "local_skins_built": true,
+  "ready_human_instances": 10,
+  "unique_source_triangles": 230191,
+  "companion_files": 699,
+  "audio_bindings": 184,
+  "art_acceptance": "IN_REVIEW_AFTER_USER_REJECTED_PREVIOUS_RESULT",
+  "full_quest_route_rerun": false,
+  "new_test_suites_run": false,
+  "uploads": 0,
+  "console_warning": {
+    "content_id": "rbxassetid://203785492",
+    "message": "Asset type does not match requested type",
+    "occurrences": 3
+  },
+  "screenshots": [
+    "cafe.png",
+    "records.png",
+    "camper.png"
+  ]
+}

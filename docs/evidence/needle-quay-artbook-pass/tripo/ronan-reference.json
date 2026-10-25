@@ -1,0 +1,6 @@
+{
+  "source_design": "assets/production/needle-quay/npcs/RONAN-design.png",
+  "isolated_reference": "references/production/characters/RONAN-front.png",
+  "method": "image_gen faithful single-character extraction",
+  "sha256": "ca526e8b91e10eb54d6aeee30027855427cc70048770148b2df5b01b095aacc7"
+}

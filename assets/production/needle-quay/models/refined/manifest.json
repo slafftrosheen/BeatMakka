@@ -1,0 +1,93 @@
+[
+  {
+    "id": "NQ-BLD-01",
+    "source": "assets/production/needle-quay/models/NQ-BLD-01/NQ-BLD-01.blend",
+    "revision": "assets/production/needle-quay/models/refined/NQ-BLD-01.blend",
+    "sha256": "65e99449860ea23e1d3f4afcf314e4c64bdb75d12e062ae396f87d3d27ce158e",
+    "status": "ARTBOOK_ALIGNMENT_IN_PROGRESS"
+  },
+  {
+    "id": "NQ-BLD-02",
+    "source": "assets/production/needle-quay/models/NQ-BLD-02/NQ-BLD-02.blend",
+    "revision": "assets/production/needle-quay/models/refined/NQ-BLD-02.blend",
+    "sha256": "a050a8ca2ad3eafc0b554c4714367c3e9349d1fb91eae4bada30604ab4a4ee7b",
+    "status": "ARTBOOK_ALIGNMENT_IN_PROGRESS"
+  },
+  {
+    "id": "NQ-BLD-03",
+    "source": "assets/production/needle-quay/models/NQ-BLD-03/NQ-BLD-03.blend",
+    "revision": "assets/production/needle-quay/models/refined/NQ-BLD-03.blend",
+    "sha256": "2366dc5cfe0d4996354d70d97360a4ecb559f4fb9c4c7c6db46afecbe1500ed9",
+    "status": "ARTBOOK_ALIGNMENT_IN_PROGRESS"
+  },
+  {
+    "id": "NQ-BLD-04",
+    "source": "assets/production/needle-quay/models/NQ-BLD-04/NQ-BLD-04.blend",
+    "revision": "assets/production/needle-quay/models/refined/NQ-BLD-04.blend",
+    "sha256": "36c139af28b2050ebb2e77d5c8ca9ddb41c3f6db34a01a85d451267eebf301e8",
+    "status": "ARTBOOK_ALIGNMENT_IN_PROGRESS"
+  },
+  {
+    "id": "NQ-BLD-05",
+    "source": "assets/production/needle-quay/models/NQ-BLD-05/NQ-BLD-05.blend",
+    "revision": "assets/production/needle-quay/models/refined/NQ-BLD-05.blend",
+    "sha256": "1d7dad55b49d9e9963c1cffbcef474065c3b69972aeeba7b33790d76620cdd69",
+    "status": "ARTBOOK_ALIGNMENT_IN_PROGRESS"
+  },
+  {
+    "id": "NQ-BLD-06",
+    "source": "assets/production/needle-quay/models/NQ-BLD-06/NQ-BLD-06.blend",
+    "revision": "assets/production/needle-quay/models/refined/NQ-BLD-06.blend",
+    "sha256": "c908c318ea543718e6bf30f786699aa63c591e8770c48b0c1b7067c69a87de81",
+    "status": "ARTBOOK_ALIGNMENT_IN_PROGRESS"
+  },
+  {
+    "id": "NQ-BLD-07",
+    "source": "assets/production/needle-quay/models/NQ-BLD-07/NQ-BLD-07.blend",
+    "revision": "assets/production/needle-quay/models/refined/NQ-BLD-07.blend",
+    "sha256": "a8e89028487815ce6ffa995dceb879b22f57e07af72b508f7258c8f4dedcedc3",
+    "status": "ARTBOOK_ALIGNMENT_IN_PROGRESS"
+  },
+  {
+    "id": "NQ-BLD-08",
+    "source": "assets/production/needle-quay/models/NQ-BLD-08/NQ-BLD-08.blend",
+    "revision": "assets/production/needle-quay/models/refined/NQ-BLD-08.blend",
+    "sha256": "a0585b23b9dadd03b73ee56525ccd06b483bf5fe8d4798fff6f4d6bbe01faa39",
+    "status": "ARTBOOK_ALIGNMENT_IN_PROGRESS"
+  },
+  {
+    "id": "NQ-BLD-09",
+    "source": "assets/production/needle-quay/models/NQ-BLD-09/NQ-BLD-09.blend",
+    "revision": "assets/production/needle-quay/models/refined/NQ-BLD-09.blend",
+    "sha256": "4a95d9ea7c75ee019502aa4c6ac77c1b88cb0c43ce95467011a0e14b91546112",
+    "status": "ARTBOOK_ALIGNMENT_IN_PROGRESS"
+  },
+  {
+    "id": "NQ-BLD-10",
+    "source": "assets/production/needle-quay/models/NQ-BLD-10/NQ-BLD-10.blend",
+    "revision": "assets/production/needle-quay/models/refined/NQ-BLD-10.blend",
+    "sha256": "3be1b6f74e8abbe14896b330b974215764abdd119c949bd4e71d648f8ffe1c02",
+    "status": "ARTBOOK_ALIGNMENT_IN_PROGRESS"
+  },
+  {
+    "id": "NQ-BLD-11",
+    "source": "assets/production/needle-quay/models/NQ-BLD-11/NQ-BLD-11.blend",
+    "revision": "assets/production/needle-quay/models/refined/NQ-BLD-11.blend",
+    "sha256": "85ac96254bf0b3f788e5bb78282d5c146f257f150a6e26733e047db6fd9cb1e8",
+    "status": "ARTBOOK_ALIGNMENT_IN_PROGRESS"
+  },
+  {
+    "id": "NQ-BLD-12",
+    "source": "assets/production/needle-quay/models/NQ-BLD-12/NQ-BLD-12.blend",
+    "revision": "assets/production/needle-quay/models/refined/NQ-BLD-12.blend",
+    "sha256": "57f05b99f5641459b8a059e939d20223b01d7f07a25d149bea618bd61b1eed99",
+    "status": "ARTBOOK_ALIGNMENT_IN_PROGRESS"
+  },
+  {
+    "id": "NQ-BLD-13",
+    "source": "assets/production/needle-quay/models/NQ-BLD-13/NQ-BLD-13.blend",
+    "revision": "assets/production/needle-quay/models/refined/NQ-BLD-13.blend",
+    "sha256": "aec615bb57063ed0c836f59c5319f3bd348e21908fe0781b5a80bf8b42c66978",
+    "status": "ARTBOOK_ALIGNMENT_IN_PROGRESS"
+  }
+]

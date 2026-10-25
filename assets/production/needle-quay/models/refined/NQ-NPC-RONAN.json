@@ -1,0 +1,27 @@
+{
+  "id": "NQ-NPC-RONAN",
+  "source": "assets/candidates/needle-quay-characters/tripo-out/needle-quay-ronan-textured-textu-73591814/model.glb",
+  "source_sha256": "7fd567d07683258827b3d0b38f96a64eddef98be66a7671d7b76e9ad4cd3d72c",
+  "height_studs": 6.3,
+  "triangles": 3862,
+  "bones": [
+    "LowerTorso",
+    "UpperTorso",
+    "Head",
+    "LeftUpperArm",
+    "LeftLowerArm",
+    "LeftHand",
+    "LeftUpperLeg",
+    "LeftLowerLeg",
+    "LeftFoot",
+    "RightUpperArm",
+    "RightLowerArm",
+    "RightHand",
+    "RightUpperLeg",
+    "RightLowerLeg",
+    "RightFoot"
+  ],
+  "source_skinning": "distance-weighted R15 candidate; deformation review pending",
+  "studio_animation": "dominant triangle groups; restrained rigid idle",
+  "art_approved": false
+}

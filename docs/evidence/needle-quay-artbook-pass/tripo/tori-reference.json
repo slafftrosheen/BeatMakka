@@ -1,0 +1,6 @@
+{
+  "source_design": "assets/production/needle-quay/npcs/TORI-design.png",
+  "isolated_reference": "references/production/characters/TORI-front.png",
+  "method": "image_gen faithful single-character extraction",
+  "sha256": "cab6642e8b508f74a7d4b9e3ce2222bde43ffb7a7672077ab5316e3cb98d92f0"
+}

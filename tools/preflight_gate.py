@@ -60,6 +60,19 @@ def main() -> int:
         recipes_data = read_json(ROOT / "data" / "job_recipes.json")
         asset_by_id = {str(item["id"]): item for item in assets_data.get("assets", [])}
         recipe_by_id = {str(item["id"]): item for item in recipes_data.get("recipes", [])}
+        # World-v2 character IDs live in the supplement, not the original 74-row prop register.
+        # Only admit a contract whose source model exactly matches that authored register.
+        npc_contracts = ROOT / "data" / "npc-candidate-recipes.json"
+        if npc_contracts.is_file():
+            world = read_json(ROOT / "data" / "needle-quay-environment.v1.json")
+            known_models = {n.get("production_model") for n in world.get("npcs", [])}
+            for contract in read_json(npc_contracts).get("contracts", []):
+                ident = contract["id"]
+                source = contract.get("source_model")
+                if source not in known_models or Path(source).stem != ident or ident in asset_by_id:
+                    raise ValueError("Unregistered or colliding character contract: " + ident)
+                asset_by_id[ident] = {"id": ident, "tripo_face_limit": contract["candidate_face_cap"]}
+                recipe_by_id[ident] = contract
 
         authorization = manifest.get("authorization", {})
         if authorization.get("approved") is not True:
@@ -132,6 +145,22 @@ def main() -> int:
                 continue
             steps = dry_run.get("steps", [])
             payloads = [step.get("payload", {}) for step in steps]
+            if request.get("processing") == "texture":
+                # Retexture only a completed, recorded geometry task for this asset;
+                # forbid regeneration, conversion, premium options or an implicit chain.
+                source_receipt = read_json(resolve_repo_path(request["source_task_receipt"]))
+                source_task = request.get("source_task_id")
+                if "texture" not in authorization.get("approved_processing", []):
+                    errors.append(f"{asset_id}: texture processing is not authorized.")
+                if source_receipt.get("status") != "success" or source_receipt.get("task_id") != source_task:
+                    errors.append(f"{asset_id}: texture source is not a recorded successful task.")
+                if source_receipt.get("type") not in ("image_to_model", "text_to_model", "multiview_to_model"):
+                    errors.append(f"{asset_id}: unsupported texture source type.")
+                if dry_run.get("source_task_id") != source_task or len(steps) != 1:
+                    errors.append(f"{asset_id}: texture plan does not match the recorded source.")
+                elif steps[0].get("endpoint") != "/v3/models/texture" or payloads[0] != {"input": "<upstream>", "model": "v3.0-20250812"}:
+                    errors.append(f"{asset_id}: texture plan has unreviewed options or endpoint.")
+                continue
             expected_face_limit = recipe.get("candidate_face_cap")
             endpoint = (
                 "/v3/generation/image-to-model"

@@ -1,0 +1,345 @@
+{
+  "assets": [
+    {
+      "id": "LOOPVAN-01",
+      "source": "assets/production/needle-quay/models/user-adapted/LOOPVAN-01.blend",
+      "original": "assets/classic_vw_combi_van__stylized_asset.glb",
+      "original_sha256": "da31450d144f2a90dceea6d304d54d9d4ee535953747a33add01883826c5d40f",
+      "dimensions_wdh": [
+        22,
+        9,
+        10
+      ],
+      "source_triangles": 500000,
+      "triangles": 15996,
+      "material_keys": {
+        "Material.001": "supplied_van_0"
+      },
+      "kind": "vehicle",
+      "selection": null,
+      "stage": "DCC_ADAPTED_PENDING_LOCAL_VISUAL_REVIEW"
+    },
+    {
+      "id": "NQ-MIDI-01",
+      "source": "assets/production/needle-quay/models/user-adapted/NQ-MIDI-01.blend",
+      "original": "assets/midi_controller_keyboard.glb",
+      "original_sha256": "9845ff1dd523f2f0f5416bbf6362c96e9543d9e312eb4c4e4c962c2b3198a072",
+      "dimensions_wdh": [
+        4.7,
+        1.7,
+        0.44
+      ],
+      "source_triangles": 16012,
+      "triangles": 6996,
+      "material_keys": {
+        "Material": "supplied_midi_0",
+        "Material.002": "supplied_midi_1",
+        "Material.004": "supplied_midi_2",
+        "Material.006": "supplied_midi_3",
+        "buttons": "supplied_midi_4",
+        "end_caps": "supplied_midi_5",
+        "keys": "supplied_midi_6",
+        "knoba": "supplied_midi_7"
+      },
+      "kind": "supplied",
+      "selection": null,
+      "stage": "DCC_ADAPTED_PENDING_LOCAL_VISUAL_REVIEW"
+    },
+    {
+      "id": "NQ-RADIO-01",
+      "source": "assets/production/needle-quay/models/user-adapted/NQ-RADIO-01.blend",
+      "original": "assets/vef_m557_radio.glb",
+      "original_sha256": "754d741abb1ed8eec086576ae269495989a086b55d4928f8e042b1f966cdccd2",
+      "dimensions_wdh": [
+        3.4,
+        2.2,
+        2.2
+      ],
+      "source_triangles": 4971,
+      "triangles": 4971,
+      "material_keys": {
+        "Glass": "supplied_radio_0",
+        "Radio": "supplied_radio_1"
+      },
+      "kind": "supplied",
+      "selection": null,
+      "stage": "DCC_ADAPTED_PENDING_LOCAL_VISUAL_REVIEW"
+    },
+    {
+      "id": "NQ-CITY-01",
+      "source": "assets/production/needle-quay/models/user-adapted/NQ-CITY-01.blend",
+      "original": "assets/city_game_ready_free.glb",
+      "original_sha256": "1dd0039ee46d44d274d4dc9cad238dba400110b222fe7e4e6f847e948c62d6e6",
+      "dimensions_wdh": [
+        24,
+        13,
+        12
+      ],
+      "source_triangles": 406,
+      "triangles": 406,
+      "material_keys": {
+        "Atlas": "supplied_city_0"
+      },
+      "kind": "supplied",
+      "selection": "Cube_Atlas_0",
+      "stage": "DCC_ADAPTED_PENDING_LOCAL_VISUAL_REVIEW"
+    },
+    {
+      "id": "NQ-CITY-02",
+      "source": "assets/production/needle-quay/models/user-adapted/NQ-CITY-02.blend",
+      "original": "assets/city_game_ready_free.glb",
+      "original_sha256": "1dd0039ee46d44d274d4dc9cad238dba400110b222fe7e4e6f847e948c62d6e6",
+      "dimensions_wdh": [
+        24,
+        13,
+        12
+      ],
+      "source_triangles": 264,
+      "triangles": 264,
+      "material_keys": {
+        "Atlas": "supplied_city_0"
+      },
+      "kind": "supplied",
+      "selection": "Cube.002_Plate.003_Atlas_0",
+      "stage": "DCC_ADAPTED_PENDING_LOCAL_VISUAL_REVIEW"
+    },
+    {
+      "id": "NQ-CITY-03",
+      "source": "assets/production/needle-quay/models/user-adapted/NQ-CITY-03.blend",
+      "original": "assets/city_game_ready_free.glb",
+      "original_sha256": "1dd0039ee46d44d274d4dc9cad238dba400110b222fe7e4e6f847e948c62d6e6",
+      "dimensions_wdh": [
+        24,
+        13,
+        12
+      ],
+      "source_triangles": 272,
+      "triangles": 272,
+      "material_keys": {
+        "Atlas": "supplied_city_0"
+      },
+      "kind": "supplied",
+      "selection": "Cube.002_Plate.004_Atlas_0",
+      "stage": "DCC_ADAPTED_PENDING_LOCAL_VISUAL_REVIEW"
+    },
+    {
+      "id": "NQ-CITY-04",
+      "source": "assets/production/needle-quay/models/user-adapted/NQ-CITY-04.blend",
+      "original": "assets/city_game_ready_free.glb",
+      "original_sha256": "1dd0039ee46d44d274d4dc9cad238dba400110b222fe7e4e6f847e948c62d6e6",
+      "dimensions_wdh": [
+        24,
+        13,
+        12
+      ],
+      "source_triangles": 496,
+      "triangles": 496,
+      "material_keys": {
+        "Atlas": "supplied_city_0"
+      },
+      "kind": "supplied",
+      "selection": "Cube.002_Plate.005_Atlas_0",
+      "stage": "DCC_ADAPTED_PENDING_LOCAL_VISUAL_REVIEW"
+    },
+    {
+      "id": "NQ-CITY-05",
+      "source": "assets/production/needle-quay/models/user-adapted/NQ-CITY-05.blend",
+      "original": "assets/city_game_ready_free.glb",
+      "original_sha256": "1dd0039ee46d44d274d4dc9cad238dba400110b222fe7e4e6f847e948c62d6e6",
+      "dimensions_wdh": [
+        24,
+        13,
+        12
+      ],
+      "source_triangles": 580,
+      "triangles": 580,
+      "material_keys": {
+        "Atlas": "supplied_city_0"
+      },
+      "kind": "supplied",
+      "selection": "Building.013_Atlas_0",
+      "stage": "DCC_ADAPTED_PENDING_LOCAL_VISUAL_REVIEW"
+    },
+    {
+      "id": "NQ-CITY-06",
+      "source": "assets/production/needle-quay/models/user-adapted/NQ-CITY-06.blend",
+      "original": "assets/city_game_ready_free.glb",
+      "original_sha256": "1dd0039ee46d44d274d4dc9cad238dba400110b222fe7e4e6f847e948c62d6e6",
+      "dimensions_wdh": [
+        24,
+        13,
+        12
+      ],
+      "source_triangles": 632,
+      "triangles": 632,
+      "material_keys": {
+        "Atlas": "supplied_city_0"
+      },
+      "kind": "supplied",
+      "selection": "Building.001_Atlas_0",
+      "stage": "DCC_ADAPTED_PENDING_LOCAL_VISUAL_REVIEW"
+    },
+    {
+      "id": "NQ-CITY-07",
+      "source": "assets/production/needle-quay/models/user-adapted/NQ-CITY-07.blend",
+      "original": "assets/city_game_ready_free.glb",
+      "original_sha256": "1dd0039ee46d44d274d4dc9cad238dba400110b222fe7e4e6f847e948c62d6e6",
+      "dimensions_wdh": [
+        24,
+        13,
+        3
+      ],
+      "source_triangles": 58,
+      "triangles": 58,
+      "material_keys": {
+        "Atlas": "supplied_city_0"
+      },
+      "kind": "supplied",
+      "selection": "Object001_Atlas_0",
+      "stage": "DCC_ADAPTED_PENDING_LOCAL_VISUAL_REVIEW"
+    },
+    {
+      "id": "NQ-CHAIR-01",
+      "source": "assets/production/needle-quay/models/user-adapted/NQ-CHAIR-01.blend",
+      "original": "assets/low_poly_tavern_interior.glb",
+      "original_sha256": "fabc282a9c05cdbcbb5dd29b61ce6e8c45a94f8b5c4704c06c159d01f210cbcf",
+      "dimensions_wdh": [
+        2,
+        2,
+        3.2
+      ],
+      "source_triangles": 298,
+      "triangles": 298,
+      "material_keys": {
+        "Base": "supplied_furniture_0",
+        "Metall": "supplied_furniture_1"
+      },
+      "kind": "supplied",
+      "selection": "chair_",
+      "stage": "DCC_ADAPTED_PENDING_LOCAL_VISUAL_REVIEW"
+    },
+    {
+      "id": "NQ-TABLE-01",
+      "source": "assets/production/needle-quay/models/user-adapted/NQ-TABLE-01.blend",
+      "original": "assets/low_poly_tavern_interior.glb",
+      "original_sha256": "fabc282a9c05cdbcbb5dd29b61ce6e8c45a94f8b5c4704c06c159d01f210cbcf",
+      "dimensions_wdh": [
+        3.6,
+        3.6,
+        2.7
+      ],
+      "source_triangles": 328,
+      "triangles": 328,
+      "material_keys": {
+        "Base": "supplied_furniture_0",
+        "Metall": "supplied_furniture_1"
+      },
+      "kind": "supplied",
+      "selection": "table1_",
+      "stage": "DCC_ADAPTED_PENDING_LOCAL_VISUAL_REVIEW"
+    },
+    {
+      "id": "NQ-BENCH-01",
+      "source": "assets/production/needle-quay/models/user-adapted/NQ-BENCH-01.blend",
+      "original": "assets/low_poly_tavern_interior.glb",
+      "original_sha256": "fabc282a9c05cdbcbb5dd29b61ce6e8c45a94f8b5c4704c06c159d01f210cbcf",
+      "dimensions_wdh": [
+        5,
+        1.8,
+        2.2
+      ],
+      "source_triangles": 308,
+      "triangles": 308,
+      "material_keys": {
+        "Base": "supplied_furniture_0"
+      },
+      "kind": "supplied",
+      "selection": "bench_",
+      "stage": "DCC_ADAPTED_PENDING_LOCAL_VISUAL_REVIEW"
+    },
+    {
+      "id": "NQ-COUNTER-01",
+      "source": "assets/production/needle-quay/models/user-adapted/NQ-COUNTER-01.blend",
+      "original": "assets/low_poly_tavern_interior.glb",
+      "original_sha256": "fabc282a9c05cdbcbb5dd29b61ce6e8c45a94f8b5c4704c06c159d01f210cbcf",
+      "dimensions_wdh": [
+        9,
+        3,
+        3.3
+      ],
+      "source_triangles": 524,
+      "triangles": 524,
+      "material_keys": {
+        "Base": "supplied_furniture_0"
+      },
+      "kind": "supplied",
+      "selection": "barCounter_",
+      "stage": "DCC_ADAPTED_PENDING_LOCAL_VISUAL_REVIEW"
+    },
+    {
+      "id": "NQ-SHELF-01",
+      "source": "assets/production/needle-quay/models/user-adapted/NQ-SHELF-01.blend",
+      "original": "assets/low_poly_tavern_interior.glb",
+      "original_sha256": "fabc282a9c05cdbcbb5dd29b61ce6e8c45a94f8b5c4704c06c159d01f210cbcf",
+      "dimensions_wdh": [
+        4,
+        1.4,
+        4.6
+      ],
+      "source_triangles": 124,
+      "triangles": 124,
+      "material_keys": {
+        "Base": "supplied_furniture_0"
+      },
+      "kind": "supplied",
+      "selection": "shelf_",
+      "stage": "DCC_ADAPTED_PENDING_LOCAL_VISUAL_REVIEW"
+    }
+  ],
+  "materials": {
+    "supplied_van_0": {
+      "color": "assets/production/needle-quay/user-model-maps/supplied_van_0_color.png"
+    },
+    "supplied_midi_0": {
+      "color": "assets/production/needle-quay/user-model-maps/supplied_midi_0_color.png"
+    },
+    "supplied_midi_1": {
+      "color": "assets/production/needle-quay/user-model-maps/supplied_midi_1_color.png"
+    },
+    "supplied_midi_2": {
+      "color": "assets/production/needle-quay/user-model-maps/supplied_midi_2_color.png"
+    },
+    "supplied_midi_3": {
+      "color": "assets/production/needle-quay/user-model-maps/supplied_midi_3_color.png"
+    },
+    "supplied_midi_4": {
+      "color": "assets/production/needle-quay/user-model-maps/supplied_midi_4_color.png"
+    },
+    "supplied_midi_5": {
+      "color": "assets/production/needle-quay/user-model-maps/supplied_midi_5_color.png"
+    },
+    "supplied_midi_6": {
+      "color": "assets/production/needle-quay/user-model-maps/supplied_midi_6_color.png"
+    },
+    "supplied_midi_7": {
+      "color": "assets/production/needle-quay/user-model-maps/supplied_midi_7_color.png"
+    },
+    "supplied_radio_0": {
+      "color": "assets/production/needle-quay/user-model-maps/supplied_radio_0_color.png"
+    },
+    "supplied_radio_1": {
+      "color": "assets/production/needle-quay/user-model-maps/supplied_radio_1_color.png"
+    },
+    "supplied_city_0": {
+      "color": "assets/production/needle-quay/user-model-maps/supplied_city_0_color.png"
+    },
+    "supplied_furniture_0": {
+      "color": "assets/production/needle-quay/user-model-maps/supplied_furniture_0_color.png"
+    },
+    "supplied_furniture_1": {
+      "color": "assets/production/needle-quay/user-model-maps/supplied_furniture_1_color.png"
+    }
+  },
+  "source_authority": "User supplied these repository-root GLBs and authorized local adaptation; originals retained.",
+  "uploads": 0
+}

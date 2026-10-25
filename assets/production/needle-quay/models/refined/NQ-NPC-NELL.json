@@ -1,0 +1,10 @@
+{
+  "id": "NQ-NPC-NELL",
+  "base": "NQ-NPC-TORI.blend",
+  "source_design": "assets/production/needle-quay/npcs/NELL-design.png",
+  "generator": "tools/build_quay_supporting_characters.py",
+  "height_studs": 5.7,
+  "provider_spend": 0,
+  "stage": "DCC_AUTHORED_CHARACTER_REVISION_PENDING_ART_REVIEW",
+  "art_approved": false
+}

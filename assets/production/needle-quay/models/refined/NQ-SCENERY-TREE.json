@@ -1,0 +1,8 @@
+{
+  "id": "NQ-SCENERY-TREE",
+  "source": "tools/build_quay_tree.py",
+  "seed": 1948,
+  "stage": "DCC_AUTHORED_ARTBOOK_REVISION_IN_REVIEW",
+  "canonical_register_asset": false,
+  "external_assets": []
+}

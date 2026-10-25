@@ -1,0 +1,13 @@
+{
+  "generator": "tools/build_quay_sunset.py",
+  "route": "Blender Nishita physically authored sunset, no external images",
+  "uploaded": false,
+  "faces": {
+    "bk.png": "4e877074fb97c8d0f81e06bebcfa2dfb5d6cd30c558a51f1c031d237f0c2dc92",
+    "dn.png": "3d4b0c312d9b388325204ae44ce4538a71480c6bed33e5ad4ca1606a8003d4dc",
+    "ft.png": "9a3a80d334ac692d7dee1fb8593ed4e023f26ac36c66bd38912baad097e271f7",
+    "lf.png": "d7b2eb2818265c95ceab6e9c02254e32841fc992f16edd5941b00f12b5361a6b",
+    "rt.png": "a12b9f7beea5db3a018232b1706d3d671e67ceeb615f92b6efbf7bced6ea3163",
+    "up.png": "9da2750d610c8b3f3db6ede9edc823a8b191cd57b3ff3a76d865b6eb82ddc947"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "source_design": "assets/production/needle-quay/npcs/IVO-design.png",
+  "isolated_reference": "references/production/characters/IVO-front.png",
+  "method": "image_gen faithful single-character extraction",
+  "sha256": "44c218f14951d63a1eb37d6cad453cde499beedaec5d54aa8ba5b79bc782a722"
+}

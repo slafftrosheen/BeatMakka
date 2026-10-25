@@ -1,0 +1,28 @@
+{
+  "authorization": {
+    "approved": true,
+    "approved_cap_credits": 210,
+    "approved_asset_ids": [
+      "NQ-NPC-IVO"
+    ],
+    "basis": "User explicitly authorized using leftover Tripo credits without confirmation for complicated models, confirmed all local work, and requested fidelity to the complete book. This batch is bounded by the live 210-credit balance; no top-up.",
+    "approved_processing": [
+      "texture"
+    ]
+  },
+  "quoted_total_credits": 10,
+  "requests": [
+    {
+      "asset_id": "NQ-NPC-IVO",
+      "estimated_credits": 10,
+      "face_limit": 4000,
+      "approved_reference": "references/production/characters/IVO-front.png",
+      "dry_run_receipt": "docs/evidence/needle-quay-artbook-pass/tripo/ivo-texture-dry-run.json",
+      "processing": "texture",
+      "source_task_id": "ec83c69a-97be-43ca-9066-0b3fbd73b6cf",
+      "source_task_receipt": "docs/evidence/needle-quay-artbook-pass/tripo/ivo-generation.json"
+    }
+  ],
+  "connection_receipt": "docs/evidence/needle-quay-artbook-pass/tripo/ivo-texture-connection.json",
+  "docs_receipt": "docs/evidence/needle-quay-artbook-pass/tripo/docs.json"
+}
