@@ -1,9 +1,15 @@
-local Shared = game.ReplicatedStorage.Shared
-local Protocol = require(Shared.JamProtocol)
-local Pattern = require(Shared.Pattern)
+local Protocol = require(game.ReplicatedStorage.Shared.JamProtocol)
 local AudioEngine = require(script.Parent.AudioEngine)
+local SchedulePlayback = require(script.Parent.SchedulePlayback)
 local Playback = {}
 Playback.__index = Playback
+
+local function bounded(list, value)
+    table.insert(list, value)
+    if #list > 256 then
+        table.remove(list, 1)
+    end
+end
 
 function Playback.new()
     local self = setmetatable({
@@ -26,16 +32,33 @@ function Playback.new()
         transportAnnounced = {},
     }, Playback)
     for slot = 1, 2 do
-        self.tracks[slot] = {
+        local renderer = {
             audio = AudioEngine.new(
                 "JamTrack" .. slot,
                 { musicOnly = true, strictSelection = true, jamTrack = true }
             ),
-            absolute = -1,
         }
+        renderer.playback = SchedulePlayback.new(renderer.audio, function(event)
+            self.submitted += 1
+            local at = workspace:GetServerTimeNow()
+            local packet = renderer.packet
+            local phase = (at - packet.startedAt + packet.offset) % packet.schedule.duration
+            local late = math.max(0, (phase - event.at) * 1000)
+            bounded(self.lateness, late)
+            bounded(self.tempoLateness, late)
+            if not renderer.reported then
+                renderer.reported = true
+                bounded(self.onsets, {
+                    slot = slot,
+                    version = renderer.version,
+                    bpm = self.bpm,
+                    scheduledAt = at - late / 1000,
+                    submittedAt = at,
+                })
+            end
+        end)
+        self.tracks[slot] = renderer
     end
-    -- Read-only, content-free instrumentation for Studio acceptance and support.
-    -- It exposes no musical patterns, profile data, control, or test override.
     self.probe = Instance.new("BindableFunction")
     self.probe.Name = "JamTiming"
     self.probe.OnInvoke = function()
@@ -45,31 +68,34 @@ function Playback.new()
     return self
 end
 
-local function appendBounded(list, value)
-    table.insert(list, value)
-    if #list > 256 then
-        table.remove(list, 1)
-    end
-end
-
 function Playback:accept(state, now)
+    now = now or workspace:GetServerTimeNow()
     self.receivedStates += 1
-    if not state then
+    if not state or state.schema ~= Protocol.Schema then
+        self.session = nil
+        for _, renderer in self.tracks do
+            renderer.playback:stop()
+            renderer.audio:setSelection({})
+            renderer.token = nil
+        end
         return
     end
     if
-        state.generation < self.generation
+        type(state.generation) ~= "number"
+        or type(state.revision) ~= "number"
+        or state.generation < self.generation
         or (state.generation == self.generation and state.revision <= self.revision)
     then
         return
     end
     self.generation, self.revision = state.generation, state.revision
     self.packets += 1
-    self.session = if state.active then state.session else nil
+    self.session = if state.active
+            and state.session
+            and state.session.schema == Protocol.Schema
+        then state.session
+        else nil
     local announced, transports = {}, {}
-    local function announce(key)
-        announced[key] = self.announced[key] or now
-    end
     local function transport(anchor, bpm)
         local key = table.concat({ state.generation, anchor, bpm }, ":")
         transports[key] = self.transportAnnounced[key] or now
@@ -78,25 +104,19 @@ function Playback:accept(state, now)
         transport(self.session.anchor, self.session.bpm)
         if self.session.tempo then
             transport(self.session.tempo.applyAt, self.session.tempo.bpm)
+            bounded(self.leads, (self.session.tempo.applyAt - now) * 1000)
         end
     end
     for slot = 1, 2 do
-        local renderer = self.tracks[slot]
-        local assignments, mask, seen, count = {}, {}, {}, 0
+        local renderer, assignments, seen = self.tracks[slot], {}, {}
         local function collect(snapshot)
-            if not snapshot then
+            if not snapshot or snapshot.schema ~= Protocol.Schema then
                 return
             end
-            for pad, enabled in snapshot.mask do
-                if not enabled then
-                    continue
-                end
-                local id = snapshot.pattern.assignments[pad]
-                if not seen[id] then
-                    count += 1
-                    seen[id] = true
-                    assignments[count] = id
-                    mask[count] = true
+            for _, event in snapshot.schedule.events do
+                if not seen[event.sampleId] then
+                    seen[event.sampleId] = true
+                    table.insert(assignments, event.sampleId)
                 end
             end
         end
@@ -105,34 +125,25 @@ function Playback:accept(state, now)
                 self.session.tracks[tostring(slot)], self.session.pending[tostring(slot)]
             if track then
                 collect(track.snapshot)
-                if track.snapshot then
-                    announce(
-                        table.concat(
-                            { state.generation, slot, track.ownerUserId, track.version },
-                            ":"
-                        )
-                    )
-                end
+                local key =
+                    table.concat({ state.generation, slot, track.ownerUserId, track.version }, ":")
+                announced[key] = self.announced[key] or now
             end
-            if pending then
+            if pending and track then
                 collect(pending.snapshot)
-                announce(
-                    table.concat(
-                        { state.generation, slot, track.ownerUserId, pending.version },
-                        ":"
-                    )
+                local key = table.concat(
+                    { state.generation, slot, track.ownerUserId, pending.version },
+                    ":"
                 )
-                appendBounded(self.leads, (pending.applyAt - now) * 1000)
-            end
-            if self.session.tempo then
-                appendBounded(self.leads, (self.session.tempo.applyAt - now) * 1000)
+                announced[key] = self.announced[key] or now
+                bounded(self.leads, (pending.applyAt - now) * 1000)
             end
         else
-            renderer.audio:stop()
+            renderer.playback:stop()
             renderer.token = nil
-            renderer.absolute = -1
         end
-        renderer.audio:setSelection(assignments, mask)
+        -- Keep current and queued dependencies warm without indexing by pads.
+        renderer.audio:setSelection(assignments)
     end
     self.announced, self.transportAnnounced = announced, transports
 end
@@ -143,29 +154,31 @@ function Playback:step(now)
         return
     end
     local bpm, anchor, tracks = Protocol.resolve(session, now)
+    if not bpm then
+        return
+    end
     if self.bpm ~= bpm then
         self.tempoLateness = {}
     end
     self.bpm, self.anchor = bpm, anchor
     for slot = 1, 2 do
         local renderer, track = self.tracks[slot], tracks[slot]
-        local snapshot = track and track.snapshot
-        if not snapshot or now < track.sinceAt then
-            renderer.audio:stop()
+        if not track or not track.snapshot then
+            renderer.playback:stop()
             renderer.token = nil
-            renderer.absolute = -1
             continue
         end
-        local token =
-            table.concat({ session.generation, track.ownerUserId, track.version, anchor, bpm }, ":")
-        local absolute, step = Pattern.position(bpm, anchor, now)
-        if absolute < 0 then
-            continue
-        end
+        local token = table.concat(
+            { session.generation, track.ownerUserId, track.version, anchor, bpm, track.sinceAt },
+            ":"
+        )
         if renderer.token ~= token then
-            renderer.audio:stop()
-            renderer.token = token
-            renderer.reported = false
+            local schedule = Protocol.schedule(track.snapshot, bpm)
+            if not schedule then
+                renderer.playback:stop()
+                self.unready += 1
+                continue
+            end
             local trackKey =
                 table.concat({ session.generation, slot, track.ownerUserId, track.version }, ":")
             local transportKey = table.concat({ session.generation, anchor, bpm }, ":")
@@ -173,90 +186,52 @@ function Playback:step(now)
                 self.announced[trackKey] or now,
                 self.transportAnnounced[transportKey] or now
             )
-            renderer.startAfter = math.max(anchor, track.sinceAt)
-            if prepared > renderer.startAfter - 0.25 then
-                -- An unknown late revision stays silent until a fresh whole bar.
-                -- Never jump into a phrase or move the other owner's clock.
-                renderer.startAfter = Protocol.boundary(anchor, bpm, now)
+            local startAfter = math.max(anchor, track.sinceAt)
+            if prepared > startAfter - 0.25 then
+                startAfter = Protocol.boundary(anchor, bpm, now)
                 self.lateDeferrals += 1
             end
-            renderer.absolute = math.floor(
-                (renderer.startAfter - anchor) / Pattern.stepDuration(bpm) + 1e-6
-            ) - 1
+            local offset = (
+                (track.phaseTick or 0) * 60 / (bpm * 960) + math.max(0, startAfter - track.sinceAt)
+            ) % schedule.duration
+            renderer.token, renderer.reported, renderer.version = token, false, track.version
+            renderer.packet = {
+                schedule = schedule,
+                startedAt = startAfter,
+                offset = offset,
+                epoch = token,
+                loop = true,
+                playing = true,
+            }
+            renderer.playback:accept(renderer.packet)
             self.transitions += 1
         end
-        if now < renderer.startAfter then
-            continue
-        end
-        if absolute <= renderer.absolute then
-            continue
-        end
-        self.missedSteps += math.max(0, absolute - renderer.absolute - 1)
-        renderer.absolute = absolute
-        local late = now - anchor - absolute * Pattern.stepDuration(bpm)
-        for pad, enabled in snapshot.mask do
-            if not enabled then
-                continue
-            end
-            if snapshot.pattern.rows[pad][step] then
-                if late >= math.min(0.08, Pattern.stepDuration(bpm) * 0.8) then
-                    self.lateSkips += 1
-                elseif
-                    renderer.audio:play(
-                        snapshot.pattern.assignments[pad],
-                        snapshot.pattern.sounds and snapshot.pattern.sounds[pad],
-                        pad
-                    )
-                then
-                    self.submitted += 1
-                    local scheduled = anchor + absolute * Pattern.stepDuration(bpm)
-                    local submittedAt = workspace:GetServerTimeNow()
-                    appendBounded(self.lateness, (submittedAt - scheduled) * 1000)
-                    appendBounded(self.tempoLateness, (submittedAt - scheduled) * 1000)
-                    if not renderer.reported then
-                        renderer.reported = true
-                        appendBounded(self.onsets, {
-                            slot = slot,
-                            version = track.version,
-                            bpm = bpm,
-                            scheduledAt = scheduled,
-                            submittedAt = submittedAt,
-                        })
-                    end
-                elseif not renderer.audio.muted then
-                    self.unready += 1
-                end
-            end
-        end
+        renderer.playback:step(now)
     end
 end
 
 function Playback:setMuted(muted)
-    for _, track in self.tracks do
-        track.audio:setMuted(muted)
+    for _, renderer in self.tracks do
+        renderer.audio:setMuted(muted)
     end
 end
 
 local function stats(values)
-    local a = table.clone(values)
-    table.sort(a)
+    local copy = table.clone(values)
+    table.sort(copy)
     return {
-        n = #a,
-        min = a[1],
-        p50 = a[math.max(1, math.ceil(#a * 0.5))],
-        p95 = a[math.max(1, math.ceil(#a * 0.95))],
-        max = a[#a],
+        n = #copy,
+        min = copy[1],
+        max = copy[#copy],
+        p50 = copy[math.max(1, math.ceil(#copy * 0.5))],
+        p95 = copy[math.max(1, math.ceil(#copy * 0.95))],
     }
 end
 
 function Playback:diagnostics()
-    local onsets = {}
-    for _, onset in self.onsets do
-        table.insert(onsets, table.clone(onset))
-    end
     local voices, playing, ready = 0, 0, 0
-    for _, track in self.tracks do
-        for _, bank in track.audio.banks do
+    for _, renderer in self.tracks do
+        for _, bank in renderer.audio.banks do
             if bank.state == "ready" then
                 ready += 1
             end
@@ -269,6 +244,7 @@ function Playback:diagnostics()
         end
     end
     return {
+        schema = Protocol.Schema,
         generation = self.generation,
         revision = self.revision,
         active = self.session ~= nil,
@@ -289,14 +265,14 @@ function Playback:diagnostics()
         playingVoices = playing,
         readyBanks = ready,
         muted = self.tracks[1].audio.muted,
-        musicPeakBound = 0.56,
-        onsets = onsets,
+        onsets = table.clone(self.onsets),
     }
 end
 
 function Playback:destroy()
-    for _, track in self.tracks do
-        track.audio:destroy()
+    for _, renderer in self.tracks do
+        renderer.playback:stop()
+        renderer.audio:destroy()
     end
     self.probe:Destroy()
     self.session = nil

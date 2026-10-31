@@ -1,0 +1,55 @@
+{
+  "scope": "source_and_package_only",
+  "listening_review": "NOT_RUN",
+  "studio_playback": "NOT_RUN",
+  "results": [
+    {
+      "name": "six canonical mappings; no approval/admission; written slots preserved",
+      "status": "PASS"
+    },
+    {
+      "name": "package payload verification deferred until packaging",
+      "status": "NOT_RUN"
+    },
+    {
+      "name": "all seven silent WAVs identified; all-zero kick rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "duplicate PCM source rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "approval claim rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "runtime admission claim rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "pitched C01 vocal misassignment rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "wrong canonical address rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "changed source hash rejected",
+      "status": "PASS"
+    }
+  ],
+  "backup": "C:/Users/slavd/.codex/backups/BeatMaka/device-audio-preview-20261030-184149",
+  "static_checks": {
+    "selene": "PASS - 0 errors, 0 warnings, 0 parse errors",
+    "stylua": "PASS",
+    "python_compile": "PASS",
+    "powershell_parse": "PASS",
+    "git_diff_check": "PASS"
+  },
+  "packaging": "DEFERRED - root coordinates merged image and audio packaging",
+  "uploads": 0,
+  "provider_calls": 0,
+  "commits": 0
+}

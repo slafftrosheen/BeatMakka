@@ -1,0 +1,2834 @@
+{
+  "example_version": 2,
+  "kind": "non_runtime_documentation_example",
+  "install_into_player_profiles": false,
+  "audio_approved": false,
+  "finished_song_created": false,
+  "purpose": "Shows five named sequences, four sound banks and a finite draft arrangement; no generated audio or authored player achievement is claimed.",
+  "project": {
+    "id": "example_project",
+    "revision": 1,
+    "name": "Evening at Needle Quay — example only",
+    "ppq": 960,
+    "defaultBpm": 174,
+    "programs": [
+      {
+        "id": "program_quay",
+        "revision": 1,
+        "name": "Harbour Pulse — pending audio",
+        "shared_edit_semantics": "explicit_shared_program",
+        "pads": [
+          {
+            "absolutePad": 1,
+            "bank": "A",
+            "physicalPad": 1,
+            "sampleId": "nq.harbour.v1.a01",
+            "contentStatus": "planned_no_audio",
+            "audioBinding": null,
+            "settings": {
+              "gain": 1.0,
+              "pitchSemitones": 0,
+              "playMode": "one_shot"
+            },
+            "discoveryId": null
+          },
+          {
+            "absolutePad": 2,
+            "bank": "A",
+            "physicalPad": 2,
+            "sampleId": "nq.harbour.v1.a02",
+            "contentStatus": "planned_no_audio",
+            "audioBinding": null,
+            "settings": {
+              "gain": 1.0,
+              "pitchSemitones": 0,
+              "playMode": "one_shot"
+            },
+            "discoveryId": null
+          },
+          {
+            "absolutePad": 3,
+            "bank": "A",
+            "physicalPad": 3,
+            "sampleId": "nq.harbour.v1.a03",
+            "contentStatus": "planned_no_audio",
+            "audioBinding": null,
+            "settings": {
+              "gain": 1.0,
+              "pitchSemitones": 0,
+              "playMode": "one_shot"
+            },
+            "discoveryId": null
+          },
+          {
+            "absolutePad": 4,
+            "bank": "A",
+            "physicalPad": 4,
+            "sampleId": "nq.harbour.v1.a04",
+            "contentStatus": "planned_no_audio",
+            "audioBinding": null,
+            "settings": {
+              "gain": 1.0,
+              "pitchSemitones": 0,
+              "playMode": "one_shot"
+            },
+            "discoveryId": null
+          },
+          {
+            "absolutePad": 5,
+            "bank": "A",
+            "physicalPad": 5,
+            "sampleId": "nq.harbour.v1.a05",
+            "contentStatus": "planned_no_audio",
+            "audioBinding": null,
+            "settings": {
+              "gain": 1.0,
+              "pitchSemitones": 0,
+              "playMode": "one_shot"
+            },
+            "discoveryId": null
+          },
+          {
+            "absolutePad": 6,
+            "bank": "A",
+            "physicalPad": 6,
+            "sampleId": "nq.harbour.v1.a06",
+            "contentStatus": "planned_no_audio",
+            "audioBinding": null,
+            "settings": {
+              "gain": 1.0,
+              "pitchSemitones": 0,
+              "playMode": "one_shot"
+            },
+            "discoveryId": null
+          },
+          {
+            "absolutePad": 7,
+            "bank": "A",
+            "physicalPad": 7,
+            "sampleId": "nq.harbour.v1.a07",
+            "contentStatus": "planned_no_audio",
+            "audioBinding": null,
+            "settings": {
+              "gain": 1.0,
+              "pitchSemitones": 0,
+              "playMode": "one_shot"
+            },
+            "discoveryId": null
+          },
+          {
+            "absolutePad": 8,
+            "bank": "A",
+            "physicalPad": 8,
+            "sampleId": "nq.harbour.v1.a08",
+            "contentStatus": "planned_no_audio",
+            "audioBinding": null,
+            "settings": {
+              "gain": 1.0,
+              "pitchSemitones": 0,
+              "playMode": "one_shot"
+            },
+            "discoveryId": null
+          },
+          {
+            "absolutePad": 9,
+            "bank": "A",
+            "physicalPad": 9,
+            "sampleId": "nq.harbour.v1.a09",
+            "contentStatus": "planned_no_audio",
+            "audioBinding": null,
+            "settings": {
+              "gain": 1.0,
+              "pitchSemitones": 0,
+              "playMode": "one_shot"
+            },
+            "discoveryId": null
+          },
+          {
+            "absolutePad": 10,
+            "bank": "A",
+            "physicalPad": 10,
+            "sampleId": "nq.harbour.v1.a10",
+            "contentStatus": "planned_no_audio",
+            "audioBinding": null,
+            "settings": {
+              "gain": 1.0,
+              "pitchSemitones": 0,
+              "playMode": "one_shot"
+            },
+            "discoveryId": null
+          },
+          {
+            "absolutePad": 11,
+            "bank": "A",
+            "physicalPad": 11,
+            "sampleId": "nq.harbour.v1.a11",
+            "contentStatus": "planned_no_audio",
+            "audioBinding": null,
+            "settings": {
+              "gain": 1.0,
+              "pitchSemitones": 0,
+              "playMode": "one_shot"
+            },
+            "discoveryId": null
+          },
+          {
+            "absolutePad": 12,
+            "bank": "A",
+            "physicalPad": 12,
+            "sampleId": "nq.harbour.v1.a12",
+            "contentStatus": "planned_no_audio",
+            "audioBinding": null,
+            "settings": {
+              "gain": 1.0,
+              "pitchSemitones": 0,
+              "playMode": "one_shot"
+            },
+            "discoveryId": null
+          },
+          {
+            "absolutePad": 13,
+            "bank": "A",
+            "physicalPad": 13,
+            "sampleId": "nq.harbour.v1.a13",
+            "contentStatus": "planned_no_audio",
+            "audioBinding": null,
+            "settings": {
+              "gain": 1.0,
+              "pitchSemitones": 0,
+              "playMode": "one_shot"
+            },
+            "discoveryId": null
+          },
+          {
+            "absolutePad": 14,
+            "bank": "A",
+            "physicalPad": 14,
+            "sampleId": "nq.harbour.v1.a14",
+            "contentStatus": "planned_no_audio",
+            "audioBinding": null,
+            "settings": {
+              "gain": 1.0,
+              "pitchSemitones": 0,
+              "playMode": "one_shot"
+            },
+            "discoveryId": null
+          },
+          {
+            "absolutePad": 15,
+            "bank": "A",
+            "physicalPad": 15,
+            "sampleId": "nq.harbour.v1.a15",
+            "contentStatus": "planned_no_audio",
+            "audioBinding": null,
+            "settings": {
+              "gain": 1.0,
+              "pitchSemitones": 0,
+              "playMode": "one_shot"
+            },
+            "discoveryId": null
+          },
+          {
+            "absolutePad": 16,
+            "bank": "A",
+            "physicalPad": 16,
+            "sampleId": "nq.harbour.v1.a16",
+            "contentStatus": "planned_no_audio",
+            "audioBinding": null,
+            "settings": {
+              "gain": 1.0,
+              "pitchSemitones": 0,
+              "playMode": "one_shot"
+            },
+            "discoveryId": null
+          },
+          {
+            "absolutePad": 17,
+            "bank": "B",
+            "physicalPad": 1,
+            "sampleId": "nq.harbour.v1.b01",
+            "contentStatus": "planned_no_audio",
+            "audioBinding": null,
+            "settings": {
+              "gain": 1.0,
+              "pitchSemitones": 0,
+              "playMode": "one_shot"
+            },
+            "discoveryId": null
+          },
+          {
+            "absolutePad": 18,
+            "bank": "B",
+            "physicalPad": 2,
+            "sampleId": "nq.harbour.v1.b02",
+            "contentStatus": "planned_no_audio",
+            "audioBinding": null,
+            "settings": {
+              "gain": 1.0,
+              "pitchSemitones": 0,
+              "playMode": "one_shot"
+            },
+            "discoveryId": null
+          },
+          {
+            "absolutePad": 19,
+            "bank": "B",
+            "physicalPad": 3,
+            "sampleId": "nq.harbour.v1.b03",
+            "contentStatus": "planned_no_audio",
+            "audioBinding": null,
+            "settings": {
+              "gain": 1.0,
+              "pitchSemitones": 0,
+              "playMode": "one_shot"
+            },
+            "discoveryId": null
+          },
+          {
+            "absolutePad": 20,
+            "bank": "B",
+            "physicalPad": 4,
+            "sampleId": "nq.harbour.v1.b04",
+            "contentStatus": "planned_no_audio",
+            "audioBinding": null,
+            "settings": {
+              "gain": 1.0,
+              "pitchSemitones": 0,
+              "playMode": "one_shot"
+            },
+            "discoveryId": null
+          },
+          {
+            "absolutePad": 21,
+            "bank": "B",
+            "physicalPad": 5,
+            "sampleId": "nq.harbour.v1.b05",
+            "contentStatus": "planned_no_audio",
+            "audioBinding": null,
+            "settings": {
+              "gain": 1.0,
+              "pitchSemitones": 0,
+              "playMode": "one_shot"
+            },
+            "discoveryId": null
+          },
+          {
+            "absolutePad": 22,
+            "bank": "B",
+            "physicalPad": 6,
+            "sampleId": "nq.harbour.v1.b06",
+            "contentStatus": "planned_no_audio",
+            "audioBinding": null,
+            "settings": {
+              "gain": 1.0,
+              "pitchSemitones": 0,
+              "playMode": "one_shot"
+            },
+            "discoveryId": null
+          },
+          {
+            "absolutePad": 23,
+            "bank": "B",
+            "physicalPad": 7,
+            "sampleId": "nq.harbour.v1.b07",
+            "contentStatus": "planned_no_audio",
+            "audioBinding": null,
+            "settings": {
+              "gain": 1.0,
+              "pitchSemitones": 0,
+              "playMode": "one_shot"
+            },
+            "discoveryId": null
+          },
+          {
+            "absolutePad": 24,
+            "bank": "B",
+            "physicalPad": 8,
+            "sampleId": "nq.harbour.v1.b08",
+            "contentStatus": "planned_no_audio",
+            "audioBinding": null,
+            "settings": {
+              "gain": 1.0,
+              "pitchSemitones": 0,
+              "playMode": "one_shot"
+            },
+            "discoveryId": null
+          },
+          {
+            "absolutePad": 25,
+            "bank": "B",
+            "physicalPad": 9,
+            "sampleId": "nq.harbour.v1.b09",
+            "contentStatus": "planned_no_audio",
+            "audioBinding": null,
+            "settings": {
+              "gain": 1.0,
+              "pitchSemitones": 0,
+              "playMode": "one_shot"
+            },
+            "discoveryId": null
+          },
+          {
+            "absolutePad": 26,
+            "bank": "B",
+            "physicalPad": 10,
+            "sampleId": "nq.harbour.v1.b10",
+            "contentStatus": "planned_no_audio",
+            "audioBinding": null,
+            "settings": {
+              "gain": 1.0,
+              "pitchSemitones": 0,
+              "playMode": "one_shot"
+            },
+            "discoveryId": null
+          },
+          {
+            "absolutePad": 27,
+            "bank": "B",
+            "physicalPad": 11,
+            "sampleId": "nq.harbour.v1.b11",
+            "contentStatus": "planned_no_audio",
+            "audioBinding": null,
+            "settings": {
+              "gain": 1.0,
+              "pitchSemitones": 0,
+              "playMode": "one_shot"
+            },
+            "discoveryId": null
+          },
+          {
+            "absolutePad": 28,
+            "bank": "B",
+            "physicalPad": 12,
+            "sampleId": "nq.harbour.v1.b12",
+            "contentStatus": "planned_no_audio",
+            "audioBinding": null,
+            "settings": {
+              "gain": 1.0,
+              "pitchSemitones": 0,
+              "playMode": "one_shot"
+            },
+            "discoveryId": null
+          },
+          {
+            "absolutePad": 29,
+            "bank": "B",
+            "physicalPad": 13,
+            "sampleId": "nq.harbour.v1.b13",
+            "contentStatus": "planned_no_audio",
+            "audioBinding": null,
+            "settings": {
+              "gain": 1.0,
+              "pitchSemitones": 0,
+              "playMode": "one_shot"
+            },
+            "discoveryId": null
+          },
+          {
+            "absolutePad": 30,
+            "bank": "B",
+            "physicalPad": 14,
+            "sampleId": "nq.harbour.v1.b14",
+            "contentStatus": "planned_no_audio",
+            "audioBinding": null,
+            "settings": {
+              "gain": 1.0,
+              "pitchSemitones": 0,
+              "playMode": "one_shot"
+            },
+            "discoveryId": null
+          },
+          {
+            "absolutePad": 31,
+            "bank": "B",
+            "physicalPad": 15,
+            "sampleId": "nq.harbour.v1.b15",
+            "contentStatus": "planned_no_audio",
+            "audioBinding": null,
+            "settings": {
+              "gain": 1.0,
+              "pitchSemitones": 0,
+              "playMode": "one_shot"
+            },
+            "discoveryId": null
+          },
+          {
+            "absolutePad": 32,
+            "bank": "B",
+            "physicalPad": 16,
+            "sampleId": "nq.harbour.v1.b16",
+            "contentStatus": "planned_no_audio",
+            "audioBinding": null,
+            "settings": {
+              "gain": 1.0,
+              "pitchSemitones": 0,
+              "playMode": "one_shot"
+            },
+            "discoveryId": null
+          },
+          {
+            "absolutePad": 33,
+            "bank": "C",
+            "physicalPad": 1,
+            "sampleId": "nq.harbour.v1.c01",
+            "contentStatus": "planned_no_audio",
+            "audioBinding": null,
+            "settings": {
+              "gain": 1.0,
+              "pitchSemitones": 0,
+              "playMode": "one_shot"
+            },
+            "discoveryId": null
+          },
+          {
+            "absolutePad": 34,
+            "bank": "C",
+            "physicalPad": 2,
+            "sampleId": "nq.harbour.v1.c02",
+            "contentStatus": "planned_no_audio",
+            "audioBinding": null,
+            "settings": {
+              "gain": 1.0,
+              "pitchSemitones": 0,
+              "playMode": "one_shot"
+            },
+            "discoveryId": null
+          },
+          {
+            "absolutePad": 35,
+            "bank": "C",
+            "physicalPad": 3,
+            "sampleId": "nq.harbour.v1.c03",
+            "contentStatus": "planned_no_audio",
+            "audioBinding": null,
+            "settings": {
+              "gain": 1.0,
+              "pitchSemitones": 0,
+              "playMode": "one_shot"
+            },
+            "discoveryId": null
+          },
+          {
+            "absolutePad": 36,
+            "bank": "C",
+            "physicalPad": 4,
+            "sampleId": "nq.harbour.v1.c04",
+            "contentStatus": "planned_no_audio",
+            "audioBinding": null,
+            "settings": {
+              "gain": 1.0,
+              "pitchSemitones": 0,
+              "playMode": "one_shot"
+            },
+            "discoveryId": null
+          },
+          {
+            "absolutePad": 37,
+            "bank": "C",
+            "physicalPad": 5,
+            "sampleId": "nq.harbour.v1.c05",
+            "contentStatus": "planned_no_audio",
+            "audioBinding": null,
+            "settings": {
+              "gain": 1.0,
+              "pitchSemitones": 0,
+              "playMode": "one_shot"
+            },
+            "discoveryId": null
+          },
+          {
+            "absolutePad": 38,
+            "bank": "C",
+            "physicalPad": 6,
+            "sampleId": "nq.harbour.v1.c06",
+            "contentStatus": "planned_no_audio",
+            "audioBinding": null,
+            "settings": {
+              "gain": 1.0,
+              "pitchSemitones": 0,
+              "playMode": "one_shot"
+            },
+            "discoveryId": null
+          },
+          {
+            "absolutePad": 39,
+            "bank": "C",
+            "physicalPad": 7,
+            "sampleId": "nq.harbour.v1.c07",
+            "contentStatus": "planned_no_audio",
+            "audioBinding": null,
+            "settings": {
+              "gain": 1.0,
+              "pitchSemitones": 0,
+              "playMode": "one_shot"
+            },
+            "discoveryId": null
+          },
+          {
+            "absolutePad": 40,
+            "bank": "C",
+            "physicalPad": 8,
+            "sampleId": "nq.harbour.v1.c08",
+            "contentStatus": "planned_no_audio",
+            "audioBinding": null,
+            "settings": {
+              "gain": 1.0,
+              "pitchSemitones": 0,
+              "playMode": "one_shot"
+            },
+            "discoveryId": null
+          },
+          {
+            "absolutePad": 41,
+            "bank": "C",
+            "physicalPad": 9,
+            "sampleId": "nq.harbour.v1.c09",
+            "contentStatus": "planned_no_audio",
+            "audioBinding": null,
+            "settings": {
+              "gain": 1.0,
+              "pitchSemitones": 0,
+              "playMode": "one_shot"
+            },
+            "discoveryId": null
+          },
+          {
+            "absolutePad": 42,
+            "bank": "C",
+            "physicalPad": 10,
+            "sampleId": "nq.harbour.v1.c10",
+            "contentStatus": "planned_no_audio",
+            "audioBinding": null,
+            "settings": {
+              "gain": 1.0,
+              "pitchSemitones": 0,
+              "playMode": "one_shot"
+            },
+            "discoveryId": null
+          },
+          {
+            "absolutePad": 43,
+            "bank": "C",
+            "physicalPad": 11,
+            "sampleId": "nq.harbour.v1.c11",
+            "contentStatus": "planned_no_audio",
+            "audioBinding": null,
+            "settings": {
+              "gain": 1.0,
+              "pitchSemitones": 0,
+              "playMode": "one_shot"
+            },
+            "discoveryId": null
+          },
+          {
+            "absolutePad": 44,
+            "bank": "C",
+            "physicalPad": 12,
+            "sampleId": "nq.harbour.v1.c12",
+            "contentStatus": "planned_no_audio",
+            "audioBinding": null,
+            "settings": {
+              "gain": 1.0,
+              "pitchSemitones": 0,
+              "playMode": "one_shot"
+            },
+            "discoveryId": null
+          },
+          {
+            "absolutePad": 45,
+            "bank": "C",
+            "physicalPad": 13,
+            "sampleId": "nq.harbour.v1.c13",
+            "contentStatus": "planned_no_audio",
+            "audioBinding": null,
+            "settings": {
+              "gain": 1.0,
+              "pitchSemitones": 0,
+              "playMode": "one_shot"
+            },
+            "discoveryId": null
+          },
+          {
+            "absolutePad": 46,
+            "bank": "C",
+            "physicalPad": 14,
+            "sampleId": "nq.harbour.v1.c14",
+            "contentStatus": "planned_no_audio",
+            "audioBinding": null,
+            "settings": {
+              "gain": 1.0,
+              "pitchSemitones": 0,
+              "playMode": "one_shot"
+            },
+            "discoveryId": null
+          },
+          {
+            "absolutePad": 47,
+            "bank": "C",
+            "physicalPad": 15,
+            "sampleId": "nq.harbour.v1.c15",
+            "contentStatus": "planned_no_audio",
+            "audioBinding": null,
+            "settings": {
+              "gain": 1.0,
+              "pitchSemitones": 0,
+              "playMode": "one_shot"
+            },
+            "discoveryId": null
+          },
+          {
+            "absolutePad": 48,
+            "bank": "C",
+            "physicalPad": 16,
+            "sampleId": "nq.harbour.v1.c16",
+            "contentStatus": "planned_no_audio",
+            "audioBinding": null,
+            "settings": {
+              "gain": 1.0,
+              "pitchSemitones": 0,
+              "playMode": "one_shot"
+            },
+            "discoveryId": null
+          },
+          {
+            "absolutePad": 49,
+            "bank": "D",
+            "physicalPad": 1,
+            "sampleId": "nq.harbour.v1.d01",
+            "contentStatus": "planned_no_audio",
+            "audioBinding": null,
+            "settings": {
+              "gain": 1.0,
+              "pitchSemitones": 0,
+              "playMode": "one_shot"
+            },
+            "discoveryId": "I01"
+          },
+          {
+            "absolutePad": 50,
+            "bank": "D",
+            "physicalPad": 2,
+            "sampleId": "nq.harbour.v1.d02",
+            "contentStatus": "planned_no_audio",
+            "audioBinding": null,
+            "settings": {
+              "gain": 1.0,
+              "pitchSemitones": 0,
+              "playMode": "one_shot"
+            },
+            "discoveryId": "I02"
+          },
+          {
+            "absolutePad": 51,
+            "bank": "D",
+            "physicalPad": 3,
+            "sampleId": "nq.harbour.v1.d03",
+            "contentStatus": "planned_no_audio",
+            "audioBinding": null,
+            "settings": {
+              "gain": 1.0,
+              "pitchSemitones": 0,
+              "playMode": "one_shot"
+            },
+            "discoveryId": "I03"
+          },
+          {
+            "absolutePad": 52,
+            "bank": "D",
+            "physicalPad": 4,
+            "sampleId": "nq.harbour.v1.d04",
+            "contentStatus": "planned_no_audio",
+            "audioBinding": null,
+            "settings": {
+              "gain": 1.0,
+              "pitchSemitones": 0,
+              "playMode": "one_shot"
+            },
+            "discoveryId": null
+          },
+          {
+            "absolutePad": 53,
+            "bank": "D",
+            "physicalPad": 5,
+            "sampleId": "nq.harbour.v1.d05",
+            "contentStatus": "planned_no_audio",
+            "audioBinding": null,
+            "settings": {
+              "gain": 1.0,
+              "pitchSemitones": 0,
+              "playMode": "one_shot"
+            },
+            "discoveryId": null
+          },
+          {
+            "absolutePad": 54,
+            "bank": "D",
+            "physicalPad": 6,
+            "sampleId": "nq.harbour.v1.d06",
+            "contentStatus": "planned_no_audio",
+            "audioBinding": null,
+            "settings": {
+              "gain": 1.0,
+              "pitchSemitones": 0,
+              "playMode": "one_shot"
+            },
+            "discoveryId": null
+          },
+          {
+            "absolutePad": 55,
+            "bank": "D",
+            "physicalPad": 7,
+            "sampleId": "nq.harbour.v1.d07",
+            "contentStatus": "planned_no_audio",
+            "audioBinding": null,
+            "settings": {
+              "gain": 1.0,
+              "pitchSemitones": 0,
+              "playMode": "one_shot"
+            },
+            "discoveryId": null
+          },
+          {
+            "absolutePad": 56,
+            "bank": "D",
+            "physicalPad": 8,
+            "sampleId": "nq.harbour.v1.d08",
+            "contentStatus": "planned_no_audio",
+            "audioBinding": null,
+            "settings": {
+              "gain": 1.0,
+              "pitchSemitones": 0,
+              "playMode": "one_shot"
+            },
+            "discoveryId": null
+          },
+          {
+            "absolutePad": 57,
+            "bank": "D",
+            "physicalPad": 9,
+            "sampleId": "nq.harbour.v1.d09",
+            "contentStatus": "planned_no_audio",
+            "audioBinding": null,
+            "settings": {
+              "gain": 1.0,
+              "pitchSemitones": 0,
+              "playMode": "one_shot"
+            },
+            "discoveryId": null
+          },
+          {
+            "absolutePad": 58,
+            "bank": "D",
+            "physicalPad": 10,
+            "sampleId": "nq.harbour.v1.d10",
+            "contentStatus": "planned_no_audio",
+            "audioBinding": null,
+            "settings": {
+              "gain": 1.0,
+              "pitchSemitones": 0,
+              "playMode": "one_shot"
+            },
+            "discoveryId": null
+          },
+          {
+            "absolutePad": 59,
+            "bank": "D",
+            "physicalPad": 11,
+            "sampleId": "nq.harbour.v1.d11",
+            "contentStatus": "planned_no_audio",
+            "audioBinding": null,
+            "settings": {
+              "gain": 1.0,
+              "pitchSemitones": 0,
+              "playMode": "one_shot"
+            },
+            "discoveryId": null
+          },
+          {
+            "absolutePad": 60,
+            "bank": "D",
+            "physicalPad": 12,
+            "sampleId": "nq.harbour.v1.d12",
+            "contentStatus": "planned_no_audio",
+            "audioBinding": null,
+            "settings": {
+              "gain": 1.0,
+              "pitchSemitones": 0,
+              "playMode": "one_shot"
+            },
+            "discoveryId": null
+          },
+          {
+            "absolutePad": 61,
+            "bank": "D",
+            "physicalPad": 13,
+            "sampleId": "nq.harbour.v1.d13",
+            "contentStatus": "planned_no_audio",
+            "audioBinding": null,
+            "settings": {
+              "gain": 1.0,
+              "pitchSemitones": 0,
+              "playMode": "one_shot"
+            },
+            "discoveryId": null
+          },
+          {
+            "absolutePad": 62,
+            "bank": "D",
+            "physicalPad": 14,
+            "sampleId": "nq.harbour.v1.d14",
+            "contentStatus": "planned_no_audio",
+            "audioBinding": null,
+            "settings": {
+              "gain": 1.0,
+              "pitchSemitones": 0,
+              "playMode": "one_shot"
+            },
+            "discoveryId": null
+          },
+          {
+            "absolutePad": 63,
+            "bank": "D",
+            "physicalPad": 15,
+            "sampleId": "nq.harbour.v1.d15",
+            "contentStatus": "planned_no_audio",
+            "audioBinding": null,
+            "settings": {
+              "gain": 1.0,
+              "pitchSemitones": 0,
+              "playMode": "one_shot"
+            },
+            "discoveryId": null
+          },
+          {
+            "absolutePad": 64,
+            "bank": "D",
+            "physicalPad": 16,
+            "sampleId": "nq.harbour.v1.d16",
+            "contentStatus": "planned_no_audio",
+            "audioBinding": null,
+            "settings": {
+              "gain": 1.0,
+              "pitchSemitones": 0,
+              "playMode": "one_shot"
+            },
+            "discoveryId": null
+          }
+        ]
+      }
+    ],
+    "tracks": [
+      {
+        "id": "track_drums",
+        "name": "Drums",
+        "programId": "program_quay",
+        "mix": {
+          "gain": 1.0,
+          "pan": 0.0,
+          "muted": false
+        }
+      },
+      {
+        "id": "track_bass",
+        "name": "Bass",
+        "programId": "program_quay",
+        "mix": {
+          "gain": 1.0,
+          "pan": 0.0,
+          "muted": false
+        }
+      },
+      {
+        "id": "track_melody",
+        "name": "Melody",
+        "programId": "program_quay",
+        "mix": {
+          "gain": 1.0,
+          "pan": 0.0,
+          "muted": false
+        }
+      },
+      {
+        "id": "track_harbour",
+        "name": "Harbour",
+        "programId": "program_quay",
+        "mix": {
+          "gain": 1.0,
+          "pan": 0.0,
+          "muted": false
+        }
+      }
+    ],
+    "sequenceOrder": [
+      "seq_intro",
+      "seq_main",
+      "seq_break",
+      "seq_variation",
+      "seq_outro"
+    ],
+    "sequences": [
+      {
+        "id": "seq_intro",
+        "revision": 1,
+        "name": "Harbour intro",
+        "bars": 4,
+        "bpm": 174,
+        "meter": [
+          4,
+          4
+        ],
+        "trackEvents": {
+          "track_drums": [],
+          "track_bass": [],
+          "track_melody": [
+            {
+              "eventId": "seq_intro_event_1",
+              "tick": 0,
+              "pad": 33,
+              "velocity": 78
+            },
+            {
+              "eventId": "seq_intro_event_3",
+              "tick": 3840,
+              "pad": 37,
+              "velocity": 78
+            },
+            {
+              "eventId": "seq_intro_event_4",
+              "tick": 7680,
+              "pad": 33,
+              "velocity": 78
+            },
+            {
+              "eventId": "seq_intro_event_6",
+              "tick": 11520,
+              "pad": 37,
+              "velocity": 78
+            }
+          ],
+          "track_harbour": [
+            {
+              "eventId": "seq_intro_event_2",
+              "tick": 0,
+              "pad": 59,
+              "velocity": 55
+            },
+            {
+              "eventId": "seq_intro_event_5",
+              "tick": 7680,
+              "pad": 59,
+              "velocity": 55
+            }
+          ]
+        },
+        "state": "illustrative_draft_pending_audio",
+        "trackPadMutes": {
+          "track_drums": {},
+          "track_bass": {},
+          "track_melody": {},
+          "track_harbour": {}
+        },
+        "trackMuteOverrides": {}
+      },
+      {
+        "id": "seq_main",
+        "revision": 1,
+        "name": "Main groove",
+        "bars": 8,
+        "bpm": 174,
+        "meter": [
+          4,
+          4
+        ],
+        "trackEvents": {
+          "track_drums": [
+            {
+              "eventId": "seq_main_event_1",
+              "tick": 0,
+              "pad": 1,
+              "velocity": 105
+            },
+            {
+              "eventId": "seq_main_event_5",
+              "tick": 0,
+              "pad": 6,
+              "velocity": 76
+            },
+            {
+              "eventId": "seq_main_event_6",
+              "tick": 480,
+              "pad": 6,
+              "velocity": 61
+            },
+            {
+              "eventId": "seq_main_event_3",
+              "tick": 960,
+              "pad": 3,
+              "velocity": 108
+            },
+            {
+              "eventId": "seq_main_event_7",
+              "tick": 960,
+              "pad": 6,
+              "velocity": 76
+            },
+            {
+              "eventId": "seq_main_event_8",
+              "tick": 1440,
+              "pad": 6,
+              "velocity": 61
+            },
+            {
+              "eventId": "seq_main_event_9",
+              "tick": 1920,
+              "pad": 6,
+              "velocity": 76
+            },
+            {
+              "eventId": "seq_main_event_2",
+              "tick": 2400,
+              "pad": 1,
+              "velocity": 105
+            },
+            {
+              "eventId": "seq_main_event_10",
+              "tick": 2400,
+              "pad": 6,
+              "velocity": 61
+            },
+            {
+              "eventId": "seq_main_event_4",
+              "tick": 2880,
+              "pad": 3,
+              "velocity": 108
+            },
+            {
+              "eventId": "seq_main_event_11",
+              "tick": 2880,
+              "pad": 6,
+              "velocity": 76
+            },
+            {
+              "eventId": "seq_main_event_12",
+              "tick": 3360,
+              "pad": 6,
+              "velocity": 61
+            },
+            {
+              "eventId": "seq_main_event_17",
+              "tick": 3840,
+              "pad": 1,
+              "velocity": 105
+            },
+            {
+              "eventId": "seq_main_event_21",
+              "tick": 3840,
+              "pad": 6,
+              "velocity": 76
+            },
+            {
+              "eventId": "seq_main_event_22",
+              "tick": 4320,
+              "pad": 6,
+              "velocity": 61
+            },
+            {
+              "eventId": "seq_main_event_19",
+              "tick": 4800,
+              "pad": 3,
+              "velocity": 108
+            },
+            {
+              "eventId": "seq_main_event_23",
+              "tick": 4800,
+              "pad": 6,
+              "velocity": 76
+            },
+            {
+              "eventId": "seq_main_event_24",
+              "tick": 5280,
+              "pad": 6,
+              "velocity": 61
+            },
+            {
+              "eventId": "seq_main_event_25",
+              "tick": 5760,
+              "pad": 6,
+              "velocity": 76
+            },
+            {
+              "eventId": "seq_main_event_18",
+              "tick": 6240,
+              "pad": 1,
+              "velocity": 105
+            },
+            {
+              "eventId": "seq_main_event_26",
+              "tick": 6240,
+              "pad": 6,
+              "velocity": 61
+            },
+            {
+              "eventId": "seq_main_event_20",
+              "tick": 6720,
+              "pad": 3,
+              "velocity": 108
+            },
+            {
+              "eventId": "seq_main_event_27",
+              "tick": 6720,
+              "pad": 6,
+              "velocity": 76
+            },
+            {
+              "eventId": "seq_main_event_28",
+              "tick": 7200,
+              "pad": 6,
+              "velocity": 61
+            },
+            {
+              "eventId": "seq_main_event_32",
+              "tick": 7680,
+              "pad": 1,
+              "velocity": 105
+            },
+            {
+              "eventId": "seq_main_event_36",
+              "tick": 7680,
+              "pad": 6,
+              "velocity": 76
+            },
+            {
+              "eventId": "seq_main_event_37",
+              "tick": 8160,
+              "pad": 6,
+              "velocity": 61
+            },
+            {
+              "eventId": "seq_main_event_34",
+              "tick": 8640,
+              "pad": 3,
+              "velocity": 108
+            },
+            {
+              "eventId": "seq_main_event_38",
+              "tick": 8640,
+              "pad": 6,
+              "velocity": 76
+            },
+            {
+              "eventId": "seq_main_event_39",
+              "tick": 9120,
+              "pad": 6,
+              "velocity": 61
+            },
+            {
+              "eventId": "seq_main_event_40",
+              "tick": 9600,
+              "pad": 6,
+              "velocity": 76
+            },
+            {
+              "eventId": "seq_main_event_33",
+              "tick": 10080,
+              "pad": 1,
+              "velocity": 105
+            },
+            {
+              "eventId": "seq_main_event_41",
+              "tick": 10080,
+              "pad": 6,
+              "velocity": 61
+            },
+            {
+              "eventId": "seq_main_event_35",
+              "tick": 10560,
+              "pad": 3,
+              "velocity": 108
+            },
+            {
+              "eventId": "seq_main_event_42",
+              "tick": 10560,
+              "pad": 6,
+              "velocity": 76
+            },
+            {
+              "eventId": "seq_main_event_43",
+              "tick": 11040,
+              "pad": 6,
+              "velocity": 61
+            },
+            {
+              "eventId": "seq_main_event_48",
+              "tick": 11520,
+              "pad": 1,
+              "velocity": 105
+            },
+            {
+              "eventId": "seq_main_event_52",
+              "tick": 11520,
+              "pad": 6,
+              "velocity": 76
+            },
+            {
+              "eventId": "seq_main_event_53",
+              "tick": 12000,
+              "pad": 6,
+              "velocity": 61
+            },
+            {
+              "eventId": "seq_main_event_50",
+              "tick": 12480,
+              "pad": 3,
+              "velocity": 108
+            },
+            {
+              "eventId": "seq_main_event_54",
+              "tick": 12480,
+              "pad": 6,
+              "velocity": 76
+            },
+            {
+              "eventId": "seq_main_event_55",
+              "tick": 12960,
+              "pad": 6,
+              "velocity": 61
+            },
+            {
+              "eventId": "seq_main_event_56",
+              "tick": 13440,
+              "pad": 6,
+              "velocity": 76
+            },
+            {
+              "eventId": "seq_main_event_49",
+              "tick": 13920,
+              "pad": 1,
+              "velocity": 105
+            },
+            {
+              "eventId": "seq_main_event_57",
+              "tick": 13920,
+              "pad": 6,
+              "velocity": 61
+            },
+            {
+              "eventId": "seq_main_event_51",
+              "tick": 14400,
+              "pad": 3,
+              "velocity": 108
+            },
+            {
+              "eventId": "seq_main_event_58",
+              "tick": 14400,
+              "pad": 6,
+              "velocity": 76
+            },
+            {
+              "eventId": "seq_main_event_59",
+              "tick": 14880,
+              "pad": 6,
+              "velocity": 61
+            },
+            {
+              "eventId": "seq_main_event_63",
+              "tick": 15360,
+              "pad": 1,
+              "velocity": 105
+            },
+            {
+              "eventId": "seq_main_event_67",
+              "tick": 15360,
+              "pad": 6,
+              "velocity": 76
+            },
+            {
+              "eventId": "seq_main_event_68",
+              "tick": 15840,
+              "pad": 6,
+              "velocity": 61
+            },
+            {
+              "eventId": "seq_main_event_65",
+              "tick": 16320,
+              "pad": 3,
+              "velocity": 108
+            },
+            {
+              "eventId": "seq_main_event_69",
+              "tick": 16320,
+              "pad": 6,
+              "velocity": 76
+            },
+            {
+              "eventId": "seq_main_event_70",
+              "tick": 16800,
+              "pad": 6,
+              "velocity": 61
+            },
+            {
+              "eventId": "seq_main_event_71",
+              "tick": 17280,
+              "pad": 6,
+              "velocity": 76
+            },
+            {
+              "eventId": "seq_main_event_64",
+              "tick": 17760,
+              "pad": 1,
+              "velocity": 105
+            },
+            {
+              "eventId": "seq_main_event_72",
+              "tick": 17760,
+              "pad": 6,
+              "velocity": 61
+            },
+            {
+              "eventId": "seq_main_event_66",
+              "tick": 18240,
+              "pad": 3,
+              "velocity": 108
+            },
+            {
+              "eventId": "seq_main_event_73",
+              "tick": 18240,
+              "pad": 6,
+              "velocity": 76
+            },
+            {
+              "eventId": "seq_main_event_74",
+              "tick": 18720,
+              "pad": 6,
+              "velocity": 61
+            },
+            {
+              "eventId": "seq_main_event_79",
+              "tick": 19200,
+              "pad": 1,
+              "velocity": 105
+            },
+            {
+              "eventId": "seq_main_event_83",
+              "tick": 19200,
+              "pad": 6,
+              "velocity": 76
+            },
+            {
+              "eventId": "seq_main_event_84",
+              "tick": 19680,
+              "pad": 6,
+              "velocity": 61
+            },
+            {
+              "eventId": "seq_main_event_81",
+              "tick": 20160,
+              "pad": 3,
+              "velocity": 108
+            },
+            {
+              "eventId": "seq_main_event_85",
+              "tick": 20160,
+              "pad": 6,
+              "velocity": 76
+            },
+            {
+              "eventId": "seq_main_event_86",
+              "tick": 20640,
+              "pad": 6,
+              "velocity": 61
+            },
+            {
+              "eventId": "seq_main_event_87",
+              "tick": 21120,
+              "pad": 6,
+              "velocity": 76
+            },
+            {
+              "eventId": "seq_main_event_80",
+              "tick": 21600,
+              "pad": 1,
+              "velocity": 105
+            },
+            {
+              "eventId": "seq_main_event_88",
+              "tick": 21600,
+              "pad": 6,
+              "velocity": 61
+            },
+            {
+              "eventId": "seq_main_event_82",
+              "tick": 22080,
+              "pad": 3,
+              "velocity": 108
+            },
+            {
+              "eventId": "seq_main_event_89",
+              "tick": 22080,
+              "pad": 6,
+              "velocity": 76
+            },
+            {
+              "eventId": "seq_main_event_90",
+              "tick": 22560,
+              "pad": 6,
+              "velocity": 61
+            },
+            {
+              "eventId": "seq_main_event_94",
+              "tick": 23040,
+              "pad": 1,
+              "velocity": 105
+            },
+            {
+              "eventId": "seq_main_event_98",
+              "tick": 23040,
+              "pad": 6,
+              "velocity": 76
+            },
+            {
+              "eventId": "seq_main_event_99",
+              "tick": 23520,
+              "pad": 6,
+              "velocity": 61
+            },
+            {
+              "eventId": "seq_main_event_96",
+              "tick": 24000,
+              "pad": 3,
+              "velocity": 108
+            },
+            {
+              "eventId": "seq_main_event_100",
+              "tick": 24000,
+              "pad": 6,
+              "velocity": 76
+            },
+            {
+              "eventId": "seq_main_event_101",
+              "tick": 24480,
+              "pad": 6,
+              "velocity": 61
+            },
+            {
+              "eventId": "seq_main_event_102",
+              "tick": 24960,
+              "pad": 6,
+              "velocity": 76
+            },
+            {
+              "eventId": "seq_main_event_95",
+              "tick": 25440,
+              "pad": 1,
+              "velocity": 105
+            },
+            {
+              "eventId": "seq_main_event_103",
+              "tick": 25440,
+              "pad": 6,
+              "velocity": 61
+            },
+            {
+              "eventId": "seq_main_event_97",
+              "tick": 25920,
+              "pad": 3,
+              "velocity": 108
+            },
+            {
+              "eventId": "seq_main_event_104",
+              "tick": 25920,
+              "pad": 6,
+              "velocity": 76
+            },
+            {
+              "eventId": "seq_main_event_105",
+              "tick": 26400,
+              "pad": 6,
+              "velocity": 61
+            },
+            {
+              "eventId": "seq_main_event_110",
+              "tick": 26880,
+              "pad": 1,
+              "velocity": 105
+            },
+            {
+              "eventId": "seq_main_event_114",
+              "tick": 26880,
+              "pad": 6,
+              "velocity": 76
+            },
+            {
+              "eventId": "seq_main_event_115",
+              "tick": 27360,
+              "pad": 6,
+              "velocity": 61
+            },
+            {
+              "eventId": "seq_main_event_112",
+              "tick": 27840,
+              "pad": 3,
+              "velocity": 108
+            },
+            {
+              "eventId": "seq_main_event_116",
+              "tick": 27840,
+              "pad": 6,
+              "velocity": 76
+            },
+            {
+              "eventId": "seq_main_event_117",
+              "tick": 28320,
+              "pad": 6,
+              "velocity": 61
+            },
+            {
+              "eventId": "seq_main_event_118",
+              "tick": 28800,
+              "pad": 6,
+              "velocity": 76
+            },
+            {
+              "eventId": "seq_main_event_111",
+              "tick": 29280,
+              "pad": 1,
+              "velocity": 105
+            },
+            {
+              "eventId": "seq_main_event_119",
+              "tick": 29280,
+              "pad": 6,
+              "velocity": 61
+            },
+            {
+              "eventId": "seq_main_event_113",
+              "tick": 29760,
+              "pad": 3,
+              "velocity": 108
+            },
+            {
+              "eventId": "seq_main_event_120",
+              "tick": 29760,
+              "pad": 6,
+              "velocity": 76
+            },
+            {
+              "eventId": "seq_main_event_121",
+              "tick": 30240,
+              "pad": 6,
+              "velocity": 61
+            }
+          ],
+          "track_bass": [
+            {
+              "eventId": "seq_main_event_13",
+              "tick": 0,
+              "pad": 17,
+              "velocity": 101
+            },
+            {
+              "eventId": "seq_main_event_14",
+              "tick": 1920,
+              "pad": 21,
+              "velocity": 94
+            },
+            {
+              "eventId": "seq_main_event_29",
+              "tick": 3840,
+              "pad": 17,
+              "velocity": 101
+            },
+            {
+              "eventId": "seq_main_event_30",
+              "tick": 5760,
+              "pad": 21,
+              "velocity": 94
+            },
+            {
+              "eventId": "seq_main_event_44",
+              "tick": 7680,
+              "pad": 17,
+              "velocity": 101
+            },
+            {
+              "eventId": "seq_main_event_45",
+              "tick": 9600,
+              "pad": 21,
+              "velocity": 94
+            },
+            {
+              "eventId": "seq_main_event_60",
+              "tick": 11520,
+              "pad": 17,
+              "velocity": 101
+            },
+            {
+              "eventId": "seq_main_event_61",
+              "tick": 13440,
+              "pad": 21,
+              "velocity": 94
+            },
+            {
+              "eventId": "seq_main_event_75",
+              "tick": 15360,
+              "pad": 17,
+              "velocity": 101
+            },
+            {
+              "eventId": "seq_main_event_76",
+              "tick": 17280,
+              "pad": 21,
+              "velocity": 94
+            },
+            {
+              "eventId": "seq_main_event_91",
+              "tick": 19200,
+              "pad": 17,
+              "velocity": 101
+            },
+            {
+              "eventId": "seq_main_event_92",
+              "tick": 21120,
+              "pad": 21,
+              "velocity": 94
+            },
+            {
+              "eventId": "seq_main_event_106",
+              "tick": 23040,
+              "pad": 17,
+              "velocity": 101
+            },
+            {
+              "eventId": "seq_main_event_107",
+              "tick": 24960,
+              "pad": 21,
+              "velocity": 94
+            },
+            {
+              "eventId": "seq_main_event_122",
+              "tick": 26880,
+              "pad": 17,
+              "velocity": 101
+            },
+            {
+              "eventId": "seq_main_event_123",
+              "tick": 28800,
+              "pad": 21,
+              "velocity": 94
+            }
+          ],
+          "track_melody": [
+            {
+              "eventId": "seq_main_event_15",
+              "tick": 0,
+              "pad": 33,
+              "velocity": 83
+            },
+            {
+              "eventId": "seq_main_event_46",
+              "tick": 7680,
+              "pad": 33,
+              "velocity": 83
+            },
+            {
+              "eventId": "seq_main_event_77",
+              "tick": 15360,
+              "pad": 33,
+              "velocity": 83
+            },
+            {
+              "eventId": "seq_main_event_108",
+              "tick": 23040,
+              "pad": 33,
+              "velocity": 83
+            }
+          ],
+          "track_harbour": [
+            {
+              "eventId": "seq_main_event_16",
+              "tick": 720,
+              "pad": 49,
+              "velocity": 73
+            },
+            {
+              "eventId": "seq_main_event_31",
+              "tick": 4560,
+              "pad": 49,
+              "velocity": 73
+            },
+            {
+              "eventId": "seq_main_event_47",
+              "tick": 8400,
+              "pad": 49,
+              "velocity": 73
+            },
+            {
+              "eventId": "seq_main_event_62",
+              "tick": 12240,
+              "pad": 49,
+              "velocity": 73
+            },
+            {
+              "eventId": "seq_main_event_78",
+              "tick": 16080,
+              "pad": 49,
+              "velocity": 73
+            },
+            {
+              "eventId": "seq_main_event_93",
+              "tick": 19920,
+              "pad": 49,
+              "velocity": 73
+            },
+            {
+              "eventId": "seq_main_event_109",
+              "tick": 23760,
+              "pad": 49,
+              "velocity": 73
+            },
+            {
+              "eventId": "seq_main_event_124",
+              "tick": 27600,
+              "pad": 49,
+              "velocity": 73
+            }
+          ]
+        },
+        "state": "illustrative_draft_pending_audio",
+        "trackPadMutes": {
+          "track_drums": {},
+          "track_bass": {},
+          "track_melody": {},
+          "track_harbour": {}
+        },
+        "trackMuteOverrides": {}
+      },
+      {
+        "id": "seq_break",
+        "revision": 1,
+        "name": "Quiet break",
+        "bars": 4,
+        "bpm": 174,
+        "meter": [
+          4,
+          4
+        ],
+        "trackEvents": {
+          "track_drums": [],
+          "track_bass": [],
+          "track_melody": [
+            {
+              "eventId": "seq_break_event_1",
+              "tick": 0,
+              "pad": 41,
+              "velocity": 82
+            },
+            {
+              "eventId": "seq_break_event_6",
+              "tick": 3840,
+              "pad": 41,
+              "velocity": 82
+            },
+            {
+              "eventId": "seq_break_event_11",
+              "tick": 7680,
+              "pad": 41,
+              "velocity": 82
+            },
+            {
+              "eventId": "seq_break_event_16",
+              "tick": 11520,
+              "pad": 41,
+              "velocity": 82
+            }
+          ],
+          "track_harbour": [
+            {
+              "eventId": "seq_break_event_2",
+              "tick": 0,
+              "pad": 51,
+              "velocity": 68
+            },
+            {
+              "eventId": "seq_break_event_3",
+              "tick": 960,
+              "pad": 51,
+              "velocity": 68
+            },
+            {
+              "eventId": "seq_break_event_4",
+              "tick": 1920,
+              "pad": 51,
+              "velocity": 68
+            },
+            {
+              "eventId": "seq_break_event_5",
+              "tick": 2880,
+              "pad": 51,
+              "velocity": 68
+            },
+            {
+              "eventId": "seq_break_event_7",
+              "tick": 3840,
+              "pad": 51,
+              "velocity": 68
+            },
+            {
+              "eventId": "seq_break_event_8",
+              "tick": 4800,
+              "pad": 51,
+              "velocity": 68
+            },
+            {
+              "eventId": "seq_break_event_9",
+              "tick": 5760,
+              "pad": 51,
+              "velocity": 68
+            },
+            {
+              "eventId": "seq_break_event_10",
+              "tick": 6720,
+              "pad": 51,
+              "velocity": 68
+            },
+            {
+              "eventId": "seq_break_event_12",
+              "tick": 7680,
+              "pad": 51,
+              "velocity": 68
+            },
+            {
+              "eventId": "seq_break_event_13",
+              "tick": 8640,
+              "pad": 51,
+              "velocity": 68
+            },
+            {
+              "eventId": "seq_break_event_14",
+              "tick": 9600,
+              "pad": 51,
+              "velocity": 68
+            },
+            {
+              "eventId": "seq_break_event_15",
+              "tick": 10560,
+              "pad": 51,
+              "velocity": 68
+            },
+            {
+              "eventId": "seq_break_event_17",
+              "tick": 11520,
+              "pad": 51,
+              "velocity": 68
+            },
+            {
+              "eventId": "seq_break_event_18",
+              "tick": 12480,
+              "pad": 51,
+              "velocity": 68
+            },
+            {
+              "eventId": "seq_break_event_19",
+              "tick": 13440,
+              "pad": 51,
+              "velocity": 68
+            },
+            {
+              "eventId": "seq_break_event_20",
+              "tick": 14400,
+              "pad": 51,
+              "velocity": 68
+            }
+          ]
+        },
+        "state": "illustrative_draft_pending_audio",
+        "trackPadMutes": {
+          "track_drums": {},
+          "track_bass": {},
+          "track_melody": {},
+          "track_harbour": {}
+        },
+        "trackMuteOverrides": {}
+      },
+      {
+        "id": "seq_variation",
+        "revision": 1,
+        "name": "Main variation",
+        "bars": 8,
+        "bpm": 174,
+        "meter": [
+          4,
+          4
+        ],
+        "trackEvents": {
+          "track_drums": [
+            {
+              "eventId": "seq_variation_event_1",
+              "tick": 0,
+              "pad": 2,
+              "velocity": 105
+            },
+            {
+              "eventId": "seq_variation_event_5",
+              "tick": 0,
+              "pad": 6,
+              "velocity": 76
+            },
+            {
+              "eventId": "seq_variation_event_6",
+              "tick": 480,
+              "pad": 6,
+              "velocity": 61
+            },
+            {
+              "eventId": "seq_variation_event_3",
+              "tick": 960,
+              "pad": 3,
+              "velocity": 108
+            },
+            {
+              "eventId": "seq_variation_event_7",
+              "tick": 960,
+              "pad": 6,
+              "velocity": 76
+            },
+            {
+              "eventId": "seq_variation_event_8",
+              "tick": 1440,
+              "pad": 6,
+              "velocity": 61
+            },
+            {
+              "eventId": "seq_variation_event_9",
+              "tick": 1920,
+              "pad": 6,
+              "velocity": 76
+            },
+            {
+              "eventId": "seq_variation_event_2",
+              "tick": 2160,
+              "pad": 2,
+              "velocity": 105
+            },
+            {
+              "eventId": "seq_variation_event_10",
+              "tick": 2400,
+              "pad": 6,
+              "velocity": 61
+            },
+            {
+              "eventId": "seq_variation_event_4",
+              "tick": 2880,
+              "pad": 3,
+              "velocity": 108
+            },
+            {
+              "eventId": "seq_variation_event_11",
+              "tick": 2880,
+              "pad": 6,
+              "velocity": 76
+            },
+            {
+              "eventId": "seq_variation_event_12",
+              "tick": 3360,
+              "pad": 6,
+              "velocity": 61
+            },
+            {
+              "eventId": "seq_variation_event_17",
+              "tick": 3840,
+              "pad": 2,
+              "velocity": 105
+            },
+            {
+              "eventId": "seq_variation_event_21",
+              "tick": 3840,
+              "pad": 6,
+              "velocity": 76
+            },
+            {
+              "eventId": "seq_variation_event_22",
+              "tick": 4320,
+              "pad": 6,
+              "velocity": 61
+            },
+            {
+              "eventId": "seq_variation_event_19",
+              "tick": 4800,
+              "pad": 3,
+              "velocity": 108
+            },
+            {
+              "eventId": "seq_variation_event_23",
+              "tick": 4800,
+              "pad": 6,
+              "velocity": 76
+            },
+            {
+              "eventId": "seq_variation_event_24",
+              "tick": 5280,
+              "pad": 6,
+              "velocity": 61
+            },
+            {
+              "eventId": "seq_variation_event_25",
+              "tick": 5760,
+              "pad": 6,
+              "velocity": 76
+            },
+            {
+              "eventId": "seq_variation_event_18",
+              "tick": 6000,
+              "pad": 2,
+              "velocity": 105
+            },
+            {
+              "eventId": "seq_variation_event_26",
+              "tick": 6240,
+              "pad": 6,
+              "velocity": 61
+            },
+            {
+              "eventId": "seq_variation_event_20",
+              "tick": 6720,
+              "pad": 3,
+              "velocity": 108
+            },
+            {
+              "eventId": "seq_variation_event_27",
+              "tick": 6720,
+              "pad": 6,
+              "velocity": 76
+            },
+            {
+              "eventId": "seq_variation_event_28",
+              "tick": 7200,
+              "pad": 6,
+              "velocity": 61
+            },
+            {
+              "eventId": "seq_variation_event_32",
+              "tick": 7680,
+              "pad": 2,
+              "velocity": 105
+            },
+            {
+              "eventId": "seq_variation_event_36",
+              "tick": 7680,
+              "pad": 6,
+              "velocity": 76
+            },
+            {
+              "eventId": "seq_variation_event_37",
+              "tick": 8160,
+              "pad": 6,
+              "velocity": 61
+            },
+            {
+              "eventId": "seq_variation_event_34",
+              "tick": 8640,
+              "pad": 3,
+              "velocity": 108
+            },
+            {
+              "eventId": "seq_variation_event_38",
+              "tick": 8640,
+              "pad": 6,
+              "velocity": 76
+            },
+            {
+              "eventId": "seq_variation_event_39",
+              "tick": 9120,
+              "pad": 6,
+              "velocity": 61
+            },
+            {
+              "eventId": "seq_variation_event_40",
+              "tick": 9600,
+              "pad": 6,
+              "velocity": 76
+            },
+            {
+              "eventId": "seq_variation_event_33",
+              "tick": 9840,
+              "pad": 2,
+              "velocity": 105
+            },
+            {
+              "eventId": "seq_variation_event_41",
+              "tick": 10080,
+              "pad": 6,
+              "velocity": 61
+            },
+            {
+              "eventId": "seq_variation_event_35",
+              "tick": 10560,
+              "pad": 3,
+              "velocity": 108
+            },
+            {
+              "eventId": "seq_variation_event_42",
+              "tick": 10560,
+              "pad": 6,
+              "velocity": 76
+            },
+            {
+              "eventId": "seq_variation_event_43",
+              "tick": 11040,
+              "pad": 6,
+              "velocity": 61
+            },
+            {
+              "eventId": "seq_variation_event_48",
+              "tick": 11520,
+              "pad": 2,
+              "velocity": 105
+            },
+            {
+              "eventId": "seq_variation_event_52",
+              "tick": 11520,
+              "pad": 6,
+              "velocity": 76
+            },
+            {
+              "eventId": "seq_variation_event_53",
+              "tick": 12000,
+              "pad": 6,
+              "velocity": 61
+            },
+            {
+              "eventId": "seq_variation_event_50",
+              "tick": 12480,
+              "pad": 3,
+              "velocity": 108
+            },
+            {
+              "eventId": "seq_variation_event_54",
+              "tick": 12480,
+              "pad": 6,
+              "velocity": 76
+            },
+            {
+              "eventId": "seq_variation_event_55",
+              "tick": 12960,
+              "pad": 6,
+              "velocity": 61
+            },
+            {
+              "eventId": "seq_variation_event_56",
+              "tick": 13440,
+              "pad": 6,
+              "velocity": 76
+            },
+            {
+              "eventId": "seq_variation_event_49",
+              "tick": 13680,
+              "pad": 2,
+              "velocity": 105
+            },
+            {
+              "eventId": "seq_variation_event_57",
+              "tick": 13920,
+              "pad": 6,
+              "velocity": 61
+            },
+            {
+              "eventId": "seq_variation_event_51",
+              "tick": 14400,
+              "pad": 3,
+              "velocity": 108
+            },
+            {
+              "eventId": "seq_variation_event_58",
+              "tick": 14400,
+              "pad": 6,
+              "velocity": 76
+            },
+            {
+              "eventId": "seq_variation_event_59",
+              "tick": 14880,
+              "pad": 6,
+              "velocity": 61
+            },
+            {
+              "eventId": "seq_variation_event_63",
+              "tick": 15360,
+              "pad": 2,
+              "velocity": 105
+            },
+            {
+              "eventId": "seq_variation_event_67",
+              "tick": 15360,
+              "pad": 6,
+              "velocity": 76
+            },
+            {
+              "eventId": "seq_variation_event_68",
+              "tick": 15840,
+              "pad": 6,
+              "velocity": 61
+            },
+            {
+              "eventId": "seq_variation_event_65",
+              "tick": 16320,
+              "pad": 3,
+              "velocity": 108
+            },
+            {
+              "eventId": "seq_variation_event_69",
+              "tick": 16320,
+              "pad": 6,
+              "velocity": 76
+            },
+            {
+              "eventId": "seq_variation_event_70",
+              "tick": 16800,
+              "pad": 6,
+              "velocity": 61
+            },
+            {
+              "eventId": "seq_variation_event_71",
+              "tick": 17280,
+              "pad": 6,
+              "velocity": 76
+            },
+            {
+              "eventId": "seq_variation_event_64",
+              "tick": 17520,
+              "pad": 2,
+              "velocity": 105
+            },
+            {
+              "eventId": "seq_variation_event_72",
+              "tick": 17760,
+              "pad": 6,
+              "velocity": 61
+            },
+            {
+              "eventId": "seq_variation_event_66",
+              "tick": 18240,
+              "pad": 3,
+              "velocity": 108
+            },
+            {
+              "eventId": "seq_variation_event_73",
+              "tick": 18240,
+              "pad": 6,
+              "velocity": 76
+            },
+            {
+              "eventId": "seq_variation_event_74",
+              "tick": 18720,
+              "pad": 6,
+              "velocity": 61
+            },
+            {
+              "eventId": "seq_variation_event_79",
+              "tick": 19200,
+              "pad": 2,
+              "velocity": 105
+            },
+            {
+              "eventId": "seq_variation_event_83",
+              "tick": 19200,
+              "pad": 6,
+              "velocity": 76
+            },
+            {
+              "eventId": "seq_variation_event_84",
+              "tick": 19680,
+              "pad": 6,
+              "velocity": 61
+            },
+            {
+              "eventId": "seq_variation_event_81",
+              "tick": 20160,
+              "pad": 3,
+              "velocity": 108
+            },
+            {
+              "eventId": "seq_variation_event_85",
+              "tick": 20160,
+              "pad": 6,
+              "velocity": 76
+            },
+            {
+              "eventId": "seq_variation_event_86",
+              "tick": 20640,
+              "pad": 6,
+              "velocity": 61
+            },
+            {
+              "eventId": "seq_variation_event_87",
+              "tick": 21120,
+              "pad": 6,
+              "velocity": 76
+            },
+            {
+              "eventId": "seq_variation_event_80",
+              "tick": 21360,
+              "pad": 2,
+              "velocity": 105
+            },
+            {
+              "eventId": "seq_variation_event_88",
+              "tick": 21600,
+              "pad": 6,
+              "velocity": 61
+            },
+            {
+              "eventId": "seq_variation_event_82",
+              "tick": 22080,
+              "pad": 3,
+              "velocity": 108
+            },
+            {
+              "eventId": "seq_variation_event_89",
+              "tick": 22080,
+              "pad": 6,
+              "velocity": 76
+            },
+            {
+              "eventId": "seq_variation_event_90",
+              "tick": 22560,
+              "pad": 6,
+              "velocity": 61
+            },
+            {
+              "eventId": "seq_variation_event_94",
+              "tick": 23040,
+              "pad": 2,
+              "velocity": 105
+            },
+            {
+              "eventId": "seq_variation_event_98",
+              "tick": 23040,
+              "pad": 6,
+              "velocity": 76
+            },
+            {
+              "eventId": "seq_variation_event_99",
+              "tick": 23520,
+              "pad": 6,
+              "velocity": 61
+            },
+            {
+              "eventId": "seq_variation_event_96",
+              "tick": 24000,
+              "pad": 3,
+              "velocity": 108
+            },
+            {
+              "eventId": "seq_variation_event_100",
+              "tick": 24000,
+              "pad": 6,
+              "velocity": 76
+            },
+            {
+              "eventId": "seq_variation_event_101",
+              "tick": 24480,
+              "pad": 6,
+              "velocity": 61
+            },
+            {
+              "eventId": "seq_variation_event_102",
+              "tick": 24960,
+              "pad": 6,
+              "velocity": 76
+            },
+            {
+              "eventId": "seq_variation_event_95",
+              "tick": 25200,
+              "pad": 2,
+              "velocity": 105
+            },
+            {
+              "eventId": "seq_variation_event_103",
+              "tick": 25440,
+              "pad": 6,
+              "velocity": 61
+            },
+            {
+              "eventId": "seq_variation_event_97",
+              "tick": 25920,
+              "pad": 3,
+              "velocity": 108
+            },
+            {
+              "eventId": "seq_variation_event_104",
+              "tick": 25920,
+              "pad": 6,
+              "velocity": 76
+            },
+            {
+              "eventId": "seq_variation_event_105",
+              "tick": 26400,
+              "pad": 6,
+              "velocity": 61
+            },
+            {
+              "eventId": "seq_variation_event_110",
+              "tick": 26880,
+              "pad": 2,
+              "velocity": 105
+            },
+            {
+              "eventId": "seq_variation_event_114",
+              "tick": 26880,
+              "pad": 6,
+              "velocity": 76
+            },
+            {
+              "eventId": "seq_variation_event_115",
+              "tick": 27360,
+              "pad": 6,
+              "velocity": 61
+            },
+            {
+              "eventId": "seq_variation_event_112",
+              "tick": 27840,
+              "pad": 3,
+              "velocity": 108
+            },
+            {
+              "eventId": "seq_variation_event_116",
+              "tick": 27840,
+              "pad": 6,
+              "velocity": 76
+            },
+            {
+              "eventId": "seq_variation_event_117",
+              "tick": 28320,
+              "pad": 6,
+              "velocity": 61
+            },
+            {
+              "eventId": "seq_variation_event_118",
+              "tick": 28800,
+              "pad": 6,
+              "velocity": 76
+            },
+            {
+              "eventId": "seq_variation_event_111",
+              "tick": 29040,
+              "pad": 2,
+              "velocity": 105
+            },
+            {
+              "eventId": "seq_variation_event_119",
+              "tick": 29280,
+              "pad": 6,
+              "velocity": 61
+            },
+            {
+              "eventId": "seq_variation_event_113",
+              "tick": 29760,
+              "pad": 3,
+              "velocity": 108
+            },
+            {
+              "eventId": "seq_variation_event_120",
+              "tick": 29760,
+              "pad": 6,
+              "velocity": 76
+            },
+            {
+              "eventId": "seq_variation_event_121",
+              "tick": 30240,
+              "pad": 6,
+              "velocity": 61
+            }
+          ],
+          "track_bass": [
+            {
+              "eventId": "seq_variation_event_13",
+              "tick": 0,
+              "pad": 25,
+              "velocity": 101
+            },
+            {
+              "eventId": "seq_variation_event_14",
+              "tick": 1920,
+              "pad": 29,
+              "velocity": 94
+            },
+            {
+              "eventId": "seq_variation_event_29",
+              "tick": 3840,
+              "pad": 25,
+              "velocity": 101
+            },
+            {
+              "eventId": "seq_variation_event_30",
+              "tick": 5760,
+              "pad": 29,
+              "velocity": 94
+            },
+            {
+              "eventId": "seq_variation_event_44",
+              "tick": 7680,
+              "pad": 25,
+              "velocity": 101
+            },
+            {
+              "eventId": "seq_variation_event_45",
+              "tick": 9600,
+              "pad": 29,
+              "velocity": 94
+            },
+            {
+              "eventId": "seq_variation_event_60",
+              "tick": 11520,
+              "pad": 25,
+              "velocity": 101
+            },
+            {
+              "eventId": "seq_variation_event_61",
+              "tick": 13440,
+              "pad": 29,
+              "velocity": 94
+            },
+            {
+              "eventId": "seq_variation_event_75",
+              "tick": 15360,
+              "pad": 25,
+              "velocity": 101
+            },
+            {
+              "eventId": "seq_variation_event_76",
+              "tick": 17280,
+              "pad": 29,
+              "velocity": 94
+            },
+            {
+              "eventId": "seq_variation_event_91",
+              "tick": 19200,
+              "pad": 25,
+              "velocity": 101
+            },
+            {
+              "eventId": "seq_variation_event_92",
+              "tick": 21120,
+              "pad": 29,
+              "velocity": 94
+            },
+            {
+              "eventId": "seq_variation_event_106",
+              "tick": 23040,
+              "pad": 25,
+              "velocity": 101
+            },
+            {
+              "eventId": "seq_variation_event_107",
+              "tick": 24960,
+              "pad": 29,
+              "velocity": 94
+            },
+            {
+              "eventId": "seq_variation_event_122",
+              "tick": 26880,
+              "pad": 25,
+              "velocity": 101
+            },
+            {
+              "eventId": "seq_variation_event_123",
+              "tick": 28800,
+              "pad": 29,
+              "velocity": 94
+            }
+          ],
+          "track_melody": [
+            {
+              "eventId": "seq_variation_event_15",
+              "tick": 0,
+              "pad": 37,
+              "velocity": 83
+            },
+            {
+              "eventId": "seq_variation_event_46",
+              "tick": 7680,
+              "pad": 37,
+              "velocity": 83
+            },
+            {
+              "eventId": "seq_variation_event_77",
+              "tick": 15360,
+              "pad": 37,
+              "velocity": 83
+            },
+            {
+              "eventId": "seq_variation_event_108",
+              "tick": 23040,
+              "pad": 37,
+              "velocity": 83
+            }
+          ],
+          "track_harbour": [
+            {
+              "eventId": "seq_variation_event_16",
+              "tick": 720,
+              "pad": 50,
+              "velocity": 73
+            },
+            {
+              "eventId": "seq_variation_event_31",
+              "tick": 4560,
+              "pad": 50,
+              "velocity": 73
+            },
+            {
+              "eventId": "seq_variation_event_47",
+              "tick": 8400,
+              "pad": 50,
+              "velocity": 73
+            },
+            {
+              "eventId": "seq_variation_event_62",
+              "tick": 12240,
+              "pad": 50,
+              "velocity": 73
+            },
+            {
+              "eventId": "seq_variation_event_78",
+              "tick": 16080,
+              "pad": 50,
+              "velocity": 73
+            },
+            {
+              "eventId": "seq_variation_event_93",
+              "tick": 19920,
+              "pad": 50,
+              "velocity": 73
+            },
+            {
+              "eventId": "seq_variation_event_109",
+              "tick": 23760,
+              "pad": 50,
+              "velocity": 73
+            },
+            {
+              "eventId": "seq_variation_event_124",
+              "tick": 27600,
+              "pad": 50,
+              "velocity": 73
+            }
+          ]
+        },
+        "state": "illustrative_draft_pending_audio",
+        "trackPadMutes": {
+          "track_drums": {},
+          "track_bass": {},
+          "track_melody": {},
+          "track_harbour": {}
+        },
+        "trackMuteOverrides": {}
+      },
+      {
+        "id": "seq_outro",
+        "revision": 1,
+        "name": "Lantern outro",
+        "bars": 4,
+        "bpm": 174,
+        "meter": [
+          4,
+          4
+        ],
+        "trackEvents": {
+          "track_drums": [],
+          "track_bass": [],
+          "track_melody": [
+            {
+              "eventId": "seq_outro_event_1",
+              "tick": 0,
+              "pad": 45,
+              "velocity": 70
+            },
+            {
+              "eventId": "seq_outro_event_3",
+              "tick": 3840,
+              "pad": 33,
+              "velocity": 63
+            },
+            {
+              "eventId": "seq_outro_event_4",
+              "tick": 7680,
+              "pad": 33,
+              "velocity": 56
+            },
+            {
+              "eventId": "seq_outro_event_5",
+              "tick": 11520,
+              "pad": 33,
+              "velocity": 49
+            }
+          ],
+          "track_harbour": [
+            {
+              "eventId": "seq_outro_event_2",
+              "tick": 0,
+              "pad": 60,
+              "velocity": 55
+            }
+          ]
+        },
+        "state": "illustrative_draft_pending_audio",
+        "trackPadMutes": {
+          "track_drums": {},
+          "track_bass": {},
+          "track_melody": {},
+          "track_harbour": {}
+        },
+        "trackMuteOverrides": {}
+      }
+    ],
+    "songDrafts": [
+      {
+        "id": "draft_evening",
+        "revision": 1,
+        "title": "Evening at the quay",
+        "tempoMode": "sequence",
+        "steps": [
+          {
+            "stepId": "step_1",
+            "sequenceId": "seq_intro",
+            "repeats": 1
+          },
+          {
+            "stepId": "step_2",
+            "sequenceId": "seq_main",
+            "repeats": 2
+          },
+          {
+            "stepId": "step_3",
+            "sequenceId": "seq_break",
+            "repeats": 1
+          },
+          {
+            "stepId": "step_4",
+            "sequenceId": "seq_variation",
+            "repeats": 2
+          },
+          {
+            "stepId": "step_5",
+            "sequenceId": "seq_outro",
+            "repeats": 1
+          }
+        ],
+        "state": "draft_pending_audio",
+        "derivedTotalBars": 44,
+        "derivedDurationSeconds": 60.689655172413794
+      }
+    ],
+    "finishedSongs": [],
+    "editor": {
+      "selectedSequenceId": "seq_main",
+      "selectedTrackId": "track_drums",
+      "selectedSoundBank": "A"
+    }
+  },
+  "planning_pack_revision": 3,
+  "change_notes": [
+    "Outros formerly used planned D13 wave splash. seq_outro_event_2 is deliberately reassigned to D12 water drop; D13–D16 are reserved for vocals in planning revision 3.",
+    "This structural example does not reconstruct the Flow demo, perform the reserved vocal cuts, install into profiles or create a Finished Song."
+  ]
+}

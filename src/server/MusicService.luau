@@ -1,19 +1,21 @@
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local Workspace = game:GetService("Workspace")
-local Pattern = require(ReplicatedStorage.Shared.Pattern)
-local Catalog = require(ReplicatedStorage.Shared.SampleCatalog)
 local Cosmetics = require(ReplicatedStorage.Shared.CosmeticCatalog)
-local Book = require(ReplicatedStorage.Shared.BeatBook)
+local WorkspaceModel = require(script.Parent.MusicWorkspace)
 local Quest = require(ReplicatedStorage.Shared.FirstPerformanceQuest)
 local Profiles = require(script.Parent.ProfileStore)
 local ListeningSession = require(script.Parent.ListeningSession)
 local RoomService = require(script.Parent.RoomService)
 local Missions = require(ReplicatedStorage.Shared.NeighborhoodMissions)
 local Discoveries = require(ReplicatedStorage.Shared.DiscoveryCatalog)
+local Catalog = require(ReplicatedStorage.Shared.SampleCatalog)
 local ConcertService = require(script.Parent.ConcertService)
 local JamService = require(script.Parent.JamService)
 local QuayDemoService = require(script.Parent.QuayDemoService)
+local CompanionService = require(script.Parent.CompanionService)
+local QuayExperienceService = require(script.Parent.QuayExperienceService)
+local CommerceService = require(script.Parent.CommerceService)
+local WardrobeService = require(script.Parent.WardrobeService)
 local MusicService = {}
 
 function MusicService.start(world)
@@ -25,12 +27,20 @@ function MusicService.start(world)
     local state = Instance.new("RemoteEvent")
     state.Name = "State"
     state.Parent = network
+    local delta = Instance.new("RemoteEvent")
+    delta.Name = "Delta"
+    delta.Parent = network
     network.Parent = ReplicatedStorage
     local profiles = {}
+    local liveMusic = require(script.Parent.QuayLiveMusic).new()
     local listening
     local concert
     local jam
     local quay
+    local companions
+    local experience
+    local commerce
+    local wardrobe
 
     local function nearby(player, anchor, distance)
         local character = player.Character
@@ -40,6 +50,18 @@ function MusicService.start(world)
             and humanoid ~= nil
             and humanoid.Health > 0
             and (root.Position - anchor.Position).Magnitude <= distance
+            and (
+                (
+                    not anchor:GetAttribute("QuayInteraction")
+                    and not anchor:GetAttribute("StreetActivity")
+                )
+                or require(ReplicatedStorage.Shared.QuayOcclusion).visible(
+                    (character:FindFirstChild("Head") or root).Position,
+                    anchor,
+                    character,
+                    profiles[player] and profiles[player].quay
+                )
+            )
     end
 
     local rooms = RoomService.new(world.rooms, nearby)
@@ -49,6 +71,11 @@ function MusicService.start(world)
         if profile == nil or player.Parent == nil then
             return
         end
+        WorkspaceModel.sync(profile)
+        if experience and profile.ready then
+            experience:reconcile(player, profile)
+        end
+        liveMusic:update(player, profile, quay and quay:van(player))
         rooms:update(player, profile)
         local count = 0
         for _, id in { "I01", "I02", "I03" } do
@@ -68,11 +95,12 @@ function MusicService.start(world)
         state:FireClient(player, {
             ready = profile.ready,
             pattern = profile.pattern,
-            book = Book.summary(profile),
+            music = WorkspaceModel.projection(profile),
             quest = Quest.summary(profile),
             unlocked = profile.unlocked,
             station = profile.station,
             playing = profile.playing,
+            broadcast = profile.broadcast == true,
             recording = profile.recording,
             startedAt = profile.startedAt,
             epoch = profile.epoch,
@@ -84,8 +112,10 @@ function MusicService.start(world)
             neighborhood = Missions.summary(profile),
             dirty = profile.editVersion ~= profile.savedEditVersion,
             editVersion = profile.editVersion,
-            restoration = if count == 3 and Book.hasNotes(profile) then 4 else count,
-            notice = notice,
+            restoration = if count == 3 and next(profile.music.project.sequences) ~= nil
+                then 4
+                else count,
+            notice = Catalog.localDiscoveryText(notice),
             preview = preview,
             cue = cue,
             listening = listening and listening:state(player),
@@ -93,6 +123,9 @@ function MusicService.start(world)
             concert = concert and concert:state(player),
             jam = jam and jam:state(player),
             quay = quay and quay:summary(player, profile),
+            companion = companions and companions:summary(player, profile),
+            experience = experience and profile.ready and experience:summary(player, profile)
+                or nil,
         })
     end
 
@@ -115,14 +148,12 @@ function MusicService.start(world)
             station.screen.Text = "MK-I\nREADY"
         end
         profile.station = nil
-        profile.playing = false
-        profile.recording = false
-        profile.epoch += 1
+        WorkspaceModel.stop(profile, true)
         send(player, notice)
     end
 
     local drainQuestSave
-    local function persist(player, profile, successNotice)
+    local function persist(player, profile, successNotice, musicOverride, accepted)
         if profile.saving then
             return false
         end
@@ -131,7 +162,11 @@ function MusicService.start(world)
         task.spawn(function()
             -- ProfileStore owns the flag across its yielding storage operation.
             profile.saving = false
-            local ok, result = Profiles.save(player, profile)
+            local ok, result = Profiles.save(player, profile, nil, musicOverride)
+            if accepted then
+                accepted(ok)
+            end
+            WorkspaceModel.sync(profile)
             if ok and profile.editVersion ~= profile.savedEditVersion then
                 result = "Snapshot saved. Your newer edits are not saved yet."
             elseif ok and successNotice then
@@ -205,6 +240,11 @@ function MusicService.start(world)
         while network.Parent do
             task.wait(0.1)
             jam:tick()
+            for player, profile in profiles do
+                if WorkspaceModel.tick(profile) then
+                    send(player)
+                end
+            end
         end
     end)
 
@@ -218,6 +258,7 @@ function MusicService.start(world)
             return
         end
         profile.lastTalk = now
+        profile.companionRoute = "legacy"
         if not profile.quest.accepted then
             profile.quest.accepted = true
             profile.editVersion += 1
@@ -256,7 +297,10 @@ function MusicService.start(world)
         station.owner = player
         station.label.Text = "MK-I  /  " .. player.DisplayName
         station.prompt.ActionText = "Occupied"
-        send(player, "Select a pad, then add steps. Space plays your loop.")
+        send(
+            player,
+            "Select a sound bank and pad, then add notes. Arrange named sections in Song Mode."
+        )
     end
     quay = QuayDemoService.new(
         world,
@@ -274,12 +318,31 @@ function MusicService.start(world)
             concert:open(player)
         end
     )
+    commerce = CommerceService.new(profiles, function(player)
+        if wardrobe then
+            wardrobe:refresh(player)
+        end
+        send(player)
+    end, function(player, message)
+        send(player, message)
+    end)
+    wardrobe = WardrobeService.new(profiles, function(player)
+        return commerce:verified(player)
+    end)
+    experience = QuayExperienceService.new(world, profiles, nearby, send, function(player, profile)
+        quay:changed(player, profile)
+    end, wardrobe, commerce)
     task.spawn(function()
         while world.root.Parent do
             task.wait(1)
             quay:tick()
         end
     end)
+
+    companions = CompanionService.new(profiles, send, function(player, profile)
+        profile.progressNeedsSave = true
+        drainQuestSave(player, profile)
+    end, world)
 
     local function join(player)
         if profiles[player] then
@@ -295,13 +358,17 @@ function MusicService.start(world)
         profile.tapTokens = 96
         profile.lastTapToken = profile.lastToken
         profile.lastSave = -math.huge
+        WorkspaceModel.sync(profile)
         profiles[player] = profile
         task.spawn(function()
             Profiles.load(player, profile)
             if profiles[player] ~= profile or player.Parent ~= Players then
                 return
             end
+            WorkspaceModel.sync(profile)
             rooms:assign(player, profile)
+            wardrobe:bind(player)
+            commerce:load(player)
             quay:arrive(player, profile, true)
             send(
                 player,
@@ -325,9 +392,14 @@ function MusicService.start(world)
         join(player)
     end
     Players.PlayerRemoving:Connect(function(player)
+        liveMusic:remove(player)
         quay:flush(player)
         listening:depart(player)
         release(player)
+        companions:remove(player)
+        experience:remove(player)
+        wardrobe:remove(player)
+        commerce:remove(player)
         profiles[player] = nil
         quay:remove(player)
         rooms:remove(player)
@@ -352,6 +424,7 @@ function MusicService.start(world)
             end
             task.wait(0.1)
         end
+        commerce:destroy()
     end)
 
     for id, station in world.stations do
@@ -370,7 +443,10 @@ function MusicService.start(world)
             station.owner = player
             station.label.Text = "MK-I  /  " .. player.DisplayName
             station.prompt.ActionText = "Occupied"
-            send(player, "Select a pad, then add steps. Space plays your loop.")
+            send(
+                player,
+                "Select a sound bank and pad, then add notes. Arrange named sections in Song Mode."
+            )
         end)
     end
 
@@ -385,6 +461,7 @@ function MusicService.start(world)
                 return
             end
             profile.lastDiscovery = now
+            profile.companionRoute = "legacy"
             local collected = profile.unlocked[id] == true
             profile.unlocked[id] = true
             if not collected then
@@ -401,12 +478,50 @@ function MusicService.start(world)
         end)
     end
 
+    local function bounded(value, depth, budget)
+        if depth > 8 then
+            return false
+        end
+        budget.nodes += 1
+        if budget.nodes > 512 then
+            return false
+        end
+        local kind = type(value)
+        if kind == "table" then
+            for key, item in value do
+                if type(key) ~= "string" and type(key) ~= "number" then
+                    return false
+                end
+                if not bounded(key, depth + 1, budget) or not bounded(item, depth + 1, budget) then
+                    return false
+                end
+            end
+        elseif kind == "string" then
+            if #value > 1024 then
+                return false
+            end
+        elseif kind == "number" then
+            if value ~= value or math.abs(value) == math.huge then
+                return false
+            end
+        elseif kind ~= "boolean" and kind ~= "nil" then
+            return false
+        end
+        return true
+    end
     command.OnServerEvent:Connect(function(player, action, a, b)
         local profile = profiles[player]
         if not profile or type(action) ~= "string" or #action > 32 then
             return
         end
+        if not bounded(a, 0, { nodes = 0 }) or not bounded(b, 0, { nodes = 0 }) then
+            return
+        end
         local now = os.clock()
+        if action:sub(1, 9) == "Companion" then
+            companions:command(player, action, a, b)
+            return
+        end
         if action == "Tap" then
             -- Keep a dense multi-pad roll from consuming Stop/Release's budget.
             profile.tapTokens = math.min(96, profile.tapTokens + (now - profile.lastTapToken) * 96)
@@ -435,13 +550,36 @@ function MusicService.start(world)
             return
         end
         if action == "Release" then
+            local leaveWorkshop = profile.station ~= nil and world.demo ~= nil
             listening:depart(player)
             release(player)
+            if leaveWorkshop then
+                quay:returnToRoamer(player, profile)
+            end
             return
         end
         if action == "Room" then
             local _, notice = rooms:change(player, profile, a, b)
             send(player, notice)
+            return
+        end
+        if action:sub(1, 4) == "Life" then
+            experience:command(player, action, a, b)
+            return
+        end
+        if action == "QuayStage" then
+            local station = world.stations[profile.station]
+            if not station or station.owner ~= player or not nearby(player, station.anchor, 15) then
+                send(
+                    player,
+                    "Open your music library at a workbench to take a set to the courtyard."
+                )
+                return
+            end
+            if quay:teleport(player, world.listening.anchor.Position + Vector3.new(0, 0, -5)) then
+                profile.stageFromWorkshop = true
+                listening:openBoard(player)
+            end
             return
         end
         if action:sub(1, 4) == "Quay" then
@@ -456,214 +594,87 @@ function MusicService.start(world)
             concert:command(player, action, a)
             return
         end
-        if action:sub(1, 5) == "Stage" then
-            listening:command(player, action)
+        if action:sub(1, 5) == "Stage" or action:sub(1, 9) == "Listening" then
+            listening:command(player, action, a)
+            if action == "StageClose" and profile.stageFromWorkshop then
+                profile.stageFromWorkshop = nil
+                quay:returnToRoamer(player, profile)
+            end
             return
         end
         local station = world.stations[profile.station]
         if not station or station.owner ~= player or not nearby(player, station.anchor, 15) then
-            release(player, "Return to a workbench to edit your pattern.")
+            release(player, "Return to a workbench to edit your project.")
             return
         end
-        local notice
-        if jam.members[player] and (action == "Play" or action == "Record" or action == "Tap") then
+        if
+            jam.members[player]
+            and (
+                action == "Play"
+                or action == "PlayStart"
+                or action == "Record"
+                or action == "Overdub"
+                or action == "SongPlay"
+                or action == "FinishedPlay"
+                or action == "Tap"
+            )
+        then
             send(
                 player,
                 "The jam owns playback. Edit notes, then publish; leave the jam for solo play."
             )
             return
         end
-        if action == "SelectSlot" and Pattern.integer(a, 1, Book.SlotCount) then
-            Book.select(profile, a)
-            profile.playing = false
-            profile.recording = false
-            profile.epoch += 1
-        elseif action == "ShelfStore" then
-            if profile.saving or now - profile.lastSave < 5 then
-                send(player, "Please wait a moment between saves.")
-                return
-            end
-            local ok, result = Book.store(profile, a, b)
-            if not ok then
-                send(player, result)
-                return
-            end
-            profile.editVersion += 1
-            profile.lastSave = now
-            persist(
-                player,
-                profile,
-                result
-                    .. (
-                        if profile.saveMode == "session"
-                            then " Saved for this Studio session only."
-                            else " Profile saved."
-                    )
-            )
-            return
-        elseif action == "ShelfLoad" then
-            if profile.saving then
-                send(player, "Wait for the current save before loading a beat.")
-                return
-            end
-            local ok, result = Book.load(profile, a, b)
-            if not ok then
-                send(player, result)
-                return
-            end
-            notice = result
-            profile.playing = false
-            profile.recording = false
-            profile.epoch += 1
-        elseif action == "Step" and Pattern.integer(a, 1, 16) and Pattern.integer(b, 1, 16) then
-            profile.pattern.rows[a][b] = not profile.pattern.rows[a][b]
-        elseif action == "PadPreset" and Pattern.integer(a, 1, 16) and type(b) == "string" then
-            local sound = require(game.ReplicatedStorage.Shared.PadSound).preset(
-                profile.pattern.sounds[a],
-                b,
-                profile.pattern.bpm
-            )
-            if not sound then
-                return
-            end
-            profile.pattern.sounds[a] = sound
-        elseif action == "PadSound" and Pattern.integer(a, 1, 16) and type(b) == "table" then
-            local Sound = require(game.ReplicatedStorage.Shared.PadSound)
-            if
-                type(b.key) ~= "string"
-                or not Sound.Spec[b.key]
-                or type(b.value) ~= "number"
-                or b.value ~= b.value
-                or math.abs(b.value) == math.huge
-            then
-                return
-            end
-            profile.pattern.sounds = profile.pattern.sounds or {}
-            local sound = Sound.sanitize(profile.pattern.sounds[a])
-            sound[b.key] = b.value
-            profile.pattern.sounds[a] = Sound.sanitize(sound)
-        elseif action == "MutePad" and Pattern.integer(a, 1, 16) then
-            profile.pattern.muted[a] = not profile.pattern.muted[a]
-        elseif action == "ClearPad" and Pattern.integer(a, 1, 16) then
-            profile.pattern.rows[a] = table.create(16, false)
-        elseif
-            action == "Assign"
-            and Pattern.integer(a, 1, 16)
-            and type(b) == "string"
-            and #b <= 40
-            and Catalog.isUnlocked(b, profile.unlocked)
-        then
-            profile.pattern.assignments[a] = b
-        elseif action == "Pack" and type(a) == "string" and #a < 32 and Catalog.PackById[a] then
-            if b ~= profile.editVersion or profile.saving then
-                send(player, "Sounds changed or saving is in progress. Review the kit again.")
-                return
-            end
-            local assignments = {}
-            for pad = 1, 16 do
-                local sample = Catalog.PackById[a].samples[pad]
-                if not sample or not Catalog.isUnlocked(sample.id, profile.unlocked) then
-                    return
+        if WorkspaceModel.handles(action) then
+            local ok, result, detail =
+                WorkspaceModel.command(player, profile, action, a, b, persist, send)
+            if action == "Tap" and ok then
+                profile.noteDeltas = profile.noteDeltas or {}
+                if detail and detail.event then
+                    table.insert(profile.noteDeltas, detail)
                 end
-                assignments[pad] = sample.id
+                if not profile.pendingTapState then
+                    profile.pendingTapState = true
+                    task.delay(1 / 30, function()
+                        profile.pendingTapState = false
+                        if profiles[player] ~= profile then
+                            return
+                        end
+                        local revisions, drafts = {}, {}
+                        for id, sequence in profile.music.project.sequences do
+                            revisions[id] = sequence.revision
+                        end
+                        for id, draft in profile.music.project.drafts do
+                            drafts[id] = draft.revision
+                        end
+                        delta:FireClient(player, {
+                            projectId = profile.music.project.id,
+                            projectRevision = profile.music.project.revision,
+                            events = profile.noteDeltas,
+                            sequenceRevisions = revisions,
+                            draftRevisions = drafts,
+                            editVersion = profile.editVersion,
+                        })
+                        profile.noteDeltas = {}
+                        liveMusic:update(player, profile, quay and quay:van(player))
+                    end)
+                end
+            else
+                send(player, result)
             end
-            profile.pattern.assignments = assignments
-            notice = Catalog.PackById[a].label .. " kit selected. Notes and tempo kept."
-        elseif action == "Finish" and type(a) == "string" and #a < 32 and Cosmetics.Sets[a] then
+        elseif action == "Broadcast" and type(a) == "boolean" then
+            profile.broadcast = a
+            send(player)
+        elseif action == "Finish" and type(a) == "string" and Cosmetics.Sets[a] then
             profile.finish = a
-        elseif action == "Bpm" and Pattern.integer(a, Pattern.MinBpm, Pattern.MaxBpm) then
-            profile.pattern.bpm = a
-            if profile.playing then
-                profile.startedAt = Workspace:GetServerTimeNow() + 0.15
-                profile.epoch += 1
-            end
-        elseif action == "Play" then
-            profile.playing = not profile.playing
-            profile.recording = false
-            profile.startedAt = Workspace:GetServerTimeNow() + 0.15
-            profile.epoch += 1
-        elseif action == "Stop" then
-            profile.playing = false
-            profile.recording = false
-            profile.epoch += 1
-        elseif action == "Record" then
-            profile.recording = not profile.recording
-            if profile.recording and not profile.playing then
-                profile.playing = true
-                profile.startedAt = Workspace:GetServerTimeNow() + 0.15
-                profile.epoch += 1
-            end
-        elseif action == "Tap" and Pattern.integer(a, 1, 16) then
-            if not profile.recording then
-                return
-            end
-            local step = Pattern.recordStep(
-                profile.pattern.bpm,
-                profile.startedAt,
-                Workspace:GetServerTimeNow(),
-                b,
-                profile.epoch
-            )
-            if not step then
-                return
-            end
-            if profile.pattern.rows[a][step] then
-                return
-            end
-            profile.pattern.rows[a][step] = true
             profile.editVersion += 1
-            -- Apply notes immediately, but coalesce chord feedback into one state.
-            if not profile.pendingTapState then
-                profile.pendingTapState = true
-                task.delay(1 / 30, function()
-                    profile.pendingTapState = false
-                    if profiles[player] == profile then
-                        send(player)
-                    end
-                end)
-            end
-            return
-        elseif action == "Save" then
-            if profile.saving or now - profile.lastSave < 5 then
-                send(player, "Please wait a moment between saves.")
-                return
-            end
-            profile.lastSave = now
-            persist(player, profile)
-            return
-        elseif action == "Restore" then
-            if a ~= profile.editVersion then
-                send(player, "Slots changed. Review Restore slots again before replacing A-D.")
-                return
-            end
-            if profile.saving then
-                send(player, "Wait for the current save before restoring slots.")
-                return
-            end
-            local _, result = Profiles.restore(profile)
-            notice = result
-            profile.playing = false
-            profile.recording = false
-            profile.epoch += 1
-        else
-            return
+            send(player)
+        elseif action == "Restore" and a == profile.editVersion and not profile.saving then
+            local _, message = Profiles.restore(profile)
+            WorkspaceModel.stop(profile, true)
+            WorkspaceModel.sync(profile)
+            send(player, message)
         end
-        if
-            action == "Step"
-            or action == "PadSound"
-            or action == "PadPreset"
-            or action == "MutePad"
-            or action == "ClearPad"
-            or action == "Assign"
-            or action == "Pack"
-            or action == "Bpm"
-            or action == "Finish"
-            or action == "SelectSlot"
-            or action == "ShelfLoad"
-        then
-            profile.editVersion += 1
-        end
-        send(player, notice)
     end)
 
     task.spawn(function()
@@ -675,7 +686,7 @@ function MusicService.start(world)
                 drainQuestSave(player, profile)
                 local station = world.stations[profile.station]
                 if station and not nearby(player, station.anchor, 18) then
-                    release(player, "Station released. Your pattern stays with you.")
+                    release(player, "Station released. Your project stays with you.")
                 end
             end
         end

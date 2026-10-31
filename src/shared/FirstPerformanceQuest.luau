@@ -1,5 +1,4 @@
-local Catalog = require(script.Parent.SampleCatalog)
-local Book = require(script.Parent.BeatBook)
+local Music = require(script.Parent.QuayMusicEvidence)
 local Quest = { Id = "first_courtyard_set", Title = "A tune for the quay" }
 
 function Quest.sanitize(raw)
@@ -20,26 +19,41 @@ function Quest.discoveryCount(profile)
     return count
 end
 
-function Quest.usesQuaySound(pattern)
-    for pad, id in pattern.assignments do
-        local sample = Catalog.ById[id]
-        if sample and sample.discovery and not pattern.muted[pad] then
-            for _, enabled in pattern.rows[pad] do
-                if enabled then
-                    return true
-                end
-            end
+function Quest.usesQuaySound(evidence)
+    return evidence ~= nil and evidence.discovery == true
+end
+
+function Quest.canPerform(profile, reference)
+    if
+        not profile.quest.accepted
+        or profile.quest.completed
+        or Quest.discoveryCount(profile) < 3
+    then
+        return false
+    end
+    -- This remains an optional single-loop activity, separate from Finished Songs.
+    if
+        type(reference) ~= "table"
+        or (reference.kind ~= "sequence" and reference.kind ~= "Sequence")
+        or type(reference.id) ~= "string"
+        or type(reference.revision) ~= "number"
+        or reference.revision ~= reference.revision
+        or reference.revision % 1 ~= 0
+        or reference.revision < 1
+        or reference.revision > 1e12
+    then
+        return false
+    end
+    for _, evidence in Music.savedSequences(profile) do
+        if
+            evidence.id == reference.id
+            and evidence.sequence.revision == reference.revision
+            and Quest.usesQuaySound(evidence)
+        then
+            return true
         end
     end
     return false
-end
-
-function Quest.canPerform(profile, pattern)
-    return profile.quest.accepted
-        and not profile.quest.completed
-        and Quest.discoveryCount(profile) == 3
-        and Quest.usesQuaySound(pattern)
-        and Book.savedPattern(profile, pattern)
 end
 
 function Quest.summary(profile)
@@ -63,13 +77,19 @@ function Quest.summary(profile)
             string.format("Collect the metal, vent and robot sounds: %d/3.", result.collected)
     else
         local ready = false
-        for _, pattern in profile.slots do
-            ready = ready or Quest.canPerform(profile, pattern)
+        for _, evidence in Music.savedSequences(profile) do
+            local sequence = profile.music and profile.music.project.sequences[evidence.id]
+            ready = ready
+                or Quest.canPerform(profile, {
+                    kind = "sequence",
+                    id = evidence.id,
+                    revision = sequence and sequence.revision,
+                })
         end
         result.stage = if ready then "perform" else "save"
         result.objective = if ready
-            then "Choose your saved quay-sound pattern, then share one full loop at the courtyard podium."
-            else "Put a collected sound on an unmuted step, then save your beat to the shelf."
+            then "Choose a saved quay-sound sequence, then share one full loop at the courtyard podium."
+            else "Put a ready collected sound in a named sequence, then Save Sequence and wait for confirmation."
     end
     return result
 end

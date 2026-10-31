@@ -1,0 +1,22 @@
+{
+  "base_sha": "8e8b91f6a5472eb6200599e60932e45a8c9ea56b",
+  "selene": "Results:\n0 errors\n0 warnings\n0 parse errors",
+  "rojo_build": "PASS",
+  "source_sha256": {
+    "src/shared/CompanionCatalog.luau": "be5f3002f969f2e76d9584f8c058e088dddafd5850e8198ba022470273e6ddd3",
+    "src/shared/CompanionProgress.luau": "c461eedefc61ba77ecc9066b8d9c425e005bc9788e456ad689dcb1ed18a17427",
+    "src/shared/CompanionModels.luau": "f34255efbc5b243df7038b5c1626608aed3501af6599872d0a6c162016a5b9e9",
+    "src/server/CompanionService.luau": "6f3a09880398490d7fb45c90af4f049c62f3f51ddf07382c7c45bd5c45dd4f67",
+    "src/server/ProfileStore.luau": "26970029cda70f19dd0f5766d695962a0bb31b2233213698cb213a46d9840f54",
+    "src/server/MusicService.luau": "8fbdb238c0a0d87e11dfc3fd6d010d34118e71ec6ab9153a2d26ed52eba7528a",
+    "src/server/QuayDemoService.luau": "c0ec38ba9150458b8f195fe7e246bf2faa1b1beeb85368ca2f2f28da58f5959a",
+    "src/server/LocalArtLibrary.luau": "83e2af081cee53cc46599da0a49b2313a53afc1aec5cb1853e04c6f124bb90ec",
+    "src/client/CompanionView.luau": "bf2aa06a93e29ea182d0b01fbfb91edd3f97eabf709ed15413fe3c6a29eafd4c",
+    "src/client/CompanionAnimation.luau": "675f682d1c9818da6be5ca72d46136e48fbc222dc390dac848465a70049dcb8b",
+    "src/client/CompanionFollower.luau": "637dfe252de91475f599803d196e3381cda23b21c8ea0cc35a80759af2703fbd",
+    "src/client/CommandPolicy.luau": "2dd01bf20939edaaf8e8132625c54a8af130036c30fef33402f8bc4007ed33c9",
+    "src/client/QuayDemoView.luau": "1fbb19994c69d5320532c127f4fb55d28bc38c0462e7ecdd918d5df92f662786",
+    "src/client/init.client.luau": "5ceb1025da4ec2405faaabcd48ce0cd42ee840ac45e34365b56a3f542b45d499"
+  },
+  "new_test_suites": false
+}

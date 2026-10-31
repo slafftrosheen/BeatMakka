@@ -1,123 +1,33 @@
 {
   "audio": [
     {
-      "key": "kick",
-      "file": "assets/production/audio/kick.wav",
-      "asset_id": null
-    },
-    {
-      "key": "snare",
-      "file": "assets/production/audio/snare.wav",
-      "asset_id": null
-    },
-    {
-      "key": "closed_hat",
-      "file": "assets/production/audio/closed_hat.wav",
-      "asset_id": null
-    },
-    {
-      "key": "open_hat",
-      "file": "assets/production/audio/open_hat.wav",
-      "asset_id": null
-    },
-    {
-      "key": "clap",
-      "file": "assets/production/audio/clap.wav",
-      "asset_id": null
-    },
-    {
-      "key": "rim",
-      "file": "assets/production/audio/rim.wav",
-      "asset_id": null
-    },
-    {
-      "key": "low_tom",
-      "file": "assets/production/audio/low_tom.wav",
-      "asset_id": null
-    },
-    {
-      "key": "high_tom",
-      "file": "assets/production/audio/high_tom.wav",
-      "asset_id": null
-    },
-    {
-      "key": "shaker",
-      "file": "assets/production/audio/shaker.wav",
-      "asset_id": null
-    },
-    {
-      "key": "tambourine",
-      "file": "assets/production/audio/tambourine.wav",
-      "asset_id": null
-    },
-    {
-      "key": "bell",
-      "file": "assets/production/audio/bell.wav",
-      "asset_id": null
-    },
-    {
-      "key": "pluck",
-      "file": "assets/production/audio/pluck.wav",
-      "asset_id": null
-    },
-    {
-      "key": "bass_c",
-      "file": "assets/production/audio/bass_c.wav",
-      "asset_id": null
-    },
-    {
-      "key": "bass_eb",
-      "file": "assets/production/audio/bass_eb.wav",
-      "asset_id": null
-    },
-    {
-      "key": "bass_g",
-      "file": "assets/production/audio/bass_g.wav",
-      "asset_id": null
-    },
-    {
-      "key": "chord",
-      "file": "assets/production/audio/chord.wav",
-      "asset_id": null
-    },
-    {
-      "key": "metal_hit",
-      "file": "assets/production/audio/metal_hit.wav",
-      "asset_id": null
-    },
-    {
-      "key": "vent_thump",
-      "file": "assets/production/audio/vent_thump.wav",
-      "asset_id": null
-    },
-    {
-      "key": "robot_chirp",
-      "file": "assets/production/audio/robot_chirp.wav",
-      "asset_id": null
-    },
-    {
-      "key": "ui_tap",
-      "file": "assets/production/audio/ui_tap.wav",
-      "asset_id": null
-    },
-    {
       "key": "ui_collect",
       "file": "assets/production/audio/ui_collect.wav",
-      "asset_id": null
-    },
-    {
-      "key": "ui_save",
-      "file": "assets/production/audio/ui_save.wav",
+      "source_sha256": "6d8557d07d1351ed32f1b1cf40b6e89fdd2039a9fcd6f3193c0438e555cc2bc1",
       "asset_id": null
     },
     {
       "key": "ui_error",
       "file": "assets/production/audio/ui_error.wav",
+      "source_sha256": "258bb16773360140308aef47d37cbeaf6587d1f52d9c3a63133737b4ec9eb8a7",
+      "asset_id": null
+    },
+    {
+      "key": "ui_save",
+      "file": "assets/production/audio/ui_save.wav",
+      "source_sha256": "2d866485005c6070e8acadd63ccfe65642a17c4e29037d7bdaa3f5dfc52a26da",
+      "asset_id": null
+    },
+    {
+      "key": "ui_tap",
+      "file": "assets/production/audio/ui_tap.wav",
+      "source_sha256": "280de6747c8664c8b1317ec4ee13f7f4abcfb676aed8fbbdbab8f112a2df866b",
       "asset_id": null
     },
     {
       "key": "waterfront",
       "file": "assets/production/audio/waterfront.wav",
+      "source_sha256": "74f7ecb9e28dbfe8662c97a620cc78dbe9c41faaa0b49decf06385eeeaceb4b0",
       "asset_id": null
     }
   ],
@@ -213,5 +123,7 @@
       "asset_id": null
     }
   ],
-  "policy": "Upload once per shared map to the experience owner. Masks/SVGs are source graphics; runtime UI can use native clipping without them. Assign only real permission-checked IDs."
+  "policy": "Upload once per shared map to the experience owner. Masks/SVGs are source graphics; runtime UI can use native clipping without them. Assign only real permission-checked IDs.",
+  "active_content_authority": "data/active-content.json",
+  "historical_music_retired": true
 }

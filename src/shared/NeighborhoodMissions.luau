@@ -1,20 +1,21 @@
--- Only ProfileStore evaluates rewards against a captured, successfully saved shelf.
+local Music = require(script.Parent.QuayMusicEvidence)
+-- Only ProfileStore evaluates rewards against captured, successfully saved music.
 local Missions = {
     Order = { "metal_pulse", "vent_duet", "helper_reply" },
     Definitions = {
         metal_pulse = {
             title = "A pulse for the quay",
-            objective = "Collect Quay metal. Put it on two different unmuted steps and save a beat to the shelf.",
+            objective = "Collect Quay metal. Put it on two different unmuted steps and save the named sequence.",
             reward = "Quay pulse light repaired.",
         },
         vent_duet = {
             title = "An alley duet",
-            objective = "Collect Vent thump. Save a pattern with audible metal and vent notes together.",
+            objective = "Collect Vent thump. Save a sequence with audible metal and vent notes together.",
             reward = "Alley duet light repaired.",
         },
         helper_reply = {
             title = "A reply for Mica",
-            objective = "Collect Helper chirp. Save two patterns with different audible chirp rhythms.",
+            objective = "Collect Helper chirp. Save two sequences with different audible chirp rhythms.",
             reward = "Helper reply light repaired.",
         },
     },
@@ -49,46 +50,33 @@ function Missions.merge(a, b)
     return a
 end
 
-local function rhythm(pattern, sample)
-    local steps = table.create(16, "0")
-    for pad = 1, 16 do
-        if pattern.assignments[pad] == sample and not pattern.muted[pad] then
-            for step = 1, 16 do
-                if pattern.rows[pad][step] == true then
-                    steps[step] = "1"
-                end
-            end
-        end
-    end
-    local count = 0
-    for _, on in steps do
-        if on == "1" then
-            count += 1
-        end
-    end
-    return table.concat(steps), count
-end
-
 function Missions.awarded(snapshot)
     local result = Missions.sanitize(snapshot.neighborhood)
     if not snapshot.quest.accepted then
         return result
     end
-    local metal, duet = false, false
-    local chirps = {}
-    for _, entry in snapshot.shelf do
-        if not entry then
-            continue
+    -- Snapshot is captured by ProfileStore only after a successful storage write.
+    local profile = {
+        saved = { music = snapshot.music },
+        music = snapshot.music,
+        unlocked = snapshot.unlocked,
+    }
+    local metal, duet, chirps = false, false, {}
+    for _, evidence in Music.savedSequences(profile) do
+        local positions = evidence.positions
+        local count = 0
+        for _ in positions.I01 or {} do
+            count += 1
         end
-        for _, pattern in entry.slots do
-            local _, metalCount = rhythm(pattern, "metal_hit")
-            local _, ventCount = rhythm(pattern, "vent_thump")
-            local chirp, chirpCount = rhythm(pattern, "robot_chirp")
-            metal = metal or metalCount >= 2
-            duet = duet or (metalCount > 0 and ventCount > 0)
-            if chirpCount > 0 then
-                chirps[chirp] = true
-            end
+        metal = metal or count >= 2
+        duet = duet or (count > 0 and next(positions.I02 or {}) ~= nil)
+        local ticks = {}
+        for tick in positions.I03 or {} do
+            table.insert(ticks, tick)
+        end
+        table.sort(ticks)
+        if #ticks > 0 then
+            chirps[table.concat(ticks, ",")] = true
         end
     end
     local variations = 0
@@ -129,7 +117,7 @@ function Missions.summary(profile)
             elseif
                 profile.chapter and profile.chapter.completed == true
             then "Your chapter set restored this courtyard. Keep making music; other chapters are ahead."
-            else "This courtyard is ready. Visit the Chapter concert prompt beside the listening podium to perform your own set.",
+            else "This courtyard is ready. Visit the Chapter concert prompt beside the listening podium to perform your own finished song.",
     }
 end
 

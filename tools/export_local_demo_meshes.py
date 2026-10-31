@@ -37,7 +37,7 @@ for asset in user_assets.values():
     sources=[s for s in sources if s[0]!=asset['id']]
     sources.append((asset['id'],asset['source'],asset['kind'],None))
 
-def mapped(v): return Vector((v.x, v.z, v.y))
+def mapped(v): return Vector((-v.x, v.z, v.y))
 def numbers(v): return ','.join(format(float(x), '.7g') for x in v)
 
 records = []
@@ -92,19 +92,20 @@ for ident, relative, kind, resolution in sources:
             key = (bone, material_name + ('__'+family if family else ''))
             colors[key] = [1,1,1] if kind=='asset' or (family and family.startswith(('character_','supplied_'))) else list(material.diffuse_color[:3]) if material else [1,1,1]
             corners = []
-            # x,z,y changes handedness. Preserve front faces by reversing winding.
-            order = (0,2,1) if transform.to_3x3().determinant() > 0 else (0,1,2)
+            # A proper rotation preserves the -Y source frontage as runtime -Z.
+            # Swapping only Y/Z reflected the whole asset despite winding repair.
+            order = (0,1,2) if transform.to_3x3().determinant() > 0 else (0,2,1)
             for index in order:
                 loop = tri.loops[index]
                 pos = mapped(transform @ mesh.vertices[tri.vertices[index]].co)
                 # Needle Records deliberately has a canonical corner pivot in its source.
-                if ident == 'NQ-BLD-02': pos -= Vector((16,0,8))
+                if ident == 'NQ-BLD-02': pos -= Vector((-16,0,8))
                 norm = mapped(normal_transform @ mesh.corner_normals[loop].vector).normalized()
                 tex = uv.data[loop].uv if uv else Vector((0,0))
                 if kind == 'building':
                     axis=max(range(3),key=lambda i:abs(norm[i]))
                     tile=4 if family=='brick' else 8 if family not in ('wood','metal') else 6
-                    tex=Vector(((pos.z if axis==0 else pos.x)/tile, (pos.z if axis==1 else pos.y)/tile))
+                    tex=Vector(((pos.z if axis==0 else -pos.x)/tile, (pos.z if axis==1 else pos.y)/tile))
                 # The legacy .mesh reader flips V on import. Keep Blender's V here:
                 # adding another flip selects the wrong atlas row (foliage became wood).
                 corners.append((pos, norm, (tex.x, tex.y, 0)))
@@ -145,6 +146,7 @@ for ident, relative, kind, resolution in sources:
     records.append({'id': ident, 'kind': kind, 'source': relative, 'source_sha256': hashlib.sha256(source.read_bytes()).hexdigest(),
                     'resolution': resolution, 'triangles':sum(p['triangles'] for p in parts), 'parts':parts,'joints':joints,'skin':skin,
                     'geometry_route':'exact evaluated triangles, normals and UVs; no decimation'})
+    records[-1]['coordinate_basis'] = 'blender_to_roblox_front_minus_z_v2'
     print(ident, records[-1]['triangles'], 'triangles', len(parts), 'parts')
 manifest = ROOT / 'assets/local-demo/mesh-manifest.json'
 manifest.write_text(json.dumps({'version':1,'assets':records},indent=2),encoding='utf-8')

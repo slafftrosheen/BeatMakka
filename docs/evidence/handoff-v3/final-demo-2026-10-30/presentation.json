@@ -1,0 +1,21 @@
+{
+  "freshProfile": {
+    "finishedCount": 0,
+    "passed": true,
+    "character": "280, 3.207531213760376, 78",
+    "attributes": {
+      "LocalArtLoaded": 83,
+      "LocalArtTotal": 83
+    },
+    "saveMode": "session",
+    "draftCount": 0,
+    "viewport": "1539, 753",
+    "sequenceCount": 1,
+    "ready": true
+  },
+  "consoleBeforeCapture": "",
+  "consoleAfterTemporaryCameraTest": "[Roblox][sabuiltin_Assistant.rbxm.Assistant.Packages._Index.AssistantUI.AssistantUI.Actions.ExecuteLuauActions] The execute_luau changed camera type. Resetting from Enum.CameraType.Scriptable back to Enum.CameraType.Custom",
+  "cameraRestored": true,
+  "deviceResetToDefault": true,
+  "captureId": "v3-final-overview-camera"
+}

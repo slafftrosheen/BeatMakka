@@ -1,0 +1,875 @@
+{
+  "date": "2026-10-29",
+  "buildings": [
+    {
+      "id": "NQ-BLD-01",
+      "name": "The Lantern Room",
+      "folder": "NQ-BLD-01-lantern-room",
+      "artbook_reference": "assets/concepts/needle-quay/NQ-BLD-01-lantern-room-v1.png",
+      "artbook_reference_sha256": "8d25a58af19e040ddf55aed1da1ca63c1bb625048d489cc5aab08a3b65b42766",
+      "views": [
+        {
+          "view": "front",
+          "file": "NQ-BLD-01-lantern-room/front.png",
+          "width": 1536,
+          "height": 1024,
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            254
+          ],
+          "bytes": 2469725,
+          "sha256": "c601918e2cff88530d1e598e041a618ac0735371cd06bd5cb5fd4f1d290f5d5f",
+          "provenance": "NQ-BLD-01-lantern-room/front.provenance.json"
+        },
+        {
+          "view": "left",
+          "file": "NQ-BLD-01-lantern-room/left.png",
+          "width": 1536,
+          "height": 1024,
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            254
+          ],
+          "bytes": 2570988,
+          "sha256": "12df097db28588f5e3b53c49cd89334e2cfc4507d1dd961faf123e8835abf63a",
+          "provenance": "NQ-BLD-01-lantern-room/left.provenance.json"
+        },
+        {
+          "view": "right",
+          "file": "NQ-BLD-01-lantern-room/right.png",
+          "width": 1536,
+          "height": 1024,
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            254
+          ],
+          "bytes": 2346592,
+          "sha256": "0c7a9c9491176990e1c1b404cd44f9fe5b12c6600daf4ea666cd166586e9901e",
+          "provenance": "NQ-BLD-01-lantern-room/right.provenance.json"
+        },
+        {
+          "view": "back",
+          "file": "NQ-BLD-01-lantern-room/back.png",
+          "width": 1536,
+          "height": 1024,
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            254
+          ],
+          "bytes": 2575288,
+          "sha256": "b6c04d828071924cd15087876c1e3570f2b7b1a04a2098bb807bbc38aa835ff7",
+          "provenance": "NQ-BLD-01-lantern-room/back.provenance.json"
+        }
+      ]
+    },
+    {
+      "id": "NQ-BLD-02",
+      "name": "Needle Records",
+      "folder": "NQ-BLD-02-needle-records",
+      "artbook_reference": "assets/concepts/needle-quay/NQ-BLD-02-needle-records-v1.png",
+      "artbook_reference_sha256": "4aeb7e45f3c6830e36cb75fba016e0bf0ffdf34e16bcb94124dbb01b3c6d51c7",
+      "views": [
+        {
+          "view": "front",
+          "file": "NQ-BLD-02-needle-records/front.png",
+          "width": 1536,
+          "height": 1024,
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            254
+          ],
+          "bytes": 2271949,
+          "sha256": "dce108693873146ff08b5307050e83535693d7a40139f44c6740de4440771aff",
+          "provenance": "NQ-BLD-02-needle-records/front.provenance.json"
+        },
+        {
+          "view": "left",
+          "file": "NQ-BLD-02-needle-records/left.png",
+          "width": 1536,
+          "height": 1024,
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            254
+          ],
+          "bytes": 2399343,
+          "sha256": "32a2aec654136da73c715a03b62d81bcbbb23fde62ff66439739f46ebd07b101",
+          "provenance": "NQ-BLD-02-needle-records/left.provenance.json"
+        },
+        {
+          "view": "right",
+          "file": "NQ-BLD-02-needle-records/right.png",
+          "width": 1536,
+          "height": 1024,
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            254
+          ],
+          "bytes": 2471028,
+          "sha256": "225b9a694636f4a20917d1393a86b6d8fd7c2a094aa06cd452daab9ef6a47c4f",
+          "provenance": "NQ-BLD-02-needle-records/right.provenance.json"
+        },
+        {
+          "view": "back",
+          "file": "NQ-BLD-02-needle-records/back.png",
+          "width": 1536,
+          "height": 1024,
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            254
+          ],
+          "bytes": 2520857,
+          "sha256": "56a673bcc33f041d268ff0478ed9faa0dbed140185ac937d4f89dfb91339682e",
+          "provenance": "NQ-BLD-02-needle-records/back.provenance.json"
+        }
+      ]
+    },
+    {
+      "id": "NQ-BLD-03",
+      "name": "Morrow Repairs",
+      "folder": "NQ-BLD-03-morrow-repairs",
+      "artbook_reference": "assets/concepts/needle-quay/NQ-BLD-03-morrow-repairs-v1.png",
+      "artbook_reference_sha256": "92a97be01119232ee731ae5a451344e8e8bf1c3f2156d4f0ff2a6b62ab218459",
+      "views": [
+        {
+          "view": "front",
+          "file": "NQ-BLD-03-morrow-repairs/front.png",
+          "width": 1536,
+          "height": 1024,
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            254
+          ],
+          "bytes": 2588587,
+          "sha256": "d2572ddccf9b725adbb6e06cf147f48bb3b28da8aea35d3285355386bdcfc34d",
+          "provenance": "NQ-BLD-03-morrow-repairs/front.provenance.json"
+        },
+        {
+          "view": "left",
+          "file": "NQ-BLD-03-morrow-repairs/left.png",
+          "width": 1536,
+          "height": 1024,
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            254
+          ],
+          "bytes": 2558944,
+          "sha256": "dc95e3156062bc56d96252a183aa45564abd26f15483db8a0f0e1cf0d00af9c5",
+          "provenance": "NQ-BLD-03-morrow-repairs/left.provenance.json"
+        },
+        {
+          "view": "right",
+          "file": "NQ-BLD-03-morrow-repairs/right.png",
+          "width": 1536,
+          "height": 1024,
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            254
+          ],
+          "bytes": 2442258,
+          "sha256": "7d015fbe84885915cc434baa33c84ed1f145116c24f4ef48778e632306a0bf25",
+          "provenance": "NQ-BLD-03-morrow-repairs/right.provenance.json"
+        },
+        {
+          "view": "back",
+          "file": "NQ-BLD-03-morrow-repairs/back.png",
+          "width": 1536,
+          "height": 1024,
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            254
+          ],
+          "bytes": 2586563,
+          "sha256": "1aee9d2a842e7bb2e8e45c3f275a6ae1da545a4f4449289b27eb374aa0c9d4ee",
+          "provenance": "NQ-BLD-03-morrow-repairs/back.provenance.json"
+        }
+      ]
+    },
+    {
+      "id": "NQ-BLD-04",
+      "name": "Harbor Market Hall",
+      "folder": "NQ-BLD-04-harbor-market-hall",
+      "artbook_reference": "assets/concepts/needle-quay/NQ-BLD-04-harbor-market-hall-v1.png",
+      "artbook_reference_sha256": "d29e1df8eb96a617f3aa2efce766e0f0556b7a84b9eafb9b8a3f23567d800b99",
+      "views": [
+        {
+          "view": "front",
+          "file": "NQ-BLD-04-harbor-market-hall/front.png",
+          "width": 1774,
+          "height": 887,
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bytes": 1770104,
+          "sha256": "e126e5bbff4e53826f2bc0d6ae6d1606bd313f65871c1418a369c669e68a33b6",
+          "provenance": "NQ-BLD-04-harbor-market-hall/front.provenance.json"
+        },
+        {
+          "view": "left",
+          "file": "NQ-BLD-04-harbor-market-hall/left.png",
+          "width": 1774,
+          "height": 887,
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bytes": 1642176,
+          "sha256": "44802a0a08208e3fb774486edeecacdc823325dd28a7cc18af9c9144f21d1052",
+          "provenance": "NQ-BLD-04-harbor-market-hall/left.provenance.json"
+        },
+        {
+          "view": "right",
+          "file": "NQ-BLD-04-harbor-market-hall/right.png",
+          "width": 1536,
+          "height": 1024,
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            254
+          ],
+          "bytes": 2307715,
+          "sha256": "8b42a4850aa3203fd8591d316a73e42ac8b5ea15e03892816ba3b4d5144a5ae1",
+          "provenance": "NQ-BLD-04-harbor-market-hall/right.provenance.json"
+        },
+        {
+          "view": "back",
+          "file": "NQ-BLD-04-harbor-market-hall/back.png",
+          "width": 1774,
+          "height": 887,
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bytes": 1708026,
+          "sha256": "ca74cf91a90ede8a564c47233131d9a243a4551389521f6b293e9e2bd5cdf095",
+          "provenance": "NQ-BLD-04-harbor-market-hall/back.provenance.json"
+        }
+      ]
+    },
+    {
+      "id": "NQ-BLD-05",
+      "name": "Signal House",
+      "folder": "NQ-BLD-05-signal-house",
+      "artbook_reference": "assets/concepts/needle-quay/NQ-BLD-05-signal-house-v1.png",
+      "artbook_reference_sha256": "d80d09e1b1bb7e22205fc33fb6936ba1bb25685c3ee9249f2d9033783a7451ad",
+      "views": [
+        {
+          "view": "front",
+          "file": "NQ-BLD-05-signal-house/front.png",
+          "width": 1536,
+          "height": 1024,
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            254
+          ],
+          "bytes": 2105544,
+          "sha256": "cb75823db3f9c1365716f8232e4a59d83883e18ed9ef0c0ce84b326f5c7b354f",
+          "provenance": "NQ-BLD-05-signal-house/front.provenance.json"
+        },
+        {
+          "view": "left",
+          "file": "NQ-BLD-05-signal-house/left.png",
+          "width": 1536,
+          "height": 1024,
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            254
+          ],
+          "bytes": 2164851,
+          "sha256": "2c7afa4152d343b135ffd9d84a4b383ed31e47b612571658342aa0817f2a1091",
+          "provenance": "NQ-BLD-05-signal-house/left.provenance.json"
+        },
+        {
+          "view": "right",
+          "file": "NQ-BLD-05-signal-house/right.png",
+          "width": 1536,
+          "height": 1024,
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            254
+          ],
+          "bytes": 1987020,
+          "sha256": "58c382b4178fc9f752befe169a9d0c3fd6b41ddc8ad7f6020df20d841c75e454",
+          "provenance": "NQ-BLD-05-signal-house/right.provenance.json"
+        },
+        {
+          "view": "back",
+          "file": "NQ-BLD-05-signal-house/back.png",
+          "width": 1536,
+          "height": 1024,
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            254
+          ],
+          "bytes": 2074915,
+          "sha256": "a28b4b75e59267f3f07e094e64052b4e89dd6c65d0b812e2589a726ddfe1544f",
+          "provenance": "NQ-BLD-05-signal-house/back.provenance.json"
+        }
+      ]
+    },
+    {
+      "id": "NQ-BLD-06",
+      "name": "Warm Current Café",
+      "folder": "NQ-BLD-06-warm-current-cafe",
+      "artbook_reference": "assets/concepts/needle-quay/NQ-BLD-06-warm-current-cafe-v1.png",
+      "artbook_reference_sha256": "4a95ac4656c04420b76f6c35379f2694162a7b01540e4343d352b64e6c506267",
+      "views": [
+        {
+          "view": "front",
+          "file": "NQ-BLD-06-warm-current-cafe/front.png",
+          "width": 1536,
+          "height": 1024,
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            254
+          ],
+          "bytes": 2166277,
+          "sha256": "181322a00a417863bb6606b0b15e306a380d73009d337d9f574e4f66db206b57",
+          "provenance": "NQ-BLD-06-warm-current-cafe/front.provenance.json"
+        },
+        {
+          "view": "left",
+          "file": "NQ-BLD-06-warm-current-cafe/left.png",
+          "width": 1536,
+          "height": 1024,
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            254
+          ],
+          "bytes": 2299639,
+          "sha256": "ff6e1336e10d04b5e508ec21faec804b64f60c03550bfbcb3e3622d52cbfae3f",
+          "provenance": "NQ-BLD-06-warm-current-cafe/left.provenance.json"
+        },
+        {
+          "view": "right",
+          "file": "NQ-BLD-06-warm-current-cafe/right.png",
+          "width": 1536,
+          "height": 1024,
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            254
+          ],
+          "bytes": 2126992,
+          "sha256": "6860c743c4bd91b7cfba5db8bd5bbebb685ed5d9b2e61f6fb9da4e40ad72a4f6",
+          "provenance": "NQ-BLD-06-warm-current-cafe/right.provenance.json"
+        },
+        {
+          "view": "back",
+          "file": "NQ-BLD-06-warm-current-cafe/back.png",
+          "width": 1536,
+          "height": 1024,
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            254
+          ],
+          "bytes": 2204879,
+          "sha256": "7dc8c5c15bb0432abc72cd642abddffb457849fe8179e771e2b1f17ed861ac48",
+          "provenance": "NQ-BLD-06-warm-current-cafe/back.provenance.json"
+        }
+      ]
+    },
+    {
+      "id": "NQ-BLD-07",
+      "name": "North Slip Ferry Office",
+      "folder": "NQ-BLD-07-north-slip-ferry-office",
+      "artbook_reference": "assets/concepts/needle-quay/NQ-BLD-07-north-slip-ferry-office-v1.png",
+      "artbook_reference_sha256": "6051dc4d57e4261953d39ec33c324b0c5f2047fd0a43d3f2404fdea278c3c6be",
+      "views": [
+        {
+          "view": "front",
+          "file": "NQ-BLD-07-north-slip-ferry-office/front.png",
+          "width": 1536,
+          "height": 1024,
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            254
+          ],
+          "bytes": 2444080,
+          "sha256": "69e26ff2fd92990142c23d12bf7a9a623334d7feffad2b320288c2cc02a81b35",
+          "provenance": "NQ-BLD-07-north-slip-ferry-office/front.provenance.json"
+        },
+        {
+          "view": "left",
+          "file": "NQ-BLD-07-north-slip-ferry-office/left.png",
+          "width": 1536,
+          "height": 1024,
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            254
+          ],
+          "bytes": 2489148,
+          "sha256": "7da1474446d358a8839c59c1a1fa1e98f0222416ae0f506d22c1f70a4d6ffcf7",
+          "provenance": "NQ-BLD-07-north-slip-ferry-office/left.provenance.json"
+        },
+        {
+          "view": "right",
+          "file": "NQ-BLD-07-north-slip-ferry-office/right.png",
+          "width": 1536,
+          "height": 1024,
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            254
+          ],
+          "bytes": 2232392,
+          "sha256": "88a4e76b1972106cfb49619bdacad2b64c9e5f8625733aee5451e110958e30e7",
+          "provenance": "NQ-BLD-07-north-slip-ferry-office/right.provenance.json"
+        },
+        {
+          "view": "back",
+          "file": "NQ-BLD-07-north-slip-ferry-office/back.png",
+          "width": 1536,
+          "height": 1024,
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            254
+          ],
+          "bytes": 2462963,
+          "sha256": "718e68a58af5eeb596e0df71ea45086836f73f5e1b715a61f3413864ca01866e",
+          "provenance": "NQ-BLD-07-north-slip-ferry-office/back.provenance.json"
+        }
+      ]
+    },
+    {
+      "id": "NQ-BLD-08",
+      "name": "Quay Supply & Tackle",
+      "folder": "NQ-BLD-08-quay-supply-tackle",
+      "artbook_reference": "assets/concepts/needle-quay/NQ-BLD-08-quay-supply-tackle-v1.png",
+      "artbook_reference_sha256": "4d2575059e8bc57af05409d9face9bd21178f5772db65ded147cc1e8ae7dfc4d",
+      "views": [
+        {
+          "view": "front",
+          "file": "NQ-BLD-08-quay-supply-tackle/front.png",
+          "width": 1536,
+          "height": 1024,
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            254
+          ],
+          "bytes": 2412806,
+          "sha256": "4d0ccb23b230715fc8e10bd574f43fdfcef61787ad47d1c6ca7329bf21ca3086",
+          "provenance": "NQ-BLD-08-quay-supply-tackle/front.provenance.json"
+        },
+        {
+          "view": "left",
+          "file": "NQ-BLD-08-quay-supply-tackle/left.png",
+          "width": 1536,
+          "height": 1024,
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            254
+          ],
+          "bytes": 2570079,
+          "sha256": "656ac891dda5b955fcbdd42cde870dce5f8520ec891f23af3969d3bae5a30a94",
+          "provenance": "NQ-BLD-08-quay-supply-tackle/left.provenance.json"
+        },
+        {
+          "view": "right",
+          "file": "NQ-BLD-08-quay-supply-tackle/right.png",
+          "width": 1536,
+          "height": 1024,
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            254
+          ],
+          "bytes": 2451770,
+          "sha256": "afa49fc9266294a3293026746d7bbdea5e356a015d31744da2a3b607adce686f",
+          "provenance": "NQ-BLD-08-quay-supply-tackle/right.provenance.json"
+        },
+        {
+          "view": "back",
+          "file": "NQ-BLD-08-quay-supply-tackle/back.png",
+          "width": 1536,
+          "height": 1024,
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            254
+          ],
+          "bytes": 2462518,
+          "sha256": "e089648d01b2a8e586215631b9967409db500768c79d974175be05ae50a3aeb0",
+          "provenance": "NQ-BLD-08-quay-supply-tackle/back.provenance.json"
+        }
+      ]
+    },
+    {
+      "id": "NQ-BLD-09",
+      "name": "Cinder Cold Storage",
+      "folder": "NQ-BLD-09-cinder-cold-storage",
+      "artbook_reference": "assets/concepts/needle-quay/NQ-BLD-09-cinder-cold-storage-v1.png",
+      "artbook_reference_sha256": "00cef33f7bf0516865d082c827cb2ef27ab6463ac1abc59869262c58af9cf7ab",
+      "views": [
+        {
+          "view": "front",
+          "file": "NQ-BLD-09-cinder-cold-storage/front.png",
+          "width": 1774,
+          "height": 887,
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bytes": 1938529,
+          "sha256": "c0328bd57132727e56ab6e9b4002924aee9bc59018d790b4e7ea523bcc691e85",
+          "provenance": "NQ-BLD-09-cinder-cold-storage/front.provenance.json"
+        },
+        {
+          "view": "left",
+          "file": "NQ-BLD-09-cinder-cold-storage/left.png",
+          "width": 1774,
+          "height": 887,
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bytes": 1851739,
+          "sha256": "a50651faa5b1432983a121cb2c478c116508736beb1699186a5a094604d2e4d1",
+          "provenance": "NQ-BLD-09-cinder-cold-storage/left.provenance.json"
+        },
+        {
+          "view": "right",
+          "file": "NQ-BLD-09-cinder-cold-storage/right.png",
+          "width": 1774,
+          "height": 887,
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bytes": 1625980,
+          "sha256": "1ca721aae5a644e238c97406be9e3d998c261eb2a55b337cc1f25f739213debd",
+          "provenance": "NQ-BLD-09-cinder-cold-storage/right.provenance.json"
+        },
+        {
+          "view": "back",
+          "file": "NQ-BLD-09-cinder-cold-storage/back.png",
+          "width": 1774,
+          "height": 887,
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bytes": 1969708,
+          "sha256": "897f2229ad1b4289007a4f4b6d8447a3510a948f1b8171cbc29f893d3171bc02",
+          "provenance": "NQ-BLD-09-cinder-cold-storage/back.provenance.json"
+        }
+      ]
+    },
+    {
+      "id": "NQ-BLD-10",
+      "name": "Quayside Flats",
+      "folder": "NQ-BLD-10-quayside-flats",
+      "artbook_reference": "assets/concepts/needle-quay/NQ-BLD-10-quayside-flats-v1.png",
+      "artbook_reference_sha256": "456928018fc737498ae959f993a5f3c66c78262a422f861573b75a16f3a91925",
+      "views": [
+        {
+          "view": "front",
+          "file": "NQ-BLD-10-quayside-flats/front.png",
+          "width": 1536,
+          "height": 1024,
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            254
+          ],
+          "bytes": 2244159,
+          "sha256": "257744f7f47719aae16cb732c1143c57ae5d4e1aa662ac0bc82a14bb4e341415",
+          "provenance": "NQ-BLD-10-quayside-flats/front.provenance.json"
+        },
+        {
+          "view": "left",
+          "file": "NQ-BLD-10-quayside-flats/left.png",
+          "width": 1536,
+          "height": 1024,
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            254
+          ],
+          "bytes": 2251850,
+          "sha256": "3e4adfce317721dde524307d1135cfd3781c54de97325fb04ddaa991b159b268",
+          "provenance": "NQ-BLD-10-quayside-flats/left.provenance.json"
+        },
+        {
+          "view": "right",
+          "file": "NQ-BLD-10-quayside-flats/right.png",
+          "width": 1536,
+          "height": 1024,
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            254
+          ],
+          "bytes": 1896667,
+          "sha256": "d06adfa5e8588f765b281d2c27ea2e90ae6a1a224527e9c0de2b5e079439bca6",
+          "provenance": "NQ-BLD-10-quayside-flats/right.provenance.json"
+        },
+        {
+          "view": "back",
+          "file": "NQ-BLD-10-quayside-flats/back.png",
+          "width": 1536,
+          "height": 1024,
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            254
+          ],
+          "bytes": 2267745,
+          "sha256": "7c0f6c824e7657956a928271d043475cd5e5bb15ef923a1ec2308a6d4bf989c2",
+          "provenance": "NQ-BLD-10-quayside-flats/back.provenance.json"
+        }
+      ]
+    },
+    {
+      "id": "NQ-BLD-11",
+      "name": "Tidewash Laundry",
+      "folder": "NQ-BLD-11-tidewash-laundry",
+      "artbook_reference": "assets/concepts/needle-quay/NQ-BLD-11-tidewash-laundry-v1.png",
+      "artbook_reference_sha256": "239be48463f71bac3f2eecc32932c067682f5fd45c645041a8f228b8b6432863",
+      "views": [
+        {
+          "view": "front",
+          "file": "NQ-BLD-11-tidewash-laundry/front.png",
+          "width": 1536,
+          "height": 1024,
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            254
+          ],
+          "bytes": 2544981,
+          "sha256": "5c2ea6cba59458426b86d3a1f68c806ea042f61943d126c2a408530fb4740ecf",
+          "provenance": "NQ-BLD-11-tidewash-laundry/front.provenance.json"
+        },
+        {
+          "view": "left",
+          "file": "NQ-BLD-11-tidewash-laundry/left.png",
+          "width": 1536,
+          "height": 1024,
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            254
+          ],
+          "bytes": 2408651,
+          "sha256": "53d51e801d06c98d04883f7637d1d4024209f8dcd3a906d1b197e263a38cf73d",
+          "provenance": "NQ-BLD-11-tidewash-laundry/left.provenance.json"
+        },
+        {
+          "view": "right",
+          "file": "NQ-BLD-11-tidewash-laundry/right.png",
+          "width": 1536,
+          "height": 1024,
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            254
+          ],
+          "bytes": 2416866,
+          "sha256": "653a0ec1baa05dec3affe2e200fe19dff80b0797ac73f3487592ad5bdfde93e0",
+          "provenance": "NQ-BLD-11-tidewash-laundry/right.provenance.json"
+        },
+        {
+          "view": "back",
+          "file": "NQ-BLD-11-tidewash-laundry/back.png",
+          "width": 1536,
+          "height": 1024,
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            254
+          ],
+          "bytes": 2438137,
+          "sha256": "574e29726944e424c55a27a580ad894d7ce52ba4df934c66c516b3eba5fd66db",
+          "provenance": "NQ-BLD-11-tidewash-laundry/back.provenance.json"
+        }
+      ]
+    },
+    {
+      "id": "NQ-BLD-12",
+      "name": "Relay Substation",
+      "folder": "NQ-BLD-12-relay-substation",
+      "artbook_reference": "assets/concepts/needle-quay/NQ-BLD-12-relay-substation-v1.png",
+      "artbook_reference_sha256": "1ac1afe9323a12b80812a7df01f22302c3c1be3f9a2441818584dd46eeaaa370",
+      "views": [
+        {
+          "view": "front",
+          "file": "NQ-BLD-12-relay-substation/front.png",
+          "width": 1536,
+          "height": 1024,
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            254
+          ],
+          "bytes": 2288045,
+          "sha256": "39ea541e3f8da8bb3aac8d8826ad4e4b9939a2fe29642c8e10eeb5804cf196e2",
+          "provenance": "NQ-BLD-12-relay-substation/front.provenance.json"
+        },
+        {
+          "view": "left",
+          "file": "NQ-BLD-12-relay-substation/left.png",
+          "width": 1536,
+          "height": 1024,
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            254
+          ],
+          "bytes": 2245083,
+          "sha256": "bc1631a0f56d3dc5d6e1372fefac6ab6c5308a45a9f74074849f816f7e65fc14",
+          "provenance": "NQ-BLD-12-relay-substation/left.provenance.json"
+        },
+        {
+          "view": "right",
+          "file": "NQ-BLD-12-relay-substation/right.png",
+          "width": 1536,
+          "height": 1024,
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            254
+          ],
+          "bytes": 2329287,
+          "sha256": "ff5fb457f0bf7ae4d6a21a6154b459a9d273ff2b93b1c52d7c8f46c0f54ca240",
+          "provenance": "NQ-BLD-12-relay-substation/right.provenance.json"
+        },
+        {
+          "view": "back",
+          "file": "NQ-BLD-12-relay-substation/back.png",
+          "width": 1536,
+          "height": 1024,
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            254
+          ],
+          "bytes": 2400687,
+          "sha256": "bb56a0dae09dacbbbe353f128f0b55eba349dbbddda0a41933a24730c8a1df91",
+          "provenance": "NQ-BLD-12-relay-substation/back.provenance.json"
+        }
+      ]
+    },
+    {
+      "id": "NQ-BLD-13",
+      "name": "Dockline Depot",
+      "folder": "NQ-BLD-13-dockline-depot",
+      "artbook_reference": "assets/concepts/needle-quay/NQ-BLD-13-dockline-depot-v1.png",
+      "artbook_reference_sha256": "32f2720c0a4994454cae774e4919d655ee47e11caffd24b38b5ab53a48936824",
+      "views": [
+        {
+          "view": "front",
+          "file": "NQ-BLD-13-dockline-depot/front.png",
+          "width": 1536,
+          "height": 1024,
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            254
+          ],
+          "bytes": 2428023,
+          "sha256": "c5e32b5209f302c70201ed519c278d1d26049bbad9e799e1a861ee203da65d80",
+          "provenance": "NQ-BLD-13-dockline-depot/front.provenance.json"
+        },
+        {
+          "view": "left",
+          "file": "NQ-BLD-13-dockline-depot/left.png",
+          "width": 1536,
+          "height": 1024,
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            254
+          ],
+          "bytes": 2448748,
+          "sha256": "badd1fccbad0949a48d74bc1b8ddfc12880710471b4a599ba005d397d3c8d7c6",
+          "provenance": "NQ-BLD-13-dockline-depot/left.provenance.json"
+        },
+        {
+          "view": "right",
+          "file": "NQ-BLD-13-dockline-depot/right.png",
+          "width": 1536,
+          "height": 1024,
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            254
+          ],
+          "bytes": 2405746,
+          "sha256": "db87d0e0b661170c21351262ab7fc07ccb60ff8b749b4944d15110a7595afa4b",
+          "provenance": "NQ-BLD-13-dockline-depot/right.provenance.json"
+        },
+        {
+          "view": "back",
+          "file": "NQ-BLD-13-dockline-depot/back.png",
+          "width": 1536,
+          "height": 1024,
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            254
+          ],
+          "bytes": 2524179,
+          "sha256": "e61f96709e5bf348a5ccd53421618bd13b8b1e80d7cfc5280a88e91a9fdc9a11",
+          "provenance": "NQ-BLD-13-dockline-depot/back.provenance.json"
+        }
+      ]
+    }
+  ],
+  "building_count": 13,
+  "image_count": 52,
+  "expected_count": 52,
+  "all_files_decode": true,
+  "errors": [],
+  "view_order": [
+    "front",
+    "left",
+    "right",
+    "back"
+  ],
+  "background": "genuine transparent PNG alpha",
+  "projection_convention": {
+    "front": "camera -Z",
+    "left": "camera -X; front corner at image right",
+    "right": "camera +X; front corner at image left",
+    "back": "camera +Z"
+  },
+  "method": "52 separate built-in image_gen derived architectural concept elevations, referenced to approved artbook and front identity anchors. Not rendered from a single exact reconstructed DCC model.",
+  "unseen_details": "Left/rear details not depicted by the artbook are design interpretations. These are concept references, not precision engineering projections.",
+  "roblox_uploads": 0,
+  "tripo_calls": 0,
+  "new_art_approval": false,
+  "assets_inventory_count": 6343,
+  "supplied_new_external_materials_used": 0
+}

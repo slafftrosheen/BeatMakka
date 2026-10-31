@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "default": "original-synthesis-v1",
+  "default": "handoff-v3-pending-audio",
   "revisions": {
     "original-synthesis-v1": {
       "manifest": "assets/production/audio/manifest.json",
@@ -8,7 +8,10 @@
         "musical-pad",
         "ui-cue",
         "ambience"
-      ]
+      ],
+      "active": false,
+      "runtime_bound": false,
+      "status": "archival_retired"
     },
     "quay-found-v1": {
       "inherits": "original-synthesis-v1",
@@ -23,7 +26,16 @@
       ],
       "listening_approved": true,
       "runtime_bound": false,
-      "requires_separate_upload_receipts": true
+      "requires_separate_upload_receipts": true,
+      "active": false,
+      "status": "archival_retired"
+    },
+    "handoff-v3-pending-audio": {
+      "manifest": "data/active-content.json",
+      "category": "active_content_authority",
+      "active_musical_samples": 0,
+      "runtime_bound": false
     }
-  }
+  },
+  "active_content_authority": "data/active-content.json"
 }

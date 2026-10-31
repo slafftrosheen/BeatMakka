@@ -1,5 +1,7 @@
 # Four patterns, a beat shelf and Mica's first courtyard set
 
+> Historical 23 October milestone. Its fixed musical slots, Beat Shelf and one-loop chapter workflow are superseded by [MPC v3](needle-quay/MPC_V3_README.md). Keep this document as the design and implementation record for that earlier revision; use the v3 guide for current play.
+
 Implementation plan and design, 23 October 2026. User-approved continuation of the existing first-zone game. Base: `dc898d887e5f147d95e728040a20a035a1e24c08`, retaining the uncommitted audio/content patch.
 
 ## Goal and constraints

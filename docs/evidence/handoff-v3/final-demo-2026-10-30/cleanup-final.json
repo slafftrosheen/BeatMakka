@@ -1,0 +1,85 @@
+{
+  "schema": 1,
+  "applied": true,
+  "source_boundary": "C:\\Users\\slavd\\BeatMaka\\output\\needle-quay-demo",
+  "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-final-v3",
+  "run": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-final-v3\\run-20261030T162143Z-fc07a094",
+  "items": [
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-MPC-v3.rbxlx",
+      "bytes": 16756164,
+      "files": [
+        {
+          "file": "NeedleQuay-MPC-v3.rbxlx",
+          "bytes": 16756164,
+          "sha256": "b173519a56fd6ac6ea076df14d0b80b23740dd66416dce621d333f88e0c3b677"
+        }
+      ],
+      "obsolete_lock": false,
+      "state": "archived_verified",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-final-v3\\run-20261030T162143Z-fc07a094\\output\\needle-quay-demo\\NeedleQuay-MPC-v3.rbxlx"
+    }
+  ],
+  "kept": [
+    {
+      "source": "output/needle-quay-demo/cleanup-blockouts.json",
+      "reason": "not_a_generated_old_demo"
+    },
+    {
+      "source": "output/needle-quay-demo/cleanup.json",
+      "reason": "not_a_generated_old_demo"
+    },
+    {
+      "source": "output/needle-quay-demo/FINAL_DEMO_QA.md",
+      "reason": "not_a_generated_old_demo"
+    },
+    {
+      "source": "output/needle-quay-demo/IMPLEMENTATION.md",
+      "reason": "not_a_generated_old_demo"
+    },
+    {
+      "source": "output/needle-quay-demo/Launch-NeedleQuay.cmd",
+      "reason": "not_a_generated_old_demo"
+    },
+    {
+      "source": "output/needle-quay-demo/Launch-NeedleQuay.ps1",
+      "reason": "not_a_generated_old_demo"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-Final-v3.rbxlx",
+      "reason": "final_demo"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-Final-v3.rbxlx.lock",
+      "reason": "final_demo"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-Final-v3.zip",
+      "reason": "final_demo"
+    },
+    {
+      "source": "output/needle-quay-demo/presentation.json",
+      "reason": "not_a_generated_old_demo"
+    },
+    {
+      "source": "output/needle-quay-demo/README.md",
+      "reason": "not_a_generated_old_demo"
+    },
+    {
+      "source": "output/needle-quay-demo/results.json",
+      "reason": "not_a_generated_old_demo"
+    },
+    {
+      "source": "output/needle-quay-demo/ROJO_WARNING_FIX.md",
+      "reason": "not_a_generated_old_demo"
+    },
+    {
+      "source": "output/needle-quay-demo/STUDIO_QA.md",
+      "reason": "not_a_generated_old_demo"
+    }
+  ],
+  "archived_bytes": 16756164,
+  "deleted_bytes": 0,
+  "studio_processes_closed": 0,
+  "receipt": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-final-v3\\run-20261030T162143Z-fc07a094\\receipt.json"
+}

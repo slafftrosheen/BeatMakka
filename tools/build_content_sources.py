@@ -218,65 +218,13 @@ def graphics():
 
 
 def audio():
-    names = ["kick", "snare", "closed_hat", "open_hat", "clap", "rim", "low_tom", "high_tom",
-             "shaker", "tambourine", "bell", "pluck", "bass_c", "bass_eb", "bass_g", "chord",
-             "metal_hit", "vent_thump", "robot_chirp",
-             "ui_tap", "ui_collect", "ui_save", "ui_error", "waterfront"]
-    base = OUT / "audio"
-    base.mkdir(parents=True, exist_ok=True)
-    records = []
-    rate = 44100
-    for index, name in enumerate(names):
-        duration = (12.0 if name == "waterfront" else .16 if name.startswith("ui_")
-                    else 1.2 if name in ("chord", "bell", "metal_hit") else .65)
-        t = np.arange(int(rate * duration)) / rate
-        rng = np.random.default_rng(220026 + index)
-        noise = rng.uniform(-1, 1, len(t))
-        if name == "waterfront":
-            # Deterministic filtered noise: no speech, recording, or outside sample.
-            sums = np.cumsum(np.pad(noise, (220, 0)))
-            low = (sums[220:] - sums[:-220])[:len(t)] / 220
-            signal = low * (.65 + .2 * np.sin(2 * np.pi * t / 6))
-        elif name.startswith("ui_"):
-            freq = {"ui_tap": 880, "ui_collect": 1174.66, "ui_save": 698.46, "ui_error": 220}[name]
-            signal = np.sin(2 * np.pi * freq * t) * np.exp(-t * 28)
-        elif name == "kick": signal = np.sin(2 * np.pi * (48 * t + 6 * (1 - np.exp(-t * 30)))) * np.exp(-t * 9)
-        elif name == "snare": signal = (noise * .7 + np.sin(2 * np.pi * 185 * t) * .3) * np.exp(-t * 19)
-        elif name in ("closed_hat", "open_hat", "shaker", "tambourine"):
-            high = noise - np.roll(noise, 1)
-            signal = high * np.exp(-t * (8 if name == "open_hat" else 45)) * .5
-            if name == "tambourine": signal += np.sin(2 * np.pi * 3731 * t) * np.exp(-t * 20) * .3
-        elif name == "clap":
-            envelope = sum(np.exp(-(t - start) * 40) * (t >= start) for start in (0, .014, .029))
-            signal = noise * envelope * .4
-        elif name == "rim": signal = (np.sin(2 * np.pi * 420 * t) + .5 * np.sin(2 * np.pi * 1320 * t)) * np.exp(-t * 55)
-        elif name in ("low_tom", "high_tom", "vent_thump"):
-            freq = {"low_tom": 105, "high_tom": 158, "vent_thump": 76}[name]
-            signal = (np.sin(2 * np.pi * (freq * t + .7 * (1 - np.exp(-t * 12)))) + .13 * noise) * np.exp(-t * 12)
-        elif name in ("bell", "metal_hit"):
-            freq = 660 if name == "bell" else 317
-            signal = sum(np.sin(2 * np.pi * freq * ratio * t) * np.exp(-t * (3 + i * 2)) / (i + 1) for i, ratio in enumerate((1, 2.71, 4.13, 5.42)))
-        elif name == "robot_chirp": signal = np.sin(2 * np.pi * (650 * t + 900 * t * t)) * np.exp(-t * 16) * (.7 + .3 * np.sin(t * 2 * np.pi * 16))
-        elif name == "chord": signal = sum(np.sin(2 * np.pi * f * t) for f in (261.63, 311.13, 392)) * np.exp(-t * 4) / 3
-        else:
-            freq = {"bass_c": 65.406, "bass_eb": 77.782, "bass_g": 97.999, "pluck": 261.63}[name]
-            signal = (np.sin(2 * np.pi * freq * t) + .22 * np.sin(2 * np.pi * freq * 2 * t)) * np.exp(-t * (9 if name == "pluck" else 6))
-        # Short click-free boundaries, normalized peak headroom. This is not LUFS mastering.
-        fade = np.minimum(1, t / .003) * np.minimum(1, (duration - t) / .015)
-        signal *= fade
-        peak = .08 if name == "waterfront" else .25 if name.startswith("ui_") else .65
-        signal *= peak / max(np.max(np.abs(signal)), 1e-6)
-        samples = np.int16(signal * 32767)
-        path = base / (name + ".wav")
-        with wave.open(str(path), "wb") as f:
-            f.setparams((1, 2, rate, len(samples), "NONE", "not compressed"))
-            f.writeframes(samples.astype("<i2").tobytes())
-        records.append({"id": name, "file": path.relative_to(ROOT).as_posix(), "sample_rate": rate, "channels": 1,
-                        "duration_seconds": duration, "peak_dbfs": round(20 * math.log10(peak), 2),
-                        "rms_dbfs": round(20 * math.log10(max(np.sqrt(np.mean(signal ** 2)), 1e-9)), 2),
-                        "asset_id": None, "rights": "Original mathematical synthesis in this project; no sampled third-party recording."})
-    write_json(base / "manifest.json", {"version": 1, "seed_base": 220026, "samples": records,
-               "acceptance": "Source WAVs measured for format/peak/RMS only; listening, Roblox upload permissions and published playback remain pending."})
+    """Preserve active sources. This tool no longer synthesizes musical samples."""
+    from active_content import active_audio
+    current = json.loads((OUT / "audio/manifest.json").read_text(encoding="utf-8"))
+    allowed = active_audio()
+    current["samples"] = [row for row in current["samples"] if row["id"] in allowed]
+    current["active_content_authority"] = "data/active-content.json"
+    write_json(OUT / "audio/manifest.json", current)
 
 
 if __name__ == "__main__":

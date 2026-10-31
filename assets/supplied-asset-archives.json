@@ -7,6 +7,14 @@
       "sha256": "d5b619b9f57bc5ec9f2c4bdf375b1c45d708253934591b85aa15cc5f697bc331",
       "archive_sha256": "0ad07c9bbbdb26faf9c3ec83c2369ed33e126cd98b96e61f1f74490a8199cda0",
       "format": "gzip"
+    },
+    {
+      "source": "assets/european_city_assetpack.glb",
+      "archive": "assets/european_city_assetpack.glb.gz",
+      "bytes": 130936972,
+      "sha256": "5fa8e67614edcd7aebd9570381d21d060f79ac66b265f723c9661c191fc74a60",
+      "archive_sha256": "febc8695627f6a6839562825d3323f0842df47281c39c63fed5ad526ee778f2f",
+      "format": "gzip"
     }
   ]
 }

@@ -1,0 +1,48 @@
+{
+  "base_sha": "8e8b91f6a5472eb6200599e60932e45a8c9ea56b",
+  "selene": {
+    "errors": 0,
+    "warnings": 0,
+    "parse_errors": 0
+  },
+  "rojo_build": "PASS",
+  "test_suites": "NOT_RUN per project instructions",
+  "files": [
+    {
+      "path": "src/shared/CompanionCatalog.luau",
+      "sha256": "ad4b23f2b6ecd45627194c2562f967f34bed08fcb2bcb2479d89b04ed651a184"
+    },
+    {
+      "path": "src/shared/CompanionJournal.luau",
+      "sha256": "0b79eb810567dd30fb5cb96dbcb6276b417e5c2cfdf23f2e453b9497b859d314"
+    },
+    {
+      "path": "src/client/CompanionPortrait.luau",
+      "sha256": "1105a8894e241f4c718fbf1aaa28cf11babf229053055f40beaef2d2c155c124"
+    },
+    {
+      "path": "src/client/CompanionView.luau",
+      "sha256": "26845a36e358ace212abb9dea3222759b47015e0c651a49e30e5f4a67b0bbca3"
+    },
+    {
+      "path": "src/client/CompanionFollower.luau",
+      "sha256": "6098e54ac3e6b0a2b4117461d20cc06c01cf2b2fb2cb8d24b7addbc81644fcec"
+    },
+    {
+      "path": "src/client/CompanionAnimation.luau",
+      "sha256": "1fc9059400912960c1075a125a0ecbd4053b03fbabcd8a88a8bee214771125b6"
+    },
+    {
+      "path": "src/client/QuayDemoView.luau",
+      "sha256": "6f8142188628ee225505a9cfed399ade0e6fd2d227b9ded3b8b36eebe463f907"
+    },
+    {
+      "path": "src/server/CompanionService.luau",
+      "sha256": "9e3151da2325a072fdc5efe982e7ee4fa0fb5d0bc2c34c0ad2e523af52c8eb55"
+    },
+    {
+      "path": "src/shared/CompanionModels.luau",
+      "sha256": "52b9dcd860c0d7b6c6cc221b40d51da6d19f07406b911d85c7e72ecbf0bcdf7b"
+    }
+  ]
+}

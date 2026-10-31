@@ -1,0 +1,9 @@
+{
+  "package": "output/needle-quay-demo/NeedleQuay-Companions.zip",
+  "bytes": 61392095,
+  "sha256": "2433e1cd33a6164c237fb1a9d4332426cff6b2ad55d43017573e61200a566745",
+  "companion_files": 814,
+  "place_sha256": "70403bf69eb5ce88e7f2bd9d891fb6823fe638f7e82d670f2b6db1e11e44f010",
+  "uploads": 0,
+  "tripo_spend_credits": 0
+}

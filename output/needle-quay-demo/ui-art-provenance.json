@@ -1,0 +1,53 @@
+[
+  {
+    "id": "bezel-v4",
+    "file": "assets/production/needle-quay/ui-device-v3/bezel-v4.png",
+    "source": "C:\\Users\\slavd\\.codex\\generated_images\\01a18cbd-2b56-73d2-94ac-a64c0430a33e\\exec-b6364f0c-d189-4cd3-9e7b-c8b7c2cd7633.png",
+    "sha256": "ee12b713799be5f273f39b6cf5da40afaf596e81fb5b0297fe29294829b1dcc1",
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA",
+    "alpha_extrema": [
+      0,
+      254
+    ],
+    "provider": "built-in image_gen",
+    "uploaded": false,
+    "art_approval": "not inferred"
+  },
+  {
+    "id": "softkey-v4",
+    "file": "assets/production/needle-quay/ui-device-v3/softkey-v4.png",
+    "source": "C:\\Users\\slavd\\.codex\\generated_images\\01a18cbd-2b56-73d2-94ac-a64c0430a33e\\exec-626ec582-1d02-44bd-a63a-7b66167b7754.png",
+    "sha256": "ec64c92c55541dd1353057b620e150cc19d264903e9ed52f901f92488485fa80",
+    "size": [
+      2172,
+      724
+    ],
+    "mode": "RGBA",
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "provider": "built-in image_gen",
+    "uploaded": false,
+    "art_approval": "not inferred"
+  },
+  {
+    "id": "sleeve-v4",
+    "file": "assets/production/needle-quay/ui-device-v3/sleeve-v4.png",
+    "source": "C:\\Users\\slavd\\.codex\\generated_images\\01a18cbd-2b56-73d2-94ac-a64c0430a33e\\exec-bf9fb710-43b4-4253-a208-5fe71510dd0a.png",
+    "sha256": "5f6e1b97a768fdd3261c6a208214e5169d8ed389407975bfbc43553a7d0bc6eb",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGB",
+    "alpha_extrema": null,
+    "provider": "built-in image_gen",
+    "uploaded": false,
+    "art_approval": "not inferred"
+  }
+]

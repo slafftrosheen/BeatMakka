@@ -1,0 +1,1 @@
+Nikolas: front, left-facing profile, right-facing profile, back. Left/right describe image-facing direction. Generated model references; minor details can differ between views. No model generation or upload performed.

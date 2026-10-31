@@ -1,0 +1,88 @@
+{
+  "date": "2026-10-30T10:09:31.095873",
+  "changed_sources": [
+    {
+      "file": "src/client/GrooveboxSkin.luau",
+      "sha256": "5d8589da9715d92de2f4e2ab23cf4ac90f6fdb77dd40476a89ae875e9b32a2ed",
+      "baseline_sha256": "b00b7cd9c3ce577738e074c0de0bb983ef01bc64820d15e4e891c4426f96cc8b"
+    },
+    {
+      "file": "src/client/GrooveboxTools.luau",
+      "sha256": "ac4995c11dd4eff8d1ba9021ddf454a6034907bac17882e5c5138827ad3be8a4",
+      "baseline_sha256": "65015732aca3a553a43b1475f0df3c7627e9f9df2def2cdbc662394fcfb13fe9"
+    },
+    {
+      "file": "src/client/HardwareFaceplate.luau",
+      "sha256": "e2ec8c95bf1d8a76b2793b7178b9e7ca527ef241ec89606ec7168e24ddeab43b",
+      "baseline_sha256": "182dfa8c2f978313d2ce78afc1913380b1365c66471453b687982a00d29ab098"
+    },
+    {
+      "file": "src/client/HardwarePadControls.luau",
+      "sha256": "10a7f1a23617aa50e889736bb04d053845fee8f16dfacbd20a11dcae9845d52e",
+      "baseline_sha256": "ca4fabacdb29d46a3a9f61120e5a048aab705a3e6df68790b7d46b40f19e0fb9"
+    },
+    {
+      "file": "src/client/QuayCelebrations.luau",
+      "sha256": "89e5c6109905214355659345a4de0f967fd258b33f4835d67264ca1fcca84f01",
+      "baseline_sha256": "350b05582f1ec76f8f530d9d812df57f512caca365efc88f0a9b03988a2c0a81"
+    },
+    {
+      "file": "src/client/QuayDemoView.luau",
+      "sha256": "62373fc196653bcc55e22872444917378cf46feef37287f7746f74caee01416d",
+      "baseline_sha256": "7ce752e4b66b91887ccf32e033055d4e4d1b30ffd784e15d50ea73a59bb9ba82"
+    },
+    {
+      "file": "src/client/WorkshopView.luau",
+      "sha256": "3faf69f23f00de298b6666aab295c13aa095b6243909240c0817b75b301f60ee",
+      "baseline_sha256": "1f1f293f672e63ed583da31c963946a0bb49a711eeb3e23a8c6439e29aea32ba"
+    },
+    {
+      "file": "src/server/QuayAtmosphere.luau",
+      "sha256": "1fdae83e13c1f38d0d54f855ab716d4766e337fa0c8db6121a3e1c23a1aa1de7",
+      "baseline_sha256": "e4bdcc96955f0d3e5f4974c2d9f0a6a93641464cee85301c1be2fb40e0d21776"
+    },
+    {
+      "file": "src/server/QuayLifeService.luau",
+      "sha256": "f1e5677c15a1437c7a0dbd0c549da7abe3868d1a9c5c71c168c00126b96bea7d",
+      "baseline_sha256": "7d5c1a6b73a0eadc2e725d53a09d5b3b3de83762b0f1fd60c497d5bfcbbbc881"
+    },
+    {
+      "file": "src/server/QuayStreetScene.luau",
+      "sha256": "e77e6bf3d573d312dc662f459fced5befe3ed29e1995deeef42c9e2da401e984",
+      "baseline_sha256": "65d746bda105f7fc38aa63a81ab984ae1f3bcade9216e9d206164020f8e4dc20"
+    },
+    {
+      "file": "src/server/QuayVista.luau",
+      "sha256": "f0e1fc6d37f4286a91b5964b663e248a0d3ebfecb99e923607109c2f4fbe98de",
+      "baseline_sha256": "b0146ec61c12cb30ab24a5a1f872619163d7a7766f2e0a8617dac6baa8e2a314"
+    }
+  ],
+  "references": [
+    {
+      "file": "01_Visual_Artbook.pdf",
+      "sha256": "596526821d23869b7e92ab0b1d7643aadc596303edc3a9a3d888a09087383496"
+    },
+    {
+      "file": "02_Production_Atlas.pdf",
+      "sha256": "70f8d7462526b01b04c576f0d9343ea28b40ba327bc619f0e101264d7465bd12"
+    },
+    {
+      "file": "BeatMakka_World_v2/BeatMakka_World_Artbook_v2_RU.pdf",
+      "sha256": "0ab9dade9cf7be3f873c41ab1cc6edf5ba54a0883bf675a43f31f273cc862a07"
+    },
+    {
+      "file": "output/needle-quay/BeatMakka_Needle_Quay_Environment_Quest_Artbook_Vol01.pdf",
+      "sha256": "8942fa5039f7b329428848b78252ce5a4ee1bb6bcad4f2e552572af4166c6101"
+    },
+    {
+      "file": "output/artbook-alpha01/BeatMakka_MK-I_Artbook_Alpha01_RU.pdf",
+      "sha256": "0f7b4d99e3bc6ce408f8e409e613fc831635583fdfb8a23ac4e8e50763ac885e"
+    },
+    {
+      "file": "assets/references/needle-quay-approved-style-board.png",
+      "sha256": "ed1febe208e798110905653ac6f2a60778830de00b2ff112cacf2e36c3bf3463"
+    }
+  ],
+  "new_external_assets": 0,
+  "test_suites_run": 0
+}

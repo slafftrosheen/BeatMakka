@@ -23,6 +23,18 @@ local function appearance(model, finish)
         if size ~= 512 and size ~= 1024 then
             continue
         end
+        if game:GetService("RunService"):IsStudio() then
+            local parts = art:GetDescendants()
+            if art:IsA("MeshPart") then
+                table.insert(parts, art)
+            end
+            for _, mesh in parts do
+                if mesh:IsA("MeshPart") then
+                    mesh:SetAttribute("LocalMaterialKey", finish .. "_" .. size)
+                end
+            end
+            continue
+        end
         local library = game.ReplicatedStorage:FindFirstChild("AppearanceLibrary")
         local template = library and library:FindFirstChild(finish .. "_" .. size)
         if not template or not template:IsA("SurfaceAppearance") then

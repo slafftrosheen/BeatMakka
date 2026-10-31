@@ -1,0 +1,121 @@
+{
+  "provider": "ElevenLabs",
+  "model": "eleven_v4",
+  "speechCredits": 10136,
+  "lines": {
+    "meet": "Follow the amber marker. Let's meet our neighbor.",
+    "cases": "Stow the next glowing case.",
+    "power": "First, switch off the power.",
+    "clear": "Now clear the intake.",
+    "restart": "Bring the power back on.",
+    "records": "Listen to the record. Which musical role fits?",
+    "metal": "Select Quay metal. Add four different steps.",
+    "chirp": "Select Helper chirp. Use steps one, five, nine, and thirteen.",
+    "variation": "Make A and B different. Store both on your shelf.",
+    "save": "Store your beat on the shelf, then save.",
+    "return_host": "Your music is ready. Let's return to our host.",
+    "finale": "Bring your saved beat to the Lantern Room.",
+    "fx_echo": "Dock Echo discovered! Let's try it on a pad.",
+    "fx_vent": "Vent Room discovered! Give your beat some space.",
+    "fx_lantern": "Lantern Space discovered! Let's hear that glow.",
+    "fx_signal": "Signal Repeat discovered! Try its quick echo.",
+    "fx_select": "Choose a pad you want to change.",
+    "fx_apply": "Press Apply beside your discovered effect.",
+    "fx_audition": "Now press Audition. Hear the difference.",
+    "fx_done": "That's your new sound. Save it with your beat."
+  },
+  "runs": [
+    {
+      "speaker": "alissia",
+      "flow_id": "FASrn9R0a3G2z84A8TP3",
+      "node_id": "RHuHs09vHjWGaV6znSAS",
+      "session_ids": [
+        "gXPQlJIkTFR16P53VXDz",
+        "mXYmXzHdfGSwQi60WSC2",
+        "MazEqaPIGlpY56kyVrLE",
+        "TiTBIqzApLN8bRJNvgmA"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "RHuHs09vHjWGaV6znSAS",
+          "session_id": "gXPQlJIkTFR16P53VXDz",
+          "credit_costs": {
+            "eG3HyqzEo0hVfTKrFWtb": 1266.9999999999998
+          }
+        },
+        {
+          "success": true,
+          "node_id": "RHuHs09vHjWGaV6znSAS",
+          "session_id": "mXYmXzHdfGSwQi60WSC2",
+          "credit_costs": {
+            "mBqBYz2inIoFpDqN2e5L": 1266.9999999999998
+          }
+        },
+        {
+          "success": true,
+          "node_id": "RHuHs09vHjWGaV6znSAS",
+          "session_id": "MazEqaPIGlpY56kyVrLE",
+          "credit_costs": {
+            "xpiBUvu5oJhCRr5yfDaz": 1266.9999999999998
+          }
+        },
+        {
+          "success": true,
+          "node_id": "RHuHs09vHjWGaV6znSAS",
+          "session_id": "TiTBIqzApLN8bRJNvgmA",
+          "credit_costs": {
+            "zbOOzhkalbZpcdXN73tN": 1266.9999999999998
+          }
+        }
+      ],
+      "voice_id": "cgSgspJ2msm6clMCkdW9"
+    },
+    {
+      "speaker": "nikolas",
+      "flow_id": "K4AeEp4jpf5SEt1fQzQf",
+      "node_id": "mNiH70uHWA2sy6RnI4mA",
+      "session_ids": [
+        "AfsW8f1MmWvUtFs3AARq",
+        "ZLfFX3kzFahbULp5Q91H",
+        "Ze3N7LjtqCe2FEFyYO4C",
+        "2iWqWnrjxmUAAMadxpFN"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "mNiH70uHWA2sy6RnI4mA",
+          "session_id": "AfsW8f1MmWvUtFs3AARq",
+          "credit_costs": {
+            "VWU2md9lwHnNBVIOgzv1": 1266.9999999999998
+          }
+        },
+        {
+          "success": true,
+          "node_id": "mNiH70uHWA2sy6RnI4mA",
+          "session_id": "ZLfFX3kzFahbULp5Q91H",
+          "credit_costs": {
+            "4IuC5p9XYMazb9okkLWS": 1266.9999999999998
+          }
+        },
+        {
+          "success": true,
+          "node_id": "mNiH70uHWA2sy6RnI4mA",
+          "session_id": "Ze3N7LjtqCe2FEFyYO4C",
+          "credit_costs": {
+            "t8bjTM2Xx5oQ8T0e6pXW": 1266.9999999999998
+          }
+        },
+        {
+          "success": true,
+          "node_id": "mNiH70uHWA2sy6RnI4mA",
+          "session_id": "2iWqWnrjxmUAAMadxpFN",
+          "credit_costs": {
+            "HFq6Rqc8OOiT8tbhPWvT": 1266.9999999999998
+          }
+        }
+      ],
+      "voice_id": "GDSfkP85ZRhua7ttCTmO"
+    }
+  ]
+}

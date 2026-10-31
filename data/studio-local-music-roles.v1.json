@@ -1,0 +1,56 @@
+{
+  "schema": 1,
+  "scope": "studio_local_gameplay_only",
+  "source_contract": "data/first-pack-slots.v3.json",
+  "source_audio": "data/active-content.json",
+  "policy": "Use actual native-pack sounds as explicitly named local gameplay substitutes. Canonical slot mapping, pending human listening review and Roblox runtime admission remain unchanged. These are not claims of equivalent original field recordings.",
+  "bindings": [
+    {
+      "discovery_id": "I01",
+      "role": "discovery_metal",
+      "sample_id": "nq.harbour.v1.a15",
+      "address": "A15",
+      "label": "Metallic Clank Hit",
+      "gameplay_label": "Harbour metal",
+      "substitute_for": "Quay metal",
+      "use": "Use A15 Metallic Clank Hit at four distinct rhythmic positions in a named sequence.",
+      "recording_equivalence": false,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "listening_review": "pending"
+    },
+    {
+      "discovery_id": "I02",
+      "role": "discovery_vent",
+      "sample_id": "nq.harbour.v1.d10",
+      "address": "D10",
+      "label": "Hydraulic Steam Release",
+      "gameplay_label": "Vent hiss",
+      "substitute_for": "Vent thump",
+      "use": "Layer D10 Hydraulic Steam Release with another part in a named sequence.",
+      "recording_equivalence": false,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "listening_review": "pending"
+    },
+    {
+      "discovery_id": "I03",
+      "role": "discovery_robot",
+      "sample_id": "nq.harbour.v1.d04",
+      "address": "D04",
+      "label": "Lantern Bell High D6",
+      "gameplay_label": "Helper bell",
+      "substitute_for": "Helper chirp",
+      "use": "Use D04 Lantern Bell High D6 on teaching-bar ticks 0, 960, 1920 and 2880.",
+      "recording_equivalence": false,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "listening_review": "pending"
+    }
+  ],
+  "lesson_roles": {
+    "preview_pluck": "nq.harbour.v1.d01",
+    "tutorial_pluck": "nq.harbour.v1.d01"
+  },
+  "lesson_policy": "The tune lesson uses the actual D01 Lantern Bell D5 as a local pitched example; it is not described as a pluck or bound to the C01 vocal."
+}

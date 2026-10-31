@@ -60,6 +60,12 @@ function Feedback:pulse(pad, station)
     if not self.enabled then
         return
     end
+    local bank = math.floor((pad - 1) / 16) + 1
+    if self.state and bank ~= (self.state.music and self.state.music.bank or 1) then
+        self.beatUntil = os.clock() + 0.1
+        return
+    end
+    pad = (pad - 1) % 16 + 1
     local now = os.clock()
     self.beatUntil = now + 0.1
     self.pulses[tostring(station) .. ":" .. tostring(pad)] = now + 0.12
@@ -179,7 +185,10 @@ function Feedback:step()
                 if model:GetAttribute("CameraRoof") then
                     for _, part in model:GetDescendants() do
                         if part:IsA("BasePart") then
-                            part.LocalTransparencyModifier = if inside then 1 else 0
+                            part.LocalTransparencyModifier = if inside
+                                    or part:GetAttribute("InteriorHidden")
+                                then 1
+                                else 0
                         end
                     end
                 end
@@ -194,7 +203,10 @@ function Feedback:step()
         if backdrop then
             for _, part in backdrop:GetDescendants() do
                 if part:IsA("BasePart") then
-                    part.LocalTransparencyModifier = if lowQuality then 1 else 0
+                    part.LocalTransparencyModifier = if lowQuality
+                            or part:GetAttribute("InteriorHidden")
+                        then 1
+                        else 0
                 end
             end
         end

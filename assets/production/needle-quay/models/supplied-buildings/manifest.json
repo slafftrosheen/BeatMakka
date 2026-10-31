@@ -1,0 +1,491 @@
+{
+  "assets": [
+    {
+      "id": "NQ-BLD-02",
+      "kind": "supplied_building",
+      "source": "assets/production/needle-quay/models/supplied-buildings/NQ-BLD-02.blend",
+      "source_sha256": "659bbbb4640756712414b71a3d7367b2ba0f19dfb6409af64ee36448fd073c24",
+      "triangles": 8494,
+      "parts": [
+        {
+          "name": "Surface0",
+          "bone": "",
+          "center": [
+            -0.0,
+            5.2330241203308105,
+            0.0
+          ],
+          "size": [
+            15.843673706054688,
+            10.466048240661621,
+            16.0
+          ],
+          "color": [
+            1,
+            1,
+            1
+          ],
+          "surface_family": "supplied_building_NQ-BLD-02",
+          "triangles": 8494,
+          "sha256": "61f7a54824d3a8f6484630aadb9de9e6294e407a7bd91aa7b7c964309dea8a03",
+          "uri": "rbxasset://needle-quay/buildings-set-01/NQ-BLD-02_0_61f7a54824d3.mesh"
+        }
+      ],
+      "joints": {},
+      "coordinate_basis": "blender_to_roblox_front_minus_z_v2"
+    },
+    {
+      "id": "NQ-BLD-01",
+      "kind": "supplied_building",
+      "source": "assets/production/needle-quay/models/supplied-buildings/NQ-BLD-01.blend",
+      "source_sha256": "413de58933a5a210527c9f9afc88626a4373f7795f6544bd2468bd39dc88017e",
+      "triangles": 7692,
+      "parts": [
+        {
+          "name": "Surface0",
+          "bone": "",
+          "center": [
+            -0.0,
+            9.966071128845215,
+            0.0
+          ],
+          "size": [
+            37.88402557373047,
+            19.93214225769043,
+            30.000001907348633
+          ],
+          "color": [
+            1,
+            1,
+            1
+          ],
+          "surface_family": "supplied_building_NQ-BLD-01",
+          "triangles": 7692,
+          "sha256": "2393e963520da6b53625b550f4920a60771a3832d68269faaadb99a41ee862a8",
+          "uri": "rbxasset://needle-quay/buildings-set-01/NQ-BLD-01_0_2393e963520d.mesh"
+        }
+      ],
+      "joints": {},
+      "coordinate_basis": "blender_to_roblox_front_minus_z_v2"
+    },
+    {
+      "id": "NQ-BLD-08",
+      "kind": "supplied_building",
+      "source": "assets/production/needle-quay/models/supplied-buildings/NQ-BLD-08.blend",
+      "source_sha256": "339212010b2b722e0a0c6f32d3b79156c55e6ca62eb038412e4b8a506c8ef880",
+      "triangles": 8380,
+      "parts": [
+        {
+          "name": "Surface0",
+          "bone": "",
+          "center": [
+            -0.0,
+            3.6204302310943604,
+            0.0
+          ],
+          "size": [
+            12.300450325012207,
+            7.240860462188721,
+            12.0
+          ],
+          "color": [
+            1,
+            1,
+            1
+          ],
+          "surface_family": "supplied_building_NQ-BLD-08",
+          "triangles": 8380,
+          "sha256": "4c38f587581d5ee77e5de15abf9f48c31f10ec59489b8d659477d5d698a92b3e",
+          "uri": "rbxasset://needle-quay/buildings-set-01/NQ-BLD-08_0_4c38f587581d.mesh"
+        }
+      ],
+      "joints": {},
+      "coordinate_basis": "blender_to_roblox_front_minus_z_v2"
+    },
+    {
+      "id": "NQ-BLD-07",
+      "kind": "supplied_building",
+      "source": "assets/production/needle-quay/models/supplied-buildings/NQ-BLD-07.blend",
+      "source_sha256": "3704f228c7c598f1ad3b127ead0df8629e05fe4d9306f31479bff2c5bcc981ec",
+      "triangles": 8629,
+      "parts": [
+        {
+          "name": "Surface0",
+          "bone": "",
+          "center": [
+            -0.0,
+            4.655235767364502,
+            0.0
+          ],
+          "size": [
+            15.042253494262695,
+            9.310471534729004,
+            12.0
+          ],
+          "color": [
+            1,
+            1,
+            1
+          ],
+          "surface_family": "supplied_building_NQ-BLD-07",
+          "triangles": 8629,
+          "sha256": "c645f54d17fa4599d0b1b31d77de7d8919afc987efa66b5c4178eb9963db5b6a",
+          "uri": "rbxasset://needle-quay/buildings-set-01/NQ-BLD-07_0_c645f54d17fa.mesh"
+        }
+      ],
+      "joints": {},
+      "coordinate_basis": "blender_to_roblox_front_minus_z_v2"
+    },
+    {
+      "id": "NQ-BLD-06",
+      "kind": "supplied_building",
+      "source": "assets/production/needle-quay/models/supplied-buildings/NQ-BLD-06.blend",
+      "source_sha256": "9be18ec4f8ae49f6f608104bc9bcc0fdb390743ed3ac490ab14ac22130b124fb",
+      "triangles": 8340,
+      "parts": [
+        {
+          "name": "Surface0",
+          "bone": "",
+          "center": [
+            -0.0,
+            4.961714744567871,
+            0.0
+          ],
+          "size": [
+            16.718732833862305,
+            9.923429489135742,
+            16.0
+          ],
+          "color": [
+            1,
+            1,
+            1
+          ],
+          "surface_family": "supplied_building_NQ-BLD-06",
+          "triangles": 8328,
+          "sha256": "dbe65582b9b34c181323b5f725fdc3c51ba2456b588a07e37a348b5a38a5e9a3",
+          "uri": "rbxasset://needle-quay/buildings-set-01/NQ-BLD-06_0_dbe65582b9b3.mesh"
+        },
+        {
+          "name": "Surface1",
+          "bone": "",
+          "center": [
+            -0.0,
+            7.393289566040039,
+            0.9199798107147217
+          ],
+          "size": [
+            12.712444305419922,
+            0.13381528854370117,
+            10.87248420715332
+          ],
+          "color": [
+            0.38999998569488525,
+            0.3400000035762787,
+            0.2800000011920929
+          ],
+          "surface_family": null,
+          "triangles": 12,
+          "sha256": "e69ca81dd022c85fe715eaaf9c165511c983896cbd5ce37162c6d89f2c6f9773",
+          "uri": "rbxasset://needle-quay/buildings-set-01/NQ-BLD-06_1_e69ca81dd022.mesh"
+        }
+      ],
+      "joints": {},
+      "coordinate_basis": "blender_to_roblox_front_minus_z_v2"
+    },
+    {
+      "id": "NQ-BLD-05",
+      "kind": "supplied_building",
+      "source": "assets/production/needle-quay/models/supplied-buildings/NQ-BLD-05.blend",
+      "source_sha256": "05c2d66378a7a5725b48d8d0b6c7d3ac81d23a533c16b5ce8ac901c8a585452e",
+      "triangles": 8818,
+      "parts": [
+        {
+          "name": "Surface0",
+          "bone": "",
+          "center": [
+            -0.0,
+            6.460185527801514,
+            0.0
+          ],
+          "size": [
+            15.890572547912598,
+            12.920371055603027,
+            16.0
+          ],
+          "color": [
+            1,
+            1,
+            1
+          ],
+          "surface_family": "supplied_building_NQ-BLD-05",
+          "triangles": 8818,
+          "sha256": "54feacd7e9296aa8da8c09f583068fd755fef047ed7ab1d368563bee0487021e",
+          "uri": "rbxasset://needle-quay/buildings-set-01/NQ-BLD-05_0_54feacd7e929.mesh"
+        }
+      ],
+      "joints": {},
+      "coordinate_basis": "blender_to_roblox_front_minus_z_v2"
+    },
+    {
+      "id": "NQ-BLD-03",
+      "kind": "supplied_building",
+      "source": "assets/production/needle-quay/models/supplied-buildings/NQ-BLD-03.blend",
+      "source_sha256": "27e192c002915b7b7bc9fee5e5aeaad1d252eb011352151107455a4e19db1376",
+      "triangles": 7882,
+      "parts": [
+        {
+          "name": "Surface0",
+          "bone": "",
+          "center": [
+            -0.0,
+            6.952629089355469,
+            0.0
+          ],
+          "size": [
+            25.574182510375977,
+            13.905258178710938,
+            24.0
+          ],
+          "color": [
+            1,
+            1,
+            1
+          ],
+          "surface_family": "supplied_building_NQ-BLD-03",
+          "triangles": 7882,
+          "sha256": "e11cb172e59ab15e8b949ca5ce57c16e683d33088f1771e9d77f9072d9f36d3c",
+          "uri": "rbxasset://needle-quay/buildings-set-01/NQ-BLD-03_0_e11cb172e59a.mesh"
+        }
+      ],
+      "joints": {},
+      "coordinate_basis": "blender_to_roblox_front_minus_z_v2"
+    }
+  ],
+  "materials": {
+    "supplied_building_NQ-BLD-02": "rbxasset://needle-quay/buildings-set-01/NQ-BLD-02_color.png",
+    "supplied_building_NQ-BLD-01": "rbxasset://needle-quay/buildings-set-01/NQ-BLD-01_color.png",
+    "supplied_building_NQ-BLD-08": "rbxasset://needle-quay/buildings-set-01/NQ-BLD-08_color.png",
+    "supplied_building_NQ-BLD-07": "rbxasset://needle-quay/buildings-set-01/NQ-BLD-07_color.png",
+    "supplied_building_NQ-BLD-06": "rbxasset://needle-quay/buildings-set-01/NQ-BLD-06_color.png",
+    "supplied_building_NQ-BLD-05": "rbxasset://needle-quay/buildings-set-01/NQ-BLD-05_color.png",
+    "supplied_building_NQ-BLD-03": "rbxasset://needle-quay/buildings-set-01/NQ-BLD-03_color.png"
+  },
+  "layout": {
+    "NQ-BLD-02": {
+      "size_wdh": [
+        15.843673706054688,
+        16.0,
+        10.466048240661621
+      ],
+      "center_offset_z": 0.0,
+      "door_x": -0.0,
+      "entrance_z": -10.5,
+      "source": "assets/production/needle-quay/models/supplied-buildings/NQ-BLD-02.blend",
+      "sha256": "659bbbb4640756712414b71a3d7367b2ba0f19dfb6409af64ee36448fd073c24",
+      "coordinate_basis": "blender_to_roblox_front_minus_z_v2"
+    },
+    "NQ-BLD-01": {
+      "size_wdh": [
+        37.88402557373047,
+        30.000001907348633,
+        19.93214225769043
+      ],
+      "center_offset_z": 9.5367431640625e-07,
+      "door_x": -0.0,
+      "entrance_z": -17.5,
+      "source": "assets/production/needle-quay/models/supplied-buildings/NQ-BLD-01.blend",
+      "sha256": "413de58933a5a210527c9f9afc88626a4373f7795f6544bd2468bd39dc88017e",
+      "coordinate_basis": "blender_to_roblox_front_minus_z_v2"
+    },
+    "NQ-BLD-08": {
+      "size_wdh": [
+        12.300450325012207,
+        12.0,
+        7.240860462188721
+      ],
+      "center_offset_z": 0.0,
+      "door_x": 2.829103574752808,
+      "entrance_z": -8.5,
+      "source": "assets/production/needle-quay/models/supplied-buildings/NQ-BLD-08.blend",
+      "sha256": "339212010b2b722e0a0c6f32d3b79156c55e6ca62eb038412e4b8a506c8ef880",
+      "coordinate_basis": "blender_to_roblox_front_minus_z_v2"
+    },
+    "NQ-BLD-07": {
+      "size_wdh": [
+        15.042253494262695,
+        12.0,
+        9.310471534729004
+      ],
+      "center_offset_z": 0.0,
+      "door_x": -4.2118309783935555,
+      "entrance_z": -8.5,
+      "source": "assets/production/needle-quay/models/supplied-buildings/NQ-BLD-07.blend",
+      "sha256": "3704f228c7c598f1ad3b127ead0df8629e05fe4d9306f31479bff2c5bcc981ec",
+      "coordinate_basis": "blender_to_roblox_front_minus_z_v2"
+    },
+    "NQ-BLD-06": {
+      "size_wdh": [
+        16.718732833862305,
+        16.0,
+        9.923429489135742
+      ],
+      "center_offset_z": 0.0,
+      "door_x": -0.0,
+      "entrance_z": -10.5,
+      "source": "assets/production/needle-quay/models/supplied-buildings/NQ-BLD-06.blend",
+      "sha256": "9be18ec4f8ae49f6f608104bc9bcc0fdb390743ed3ac490ab14ac22130b124fb",
+      "coordinate_basis": "blender_to_roblox_front_minus_z_v2"
+    },
+    "NQ-BLD-05": {
+      "size_wdh": [
+        15.890572547912598,
+        16.0,
+        12.920371055603027
+      ],
+      "center_offset_z": 0.0,
+      "door_x": 1.9068687057495117,
+      "entrance_z": -10.5,
+      "source": "assets/production/needle-quay/models/supplied-buildings/NQ-BLD-05.blend",
+      "sha256": "05c2d66378a7a5725b48d8d0b6c7d3ac81d23a533c16b5ce8ac901c8a585452e",
+      "coordinate_basis": "blender_to_roblox_front_minus_z_v2"
+    },
+    "NQ-BLD-03": {
+      "size_wdh": [
+        25.574182510375977,
+        24.0,
+        13.905258178710938
+      ],
+      "center_offset_z": 0.0,
+      "door_x": -0.0,
+      "entrance_z": -14.5,
+      "source": "assets/production/needle-quay/models/supplied-buildings/NQ-BLD-03.blend",
+      "sha256": "27e192c002915b7b7bc9fee5e5aeaad1d252eb011352151107455a4e19db1376",
+      "coordinate_basis": "blender_to_roblox_front_minus_z_v2"
+    }
+  },
+  "provenance": [
+    {
+      "id": "NQ-BLD-02",
+      "original": "assets/supplied/buildings/set-01/record-store.glb",
+      "original_sha256": "43415ad42e98f099a1cb8e6dff16488099876f93ff3a2cabeea070a4b4d699d2",
+      "uniform_scale": 16.00781631656082,
+      "size_wdh": [
+        15.843673706054688,
+        16.0,
+        10.466048240661621
+      ],
+      "repair": null,
+      "stage": "LOCAL_ADAPTATION_PENDING_ACCEPTANCE",
+      "art_approved": false,
+      "studio_imported": false,
+      "runtime_verified": false
+    },
+    {
+      "id": "NQ-BLD-01",
+      "original": "assets/supplied/buildings/set-01/lantern-room.glb",
+      "original_sha256": "c3b46a6b9720088787ba0bf22dd2eb05b5888d5ff60ae8145558c4ff3219c076",
+      "uniform_scale": 37.902529302899445,
+      "size_wdh": [
+        37.88402557373047,
+        30.000001907348633,
+        19.93214225769043
+      ],
+      "repair": null,
+      "stage": "LOCAL_ADAPTATION_PENDING_ACCEPTANCE",
+      "art_approved": false,
+      "studio_imported": false,
+      "runtime_verified": false
+    },
+    {
+      "id": "NQ-BLD-08",
+      "original": "assets/supplied/buildings/set-01/seaside-shop.glb",
+      "original_sha256": "83913110598405747c4b4260aacdee750a51822c3cf9fdee58dbb8dc67bbbbfa",
+      "uniform_scale": 12.306458937279276,
+      "size_wdh": [
+        12.300450325012207,
+        12.0,
+        7.240860462188721
+      ],
+      "repair": null,
+      "stage": "LOCAL_ADAPTATION_PENDING_ACCEPTANCE",
+      "art_approved": false,
+      "studio_imported": false,
+      "runtime_verified": false
+    },
+    {
+      "id": "NQ-BLD-07",
+      "original": "assets/supplied/buildings/set-01/ferry-booth.glb",
+      "original_sha256": "37415b23362735b5a11b98bd340c991c7fd1ae9c3fd52d951a0f233f22f9189a",
+      "uniform_scale": 15.049601959583589,
+      "size_wdh": [
+        15.042253494262695,
+        12.0,
+        9.310471534729004
+      ],
+      "repair": null,
+      "stage": "LOCAL_ADAPTATION_PENDING_ACCEPTANCE",
+      "art_approved": false,
+      "studio_imported": false,
+      "runtime_verified": false
+    },
+    {
+      "id": "NQ-BLD-06",
+      "original": "assets/supplied/buildings/set-01/cafe.glb",
+      "original_sha256": "1a503204b74712fb3f446875463d1d612a60c9c2603445078aabfca2473be5b2",
+      "uniform_scale": 16.726900438051064,
+      "size_wdh": [
+        16.718732833862305,
+        16.0,
+        9.923429489135742
+      ],
+      "repair": {
+        "method": "Closed warm roof deck covers baked black roof artifact; original preserved",
+        "source_roof_z": 0.438,
+        "deck_top_z": 0.446,
+        "dimensions": [
+          0.76,
+          0.65,
+          0.008
+        ]
+      },
+      "stage": "LOCAL_ADAPTATION_PENDING_ACCEPTANCE",
+      "art_approved": false,
+      "studio_imported": false,
+      "runtime_verified": false
+    },
+    {
+      "id": "NQ-BLD-05",
+      "original": "assets/supplied/buildings/set-01/steampunk-shop.glb",
+      "original_sha256": "b2c6b9862964d0e91163cf081beaa4c473ca41804078b53a733b1eeef7f56f12",
+      "uniform_scale": 16.007815361954556,
+      "size_wdh": [
+        15.890572547912598,
+        16.0,
+        12.920371055603027
+      ],
+      "repair": null,
+      "stage": "LOCAL_ADAPTATION_PENDING_ACCEPTANCE",
+      "art_approved": false,
+      "studio_imported": false,
+      "runtime_verified": false
+    },
+    {
+      "id": "NQ-BLD-03",
+      "original": "assets/supplied/buildings/set-01/repair-shop.glb",
+      "original_sha256": "73c5e86e93cf5b7677ca17df3a6e7411d0d564693917d6463aeb6925c276f945",
+      "uniform_scale": 25.586673607496095,
+      "size_wdh": [
+        25.574182510375977,
+        24.0,
+        13.905258178710938
+      ],
+      "repair": null,
+      "stage": "LOCAL_ADAPTATION_PENDING_ACCEPTANCE",
+      "art_approved": false,
+      "studio_imported": false,
+      "runtime_verified": false
+    }
+  ],
+  "uploads": 0
+}

@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-28",
+  "method": "built-in image_gen",
+  "reference": "BeatMakka_Companions_v1/art/Character_Turnarounds_CANDIDATE.png",
+  "purpose": "User-requested separate model-generation references",
+  "files": [
+    {
+      "file": "01-front.png",
+      "generation_source": "C:\\Users\\slavd\\.codex\\generated_images\\01a18326-9115-7162-aca3-e82168a8f57b\\exec-eda082a9-de38-4cbe-81f8-8481b310954b.png",
+      "bytes": 2114928,
+      "sha256": "d3272b7ac39b92f980d985718b1abd413aea193e80b10a04f74e26b7da1b0036"
+    },
+    {
+      "file": "02-left.png",
+      "generation_source": "C:\\Users\\slavd\\.codex\\generated_images\\01a18326-9115-7162-aca3-e82168a8f57b\\exec-e3e14c5f-ad45-4a65-a49e-4c799850878a.png",
+      "bytes": 1857274,
+      "sha256": "7cdb25ea9e363ee415c4b79e850bdaee7c82b022aae645d3efc85f7a7c7353cd"
+    },
+    {
+      "file": "03-right.png",
+      "generation_source": "C:\\Users\\slavd\\.codex\\generated_images\\01a18326-9115-7162-aca3-e82168a8f57b\\exec-80848f78-4d42-4c86-a010-e7bcdc6b64ef.png",
+      "bytes": 1898820,
+      "sha256": "4adede2dd19ca8c383fac06faad5b18f2194782fad247bbb0fa2bc403bf3832c"
+    },
+    {
+      "file": "04-back.png",
+      "generation_source": "C:\\Users\\slavd\\.codex\\generated_images\\01a18326-9115-7162-aca3-e82168a8f57b\\exec-0901a3d7-6eb7-4e48-bea2-26067dbcd0a2.png",
+      "bytes": 2147250,
+      "sha256": "77a56bb5a4f520e80c2d8e7468c8ff2377ae02ad7146a5978a355f8f4dcc0e3a"
+    }
+  ],
+  "stage": "REFERENCE_IMAGES_NOT_3D_MODELS",
+  "roblox_uploads": 0,
+  "tripo_calls": 0
+}

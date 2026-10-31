@@ -1,0 +1,27 @@
+{
+  "method": "built-in image_gen",
+  "reference": "BeatMakka_Companions_v1/art/Character_Turnarounds_CANDIDATE.png",
+  "files": [
+    {
+      "file": "01-front.png",
+      "source": "C:\\Users\\slavd\\.codex\\generated_images\\01a18326-9115-7162-aca3-e82168a8f57b\\exec-fc36e5ad-5003-413e-ac12-cfe0f3b2abdb.png",
+      "sha256": "10181ee2a796dd865026b2630c1802b178b2dd5b2680864f8c3debba4043f38b"
+    },
+    {
+      "file": "02-left.png",
+      "source": "C:\\Users\\slavd\\.codex\\generated_images\\01a18326-9115-7162-aca3-e82168a8f57b\\exec-42f605f0-75c8-4376-8c4d-ee3a67bfff5b.png",
+      "sha256": "a5fd179473f2eed31aa741a2837ce83b34685187a4772094f5a6070f821ae64d"
+    },
+    {
+      "file": "03-right.png",
+      "source": "C:\\Users\\slavd\\.codex\\generated_images\\01a18326-9115-7162-aca3-e82168a8f57b\\exec-81b6a162-c631-452c-9f5e-d601e1dc42fa.png",
+      "sha256": "debd8ae9927a6256a142993909bd787023632b286986ff2454b681531708dd81"
+    },
+    {
+      "file": "04-back.png",
+      "source": "C:\\Users\\slavd\\.codex\\generated_images\\01a18326-9115-7162-aca3-e82168a8f57b\\exec-8354c7ff-6f58-4093-9006-6dfeaa0e041c.png",
+      "sha256": "4380c0259b6ad10e59609acdb7905366f6ceedef1dae40d694d15f0d8861a04d"
+    }
+  ],
+  "stage": "REFERENCE_IMAGES_NOT_3D_MODELS"
+}

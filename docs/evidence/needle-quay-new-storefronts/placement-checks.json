@@ -1,0 +1,141 @@
+{
+  "checks": "Footprint envelopes, frontage alignment, source hashes, doorway approach clearance and pairwise building footprint overlap",
+  "buildings": [
+    {
+      "id": "NQ-BLD-01",
+      "size_wdh": [
+        37.88402557373047,
+        30.000001907348633,
+        19.93214225769043
+      ],
+      "center_xz": [
+        0,
+        95.00000095367432
+      ],
+      "door_xz": [
+        0.0,
+        77.5
+      ],
+      "front_clearance_studs": 2.5,
+      "envelope_fit": true,
+      "source_hash_matches": true
+    },
+    {
+      "id": "NQ-BLD-02",
+      "size_wdh": [
+        15.843673706054688,
+        16.0,
+        10.466048240661621
+      ],
+      "center_xz": [
+        -60,
+        0.0
+      ],
+      "door_xz": [
+        -60.0,
+        -10.5
+      ],
+      "front_clearance_studs": 2.5,
+      "envelope_fit": true,
+      "source_hash_matches": true
+    },
+    {
+      "id": "NQ-BLD-03",
+      "size_wdh": [
+        25.574182510375977,
+        24.0,
+        13.905258178710938
+      ],
+      "center_xz": [
+        -130,
+        -105.0
+      ],
+      "door_xz": [
+        -130.0,
+        -119.5
+      ],
+      "front_clearance_studs": 2.5,
+      "envelope_fit": true,
+      "source_hash_matches": true
+    },
+    {
+      "id": "NQ-BLD-05",
+      "size_wdh": [
+        15.890572547912598,
+        16.0,
+        12.920371055603027
+      ],
+      "center_xz": [
+        175,
+        95.0
+      ],
+      "door_xz": [
+        173.0931312942505,
+        84.5
+      ],
+      "front_clearance_studs": 2.5,
+      "envelope_fit": true,
+      "source_hash_matches": true
+    },
+    {
+      "id": "NQ-BLD-06",
+      "size_wdh": [
+        16.718732833862305,
+        16.0,
+        9.923429489135742
+      ],
+      "center_xz": [
+        -65,
+        90.0
+      ],
+      "door_xz": [
+        -65.0,
+        79.5
+      ],
+      "front_clearance_studs": 2.5,
+      "envelope_fit": true,
+      "source_hash_matches": true
+    },
+    {
+      "id": "NQ-BLD-07",
+      "size_wdh": [
+        15.042253494262695,
+        12.0,
+        9.310471534729004
+      ],
+      "center_xz": [
+        -175,
+        90.0
+      ],
+      "door_xz": [
+        -170.78816902160645,
+        81.5
+      ],
+      "front_clearance_studs": 2.5,
+      "envelope_fit": true,
+      "source_hash_matches": true
+    },
+    {
+      "id": "NQ-BLD-08",
+      "size_wdh": [
+        12.300450325012207,
+        12.0,
+        7.240860462188721
+      ],
+      "center_xz": [
+        -175,
+        0.0
+      ],
+      "door_xz": [
+        -177.82910357475282,
+        -8.5
+      ],
+      "front_clearance_studs": 2.5,
+      "envelope_fit": true,
+      "source_hash_matches": true
+    }
+  ],
+  "building_overlaps": [],
+  "studio_runtime": "BLOCKED: built-in connector and fresh official StudioMCP both return empty studios",
+  "uploads": 0
+}

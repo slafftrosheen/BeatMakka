@@ -1,0 +1,75 @@
+{
+  "provider": "ElevenLabs",
+  "model": "eleven_scribe_v1",
+  "reportedCredits": 0,
+  "runs": [
+    {
+      "speaker": "alissia",
+      "flow_id": "6ExjEyK8zburcYiSdjpY",
+      "session_ids": [
+        "TjRXHNmNOJ2A8pJ5OpCr"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "G0GnpndNCm5AIeVDHtLv",
+          "session_id": "TjRXHNmNOJ2A8pJ5OpCr",
+          "credit_costs": {
+            "Zlm1pcOznarQ02PHSShd": 0
+          }
+        }
+      ]
+    },
+    {
+      "speaker": "nikolas",
+      "flow_id": "6yo48xVwUP94Qeh1IT7C",
+      "session_ids": [
+        "aaKStuaT3OF2w0uiBtCK"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "ocD2xBeJW9RpTvvMtcsi",
+          "session_id": "aaKStuaT3OF2w0uiBtCK",
+          "credit_costs": {
+            "nFLsQg5Kwfr0lLNx7HiL": 0
+          }
+        }
+      ]
+    },
+    {
+      "speaker": "street_roger",
+      "flow_id": "KMOo7I8aTyFUsptQ2aOw",
+      "session_ids": [
+        "PV1ZUjowT07nDiuopdMq"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "Frx4yceWFik704WXZAlg",
+          "session_id": "PV1ZUjowT07nDiuopdMq",
+          "credit_costs": {
+            "MqRFHFFcmCxkbAFqjWki": 0
+          }
+        }
+      ]
+    },
+    {
+      "speaker": "street_sarah",
+      "flow_id": "em1Z2OwPwMSWMTWrlIFV",
+      "session_ids": [
+        "O0N1bqkkhjNC840VXZKq"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "DA2nV8lTx3au8o36J1pJ",
+          "session_id": "O0N1bqkkhjNC840VXZKq",
+          "credit_costs": {
+            "qMW6GNcFkzm2Fs7GcP1Y": 0
+          }
+        }
+      ]
+    }
+  ]
+}

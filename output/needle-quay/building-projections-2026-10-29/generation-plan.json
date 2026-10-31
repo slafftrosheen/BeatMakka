@@ -1,0 +1,183 @@
+{
+  "date": "2026-10-29",
+  "root": "C:/Users/slavd/BeatMaka/output/needle-quay/building-projections-2026-10-29",
+  "buildings": [
+    {
+      "id": "NQ-BLD-01",
+      "name": "The Lantern Room",
+      "reference": "assets/concepts/needle-quay/NQ-BLD-01-lantern-room-v1.png",
+      "dimensions": [
+        44,
+        30,
+        26
+      ],
+      "notes": "Broad single-storey red-brick music hall. Preserve ornate curved teal-and-brass LANTERN ROOM marquee, round divided porthole above, central walnut double entrance, TWO large arched windows flanking it, cream masonry band and corner caps, flat parapet roof with low HVAC/skylights, service-side teal door and pipes. Front sign reads THE LANTERN ROOM. Right side is the service-door side. Left side quieter brick with utility details.",
+      "folder": "NQ-BLD-01-lantern-room"
+    },
+    {
+      "id": "NQ-BLD-02",
+      "name": "Needle Records",
+      "reference": "assets/concepts/needle-quay/NQ-BLD-02-needle-records-v1.png",
+      "dimensions": [
+        32,
+        16,
+        24
+      ],
+      "notes": "Needle Records: compact one-storey teal painted masonry record shop, cream trim, huge black vinyl record with coral center above coral/cream striped awning, symmetrical warm wood/glass shopfront with central entrance, vinyl bins. Flat parapet roof. RIGHT wall has one warm window, metal ladder, AC unit and pipes. LEFT wall is distinct quieter teal/brick service wall. Preserve canonical proportions 32 wide,16 deep,24 total height rather than copying conflicting numeric arrows on sheet. No dimension text.",
+      "folder": "NQ-BLD-02-needle-records"
+    },
+    {
+      "id": "NQ-BLD-03",
+      "name": "Morrow Repairs",
+      "reference": "assets/concepts/needle-quay/NQ-BLD-03-morrow-repairs-v1.png",
+      "dimensions": [
+        32,
+        24,
+        19
+      ],
+      "notes": "Morrow Repairs: broad low workshop, teal metal walls with cream stone band, large circular fan in teal round housing centered above MORROW REPAIRS sign; front workbench/tool-display bay on LEFT, walnut sliding door on RIGHT, vertical vent ribs around sign. Flat parapet roof with skylight, AC and chimney. RIGHT side has barred window, utility door and pipework; left more blank repair wall. Keep one front fan, do not repeat on back.",
+      "folder": "NQ-BLD-03-morrow-repairs"
+    },
+    {
+      "id": "NQ-BLD-04",
+      "name": "Harbor Market Hall",
+      "reference": "assets/concepts/needle-quay/NQ-BLD-04-harbor-market-hall-v1.png",
+      "dimensions": [
+        48,
+        30,
+        16
+      ],
+      "notes": "Harbor Market Hall: long low semi-open teal/cream column frame, coral and cream striped canvas awnings, exactly FOUR walnut market stalls in total, open central front aisle, separate rear performance nook, small enclosed brick service bay. Curved teal HARBOR MARKET HALL entrance sign with small vinyl emblem. No extra floors and no extra counters invented in each view. RIGHT exterior side includes brick service bay and side door.",
+      "folder": "NQ-BLD-04-harbor-market-hall"
+    },
+    {
+      "id": "NQ-BLD-05",
+      "name": "Signal House",
+      "reference": "assets/concepts/needle-quay/NQ-BLD-05-signal-house-v1.png",
+      "dimensions": [
+        16,
+        16,
+        26
+      ],
+      "notes": "Signal House: square small teal/cream masonry radio house with round warm amber porthole on front LEFT, small exterior console under coral/cream mini awning on front RIGHT. Flat parapet, one tall segmented radio mast with dish pointing toward right wall, lantern/indicator and crossbars. AC, utility pipe, gray roof. RIGHT wall has wooden service door and electrical boxes. Total height includes mast. Never move console to side wall.",
+      "folder": "NQ-BLD-05-signal-house"
+    },
+    {
+      "id": "NQ-BLD-06",
+      "name": "Warm Current Café",
+      "reference": "assets/concepts/needle-quay/NQ-BLD-06-warm-current-cafe-v1.png",
+      "dimensions": [
+        18,
+        16,
+        13
+      ],
+      "notes": "Warm Current Café: small single-storey cafe, teal upper trim and exposed warm brick, cream corners, unstriped dusty-coral awning across front, wood entrance on front LEFT and warmly lit serving window/ledge to RIGHT, small hanging circular coffee-cup sign at front left corner. Flat parapet roof with brick chimney toward right rear and low roof AC/skylight. RIGHT wall has arched amber window, small bench and pipes. Don't add vinyl record logo.",
+      "folder": "NQ-BLD-06-warm-current-cafe"
+    },
+    {
+      "id": "NQ-BLD-07",
+      "name": "North Slip Ferry Office",
+      "reference": "assets/concepts/needle-quay/NQ-BLD-07-north-slip-ferry-office-v1.png",
+      "dimensions": [
+        18,
+        12,
+        11
+      ],
+      "notes": "North Slip Ferry Office: wide squat ferry-ticket booth, teal shuttered ticket hatch on LEFT front, wood/glass door on RIGHT, big round cream clock above door, FERRY TICKETS teal fascia, small blue ferry flag on roof. Flat roof with low utility equipment. RIGHT brick wall has red/cream life ring and exposed black pipes; preserve unique door/hatch count. Do not add generic shopfront.",
+      "folder": "NQ-BLD-07-north-slip-ferry-office"
+    },
+    {
+      "id": "NQ-BLD-08",
+      "name": "Quay Supply & Tackle",
+      "reference": "assets/concepts/needle-quay/NQ-BLD-08-quay-supply-tackle-v1.png",
+      "dimensions": [
+        16,
+        12,
+        10
+      ],
+      "notes": "Quay Supply & Tackle: small low teal painted supply shop, cream fascia, front wood entrance on LEFT, broad display window on RIGHT, brown hanging hook-icon sign on front left. Distinct single-slope teal sheet-metal roof, wood trim, ropes/coiled nets/crates and small red/cream life ring near front right. RIGHT side has small rectangular window, rope/net dressing and drainpipe. No record sign or cafe awning.",
+      "folder": "NQ-BLD-08-quay-supply-tackle"
+    },
+    {
+      "id": "NQ-BLD-09",
+      "name": "Cinder Cold Storage",
+      "reference": "assets/concepts/needle-quay/NQ-BLD-09-cinder-cold-storage-v1.png",
+      "dimensions": [
+        34,
+        20,
+        16
+      ],
+      "notes": "Cinder Cold Storage: broad industrial red brick warehouse with cream capped stepped parapet, large central double teal insulated loading doors with narrow amber bar above, small personnel door on front RIGHT, hazard strips on loading jambs, modest blank teal sign above. RIGHT side has oversized square chiller fan unit framed by thick pale insulated pipe loop. LEFT side quieter brick utility panels. Flat roof with skylights and AC. Industrial, no ornamental club marquee.",
+      "folder": "NQ-BLD-09-cinder-cold-storage"
+    },
+    {
+      "id": "NQ-BLD-10",
+      "name": "Quayside Flats",
+      "reference": "assets/concepts/needle-quay/NQ-BLD-10-quayside-flats-v1.png",
+      "dimensions": [
+        38,
+        16,
+        26
+      ],
+      "notes": "Quayside Flats: WIDE TWO-STOREY residential block. Preserve FOUR upstairs wood/shutter windows with cream surrounds and planter boxes; narrow small balcony under one window. Ground floor TWO broad shuttered shopfronts, one on each side of central wood residential entrance, coral awnings over shopfronts. Teal painted plaster, brick patches, cream bands. Flat roof with short clothesline and low HVAC. RIGHT narrow end wall has one upper window, pipes, utility boxes. Back is residential with corresponding two levels, NOT a copy of front shops.",
+      "folder": "NQ-BLD-10-quayside-flats"
+    },
+    {
+      "id": "NQ-BLD-11",
+      "name": "Tidewash Laundry",
+      "reference": "assets/concepts/needle-quay/NQ-BLD-11-tidewash-laundry-v1.png",
+      "dimensions": [
+        18,
+        16,
+        14
+      ],
+      "notes": "Tidewash Laundry: small single-storey laundrette with rounded cream upper corners and long dusty-coral TIDEWASH LAUNDRY sign with wave icon. Front display has EXACTLY THREE circular washing-machine portholes in a row behind glass on LEFT, teal glass/wood entrance door on RIGHT. Bench below front glass, modest laundry basket. Flat low parapet roof, HVAC and pipes. RIGHT brick wall has two small vents, AC and drainpipe. Back utility wall, no duplicate washer showroom.",
+      "folder": "NQ-BLD-11-tidewash-laundry"
+    },
+    {
+      "id": "NQ-BLD-12",
+      "name": "Relay Substation",
+      "reference": "assets/concepts/needle-quay/NQ-BLD-12-relay-substation-v1.png",
+      "dimensions": [
+        12,
+        12,
+        11
+      ],
+      "notes": "Relay Substation: tiny square industrial teal service hut with heavy cream coping corners, LEFT-front narrow metal door and vent, RIGHT-front attached electrical control cabinet with small amber status light. Flat roof, two ceramic insulators with SINGLE connecting curved cable on top, low ventilation box. RIGHT side has large horizontal louver and vertical black cables, no shop windows. Back has sparse service panels and conduits. No antennas or shop sign invented.",
+      "folder": "NQ-BLD-12-relay-substation"
+    },
+    {
+      "id": "NQ-BLD-13",
+      "name": "Dockline Depot",
+      "reference": "assets/concepts/needle-quay/NQ-BLD-13-dockline-depot-v1.png",
+      "dimensions": [
+        30,
+        22,
+        20
+      ],
+      "notes": "Dockline Depot: brick lower half and teal corrugated metal upper warehouse, GABLED/low pitched roof, central large walnut cross-braced double loading doors on front, overhead wood beam and side-mounted jib hoist at front LEFT, hanging hook, small personnel door on front RIGHT with shallow metal rain hood. RIGHT side has TWO small amber rectangular windows aligned at different heights, pipes, brick plinth. Back keeps same gable pitch with quieter loading/utility treatment, no duplicated front jib. Modest roof vent/skylight.",
+      "folder": "NQ-BLD-13-dockline-depot"
+    }
+  ],
+  "common_prompt": "Use case: precise-object-edit / stylized-concept architectural elevation. Transform the supplied approved artbook concept sheet into ONE standalone isolated render of ONLY its named building, matching its detailed stylized 3D material craft, geometry, roof silhouette, storey count, wall finish, trim, fixtures and curated wear. The artbook is DESIGN REFERENCE, NOT a page to reproduce. NO layout, NO collaged views, NO labels/captions/dimension arrows, NO title/footer, NO annotation colors, NO paper or drawn checkerboard. Transparent background with genuine clean alpha; no white rectangle, sky, street, water, quay, neighboring buildings, ground shadow or large diorama platform. Only a very thin continuous foundation directly under the building may remain; remove detached dock bollards, freestanding street lamps, characters, loose foreground clutter and sea base. Preserve attached fixtures and restrained reference planters. Show one complete building centered with at least 12% clear margin around all extremities, no cropping. Warm lit AFTER/restored presentation, neutral even studio lighting, mild weathering, no redesign. Camera is LEVEL at facade mid-height, strictly ORTHOGRAPHIC ELEVATION, not perspective, not isometric, not three-quarter, no downward tilt. Verticals parallel, facade horizontal lines level, no roof-top surface visible from an elevated camera. Do not reveal an adjacent wall face except tiny edge thickness. Each file is one projection of the SAME building. Colors: faded teal, warm cream, walnut, brick, dusty coral, amber lamps. Any existing shop sign may remain as part of the actual building, but no explanatory text outside it. Render clean detailed high-quality isolated game-asset concept, not a simplified blockout.",
+  "views": [
+    "front",
+    "left",
+    "right",
+    "back"
+  ],
+  "conventions": {
+    "front": "camera -Z",
+    "left": "camera -X; front corner at image right",
+    "right": "camera +X; front corner at image left",
+    "back": "camera +Z"
+  },
+  "background": "transparent",
+  "kind": "AI-derived artbook elevations; not measured DCC orthographic renders",
+  "rear_details": "Interpreted where reference does not depict them",
+  "requested_images": 52,
+  "roblox_uploads": 0,
+  "tripo_calls": 0,
+  "assets_folder_inventory_count": 6343,
+  "user_projection_layout_reference": "assets/references/needle-quay-four-view-layout-2026-10-29.png"
+}

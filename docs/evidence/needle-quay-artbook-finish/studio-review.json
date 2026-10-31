@@ -1,0 +1,420 @@
+{
+  "skinParts": 26,
+  "mapExamples": {
+    "authored_glass": {
+      "color": "Enum.ContentSourceType.Object",
+      "metalness": "Enum.ContentSourceType.Object",
+      "normal": "Enum.ContentSourceType.Object",
+      "roughness": "Enum.ContentSourceType.Object"
+    },
+    "supplied_building_NQ-BLD-01": {
+      "color": "Enum.ContentSourceType.Object",
+      "metalness": "Enum.ContentSourceType.Object",
+      "normal": "Enum.ContentSourceType.Object",
+      "roughness": "Enum.ContentSourceType.Object"
+    },
+    "supplied_building_NQ-BLD-06": {
+      "color": "Enum.ContentSourceType.Object",
+      "metalness": "Enum.ContentSourceType.Object",
+      "normal": "Enum.ContentSourceType.Object",
+      "roughness": "Enum.ContentSourceType.Object"
+    },
+    "supplied_radio_0": {
+      "color": "Enum.ContentSourceType.Object",
+      "metalness": "Enum.ContentSourceType.Object",
+      "normal": "Enum.ContentSourceType.Object",
+      "roughness": "Enum.ContentSourceType.Object"
+    },
+    "supplied_midi_6": {
+      "color": "Enum.ContentSourceType.Object",
+      "metalness": "Enum.ContentSourceType.Object",
+      "normal": "Enum.ContentSourceType.Object",
+      "roughness": "Enum.ContentSourceType.Object"
+    },
+    "env_plaster": {
+      "color": "Enum.ContentSourceType.Object",
+      "metalness": "Enum.ContentSourceType.Object",
+      "normal": "Enum.ContentSourceType.Object",
+      "roughness": "Enum.ContentSourceType.Object"
+    },
+    "authored_cream": {
+      "color": "Enum.ContentSourceType.Object",
+      "metalness": "Enum.ContentSourceType.Object",
+      "normal": "Enum.ContentSourceType.Object",
+      "roughness": "Enum.ContentSourceType.Object"
+    },
+    "env_metal": {
+      "color": "Enum.ContentSourceType.Object",
+      "metalness": "Enum.ContentSourceType.Object",
+      "normal": "Enum.ContentSourceType.Object",
+      "roughness": "Enum.ContentSourceType.Object"
+    },
+    "supplied_groceries_0": {
+      "color": "Enum.ContentSourceType.Object",
+      "metalness": "Enum.ContentSourceType.Object",
+      "normal": "Enum.ContentSourceType.Object",
+      "roughness": "Enum.ContentSourceType.Object"
+    },
+    "character_ivo": {
+      "color": "Enum.ContentSourceType.Object",
+      "metalness": "Enum.ContentSourceType.Object",
+      "normal": "Enum.ContentSourceType.Object",
+      "roughness": "Enum.ContentSourceType.Object"
+    },
+    "character_tori": {
+      "color": "Enum.ContentSourceType.Object",
+      "metalness": "Enum.ContentSourceType.Object",
+      "normal": "Enum.ContentSourceType.Object",
+      "roughness": "Enum.ContentSourceType.Object"
+    },
+    "supplied_liftup_95824bd9852d": {
+      "color": "Enum.ContentSourceType.Object",
+      "metalness": "Enum.ContentSourceType.Object",
+      "normal": "Enum.ContentSourceType.Object",
+      "roughness": "Enum.ContentSourceType.Object"
+    },
+    "supplied_furniture_1": {
+      "color": "Enum.ContentSourceType.Object",
+      "metalness": "Enum.ContentSourceType.Object",
+      "normal": "Enum.ContentSourceType.Object",
+      "roughness": "Enum.ContentSourceType.Object"
+    },
+    "supplied_liftup_23ad7fe2ac8f": {
+      "color": "Enum.ContentSourceType.Object",
+      "metalness": "Enum.ContentSourceType.Object",
+      "normal": "Enum.ContentSourceType.Object",
+      "roughness": "Enum.ContentSourceType.Object"
+    },
+    "supplied_liftup_3a6b2a03877c": {
+      "color": "Enum.ContentSourceType.Object",
+      "metalness": "Enum.ContentSourceType.Object",
+      "normal": "Enum.ContentSourceType.Object",
+      "roughness": "Enum.ContentSourceType.Object"
+    },
+    "supplied_building_NQ-BLD-02": {
+      "color": "Enum.ContentSourceType.Object",
+      "metalness": "Enum.ContentSourceType.Object",
+      "normal": "Enum.ContentSourceType.Object",
+      "roughness": "Enum.ContentSourceType.Object"
+    },
+    "supplied_liftup_88d02694611d": {
+      "color": "Enum.ContentSourceType.Object",
+      "metalness": "Enum.ContentSourceType.Object",
+      "normal": "Enum.ContentSourceType.Object",
+      "roughness": "Enum.ContentSourceType.Object"
+    },
+    "supplied_utility_0": {
+      "color": "Enum.ContentSourceType.Object",
+      "metalness": "Enum.ContentSourceType.Object",
+      "normal": "Enum.ContentSourceType.Object",
+      "roughness": "Enum.ContentSourceType.Object"
+    },
+    "supplied_midi_0": {
+      "color": "Enum.ContentSourceType.Object",
+      "metalness": "Enum.ContentSourceType.Object",
+      "normal": "Enum.ContentSourceType.Object",
+      "roughness": "Enum.ContentSourceType.Object"
+    },
+    "authored_iron": {
+      "color": "Enum.ContentSourceType.Object",
+      "metalness": "Enum.ContentSourceType.Object",
+      "normal": "Enum.ContentSourceType.Object",
+      "roughness": "Enum.ContentSourceType.Object"
+    },
+    "supplied_liftup_1b02f4b8abd9": {
+      "color": "Enum.ContentSourceType.Object",
+      "metalness": "Enum.ContentSourceType.Object",
+      "normal": "Enum.ContentSourceType.Object",
+      "roughness": "Enum.ContentSourceType.Object"
+    },
+    "authored_coral": {
+      "color": "Enum.ContentSourceType.Object",
+      "metalness": "Enum.ContentSourceType.Object",
+      "normal": "Enum.ContentSourceType.Object",
+      "roughness": "Enum.ContentSourceType.Object"
+    },
+    "supplied_midi_5": {
+      "color": "Enum.ContentSourceType.Object",
+      "metalness": "Enum.ContentSourceType.Object",
+      "normal": "Enum.ContentSourceType.Object",
+      "roughness": "Enum.ContentSourceType.Object"
+    },
+    "character_ronan": {
+      "color": "Enum.ContentSourceType.Object",
+      "metalness": "Enum.ContentSourceType.Object",
+      "normal": "Enum.ContentSourceType.Object",
+      "roughness": "Enum.ContentSourceType.Object"
+    },
+    "supplied_liftup_2c998f489aae": {
+      "color": "Enum.ContentSourceType.Object",
+      "metalness": "Enum.ContentSourceType.Object",
+      "normal": "Enum.ContentSourceType.Object",
+      "roughness": "Enum.ContentSourceType.Object"
+    },
+    "supplied_liftup_3bb5bfcd2ac8": {
+      "color": "Enum.ContentSourceType.Object",
+      "metalness": "Enum.ContentSourceType.Object",
+      "normal": "Enum.ContentSourceType.Object",
+      "roughness": "Enum.ContentSourceType.Object"
+    },
+    "supplied_midi_1": {
+      "color": "Enum.ContentSourceType.Object",
+      "metalness": "Enum.ContentSourceType.Object",
+      "normal": "Enum.ContentSourceType.Object",
+      "roughness": "Enum.ContentSourceType.Object"
+    },
+    "supplied_dressing_f80c6402f81d": {
+      "color": "Enum.ContentSourceType.Object",
+      "metalness": "Enum.ContentSourceType.Object",
+      "normal": "Enum.ContentSourceType.Object",
+      "roughness": "Enum.ContentSourceType.Object"
+    },
+    "supplied_city_0": {
+      "color": "Enum.ContentSourceType.Object",
+      "metalness": "Enum.ContentSourceType.Object",
+      "normal": "Enum.ContentSourceType.Object",
+      "roughness": "Enum.ContentSourceType.Object"
+    },
+    "supplied_dressing_f17b68636d7d": {
+      "color": "Enum.ContentSourceType.Object",
+      "metalness": "Enum.ContentSourceType.Object",
+      "normal": "Enum.ContentSourceType.Object",
+      "roughness": "Enum.ContentSourceType.Object"
+    },
+    "env_canvas": {
+      "color": "Enum.ContentSourceType.Object",
+      "metalness": "Enum.ContentSourceType.Object",
+      "normal": "Enum.ContentSourceType.Object",
+      "roughness": "Enum.ContentSourceType.Object"
+    },
+    "authored_wood": {
+      "color": "Enum.ContentSourceType.Object",
+      "metalness": "Enum.ContentSourceType.Object",
+      "normal": "Enum.ContentSourceType.Object",
+      "roughness": "Enum.ContentSourceType.Object"
+    },
+    "quay_1024": {
+      "color": "Enum.ContentSourceType.Object",
+      "metalness": "Enum.ContentSourceType.Object",
+      "normal": "Enum.ContentSourceType.Object",
+      "roughness": "Enum.ContentSourceType.Object"
+    },
+    "supplied_dressing_be8d8f0d2ac6": {
+      "color": "Enum.ContentSourceType.Object",
+      "metalness": "Enum.ContentSourceType.Object",
+      "normal": "Enum.ContentSourceType.Object",
+      "roughness": "Enum.ContentSourceType.Object"
+    },
+    "authored_brass": {
+      "color": "Enum.ContentSourceType.Object",
+      "metalness": "Enum.ContentSourceType.Object",
+      "normal": "Enum.ContentSourceType.Object",
+      "roughness": "Enum.ContentSourceType.Object"
+    },
+    "character_nell": {
+      "color": "Enum.ContentSourceType.Object",
+      "metalness": "Enum.ContentSourceType.Object",
+      "normal": "Enum.ContentSourceType.Object",
+      "roughness": "Enum.ContentSourceType.Object"
+    },
+    "supplied_midi_3": {
+      "color": "Enum.ContentSourceType.Object",
+      "metalness": "Enum.ContentSourceType.Object",
+      "normal": "Enum.ContentSourceType.Object",
+      "roughness": "Enum.ContentSourceType.Object"
+    },
+    "supplied_midi_4": {
+      "color": "Enum.ContentSourceType.Object",
+      "metalness": "Enum.ContentSourceType.Object",
+      "normal": "Enum.ContentSourceType.Object",
+      "roughness": "Enum.ContentSourceType.Object"
+    },
+    "supplied_building_NQ-BLD-08": {
+      "color": "Enum.ContentSourceType.Object",
+      "metalness": "Enum.ContentSourceType.Object",
+      "normal": "Enum.ContentSourceType.Object",
+      "roughness": "Enum.ContentSourceType.Object"
+    },
+    "supplied_midi_7": {
+      "color": "Enum.ContentSourceType.Object",
+      "metalness": "Enum.ContentSourceType.Object",
+      "normal": "Enum.ContentSourceType.Object",
+      "roughness": "Enum.ContentSourceType.Object"
+    },
+    "env_stone": {
+      "color": "Enum.ContentSourceType.Object",
+      "metalness": "Enum.ContentSourceType.Object",
+      "normal": "Enum.ContentSourceType.Object",
+      "roughness": "Enum.ContentSourceType.Object"
+    },
+    "authored_stone": {
+      "color": "Enum.ContentSourceType.Object",
+      "metalness": "Enum.ContentSourceType.Object",
+      "normal": "Enum.ContentSourceType.Object",
+      "roughness": "Enum.ContentSourceType.Object"
+    },
+    "character_sana": {
+      "color": "Enum.ContentSourceType.Object",
+      "metalness": "Enum.ContentSourceType.Object",
+      "normal": "Enum.ContentSourceType.Object",
+      "roughness": "Enum.ContentSourceType.Object"
+    },
+    "supplied_van_LOOPVAN-01": {
+      "color": "Enum.ContentSourceType.Object",
+      "metalness": "Enum.ContentSourceType.Object",
+      "normal": "Enum.ContentSourceType.Object",
+      "roughness": "Enum.ContentSourceType.Object"
+    },
+    "supplied_midi_2": {
+      "color": "Enum.ContentSourceType.Object",
+      "metalness": "Enum.ContentSourceType.Object",
+      "normal": "Enum.ContentSourceType.Object",
+      "roughness": "Enum.ContentSourceType.Object"
+    },
+    "env_wood": {
+      "color": "Enum.ContentSourceType.Object",
+      "metalness": "Enum.ContentSourceType.Object",
+      "normal": "Enum.ContentSourceType.Object",
+      "roughness": "Enum.ContentSourceType.Object"
+    },
+    "character_naya": {
+      "color": "Enum.ContentSourceType.Object",
+      "metalness": "Enum.ContentSourceType.Object",
+      "normal": "Enum.ContentSourceType.Object",
+      "roughness": "Enum.ContentSourceType.Object"
+    },
+    "supplied_furniture_0": {
+      "color": "Enum.ContentSourceType.Object",
+      "metalness": "Enum.ContentSourceType.Object",
+      "normal": "Enum.ContentSourceType.Object",
+      "roughness": "Enum.ContentSourceType.Object"
+    },
+    "quay_512": {
+      "color": "Enum.ContentSourceType.Object",
+      "metalness": "Enum.ContentSourceType.Object",
+      "normal": "Enum.ContentSourceType.Object",
+      "roughness": "Enum.ContentSourceType.Object"
+    },
+    "authored_leaf": {
+      "color": "Enum.ContentSourceType.Object",
+      "metalness": "Enum.ContentSourceType.Object",
+      "normal": "Enum.ContentSourceType.Object",
+      "roughness": "Enum.ContentSourceType.Object"
+    },
+    "supplied_liftup_958c3e86d3f6": {
+      "color": "Enum.ContentSourceType.Object",
+      "metalness": "Enum.ContentSourceType.Object",
+      "normal": "Enum.ContentSourceType.Object",
+      "roughness": "Enum.ContentSourceType.Object"
+    },
+    "supplied_building_NQ-BLD-03": {
+      "color": "Enum.ContentSourceType.Object",
+      "metalness": "Enum.ContentSourceType.Object",
+      "normal": "Enum.ContentSourceType.Object",
+      "roughness": "Enum.ContentSourceType.Object"
+    },
+    "authored_brick": {
+      "color": "Enum.ContentSourceType.Object",
+      "metalness": "Enum.ContentSourceType.Object",
+      "normal": "Enum.ContentSourceType.Object",
+      "roughness": "Enum.ContentSourceType.Object"
+    },
+    "supplied_building_NQ-BLD-07": {
+      "color": "Enum.ContentSourceType.Object",
+      "metalness": "Enum.ContentSourceType.Object",
+      "normal": "Enum.ContentSourceType.Object",
+      "roughness": "Enum.ContentSourceType.Object"
+    },
+    "supplied_building_NQ-BLD-05": {
+      "color": "Enum.ContentSourceType.Object",
+      "metalness": "Enum.ContentSourceType.Object",
+      "normal": "Enum.ContentSourceType.Object",
+      "roughness": "Enum.ContentSourceType.Object"
+    },
+    "supplied_shore_rock_0": {
+      "color": "Enum.ContentSourceType.Object",
+      "metalness": "Enum.ContentSourceType.Object",
+      "normal": "Enum.ContentSourceType.Object",
+      "roughness": "Enum.ContentSourceType.Object"
+    },
+    "authored_teal": {
+      "color": "Enum.ContentSourceType.Object",
+      "metalness": "Enum.ContentSourceType.Object",
+      "normal": "Enum.ContentSourceType.Object",
+      "roughness": "Enum.ContentSourceType.Object"
+    },
+    "supplied_radio_1": {
+      "color": "Enum.ContentSourceType.Object",
+      "metalness": "Enum.ContentSourceType.Object",
+      "normal": "Enum.ContentSourceType.Object",
+      "roughness": "Enum.ContentSourceType.Object"
+    }
+  },
+  "missingPBR": 0,
+  "attributes": {
+    "LocalPBRPlaneCount": 93,
+    "LocalArtLoaded": 83,
+    "LocalTextureFailures": 0,
+    "LocalPBRFailed": 0,
+    "LocalArtTotal": 83,
+    "LocalMaterialMode": "Local SurfaceAppearance / editable color, normal, roughness and metalness / no uploads",
+    "ArtbookMaterialTreatment": "World v2 / Needle Quay Vol.01 / UVs and alpha retained",
+    "LocalSkinsBuilt": true,
+    "LocalPBRReady": true,
+    "LocalPBRLoadComplete": true
+  },
+  "surfaces": 1416,
+  "unconvertedPaving": 0,
+  "architecture": {
+    "assets/production/needle-quay/architecture-artbook/NQ-BLD-10.blend": "cb2175ce7207a3bf2d01a581f1a323eb27b6937f2b9acdae32e56f4ef2dcce07",
+    "assets/production/needle-quay/architecture-artbook/NQ-FACADE-01.blend": "785f30c4a4bcabe6f0d1710f867ff6111ef0cca9ae01507e989c2cdaece4f8ea",
+    "assets/production/needle-quay/architecture-artbook/NQ-BLD-11.blend": "ec97ab410cad3ff5df0254fc720bfcb7779ff4fb3ee5e4e774425f06287e2003",
+    "assets/production/needle-quay/architecture-artbook/NQ-FACADE-02.blend": "7fc020bd495e67e649d406fa6155a8ad080af3755102af99408cf585d59df91e",
+    "assets/production/needle-quay/architecture-artbook/NQ-BLD-09.blend": "14103e09b66719d2a32ee3253669569cf72ac3735e811c5af9cf67a76c49ed14",
+    "assets/production/needle-quay/architecture-artbook/NQ-BLD-13.blend": "9049f92060c6d5dab6fe95fc6ef0025377b20bf257f67c5be3627337ab8f3d66",
+    "assets/production/needle-quay/architecture-artbook/NQ-FACADE-03.blend": "8e0a6c77070b6a246c4b5bdd3e98e9f1fe60af63aba281a56c88c94a6353fe52",
+    "assets/production/needle-quay/architecture-artbook/NQ-BLD-12.blend": "c8199f5e34df6c3994d5771a1d7db73cb4602de29125edf06b9648d6f5fb5810"
+  },
+  "graffiti": {
+    "GRA-06": "Enum.ContentSourceType.Object",
+    "GRA-10": "Enum.ContentSourceType.Object",
+    "GRA-01": "Enum.ContentSourceType.Object",
+    "GRA-02": "Enum.ContentSourceType.Object",
+    "GRA-04": "Enum.ContentSourceType.Object",
+    "GRA-03": "Enum.ContentSourceType.Object",
+    "GRA-05": "Enum.ContentSourceType.Object",
+    "GRA-09": "Enum.ContentSourceType.Object",
+    "GRA-08": "Enum.ContentSourceType.Object",
+    "GRA-07": "Enum.ContentSourceType.Object"
+  },
+  "clouds": 0,
+  "review": {
+    "studio_id": "87b72f67-950b-407c-a0ca-3db468590934",
+    "date": "2026-10-30",
+    "desktop_steps": [
+      1,
+      5
+    ],
+    "desktop_playback": true,
+    "undo_depth_after_steps": 2,
+    "phone_portrait_viewport": [
+      400,
+      777
+    ],
+    "phone_pad_size": [
+      65,
+      65
+    ],
+    "phone_pad_count": 16,
+    "companion_review": {
+      "selected": "alissia",
+      "SuppliedSkinReady": true,
+      "parts": 4,
+      "PBR_surfaces": 4
+    },
+    "console_project_exceptions": 0,
+    "known_external_warning": "rbxassetid://203785492 asset type mismatch",
+    "uploads": 0,
+    "publish": 0
+  }
+}

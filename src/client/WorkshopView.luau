@@ -5,7 +5,6 @@ local Shared = game:GetService("ReplicatedStorage").Shared
 local Theme = require(Shared.Theme)
 local Catalog = require(Shared.SampleCatalog)
 local Cosmetics = require(Shared.CosmeticCatalog)
-local Atlas = require(Shared.UiAtlas)
 local Pattern = require(Shared.Pattern)
 local Gui = require(script.Parent.GuiFactory)
 local BeatBookView = require(script.Parent.BeatBookView)
@@ -13,8 +12,27 @@ local PadInput = require(script.Parent.PadInput)
 local RoomSettings = require(script.Parent.RoomSettings)
 local RecorderGuide = require(script.Parent.RecorderGuide)
 local SampleEditor = require(script.Parent.SampleEditor)
+local Icons = require(script.Parent.GameIcons)
 local WorkshopView = {}
 WorkshopView.__index = WorkshopView
+local compactSampleNames = {
+    kick = "KICK",
+    snare = "SNARE",
+    closed_hat = "HAT C",
+    open_hat = "HAT O",
+    clap = "CLAP",
+    rim = "RIM",
+    low_tom = "L TOM",
+    high_tom = "H TOM",
+    shaker = "SHAKE",
+    tambourine = "TAMB",
+    bell = "BELL",
+    pluck = "PLUCK",
+    bass_c = "C",
+    bass_eb = "E♭",
+    bass_g = "G",
+    chord = "CHORD",
+}
 
 function WorkshopView.new(callbacks)
     local self = setmetatable({
@@ -36,17 +54,25 @@ function WorkshopView.new(callbacks)
     self.screen = screen
     self.inputConnections = {}
     self.padInput = PadInput.new(function(pad)
-        self.playedPad = true
         self:selectPad(pad)
+        if self.padSelectOnly then
+            return false
+        end
+        self.playedPad = true
         return callbacks.tap(pad)
     end, function(pad, held)
+        if held and self.motion then
+            self.motion:hit(pad)
+        end
         local button = self.pads[pad]
         if button then
             button:SetAttribute("Held", held)
+            button.TextColor3 = Theme.Ink
             button.BackgroundColor3 = if held
                 then Theme.Coral
                 elseif pad == self.selectedPad then Theme.Amber
-                else Theme.Teal
+                elseif button:GetAttribute("PadMuted") then Theme.Stone
+                else Theme.Cream
         end
     end)
     local hud = Gui.round(Gui.make("Frame", screen, {
@@ -116,21 +142,27 @@ function WorkshopView.new(callbacks)
         }),
         16
     )
-    Gui.make("UISizeConstraint", panel, { MaxSize = Vector2.new(1040, 850) })
+    Gui.make("UISizeConstraint", panel, { MaxSize = Vector2.new(1920, 1200) })
     self.panel = panel
     self.resizeHud = resizeHud
-    Gui.panelMask(panel)
+    self.hardware = require(script.Parent.HardwareFaceplate).new(
+        panel,
+        callbacks.command,
+        function()
+            return self.state
+        end
+    )
     self.pages = {}
     self.tabs = {}
     self.page = "Play"
-    local header = Gui.label(panel, "MK-I  /  MAKE SOMETHING YOURS", 18)
+    local header = Gui.label(panel, "MK-I / NEEDLE QUAY", 18)
     header.Name = "Header"
     header.Font = Theme.Bold
     local navigation = Gui.make("Frame", panel, {
         Name = "Navigation",
         BackgroundTransparency = 1,
     })
-    local tabNames = { "Play", "Steps", "Sounds", "Beats", "Settings" }
+    local tabNames = { "Play", "Sounds", "Beats", "Settings" }
     for index, name in tabNames do
         local button = Gui.button(navigation, name, function()
             self:showPage(name)
@@ -139,8 +171,28 @@ function WorkshopView.new(callbacks)
         button.Size = UDim2.new(1 / 6, -4, 1, 0)
         button.Position = UDim2.fromScale((index - 1) / 6, 0)
         self.tabs[name] = button
+        button.Text = ""
+        local icon = Icons.make(
+            button,
+            ({
+                Play = "pads",
+                Steps = "steps",
+                Sounds = "sound",
+                Beats = "disc",
+                Settings = "knob",
+            })[name],
+            Theme.Cream,
+            20
+        )
+        icon.Position = UDim2.new(0.5, -10, 0, 3)
+        local caption = Gui.label(button, string.upper(name), 10, Theme.Cream)
+        caption.Name = "Caption"
+        caption.Font = Enum.Font.Code
+        caption.Position, caption.Size = UDim2.new(0, 0, 1, -19), UDim2.new(1, 0, 0, 18)
+        caption.TextXAlignment = Enum.TextXAlignment.Center
     end
-    local close = Gui.button(navigation, "Leave", function()
+    self.tabs.Steps = self.tabs.Play
+    local close = Gui.button(panel, "EXIT", function()
         callbacks.command("Release")
     end)
     close.Modal = true
@@ -176,21 +228,39 @@ function WorkshopView.new(callbacks)
     self.record.LayoutOrder = 2
     self.stop = control(toolbar, "Stop", "Stop")
     self.stop.LayoutOrder = 3
-    self.playIcon = Gui.icon(self.play, "play")
-    Gui.icon(self.record, "record")
-    local body = Gui.make("Frame", panel, {
+    for _, entry in { { self.play, "play" }, { self.record, "record" }, { self.stop, "stop" } } do
+        local icon = Icons.make(
+            entry[1],
+            entry[2],
+            if entry[2] == "record" then Theme.Coral else Theme.Cream,
+            22
+        )
+        icon.Position = UDim2.new(0, 8, 0.5, -11)
+        entry[1].Font = Enum.Font.Code
+        Gui.make(
+            "UIPadding",
+            entry[1],
+            { PaddingLeft = UDim.new(0, 30), PaddingRight = UDim.new(0, 4) }
+        )
+    end
+    local body = Gui.make("ScrollingFrame", panel, {
         Name = "Pages",
         BackgroundTransparency = 1,
         ClipsDescendants = true,
+        BorderSizePixel = 0,
+        ScrollBarThickness = 3,
+        ScrollingDirection = Enum.ScrollingDirection.Y,
+        CanvasSize = UDim2.new(),
     })
     local function page(name, scrolling)
-        local frame = Gui.make(if scrolling then "ScrollingFrame" else "Frame", body, {
-            Name = name,
-            Size = UDim2.fromScale(1, 1),
-            BackgroundTransparency = 1,
-            BorderSizePixel = 0,
-            Visible = name == "Play",
-        })
+        local frame =
+            Gui.make(if scrolling or name == "Play" then "ScrollingFrame" else "Frame", body, {
+                Name = name,
+                Size = UDim2.fromScale(1, 1),
+                BackgroundTransparency = 1,
+                BorderSizePixel = 0,
+                Visible = name == "Play",
+            })
         if scrolling then
             frame.CanvasSize = UDim2.new()
             frame.AutomaticCanvasSize = Enum.AutomaticSize.Y
@@ -205,7 +275,40 @@ function WorkshopView.new(callbacks)
         return frame
     end
     local performance = page("Play", false)
-    local sequencer = page("Steps", false)
+    performance.CanvasSize = UDim2.new()
+    performance.ScrollBarThickness = 3
+    performance.ScrollingDirection = Enum.ScrollingDirection.Y
+    -- The pad bank is independent of the right-hand page navigation.
+    local padBank = Gui.make("Frame", body, {
+        Name = "PersistentPadBank",
+        BackgroundTransparency = 1,
+        Size = UDim2.new(0.5, -8, 1, 0),
+    })
+    local bankIcon = Icons.make(padBank, "pads", Theme.Amber, 24)
+    self.mobileEdit = false
+    local mobileEdit = Gui.button(body, "EDIT STEPS & SOUND", function()
+        self.mobileEdit = not self.mobileEdit
+        self.resizeLayout()
+    end)
+    mobileEdit.Name, mobileEdit.Size, mobileEdit.Visible =
+        "MobileWorkspace", UDim2.new(1, -6, 0, 44), false
+    local bankLabel = Gui.label(padBank, "16 PADS / LIVE", 13, Theme.Cream)
+    bankLabel.Font = Enum.Font.Code
+    bankLabel.Position, bankLabel.Size = UDim2.fromOffset(32, 0), UDim2.new(1, -32, 0, 24)
+    bankIcon.Position = UDim2.fromOffset(0, 0)
+    local selectMode = Gui.button(padBank, "PLAY PADS", function()
+        self.padSelectOnly = not self.padSelectOnly
+        self.padMode.Text = if self.padSelectOnly then "SELECT PADS" else "PLAY PADS"
+        self.padMode.BackgroundColor3 = if self.padSelectOnly then Theme.Walnut else Theme.Teal
+    end)
+    selectMode.Name, selectMode.Position, selectMode.Size =
+        "PadMode", UDim2.new(1, -116, 0, 0), UDim2.fromOffset(116, 44)
+    selectMode.TextSize = 11
+    self.padMode = selectMode
+    bankLabel.Size = UDim2.new(1, -154, 0, 44)
+    self.hardwareKnobs =
+        require(script.Parent.HardwarePadControls).new(performance, self, callbacks.command)
+    local sequencer = performance
     local sounds = page("Sounds", true)
     self.sampleEditor = SampleEditor.new(sounds, function(key, value)
         callbacks.command("PadSound", self.selectedPad, { key = key, value = value })
@@ -218,9 +321,47 @@ function WorkshopView.new(callbacks)
     end, function(name)
         callbacks.command("PadPreset", self.selectedPad, name)
     end)
+    local broadcast = Gui.button(panel, "STREET SPEAKER / OFF", function()
+        if self.state and self.state.ready then
+            callbacks.command("Broadcast", not self.state.broadcast)
+        end
+    end)
+    broadcast.Name = "StreetSpeaker"
+    self.broadcast = broadcast
+    local footer = Gui.make("Frame", padBank, {
+        Name = "PatternControls",
+        BackgroundTransparency = 1,
+        Position = UDim2.new(0, 0, 1, -44),
+        Size = UDim2.new(1, 0, 0, 44),
+    })
+    Gui.make("UIGridLayout", footer, {
+        CellSize = UDim2.new(1 / 6, -5, 1, 0),
+        CellPadding = UDim2.fromOffset(5, 0),
+        SortOrder = Enum.SortOrder.LayoutOrder,
+    })
+    self.slotButtons = {}
+    for slot = 1, 4 do
+        local b = Gui.button(footer, string.char(64 + slot), function()
+            callbacks.command("SelectSlot", slot)
+        end)
+        b.Name = "Slot" .. slot
+        b.LayoutOrder = slot
+        b.Font = Enum.Font.Code
+        self.slotButtons[slot] = b
+    end
+    self.quickMute = Gui.button(footer, "MUTE", function()
+        callbacks.command("MutePad", self.selectedPad)
+    end)
+    self.quickMute.Name = "MutePad"
+    self.quickMute.LayoutOrder = 5
+    self.quickSave = Gui.button(footer, "SAVE", function()
+        callbacks.command("Save")
+    end)
+    self.quickSave.Name = "Save"
+    self.quickSave.LayoutOrder = 6
     local beats = page("Beats", true)
     local settings = page("Settings", true)
-    local pads = Gui.make("Frame", performance, {
+    local pads = Gui.make("Frame", padBank, {
         Name = "Pads",
         BackgroundTransparency = 1,
         AnchorPoint = Vector2.new(0.5, 0.5),
@@ -231,7 +372,7 @@ function WorkshopView.new(callbacks)
         CellPadding = UDim2.fromOffset(6, 6),
         SortOrder = Enum.SortOrder.LayoutOrder,
     })
-    self.rowTitle = Gui.label(sequencer, "PAD 01 / 16 STEPS", 15)
+    self.rowTitle = Gui.label(sequencer, "PAD 01 / 16 STEPS", 15, Theme.Cream)
     self.rowTitle.Name = "SelectedPad"
     self.rowTitle.Font = Theme.Bold
     self.rowTitle.Size = UDim2.new(1, 0, 0, 26)
@@ -289,12 +430,12 @@ function WorkshopView.new(callbacks)
         end)
         Gui.make("UIGradient", button, {
             Rotation = 90,
-            Color = ColorSequence.new(Color3.new(1, 1, 1), Color3.fromRGB(175, 193, 189)),
+            Color = ColorSequence.new(Color3.fromRGB(210, 216, 211), Color3.new(1, 1, 1)),
         })
         Gui.make("UIStroke", button, {
-            Color = Theme.Ink,
-            Thickness = 2,
-            Transparency = 0.35,
+            Color = Theme.Walnut,
+            Thickness = 3,
+            Transparency = 0.15,
             ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
         })
         Gui.round(
@@ -310,6 +451,22 @@ function WorkshopView.new(callbacks)
         button.LayoutOrder = pad
         button.Name = string.format("Pad_%02d", pad)
         self.pads[pad] = button
+        local mini = Gui.make("Frame", button, {
+            Name = "NotePreview",
+            BackgroundTransparency = 1,
+            Position = UDim2.new(0, 6, 1, -10),
+            Size = UDim2.new(1, -12, 0, 4),
+        })
+        for step = 1, 16 do
+            Gui.make("Frame", mini, {
+                Name = tostring(step),
+                BorderSizePixel = 0,
+                BackgroundColor3 = Theme.Teal,
+                BackgroundTransparency = 0.8,
+                Position = UDim2.fromScale((step - 1) / 16, 0),
+                Size = UDim2.new(1 / 16, -1, 1, 0),
+            })
+        end
     end
     for step = 1, 16 do
         local button = Gui.button(steps, tostring(step), function()
@@ -321,6 +478,8 @@ function WorkshopView.new(callbacks)
         button.Name = string.format("Step_%02d", step)
         self.steps[step] = button
     end
+    self.beatGuide = require(script.Parent.QuayBeatGuide).new(sequencer, self)
+    self.beatTools = require(script.Parent.GrooveboxTools).new(sequencer, self, callbacks.command)
     for index, button in self.pads do
         button.NextSelectionLeft = self.pads[index - 1]
         button.NextSelectionRight = self.pads[index + 1]
@@ -465,86 +624,158 @@ function WorkshopView.new(callbacks)
     self.inputStatus.Size = UDim2.new(1, -8, 0, 72)
     self.inputStatus.AutomaticSize = Enum.AutomaticSize.Y
     self.inputStatus.LayoutOrder = 5
+    self.audioStatus.Visible, self.appearanceStatus.Visible, self.inputStatus.Visible =
+        false, false, false
+    local diagnostics = Gui.button(settings, "Diagnostics", function()
+        local visible = not self.inputStatus.Visible
+        self.audioStatus.Visible, self.appearanceStatus.Visible, self.inputStatus.Visible =
+            visible, visible, visible
+    end)
+    diagnostics.Size = UDim2.new(1, -8, 0, 44)
+    diagnostics.LayoutOrder = 20
     self.roomSettings = RoomSettings.new(settings, callbacks.command)
+    require(script.Parent.AudioMixView).new(settings)
     self.status = Gui.label(panel, "Loading session...", 13)
     self.status.Name = "Status"
     self.noticeLabel = header
     local function resize()
         local size = panel.AbsoluteSize
-        local short = size.Y < 440 and size.X >= 600
-        self.shortLayout = short
-        if short then
-            local twoColumns = size.Y < 300
-            local railWidth = if twoColumns then 136 else 96
-            local function navPosition(index)
-                return if twoColumns
-                    then UDim2.fromOffset((index - 1) % 2 * 70, math.floor((index - 1) / 2) * 48)
-                    else UDim2.fromOffset(0, (index - 1) * 48)
-            end
-            navigation.Position = UDim2.fromOffset(8, 8)
-            navigation.Size = UDim2.new(0, railWidth, 1, -16)
-            for index, name in tabNames do
-                local button = self.tabs[name]
-                button.Position = navPosition(index)
-                button.Size = UDim2.fromOffset(if twoColumns then 66 else 96, 44)
-            end
-            close.Position = navPosition(6)
-            close.Size = UDim2.fromOffset(if twoColumns then 66 else 96, 44)
-            toolbar.Position = UDim2.new(1, -120, 0, 8)
-            toolbar.Size = UDim2.fromOffset(112, 140)
-            transportGrid.CellSize = UDim2.fromOffset(112, 44)
-            transportGrid.CellPadding = UDim2.fromOffset(0, 4)
-            header.Position = UDim2.new(1, -120, 0, 160)
-            header.Size = UDim2.new(0, 112, 1, -168)
-            body.Position = UDim2.fromOffset(railWidth + 16, 8)
-            body.Size = UDim2.new(1, -(railWidth + 144), 1, -48)
-            self.status.Position = UDim2.new(0, railWidth + 16, 1, -36)
-            self.status.Size = UDim2.new(1, -(railWidth + 144), 0, 32)
-        else
-            header.Position = UDim2.fromOffset(8, 6)
-            header.Size = UDim2.new(1, -16, 0, 54)
-            navigation.Position = UDim2.fromOffset(8, 64)
-            navigation.Size = UDim2.new(1, -12, 0, 44)
-            for index, name in tabNames do
-                local button = self.tabs[name]
-                button.Position = UDim2.fromScale((index - 1) / 6, 0)
-                button.Size = UDim2.new(1 / 6, -4, 1, 0)
-            end
-            close.Position = UDim2.fromScale(5 / 6, 0)
-            close.Size = UDim2.new(1 / 6, -4, 1, 0)
-            toolbar.Position = UDim2.fromOffset(8, 112)
-            toolbar.Size = UDim2.new(1, -16, 0, 44)
-            transportGrid.CellSize = UDim2.new(1 / 3, -4, 1, 0)
-            transportGrid.CellPadding = UDim2.fromOffset(6, 0)
-            body.Position = UDim2.fromOffset(8, 160)
-            body.Size = UDim2.new(1, -16, 1, -200)
-            self.status.Position = UDim2.new(0, 8, 1, -36)
-            self.status.Size = UDim2.new(1, -16, 0, 32)
+        local narrow = size.X < 600
+        local portrait = narrow
+        local shortPortrait = portrait and size.Y < 700
+        local shortLandscape = not portrait and size.Y < 470
+        self.hardware:resize(narrow, shortPortrait or shortLandscape)
+        self.hardware.display.Visible = true
+        self.hardware.brand.Visible, self.hardware.track.Visible =
+            not shortLandscape, not shortLandscape
+        toolbar.Position = if narrow then UDim2.fromOffset(18, 88) else UDim2.new(0.29, 0, 0, 24)
+        toolbar.Size = if narrow then UDim2.new(1, -36, 0, 44) else UDim2.new(0.39, -20, 0, 44)
+        transportGrid.CellSize = UDim2.new(1 / 3, -4, 1, 0)
+        local navY = if narrow then 142 else 90
+        navigation.Position = if narrow
+            then UDim2.fromOffset(18, navY + 50)
+            else UDim2.new(0.5, 8, 0, navY)
+        navigation.Size = if narrow then UDim2.new(1, -36, 0, 44) else UDim2.new(0.5, -26, 0, 44)
+        for index, name in tabNames do
+            local button = self.tabs[name]
+            button.Position = UDim2.fromScale((index - 1) / 4, 0)
+            button.Size = UDim2.new(0.25, -4, 1, 0)
+            button.Caption.Text = ({
+                Play = "PERFORM",
+                Sounds = "SOUNDS",
+                Beats = "BEATS",
+                Settings = "SETUP",
+            })[name]
         end
-        header.Font = Theme.Font
-        header.TextSize = 14
-        header.TextSize = if short then 12 else 14
-        header.TextYAlignment = Enum.TextYAlignment.Top
-        header.Text = if self.noticeUntil and os.clock() < self.noticeUntil
-            then self.noticeText
-            else self:guideText()
+        broadcast.Position = UDim2.fromOffset(18, navY)
+        broadcast.Size = if narrow then UDim2.new(1, -132, 0, 44) else UDim2.new(0.5, -124, 0, 44)
+        close.Position = if narrow
+            then UDim2.new(1, -106, 0, navY)
+            else UDim2.new(0.5, -98, 0, navY)
+        close.Size = UDim2.fromOffset(88, 44)
+        -- On a short phone, sharing lives in Setup so the performance pads keep
+        -- their space. Exit stays beside the transport and remains reachable.
+        broadcast.Parent = if shortPortrait or shortLandscape then settings else panel
+        broadcast.LayoutOrder = -1
+        if shortPortrait then
+            toolbar.Position = UDim2.fromOffset(18, 70)
+            toolbar.Size = UDim2.new(1, -90, 0, 44)
+            close.Position, close.Size = UDim2.new(1, -62, 0, 70), UDim2.fromOffset(44, 44)
+            navigation.Position = UDim2.fromOffset(18, 120)
+            broadcast.Size = UDim2.new(1, -8, 0, 44)
+        end
+        if shortLandscape then
+            toolbar.Position, toolbar.Size = UDim2.fromOffset(18, 12), UDim2.new(1, -272, 0, 44)
+            close.Position, close.Size = UDim2.new(1, -248, 0, 12), UDim2.fromOffset(44, 44)
+            navigation.Position = UDim2.new(0.5, 12, 0, 68)
+            broadcast.Size = UDim2.new(1, -8, 0, 44)
+        end
+        footer.Parent = if shortLandscape then beats else padBank
+        footer.LayoutOrder = -2
+        footer.Position = if shortLandscape then UDim2.new() else UDim2.new(0, 0, 1, -44)
+        selectMode.Parent = if shortLandscape then settings else padBank
+        selectMode.LayoutOrder = -2
+        selectMode.Position = if shortLandscape then UDim2.new() else UDim2.new(1, -116, 0, 0)
+        selectMode.Size = if shortLandscape
+            then UDim2.new(1, -8, 0, 44)
+            else UDim2.fromOffset(116, 44)
+        bankIcon.Visible, bankLabel.Visible = not shortLandscape, not shortLandscape
+        local bodyY = if shortLandscape
+            then 68
+            elseif shortPortrait then 176
+            elseif narrow then 248
+            else 148
+        body.Position = UDim2.fromOffset(18, bodyY)
+        body.Size = UDim2.new(1, -36, 1, -bodyY - (if shortLandscape then 32 else 40))
+        header.Position, header.Size = UDim2.new(0, 18, 1, -32), UDim2.new(0.36, -18, 0, 24)
+        header.Font, header.TextColor3, header.TextSize = Enum.Font.Code, Theme.Cream, 11
+        header.TextYAlignment = Enum.TextYAlignment.Center
+        self.status.Position, self.status.Size =
+            UDim2.new(0.36, 0, 1, -32), UDim2.new(0.64, -18, 0, 24)
+        self.status.TextSize = 11
+        self.status.TextColor3 = Theme.Cream
         local available = body.AbsoluteSize
-        local side = math.max(0, math.min(available.X, available.Y))
+        local mobileHeader = if portrait and self.page == "Play" then 50 else 0
+        local bankHeight = if shortLandscape
+            then available.Y
+            elseif portrait then available.Y - mobileHeader
+            else math.max(330, available.Y)
+        local paneWidth = if portrait then available.X - 6 else available.X / 2 - 12
+        local paneHeight = bankHeight - (if shortLandscape then 50 else 0)
+        body.CanvasSize = if portrait then UDim2.new() else UDim2.fromOffset(0, bankHeight)
+        body.ScrollingEnabled = not portrait and available.Y < bankHeight
+        mobileEdit.Visible = portrait and self.page == "Play"
+        mobileEdit.Text = if self.mobileEdit then "BACK TO 16 PADS" else "EDIT STEPS & SOUND"
+        padBank.Visible = not portrait or (self.page == "Play" and not self.mobileEdit)
+        padBank.Position = UDim2.fromOffset(0, mobileHeader)
+        padBank.Size = if portrait
+            then UDim2.new(1, -6, 0, bankHeight)
+            else UDim2.new(0.5, -12, 0, bankHeight)
+        for _, frame in self.pages do
+            frame.Position = if portrait
+                then UDim2.fromOffset(0, mobileHeader)
+                else UDim2.new(0.5, 12, 0, if shortLandscape then 50 else 0)
+            frame.Size = if portrait
+                then UDim2.new(1, -6, 0, paneHeight)
+                else UDim2.new(0.5, -12, 0, paneHeight)
+            frame.Visible = frame.Name == self.page
+                and (not portrait or self.page ~= "Play" or self.mobileEdit)
+        end
+        -- Fixed minimum interaction sizes; the work area scrolls on small screens.
+        local recipeHeight = if self.beatGuide.root.Visible then 62 else 0
+        local columns = if paneWidth < 380 then 4 else 8
+        local stepHeight = (16 / columns) * 48 - 4
+        steps.Position = UDim2.fromOffset(0, 34 + recipeHeight)
+        steps.Size = UDim2.new(1, -6, 0, stepHeight)
+        -- Integer cell widths prevent subpixel rounding from silently wrapping
+        -- an eight-step row into seven columns and covering steps 15/16.
+        stepGrid.CellSize =
+            UDim2.fromOffset(math.floor((paneWidth - 6 - 6 * (columns - 1)) / columns), 44)
+        stepGrid.CellPadding = UDim2.fromOffset(6, 4)
+        local toolsY = 44 + recipeHeight + stepHeight
+        self.beatTools.rhythm.Position = UDim2.fromOffset(0, toolsY)
+        self.beatTools.root.Position = UDim2.fromOffset(0, toolsY + 56)
+        self.hardwareKnobs.root.Position = UDim2.fromOffset(0, toolsY + 208)
+        local knobHeight = self.hardwareKnobs:resize(paneWidth - 6)
+        self.hardwareKnobs.root.AnchorPoint = Vector2.zero
+        self.hardwareKnobs.root.Visible = true
+        performance.CanvasSize = UDim2.fromOffset(0, toolsY + 220 + knobHeight)
+        performance.ClipsDescendants = true
+        local side =
+            math.max(0, math.min(paneWidth - 8, bankHeight - (if shortLandscape then 8 else 92)))
+        pads.Position = UDim2.new(0.5, 0, 0.5, 2)
         pads.Size = UDim2.fromOffset(side, side)
         local cell = math.max(0, math.floor((side - 18) / 4))
         padGrid.CellSize = UDim2.fromOffset(cell, cell)
-        stepGrid.CellSize = UDim2.fromOffset(
-            math.max(0, math.floor((available.X - 18) / 4)),
-            math.max(0, math.floor((available.Y - 48) / 4))
-        )
         local smallPads = side < 300
+        self.microPads = side < 230
         for _, button in self.pads do
             button.TextSize = if smallPads then 11 else 14
         end
         self.compactPads = smallPads
-        local columns = if size.X < 480 then 2 else 3
-        libraryGrid.CellSize = UDim2.new(1 / columns, -6, 0, 48)
-        self.libraryColumns = columns
+        local libraryColumns = if paneWidth < 480 then 2 else 3
+        libraryGrid.CellSize = UDim2.new(1 / libraryColumns, -6, 0, 48)
+        self.libraryColumns = libraryColumns
         self:filterSamples()
         if self.state then
             self:updatePadLabels()
@@ -581,6 +812,27 @@ function WorkshopView.new(callbacks)
         self.endedConnection:Disconnect()
         self.viewportConnection:Disconnect()
     end)
+    self.resizeLayout = resize
+    local skin = require(script.Parent.GrooveboxSkin)
+    for _, button in self.pads do
+        skin.pad(button)
+        button.PadLed.ZIndex = 4
+        button.NotePreview.ZIndex = 4
+    end
+    for _, frame in
+        { padBank, self.pages.Play, self.pages.Sounds, self.pages.Beats, self.pages.Settings }
+    do
+        local performanceSurface = frame == padBank or frame == self.pages.Play
+        frame.BackgroundColor3 = if performanceSurface
+            then Color3.fromRGB(30, 51, 48)
+            else Theme.Paper
+        frame.BackgroundTransparency = 0
+        if frame:IsA("ScrollingFrame") then
+            frame.ScrollBarImageColor3 = Theme.FadedTeal
+        end
+        Gui.round(frame, 8)
+    end
+    self.motion = require(script.Parent.GrooveboxMotion).new(self, self.hardware.display)
     self:showPage("Play")
     resize()
     return self
@@ -592,7 +844,6 @@ function WorkshopView:beginPad(pad, token)
         or not self.state.ready
         or not self.state.station
         or not self.panel.Visible
-        or self.page ~= "Play"
     then
         return false
     end
@@ -612,6 +863,9 @@ function WorkshopView:cancelInput(interrupted)
 end
 
 function WorkshopView:showPage(name)
+    if name == "Steps" then
+        name = "Play"
+    end
     if not self.pages[name] then
         return
     end
@@ -646,6 +900,12 @@ function WorkshopView:showPage(name)
         local tab = self.tabs[pageName]
         tab.BackgroundColor3 = if pageName == name then Theme.Amber else Theme.Teal
         tab.TextColor3 = if pageName == name then Theme.Ink else Theme.Cream
+        if tab:FindFirstChild("Caption") then
+            tab.Caption.TextColor3 = tab.TextColor3
+        end
+    end
+    if self.resizeLayout then
+        self.resizeLayout()
     end
     if
         UserInputService.GamepadEnabled
@@ -665,21 +925,21 @@ function WorkshopView:guideText()
         return "Restore replaces working slots A-D. Press again to confirm."
     end
     if self.page == "Settings" then
-        return "Save profile keeps slots A-D and your six-Beat shelf."
+        return "SAVE / SOUND / FX"
     elseif self.page == "Sounds" then
-        return "Sculpt your pad above; browse the sound library below. Your notes stay."
+        return "SELECT / SHAPE / AUDITION"
     elseif self.page == "Beats" then
-        return "Save to shelf keeps A-D as a Beat. Load replaces working A-D."
+        return "YOUR BEAT SHELF"
     elseif state.recording then
-        return "Tap pads to record to 16 steps. Stop ends recording."
+        return "REC / TAP THE PADS"
     elseif self.page == "Steps" then
-        return "Turn on 01, 05, 09 and 13; press Play to hear your loop."
+        return "LIGHT A STEP / PRESS PLAY"
     elseif Pattern.hasNotes(state.pattern) then
-        return "Try Play. Beats saves your A-D set to the shelf."
+        return "PLAY / TURN FX / SHARE TO STREET"
     elseif self.playedPad then
-        return "Open Steps to build a loop, or Record and tap pads."
+        return "LIGHT STEPS / RECORD PADS"
     end
-    return "Try a pad. Sounds chooses its sound; Steps makes a loop."
+    return "TAP A PAD"
 end
 
 function WorkshopView:filterSamples()
@@ -772,28 +1032,44 @@ function WorkshopView:updatePadLabels()
         local sample = Catalog.ById[p.assignments[pad]]
         local key = Catalog.List[pad].key
         key = ({ One = "1", Two = "2", Three = "3", Four = "4" })[key] or key
+        local compactName = compactSampleNames[sample.id]
+            or string.upper((sample.label:match("^%S+") or sample.label):sub(1, 5))
+        button:SetAttribute("SampleName", sample.label)
+        button:SetAttribute("ShortName", compactName)
+        button:SetAttribute("PadKey", key)
+        button:SetAttribute("PadMuted", p.muted[pad] == true)
+        button:SetAttribute("PadSelected", pad == self.selectedPad)
         button.Text = if self.compactPads
-            then string.format("%02d%s\n%s", pad, if p.muted[pad] then " M" else "", sample.label)
+            then string.format(
+                "%02d%s\n%s",
+                pad,
+                if p.muted[pad] then " M" else "",
+                if self.microPads then compactName else sample.label
+            )
             else string.format(
-                "%02d [%s]\n%s\n%s",
+                "%02d [%s]\n%s%s",
                 pad,
                 key,
                 sample.label,
-                if p.muted[pad]
-                    then "MUTED"
-                    elseif pad == self.selectedPad then "SELECTED"
-                    else "Tap to play"
+                if p.muted[pad] then " / M" else ""
             )
         button.BackgroundColor3 = if self.padInput.held[pad]
             then Theme.Coral
             elseif pad == self.selectedPad then Theme.Amber
-            else Theme.Teal
-        button.TextColor3 = if pad == self.selectedPad then Theme.Ink else Theme.Cream
+            elseif p.muted[pad] then Theme.Stone
+            else Theme.Cream
+        button.TextColor3 = Theme.Ink
+        button.Font = Enum.Font.Code
         button.PadLed.BackgroundColor3 = if p.muted[pad]
             then Theme.FadedTeal
             elseif pad == self.selectedPad then Theme.Coral
             else Theme.Amber
         button.PadLed.BackgroundTransparency = if pad == self.selectedPad then 0 else 0.5
+        for step = 1, 16 do
+            button.NotePreview[tostring(step)].BackgroundTransparency = if p.rows[pad][step]
+                then 0
+                else 0.85
+        end
     end
     self.libraryTitle.Text = string.format("PAD %02d / Choose a sound to assign", self.selectedPad)
 end
@@ -843,15 +1119,35 @@ function WorkshopView:update(state)
     self.roomSettings:update(state)
     self.recorderGuide:update(state)
     self.sampleEditor:update(state, self.selectedPad)
+    self.beatTools:update(state)
     if UserInputService.GamepadEnabled and wasOpen ~= self.panel.Visible then
         GuiService.SelectedObject = if self.panel.Visible then self.play else self.sound
     end
     local p = state.pattern
-    self.play.Text = if state.playing then "Stop [SPACE]" else "Play [SPACE]"
-    if self.playIcon then
-        self.playIcon.ImageRectOffset = Atlas[if state.playing then "stop" else "play"]
+    local wasRecipeVisible = self.beatGuide.root.Visible
+    self.beatGuide:update(state, self.selectedPad)
+    if wasRecipeVisible ~= self.beatGuide.root.Visible then
+        self.resizeLayout()
     end
-    self.record.Text = if state.recording then "RECORDING [T]" else "Record OFF [T]"
+    self.play.Text = if state.playing then "PAUSE" else "PLAY"
+    self.record.Text = if state.recording then "RECORDING" else "REC"
+    self.stop.Text = "STOP"
+    self.record.BackgroundColor3 = if state.recording then Theme.Coral else Theme.Graphite
+    self.play.BackgroundColor3 = if state.playing then Theme.Teal else Theme.Graphite
+    self.broadcast.Text = if state.broadcast
+        then "STREET SPEAKER / LIVE"
+        else "STREET SPEAKER / OFF"
+    self.broadcast.BackgroundColor3 = if state.broadcast then Theme.Coral else Theme.Teal
+    self.quickMute.Text = if p.muted[self.selectedPad] then "UNMUTE" else "MUTE"
+    self.quickSave.Text = if state.saving then "..." elseif state.dirty then "SAVE *" else "SAVE"
+    for slot, button in self.slotButtons do
+        button.BackgroundColor3 = if state.book and state.book.activeSlot == slot
+            then Theme.Amber
+            else Theme.Graphite
+        button.TextColor3 = if state.book and state.book.activeSlot == slot
+            then Theme.Ink
+            else Theme.Cream
+    end
     self.finish.Text = "Finish: " .. Cosmetics.Sets[state.finish].label
     self.padMute.Text = if p.muted[self.selectedPad] then "Unmute pad" else "Mute pad"
     self.save.Text = if state.saving
@@ -891,17 +1187,16 @@ function WorkshopView:update(state)
     end
     self:filterSamples()
     self.rowTitle.Text = string.format(
-        "%s / PAD %02d / %d BPM",
-        if state.book then state.book.slots[state.book.activeSlot].label else "A",
+        "%02d / %s · 16 STEPS",
         self.selectedPad,
-        p.bpm
+        Catalog.ById[p.assignments[self.selectedPad]].label
     )
     self:updatePadLabels()
     for step, button in self.steps do
         local on = p.rows[self.selectedPad][step]
-        button.Text = string.format("%02d\n%s", step, if on then "ON" else "OFF")
-        button.BackgroundColor3 = if on then Theme.Teal else Theme.Stone
-        button.TextColor3 = if on then Theme.Cream else Theme.Ink
+        button.Text = string.format("%02d", step)
+        button.BackgroundColor3 = if on then Theme.Amber else Theme.Graphite
+        button.TextColor3 = if on then Theme.Ink else Theme.Cream
     end
     for _, sample in Catalog.List do
         local unlocked = Catalog.isUnlocked(sample.id, state.unlocked)
@@ -928,14 +1223,16 @@ function WorkshopView:update(state)
                 )
             if state.quay then
                 local completed = 0
-                for _, done in state.quay.progress.completed do
-                    if done then
+                for id, done in state.quay.progress.completed do
+                    if done and id ~= "NQ-Q03" then
                         completed += 1
                     end
                 end
                 self.hudLabel.Text = "NEEDLE QUAY / "
                     .. completed
-                    .. "/13 activities\nMeet the neighbors at the marked stops. QUAY / MAP opens your route and journal."
+                    .. "/12   /   "
+                    .. collected
+                    .. "/3 SOUNDS"
             elseif state.quest and state.quest.completed and state.neighborhood then
                 self.hudLabel.Text = if state.neighborhood.courtReady
                     then (if state.concert and state.concert.completed
@@ -965,6 +1262,9 @@ function WorkshopView:update(state)
             elseif state.saveMode == "session" then "SESSION SAVED"
             else "SAVED"
     )
+    self.hardware:update(state, self.selectedPad)
+    self.hardwareKnobs:update(state, self.selectedPad)
+    self.status.Font = Enum.Font.Code
     self.noticeLabel.Text = if self.noticeUntil and os.clock() < self.noticeUntil
         then self.noticeText
         else self:guideText()
@@ -979,19 +1279,29 @@ function WorkshopView:playhead(step)
     if not self.state then
         return
     end
+    for pad, button in self.pads do
+        local hit = self.state.pattern.rows[pad][step] and not self.state.pattern.muted[pad]
+        if hit and self.motion then
+            self.motion:hit(pad)
+        end
+        button.PadLed.BackgroundColor3 = if hit then Theme.Amber else Theme.FadedTeal
+        button.PadLed.BackgroundTransparency = if hit then 0 else 0.65
+        button.BackgroundColor3 = if hit and self.effects
+            then Theme.Coral
+            elseif self.padInput.held[pad] then Theme.Coral
+            elseif pad == self.selectedPad then Theme.Amber
+            elseif self.state.pattern.muted[pad] then Theme.Stone
+            else Theme.Cream
+        button.TextColor3 = Theme.Ink
+    end
     for index, button in self.steps do
         local on = self.state.pattern.rows[self.selectedPad][index]
         button.BackgroundColor3 = if index == step
-            then Theme.Amber
-            elseif on then Theme.Teal
-            else Theme.Stone
-        button.TextColor3 = if index == step or not on then Theme.Ink else Theme.Cream
-        button.Text = string.format(
-            "%s%02d\n%s",
-            if index == step then "> " else "",
-            index,
-            if on then "ON" else "OFF"
-        )
+            then Theme.Coral
+            elseif on then Theme.Amber
+            else Theme.Graphite
+        button.TextColor3 = if index == step or on then Theme.Ink else Theme.Cream
+        button.Text = string.format("%02d", index)
     end
 end
 

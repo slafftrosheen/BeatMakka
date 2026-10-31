@@ -1,0 +1,7 @@
+{
+  "tool": "built-in imagegen",
+  "date": "2026-10-29",
+  "prompt": "Game UI production texture for Needle Quay music sampler hardware, inspired by a handmade coastal music workshop: warm ivory enamel powder-coated metal faceplate, very subtle warm-gray stippled grain, delicately worn brass edges, teal patina only along thin outer perimeter, tiny inset screw heads at the four corners. Orthographic perfectly front-facing flat rectangle, full image filled edge to edge with material, 3:2 landscape composition. Center 90 percent MUST be quiet blank uninterrupted pale cream enamel suitable for overlaying real UI controls. Absolutely no words, text, symbols, labels, screens, knobs, pads, buttons, holes, shadows cast outside panel, perspective, devices or scenery. Painterly stylized premium game prop material, gently aged, clean usable center, fine subtle detail rather than heavy dirt. Output maximum 1024 pixels longest side if possible. This is the actual background layer asset, not a UI mockup.",
+  "source": "C:/Users/slavd/.codex/generated_images/01a18326-9115-7162-aca3-e82168a8f57b/exec-7303c65a-4bce-4f83-8110-ff3ea0dfce2b.png",
+  "usage": "Local hardware faceplate background; no baked labels or controls; original output copied unchanged."
+}

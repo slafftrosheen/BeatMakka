@@ -1,12 +1,77 @@
 """Compile full local design/production register, provenance and browseable index."""
-import json,hashlib,html,struct,xml.etree.ElementTree as ET
+import argparse,json,hashlib,html,struct,xml.etree.ElementTree as ET
 from pathlib import Path
 from datetime import date
-from PIL import Image
 R=Path(__file__).resolve().parents[1];O=R/'assets/production/needle-quay';DOC=R/'docs/needle-quay'
 def load(p):return json.loads((R/p).read_text(encoding='utf-8'))
 def save(p,v):(R/p).write_text(json.dumps(v,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 def digest(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+
+def quest_projection(data):
+    """Project authored canonical contracts without reintroducing a second ruleset."""
+    quests = data['quests']
+    expected_ids = [f'NQ-Q{i:02d}' for i in range(13)]
+    if [quest.get('id') for quest in quests] != expected_ids:
+        raise ValueError('Canonical quest IDs/order must remain NQ-Q00 through NQ-Q12')
+    required = ('name', 'npc', 'completion_contract', 'geometry_anchor',
+                'world_state_contract', 'sound_contract', 'failure_recovery', 'acceptance')
+    for quest in quests:
+        missing = [field for field in required if field not in quest]
+        if missing:
+            raise ValueError(f"{quest['id']} is missing canonical contracts: {', '.join(missing)}")
+    return {
+        'quests': quests,
+        'audio': 'Canonical sound contracts are projected unchanged; approved audio admission remains separate. No audio submitted to Roblox or new sample licenses inferred',
+        'binding_state': 'Projection of data/needle-quay-environment.v1.json; preserve each quest implementation and acceptance boundary',
+    }
+
+def quest_register_section(data):
+    quests = quest_projection(data)['quests']
+    lines = [
+        '## Quest/world contracts', '',
+        'The musical evidence below follows the [v3 MPC workflow](../../assets/supplied/needle-quay-handoff-v3/MPC_WORKFLOW.md). Canonical quest IDs and earned history are preserved.', '',
+        '| ID | Quest | NPC | Completion contract |',
+        '| --- | --- | --- | --- |',
+    ]
+    for quest in quests:
+        lines.append('| ' + quest['id'] + ' | ' + quest['name'] + ' | '
+                     + quest['npc'] + ' | ' + quest['completion_contract'] + ' |')
+    lines += ['', '[Geometry, sound, recovery, personal restoration and finale contracts](../../assets/production/needle-quay/quest-world-contracts.json) project the canonical register unchanged. The six finale ideas are presentation cues only; completion follows the pinned Finished Song to its actual end. Runtime acceptance requires its own evidence.', '']
+    return lines
+
+def align_quest_integrity_entry():
+    """Refresh only this generated payload's entry in an existing integrity index."""
+    manifest_path = 'assets/production/needle-quay/delivery-manifest.json'
+    if not (R / manifest_path).exists():
+        return
+    manifest = load(manifest_path)
+    payload_path = 'assets/production/needle-quay/quest-world-contracts.json'
+    entries = [entry for entry in manifest['files'] if entry['path'] == payload_path]
+    if len(entries) != 1:
+        raise ValueError('Existing integrity index must contain exactly one quest-world-contracts entry')
+    entry = entries[0]
+    entry['bytes'] = (R / payload_path).stat().st_size
+    entry['sha256'] = digest(R / payload_path)
+    save(manifest_path, manifest)
+
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--quest-contracts-only', action='store_true',
+                    help='Regenerate quest JSON/register section and align its existing integrity entry')
+args = parser.parse_args()
+if args.quest_contracts_only:
+    data = load('data/needle-quay-environment.v1.json')
+    register_path = DOC / 'ENVIRONMENT_REGISTER.md'
+    register = register_path.read_text(encoding='utf-8')
+    start = register.index('## Quest/world contracts\n')
+    end = register.index('## Integrity and sources\n', start)
+    updated = register[:start] + '\n'.join(quest_register_section(data)) + '\n' + register[end:]
+    save('assets/production/needle-quay/quest-world-contracts.json', quest_projection(data))
+    register_path.write_text(updated, encoding='utf-8')
+    align_quest_integrity_entry()
+    print('Projected', len(data['quests']), 'canonical quest contracts; source register unchanged')
+    raise SystemExit(0)
+
+from PIL import Image
 D=load('data/needle-quay-environment.v1.json');M=load('assets/production/needle-quay/models/model-manifest.json');V=load('assets/production/needle-quay/graphics/vector-manifest.json');T=load('assets/production/needle-quay/materials/material-manifest.json')
 gfx={g['id']:g for g in V['graphics']};graphs=[]
 for g in D['graphics']:
@@ -20,7 +85,7 @@ models={m['id']:m for m in M['buildings']};cards=[]
 materials=[['MAT-01','MAT-02','MAT-03','MAT-05','MAT-08','MAT-10'],['MAT-01','MAT-02','MAT-03','MAT-07','MAT-10'],['MAT-01','MAT-02','MAT-03','MAT-08','MAT-12'],['MAT-01','MAT-03','MAT-07','MAT-11'],['MAT-01','MAT-02','MAT-08','MAT-09','MAT-10']]
 special={
  'NQ-BLD-01':{'before':'Marquee unlit; closed stage dressing; Ronan waits in lobby.','after':'Amber marquee inserts on; stage cable dressing cleared; six concert phase lights remain separate.','interaction':'Lobby conversation, stage trigger, right-side service opening','modules':['40x6 lobby zone','40x14 hall zone','28x6 stage','6-stud service opening','front portal','separate marquee/light inserts']},
- 'NQ-BLD-02':{'before':'Faded poster and unsorted record-bin dressing.','after':'New poster and sorted bins; listening light enabled.','interaction':'Front door, left sorting counter, right Beat Shelf/listening nook','modules':['canonical H06 32x16x24 envelope','30x14 maximum clear interior design zone','5x3x3 record bins','4x3x2 listening nook','shared awning stripes']},
+ 'NQ-BLD-02':{'before':'Faded poster and unsorted record-bin dressing.','after':'New poster and sorted bins; listening light enabled.','interaction':'Front door, left sorting counter, right sequence and song listening nook','modules':['canonical H06 32x16x24 envelope','30x14 maximum clear interior design zone','5x3x3 record bins','4x3x2 listening nook','shared awning stripes']},
  'NQ-BLD-03':{'before':'P16 fan stationary, service leaf parked, muted work lamp.','after':'P16 fan rotation enabled by personal progress; service bay clear; amber work lamp on.','interaction':'Front-right P16/I02 vent, left workbench, sliding leaf travel zone','modules':['10x3x3 bench','canonical 3x3x2 P16 target','separate door leaf','18-stud rail','fan rim and blades']},
  'NQ-BLD-04':{'before':'Four stalls open for trade; performance nook occupied by removable crates.','after':'Same four stalls; nook cleared; festive poster and amber lighting.','interaction':'Sana at front-left; open central aisle; separate rear performance nook','modules':['four 8x3x4 counters','four 9x5 canopies','12x6 performance nook','corner roof columns']},
  'NQ-BLD-05':{'before':'Signal window dim; radio icon silent; console available outside.','after':'Amber insert on; antenna indicator active; breakwater light restored.','interaction':'Console fixed on front (-Z), right-hand side; I03 accessible without entering solid shell','modules':['16x16 radio shell','mast within total 26 height','separate crossbar','5x3x2 external desk','round signal insert']}}
@@ -35,13 +100,9 @@ for n in D['npcs']:
 save('assets/production/needle-quay/npcs/npc-manifest.json',{'npcs':npcs,'new_designs':6,'canonical_reuse':1,'new_animations_exported':0})
 for spec in D['materials']:
  source=next(m for m in T['materials'] if m['id']==spec['id']);spec.update({'production_source':source['source'],'preview':source['preview'],'stage':source['stage'],'mapping_status':'Shared atlas reuse plus procedural DCC finish; final UV bake pending for brick/brass'})
-quest_locations=[None,'NQ-BLD-07','NQ-BLD-07','NQ-BLD-07','NQ-BLD-03','NQ-BLD-03','NQ-BLD-02','NQ-BLD-02','NQ-BLD-04','NQ-BLD-05','NQ-BLD-05','NQ-BLD-01','NQ-BLD-01']
-conditions=['Interact with van tutorial anchor','Interact with three removable dock dressing targets','Unlock I01 and author four active beat steps','Accept performance invitation or skip without progression penalty','Repair P16 then unlock I02','Save distinct A and B patterns','Match three authored record tags','Persist composition in existing Beat Shelf contract','Clear performance nook without moving any of four stalls','Unlock I03 then submit matching rhythmic pattern','Commit personal radio-restored flag','Complete Ronan conversation then stage-ready flag','Advance six concert phases from personal server-owned completion events']
-phases=['arrival / resident gathering','dock rhythm','repair pulse A/B','vinyl motif','radio response','ensemble / restoration']
-for i,q in enumerate(D['quests']):
- q.update({'design_building':quest_locations[i],'completion_contract':conditions[i],'geometry_anchor':('LOOPVAN-01 tutorial marker' if i==0 else next(c for c in cards if c['id']==quest_locations[i])['interaction']),'world_state_contract':'Personal client presentation from server-owned saved progress; no global completion propagation','sound_contract':('I01 / dock metal' if i in (2,3) else 'I02 / vent pulse' if i in (4,5) else 'I03 / radio response' if i in (9,10) else 'existing composition playback / role ambience; no new audio license or upload implied'),'failure_recovery':'Cancel/rejoin preserves prior committed steps; replay presentation idempotently; optional performance never gates progress','acceptance':'DESIGN_SPECIFIED; not implemented or runtime verified'})
- if i==12:q['concert_phases']=phases
-save('assets/production/needle-quay/quest-world-contracts.json',{'quests':D['quests'],'audio':'Existing canonical sample contracts retained; no audio submitted to Roblox or new sample licenses inferred','binding_state':'Design anchors only; executable Q00–Q12 runtime integration remains separate work'})
+# The canonical register owns completion, recovery, sound and acceptance contracts.
+# Full production recompilation must preserve every current quest field as authored.
+save('assets/production/needle-quay/quest-world-contracts.json', quest_projection(D))
 D['production_delivery']={'date':'2026-10-25','kind':'FULL_REGISTER_DESIGN_VISUALIZATION_AND_LOCAL_ASSET_CANDIDATES','buildings':13,'npcs':7,'materials':12,'graphics':61,'quests_designed':13,'runtime_verified':False,'roblox_uploads':0,'tripo_calls':0}
 save('data/needle-quay-environment.v1.json',D)
 # Browseable, local file index. Images reference the preserved source masters.
@@ -76,8 +137,9 @@ md+=['','Six new four-view design sheets and 15-bone rigid model candidates; Mic
 for m in T['materials']:md.append('| '+m['id']+' | '+m['name']+' | '+m['atlas_slot']+' | [Swatch](../../'+m['preview']+') |')
 md+=['','Shared atlas reuse, 12 procedural material sources, new brick/brass finishes. Final UV bake and engine maps remain separate gates. [Material manifest](../../assets/production/needle-quay/materials/material-manifest.json).','', '## Graphic Bible','', '| ID | Type | Subject | Master / export |','| --- | --- | --- | --- |']
 for g in graphs:md.append('| '+g['id']+' | '+g['kind']+' | '+g['subject']+' | [Master](../../'+g['source']+') · [PNG](../../'+g['png']+') |')
-md+=['','61 base designs and 8 faded poster variants. SVG sources for the 51 vector designs; prompt-backed transparent PNG masters for 10 graffiti. New art candidates require their own review.','', '## Quest/world contracts','', '| ID | Quest | NPC | Completion contract |','| --- | --- | --- | --- |']
-for q in D['quests']:md.append('| '+q['id']+' | '+q['name']+' | '+q['npc']+' | '+q['completion_contract']+' |')
-md+=['','[Geometry, sound, recovery, personal restoration and finale phase contracts](../../assets/production/needle-quay/quest-world-contracts.json). These are design contracts, not an executable accepted Q00–Q12 implementation.','', '## Integrity and sources','', '[Payload SHA-256 manifest](../../assets/production/needle-quay/delivery-manifest.json) · [20 verified canonical packages](../../assets/production/needle-quay/packages/package-index.json) · [CLI receipts](../evidence/needle-quay-production) · [Unchanged user request](environment-production-register-v1.0-source.ru.md) · [Concept approval](ART_APPROVAL_2026-10-25.json).','', 'Stage separation: candidate → DCC-clean → art-approved → Studio-imported → runtime-verified. Candidate delivery and package integrity do not imply later gates. All assets remain local and in Git; deployment requires fresh authorization.']
+md+=['','61 base designs and 8 faded poster variants. SVG sources for the 51 vector designs; prompt-backed transparent PNG masters for 10 graffiti. New art candidates require their own review.','']
+md+=quest_register_section(D)
+md+=['## Integrity and sources','', '[Payload SHA-256 manifest](../../assets/production/needle-quay/delivery-manifest.json) · [20 verified canonical packages](../../assets/production/needle-quay/packages/package-index.json) · [CLI receipts](../evidence/needle-quay-production) · [Unchanged user request](environment-production-register-v1.0-source.ru.md) · [Concept approval](ART_APPROVAL_2026-10-25.json).','', 'Stage separation: candidate → DCC-clean → art-approved → Studio-imported → runtime-verified. Candidate delivery and package integrity do not imply later gates. All assets remain local and in Git; deployment requires fresh authorization.']
 (DOC/'ENVIRONMENT_REGISTER.md').write_text('\n'.join(md)+'\n',encoding='utf-8')
-(DOC/'README.md').write_text('# Needle Quay — full local register\n\n25 October 2026.\n\n- [Complete asset register](ENVIRONMENT_REGISTER.md)\n- [91-page artbook](../../output/needle-quay/BeatMakka_Needle_Quay_Environment_Quest_Artbook_Vol01.pdf)\n- [Visual catalog with every source/export](../../output/needle-quay/index.html)\n- [Full delivery, decisions and acceptance boundaries](FULL_REGISTER_DELIVERY.md)\n- [Machine-readable register](../../data/needle-quay-environment.v1.json)\n- [Approval receipt for previous artbooks and 13 concepts](ART_APPROVAL_2026-10-25.json)\n\n13 building concepts and model candidates, 7 NPC identities, 12 material families, 61 graphic designs plus 8 faded variants, 13 quest/world design contracts, 4 parking venues, native blockout and 20 integrity-verified packages.\n\nCurrent manifests and sources live in assets/production/needle-quay/. New production files remain candidates; final art/UV/rig/Studio/runtime gates are recorded explicitly. Earlier hero/supporting generation notes retain historical statuses; the exact approval receipt governs previous concept approval.\n\nNo Roblox uploads, publishing or billable Tripo work. Current testing-account restrictions remain in force. Unrelated jam/gameplay changes are preserved separately.\n',encoding='utf-8')
+if not (DOC/'README.md').exists():
+ (DOC/'README.md').write_text('# Needle Quay — full local register\n\n25 October 2026.\n\n- [Complete asset register](ENVIRONMENT_REGISTER.md)\n- [91-page artbook](../../output/needle-quay/BeatMakka_Needle_Quay_Environment_Quest_Artbook_Vol01.pdf)\n- [Visual catalog with every source/export](../../output/needle-quay/index.html)\n- [Full delivery, decisions and acceptance boundaries](FULL_REGISTER_DELIVERY.md)\n- [Machine-readable register](../../data/needle-quay-environment.v1.json)\n- [Approval receipt for previous artbooks and 13 concepts](ART_APPROVAL_2026-10-25.json)\n\n13 building concepts and model candidates, 7 NPC identities, 12 material families, 61 graphic designs plus 8 faded variants, 13 quest/world design contracts, 4 parking venues, native blockout and 20 integrity-verified packages.\n\nCurrent manifests and sources live in assets/production/needle-quay/. New production files remain candidates; final art/UV/rig/Studio/runtime gates are recorded explicitly. Earlier hero/supporting generation notes retain historical statuses; the exact approval receipt governs previous concept approval.\n\nNo Roblox uploads, publishing or billable Tripo work. Current testing-account restrictions remain in force. Unrelated jam/gameplay changes are preserved separately.\n',encoding='utf-8')

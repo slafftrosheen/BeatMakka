@@ -1,0 +1,210 @@
+{
+  "provider": "ElevenLabs",
+  "model": "eleven_v4",
+  "date": "2026-10-29",
+  "robloxUploads": 0,
+  "runs": [
+    {
+      "id": "dock",
+      "name": "Tori",
+      "voice_id": "CwhRBWXzGAHq8TQ4Fs17",
+      "lines": {
+        "brief": "Make me a steady dock beat. Two layers, four hits with Dock Echo. Keep it around one fifteen.",
+        "success": "Those echoes leave room for the dock. That's our pulse!",
+        "slow": "Give it a little more pace. The dock needs some lift.",
+        "fast": "Ease the pace a little. Leave room between those echoes.",
+        "layers": "Let's hear two clear layers. Bring another pad into the beat.",
+        "fx": "Try Dock Echo on a pad with four hits. Let that repeat carry the groove.",
+        "save": "Store your beat on the shelf, then save. Bring that version back to me."
+      },
+      "prompt": "[warm, natural, conversational] Make me a steady dock beat. Two layers, four hits with Dock Echo. Keep it around one fifteen. [long pause] [long pause] Those echoes leave room for the dock. That's our pulse! [long pause] [long pause] Give it a little more pace. The dock needs some lift. [long pause] [long pause] Ease the pace a little. Leave room between those echoes. [long pause] [long pause] Let's hear two clear layers. Bring another pad into the beat. [long pause] [long pause] Try Dock Echo on a pad with four hits. Let that repeat carry the groove. [long pause] [long pause] Store your beat on the shelf, then save. Bring that version back to me.",
+      "flow_id": "FsAnVvCYmXN8Lc74N1qW",
+      "session_ids": [
+        "RO7KLmR2J6M4Ex79sVVv",
+        "lPuiY4kHj9mqyNvzM8lt"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "1weoHJRXbjtb6xYtdIfM",
+          "session_id": "RO7KLmR2J6M4Ex79sVVv",
+          "credit_costs": {
+            "UUXCmzUORP1GFzj27Bhv": 655.0000000000001
+          }
+        },
+        {
+          "success": true,
+          "node_id": "1weoHJRXbjtb6xYtdIfM",
+          "session_id": "lPuiY4kHj9mqyNvzM8lt",
+          "credit_costs": {
+            "3wolTcSHDKC65J6VFfLa": 655.0000000000001
+          }
+        }
+      ],
+      "media": [
+        {
+          "generation_id": "UUXCmzUORP1GFzj27Bhv",
+          "duration_secs": 35.84,
+          "model_id": "eleven_v4"
+        },
+        {
+          "generation_id": "3wolTcSHDKC65J6VFfLa",
+          "duration_secs": 34.8,
+          "model_id": "eleven_v4"
+        }
+      ]
+    },
+    {
+      "id": "repair",
+      "name": "Ivo",
+      "voice_id": "CwhRBWXzGAHq8TQ4Fs17",
+      "lines": {
+        "brief": "I want a workshop groove. Two layers, four hits with Vent Room. Around one twenty-five should do it.",
+        "success": "Roomy percussion, steady pace. Even the workshop has a groove.",
+        "slow": "A little faster would give this workshop some energy.",
+        "fast": "Bring the tempo down a little. Let that room breathe.",
+        "layers": "I need two clear layers working together. Bring another pad in.",
+        "fx": "Put Vent Room on a pad with four hits. Give that rhythm some space.",
+        "save": "Store it on your shelf and save. Then bring me that beat."
+      },
+      "prompt": "[warm, natural, conversational] I want a workshop groove. Two layers, four hits with Vent Room. Around one twenty-five should do it. [long pause] [long pause] Roomy percussion, steady pace. Even the workshop has a groove. [long pause] [long pause] A little faster would give this workshop some energy. [long pause] [long pause] Bring the tempo down a little. Let that room breathe. [long pause] [long pause] I need two clear layers working together. Bring another pad in. [long pause] [long pause] Put Vent Room on a pad with four hits. Give that rhythm some space. [long pause] [long pause] Store it on your shelf and save. Then bring me that beat.",
+      "flow_id": "S3Er6iqvR24s4xZAoV4q",
+      "session_ids": [
+        "wsowdMHnqHCYTlkO52LV",
+        "UK5F5YavJtvFNxIK12qk"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "s3JIhAfB355og8A65psJ",
+          "session_id": "wsowdMHnqHCYTlkO52LV",
+          "credit_costs": {
+            "HzbVv9G6BJXdEDvBF89D": 649
+          }
+        },
+        {
+          "success": true,
+          "node_id": "s3JIhAfB355og8A65psJ",
+          "session_id": "UK5F5YavJtvFNxIK12qk",
+          "credit_costs": {
+            "GdtIjHkJr6kQ9ccM6Uuk": 649
+          }
+        }
+      ],
+      "media": [
+        {
+          "generation_id": "HzbVv9G6BJXdEDvBF89D",
+          "duration_secs": 36.72,
+          "model_id": "eleven_v4"
+        },
+        {
+          "generation_id": "GdtIjHkJr6kQ9ccM6Uuk",
+          "duration_secs": 35.68,
+          "model_id": "eleven_v4"
+        }
+      ]
+    },
+    {
+      "id": "records",
+      "name": "Naya",
+      "voice_id": "EXAVITQu4vr4xnSDxMaL",
+      "lines": {
+        "brief": "Make something slow and spacious for the evening. Two layers, four hits with Lantern Space. Around ninety.",
+        "success": "Slow and spacious. I'd keep that on for the evening.",
+        "slow": "Lift the tempo a touch. Relaxed, but still moving.",
+        "fast": "Slow it down a little. I want time to sink into the sound.",
+        "layers": "Give me two clear layers to settle into. Bring another pad in.",
+        "fx": "Try Lantern Space on a pad with four hits. Let the sound open up.",
+        "save": "Keep this version on your shelf and save it. Then let's listen again."
+      },
+      "prompt": "[warm, natural, conversational] Make something slow and spacious for the evening. Two layers, four hits with Lantern Space. Around ninety. [long pause] [long pause] Slow and spacious. I'd keep that on for the evening. [long pause] [long pause] Lift the tempo a touch. Relaxed, but still moving. [long pause] [long pause] Slow it down a little. I want time to sink into the sound. [long pause] [long pause] Give me two clear layers to settle into. Bring another pad in. [long pause] [long pause] Try Lantern Space on a pad with four hits. Let the sound open up. [long pause] [long pause] Keep this version on your shelf and save it. Then let's listen again.",
+      "flow_id": "4MmJ0wFQJiT5gAB4ZlqG",
+      "session_ids": [
+        "d9VXwnUjdXrlG0u2TNSB",
+        "igawYhcrmCS6EiTsbDyW"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "ZN06oEhLsHGoNNQnGAhd",
+          "session_id": "d9VXwnUjdXrlG0u2TNSB",
+          "credit_costs": {
+            "Naah0fRByKj5hVo57M2u": 656
+          }
+        },
+        {
+          "success": true,
+          "node_id": "ZN06oEhLsHGoNNQnGAhd",
+          "session_id": "igawYhcrmCS6EiTsbDyW",
+          "credit_costs": {
+            "3Dao7CkHZqU5Yi4dtmHj": 656
+          }
+        }
+      ],
+      "media": [
+        {
+          "generation_id": "Naah0fRByKj5hVo57M2u",
+          "duration_secs": 38.24,
+          "model_id": "eleven_v4"
+        },
+        {
+          "generation_id": "3Dao7CkHZqU5Yi4dtmHj",
+          "duration_secs": 37.6,
+          "model_id": "eleven_v4"
+        }
+      ]
+    },
+    {
+      "id": "signal",
+      "name": "Mica",
+      "voice_id": "EXAVITQu4vr4xnSDxMaL",
+      "lines": {
+        "brief": "Give the breakwater a bright little ident. Two layers, four hits with Signal Repeat. Aim around one thirty-five.",
+        "success": "Tight repeats and a clear pulse. That's a signal worth keeping!",
+        "slow": "Pick up the pace a little. Give that signal some spark.",
+        "fast": "Ease back on the tempo. Keep those repeats clear.",
+        "layers": "Add a second clear layer. Let the two parts answer each other.",
+        "fx": "Put Signal Repeat on a pad with four hits. I want that quick echo.",
+        "save": "Store your beat on the shelf and save. Bring me that version."
+      },
+      "prompt": "[warm, natural, conversational] Give the breakwater a bright little ident. Two layers, four hits with Signal Repeat. Aim around one thirty-five. [long pause] [long pause] Tight repeats and a clear pulse. That's a signal worth keeping! [long pause] [long pause] Pick up the pace a little. Give that signal some spark. [long pause] [long pause] Ease back on the tempo. Keep those repeats clear. [long pause] [long pause] Add a second clear layer. Let the two parts answer each other. [long pause] [long pause] Put Signal Repeat on a pad with four hits. I want that quick echo. [long pause] [long pause] Store your beat on the shelf and save. Bring me that version.",
+      "flow_id": "B10b7GE0f12J3X8lRaI3",
+      "session_ids": [
+        "SpVJXtz2hofZ2xlEXgxO",
+        "xKnH3ryDG5TZcNiTGpj9"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "m8v4RImxQDFDTYgLccVR",
+          "session_id": "SpVJXtz2hofZ2xlEXgxO",
+          "credit_costs": {
+            "ahTtlJUP6JCRkvJsDm4a": 662
+          }
+        },
+        {
+          "success": true,
+          "node_id": "m8v4RImxQDFDTYgLccVR",
+          "session_id": "xKnH3ryDG5TZcNiTGpj9",
+          "credit_costs": {
+            "OzO64RulzZ2Xn1xdP9SB": 662
+          }
+        }
+      ],
+      "media": [
+        {
+          "generation_id": "ahTtlJUP6JCRkvJsDm4a",
+          "duration_secs": 36.88,
+          "model_id": "eleven_v4"
+        },
+        {
+          "generation_id": "OzO64RulzZ2Xn1xdP9SB",
+          "duration_secs": 35.68,
+          "model_id": "eleven_v4"
+        }
+      ]
+    }
+  ],
+  "speechCredits": 5244.0,
+  "priceUSD": 1.0488
+}

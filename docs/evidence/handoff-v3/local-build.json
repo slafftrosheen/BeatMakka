@@ -1,0 +1,9 @@
+{
+  "tool": "rojo 7.7.0 (Rokit shim)",
+  "command": "rojo build default.project.json --output output/needle-quay-demo/NeedleQuay-MPC-v3.rbxlx",
+  "exitCode": 0,
+  "bytes": 16754003,
+  "sha256": "732dabddbc6f047c74b80017c528f155b5b11889b735ee365778db05a07bc43e",
+  "runtimeExecuted": false,
+  "testsExecuted": false
+}

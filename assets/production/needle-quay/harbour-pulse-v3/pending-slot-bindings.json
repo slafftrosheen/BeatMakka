@@ -1,0 +1,585 @@
+{
+  "schema": 2,
+  "decision": "also change mapping to the one which came with pack, so all 64 samples are playable",
+  "mapping_revision": "pack-native-2026-10-30",
+  "approval_status": "all_pending_listening",
+  "technical_local_ready": 64,
+  "bindings": [
+    {
+      "ordinal": 1,
+      "address": "A01",
+      "sample_id": "nq.harbour.v1.a01",
+      "label": "Drop Kick Main",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/local-dsp-repairs/01_Drop_Kick_Main.wav",
+      "sha256": "ed0499ae05d4994ebb8c99009189c593e9772643a3797b1500a61f51357b8281",
+      "source_kind": "deterministic_dsp_silence_repair"
+    },
+    {
+      "ordinal": 2,
+      "address": "A02",
+      "sample_id": "nq.harbour.v1.a02",
+      "label": "Drop Kick 2",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/local-dsp-repairs/onset-trim/02_Drop_Kick_2.wav",
+      "sha256": "5fb0fac2457e760a99476671e1f68e9558c4fe42c93ed93f07c9d8bce9fc459a",
+      "source_kind": "leading_silence_trim"
+    },
+    {
+      "ordinal": 3,
+      "address": "A03",
+      "sample_id": "nq.harbour.v1.a03",
+      "label": "Fast Step Kick",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/local-dsp-repairs/onset-trim/03_Fast_Step_Kick.wav",
+      "sha256": "4191940b2c4923d67be1d1cad64d7184876e4c60053042e92910a6c7bc1efa3f",
+      "source_kind": "leading_silence_trim"
+    },
+    {
+      "ordinal": 4,
+      "address": "A04",
+      "sample_id": "nq.harbour.v1.a04",
+      "label": "Ghost Kick",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Drums/04_Ghost_Kick.wav",
+      "sha256": "e629a67c40167b4cc2dbc227f2184b69dfe25a4497c2d115417bae1e6b372bff",
+      "source_kind": "native_supplied_wav"
+    },
+    {
+      "ordinal": 5,
+      "address": "A05",
+      "sample_id": "nq.harbour.v1.a05",
+      "label": "Main Backbeat Snare",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Drums/05_Main_Backbeat_Snare.wav",
+      "sha256": "ec25805af70109a473115081cad8b2f292077d05327e69c6ef7672ab0e6cc180",
+      "source_kind": "native_supplied_wav"
+    },
+    {
+      "ordinal": 6,
+      "address": "A06",
+      "sample_id": "nq.harbour.v1.a06",
+      "label": "Snare Roll Transient",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/local-dsp-repairs/onset-trim/06_Snare_Roll_Transient.wav",
+      "sha256": "fd7a16333a53e1dc38ab98396099035814c6bf66d643da6e0bc8729eb047f897",
+      "source_kind": "leading_silence_trim"
+    },
+    {
+      "ordinal": 7,
+      "address": "A07",
+      "sample_id": "nq.harbour.v1.a07",
+      "label": "Rimshot Snare",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/local-dsp-repairs/onset-trim/07_Rimshot_Snare.wav",
+      "sha256": "46b091347b5726f87426f6520f0f8f81374f3e9b5a89234145f1a7822f6831e7",
+      "source_kind": "leading_silence_trim"
+    },
+    {
+      "ordinal": 8,
+      "address": "A08",
+      "sample_id": "nq.harbour.v1.a08",
+      "label": "Crack Snare Accent",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/local-dsp-repairs/onset-trim/08_Crack_Snare_Accent.wav",
+      "sha256": "6e8273088f2d7636fc49b549a2cb4c6a6a88e3a3b2a914634d1c9c1ae9525ba7",
+      "source_kind": "leading_silence_trim"
+    },
+    {
+      "ordinal": 9,
+      "address": "A09",
+      "sample_id": "nq.harbour.v1.a09",
+      "label": "Closed DnB Hat 1",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/local-dsp-repairs/09_Closed_DnB_Hat_1.wav",
+      "sha256": "9038cbcdeff70ca542ce01164303b2784427cece6c4e656448df5e822d151e7c",
+      "source_kind": "deterministic_dsp_silence_repair"
+    },
+    {
+      "ordinal": 10,
+      "address": "A10",
+      "sample_id": "nq.harbour.v1.a10",
+      "label": "Closed DnB Hat 2",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/local-dsp-repairs/10_Closed_DnB_Hat_2.wav",
+      "sha256": "e749b81c803ee7af34eb84e51664dd68cd15d9a96c47621147af30b6fc6f5ae8",
+      "source_kind": "deterministic_dsp_silence_repair"
+    },
+    {
+      "ordinal": 11,
+      "address": "A11",
+      "sample_id": "nq.harbour.v1.a11",
+      "label": "Open Hat Splash",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/local-dsp-repairs/onset-trim/11_Open_Hat_Splash.wav",
+      "sha256": "9773c2287d6229e7c4f417a7bcebcc965ca4a311c7ff5e4c98382e730ab713e3",
+      "source_kind": "leading_silence_trim"
+    },
+    {
+      "ordinal": 12,
+      "address": "A12",
+      "sample_id": "nq.harbour.v1.a12",
+      "label": "Shaker Ghost",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Drums/12_Shaker_Ghost.wav",
+      "sha256": "06873d95756ae2f609869d61b28034f43777954fea760ea73a394a49d443ccff",
+      "source_kind": "native_supplied_wav"
+    },
+    {
+      "ordinal": 13,
+      "address": "A13",
+      "sample_id": "nq.harbour.v1.a13",
+      "label": "Dock Intro Perc 1",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/local-dsp-repairs/onset-trim/13_Dock_Intro_Perc_1.wav",
+      "sha256": "4d64c1cf865bd500a31ccdadf07e725f0ab10e0f555c3ee32b93921a3ceca005",
+      "source_kind": "leading_silence_trim"
+    },
+    {
+      "ordinal": 14,
+      "address": "A14",
+      "sample_id": "nq.harbour.v1.a14",
+      "label": "Dock Intro Perc 2",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/local-dsp-repairs/onset-trim/14_Dock_Intro_Perc_2.wav",
+      "sha256": "69f0d37aa11ca4f3a7c4194bae7a9290a451b5648cc4d90b84024343d893414d",
+      "source_kind": "leading_silence_trim"
+    },
+    {
+      "ordinal": 15,
+      "address": "A15",
+      "sample_id": "nq.harbour.v1.a15",
+      "label": "Metallic Clank Hit",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/local-dsp-repairs/level-only/15_Metallic_Clank_Hit.wav",
+      "sha256": "e1849e08764a30b6531b0abaf342eba575a73b34825f34a5549a2ab1ee9caa3d",
+      "source_kind": "level_only_normalization"
+    },
+    {
+      "ordinal": 16,
+      "address": "A16",
+      "sample_id": "nq.harbour.v1.a16",
+      "label": "Break Fill 2-Bar",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Drums/16_Break_Fill_2-Bar.wav",
+      "sha256": "66fb269ecd96915da7e3c500a8764f6c51b6e84ef13ed1c6d0b1ff712cbd8ee2",
+      "source_kind": "native_supplied_wav"
+    },
+    {
+      "ordinal": 17,
+      "address": "B01",
+      "sample_id": "nq.harbour.v1.b01",
+      "label": "Drop Sub D1",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/local-dsp-repairs/17_Drop_Sub_D1.wav",
+      "sha256": "b9c999f35063757258f83bb4fe80b88bc0c99740c085d6bd3389607806d40d8a",
+      "source_kind": "deterministic_dsp_silence_repair"
+    },
+    {
+      "ordinal": 18,
+      "address": "B02",
+      "sample_id": "nq.harbour.v1.b02",
+      "label": "Sub Pulse 808",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Bass/18_Sub_Pulse_808.wav",
+      "sha256": "1c4c392ce3b9c6923257e724ae11bbb05d1d69141fedc5b9a40ee149f1979438",
+      "source_kind": "native_supplied_wav"
+    },
+    {
+      "ordinal": 19,
+      "address": "B03",
+      "sample_id": "nq.harbour.v1.b03",
+      "label": "Sub Warm F1",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Bass/19_Sub_Warm_F1.wav",
+      "sha256": "5ed38ac885a4569781a4173171d4daba4d7979b21c90176c696140727d7d6a20",
+      "source_kind": "native_supplied_wav"
+    },
+    {
+      "ordinal": 20,
+      "address": "B04",
+      "sample_id": "nq.harbour.v1.b04",
+      "label": "Deep Sub Rumble",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Bass/20_Deep_Sub_Rumble.wav",
+      "sha256": "72a9db3f6e8ef9a528c93df5564471767eb06aa3c38804f08de57e6c14bc8a87",
+      "source_kind": "native_supplied_wav"
+    },
+    {
+      "ordinal": 21,
+      "address": "B05",
+      "sample_id": "nq.harbour.v1.b05",
+      "label": "Reese Growl Drop",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/local-dsp-repairs/onset-trim/21_Reese_Growl_Drop.wav",
+      "sha256": "895748348fdf25cf983829327abfa207f8a11c955d9f00f37afbb6265304c307",
+      "source_kind": "leading_silence_trim"
+    },
+    {
+      "ordinal": 22,
+      "address": "B06",
+      "sample_id": "nq.harbour.v1.b06",
+      "label": "Reese Bite Filter",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Bass/22_Reese_Bite_Filter.wav",
+      "sha256": "7c54975aaf93f43b04984c91cf9c0fbb8e52dc663ff6ac6e603f3305ea54f56b",
+      "source_kind": "native_supplied_wav"
+    },
+    {
+      "ordinal": 23,
+      "address": "B07",
+      "sample_id": "nq.harbour.v1.b07",
+      "label": "Reese Pitch Dive",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Bass/23_Reese_Pitch_Dive.wav",
+      "sha256": "3dd068d01756cfbc9caa4ba009862de2c0fbb25d0e99143d078fd6b13aef13b4",
+      "source_kind": "native_supplied_wav"
+    },
+    {
+      "ordinal": 24,
+      "address": "B08",
+      "sample_id": "nq.harbour.v1.b08",
+      "label": "Reese Bark Accent",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Bass/24_Reese_Bark_Accent.wav",
+      "sha256": "8c10c0d2ead0fd50193649e7e69616129c8ff74789807edace9e34b4db6d654c",
+      "source_kind": "native_supplied_wav"
+    },
+    {
+      "ordinal": 25,
+      "address": "B09",
+      "sample_id": "nq.harbour.v1.b09",
+      "label": "Foghorn Bass Low",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/local-dsp-repairs/onset-trim/25_Foghorn_Bass_Low.wav",
+      "sha256": "9c9272cf751f0ebb3c0ad0a504248dbd08c4b310df5b4a31cb7ad1997312b780",
+      "source_kind": "leading_silence_trim"
+    },
+    {
+      "ordinal": 26,
+      "address": "B10",
+      "sample_id": "nq.harbour.v1.b10",
+      "label": "Foghorn Stutter Hit",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Bass/26_Foghorn_Stutter_Hit.wav",
+      "sha256": "592b9c458513d5d754ff0f9fadef94eedec2efa967c2e5fa0e1f883b27af5dc9",
+      "source_kind": "native_supplied_wav"
+    },
+    {
+      "ordinal": 27,
+      "address": "B11",
+      "sample_id": "nq.harbour.v1.b11",
+      "label": "Distorted Reese Hit",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Bass/27_Distorted_Reese_Hit.wav",
+      "sha256": "88144d5dfabe7baa6d50cd2d7aa9ec6099cfa350b68e6696b1368da8be51992c",
+      "source_kind": "native_supplied_wav"
+    },
+    {
+      "ordinal": 28,
+      "address": "B12",
+      "sample_id": "nq.harbour.v1.b12",
+      "label": "Wobble Sub Stomp",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Bass/28_Wobble_Sub_Stomp.wav",
+      "sha256": "763bd3eedc1fee5bf5a5537d1eb619ca10ba8cf676d10cb047fc2f7f22ab766d",
+      "source_kind": "native_supplied_wav"
+    },
+    {
+      "ordinal": 29,
+      "address": "B13",
+      "sample_id": "nq.harbour.v1.b13",
+      "label": "Mid Reese Stab 1",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Bass/29_Mid_Reese_Stab_1.wav",
+      "sha256": "9e5bb4c333964056288ac0e2ac249a127c6ee640d12105b5dab082be9ef18787",
+      "source_kind": "native_supplied_wav"
+    },
+    {
+      "ordinal": 30,
+      "address": "B14",
+      "sample_id": "nq.harbour.v1.b14",
+      "label": "Mid Reese Stab 2",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/local-dsp-repairs/30_Mid_Reese_Stab_2.wav",
+      "sha256": "279015a345c6ebd8d48f268c41f67b8790e63bec8f1d97bd9240fc4d8034fb6f",
+      "source_kind": "deterministic_dsp_silence_repair"
+    },
+    {
+      "ordinal": 31,
+      "address": "B15",
+      "sample_id": "nq.harbour.v1.b15",
+      "label": "Sub Glide Low",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/local-dsp-repairs/31_Sub_Glide_Low.wav",
+      "sha256": "fa8dcd9a534ca973c8d48997bcf2d53d154f37b30e0d9c6f773e2186a0ba020e",
+      "source_kind": "deterministic_dsp_silence_repair"
+    },
+    {
+      "ordinal": 32,
+      "address": "B16",
+      "sample_id": "nq.harbour.v1.b16",
+      "label": "Sustained Bass Tail",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/local-dsp-repairs/32_Sustained_Bass_Tail.wav",
+      "sha256": "f391fc68aa231bdb83c908e70718795a1788d70c842e45af965b6ded77f5190a",
+      "source_kind": "deterministic_dsp_silence_repair"
+    },
+    {
+      "ordinal": 33,
+      "address": "C01",
+      "sample_id": "nq.harbour.v1.c01",
+      "label": "Needle Quay",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/MC_Vocals/33__Needle_Quay__.wav",
+      "sha256": "8755ffe1f03e6dc5e546e2752c1631e9c29a146df051f0b883595640fb02b030",
+      "source_kind": "native_supplied_wav"
+    },
+    {
+      "ordinal": 34,
+      "address": "C02",
+      "sample_id": "nq.harbour.v1.c02",
+      "label": "We Make Waves",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/MC_Vocals/34__We_Make_Waves__.wav",
+      "sha256": "6580a038c9f74651892b2bb67802497e90812eeb41a887937799d26d88bc9b56",
+      "source_kind": "native_supplied_wav"
+    },
+    {
+      "ordinal": 35,
+      "address": "C03",
+      "sample_id": "nq.harbour.v1.c03",
+      "label": "From the Docks",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/MC_Vocals/35__From_the_Docks_.wav",
+      "sha256": "ec5750488b3ec7d5068a38e3d6d4a5e3e43502661b558223dd6b5cf428c9484a",
+      "source_kind": "native_supplied_wav"
+    },
+    {
+      "ordinal": 36,
+      "address": "C04",
+      "sample_id": "nq.harbour.v1.c04",
+      "label": "To the Decks",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/MC_Vocals/36__To_the_Decks__.wav",
+      "sha256": "25f83e77cced22981b6e4492cb1348bc20f80130c35adad1224ec4072189f01b",
+      "source_kind": "native_supplied_wav"
+    },
+    {
+      "ordinal": 37,
+      "address": "C05",
+      "sample_id": "nq.harbour.v1.c05",
+      "label": "Let the Place Shake",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/MC_Vocals/37__Let_the_Place_Shake__.wav",
+      "sha256": "9e8989ab439367edd4a7ea0abcc68279bfe8c6b886bb943c25b94307211c3791",
+      "source_kind": "native_supplied_wav"
+    },
+    {
+      "ordinal": 38,
+      "address": "C06",
+      "sample_id": "nq.harbour.v1.c06",
+      "label": "Get Loud    Adlib",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/MC_Vocals/38__Get_Loud____Adlib_.wav",
+      "sha256": "6ece27089ef58e7aaac308ac6bb747e7370a53d1da11fdf8a1c5fe5f3559e3ff",
+      "source_kind": "native_supplied_wav"
+    },
+    {
+      "ordinal": 39,
+      "address": "C07",
+      "sample_id": "nq.harbour.v1.c07",
+      "label": "Tell  Em",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/MC_Vocals/39__Tell__Em__.wav",
+      "sha256": "9504182480c72fbdfbe7ccb8e2d015031108511c0057ec74436a7b704a9f5ef2",
+      "source_kind": "native_supplied_wav"
+    },
+    {
+      "ordinal": 40,
+      "address": "C08",
+      "sample_id": "nq.harbour.v1.c08",
+      "label": "Dust Off the Needle",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/local-dsp-repairs/onset-trim/40__Dust_Off_the_Needle_.wav",
+      "sha256": "5b395421eb8a3764ef53365b9bf84ec5b39f12c1132575adbf10a2a280666cff",
+      "source_kind": "leading_silence_trim"
+    },
+    {
+      "ordinal": 41,
+      "address": "C09",
+      "sample_id": "nq.harbour.v1.c09",
+      "label": "Spin the Wax Now",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/local-dsp-repairs/onset-trim/41__Spin_the_Wax_Now_.wav",
+      "sha256": "856a4c891a5ec67480737d84eda659f1fbbd2c8d3222b84d6ff66dc855e99522",
+      "source_kind": "leading_silence_trim"
+    },
+    {
+      "ordinal": 42,
+      "address": "C10",
+      "sample_id": "nq.harbour.v1.c10",
+      "label": "Harbour Lights Burning",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/local-dsp-repairs/onset-trim/42__Harbour_Lights_Burning_.wav",
+      "sha256": "114e7b2dbfaf17522fd17ec15ec06cfae485958be3e27a44f295bba4ac025fc1",
+      "source_kind": "leading_silence_trim"
+    },
+    {
+      "ordinal": 43,
+      "address": "C11",
+      "sample_id": "nq.harbour.v1.c11",
+      "label": "Listen to the Sound",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/MC_Vocals/43__Listen_to_the_Sound_.wav",
+      "sha256": "e4635524f6e06d281c0d5b8f37cc530063437df76b13419e223261d57b59ce60",
+      "source_kind": "native_supplied_wav"
+    },
+    {
+      "ordinal": 44,
+      "address": "C12",
+      "sample_id": "nq.harbour.v1.c12",
+      "label": "Digging Through Crates",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/MC_Vocals/44__Digging_Through_Crates_.wav",
+      "sha256": "62978949acf1577518bf9c5d016b50e225b20aae94cdb5c345b6fd61c6238fd1",
+      "source_kind": "native_supplied_wav"
+    },
+    {
+      "ordinal": 45,
+      "address": "C13",
+      "sample_id": "nq.harbour.v1.c13",
+      "label": "Locked in Key",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/MC_Vocals/45__Locked_in_Key_.wav",
+      "sha256": "b5aa96dda8d9c5357b3c8913122ab476d7277f313d2132bf46f7199b41f31b2a",
+      "source_kind": "native_supplied_wav"
+    },
+    {
+      "ordinal": 46,
+      "address": "C14",
+      "sample_id": "nq.harbour.v1.c14",
+      "label": "Hit a 4-by-4",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/MC_Vocals/46__Hit_a_4-by-4_.wav",
+      "sha256": "05efc3a05183b7412b52c15019d3148f1a56210a95d3d7718582723de250115d",
+      "source_kind": "native_supplied_wav"
+    },
+    {
+      "ordinal": 47,
+      "address": "C15",
+      "sample_id": "nq.harbour.v1.c15",
+      "label": "Unlock the Floor",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/MC_Vocals/47__Unlock_the_Floor_.wav",
+      "sha256": "bf00ddc0fd54c089fc0ed3332f0c241283cc71f8bfe089609c3b512197df1664",
+      "source_kind": "native_supplied_wav"
+    },
+    {
+      "ordinal": 48,
+      "address": "C16",
+      "sample_id": "nq.harbour.v1.c16",
+      "label": "Repair Shop",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/MC_Vocals/48__Repair_Shop__.wav",
+      "sha256": "645890bfd442da9937b44f6133e86af73833183ac06c2875d1c8d96f7b2a908a",
+      "source_kind": "native_supplied_wav"
+    },
+    {
+      "ordinal": 49,
+      "address": "D01",
+      "sample_id": "nq.harbour.v1.d01",
+      "label": "Lantern Bell D5",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Harbour_FX___Melodics/49_Lantern_Bell_D5.wav",
+      "sha256": "9c939c0741eddf6892a6d410c3985a8fa87adbb8ebbde641dc11cca835377251",
+      "source_kind": "native_supplied_wav"
+    },
+    {
+      "ordinal": 50,
+      "address": "D02",
+      "sample_id": "nq.harbour.v1.d02",
+      "label": "Lantern Bell F5",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Harbour_FX___Melodics/50_Lantern_Bell_F5.wav",
+      "sha256": "5d563aba4b22354e2a9b6e453c45792ddcd8a2da59ea54490c1d541f370aa979",
+      "source_kind": "native_supplied_wav"
+    },
+    {
+      "ordinal": 51,
+      "address": "D03",
+      "sample_id": "nq.harbour.v1.d03",
+      "label": "Lantern Bell A5",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Harbour_FX___Melodics/51_Lantern_Bell_A5.wav",
+      "sha256": "bf805d651042ef80a3a1908b62f0e9a949b423b0fba327b0448d8c6bb3e7d3a5",
+      "source_kind": "native_supplied_wav"
+    },
+    {
+      "ordinal": 52,
+      "address": "D04",
+      "sample_id": "nq.harbour.v1.d04",
+      "label": "Lantern Bell High D6",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Harbour_FX___Melodics/52_Lantern_Bell_High_D6.wav",
+      "sha256": "97cc4c73e862970a5d3514f5178b2b02b7a775480e6c1ecd7b8486c8950126f6",
+      "source_kind": "native_supplied_wav"
+    },
+    {
+      "ordinal": 53,
+      "address": "D05",
+      "sample_id": "nq.harbour.v1.d05",
+      "label": "Melodic Chord Stab Dm",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Harbour_FX___Melodics/53_Melodic_Chord_Stab_Dm.wav",
+      "sha256": "e4e148f6ca601adeaa455c915c216d93ee9c55aecc5d00b3c1a6771471310dd1",
+      "source_kind": "native_supplied_wav"
+    },
+    {
+      "ordinal": 54,
+      "address": "D06",
+      "sample_id": "nq.harbour.v1.d06",
+      "label": "Quay Ambient Pad Swell",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Harbour_FX___Melodics/54_Quay_Ambient_Pad_Swell.wav",
+      "sha256": "5eae28b23f11c88c6c5f0864bff18b598fad4a771687ada474d9c0f037e9cc2a",
+      "source_kind": "native_supplied_wav"
+    },
+    {
+      "ordinal": 55,
+      "address": "D07",
+      "sample_id": "nq.harbour.v1.d07",
+      "label": "Retro Synth Lead Lick",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Harbour_FX___Melodics/55_Retro_Synth_Lead_Lick.wav",
+      "sha256": "4124584b83208c072342386bba627d54650b91a4c2896c99ee1ba174e85e5767",
+      "source_kind": "native_supplied_wav"
+    },
+    {
+      "ordinal": 56,
+      "address": "D08",
+      "sample_id": "nq.harbour.v1.d08",
+      "label": "Bell Counter-Melody",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Harbour_FX___Melodics/56_Bell_Counter-Melody.wav",
+      "sha256": "77459c1128a4a0734c7ba1ed2399b1be1521850ff39ffd3a4ead06dde4634490",
+      "source_kind": "native_supplied_wav"
+    },
+    {
+      "ordinal": 57,
+      "address": "D09",
+      "sample_id": "nq.harbour.v1.d09",
+      "label": "Dock Winch Cable Zing",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Harbour_FX___Melodics/57_Dock_Winch_Cable_Zing.wav",
+      "sha256": "3b60d0cf078884570c61dfc702f64bb1a9a6f1ef62b6ae801f48d4a35576f73d",
+      "source_kind": "native_supplied_wav"
+    },
+    {
+      "ordinal": 58,
+      "address": "D10",
+      "sample_id": "nq.harbour.v1.d10",
+      "label": "Hydraulic Steam Release",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Harbour_FX___Melodics/58_Hydraulic_Steam_Release.wav",
+      "sha256": "de0eeaad9d15632944b8cf19ee374e8dd9670122993e0201628e4d2d4420a85c",
+      "source_kind": "native_supplied_wav"
+    },
+    {
+      "ordinal": 59,
+      "address": "D11",
+      "sample_id": "nq.harbour.v1.d11",
+      "label": "Harbour Foghorn Echo",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Harbour_FX___Melodics/59_Harbour_Foghorn_Echo.wav",
+      "sha256": "5b14a4d71834707d401a64b48500e0940946d84a16f66ba1573e860c769eade4",
+      "source_kind": "native_supplied_wav"
+    },
+    {
+      "ordinal": 60,
+      "address": "D12",
+      "sample_id": "nq.harbour.v1.d12",
+      "label": "Vinyl Needle Crackle Drop",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Harbour_FX___Melodics/60_Vinyl_Needle_Crackle_Drop.wav",
+      "sha256": "dd4cbf11fc2a736e8c1b56640479d13b5c44f0aea04d199e101bbe6af9d57d81",
+      "source_kind": "native_supplied_wav"
+    },
+    {
+      "ordinal": 61,
+      "address": "D13",
+      "sample_id": "nq.harbour.v1.d13",
+      "label": "Breakdown Riser FX",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Harbour_FX___Melodics/61_Breakdown_Riser_FX.wav",
+      "sha256": "82072ad35c9a7293282b7684c085ee61c9e002d331fa4dabc302bf6fb11a86e3",
+      "source_kind": "native_supplied_wav"
+    },
+    {
+      "ordinal": 62,
+      "address": "D14",
+      "sample_id": "nq.harbour.v1.d14",
+      "label": "Metal Resonance Pipe",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Harbour_FX___Melodics/62_Metal_Resonance_Pipe.wav",
+      "sha256": "d8e9706003c275eb3920fe97ac0192193e2e5339f9362df15854ae2323d0c88f",
+      "source_kind": "native_supplied_wav"
+    },
+    {
+      "ordinal": 63,
+      "address": "D15",
+      "sample_id": "nq.harbour.v1.d15",
+      "label": "Lantern Room Tape Echo",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Harbour_FX___Melodics/63_Lantern_Room_Tape_Echo.wav",
+      "sha256": "8533d2378e0078e8b51965d871f65f5b239783e3f3118eae206806b4a6ff0555",
+      "source_kind": "native_supplied_wav"
+    },
+    {
+      "ordinal": 64,
+      "address": "D16",
+      "sample_id": "nq.harbour.v1.d16",
+      "label": "Impact Drop Boom",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Harbour_FX___Melodics/64_Impact_Drop_Boom.wav",
+      "sha256": "fa382d3d7a53fca8ce73717b1f01e516322782b71966345fd6ff271f18b2dcbe",
+      "source_kind": "native_supplied_wav"
+    }
+  ]
+}

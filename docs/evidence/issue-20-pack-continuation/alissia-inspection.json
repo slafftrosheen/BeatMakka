@@ -1,0 +1,62 @@
+{
+  "schema": "game_dev.result.v1",
+  "operation": "asset.inspect",
+  "ok": true,
+  "data": {
+    "filePath": "C:\\Users\\slavd\\BeatMaka\\assets\\production\\needle-quay\\companions\\ALISSIA\\NQ-CMP-ALISSIA.glb",
+    "fileBytes": 684776,
+    "generator": "glTF-Transform v4.5.1",
+    "meshCount": 59,
+    "primitiveCount": 59,
+    "vertexCount": 4612,
+    "triangleCount": 3608,
+    "undrawnMeshCount": 0,
+    "undrawnPrimitiveCount": 0,
+    "undrawnTriangleCount": 0,
+    "sceneGraphFallback": false,
+    "materialCount": 1,
+    "textureCount": 1,
+    "textureResolutions": [
+      {
+        "name": "alissia_color",
+        "width": 512,
+        "height": 512,
+        "mimeType": "image/png",
+        "bytes": 307522
+      }
+    ],
+    "boundingBox": {
+      "min": [
+        -1.127500057220459,
+        0,
+        -0.8978999853134155
+      ],
+      "max": [
+        1.373500108718872,
+        4.161499977111816,
+        0.7380000352859497
+      ],
+      "sizeMeters": [
+        2.501000165939331,
+        4.161499977111816,
+        1.6359000205993652
+      ]
+    },
+    "boundingBoxEmpty": false,
+    "hasUVs": true,
+    "hasNormals": true,
+    "hasTangents": false,
+    "pbr": {
+      "hasBaseColorTexture": true,
+      "hasMetallicRoughnessTexture": false,
+      "hasNormalTexture": false,
+      "hasOcclusionTexture": false,
+      "hasEmissiveTexture": false
+    },
+    "animationCount": 10,
+    "hasSkin": true,
+    "warnings": [
+      "texture is below 1024px on an axis and will blur at close range: alissia_color (512x512)"
+    ]
+  }
+}

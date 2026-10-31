@@ -1,233 +1,209 @@
--- Arrangement of an owned saved snapshot; no working-pattern or audience mutation.
+-- Finite playback of one successfully saved immutable Finished Song revision.
+-- Legacy checkpoint history survives; it is never a certificate for a new performance.
 local Pattern = require(script.Parent.Pattern)
-local Book = require(script.Parent.BeatBook)
-local Samples = require(script.Parent.SampleCatalog)
-local Missions = require(script.Parent.NeighborhoodMissions)
 local Quay = require(script.Parent.QuayProgress)
-local Chapter = {
-    Hints = {
-        "Choose an audible pad to introduce your rhythm.",
-        "Add a different low or supporting part.",
-        "Make space: take the supporting part out.",
-        "Bring your supporting part back.",
-        "Switch to a different saved pattern.",
-        "Feature a collected sound in this pattern. Switch again if needed.",
-        "Play this last loop to finish the section. Your music can keep going.",
-    },
+local Music = require(script.Parent.QuayMusicEvidence)
+local Chapter = {}
+Chapter.Hints = {
+    "Choose your Finished Song. We will hear it from its beginning to its last sound.",
+    "Rhythm",
+    "Support",
+    "Space",
+    "Return",
+    "Variation",
+    "Signature",
 }
 
 function Chapter.sanitize(raw)
     raw = if type(raw) == "table" then raw else {}
     local completed = raw.completed == true
-    return {
+    local result = {
         completed = completed,
         checkpoint = if completed
             then 6
             elseif Pattern.integer(raw.checkpoint, 0, 5) then raw.checkpoint
             else 0,
     }
+    local performance = raw.performance
+    if
+        type(performance) == "table"
+        and type(performance.songId) == "string"
+        and Pattern.integer(performance.revision, 1, 1e12)
+        and type(performance.duration) == "number"
+        and performance.duration > 0
+        and type(performance.endedAt) == "number"
+    then
+        result.performance = {
+            songId = performance.songId,
+            revision = performance.revision,
+            duration = performance.duration,
+            endedAt = performance.endedAt,
+            localOnly = performance.localOnly == true,
+        }
+    end
+    return result
 end
 
 function Chapter.equal(a, b)
     a, b = Chapter.sanitize(a), Chapter.sanitize(b)
-    return a.completed == b.completed and a.checkpoint == b.checkpoint
-end
-
-local function audible(pattern, pad)
-    if pattern.muted[pad] then
+    if a.completed ~= b.completed or a.checkpoint ~= b.checkpoint then
         return false
     end
-    for _, on in pattern.rows[pad] do
-        if on then
-            return true
+    if (a.performance == nil) ~= (b.performance == nil) then
+        return false
+    end
+    if a.performance then
+        for key, value in a.performance do
+            if b.performance[key] ~= value then
+                return false
+            end
         end
     end
-    return false
+    return true
 end
 
-local function discovery(pattern, pad)
-    local sample = Samples.ById[pattern.assignments[pad]]
-    return sample and sample.discovery ~= nil
-end
-
-local function parts(pattern, ordinaryOnly)
-    local n = 0
-    for pad = 1, 16 do
-        if audible(pattern, pad) and (not ordinaryOnly or not discovery(pattern, pad)) then
-            n += 1
-        end
+function Chapter.start(profile, reference, now)
+    if not Quay.readyForFinale(profile) then
+        return nil, "Finish the neighbourhood route and select a ready Finished Song with Ronan."
     end
-    return n
-end
-
-function Chapter.start(profile, shelf, now)
+    local id = if type(reference) == "table" then reference.id else reference
+    if id == nil then
+        id = profile.selectedFinishedSongId
+    end
+    if type(id) ~= "string" then
+        return nil, "Select a successfully saved Finished Song first."
+    end
+    if id ~= profile.selectedFinishedSongId then
+        return nil, "Select this saved Finished Song revision before starting the evening."
+    end
+    local evidence, message = Music.finished(profile, id)
+    if not evidence then
+        return nil, message
+    end
     if
-        not (Missions.summary(profile).courtReady or Quay.readyForFinale(profile))
-        or not Pattern.integer(shelf, 1, 6)
+        type(reference) == "table"
+        and reference.revision
+        and reference.revision ~= evidence.revision
     then
-        return nil,
-            "Prepare the neighborhood jobs and Mica's first courtyard set before this concert."
-    end
-    local entry = profile.saved and profile.saved.shelf and profile.saved.shelf[shelf]
-    if not entry then
-        return nil, "Choose a shelf beat that was successfully saved."
-    end
-    local slots = Book.sanitizeSlots(entry.slots, profile.unlocked)
-    local first, varied, collected = nil, false, false
-    for index, pattern in slots do
-        if not first and parts(pattern) >= 2 then
-            first = index
-        end
-        for pad = 1, 16 do
-            collected = collected
-                or (parts(pattern, true) > 0 and audible(pattern, pad) and discovery(pattern, pad))
-        end
-    end
-    if first then
-        for index, pattern in slots do
-            varied = varied
-                or (
-                    index ~= first
-                    and parts(pattern, true) > 0
-                    and not Book.samePattern(pattern, slots[first])
-                )
-        end
-    end
-    if not first or not varied or not collected then
-        return nil,
-            "Save two audible parts, a different playable pattern, and a pattern layering a collected sound with another part. Your choice of notes and style."
-    end
-    local pattern = Pattern.sanitize(slots[first], profile.unlocked)
-    for pad = 1, 16 do
-        pattern.muted[pad] = true
+        return nil, "That song revision changed. Select its saved revision again."
     end
     return {
-        slots = slots,
-        unlocked = table.clone(profile.unlocked),
-        slot = first,
-        pattern = pattern,
-        phase = 0,
-        earned = 0,
+        id = evidence.id,
+        revision = evidence.revision,
+        title = evidence.song.title,
+        schedule = evidence.schedule,
         epoch = 1,
-        startedAt = now,
-        duration = Pattern.Steps * Pattern.stepDuration(pattern.bpm),
+        startedAt = now + 0.3,
+        lastAt = now + 0.3,
+        position = 0,
+        duration = evidence.schedule.duration,
+        endDuration = evidence.schedule.completeAt
+            or (evidence.schedule.duration + (evidence.schedule.audioTailSeconds or 0)),
+        paused = false,
+        ended = false,
+        localOnly = evidence.localOnly,
     }
 end
 
-local function restart(session, now)
-    session.epoch += 1
-    session.startedAt = now + 0.15
-    session.duration = Pattern.Steps * Pattern.stepDuration(session.pattern.bpm)
-end
-
-function Chapter.act(session, action, value, now)
-    if session.phase > 0 and session.earned < session.phase then
-        return false, "Let this full loop finish before the next musical action."
-    end
-    local base = session.slots[session.slot]
-    if action == "Rhythm" and session.phase == 0 then
-        if not Pattern.integer(value, 1, 16) or not audible(base, value) then
-            return false, "Choose an audible pad from your saved pattern."
-        end
-        session.rhythm = value
-        session.pattern.muted[value] = false
-        session.phase = 1
-    elseif action == "Support" and session.phase == 1 then
-        if
-            not Pattern.integer(value, 1, 16)
-            or value == session.rhythm
-            or not audible(base, value)
-        then
-            return false, "Choose a different audible low or supporting part."
-        end
-        session.support = value
-        session.pattern.muted[value] = false
-        session.phase = 2
-    elseif action == "Break" and session.phase == 2 then
-        session.pattern.muted[session.support] = true
-        session.phase = 3
-    elseif action == "Return" and session.phase == 3 then
-        session.pattern.muted[session.support] = false
-        session.phase = 4
-    elseif action == "Switch" and (session.phase == 4 or session.phase == 5) then
-        if
-            not Pattern.integer(value, 1, 4)
-            or value == session.slot
-            or parts(session.slots[value], true) == 0
-            or Book.samePattern(base, session.slots[value])
-        then
-            return false, "Choose a different saved pattern with an audible non-collected part."
-        end
-        session.slot = value
-        session.pattern = Pattern.sanitize(session.slots[value], session.unlocked)
-        for pad = 1, 16 do
-            if discovery(session.pattern, pad) then
-                session.pattern.muted[pad] = true
-            end
-        end
-        session.phase = 5
-        session.earned = math.min(session.earned, 4)
-    elseif action == "Feature" and session.phase == 5 then
-        if
-            not Pattern.integer(value, 1, 16)
-            or not audible(base, value)
-            or not discovery(base, value)
-        then
-            return false, "Choose a saved, unmuted collected-sound pad; switch pattern if needed."
-        end
-        session.pattern.muted[value] = false
-        session.phase = 6
-    else
-        return false, "Follow the current musical action, or stop the set at any time."
-    end
-    restart(session, now)
-    return true, Chapter.Hints[session.phase + 1]
-end
-
 function Chapter.tick(session, now)
-    if session.phase > 0 and now >= session.startedAt + session.duration then
-        session.earned = math.max(session.earned, session.phase)
+    if session.ended or session.paused then
+        return session.ended
     end
-    return session.earned
+    local delta = math.max(0, now - session.lastAt)
+    session.lastAt = math.max(session.lastAt, now)
+    session.position = math.min(session.endDuration, session.position + delta)
+    if session.position >= session.endDuration then
+        session.ended, session.endedAt = true, now
+    end
+    return session.ended
+end
+
+function Chapter.act(session, action, _, now)
+    Chapter.tick(session, now)
+    if action == "Pause" and not session.ended and not session.paused then
+        session.paused = true
+        session.epoch += 1
+        return true, "Paused. Progress is frozen; resume this same song from this position."
+    elseif action == "Resume" and session.paused and not session.ended then
+        session.paused = false
+        session.lastAt = now
+        session.startedAt = now - session.position
+        session.epoch += 1
+        return true, "Resumed the pinned song revision."
+    end
+    return false, "The arrangement plays as saved. Pause, resume or stop at any time."
 end
 
 function Chapter.summary(profile, session, open)
     local ledger = Chapter.sanitize(profile.chapter)
-    local phase = if session then session.phase else 0
+    local songs = {}
+    local music = profile.saved and profile.saved.music
+    for _, id in (music and music.finishedOrder) or {} do
+        local song = music.finishedSongs[id]
+        if song then
+            local evidence, reason = Music.finished(profile, id)
+            table.insert(songs, {
+                id = id,
+                revision = song.revision,
+                title = song.title,
+                ready = evidence ~= nil,
+                reason = reason,
+                duration = song.duration,
+                localOnly = evidence and evidence.localOnly or song.localOnly == true,
+            })
+        end
+    end
+    local position = session and session.position or 0
+    local section
+    if session then
+        for _, candidate in session.schedule.sections do
+            if position >= candidate.at and position < candidate.endAt then
+                section = candidate
+            end
+        end
+    end
+    local progress = if session then math.clamp(position / session.endDuration, 0, 1) else 0
     return {
         open = open == true,
-        eligible = Missions.summary(profile).courtReady or Quay.readyForFinale(profile),
-        checkpoint = ledger.checkpoint,
+        eligible = Quay.readyForFinale(profile),
         completed = ledger.completed,
-        phase = phase,
-        waiting = session ~= nil and session.earned < phase,
-        hint = if session and session.earned == 6
-            then "Section complete. Other chapters are still ahead. Stop or keep playing your set."
-            elseif session then Chapter.Hints[phase + 1]
-            else "Choose a saved shelf beat. Starting a new set keeps earned section progress.",
-        slot = session and session.slot,
-        base = session and session.slots[session.slot],
-        playback = if session and phase > 0
-            then {
-                pattern = session.pattern,
-                startedAt = session.startedAt,
-                epoch = session.epoch,
-                performer = "YOUR CHAPTER SET",
-                hosting = true,
-            }
-            else nil,
-        reaction = if session
-            then (if session.earned == 6
-                then 4
-                elseif phase >= 5 then 3
-                elseif phase >= 2 then 2
-                else phase)
-            else (if ledger.checkpoint == 6
-                then 4
-                elseif ledger.checkpoint >= 5 then 3
-                elseif ledger.checkpoint >= 2 then 2
-                else ledger.checkpoint),
+        checkpoint = ledger.checkpoint,
+        songs = songs,
+        selectedFinishedSongId = profile.selectedFinishedSongId,
+        finishedSongId = session and session.id,
+        revision = session and session.revision,
+        title = session and session.title,
+        position = position,
+        duration = session and session.endDuration or 0,
+        progress = progress,
+        section = section,
+        paused = session and session.paused or false,
+        ended = session and session.ended or false,
+        localOnly = session and session.localOnly or false,
+        hint = if session and session.ended
+            then "Your song reached its actual end. The room has heard this evening."
+            elseif session and session.paused then "Paused at the same musical position."
+            elseif session then "Your finished arrangement is playing from beginning to end."
+            else Chapter.Hints[1],
+        cue = if session then Chapter.Hints[math.min(7, math.floor(progress * 6) + 2)] else nil,
+        playback = session and not session.ended and not session.paused and {
+            kind = "finished",
+            id = session.id,
+            revision = session.revision,
+            schedule = session.schedule,
+            startedAt = session.startedAt,
+            epoch = session.epoch,
+            position = position,
+            paused = false,
+            loop = false,
+            performer = "YOUR FINISHED SONG",
+            hosting = true,
+        } or nil,
+        reaction = if session and session.ended
+            then 4
+            elseif session then math.min(3, math.floor(progress * 4) + 1)
+            elseif ledger.completed then 4
+            else 0,
     }
 end
-
 return Chapter

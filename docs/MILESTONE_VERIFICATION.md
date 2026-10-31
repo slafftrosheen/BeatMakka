@@ -1,5 +1,7 @@
 # Four patterns, beat shelf and Mica: Studio verification
 
+> Historical verification for the 23 October source revision. These checks do not validate the current named-sequence, Song Mode or Finished Song workflow. See [MPC v3](needle-quay/MPC_V3_README.md) and its linked current evidence.
+
 23 October 2026. User explicitly authorized Studio MCP testing, fixes, commit and push of all pending changes, including the audio/content continuation. Base checkout and fetched `origin/main` were both `dc898d887e5f147d95e728040a20a035a1e24c08`.
 
 ## Results

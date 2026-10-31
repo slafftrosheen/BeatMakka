@@ -1,10 +1,15 @@
 """Real local PCM peak envelopes for the sample editor; no generated imagery."""
 from pathlib import Path
 import json,wave,array
+from active_content import active_audio, preview_audio, validate_install_manifest
 root=Path(__file__).resolve().parents[1];result={}
-for row in json.loads((root/'assets/local-demo/install-manifest.json').read_text())['files']:
- if not row['file'].startswith('audio/'):continue
+manifest=json.loads((root/'assets/local-demo/install-manifest.json').read_text())
+validate_install_manifest(manifest)
+musical={identity for identity,row in active_audio().items() if row.get('runtime_admitted') is True} | set(preview_audio())
+for row in manifest['files']:
+ if not row['file'].startswith(('audio/','preview-audio/')):continue
  p=root/'assets/local-demo/content/needle-quay'/row['file']
+ if p.stem not in musical:continue
  with wave.open(str(p),'rb') as w:
   if w.getsampwidth()!=2:continue
   frames=w.getnframes();channels=w.getnchannels();rate=w.getframerate();samples=array.array('h',w.readframes(frames))

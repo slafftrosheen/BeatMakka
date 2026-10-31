@@ -34,3 +34,8 @@ desktop.ini
 
 # Raw local copy of the losslessly archived oversized supplied model
 /assets/low_poly_city_pack.glb
+/assets/european_city_assetpack.glb
+
+# Rebuildable demo deliveries; source, active content and receipts stay in Git.
+/output/needle-quay-demo/*.zip
+/output/needle-quay-demo/NeedleQuay-*/

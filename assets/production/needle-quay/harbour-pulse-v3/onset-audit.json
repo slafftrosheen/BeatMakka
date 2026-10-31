@@ -1,0 +1,1481 @@
+{
+  "schema": 1,
+  "generator": "tools/prepare_pack_native_audio.py",
+  "threshold": "max(-60 dBFS PCM16, -40 dB relative to each source peak)",
+  "pre_roll_ms": 2,
+  "original_sources_modified": false,
+  "sources": [
+    {
+      "address": "A01",
+      "source_ordinal": 1,
+      "source_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Drums/01_Drop_Kick_Main.wav",
+      "source_sha256": "c0ca856d027e422dad450c8221d37c6efd7c1bb0172560ced285d9d7ebc2ef0f",
+      "selected_file": "assets/production/needle-quay/harbour-pulse-v3/local-dsp-repairs/01_Drop_Kick_Main.wav",
+      "selected_sha256": "ed0499ae05d4994ebb8c99009189c593e9772643a3797b1500a61f51357b8281",
+      "before": {
+        "first_nonzero_frame": 16758,
+        "signal_onset_frame": 16758,
+        "first_nonzero_ms": 380.0,
+        "signal_onset_ms": 380.0,
+        "threshold_pcm16": 33
+      },
+      "after": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 7,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.1587,
+        "threshold_pcm16": 164
+      },
+      "removed_leading_ms": 0
+    },
+    {
+      "address": "A02",
+      "source_ordinal": 2,
+      "source_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Drums/02_Drop_Kick_2.wav",
+      "source_sha256": "d84000a246b903b5ec6e0815c8044f42be3da7bfce1d02813fd76db4f79dc925",
+      "selected_file": "assets/production/needle-quay/harbour-pulse-v3/local-dsp-repairs/onset-trim/02_Drop_Kick_2.wav",
+      "selected_sha256": "5fb0fac2457e760a99476671e1f68e9558c4fe42c93ed93f07c9d8bce9fc459a",
+      "before": {
+        "first_nonzero_frame": 6615,
+        "signal_onset_frame": 7490,
+        "first_nonzero_ms": 150.0,
+        "signal_onset_ms": 169.8413,
+        "threshold_pcm16": 161
+      },
+      "after": {
+        "first_nonzero_frame": 0,
+        "signal_onset_frame": 88,
+        "first_nonzero_ms": 0.0,
+        "signal_onset_ms": 1.9955,
+        "threshold_pcm16": 161
+      },
+      "removed_leading_ms": 167.8458
+    },
+    {
+      "address": "A03",
+      "source_ordinal": 3,
+      "source_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Drums/03_Fast_Step_Kick.wav",
+      "source_sha256": "1f9259773ef34af76cde2e482802a6feb9ef53f49047c0299ea1db094ec839d4",
+      "selected_file": "assets/production/needle-quay/harbour-pulse-v3/local-dsp-repairs/onset-trim/03_Fast_Step_Kick.wav",
+      "selected_sha256": "4191940b2c4923d67be1d1cad64d7184876e4c60053042e92910a6c7bc1efa3f",
+      "before": {
+        "first_nonzero_frame": 10,
+        "signal_onset_frame": 3078,
+        "first_nonzero_ms": 0.2268,
+        "signal_onset_ms": 69.7959,
+        "threshold_pcm16": 150
+      },
+      "after": {
+        "first_nonzero_frame": 0,
+        "signal_onset_frame": 88,
+        "first_nonzero_ms": 0.0,
+        "signal_onset_ms": 1.9955,
+        "threshold_pcm16": 150
+      },
+      "removed_leading_ms": 67.8005
+    },
+    {
+      "address": "A04",
+      "source_ordinal": 4,
+      "source_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Drums/04_Ghost_Kick.wav",
+      "source_sha256": "e629a67c40167b4cc2dbc227f2184b69dfe25a4497c2d115417bae1e6b372bff",
+      "selected_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Drums/04_Ghost_Kick.wav",
+      "selected_sha256": "e629a67c40167b4cc2dbc227f2184b69dfe25a4497c2d115417bae1e6b372bff",
+      "before": {
+        "first_nonzero_frame": 2,
+        "signal_onset_frame": 38,
+        "first_nonzero_ms": 0.0454,
+        "signal_onset_ms": 0.8617,
+        "threshold_pcm16": 99
+      },
+      "after": {
+        "first_nonzero_frame": 2,
+        "signal_onset_frame": 38,
+        "first_nonzero_ms": 0.0454,
+        "signal_onset_ms": 0.8617,
+        "threshold_pcm16": 99
+      },
+      "removed_leading_ms": 0
+    },
+    {
+      "address": "A05",
+      "source_ordinal": 5,
+      "source_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Drums/05_Main_Backbeat_Snare.wav",
+      "source_sha256": "ec25805af70109a473115081cad8b2f292077d05327e69c6ef7672ab0e6cc180",
+      "selected_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Drums/05_Main_Backbeat_Snare.wav",
+      "selected_sha256": "ec25805af70109a473115081cad8b2f292077d05327e69c6ef7672ab0e6cc180",
+      "before": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 3,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.068,
+        "threshold_pcm16": 117
+      },
+      "after": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 3,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.068,
+        "threshold_pcm16": 117
+      },
+      "removed_leading_ms": 0
+    },
+    {
+      "address": "A06",
+      "source_ordinal": 6,
+      "source_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Drums/06_Snare_Roll_Transient.wav",
+      "source_sha256": "e5cefcbc3f01501c2a219256d596a97e678124ee1036d33cb466f15a1c0629c1",
+      "selected_file": "assets/production/needle-quay/harbour-pulse-v3/local-dsp-repairs/onset-trim/06_Snare_Roll_Transient.wav",
+      "selected_sha256": "fd7a16333a53e1dc38ab98396099035814c6bf66d643da6e0bc8729eb047f897",
+      "before": {
+        "first_nonzero_frame": 21114,
+        "signal_onset_frame": 21169,
+        "first_nonzero_ms": 478.7755,
+        "signal_onset_ms": 480.0227,
+        "threshold_pcm16": 33
+      },
+      "after": {
+        "first_nonzero_frame": 33,
+        "signal_onset_frame": 88,
+        "first_nonzero_ms": 0.7483,
+        "signal_onset_ms": 1.9955,
+        "threshold_pcm16": 33
+      },
+      "removed_leading_ms": 478.0272
+    },
+    {
+      "address": "A07",
+      "source_ordinal": 7,
+      "source_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Drums/07_Rimshot_Snare.wav",
+      "source_sha256": "2f0f6b6b2d925121818ac83cf84f6187ba1852efb884d2ca1604cfe053983e0b",
+      "selected_file": "assets/production/needle-quay/harbour-pulse-v3/local-dsp-repairs/onset-trim/07_Rimshot_Snare.wav",
+      "selected_sha256": "46b091347b5726f87426f6520f0f8f81374f3e9b5a89234145f1a7822f6831e7",
+      "before": {
+        "first_nonzero_frame": 12,
+        "signal_onset_frame": 3417,
+        "first_nonzero_ms": 0.2721,
+        "signal_onset_ms": 77.483,
+        "threshold_pcm16": 171
+      },
+      "after": {
+        "first_nonzero_frame": 0,
+        "signal_onset_frame": 88,
+        "first_nonzero_ms": 0.0,
+        "signal_onset_ms": 1.9955,
+        "threshold_pcm16": 171
+      },
+      "removed_leading_ms": 75.4875
+    },
+    {
+      "address": "A08",
+      "source_ordinal": 8,
+      "source_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Drums/08_Crack_Snare_Accent.wav",
+      "source_sha256": "bb53853646081bc4b5dbfac424c1aad72a08d7d9843f215c37a02240abed103a",
+      "selected_file": "assets/production/needle-quay/harbour-pulse-v3/local-dsp-repairs/onset-trim/08_Crack_Snare_Accent.wav",
+      "selected_sha256": "6e8273088f2d7636fc49b549a2cb4c6a6a88e3a3b2a914634d1c9c1ae9525ba7",
+      "before": {
+        "first_nonzero_frame": 118,
+        "signal_onset_frame": 11917,
+        "first_nonzero_ms": 2.6757,
+        "signal_onset_ms": 270.2268,
+        "threshold_pcm16": 113
+      },
+      "after": {
+        "first_nonzero_frame": 0,
+        "signal_onset_frame": 88,
+        "first_nonzero_ms": 0.0,
+        "signal_onset_ms": 1.9955,
+        "threshold_pcm16": 113
+      },
+      "removed_leading_ms": 268.2313
+    },
+    {
+      "address": "A09",
+      "source_ordinal": 9,
+      "source_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Drums/09_Closed_DnB_Hat_1.wav",
+      "source_sha256": "8f9d3ef27b13687c1e9c50e1455ffecc551bea6fef91a89cde4f3eefc9b91cd7",
+      "selected_file": "assets/production/needle-quay/harbour-pulse-v3/local-dsp-repairs/09_Closed_DnB_Hat_1.wav",
+      "selected_sha256": "9038cbcdeff70ca542ce01164303b2784427cece6c4e656448df5e822d151e7c",
+      "before": {
+        "first_nonzero_frame": 9702,
+        "signal_onset_frame": 9702,
+        "first_nonzero_ms": 220.0,
+        "signal_onset_ms": 220.0,
+        "threshold_pcm16": 33
+      },
+      "after": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 7,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.1587,
+        "threshold_pcm16": 164
+      },
+      "removed_leading_ms": 0
+    },
+    {
+      "address": "A10",
+      "source_ordinal": 10,
+      "source_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Drums/10_Closed_DnB_Hat_2.wav",
+      "source_sha256": "8f9d3ef27b13687c1e9c50e1455ffecc551bea6fef91a89cde4f3eefc9b91cd7",
+      "selected_file": "assets/production/needle-quay/harbour-pulse-v3/local-dsp-repairs/10_Closed_DnB_Hat_2.wav",
+      "selected_sha256": "e749b81c803ee7af34eb84e51664dd68cd15d9a96c47621147af30b6fc6f5ae8",
+      "before": {
+        "first_nonzero_frame": 9702,
+        "signal_onset_frame": 9702,
+        "first_nonzero_ms": 220.0,
+        "signal_onset_ms": 220.0,
+        "threshold_pcm16": 33
+      },
+      "after": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 5,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.1134,
+        "threshold_pcm16": 164
+      },
+      "removed_leading_ms": 0
+    },
+    {
+      "address": "A11",
+      "source_ordinal": 11,
+      "source_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Drums/11_Open_Hat_Splash.wav",
+      "source_sha256": "8908dc914951de8adb3c32f2874e87bb249c962b55fd71ee18d4830ead043056",
+      "selected_file": "assets/production/needle-quay/harbour-pulse-v3/local-dsp-repairs/onset-trim/11_Open_Hat_Splash.wav",
+      "selected_sha256": "9773c2287d6229e7c4f417a7bcebcc965ca4a311c7ff5e4c98382e730ab713e3",
+      "before": {
+        "first_nonzero_frame": 91,
+        "signal_onset_frame": 3120,
+        "first_nonzero_ms": 2.0635,
+        "signal_onset_ms": 70.7483,
+        "threshold_pcm16": 184
+      },
+      "after": {
+        "first_nonzero_frame": 0,
+        "signal_onset_frame": 88,
+        "first_nonzero_ms": 0.0,
+        "signal_onset_ms": 1.9955,
+        "threshold_pcm16": 184
+      },
+      "removed_leading_ms": 68.7528
+    },
+    {
+      "address": "A12",
+      "source_ordinal": 12,
+      "source_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Drums/12_Shaker_Ghost.wav",
+      "source_sha256": "06873d95756ae2f609869d61b28034f43777954fea760ea73a394a49d443ccff",
+      "selected_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Drums/12_Shaker_Ghost.wav",
+      "selected_sha256": "06873d95756ae2f609869d61b28034f43777954fea760ea73a394a49d443ccff",
+      "before": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 10,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.2268,
+        "threshold_pcm16": 38
+      },
+      "after": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 10,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.2268,
+        "threshold_pcm16": 38
+      },
+      "removed_leading_ms": 0
+    },
+    {
+      "address": "A13",
+      "source_ordinal": 13,
+      "source_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Drums/13_Dock_Intro_Perc_1.wav",
+      "source_sha256": "d29b83583764632a9206e97510570838531ffb21adba95c062cdeda15f596d3b",
+      "selected_file": "assets/production/needle-quay/harbour-pulse-v3/local-dsp-repairs/onset-trim/13_Dock_Intro_Perc_1.wav",
+      "selected_sha256": "4d64c1cf865bd500a31ccdadf07e725f0ab10e0f555c3ee32b93921a3ceca005",
+      "before": {
+        "first_nonzero_frame": 3007,
+        "signal_onset_frame": 3209,
+        "first_nonzero_ms": 68.1859,
+        "signal_onset_ms": 72.7664,
+        "threshold_pcm16": 33
+      },
+      "after": {
+        "first_nonzero_frame": 0,
+        "signal_onset_frame": 88,
+        "first_nonzero_ms": 0.0,
+        "signal_onset_ms": 1.9955,
+        "threshold_pcm16": 33
+      },
+      "removed_leading_ms": 70.771
+    },
+    {
+      "address": "A14",
+      "source_ordinal": 14,
+      "source_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Drums/14_Dock_Intro_Perc_2.wav",
+      "source_sha256": "3008dfedcdb59a68f2ff51fb6f7121bcc8cddd616a730961d5488b3c129f6723",
+      "selected_file": "assets/production/needle-quay/harbour-pulse-v3/local-dsp-repairs/onset-trim/14_Dock_Intro_Perc_2.wav",
+      "selected_sha256": "69f0d37aa11ca4f3a7c4194bae7a9290a451b5648cc4d90b84024343d893414d",
+      "before": {
+        "first_nonzero_frame": 12658,
+        "signal_onset_frame": 12789,
+        "first_nonzero_ms": 287.0295,
+        "signal_onset_ms": 290.0,
+        "threshold_pcm16": 33
+      },
+      "after": {
+        "first_nonzero_frame": 0,
+        "signal_onset_frame": 88,
+        "first_nonzero_ms": 0.0,
+        "signal_onset_ms": 1.9955,
+        "threshold_pcm16": 33
+      },
+      "removed_leading_ms": 288.0045
+    },
+    {
+      "address": "A15",
+      "source_ordinal": 15,
+      "source_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Drums/15_Metallic_Clank_Hit.wav",
+      "source_sha256": "ee0d7c3c4afac071285bbe72114cd2a45398d1b3b150189e025448efd07642e9",
+      "selected_file": "assets/production/needle-quay/harbour-pulse-v3/local-dsp-repairs/level-only/15_Metallic_Clank_Hit.wav",
+      "selected_sha256": "e1849e08764a30b6531b0abaf342eba575a73b34825f34a5549a2ab1ee9caa3d",
+      "before": {
+        "first_nonzero_frame": 15,
+        "signal_onset_frame": 19845,
+        "first_nonzero_ms": 0.3401,
+        "signal_onset_ms": 450.0,
+        "threshold_pcm16": 33
+      },
+      "after": {
+        "first_nonzero_frame": 15,
+        "signal_onset_frame": 15,
+        "first_nonzero_ms": 0.3401,
+        "signal_onset_ms": 0.3401,
+        "threshold_pcm16": 82
+      },
+      "removed_leading_ms": 0
+    },
+    {
+      "address": "A16",
+      "source_ordinal": 16,
+      "source_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Drums/16_Break_Fill_2-Bar.wav",
+      "source_sha256": "66fb269ecd96915da7e3c500a8764f6c51b6e84ef13ed1c6d0b1ff712cbd8ee2",
+      "selected_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Drums/16_Break_Fill_2-Bar.wav",
+      "selected_sha256": "66fb269ecd96915da7e3c500a8764f6c51b6e84ef13ed1c6d0b1ff712cbd8ee2",
+      "before": {
+        "first_nonzero_frame": 2,
+        "signal_onset_frame": 92,
+        "first_nonzero_ms": 0.0454,
+        "signal_onset_ms": 2.0862,
+        "threshold_pcm16": 145
+      },
+      "after": {
+        "first_nonzero_frame": 2,
+        "signal_onset_frame": 92,
+        "first_nonzero_ms": 0.0454,
+        "signal_onset_ms": 2.0862,
+        "threshold_pcm16": 145
+      },
+      "removed_leading_ms": 0
+    },
+    {
+      "address": "B01",
+      "source_ordinal": 17,
+      "source_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Bass/17_Drop_Sub_D1.wav",
+      "source_sha256": "af2484b7110124e5231aa21efc6bf1476e28afe383a25fda916406825ddfe79a",
+      "selected_file": "assets/production/needle-quay/harbour-pulse-v3/local-dsp-repairs/17_Drop_Sub_D1.wav",
+      "selected_sha256": "b9c999f35063757258f83bb4fe80b88bc0c99740c085d6bd3389607806d40d8a",
+      "before": {
+        "first_nonzero_frame": 28665,
+        "signal_onset_frame": 28665,
+        "first_nonzero_ms": 650.0,
+        "signal_onset_ms": 650.0,
+        "threshold_pcm16": 33
+      },
+      "after": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 14,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.3175,
+        "threshold_pcm16": 164
+      },
+      "removed_leading_ms": 0
+    },
+    {
+      "address": "B02",
+      "source_ordinal": 18,
+      "source_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Bass/18_Sub_Pulse_808.wav",
+      "source_sha256": "1c4c392ce3b9c6923257e724ae11bbb05d1d69141fedc5b9a40ee149f1979438",
+      "selected_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Bass/18_Sub_Pulse_808.wav",
+      "selected_sha256": "1c4c392ce3b9c6923257e724ae11bbb05d1d69141fedc5b9a40ee149f1979438",
+      "before": {
+        "first_nonzero_frame": 44,
+        "signal_onset_frame": 746,
+        "first_nonzero_ms": 0.9977,
+        "signal_onset_ms": 16.9161,
+        "threshold_pcm16": 171
+      },
+      "after": {
+        "first_nonzero_frame": 44,
+        "signal_onset_frame": 746,
+        "first_nonzero_ms": 0.9977,
+        "signal_onset_ms": 16.9161,
+        "threshold_pcm16": 171
+      },
+      "removed_leading_ms": 0
+    },
+    {
+      "address": "B03",
+      "source_ordinal": 19,
+      "source_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Bass/19_Sub_Warm_F1.wav",
+      "source_sha256": "5ed38ac885a4569781a4173171d4daba4d7979b21c90176c696140727d7d6a20",
+      "selected_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Bass/19_Sub_Warm_F1.wav",
+      "selected_sha256": "5ed38ac885a4569781a4173171d4daba4d7979b21c90176c696140727d7d6a20",
+      "before": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 6,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.1361,
+        "threshold_pcm16": 84
+      },
+      "after": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 6,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.1361,
+        "threshold_pcm16": 84
+      },
+      "removed_leading_ms": 0
+    },
+    {
+      "address": "B04",
+      "source_ordinal": 20,
+      "source_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Bass/20_Deep_Sub_Rumble.wav",
+      "source_sha256": "72a9db3f6e8ef9a528c93df5564471767eb06aa3c38804f08de57e6c14bc8a87",
+      "selected_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Bass/20_Deep_Sub_Rumble.wav",
+      "selected_sha256": "72a9db3f6e8ef9a528c93df5564471767eb06aa3c38804f08de57e6c14bc8a87",
+      "before": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 9,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.2041,
+        "threshold_pcm16": 90
+      },
+      "after": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 9,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.2041,
+        "threshold_pcm16": 90
+      },
+      "removed_leading_ms": 0
+    },
+    {
+      "address": "B05",
+      "source_ordinal": 21,
+      "source_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Bass/21_Reese_Growl_Drop.wav",
+      "source_sha256": "785e61b9d9ae5434606395dd76d9912ffdfa4ea8c3a79c97bd22f1eafaa1ede0",
+      "selected_file": "assets/production/needle-quay/harbour-pulse-v3/local-dsp-repairs/onset-trim/21_Reese_Growl_Drop.wav",
+      "selected_sha256": "895748348fdf25cf983829327abfa207f8a11c955d9f00f37afbb6265304c307",
+      "before": {
+        "first_nonzero_frame": 13228,
+        "signal_onset_frame": 13976,
+        "first_nonzero_ms": 299.9546,
+        "signal_onset_ms": 316.9161,
+        "threshold_pcm16": 171
+      },
+      "after": {
+        "first_nonzero_frame": 0,
+        "signal_onset_frame": 88,
+        "first_nonzero_ms": 0.0,
+        "signal_onset_ms": 1.9955,
+        "threshold_pcm16": 171
+      },
+      "removed_leading_ms": 314.9206
+    },
+    {
+      "address": "B06",
+      "source_ordinal": 22,
+      "source_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Bass/22_Reese_Bite_Filter.wav",
+      "source_sha256": "7c54975aaf93f43b04984c91cf9c0fbb8e52dc663ff6ac6e603f3305ea54f56b",
+      "selected_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Bass/22_Reese_Bite_Filter.wav",
+      "selected_sha256": "7c54975aaf93f43b04984c91cf9c0fbb8e52dc663ff6ac6e603f3305ea54f56b",
+      "before": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 5,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.1134,
+        "threshold_pcm16": 98
+      },
+      "after": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 5,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.1134,
+        "threshold_pcm16": 98
+      },
+      "removed_leading_ms": 0
+    },
+    {
+      "address": "B07",
+      "source_ordinal": 23,
+      "source_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Bass/23_Reese_Pitch_Dive.wav",
+      "source_sha256": "3dd068d01756cfbc9caa4ba009862de2c0fbb25d0e99143d078fd6b13aef13b4",
+      "selected_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Bass/23_Reese_Pitch_Dive.wav",
+      "selected_sha256": "3dd068d01756cfbc9caa4ba009862de2c0fbb25d0e99143d078fd6b13aef13b4",
+      "before": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 5,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.1134,
+        "threshold_pcm16": 98
+      },
+      "after": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 5,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.1134,
+        "threshold_pcm16": 98
+      },
+      "removed_leading_ms": 0
+    },
+    {
+      "address": "B08",
+      "source_ordinal": 24,
+      "source_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Bass/24_Reese_Bark_Accent.wav",
+      "source_sha256": "8c10c0d2ead0fd50193649e7e69616129c8ff74789807edace9e34b4db6d654c",
+      "selected_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Bass/24_Reese_Bark_Accent.wav",
+      "selected_sha256": "8c10c0d2ead0fd50193649e7e69616129c8ff74789807edace9e34b4db6d654c",
+      "before": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 5,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.1134,
+        "threshold_pcm16": 91
+      },
+      "after": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 5,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.1134,
+        "threshold_pcm16": 91
+      },
+      "removed_leading_ms": 0
+    },
+    {
+      "address": "B09",
+      "source_ordinal": 25,
+      "source_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Bass/25_Foghorn_Bass_Low.wav",
+      "source_sha256": "1bfb29f69e8779db8bf1b75a764400fac357d1fc426097913bc704be5019aa7a",
+      "selected_file": "assets/production/needle-quay/harbour-pulse-v3/local-dsp-repairs/onset-trim/25_Foghorn_Bass_Low.wav",
+      "selected_sha256": "9c9272cf751f0ebb3c0ad0a504248dbd08c4b310df5b4a31cb7ad1997312b780",
+      "before": {
+        "first_nonzero_frame": 6987,
+        "signal_onset_frame": 7719,
+        "first_nonzero_ms": 158.4354,
+        "signal_onset_ms": 175.034,
+        "threshold_pcm16": 92
+      },
+      "after": {
+        "first_nonzero_frame": 0,
+        "signal_onset_frame": 88,
+        "first_nonzero_ms": 0.0,
+        "signal_onset_ms": 1.9955,
+        "threshold_pcm16": 92
+      },
+      "removed_leading_ms": 173.0385
+    },
+    {
+      "address": "B10",
+      "source_ordinal": 26,
+      "source_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Bass/26_Foghorn_Stutter_Hit.wav",
+      "source_sha256": "592b9c458513d5d754ff0f9fadef94eedec2efa967c2e5fa0e1f883b27af5dc9",
+      "selected_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Bass/26_Foghorn_Stutter_Hit.wav",
+      "selected_sha256": "592b9c458513d5d754ff0f9fadef94eedec2efa967c2e5fa0e1f883b27af5dc9",
+      "before": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 4,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.0907,
+        "threshold_pcm16": 104
+      },
+      "after": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 4,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.0907,
+        "threshold_pcm16": 104
+      },
+      "removed_leading_ms": 0
+    },
+    {
+      "address": "B11",
+      "source_ordinal": 27,
+      "source_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Bass/27_Distorted_Reese_Hit.wav",
+      "source_sha256": "88144d5dfabe7baa6d50cd2d7aa9ec6099cfa350b68e6696b1368da8be51992c",
+      "selected_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Bass/27_Distorted_Reese_Hit.wav",
+      "selected_sha256": "88144d5dfabe7baa6d50cd2d7aa9ec6099cfa350b68e6696b1368da8be51992c",
+      "before": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 8,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.1814,
+        "threshold_pcm16": 92
+      },
+      "after": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 8,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.1814,
+        "threshold_pcm16": 92
+      },
+      "removed_leading_ms": 0
+    },
+    {
+      "address": "B12",
+      "source_ordinal": 28,
+      "source_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Bass/28_Wobble_Sub_Stomp.wav",
+      "source_sha256": "763bd3eedc1fee5bf5a5537d1eb619ca10ba8cf676d10cb047fc2f7f22ab766d",
+      "selected_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Bass/28_Wobble_Sub_Stomp.wav",
+      "selected_sha256": "763bd3eedc1fee5bf5a5537d1eb619ca10ba8cf676d10cb047fc2f7f22ab766d",
+      "before": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 53,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 1.2018,
+        "threshold_pcm16": 84
+      },
+      "after": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 53,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 1.2018,
+        "threshold_pcm16": 84
+      },
+      "removed_leading_ms": 0
+    },
+    {
+      "address": "B13",
+      "source_ordinal": 29,
+      "source_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Bass/29_Mid_Reese_Stab_1.wav",
+      "source_sha256": "9e5bb4c333964056288ac0e2ac249a127c6ee640d12105b5dab082be9ef18787",
+      "selected_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Bass/29_Mid_Reese_Stab_1.wav",
+      "selected_sha256": "9e5bb4c333964056288ac0e2ac249a127c6ee640d12105b5dab082be9ef18787",
+      "before": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 8,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.1814,
+        "threshold_pcm16": 69
+      },
+      "after": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 8,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.1814,
+        "threshold_pcm16": 69
+      },
+      "removed_leading_ms": 0
+    },
+    {
+      "address": "B14",
+      "source_ordinal": 30,
+      "source_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Bass/30_Mid_Reese_Stab_2.wav",
+      "source_sha256": "477aee43717ac57688a3f849c7f3c38bc4a6ba6862c6202ac3ff93ba16e40e79",
+      "selected_file": "assets/production/needle-quay/harbour-pulse-v3/local-dsp-repairs/30_Mid_Reese_Stab_2.wav",
+      "selected_sha256": "279015a345c6ebd8d48f268c41f67b8790e63bec8f1d97bd9240fc4d8034fb6f",
+      "before": {
+        "first_nonzero_frame": 24255,
+        "signal_onset_frame": 24255,
+        "first_nonzero_ms": 550.0,
+        "signal_onset_ms": 550.0,
+        "threshold_pcm16": 33
+      },
+      "after": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 5,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.1134,
+        "threshold_pcm16": 164
+      },
+      "removed_leading_ms": 0
+    },
+    {
+      "address": "B15",
+      "source_ordinal": 31,
+      "source_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Bass/31_Sub_Glide_Low.wav",
+      "source_sha256": "afe971ae2e9862b4254a63cd0992a31fc399cbdb25b4f572554d3edc63093072",
+      "selected_file": "assets/production/needle-quay/harbour-pulse-v3/local-dsp-repairs/31_Sub_Glide_Low.wav",
+      "selected_sha256": "fa8dcd9a534ca973c8d48997bcf2d53d154f37b30e0d9c6f773e2186a0ba020e",
+      "before": {
+        "first_nonzero_frame": 37485,
+        "signal_onset_frame": 37485,
+        "first_nonzero_ms": 850.0,
+        "signal_onset_ms": 850.0,
+        "threshold_pcm16": 33
+      },
+      "after": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 11,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.2494,
+        "threshold_pcm16": 164
+      },
+      "removed_leading_ms": 0
+    },
+    {
+      "address": "B16",
+      "source_ordinal": 32,
+      "source_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Bass/32_Sustained_Bass_Tail.wav",
+      "source_sha256": "d3eb86fddd3fcfe0d29215968da71280cd816fc2fbd2d485a2628c98e6946675",
+      "selected_file": "assets/production/needle-quay/harbour-pulse-v3/local-dsp-repairs/32_Sustained_Bass_Tail.wav",
+      "selected_sha256": "f391fc68aa231bdb83c908e70718795a1788d70c842e45af965b6ded77f5190a",
+      "before": {
+        "first_nonzero_frame": 48510,
+        "signal_onset_frame": 48510,
+        "first_nonzero_ms": 1100.0,
+        "signal_onset_ms": 1100.0,
+        "threshold_pcm16": 33
+      },
+      "after": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 14,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.3175,
+        "threshold_pcm16": 164
+      },
+      "removed_leading_ms": 0
+    },
+    {
+      "address": "C01",
+      "source_ordinal": 33,
+      "source_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/MC_Vocals/33__Needle_Quay__.wav",
+      "source_sha256": "8755ffe1f03e6dc5e546e2752c1631e9c29a146df051f0b883595640fb02b030",
+      "selected_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/MC_Vocals/33__Needle_Quay__.wav",
+      "selected_sha256": "8755ffe1f03e6dc5e546e2752c1631e9c29a146df051f0b883595640fb02b030",
+      "before": {
+        "first_nonzero_frame": 2,
+        "signal_onset_frame": 25,
+        "first_nonzero_ms": 0.0454,
+        "signal_onset_ms": 0.5669,
+        "threshold_pcm16": 128
+      },
+      "after": {
+        "first_nonzero_frame": 2,
+        "signal_onset_frame": 25,
+        "first_nonzero_ms": 0.0454,
+        "signal_onset_ms": 0.5669,
+        "threshold_pcm16": 128
+      },
+      "removed_leading_ms": 0
+    },
+    {
+      "address": "C02",
+      "source_ordinal": 34,
+      "source_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/MC_Vocals/34__We_Make_Waves__.wav",
+      "source_sha256": "6580a038c9f74651892b2bb67802497e90812eeb41a887937799d26d88bc9b56",
+      "selected_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/MC_Vocals/34__We_Make_Waves__.wav",
+      "selected_sha256": "6580a038c9f74651892b2bb67802497e90812eeb41a887937799d26d88bc9b56",
+      "before": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 14,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.3175,
+        "threshold_pcm16": 165
+      },
+      "after": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 14,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.3175,
+        "threshold_pcm16": 165
+      },
+      "removed_leading_ms": 0
+    },
+    {
+      "address": "C03",
+      "source_ordinal": 35,
+      "source_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/MC_Vocals/35__From_the_Docks_.wav",
+      "source_sha256": "ec5750488b3ec7d5068a38e3d6d4a5e3e43502661b558223dd6b5cf428c9484a",
+      "selected_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/MC_Vocals/35__From_the_Docks_.wav",
+      "selected_sha256": "ec5750488b3ec7d5068a38e3d6d4a5e3e43502661b558223dd6b5cf428c9484a",
+      "before": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 4,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.0907,
+        "threshold_pcm16": 139
+      },
+      "after": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 4,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.0907,
+        "threshold_pcm16": 139
+      },
+      "removed_leading_ms": 0
+    },
+    {
+      "address": "C04",
+      "source_ordinal": 36,
+      "source_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/MC_Vocals/36__To_the_Decks__.wav",
+      "source_sha256": "25f83e77cced22981b6e4492cb1348bc20f80130c35adad1224ec4072189f01b",
+      "selected_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/MC_Vocals/36__To_the_Decks__.wav",
+      "selected_sha256": "25f83e77cced22981b6e4492cb1348bc20f80130c35adad1224ec4072189f01b",
+      "before": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 11,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.2494,
+        "threshold_pcm16": 151
+      },
+      "after": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 11,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.2494,
+        "threshold_pcm16": 151
+      },
+      "removed_leading_ms": 0
+    },
+    {
+      "address": "C05",
+      "source_ordinal": 37,
+      "source_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/MC_Vocals/37__Let_the_Place_Shake__.wav",
+      "source_sha256": "9e8989ab439367edd4a7ea0abcc68279bfe8c6b886bb943c25b94307211c3791",
+      "selected_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/MC_Vocals/37__Let_the_Place_Shake__.wav",
+      "selected_sha256": "9e8989ab439367edd4a7ea0abcc68279bfe8c6b886bb943c25b94307211c3791",
+      "before": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 4,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.0907,
+        "threshold_pcm16": 141
+      },
+      "after": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 4,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.0907,
+        "threshold_pcm16": 141
+      },
+      "removed_leading_ms": 0
+    },
+    {
+      "address": "C06",
+      "source_ordinal": 38,
+      "source_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/MC_Vocals/38__Get_Loud____Adlib_.wav",
+      "source_sha256": "6ece27089ef58e7aaac308ac6bb747e7370a53d1da11fdf8a1c5fe5f3559e3ff",
+      "selected_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/MC_Vocals/38__Get_Loud____Adlib_.wav",
+      "selected_sha256": "6ece27089ef58e7aaac308ac6bb747e7370a53d1da11fdf8a1c5fe5f3559e3ff",
+      "before": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 14,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.3175,
+        "threshold_pcm16": 120
+      },
+      "after": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 14,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.3175,
+        "threshold_pcm16": 120
+      },
+      "removed_leading_ms": 0
+    },
+    {
+      "address": "C07",
+      "source_ordinal": 39,
+      "source_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/MC_Vocals/39__Tell__Em__.wav",
+      "source_sha256": "9504182480c72fbdfbe7ccb8e2d015031108511c0057ec74436a7b704a9f5ef2",
+      "selected_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/MC_Vocals/39__Tell__Em__.wav",
+      "selected_sha256": "9504182480c72fbdfbe7ccb8e2d015031108511c0057ec74436a7b704a9f5ef2",
+      "before": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 4,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.0907,
+        "threshold_pcm16": 138
+      },
+      "after": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 4,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.0907,
+        "threshold_pcm16": 138
+      },
+      "removed_leading_ms": 0
+    },
+    {
+      "address": "C08",
+      "source_ordinal": 40,
+      "source_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/MC_Vocals/40__Dust_Off_the_Needle_.wav",
+      "source_sha256": "e1b813a2c77049eb705ed22ddc7dc0f95fc99219e78a8e4cc6c3b28fcbe43d72",
+      "selected_file": "assets/production/needle-quay/harbour-pulse-v3/local-dsp-repairs/onset-trim/40__Dust_Off_the_Needle_.wav",
+      "selected_sha256": "5b395421eb8a3764ef53365b9bf84ec5b39f12c1132575adbf10a2a280666cff",
+      "before": {
+        "first_nonzero_frame": 9661,
+        "signal_onset_frame": 9711,
+        "first_nonzero_ms": 219.0703,
+        "signal_onset_ms": 220.2041,
+        "threshold_pcm16": 100
+      },
+      "after": {
+        "first_nonzero_frame": 38,
+        "signal_onset_frame": 88,
+        "first_nonzero_ms": 0.8617,
+        "signal_onset_ms": 1.9955,
+        "threshold_pcm16": 100
+      },
+      "removed_leading_ms": 218.2086
+    },
+    {
+      "address": "C09",
+      "source_ordinal": 41,
+      "source_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/MC_Vocals/41__Spin_the_Wax_Now_.wav",
+      "source_sha256": "1281364e8dc13733d364a46003f33e6cd135d184f77f05a465df45cf595327b8",
+      "selected_file": "assets/production/needle-quay/harbour-pulse-v3/local-dsp-repairs/onset-trim/41__Spin_the_Wax_Now_.wav",
+      "selected_sha256": "856a4c891a5ec67480737d84eda659f1fbbd2c8d3222b84d6ff66dc855e99522",
+      "before": {
+        "first_nonzero_frame": 11757,
+        "signal_onset_frame": 12577,
+        "first_nonzero_ms": 266.5986,
+        "signal_onset_ms": 285.1927,
+        "threshold_pcm16": 100
+      },
+      "after": {
+        "first_nonzero_frame": 0,
+        "signal_onset_frame": 88,
+        "first_nonzero_ms": 0.0,
+        "signal_onset_ms": 1.9955,
+        "threshold_pcm16": 100
+      },
+      "removed_leading_ms": 283.1973
+    },
+    {
+      "address": "C10",
+      "source_ordinal": 42,
+      "source_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/MC_Vocals/42__Harbour_Lights_Burning_.wav",
+      "source_sha256": "0a6182edcd7c079d4653e9dbe689468f85d55195e06119e9be6a92d3aea819b9",
+      "selected_file": "assets/production/needle-quay/harbour-pulse-v3/local-dsp-repairs/onset-trim/42__Harbour_Lights_Burning_.wav",
+      "selected_sha256": "114e7b2dbfaf17522fd17ec15ec06cfae485958be3e27a44f295bba4ac025fc1",
+      "before": {
+        "first_nonzero_frame": 73,
+        "signal_onset_frame": 12101,
+        "first_nonzero_ms": 1.6553,
+        "signal_onset_ms": 274.3991,
+        "threshold_pcm16": 103
+      },
+      "after": {
+        "first_nonzero_frame": 0,
+        "signal_onset_frame": 88,
+        "first_nonzero_ms": 0.0,
+        "signal_onset_ms": 1.9955,
+        "threshold_pcm16": 103
+      },
+      "removed_leading_ms": 272.4036
+    },
+    {
+      "address": "C11",
+      "source_ordinal": 43,
+      "source_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/MC_Vocals/43__Listen_to_the_Sound_.wav",
+      "source_sha256": "e4635524f6e06d281c0d5b8f37cc530063437df76b13419e223261d57b59ce60",
+      "selected_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/MC_Vocals/43__Listen_to_the_Sound_.wav",
+      "selected_sha256": "e4635524f6e06d281c0d5b8f37cc530063437df76b13419e223261d57b59ce60",
+      "before": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 9,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.2041,
+        "threshold_pcm16": 84
+      },
+      "after": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 9,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.2041,
+        "threshold_pcm16": 84
+      },
+      "removed_leading_ms": 0
+    },
+    {
+      "address": "C12",
+      "source_ordinal": 44,
+      "source_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/MC_Vocals/44__Digging_Through_Crates_.wav",
+      "source_sha256": "62978949acf1577518bf9c5d016b50e225b20aae94cdb5c345b6fd61c6238fd1",
+      "selected_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/MC_Vocals/44__Digging_Through_Crates_.wav",
+      "selected_sha256": "62978949acf1577518bf9c5d016b50e225b20aae94cdb5c345b6fd61c6238fd1",
+      "before": {
+        "first_nonzero_frame": 2,
+        "signal_onset_frame": 79,
+        "first_nonzero_ms": 0.0454,
+        "signal_onset_ms": 1.7914,
+        "threshold_pcm16": 126
+      },
+      "after": {
+        "first_nonzero_frame": 2,
+        "signal_onset_frame": 79,
+        "first_nonzero_ms": 0.0454,
+        "signal_onset_ms": 1.7914,
+        "threshold_pcm16": 126
+      },
+      "removed_leading_ms": 0
+    },
+    {
+      "address": "C13",
+      "source_ordinal": 45,
+      "source_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/MC_Vocals/45__Locked_in_Key_.wav",
+      "source_sha256": "b5aa96dda8d9c5357b3c8913122ab476d7277f313d2132bf46f7199b41f31b2a",
+      "selected_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/MC_Vocals/45__Locked_in_Key_.wav",
+      "selected_sha256": "b5aa96dda8d9c5357b3c8913122ab476d7277f313d2132bf46f7199b41f31b2a",
+      "before": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 14,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.3175,
+        "threshold_pcm16": 120
+      },
+      "after": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 14,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.3175,
+        "threshold_pcm16": 120
+      },
+      "removed_leading_ms": 0
+    },
+    {
+      "address": "C14",
+      "source_ordinal": 46,
+      "source_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/MC_Vocals/46__Hit_a_4-by-4_.wav",
+      "source_sha256": "05efc3a05183b7412b52c15019d3148f1a56210a95d3d7718582723de250115d",
+      "selected_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/MC_Vocals/46__Hit_a_4-by-4_.wav",
+      "selected_sha256": "05efc3a05183b7412b52c15019d3148f1a56210a95d3d7718582723de250115d",
+      "before": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 9,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.2041,
+        "threshold_pcm16": 138
+      },
+      "after": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 9,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.2041,
+        "threshold_pcm16": 138
+      },
+      "removed_leading_ms": 0
+    },
+    {
+      "address": "C15",
+      "source_ordinal": 47,
+      "source_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/MC_Vocals/47__Unlock_the_Floor_.wav",
+      "source_sha256": "bf00ddc0fd54c089fc0ed3332f0c241283cc71f8bfe089609c3b512197df1664",
+      "selected_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/MC_Vocals/47__Unlock_the_Floor_.wav",
+      "selected_sha256": "bf00ddc0fd54c089fc0ed3332f0c241283cc71f8bfe089609c3b512197df1664",
+      "before": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 21,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.4762,
+        "threshold_pcm16": 123
+      },
+      "after": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 21,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.4762,
+        "threshold_pcm16": 123
+      },
+      "removed_leading_ms": 0
+    },
+    {
+      "address": "C16",
+      "source_ordinal": 48,
+      "source_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/MC_Vocals/48__Repair_Shop__.wav",
+      "source_sha256": "645890bfd442da9937b44f6133e86af73833183ac06c2875d1c8d96f7b2a908a",
+      "selected_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/MC_Vocals/48__Repair_Shop__.wav",
+      "selected_sha256": "645890bfd442da9937b44f6133e86af73833183ac06c2875d1c8d96f7b2a908a",
+      "before": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 15,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.3401,
+        "threshold_pcm16": 114
+      },
+      "after": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 15,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.3401,
+        "threshold_pcm16": 114
+      },
+      "removed_leading_ms": 0
+    },
+    {
+      "address": "D01",
+      "source_ordinal": 49,
+      "source_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Harbour_FX___Melodics/49_Lantern_Bell_D5.wav",
+      "source_sha256": "9c939c0741eddf6892a6d410c3985a8fa87adbb8ebbde641dc11cca835377251",
+      "selected_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Harbour_FX___Melodics/49_Lantern_Bell_D5.wav",
+      "selected_sha256": "9c939c0741eddf6892a6d410c3985a8fa87adbb8ebbde641dc11cca835377251",
+      "before": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 10,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.2268,
+        "threshold_pcm16": 51
+      },
+      "after": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 10,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.2268,
+        "threshold_pcm16": 51
+      },
+      "removed_leading_ms": 0
+    },
+    {
+      "address": "D02",
+      "source_ordinal": 50,
+      "source_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Harbour_FX___Melodics/50_Lantern_Bell_F5.wav",
+      "source_sha256": "5d563aba4b22354e2a9b6e453c45792ddcd8a2da59ea54490c1d541f370aa979",
+      "selected_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Harbour_FX___Melodics/50_Lantern_Bell_F5.wav",
+      "selected_sha256": "5d563aba4b22354e2a9b6e453c45792ddcd8a2da59ea54490c1d541f370aa979",
+      "before": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 6,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.1361,
+        "threshold_pcm16": 40
+      },
+      "after": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 6,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.1361,
+        "threshold_pcm16": 40
+      },
+      "removed_leading_ms": 0
+    },
+    {
+      "address": "D03",
+      "source_ordinal": 51,
+      "source_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Harbour_FX___Melodics/51_Lantern_Bell_A5.wav",
+      "source_sha256": "bf805d651042ef80a3a1908b62f0e9a949b423b0fba327b0448d8c6bb3e7d3a5",
+      "selected_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Harbour_FX___Melodics/51_Lantern_Bell_A5.wav",
+      "selected_sha256": "bf805d651042ef80a3a1908b62f0e9a949b423b0fba327b0448d8c6bb3e7d3a5",
+      "before": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 26,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.5896,
+        "threshold_pcm16": 61
+      },
+      "after": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 26,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.5896,
+        "threshold_pcm16": 61
+      },
+      "removed_leading_ms": 0
+    },
+    {
+      "address": "D04",
+      "source_ordinal": 52,
+      "source_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Harbour_FX___Melodics/52_Lantern_Bell_High_D6.wav",
+      "source_sha256": "97cc4c73e862970a5d3514f5178b2b02b7a775480e6c1ecd7b8486c8950126f6",
+      "selected_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Harbour_FX___Melodics/52_Lantern_Bell_High_D6.wav",
+      "selected_sha256": "97cc4c73e862970a5d3514f5178b2b02b7a775480e6c1ecd7b8486c8950126f6",
+      "before": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 9,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.2041,
+        "threshold_pcm16": 52
+      },
+      "after": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 9,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.2041,
+        "threshold_pcm16": 52
+      },
+      "removed_leading_ms": 0
+    },
+    {
+      "address": "D05",
+      "source_ordinal": 53,
+      "source_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Harbour_FX___Melodics/53_Melodic_Chord_Stab_Dm.wav",
+      "source_sha256": "e4e148f6ca601adeaa455c915c216d93ee9c55aecc5d00b3c1a6771471310dd1",
+      "selected_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Harbour_FX___Melodics/53_Melodic_Chord_Stab_Dm.wav",
+      "selected_sha256": "e4e148f6ca601adeaa455c915c216d93ee9c55aecc5d00b3c1a6771471310dd1",
+      "before": {
+        "first_nonzero_frame": 2,
+        "signal_onset_frame": 12,
+        "first_nonzero_ms": 0.0454,
+        "signal_onset_ms": 0.2721,
+        "threshold_pcm16": 34
+      },
+      "after": {
+        "first_nonzero_frame": 2,
+        "signal_onset_frame": 12,
+        "first_nonzero_ms": 0.0454,
+        "signal_onset_ms": 0.2721,
+        "threshold_pcm16": 34
+      },
+      "removed_leading_ms": 0
+    },
+    {
+      "address": "D06",
+      "source_ordinal": 54,
+      "source_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Harbour_FX___Melodics/54_Quay_Ambient_Pad_Swell.wav",
+      "source_sha256": "5eae28b23f11c88c6c5f0864bff18b598fad4a771687ada474d9c0f037e9cc2a",
+      "selected_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Harbour_FX___Melodics/54_Quay_Ambient_Pad_Swell.wav",
+      "selected_sha256": "5eae28b23f11c88c6c5f0864bff18b598fad4a771687ada474d9c0f037e9cc2a",
+      "before": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 13,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.2948,
+        "threshold_pcm16": 92
+      },
+      "after": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 13,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.2948,
+        "threshold_pcm16": 92
+      },
+      "removed_leading_ms": 0
+    },
+    {
+      "address": "D07",
+      "source_ordinal": 55,
+      "source_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Harbour_FX___Melodics/55_Retro_Synth_Lead_Lick.wav",
+      "source_sha256": "4124584b83208c072342386bba627d54650b91a4c2896c99ee1ba174e85e5767",
+      "selected_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Harbour_FX___Melodics/55_Retro_Synth_Lead_Lick.wav",
+      "selected_sha256": "4124584b83208c072342386bba627d54650b91a4c2896c99ee1ba174e85e5767",
+      "before": {
+        "first_nonzero_frame": 2,
+        "signal_onset_frame": 47,
+        "first_nonzero_ms": 0.0454,
+        "signal_onset_ms": 1.0658,
+        "threshold_pcm16": 38
+      },
+      "after": {
+        "first_nonzero_frame": 2,
+        "signal_onset_frame": 47,
+        "first_nonzero_ms": 0.0454,
+        "signal_onset_ms": 1.0658,
+        "threshold_pcm16": 38
+      },
+      "removed_leading_ms": 0
+    },
+    {
+      "address": "D08",
+      "source_ordinal": 56,
+      "source_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Harbour_FX___Melodics/56_Bell_Counter-Melody.wav",
+      "source_sha256": "77459c1128a4a0734c7ba1ed2399b1be1521850ff39ffd3a4ead06dde4634490",
+      "selected_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Harbour_FX___Melodics/56_Bell_Counter-Melody.wav",
+      "selected_sha256": "77459c1128a4a0734c7ba1ed2399b1be1521850ff39ffd3a4ead06dde4634490",
+      "before": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 10,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.2268,
+        "threshold_pcm16": 43
+      },
+      "after": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 10,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.2268,
+        "threshold_pcm16": 43
+      },
+      "removed_leading_ms": 0
+    },
+    {
+      "address": "D09",
+      "source_ordinal": 57,
+      "source_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Harbour_FX___Melodics/57_Dock_Winch_Cable_Zing.wav",
+      "source_sha256": "3b60d0cf078884570c61dfc702f64bb1a9a6f1ef62b6ae801f48d4a35576f73d",
+      "selected_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Harbour_FX___Melodics/57_Dock_Winch_Cable_Zing.wav",
+      "selected_sha256": "3b60d0cf078884570c61dfc702f64bb1a9a6f1ef62b6ae801f48d4a35576f73d",
+      "before": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 8,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.1814,
+        "threshold_pcm16": 58
+      },
+      "after": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 8,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.1814,
+        "threshold_pcm16": 58
+      },
+      "removed_leading_ms": 0
+    },
+    {
+      "address": "D10",
+      "source_ordinal": 58,
+      "source_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Harbour_FX___Melodics/58_Hydraulic_Steam_Release.wav",
+      "source_sha256": "de0eeaad9d15632944b8cf19ee374e8dd9670122993e0201628e4d2d4420a85c",
+      "selected_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Harbour_FX___Melodics/58_Hydraulic_Steam_Release.wav",
+      "selected_sha256": "de0eeaad9d15632944b8cf19ee374e8dd9670122993e0201628e4d2d4420a85c",
+      "before": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 11,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.2494,
+        "threshold_pcm16": 39
+      },
+      "after": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 11,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.2494,
+        "threshold_pcm16": 39
+      },
+      "removed_leading_ms": 0
+    },
+    {
+      "address": "D11",
+      "source_ordinal": 59,
+      "source_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Harbour_FX___Melodics/59_Harbour_Foghorn_Echo.wav",
+      "source_sha256": "5b14a4d71834707d401a64b48500e0940946d84a16f66ba1573e860c769eade4",
+      "selected_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Harbour_FX___Melodics/59_Harbour_Foghorn_Echo.wav",
+      "selected_sha256": "5b14a4d71834707d401a64b48500e0940946d84a16f66ba1573e860c769eade4",
+      "before": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 15,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.3401,
+        "threshold_pcm16": 74
+      },
+      "after": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 15,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.3401,
+        "threshold_pcm16": 74
+      },
+      "removed_leading_ms": 0
+    },
+    {
+      "address": "D12",
+      "source_ordinal": 60,
+      "source_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Harbour_FX___Melodics/60_Vinyl_Needle_Crackle_Drop.wav",
+      "source_sha256": "dd4cbf11fc2a736e8c1b56640479d13b5c44f0aea04d199e101bbe6af9d57d81",
+      "selected_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Harbour_FX___Melodics/60_Vinyl_Needle_Crackle_Drop.wav",
+      "selected_sha256": "dd4cbf11fc2a736e8c1b56640479d13b5c44f0aea04d199e101bbe6af9d57d81",
+      "before": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 9,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.2041,
+        "threshold_pcm16": 39
+      },
+      "after": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 9,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.2041,
+        "threshold_pcm16": 39
+      },
+      "removed_leading_ms": 0
+    },
+    {
+      "address": "D13",
+      "source_ordinal": 61,
+      "source_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Harbour_FX___Melodics/61_Breakdown_Riser_FX.wav",
+      "source_sha256": "82072ad35c9a7293282b7684c085ee61c9e002d331fa4dabc302bf6fb11a86e3",
+      "selected_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Harbour_FX___Melodics/61_Breakdown_Riser_FX.wav",
+      "selected_sha256": "82072ad35c9a7293282b7684c085ee61c9e002d331fa4dabc302bf6fb11a86e3",
+      "before": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 63,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 1.4286,
+        "threshold_pcm16": 101
+      },
+      "after": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 63,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 1.4286,
+        "threshold_pcm16": 101
+      },
+      "removed_leading_ms": 0
+    },
+    {
+      "address": "D14",
+      "source_ordinal": 62,
+      "source_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Harbour_FX___Melodics/62_Metal_Resonance_Pipe.wav",
+      "source_sha256": "d8e9706003c275eb3920fe97ac0192193e2e5339f9362df15854ae2323d0c88f",
+      "selected_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Harbour_FX___Melodics/62_Metal_Resonance_Pipe.wav",
+      "selected_sha256": "d8e9706003c275eb3920fe97ac0192193e2e5339f9362df15854ae2323d0c88f",
+      "before": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 7,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.1587,
+        "threshold_pcm16": 40
+      },
+      "after": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 7,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.1587,
+        "threshold_pcm16": 40
+      },
+      "removed_leading_ms": 0
+    },
+    {
+      "address": "D15",
+      "source_ordinal": 63,
+      "source_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Harbour_FX___Melodics/63_Lantern_Room_Tape_Echo.wav",
+      "source_sha256": "8533d2378e0078e8b51965d871f65f5b239783e3f3118eae206806b4a6ff0555",
+      "selected_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Harbour_FX___Melodics/63_Lantern_Room_Tape_Echo.wav",
+      "selected_sha256": "8533d2378e0078e8b51965d871f65f5b239783e3f3118eae206806b4a6ff0555",
+      "before": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 10,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.2268,
+        "threshold_pcm16": 74
+      },
+      "after": {
+        "first_nonzero_frame": 1,
+        "signal_onset_frame": 10,
+        "first_nonzero_ms": 0.0227,
+        "signal_onset_ms": 0.2268,
+        "threshold_pcm16": 74
+      },
+      "removed_leading_ms": 0
+    },
+    {
+      "address": "D16",
+      "source_ordinal": 64,
+      "source_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Harbour_FX___Melodics/64_Impact_Drop_Boom.wav",
+      "source_sha256": "fa382d3d7a53fca8ce73717b1f01e516322782b71966345fd6ff271f18b2dcbe",
+      "selected_file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Harbour_FX___Melodics/64_Impact_Drop_Boom.wav",
+      "selected_sha256": "fa382d3d7a53fca8ce73717b1f01e516322782b71966345fd6ff271f18b2dcbe",
+      "before": {
+        "first_nonzero_frame": 2,
+        "signal_onset_frame": 76,
+        "first_nonzero_ms": 0.0454,
+        "signal_onset_ms": 1.7234,
+        "threshold_pcm16": 41
+      },
+      "after": {
+        "first_nonzero_frame": 2,
+        "signal_onset_frame": 76,
+        "first_nonzero_ms": 0.0454,
+        "signal_onset_ms": 1.7234,
+        "threshold_pcm16": 41
+      },
+      "removed_leading_ms": 0
+    }
+  ]
+}

@@ -1,0 +1,583 @@
+{
+  "schema": 1,
+  "pack_id": "nq_harbour_01",
+  "decision": "Keep the written map; leave mismatched slots pending",
+  "slots": [
+    {
+      "address": "A01",
+      "sample_id": "nq.harbour.v1.a01",
+      "label": "Deep kick",
+      "file": null,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "status": "pending_exact_role_and_approval_review"
+    },
+    {
+      "address": "A02",
+      "sample_id": "nq.harbour.v1.a02",
+      "label": "Punch kick",
+      "file": null,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "status": "pending_exact_role_and_approval_review"
+    },
+    {
+      "address": "A03",
+      "sample_id": "nq.harbour.v1.a03",
+      "label": "Main snare",
+      "file": null,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "status": "pending_exact_role_and_approval_review"
+    },
+    {
+      "address": "A04",
+      "sample_id": "nq.harbour.v1.a04",
+      "label": "Tight ghost snare",
+      "file": null,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "status": "pending_exact_role_and_approval_review"
+    },
+    {
+      "address": "A05",
+      "sample_id": "nq.harbour.v1.a05",
+      "label": "Small handclap",
+      "file": null,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "status": "pending_exact_role_and_approval_review"
+    },
+    {
+      "address": "A06",
+      "sample_id": "nq.harbour.v1.a06",
+      "label": "Closed hi-hat",
+      "file": null,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "status": "pending_exact_role_and_approval_review"
+    },
+    {
+      "address": "A07",
+      "sample_id": "nq.harbour.v1.a07",
+      "label": "Open hi-hat",
+      "file": null,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "status": "pending_exact_role_and_approval_review"
+    },
+    {
+      "address": "A08",
+      "sample_id": "nq.harbour.v1.a08",
+      "label": "Pedal hi-hat",
+      "file": null,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "status": "pending_exact_role_and_approval_review"
+    },
+    {
+      "address": "A09",
+      "sample_id": "nq.harbour.v1.a09",
+      "label": "Ride bell",
+      "file": null,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "status": "pending_exact_role_and_approval_review"
+    },
+    {
+      "address": "A10",
+      "sample_id": "nq.harbour.v1.a10",
+      "label": "Short ride",
+      "file": null,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "status": "pending_exact_role_and_approval_review"
+    },
+    {
+      "address": "A11",
+      "sample_id": "nq.harbour.v1.a11",
+      "label": "Short crash",
+      "file": null,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "status": "pending_exact_role_and_approval_review"
+    },
+    {
+      "address": "A12",
+      "sample_id": "nq.harbour.v1.a12",
+      "label": "Wooden rimshot",
+      "file": null,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "status": "pending_exact_role_and_approval_review"
+    },
+    {
+      "address": "A13",
+      "sample_id": "nq.harbour.v1.a13",
+      "label": "Low tom D",
+      "file": null,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "status": "pending_exact_role_and_approval_review"
+    },
+    {
+      "address": "A14",
+      "sample_id": "nq.harbour.v1.a14",
+      "label": "Mid tom A",
+      "file": null,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "status": "pending_exact_role_and_approval_review"
+    },
+    {
+      "address": "A15",
+      "sample_id": "nq.harbour.v1.a15",
+      "label": "Short shaker",
+      "file": null,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "status": "pending_exact_role_and_approval_review"
+    },
+    {
+      "address": "A16",
+      "sample_id": "nq.harbour.v1.a16",
+      "label": "Tambourine hit",
+      "file": null,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "status": "pending_exact_role_and_approval_review"
+    },
+    {
+      "address": "B01",
+      "sample_id": "nq.harbour.v1.b01",
+      "label": "Rounded sub D2",
+      "file": null,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "status": "pending_exact_role_and_approval_review"
+    },
+    {
+      "address": "B02",
+      "sample_id": "nq.harbour.v1.b02",
+      "label": "Rounded sub E2",
+      "file": null,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "status": "pending_exact_role_and_approval_review"
+    },
+    {
+      "address": "B03",
+      "sample_id": "nq.harbour.v1.b03",
+      "label": "Rounded sub F2",
+      "file": null,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "status": "pending_exact_role_and_approval_review"
+    },
+    {
+      "address": "B04",
+      "sample_id": "nq.harbour.v1.b04",
+      "label": "Rounded sub G2",
+      "file": null,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "status": "pending_exact_role_and_approval_review"
+    },
+    {
+      "address": "B05",
+      "sample_id": "nq.harbour.v1.b05",
+      "label": "Rounded sub A2",
+      "file": null,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "status": "pending_exact_role_and_approval_review"
+    },
+    {
+      "address": "B06",
+      "sample_id": "nq.harbour.v1.b06",
+      "label": "Rounded sub Bb2",
+      "file": null,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "status": "pending_exact_role_and_approval_review"
+    },
+    {
+      "address": "B07",
+      "sample_id": "nq.harbour.v1.b07",
+      "label": "Rounded sub C3",
+      "file": null,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "status": "pending_exact_role_and_approval_review"
+    },
+    {
+      "address": "B08",
+      "sample_id": "nq.harbour.v1.b08",
+      "label": "Rounded sub D3",
+      "file": null,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "status": "pending_exact_role_and_approval_review"
+    },
+    {
+      "address": "B09",
+      "sample_id": "nq.harbour.v1.b09",
+      "label": "Controlled Reese D2",
+      "file": null,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "status": "pending_exact_role_and_approval_review"
+    },
+    {
+      "address": "B10",
+      "sample_id": "nq.harbour.v1.b10",
+      "label": "Controlled Reese E2",
+      "file": null,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "status": "pending_exact_role_and_approval_review"
+    },
+    {
+      "address": "B11",
+      "sample_id": "nq.harbour.v1.b11",
+      "label": "Controlled Reese F2",
+      "file": null,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "status": "pending_exact_role_and_approval_review"
+    },
+    {
+      "address": "B12",
+      "sample_id": "nq.harbour.v1.b12",
+      "label": "Controlled Reese G2",
+      "file": null,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "status": "pending_exact_role_and_approval_review"
+    },
+    {
+      "address": "B13",
+      "sample_id": "nq.harbour.v1.b13",
+      "label": "Controlled Reese A2",
+      "file": null,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "status": "pending_exact_role_and_approval_review"
+    },
+    {
+      "address": "B14",
+      "sample_id": "nq.harbour.v1.b14",
+      "label": "Controlled Reese Bb2",
+      "file": null,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "status": "pending_exact_role_and_approval_review"
+    },
+    {
+      "address": "B15",
+      "sample_id": "nq.harbour.v1.b15",
+      "label": "Controlled Reese C3",
+      "file": null,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "status": "pending_exact_role_and_approval_review"
+    },
+    {
+      "address": "B16",
+      "sample_id": "nq.harbour.v1.b16",
+      "label": "Controlled Reese D3",
+      "file": null,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "status": "pending_exact_role_and_approval_review"
+    },
+    {
+      "address": "C01",
+      "sample_id": "nq.harbour.v1.c01",
+      "label": "Bell-pluck D4",
+      "file": null,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "status": "pending_exact_role_and_approval_review"
+    },
+    {
+      "address": "C02",
+      "sample_id": "nq.harbour.v1.c02",
+      "label": "Bell-pluck E4",
+      "file": null,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "status": "pending_exact_role_and_approval_review"
+    },
+    {
+      "address": "C03",
+      "sample_id": "nq.harbour.v1.c03",
+      "label": "Bell-pluck F4",
+      "file": null,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "status": "pending_exact_role_and_approval_review"
+    },
+    {
+      "address": "C04",
+      "sample_id": "nq.harbour.v1.c04",
+      "label": "Bell-pluck G4",
+      "file": null,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "status": "pending_exact_role_and_approval_review"
+    },
+    {
+      "address": "C05",
+      "sample_id": "nq.harbour.v1.c05",
+      "label": "Bell-pluck A4",
+      "file": null,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "status": "pending_exact_role_and_approval_review"
+    },
+    {
+      "address": "C06",
+      "sample_id": "nq.harbour.v1.c06",
+      "label": "Bell-pluck Bb4",
+      "file": null,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "status": "pending_exact_role_and_approval_review"
+    },
+    {
+      "address": "C07",
+      "sample_id": "nq.harbour.v1.c07",
+      "label": "Bell-pluck C5",
+      "file": null,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "status": "pending_exact_role_and_approval_review"
+    },
+    {
+      "address": "C08",
+      "sample_id": "nq.harbour.v1.c08",
+      "label": "Bell-pluck D5",
+      "file": null,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "status": "pending_exact_role_and_approval_review"
+    },
+    {
+      "address": "C09",
+      "sample_id": "nq.harbour.v1.c09",
+      "label": "Warm keys D minor",
+      "file": null,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "status": "pending_exact_role_and_approval_review"
+    },
+    {
+      "address": "C10",
+      "sample_id": "nq.harbour.v1.c10",
+      "label": "Warm keys B-flat major",
+      "file": null,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "status": "pending_exact_role_and_approval_review"
+    },
+    {
+      "address": "C11",
+      "sample_id": "nq.harbour.v1.c11",
+      "label": "Warm keys C major",
+      "file": null,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "status": "pending_exact_role_and_approval_review"
+    },
+    {
+      "address": "C12",
+      "sample_id": "nq.harbour.v1.c12",
+      "label": "Warm keys A minor",
+      "file": null,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "status": "pending_exact_role_and_approval_review"
+    },
+    {
+      "address": "C13",
+      "sample_id": "nq.harbour.v1.c13",
+      "label": "Lantern pad D minor",
+      "file": null,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "status": "pending_exact_role_and_approval_review"
+    },
+    {
+      "address": "C14",
+      "sample_id": "nq.harbour.v1.c14",
+      "label": "Dub organ D minor stab",
+      "file": null,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "status": "pending_exact_role_and_approval_review"
+    },
+    {
+      "address": "C15",
+      "sample_id": "nq.harbour.v1.c15",
+      "label": "Muted brass D minor stab",
+      "file": null,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "status": "pending_exact_role_and_approval_review"
+    },
+    {
+      "address": "C16",
+      "sample_id": "nq.harbour.v1.c16",
+      "label": "Signal synth D5 accent",
+      "file": null,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "status": "pending_exact_role_and_approval_review"
+    },
+    {
+      "address": "D01",
+      "sample_id": "nq.harbour.v1.d01",
+      "label": "Quay metal",
+      "file": null,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "status": "pending_exact_role_and_approval_review"
+    },
+    {
+      "address": "D02",
+      "sample_id": "nq.harbour.v1.d02",
+      "label": "Vent thump",
+      "file": null,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "status": "pending_exact_role_and_approval_review"
+    },
+    {
+      "address": "D03",
+      "sample_id": "nq.harbour.v1.d03",
+      "label": "Helper chirp",
+      "file": null,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "status": "pending_exact_role_and_approval_review"
+    },
+    {
+      "address": "D04",
+      "sample_id": "nq.harbour.v1.d04",
+      "label": "Bollard tap",
+      "file": null,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "status": "pending_exact_role_and_approval_review"
+    },
+    {
+      "address": "D05",
+      "sample_id": "nq.harbour.v1.d05",
+      "label": "Mooring-rope creak",
+      "file": null,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "status": "pending_exact_role_and_approval_review"
+    },
+    {
+      "address": "D06",
+      "sample_id": "nq.harbour.v1.d06",
+      "label": "Rope flick",
+      "file": null,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "status": "pending_exact_role_and_approval_review"
+    },
+    {
+      "address": "D07",
+      "sample_id": "nq.harbour.v1.d07",
+      "label": "Wooden dock knock",
+      "file": null,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "status": "pending_exact_role_and_approval_review"
+    },
+    {
+      "address": "D08",
+      "sample_id": "nq.harbour.v1.d08",
+      "label": "Crate knock",
+      "file": null,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "status": "pending_exact_role_and_approval_review"
+    },
+    {
+      "address": "D09",
+      "sample_id": "nq.harbour.v1.d09",
+      "label": "Depot latch click",
+      "file": null,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "status": "pending_exact_role_and_approval_review"
+    },
+    {
+      "address": "D10",
+      "sample_id": "nq.harbour.v1.d10",
+      "label": "Wrench ring",
+      "file": null,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "status": "pending_exact_role_and_approval_review"
+    },
+    {
+      "address": "D11",
+      "sample_id": "nq.harbour.v1.d11",
+      "label": "Ferry bell D4",
+      "file": null,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "status": "pending_exact_role_and_approval_review"
+    },
+    {
+      "address": "D12",
+      "sample_id": "nq.harbour.v1.d12",
+      "label": "Water drop",
+      "file": null,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "status": "pending_exact_role_and_approval_review"
+    },
+    {
+      "address": "D13",
+      "sample_id": "nq.harbour.v1.d13",
+      "label": "Needle Quay vocal call",
+      "file": null,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "status": "pending_exact_role_and_approval_review"
+    },
+    {
+      "address": "D14",
+      "sample_id": "nq.harbour.v1.d14",
+      "label": "Vocal response",
+      "file": null,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "status": "pending_exact_role_and_approval_review"
+    },
+    {
+      "address": "D15",
+      "sample_id": "nq.harbour.v1.d15",
+      "label": "Short vocal phrase",
+      "file": null,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "status": "pending_exact_role_and_approval_review"
+    },
+    {
+      "address": "D16",
+      "sample_id": "nq.harbour.v1.d16",
+      "label": "Rhythmic vocal hit",
+      "file": null,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "status": "pending_exact_role_and_approval_review"
+    }
+  ]
+}

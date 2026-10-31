@@ -1,0 +1,62 @@
+{
+  "base_sha": "8e8b91f6a5472eb6200599e60932e45a8c9ea56b",
+  "file_count": 12,
+  "selene": {
+    "errors": 0,
+    "warnings": 0,
+    "parse_errors": 0
+  },
+  "rojo_build": "PASS",
+  "test_suites": "NOT_RUN per project instructions",
+  "source_files": [
+    {
+      "path": "src/shared/QuayProgress.luau",
+      "sha256": "ab2e6cc1e5091d8b3ce7cc72e9204b9ea958748dbb232367300da5596d906d44"
+    },
+    {
+      "path": "src/shared/QuayObjectives.luau",
+      "sha256": "dd9681177a93ab9445818560a9126f8676864a8383c2c5a0c781e92fdb45f2c1"
+    },
+    {
+      "path": "src/shared/QuayConversations.luau",
+      "sha256": "60b1a226efa30f1982152ada9829171d205b58f7e3dfba10b752618d9aec3df0"
+    },
+    {
+      "path": "src/client/QuayDialogueView.luau",
+      "sha256": "8bf412d711cf278daed1879cd1ca613cee329d632b8740adec5103824cb19a92"
+    },
+    {
+      "path": "src/client/QuayObjectiveView.luau",
+      "sha256": "e70ddf3e4d8ad0636dbd2a3292cab5087debc5aa3a243edfe413d92423b2106e"
+    },
+    {
+      "path": "src/client/QuayDemoView.luau",
+      "sha256": "e51545d15e44eb9e11b8ad3977412852e1e5e89db467a07e2b1f37422da18a12"
+    },
+    {
+      "path": "src/client/QuayNeighbors.luau",
+      "sha256": "c8f38ff1a82ba1c09e6218ea3094cb9ef96a45bc2736894cd8e4b14c991449fd"
+    },
+    {
+      "path": "src/client/init.client.luau",
+      "sha256": "f5f0f058240d56935ae265cbf34a2bf251a4c0f976bda7334ac3ee89ecc03982"
+    },
+    {
+      "path": "src/client/WorkshopView.luau",
+      "sha256": "b15197b640ce7c23de84c29a1c12f6c7c04866a49b8788209fb6d47a9b7638cc"
+    },
+    {
+      "path": "src/server/QuayDemoService.luau",
+      "sha256": "7c502bf2c648b49098efeee15e68d55390eb27f4f74cd39bca26cec8d6c90b26"
+    },
+    {
+      "path": "src/server/NeedleQuayDemoWorld.luau",
+      "sha256": "f977f94d4caa8259efee4dcce0c968735877e4b24961bd034129fd9452ae0bcf"
+    },
+    {
+      "path": "src/server/QuayNeighborhoodScene.luau",
+      "sha256": "b3322ac5413958650608d6ac5287050d8bae55b71972dce3de64ef949b88ccb7"
+    }
+  ],
+  "place_sha256": "688dd9a1f87db9b1d74d3266e6c73ffb130aba0dd8698a672ef10aaa14c3511d"
+}

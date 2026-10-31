@@ -9,6 +9,7 @@ local Kit = require(script.Parent.ModularKit)
 local Details = require(script.Parent.AssetDetails)
 local RoomBuilder = require(script.Parent.RoomBuilder)
 local Missions = require(Shared.NeighborhoodMissions)
+local Discoveries = require(Shared.DiscoveryCatalog)
 local WorldBuilder = {}
 
 local function label(parent, text, offset)
@@ -244,11 +245,25 @@ function WorldBuilder.build()
     end
     local nodes = {}
     local specs = {
-        { "I01", "metal_hit", "Quay metal", "I01", Vector3.new(26, 2, -8), Vector3.new(3, 2, 0.3) },
-        { "I02", "vent_thump", "Vent thump", "P16", Vector3.new(29, 0, 8), Vector3.new(3, 3, 2) },
+        {
+            "I01",
+            "nq.harbour.v1.d01",
+            "Quay metal",
+            "I01",
+            Vector3.new(26, 2, -8),
+            Vector3.new(3, 2, 0.3),
+        },
+        {
+            "I02",
+            "nq.harbour.v1.d02",
+            "Vent thump",
+            "P16",
+            Vector3.new(29, 0, 8),
+            Vector3.new(3, 3, 2),
+        },
         {
             "I03",
-            "robot_chirp",
+            "nq.harbour.v1.d03",
             "Helper chirp",
             "H04",
             Vector3.new(20, 0, 18),
@@ -257,8 +272,19 @@ function WorldBuilder.build()
     }
     for _, spec in specs do
         local id, sampleId, name, artId, position, size = table.unpack(spec)
+        local discovery = Discoveries.ById[id]
+        if discovery and discovery.localOnly then
+            sampleId, name = discovery.sample, discovery.label
+        end
         local model = Assets.place(root, artId, CFrame.new(position), size, Theme.FadedTeal)
         model:SetAttribute("DiscoveryId", id)
+        model:SetAttribute("SourceSampleId", sampleId)
+        if discovery and discovery.localOnly then
+            model:SetAttribute("SourceSubstitute", true)
+            model:SetAttribute("SourceAddress", discovery.sourceAddress)
+            model:SetAttribute("SourceLabel", discovery.sourceLabel)
+            model:SetAttribute("LocalOnly", true)
+        end
         local anchor = part(
             model,
             "DiscoveryTarget",

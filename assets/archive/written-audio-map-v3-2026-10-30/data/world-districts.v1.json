@@ -1,0 +1,451 @@
+{
+  "schema": 1,
+  "kind": "DESIGN_PROPOSAL_NOT_RUNTIME_ACCEPTANCE",
+  "date": "2026-10-30",
+  "project": "BeatMakka / Frequency Zero",
+  "cityWorkingName": "Resonance City",
+  "firstDistrict": "N00",
+  "totalDistricts": 11,
+  "styleGenreCount": 0,
+  "originalBankCount": 0,
+  "visualAuthority": "assets/references/needle-quay-approved-style-board.png",
+  "canonicalKitEvidence": "assets/supplied/needle-quay-handoff-v3/FIRST_PACK_64_SLOTS.json",
+  "kitPolicy": "Four sound banks /64 planned addresses; approved sample admission remains pending. Retired audio is unavailable, never substituted; musical capability is free.",
+  "personalWorldProgress": true,
+  "sharedWorldPresentation": "public venues with private player unlock and locally projected restoration",
+  "initialCityMap": {
+    "allDistrictShapesVisible": true,
+    "onlyUnlocked": [
+      "N00"
+    ],
+    "otherRoutes": "LOCKED"
+  },
+  "firstDistrictStops": [
+    {
+      "id": "P1",
+      "name": "Dockside Exchange",
+      "activity": "sequencing and rhythm",
+      "existingBinding": "I01 canonical discovery role, planned D01; metal_pulse mission retains its ID",
+      "previous_display_name": "Rusty Workshop",
+      "environment_stop_id": "NQ-STOP-01",
+      "building_ids": [
+        "NQ-BLD-08",
+        "NQ-BLD-13"
+      ]
+    },
+    {
+      "id": "P2",
+      "name": "Repair Alley",
+      "activity": "safe ventilation repair; original named sequence and saved musical variation",
+      "existingBinding": "I02 canonical discovery role, planned D02; vent_duet mission retains its ID",
+      "previous_display_name": "Vinyl Corner",
+      "environment_stop_id": "NQ-STOP-02",
+      "building_ids": [
+        "NQ-BLD-03",
+        "NQ-BLD-09"
+      ]
+    },
+    {
+      "id": "P3",
+      "name": "Vinyl Market",
+      "activity": "ready semantic record matching; saved Song Mode draft; optional loop-sharing",
+      "existingBinding": "H06 Needle Records + H03; existing StageQueue where supported",
+      "previous_display_name": "Harbor Market",
+      "environment_stop_id": "NQ-STOP-03",
+      "building_ids": [
+        "NQ-BLD-02",
+        "NQ-BLD-04"
+      ]
+    },
+    {
+      "id": "P4",
+      "name": "Breakwater Steps",
+      "activity": "virtual acoustics/world sound collection",
+      "existingBinding": "I03 canonical discovery role, planned D03; selected teaching bar quarter-note reply; helper_reply mission retains its ID",
+      "previous_display_name": "Echo Pier",
+      "environment_stop_id": "NQ-STOP-04",
+      "building_ids": [
+        "NQ-BLD-05",
+        "NQ-BLD-12"
+      ]
+    }
+  ],
+  "finale": {
+    "name": "The Lantern Room",
+    "implementation": "local finite saved FinishedSong performance; pinned immutable revision, actual musical end plus bounded 2-second tail; pause freezes and stop/leave cancels incomplete traversal",
+    "previous_display_name": "The Lighthouse Club"
+  },
+  "verifiedRepoStatusAt": "2026-10-24",
+  "sourceDocs": [
+    "README.md",
+    "docs/STYLE_STARTER_PACKS.md",
+    "docs/PENDING_VERIFICATION_2026-10-24.md",
+    "docs/A01_10_NEIGHBORHOOD_MISSIONS.md",
+    "docs/A01_11_CHAPTER_CONCERT.md",
+    "docs/A01_12_STAGE_VERIFICATION.md",
+    "output/artbook-alpha01/README.md",
+    "assets/references/needle-quay-approved-style-board.json",
+    "docs/needle-quay/environment-production-register-v1.0-source.ru.md"
+  ],
+  "districts": [
+    {
+      "id": "N00",
+      "number": 1,
+      "name": "Needle Quay",
+      "genre": "Original Quay",
+      "kitSlug": "original",
+      "key": null,
+      "bpm": 96,
+      "startState": "first_demo",
+      "theme": "Порт, мастерская, винил, фургон; первый курс музыки.",
+      "learning": "Первый бит, звук среды, ответственность.",
+      "polygon": [
+        [
+          216,
+          804
+        ],
+        [
+          1037,
+          791
+        ],
+        [
+          1039,
+          1165
+        ],
+        [
+          248,
+          1177
+        ]
+      ],
+      "accent": "#2F5C58"
+    },
+    {
+      "id": "N01",
+      "number": 2,
+      "name": "Gritline Yard",
+      "genre": "Grunge",
+      "kitSlug": "grunge",
+      "key": "D minor",
+      "bpm": 90,
+      "startState": "locked_future",
+      "theme": "Гаражи, кирпич и репетиционные помещения.",
+      "learning": "Динамика и выразительность.",
+      "polygon": [
+        [
+          113,
+          202
+        ],
+        [
+          568,
+          193
+        ],
+        [
+          588,
+          432
+        ],
+        [
+          134,
+          439
+        ]
+      ],
+      "accent": "#B77E65"
+    },
+    {
+      "id": "N02",
+      "number": 3,
+      "name": "Brassworks",
+      "genre": "Industrial",
+      "kitSlug": "industrial",
+      "key": "A minor",
+      "bpm": 140,
+      "startState": "locked_future",
+      "theme": "Мастерские, музей механизмов и ритмический завод.",
+      "learning": "Периодичность и логика.",
+      "polygon": [
+        [
+          614,
+          193
+        ],
+        [
+          1071,
+          191
+        ],
+        [
+          1086,
+          421
+        ],
+        [
+          609,
+          436
+        ]
+      ],
+      "accent": "#A88353"
+    },
+    {
+      "id": "N03",
+      "number": 4,
+      "name": "Aurora Steps",
+      "genre": "Hard Trance",
+      "kitSlug": "hardtrance",
+      "key": "A minor",
+      "bpm": 140,
+      "startState": "locked_future",
+      "theme": "Палубы и высокие открытые площадки.",
+      "learning": "Темп, фразировка и наращивание интенсивности.",
+      "polygon": [
+        [
+          1114,
+          197
+        ],
+        [
+          1576,
+          190
+        ],
+        [
+          1592,
+          418
+        ],
+        [
+          1109,
+          426
+        ]
+      ],
+      "accent": "#927F9D"
+    },
+    {
+      "id": "N04",
+      "number": 5,
+      "name": "Skyglass Junction",
+      "genre": "Trance",
+      "kitSlug": "trance",
+      "key": "A minor",
+      "bpm": 140,
+      "startState": "locked_future",
+      "theme": "Надземный терминал и стеклянные навесы.",
+      "learning": "Слои, длинные фразы и переходы.",
+      "polygon": [
+        [
+          1620,
+          194
+        ],
+        [
+          2079,
+          199
+        ],
+        [
+          2093,
+          437
+        ],
+        [
+          1620,
+          419
+        ]
+      ],
+      "accent": "#648C9B"
+    },
+    {
+      "id": "N05",
+      "number": 6,
+      "name": "Murmur Canal",
+      "genre": "Trip Hop",
+      "kitSlug": "triphop",
+      "key": "A minor",
+      "bpm": 90,
+      "startState": "locked_future",
+      "theme": "Туманные каналы и дождевые мостики.",
+      "learning": "Пауза, текстуры и внимательное слушание.",
+      "polygon": [
+        [
+          107,
+          477
+        ],
+        [
+          559,
+          469
+        ],
+        [
+          573,
+          747
+        ],
+        [
+          117,
+          755
+        ]
+      ],
+      "accent": "#77959A"
+    },
+    {
+      "id": "N06",
+      "number": 7,
+      "name": "Blockbeat Lane",
+      "genre": "Hip Hop",
+      "kitSlug": "hiphop",
+      "key": "A minor",
+      "bpm": 90,
+      "startState": "locked_future",
+      "theme": "Открытые дворы и виниловые киоски.",
+      "learning": "Ритмическая речь и творческий диалог.",
+      "polygon": [
+        [
+          597,
+          464
+        ],
+        [
+          1071,
+          469
+        ],
+        [
+          1082,
+          750
+        ],
+        [
+          588,
+          748
+        ]
+      ],
+      "accent": "#CB8064"
+    },
+    {
+      "id": "N07",
+      "number": 8,
+      "name": "Motorgrid",
+      "genre": "Techno",
+      "kitSlug": "techno",
+      "key": "A minor",
+      "bpm": 140,
+      "startState": "locked_future",
+      "theme": "Ритмичные фонари и городская энергосеть.",
+      "learning": "Алгоритмы, циклы и вариации.",
+      "polygon": [
+        [
+          1114,
+          467
+        ],
+        [
+          1579,
+          461
+        ],
+        [
+          1594,
+          751
+        ],
+        [
+          1108,
+          742
+        ]
+      ],
+      "accent": "#65928C"
+    },
+    {
+      "id": "N08",
+      "number": 9,
+      "name": "Loopline Square",
+      "genre": "Dance",
+      "kitSlug": "dance",
+      "key": "A minor",
+      "bpm": 140,
+      "startState": "locked_future",
+      "theme": "Круглая сцена и общественная танцевальная площадь.",
+      "learning": "Синхронизация и команда.",
+      "polygon": [
+        [
+          1625,
+          460
+        ],
+        [
+          2092,
+          474
+        ],
+        [
+          2100,
+          756
+        ],
+        [
+          1610,
+          742
+        ]
+      ],
+      "accent": "#D49B75"
+    },
+    {
+      "id": "N09",
+      "number": 10,
+      "name": "Lantern Mile",
+      "genre": "Pop",
+      "kitSlug": "pop",
+      "key": "D major",
+      "bpm": 90,
+      "startState": "locked_future",
+      "theme": "Афиши, театры и кафе.",
+      "learning": "Мелодия, форма и хук.",
+      "polygon": [
+        [
+          1070,
+          800
+        ],
+        [
+          1555,
+          799
+        ],
+        [
+          1557,
+          1175
+        ],
+        [
+          1066,
+          1165
+        ]
+      ],
+      "accent": "#C98775"
+    },
+    {
+      "id": "N10",
+      "number": 11,
+      "name": "Sunbay Strand",
+      "genre": "Reggae",
+      "kitSlug": "reggae",
+      "key": "A minor",
+      "bpm": 90,
+      "startState": "locked_future",
+      "theme": "Тёплое побережье и деревянные мостки.",
+      "learning": "Оффбит и исторический контекст ямайского регги.",
+      "polygon": [
+        [
+          1601,
+          809
+        ],
+        [
+          2074,
+          795
+        ],
+        [
+          2095,
+          1183
+        ],
+        [
+          1589,
+          1176
+        ]
+      ],
+      "accent": "#B2A168"
+    }
+  ],
+  "environmentRegistry": "data/needle-quay-environment.v1.json",
+  "historicalSoundStatus_2026_10_24": {
+    "genreWavsAuthored": 160,
+    "genreAudioIdsBound": 100,
+    "genreAudioIdsPending": 60,
+    "originalSourceWavs": 24,
+    "originalAudioBindings": "pending",
+    "microphoneCapture": "unsupported in current game"
+  },
+  "soundStatus": {
+    "plannedSoundBanks": 4,
+    "physicalPads": 16,
+    "plannedSampleSlots": 64,
+    "approvedSamples": 0,
+    "loadedPlannedSamples": 0,
+    "microphoneCapture": "unsupported in current game",
+    "status": "pending original demo approval and 64 approved one-shots; no Flow generation started here"
+  }
+}

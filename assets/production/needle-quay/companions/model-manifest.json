@@ -1,0 +1,500 @@
+{
+  "characters": [
+    {
+      "id": "NQ-CMP-ALISSIA",
+      "name": "Alissia",
+      "height_studs": 4.140999972820282,
+      "bounds_wdh_studs": [
+        2.460000067949295,
+        1.8101499676704407,
+        4.140999972820282
+      ],
+      "authored_height_parameter": 4.1,
+      "source": "assets/production/needle-quay/companions/ALISSIA/NQ-CMP-ALISSIA.blend",
+      "source_sha256": "53eb0a2a67582f1ca2dd07c80c2b3fc1a3963dbf86d433664fbf3f2f99246d0e",
+      "glb": "assets/production/needle-quay/companions/ALISSIA/NQ-CMP-ALISSIA.glb",
+      "glb_sha256": "16c1cdc4bbe311ac7fdf078b9a6439f4b483d666b885c5f350efda23e649f92c",
+      "lod_triangles": [
+        4100,
+        1490,
+        441
+      ],
+      "atlas_resolution": [
+        512,
+        512
+      ],
+      "atlas_sha256": "abab97f9762951e9bf5dae4995ebf8e15f6e74dadddb91a658f2214369326dc2",
+      "bone_count": 16,
+      "binding": "rigid one-bone weights per authored segment",
+      "source_actions": [
+        "idle",
+        "idle_listen",
+        "walk",
+        "run",
+        "point",
+        "kneel",
+        "think",
+        "celebrate",
+        "wave",
+        "music_bob"
+      ],
+      "previews": [
+        "assets/production/needle-quay/companions/ALISSIA/front.png",
+        "assets/production/needle-quay/companions/ALISSIA/side.png",
+        "assets/production/needle-quay/companions/ALISSIA/back.png",
+        "assets/production/needle-quay/companions/ALISSIA/isometric.png"
+      ],
+      "stage": "DCC_CANDIDATE_PENDING_ART_REVIEW",
+      "art_approved": false,
+      "studio_imported": false,
+      "runtime_verified": false,
+      "provider_spend": 0,
+      "provenance": {
+        "source": "Issue 20 textual brief and supplied candidate artwork",
+        "concept_reference": "assets/references/companions/provided-pack-v1/art/Character_Turnarounds_CANDIDATE.png",
+        "family_photographs_used": false,
+        "generator": "tools/build_companion_candidates.py",
+        "artbook_refresh": "assets/references/companions/artbook-refresh-provenance.json",
+        "generator_sha256": "bd0cd5f7e50904fe9099643e197bab05afaf208e8ea2d3615f60131ed6d845ad"
+      },
+      "detail_previews": [
+        "assets/production/needle-quay/companions/ALISSIA/silhouette.png",
+        "assets/production/needle-quay/companions/ALISSIA/props.png"
+      ],
+      "runtime_content_files": [
+        "companions/alissia_color_abab97f97629.png",
+        "companions/alissia_lod0_Head_dc4c6b213a55.mesh",
+        "companions/alissia_lod0_Hips_bfd3a7ad83b0.mesh",
+        "companions/alissia_lod0_LeftFoot_83ea8a547de1.mesh",
+        "companions/alissia_lod0_LeftHand_bacf44d57598.mesh",
+        "companions/alissia_lod0_LeftLowerArm_dd8863674b2f.mesh",
+        "companions/alissia_lod0_LeftLowerLeg_5f526db781be.mesh",
+        "companions/alissia_lod0_LeftUpperArm_1299356d592b.mesh",
+        "companions/alissia_lod0_LeftUpperLeg_7b930da4af4c.mesh",
+        "companions/alissia_lod0_RightFoot_c1315384a3c5.mesh",
+        "companions/alissia_lod0_RightHand_196eb7132e43.mesh",
+        "companions/alissia_lod0_RightLowerArm_eeda17a040f7.mesh",
+        "companions/alissia_lod0_RightLowerLeg_6499507a52f3.mesh",
+        "companions/alissia_lod0_RightUpperArm_fd8ae62c2f28.mesh",
+        "companions/alissia_lod0_RightUpperLeg_ce5ba26b7a5d.mesh",
+        "companions/alissia_lod0_Spine_5535907f4913.mesh",
+        "companions/alissia_lod1_Head_fc9eef45c19d.mesh",
+        "companions/alissia_lod1_Hips_7e77fb37100f.mesh",
+        "companions/alissia_lod1_LeftFoot_aa41453fa305.mesh",
+        "companions/alissia_lod1_LeftHand_ec41e7ad78da.mesh",
+        "companions/alissia_lod1_LeftLowerArm_d82cf62f4541.mesh",
+        "companions/alissia_lod1_LeftLowerLeg_323bcb89cb74.mesh",
+        "companions/alissia_lod1_LeftUpperArm_0e88a633d09c.mesh",
+        "companions/alissia_lod1_LeftUpperLeg_e05cc0ef22de.mesh",
+        "companions/alissia_lod1_RightFoot_523a02ce98b7.mesh",
+        "companions/alissia_lod1_RightHand_a8612fe0aba5.mesh",
+        "companions/alissia_lod1_RightLowerArm_9053d7bedd62.mesh",
+        "companions/alissia_lod1_RightLowerLeg_4ff8a17b2f06.mesh",
+        "companions/alissia_lod1_RightUpperArm_b50dd731ed83.mesh",
+        "companions/alissia_lod1_RightUpperLeg_e05cc0ef22de.mesh",
+        "companions/alissia_lod1_Spine_aa9ade87bbdb.mesh",
+        "companions/alissia_lod2_Head_2d069b2536b6.mesh",
+        "companions/alissia_lod2_Hips_0e2d0de118c1.mesh",
+        "companions/alissia_lod2_LeftFoot_744702b35099.mesh",
+        "companions/alissia_lod2_LeftHand_8e7241326967.mesh",
+        "companions/alissia_lod2_LeftLowerArm_8b8d4424b3e0.mesh",
+        "companions/alissia_lod2_LeftLowerLeg_96161675bc0f.mesh",
+        "companions/alissia_lod2_LeftUpperArm_5ca3690ac7ff.mesh",
+        "companions/alissia_lod2_LeftUpperLeg_800467946ec0.mesh",
+        "companions/alissia_lod2_RightFoot_587f9663944a.mesh",
+        "companions/alissia_lod2_RightHand_77f0a158ca5d.mesh",
+        "companions/alissia_lod2_RightLowerArm_1934800dd92c.mesh",
+        "companions/alissia_lod2_RightLowerLeg_ebcfe2784340.mesh",
+        "companions/alissia_lod2_RightUpperArm_5ca3690ac7ff.mesh",
+        "companions/alissia_lod2_RightUpperLeg_800467946ec0.mesh",
+        "companions/alissia_lod2_Spine_ab122b0ae70e.mesh"
+      ],
+      "local_lod_files": [
+        "assets/local-demo/content/needle-quay/companions/alissia_lod0_Head_dc4c6b213a55.mesh",
+        "assets/local-demo/content/needle-quay/companions/alissia_lod0_Hips_bfd3a7ad83b0.mesh",
+        "assets/local-demo/content/needle-quay/companions/alissia_lod0_LeftFoot_83ea8a547de1.mesh",
+        "assets/local-demo/content/needle-quay/companions/alissia_lod0_LeftHand_bacf44d57598.mesh",
+        "assets/local-demo/content/needle-quay/companions/alissia_lod0_LeftLowerArm_dd8863674b2f.mesh",
+        "assets/local-demo/content/needle-quay/companions/alissia_lod0_LeftLowerLeg_5f526db781be.mesh",
+        "assets/local-demo/content/needle-quay/companions/alissia_lod0_LeftUpperArm_1299356d592b.mesh",
+        "assets/local-demo/content/needle-quay/companions/alissia_lod0_LeftUpperLeg_7b930da4af4c.mesh",
+        "assets/local-demo/content/needle-quay/companions/alissia_lod0_RightFoot_c1315384a3c5.mesh",
+        "assets/local-demo/content/needle-quay/companions/alissia_lod0_RightHand_196eb7132e43.mesh",
+        "assets/local-demo/content/needle-quay/companions/alissia_lod0_RightLowerArm_eeda17a040f7.mesh",
+        "assets/local-demo/content/needle-quay/companions/alissia_lod0_RightLowerLeg_6499507a52f3.mesh",
+        "assets/local-demo/content/needle-quay/companions/alissia_lod0_RightUpperArm_fd8ae62c2f28.mesh",
+        "assets/local-demo/content/needle-quay/companions/alissia_lod0_RightUpperLeg_ce5ba26b7a5d.mesh",
+        "assets/local-demo/content/needle-quay/companions/alissia_lod0_Spine_5535907f4913.mesh",
+        "assets/local-demo/content/needle-quay/companions/alissia_lod1_Head_fc9eef45c19d.mesh",
+        "assets/local-demo/content/needle-quay/companions/alissia_lod1_Hips_7e77fb37100f.mesh",
+        "assets/local-demo/content/needle-quay/companions/alissia_lod1_LeftFoot_aa41453fa305.mesh",
+        "assets/local-demo/content/needle-quay/companions/alissia_lod1_LeftHand_ec41e7ad78da.mesh",
+        "assets/local-demo/content/needle-quay/companions/alissia_lod1_LeftLowerArm_d82cf62f4541.mesh",
+        "assets/local-demo/content/needle-quay/companions/alissia_lod1_LeftLowerLeg_323bcb89cb74.mesh",
+        "assets/local-demo/content/needle-quay/companions/alissia_lod1_LeftUpperArm_0e88a633d09c.mesh",
+        "assets/local-demo/content/needle-quay/companions/alissia_lod1_LeftUpperLeg_e05cc0ef22de.mesh",
+        "assets/local-demo/content/needle-quay/companions/alissia_lod1_RightFoot_523a02ce98b7.mesh",
+        "assets/local-demo/content/needle-quay/companions/alissia_lod1_RightHand_a8612fe0aba5.mesh",
+        "assets/local-demo/content/needle-quay/companions/alissia_lod1_RightLowerArm_9053d7bedd62.mesh",
+        "assets/local-demo/content/needle-quay/companions/alissia_lod1_RightLowerLeg_4ff8a17b2f06.mesh",
+        "assets/local-demo/content/needle-quay/companions/alissia_lod1_RightUpperArm_b50dd731ed83.mesh",
+        "assets/local-demo/content/needle-quay/companions/alissia_lod1_RightUpperLeg_e05cc0ef22de.mesh",
+        "assets/local-demo/content/needle-quay/companions/alissia_lod1_Spine_aa9ade87bbdb.mesh",
+        "assets/local-demo/content/needle-quay/companions/alissia_lod2_Head_2d069b2536b6.mesh",
+        "assets/local-demo/content/needle-quay/companions/alissia_lod2_Hips_0e2d0de118c1.mesh",
+        "assets/local-demo/content/needle-quay/companions/alissia_lod2_LeftFoot_744702b35099.mesh",
+        "assets/local-demo/content/needle-quay/companions/alissia_lod2_LeftHand_8e7241326967.mesh",
+        "assets/local-demo/content/needle-quay/companions/alissia_lod2_LeftLowerArm_8b8d4424b3e0.mesh",
+        "assets/local-demo/content/needle-quay/companions/alissia_lod2_LeftLowerLeg_96161675bc0f.mesh",
+        "assets/local-demo/content/needle-quay/companions/alissia_lod2_LeftUpperArm_5ca3690ac7ff.mesh",
+        "assets/local-demo/content/needle-quay/companions/alissia_lod2_LeftUpperLeg_800467946ec0.mesh",
+        "assets/local-demo/content/needle-quay/companions/alissia_lod2_RightFoot_587f9663944a.mesh",
+        "assets/local-demo/content/needle-quay/companions/alissia_lod2_RightHand_77f0a158ca5d.mesh",
+        "assets/local-demo/content/needle-quay/companions/alissia_lod2_RightLowerArm_1934800dd92c.mesh",
+        "assets/local-demo/content/needle-quay/companions/alissia_lod2_RightLowerLeg_ebcfe2784340.mesh",
+        "assets/local-demo/content/needle-quay/companions/alissia_lod2_RightUpperArm_5ca3690ac7ff.mesh",
+        "assets/local-demo/content/needle-quay/companions/alissia_lod2_RightUpperLeg_800467946ec0.mesh",
+        "assets/local-demo/content/needle-quay/companions/alissia_lod2_Spine_ab122b0ae70e.mesh"
+      ],
+      "rig_manifest": {
+        "joints": [
+          {
+            "name": "Root",
+            "parent": null
+          },
+          {
+            "name": "Hips",
+            "parent": "Root"
+          },
+          {
+            "name": "Spine",
+            "parent": "Hips"
+          },
+          {
+            "name": "Head",
+            "parent": "Spine"
+          },
+          {
+            "name": "LeftUpperArm",
+            "parent": "Spine"
+          },
+          {
+            "name": "LeftLowerArm",
+            "parent": "LeftUpperArm"
+          },
+          {
+            "name": "LeftHand",
+            "parent": "LeftLowerArm"
+          },
+          {
+            "name": "LeftUpperLeg",
+            "parent": "Hips"
+          },
+          {
+            "name": "LeftLowerLeg",
+            "parent": "LeftUpperLeg"
+          },
+          {
+            "name": "LeftFoot",
+            "parent": "LeftLowerLeg"
+          },
+          {
+            "name": "RightUpperArm",
+            "parent": "Spine"
+          },
+          {
+            "name": "RightLowerArm",
+            "parent": "RightUpperArm"
+          },
+          {
+            "name": "RightHand",
+            "parent": "RightLowerArm"
+          },
+          {
+            "name": "RightUpperLeg",
+            "parent": "Hips"
+          },
+          {
+            "name": "RightLowerLeg",
+            "parent": "RightUpperLeg"
+          },
+          {
+            "name": "RightFoot",
+            "parent": "RightLowerLeg"
+          }
+        ],
+        "source_actions": [
+          "idle",
+          "idle_listen",
+          "walk",
+          "run",
+          "point",
+          "kneel",
+          "think",
+          "celebrate",
+          "wave",
+          "music_bob"
+        ],
+        "runtime_binding": "rigid-part procedural counterpart; no uploaded animation IDs"
+      },
+      "material_manifest": [
+        {
+          "name": "ALISSIA_MatteAtlas",
+          "base_color_image_size": [
+            512,
+            512
+          ],
+          "atlas_sha256": "abab97f9762951e9bf5dae4995ebf8e15f6e74dadddb91a658f2214369326dc2"
+        }
+      ]
+    },
+    {
+      "id": "NQ-CMP-NIKOLAS",
+      "name": "Nikolas",
+      "height_studs": 3.8908897042274475,
+      "bounds_wdh_studs": [
+        2.2989999055862427,
+        1.6434999406337738,
+        3.8908897042274475
+      ],
+      "authored_height_parameter": 3.8,
+      "source": "assets/production/needle-quay/companions/NIKOLAS/NQ-CMP-NIKOLAS.blend",
+      "source_sha256": "b9ad65962a8a7a11205922f1ff711fadae18f128be0d6ab9e3626b63b0541b21",
+      "glb": "assets/production/needle-quay/companions/NIKOLAS/NQ-CMP-NIKOLAS.glb",
+      "glb_sha256": "2a17fc25734a2282da789df32fcaa29394212aec4a8d36559dd4db91b3359242",
+      "lod_triangles": [
+        3968,
+        1424,
+        410
+      ],
+      "atlas_resolution": [
+        512,
+        512
+      ],
+      "atlas_sha256": "abab97f9762951e9bf5dae4995ebf8e15f6e74dadddb91a658f2214369326dc2",
+      "bone_count": 16,
+      "binding": "rigid one-bone weights per authored segment",
+      "source_actions": [
+        "idle",
+        "idle_listen",
+        "walk",
+        "run",
+        "point",
+        "kneel",
+        "think",
+        "celebrate",
+        "wave",
+        "music_bob"
+      ],
+      "previews": [
+        "assets/production/needle-quay/companions/NIKOLAS/front.png",
+        "assets/production/needle-quay/companions/NIKOLAS/side.png",
+        "assets/production/needle-quay/companions/NIKOLAS/back.png",
+        "assets/production/needle-quay/companions/NIKOLAS/isometric.png"
+      ],
+      "stage": "DCC_CANDIDATE_PENDING_ART_REVIEW",
+      "art_approved": false,
+      "studio_imported": false,
+      "runtime_verified": false,
+      "provider_spend": 0,
+      "provenance": {
+        "source": "Issue 20 textual brief and supplied candidate artwork",
+        "concept_reference": "assets/references/companions/provided-pack-v1/art/Character_Turnarounds_CANDIDATE.png",
+        "family_photographs_used": false,
+        "generator": "tools/build_companion_candidates.py",
+        "artbook_refresh": "assets/references/companions/artbook-refresh-provenance.json",
+        "generator_sha256": "bd0cd5f7e50904fe9099643e197bab05afaf208e8ea2d3615f60131ed6d845ad"
+      },
+      "detail_previews": [
+        "assets/production/needle-quay/companions/NIKOLAS/silhouette.png",
+        "assets/production/needle-quay/companions/NIKOLAS/props.png"
+      ],
+      "runtime_content_files": [
+        "companions/nikolas_color_abab97f97629.png",
+        "companions/nikolas_lod0_Head_daf5266e0ff4.mesh",
+        "companions/nikolas_lod0_Hips_2b500c6885ef.mesh",
+        "companions/nikolas_lod0_LeftFoot_f5d753f845b0.mesh",
+        "companions/nikolas_lod0_LeftHand_52d72e06caa2.mesh",
+        "companions/nikolas_lod0_LeftLowerArm_14dfa8b8d727.mesh",
+        "companions/nikolas_lod0_LeftLowerLeg_8fc1a5aaba81.mesh",
+        "companions/nikolas_lod0_LeftUpperArm_a1a1d6e81a24.mesh",
+        "companions/nikolas_lod0_LeftUpperLeg_a02b82efa245.mesh",
+        "companions/nikolas_lod0_RightFoot_f4a303a24c45.mesh",
+        "companions/nikolas_lod0_RightHand_5147489b7167.mesh",
+        "companions/nikolas_lod0_RightLowerArm_3237996e5a2e.mesh",
+        "companions/nikolas_lod0_RightLowerLeg_86b62c8e9e4d.mesh",
+        "companions/nikolas_lod0_RightUpperArm_99a82b427715.mesh",
+        "companions/nikolas_lod0_RightUpperLeg_fc0c2ec462a5.mesh",
+        "companions/nikolas_lod0_Spine_2705f9df763f.mesh",
+        "companions/nikolas_lod1_Head_605305d18ed6.mesh",
+        "companions/nikolas_lod1_Hips_9bb984269834.mesh",
+        "companions/nikolas_lod1_LeftFoot_a889f8615ee5.mesh",
+        "companions/nikolas_lod1_LeftHand_b95896687161.mesh",
+        "companions/nikolas_lod1_LeftLowerArm_42cd405866e5.mesh",
+        "companions/nikolas_lod1_LeftLowerLeg_9f480ad9e37f.mesh",
+        "companions/nikolas_lod1_LeftUpperArm_1a4882388c15.mesh",
+        "companions/nikolas_lod1_LeftUpperLeg_f470de363c20.mesh",
+        "companions/nikolas_lod1_RightFoot_809b6aa4e1eb.mesh",
+        "companions/nikolas_lod1_RightHand_70c0806476d7.mesh",
+        "companions/nikolas_lod1_RightLowerArm_764b928997dd.mesh",
+        "companions/nikolas_lod1_RightLowerLeg_34f0687edaf9.mesh",
+        "companions/nikolas_lod1_RightUpperArm_829ba5cd8b4b.mesh",
+        "companions/nikolas_lod1_RightUpperLeg_ddadfef93527.mesh",
+        "companions/nikolas_lod1_Spine_71c93b59d5a7.mesh",
+        "companions/nikolas_lod2_Head_34250d50ecba.mesh",
+        "companions/nikolas_lod2_Hips_246625032b88.mesh",
+        "companions/nikolas_lod2_LeftFoot_7d1ba98d53b8.mesh",
+        "companions/nikolas_lod2_LeftHand_8575a950a955.mesh",
+        "companions/nikolas_lod2_LeftLowerArm_f4b5ab863fe6.mesh",
+        "companions/nikolas_lod2_LeftLowerLeg_5701a3cc43d0.mesh",
+        "companions/nikolas_lod2_LeftUpperArm_4c22b11605d9.mesh",
+        "companions/nikolas_lod2_LeftUpperLeg_fcac5887807f.mesh",
+        "companions/nikolas_lod2_RightFoot_bab37ff2ed77.mesh",
+        "companions/nikolas_lod2_RightHand_4fc5c001509b.mesh",
+        "companions/nikolas_lod2_RightLowerArm_d8ac3e8d97c0.mesh",
+        "companions/nikolas_lod2_RightLowerLeg_0ad31ea92ffd.mesh",
+        "companions/nikolas_lod2_RightUpperArm_b13ffc8bbe69.mesh",
+        "companions/nikolas_lod2_RightUpperLeg_11edeb47b243.mesh",
+        "companions/nikolas_lod2_Spine_29702024b28d.mesh"
+      ],
+      "local_lod_files": [
+        "assets/local-demo/content/needle-quay/companions/nikolas_lod0_Head_daf5266e0ff4.mesh",
+        "assets/local-demo/content/needle-quay/companions/nikolas_lod0_Hips_2b500c6885ef.mesh",
+        "assets/local-demo/content/needle-quay/companions/nikolas_lod0_LeftFoot_f5d753f845b0.mesh",
+        "assets/local-demo/content/needle-quay/companions/nikolas_lod0_LeftHand_52d72e06caa2.mesh",
+        "assets/local-demo/content/needle-quay/companions/nikolas_lod0_LeftLowerArm_14dfa8b8d727.mesh",
+        "assets/local-demo/content/needle-quay/companions/nikolas_lod0_LeftLowerLeg_8fc1a5aaba81.mesh",
+        "assets/local-demo/content/needle-quay/companions/nikolas_lod0_LeftUpperArm_a1a1d6e81a24.mesh",
+        "assets/local-demo/content/needle-quay/companions/nikolas_lod0_LeftUpperLeg_a02b82efa245.mesh",
+        "assets/local-demo/content/needle-quay/companions/nikolas_lod0_RightFoot_f4a303a24c45.mesh",
+        "assets/local-demo/content/needle-quay/companions/nikolas_lod0_RightHand_5147489b7167.mesh",
+        "assets/local-demo/content/needle-quay/companions/nikolas_lod0_RightLowerArm_3237996e5a2e.mesh",
+        "assets/local-demo/content/needle-quay/companions/nikolas_lod0_RightLowerLeg_86b62c8e9e4d.mesh",
+        "assets/local-demo/content/needle-quay/companions/nikolas_lod0_RightUpperArm_99a82b427715.mesh",
+        "assets/local-demo/content/needle-quay/companions/nikolas_lod0_RightUpperLeg_fc0c2ec462a5.mesh",
+        "assets/local-demo/content/needle-quay/companions/nikolas_lod0_Spine_2705f9df763f.mesh",
+        "assets/local-demo/content/needle-quay/companions/nikolas_lod1_Head_605305d18ed6.mesh",
+        "assets/local-demo/content/needle-quay/companions/nikolas_lod1_Hips_9bb984269834.mesh",
+        "assets/local-demo/content/needle-quay/companions/nikolas_lod1_LeftFoot_a889f8615ee5.mesh",
+        "assets/local-demo/content/needle-quay/companions/nikolas_lod1_LeftHand_b95896687161.mesh",
+        "assets/local-demo/content/needle-quay/companions/nikolas_lod1_LeftLowerArm_42cd405866e5.mesh",
+        "assets/local-demo/content/needle-quay/companions/nikolas_lod1_LeftLowerLeg_9f480ad9e37f.mesh",
+        "assets/local-demo/content/needle-quay/companions/nikolas_lod1_LeftUpperArm_1a4882388c15.mesh",
+        "assets/local-demo/content/needle-quay/companions/nikolas_lod1_LeftUpperLeg_f470de363c20.mesh",
+        "assets/local-demo/content/needle-quay/companions/nikolas_lod1_RightFoot_809b6aa4e1eb.mesh",
+        "assets/local-demo/content/needle-quay/companions/nikolas_lod1_RightHand_70c0806476d7.mesh",
+        "assets/local-demo/content/needle-quay/companions/nikolas_lod1_RightLowerArm_764b928997dd.mesh",
+        "assets/local-demo/content/needle-quay/companions/nikolas_lod1_RightLowerLeg_34f0687edaf9.mesh",
+        "assets/local-demo/content/needle-quay/companions/nikolas_lod1_RightUpperArm_829ba5cd8b4b.mesh",
+        "assets/local-demo/content/needle-quay/companions/nikolas_lod1_RightUpperLeg_ddadfef93527.mesh",
+        "assets/local-demo/content/needle-quay/companions/nikolas_lod1_Spine_71c93b59d5a7.mesh",
+        "assets/local-demo/content/needle-quay/companions/nikolas_lod2_Head_34250d50ecba.mesh",
+        "assets/local-demo/content/needle-quay/companions/nikolas_lod2_Hips_246625032b88.mesh",
+        "assets/local-demo/content/needle-quay/companions/nikolas_lod2_LeftFoot_7d1ba98d53b8.mesh",
+        "assets/local-demo/content/needle-quay/companions/nikolas_lod2_LeftHand_8575a950a955.mesh",
+        "assets/local-demo/content/needle-quay/companions/nikolas_lod2_LeftLowerArm_f4b5ab863fe6.mesh",
+        "assets/local-demo/content/needle-quay/companions/nikolas_lod2_LeftLowerLeg_5701a3cc43d0.mesh",
+        "assets/local-demo/content/needle-quay/companions/nikolas_lod2_LeftUpperArm_4c22b11605d9.mesh",
+        "assets/local-demo/content/needle-quay/companions/nikolas_lod2_LeftUpperLeg_fcac5887807f.mesh",
+        "assets/local-demo/content/needle-quay/companions/nikolas_lod2_RightFoot_bab37ff2ed77.mesh",
+        "assets/local-demo/content/needle-quay/companions/nikolas_lod2_RightHand_4fc5c001509b.mesh",
+        "assets/local-demo/content/needle-quay/companions/nikolas_lod2_RightLowerArm_d8ac3e8d97c0.mesh",
+        "assets/local-demo/content/needle-quay/companions/nikolas_lod2_RightLowerLeg_0ad31ea92ffd.mesh",
+        "assets/local-demo/content/needle-quay/companions/nikolas_lod2_RightUpperArm_b13ffc8bbe69.mesh",
+        "assets/local-demo/content/needle-quay/companions/nikolas_lod2_RightUpperLeg_11edeb47b243.mesh",
+        "assets/local-demo/content/needle-quay/companions/nikolas_lod2_Spine_29702024b28d.mesh"
+      ],
+      "rig_manifest": {
+        "joints": [
+          {
+            "name": "Root",
+            "parent": null
+          },
+          {
+            "name": "Hips",
+            "parent": "Root"
+          },
+          {
+            "name": "Spine",
+            "parent": "Hips"
+          },
+          {
+            "name": "Head",
+            "parent": "Spine"
+          },
+          {
+            "name": "LeftUpperArm",
+            "parent": "Spine"
+          },
+          {
+            "name": "LeftLowerArm",
+            "parent": "LeftUpperArm"
+          },
+          {
+            "name": "LeftHand",
+            "parent": "LeftLowerArm"
+          },
+          {
+            "name": "LeftUpperLeg",
+            "parent": "Hips"
+          },
+          {
+            "name": "LeftLowerLeg",
+            "parent": "LeftUpperLeg"
+          },
+          {
+            "name": "LeftFoot",
+            "parent": "LeftLowerLeg"
+          },
+          {
+            "name": "RightUpperArm",
+            "parent": "Spine"
+          },
+          {
+            "name": "RightLowerArm",
+            "parent": "RightUpperArm"
+          },
+          {
+            "name": "RightHand",
+            "parent": "RightLowerArm"
+          },
+          {
+            "name": "RightUpperLeg",
+            "parent": "Hips"
+          },
+          {
+            "name": "RightLowerLeg",
+            "parent": "RightUpperLeg"
+          },
+          {
+            "name": "RightFoot",
+            "parent": "RightLowerLeg"
+          }
+        ],
+        "source_actions": [
+          "idle",
+          "idle_listen",
+          "walk",
+          "run",
+          "point",
+          "kneel",
+          "think",
+          "celebrate",
+          "wave",
+          "music_bob"
+        ],
+        "runtime_binding": "rigid-part procedural counterpart; no uploaded animation IDs"
+      },
+      "material_manifest": [
+        {
+          "name": "NIKOLAS_MatteAtlas",
+          "base_color_image_size": [
+            512,
+            512
+          ],
+          "atlas_sha256": "abab97f9762951e9bf5dae4995ebf8e15f6e74dadddb91a658f2214369326dc2"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"jsonrpc": "2.0", "id": 2, "result": {"content": [{"type": "text", "text": "{\"LocalArtLoaded\":74,\"LocalArtTotal\":74,\"LocalPBRFailed\":0,\"LocalPBRReady\":true,\"LocalPBRLoadComplete\":true}"}], "isError": false}}

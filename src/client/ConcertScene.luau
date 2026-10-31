@@ -1,5 +1,6 @@
 -- Personal temporary crowd stand-ins reuse H04; no imported NPC art claim.
 local Theme = require(game.ReplicatedStorage.Shared.Theme)
+local Transport = require(game.ReplicatedStorage.Shared.MusicTransport)
 local Scene = {}
 Scene.__index = Scene
 
@@ -9,6 +10,7 @@ end
 
 function Scene:update(state)
     self.playback = state and state.playback
+    self.paused = state and state.paused
     self.reaction = if state then state.reaction else 0
     if not state or (not state.open and state.checkpoint == 0) then
         self:destroy()
@@ -88,13 +90,19 @@ function Scene:update(state)
 end
 
 function Scene:step(effects)
-    local t = if self.playback
-        then (workspace:GetServerTimeNow() - self.playback.startedAt)
-            * self.playback.pattern.bpm
-            / 60
-            * math.pi
-            * 2
-        else os.clock() * 3
+    local t
+    if self.playback then
+        local cursor = Transport.cursor(
+            self.playback.schedule,
+            math.max(0, workspace:GetServerTimeNow() - self.playback.startedAt)
+        )
+        self.beatPhase = (cursor.tick or 0) / 960 * math.pi * 2
+        t = self.beatPhase
+    elseif self.paused then
+        t = self.beatPhase or 0
+    else
+        t = os.clock() * 3
+    end
     for index, actor in self.actors do
         if actor.model.Parent then
             local move = CFrame.identity

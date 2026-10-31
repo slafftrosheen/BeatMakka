@@ -1,0 +1,977 @@
+{
+  "schema": 1,
+  "retired_musical_ids": 179,
+  "retired_kit_count": 11,
+  "removed_repository_package_files": [
+    "audio/bass_c.wav",
+    "audio/bass_eb.wav",
+    "audio/bass_g.wav",
+    "audio/bell.wav",
+    "audio/chord.wav",
+    "audio/clap.wav",
+    "audio/closed_hat.wav",
+    "audio/high_tom.wav",
+    "audio/kick.wav",
+    "audio/low_tom.wav",
+    "audio/metal_hit.wav",
+    "audio/open_hat.wav",
+    "audio/pluck.wav",
+    "audio/rim.wav",
+    "audio/robot_chirp.wav",
+    "audio/shaker.wav",
+    "audio/snare.wav",
+    "audio/style.dance.01.wav",
+    "audio/style.dance.02.wav",
+    "audio/style.dance.03.wav",
+    "audio/style.dance.04.wav",
+    "audio/style.dance.05.wav",
+    "audio/style.dance.06.wav",
+    "audio/style.dance.07.wav",
+    "audio/style.dance.08.wav",
+    "audio/style.dance.09.wav",
+    "audio/style.dance.10.wav",
+    "audio/style.dance.11.wav",
+    "audio/style.dance.12.wav",
+    "audio/style.dance.13.wav",
+    "audio/style.dance.14.wav",
+    "audio/style.dance.15.wav",
+    "audio/style.dance.16.wav",
+    "audio/style.grunge.01.wav",
+    "audio/style.grunge.02.wav",
+    "audio/style.grunge.03.wav",
+    "audio/style.grunge.04.wav",
+    "audio/style.grunge.05.wav",
+    "audio/style.grunge.06.wav",
+    "audio/style.grunge.07.wav",
+    "audio/style.grunge.08.wav",
+    "audio/style.grunge.09.wav",
+    "audio/style.grunge.10.wav",
+    "audio/style.grunge.11.wav",
+    "audio/style.grunge.12.wav",
+    "audio/style.grunge.13.wav",
+    "audio/style.grunge.14.wav",
+    "audio/style.grunge.15.wav",
+    "audio/style.grunge.16.wav",
+    "audio/style.hardtrance.01.wav",
+    "audio/style.hardtrance.02.wav",
+    "audio/style.hardtrance.03.wav",
+    "audio/style.hardtrance.04.wav",
+    "audio/style.hardtrance.05.wav",
+    "audio/style.hardtrance.06.wav",
+    "audio/style.hardtrance.07.wav",
+    "audio/style.hardtrance.08.wav",
+    "audio/style.hardtrance.09.wav",
+    "audio/style.hardtrance.10.wav",
+    "audio/style.hardtrance.11.wav",
+    "audio/style.hardtrance.12.wav",
+    "audio/style.hardtrance.13.wav",
+    "audio/style.hardtrance.14.wav",
+    "audio/style.hardtrance.15.wav",
+    "audio/style.hardtrance.16.wav",
+    "audio/style.hiphop.01.wav",
+    "audio/style.hiphop.02.wav",
+    "audio/style.hiphop.03.wav",
+    "audio/style.hiphop.04.wav",
+    "audio/style.hiphop.05.wav",
+    "audio/style.hiphop.06.wav",
+    "audio/style.hiphop.07.wav",
+    "audio/style.hiphop.08.wav",
+    "audio/style.hiphop.09.wav",
+    "audio/style.hiphop.10.wav",
+    "audio/style.hiphop.11.wav",
+    "audio/style.hiphop.12.wav",
+    "audio/style.hiphop.13.wav",
+    "audio/style.hiphop.14.wav",
+    "audio/style.hiphop.15.wav",
+    "audio/style.hiphop.16.wav",
+    "audio/style.industrial.01.wav",
+    "audio/style.industrial.02.wav",
+    "audio/style.industrial.03.wav",
+    "audio/style.industrial.04.wav",
+    "audio/style.industrial.05.wav",
+    "audio/style.industrial.06.wav",
+    "audio/style.industrial.07.wav",
+    "audio/style.industrial.08.wav",
+    "audio/style.industrial.09.wav",
+    "audio/style.industrial.10.wav",
+    "audio/style.industrial.11.wav",
+    "audio/style.industrial.12.wav",
+    "audio/style.industrial.13.wav",
+    "audio/style.industrial.14.wav",
+    "audio/style.industrial.15.wav",
+    "audio/style.industrial.16.wav",
+    "audio/style.pop.01.wav",
+    "audio/style.pop.02.wav",
+    "audio/style.pop.03.wav",
+    "audio/style.pop.04.wav",
+    "audio/style.pop.05.wav",
+    "audio/style.pop.06.wav",
+    "audio/style.pop.07.wav",
+    "audio/style.pop.08.wav",
+    "audio/style.pop.09.wav",
+    "audio/style.pop.10.wav",
+    "audio/style.pop.11.wav",
+    "audio/style.pop.12.wav",
+    "audio/style.pop.13.wav",
+    "audio/style.pop.14.wav",
+    "audio/style.pop.15.wav",
+    "audio/style.pop.16.wav",
+    "audio/style.reggae.01.wav",
+    "audio/style.reggae.02.wav",
+    "audio/style.reggae.03.wav",
+    "audio/style.reggae.04.wav",
+    "audio/style.reggae.05.wav",
+    "audio/style.reggae.06.wav",
+    "audio/style.reggae.07.wav",
+    "audio/style.reggae.08.wav",
+    "audio/style.reggae.09.wav",
+    "audio/style.reggae.10.wav",
+    "audio/style.reggae.11.wav",
+    "audio/style.reggae.12.wav",
+    "audio/style.reggae.13.wav",
+    "audio/style.reggae.14.wav",
+    "audio/style.reggae.15.wav",
+    "audio/style.reggae.16.wav",
+    "audio/style.techno.01.wav",
+    "audio/style.techno.02.wav",
+    "audio/style.techno.03.wav",
+    "audio/style.techno.04.wav",
+    "audio/style.techno.05.wav",
+    "audio/style.techno.06.wav",
+    "audio/style.techno.07.wav",
+    "audio/style.techno.08.wav",
+    "audio/style.techno.09.wav",
+    "audio/style.techno.10.wav",
+    "audio/style.techno.11.wav",
+    "audio/style.techno.12.wav",
+    "audio/style.techno.13.wav",
+    "audio/style.techno.14.wav",
+    "audio/style.techno.15.wav",
+    "audio/style.techno.16.wav",
+    "audio/style.trance.01.wav",
+    "audio/style.trance.02.wav",
+    "audio/style.trance.03.wav",
+    "audio/style.trance.04.wav",
+    "audio/style.trance.05.wav",
+    "audio/style.trance.06.wav",
+    "audio/style.trance.07.wav",
+    "audio/style.trance.08.wav",
+    "audio/style.trance.09.wav",
+    "audio/style.trance.10.wav",
+    "audio/style.trance.11.wav",
+    "audio/style.trance.12.wav",
+    "audio/style.trance.13.wav",
+    "audio/style.trance.14.wav",
+    "audio/style.trance.15.wav",
+    "audio/style.trance.16.wav",
+    "audio/style.triphop.01.wav",
+    "audio/style.triphop.02.wav",
+    "audio/style.triphop.03.wav",
+    "audio/style.triphop.04.wav",
+    "audio/style.triphop.05.wav",
+    "audio/style.triphop.06.wav",
+    "audio/style.triphop.07.wav",
+    "audio/style.triphop.08.wav",
+    "audio/style.triphop.09.wav",
+    "audio/style.triphop.10.wav",
+    "audio/style.triphop.11.wav",
+    "audio/style.triphop.12.wav",
+    "audio/style.triphop.13.wav",
+    "audio/style.triphop.14.wav",
+    "audio/style.triphop.15.wav",
+    "audio/style.triphop.16.wav",
+    "audio/tambourine.wav",
+    "audio/vent_thump.wav"
+  ],
+  "retained_modified_payloads": [],
+  "installed_studio_audit": [
+    {
+      "studio": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14",
+      "retired_files": [
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\bass_c.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\bass_eb.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\bass_g.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\bell.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\chord.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\clap.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\closed_hat.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\high_tom.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\kick.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\low_tom.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\metal_hit.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\open_hat.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\pluck.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\rim.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\robot_chirp.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\shaker.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\snare.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.dance.01.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.dance.02.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.dance.03.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.dance.04.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.dance.05.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.dance.06.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.dance.07.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.dance.08.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.dance.09.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.dance.10.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.dance.11.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.dance.12.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.dance.13.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.dance.14.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.dance.15.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.dance.16.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.grunge.01.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.grunge.02.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.grunge.03.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.grunge.04.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.grunge.05.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.grunge.06.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.grunge.07.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.grunge.08.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.grunge.09.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.grunge.10.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.grunge.11.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.grunge.12.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.grunge.13.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.grunge.14.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.grunge.15.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.grunge.16.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.hardtrance.01.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.hardtrance.02.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.hardtrance.03.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.hardtrance.04.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.hardtrance.05.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.hardtrance.06.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.hardtrance.07.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.hardtrance.08.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.hardtrance.09.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.hardtrance.10.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.hardtrance.11.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.hardtrance.12.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.hardtrance.13.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.hardtrance.14.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.hardtrance.15.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.hardtrance.16.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.hiphop.01.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.hiphop.02.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.hiphop.03.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.hiphop.04.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.hiphop.05.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.hiphop.06.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.hiphop.07.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.hiphop.08.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.hiphop.09.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.hiphop.10.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.hiphop.11.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.hiphop.12.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.hiphop.13.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.hiphop.14.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.hiphop.15.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.hiphop.16.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.industrial.01.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.industrial.02.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.industrial.03.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.industrial.04.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.industrial.05.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.industrial.06.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.industrial.07.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.industrial.08.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.industrial.09.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.industrial.10.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.industrial.11.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.industrial.12.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.industrial.13.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.industrial.14.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.industrial.15.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.industrial.16.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.pop.01.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.pop.02.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.pop.03.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.pop.04.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.pop.05.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.pop.06.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.pop.07.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.pop.08.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.pop.09.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.pop.10.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.pop.11.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.pop.12.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.pop.13.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.pop.14.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.pop.15.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.pop.16.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.reggae.01.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.reggae.02.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.reggae.03.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.reggae.04.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.reggae.05.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.reggae.06.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.reggae.07.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.reggae.08.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.reggae.09.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.reggae.10.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.reggae.11.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.reggae.12.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.reggae.13.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.reggae.14.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.reggae.15.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.reggae.16.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.techno.01.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.techno.02.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.techno.03.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.techno.04.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.techno.05.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.techno.06.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.techno.07.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.techno.08.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.techno.09.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.techno.10.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.techno.11.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.techno.12.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.techno.13.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.techno.14.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.techno.15.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.techno.16.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.trance.01.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.trance.02.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.trance.03.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.trance.04.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.trance.05.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.trance.06.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.trance.07.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.trance.08.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.trance.09.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.trance.10.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.trance.11.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.trance.12.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.trance.13.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.trance.14.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.trance.15.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.trance.16.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.triphop.01.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.triphop.02.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.triphop.03.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.triphop.04.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.triphop.05.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.triphop.06.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.triphop.07.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.triphop.08.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.triphop.09.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.triphop.10.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.triphop.11.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.triphop.12.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.triphop.13.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.triphop.14.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.triphop.15.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\style.triphop.16.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\tambourine.wav",
+          "sha256_matches_old_manifest": true
+        },
+        {
+          "file": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Versions\\version-7062aec9dbe74b14\\content\\needle-quay\\audio\\vent_thump.wav",
+          "sha256_matches_old_manifest": true
+        }
+      ]
+    }
+  ],
+  "installed_files_changed": 0,
+  "active_nonmusical_ids": [
+    "ui_tap",
+    "ui_collect",
+    "ui_save",
+    "ui_error",
+    "waterfront"
+  ],
+  "source_audio_deleted": 0,
+  "archive_preimages": [
+    {
+      "file": "assets/archive/audio-retirement-handoff-v3/src/shared/SampleCatalog.luau",
+      "sha256": "ef1e1aac2ec5b9ddbe99033b82e0acdf407baf310ba835b140fa9f1ecca4412e"
+    },
+    {
+      "file": "assets/archive/audio-retirement-handoff-v3/src/shared/StylePacks.luau",
+      "sha256": "37bbf2262fa5cc28d3764408c26b93f5a516cd2413c3cbfa9fc88fc91c41a100"
+    },
+    {
+      "file": "assets/archive/audio-retirement-handoff-v3/src/shared/SampleWaveforms.luau",
+      "sha256": "4fa8dff0f9590a4b619aeed594f623bddfb50863ca138763056cb86a362dc470"
+    },
+    {
+      "file": "assets/archive/audio-retirement-handoff-v3/src/shared/ContentIds.luau",
+      "sha256": "5d348bfa3c1f4764b2f7422a59120ef7582fc68de5571ea0546032a37f468134"
+    },
+    {
+      "file": "assets/archive/audio-retirement-handoff-v3/src/shared/LocalContent.luau",
+      "sha256": "cf42e18044a7b2be878f6f8dd67d46cb8944055cd01c600fd4c04cfb7f7755c8"
+    },
+    {
+      "file": "assets/archive/audio-retirement-handoff-v3/data/content-ids.json",
+      "sha256": "747fd76cc202b1892912d82a51ac5081e05bb9c278dfb6289549e20244420da9"
+    },
+    {
+      "file": "assets/archive/audio-retirement-handoff-v3/data/style-upload-manifest.json",
+      "sha256": "1c87aa640b3087b1c482ac7978937013b05b7291cbe46a9191703c383bfd0ecf"
+    },
+    {
+      "file": "assets/archive/audio-retirement-handoff-v3/data/audio-source-revisions.json",
+      "sha256": "70082a328d938ae3e66eccc854dbeeb7f366b7a33a250107a448dc073cc5da04"
+    },
+    {
+      "file": "assets/archive/audio-retirement-handoff-v3/assets/production/upload-manifest.json",
+      "sha256": "8adb669c64cd835b457f85da3de16e2806dd1de96c7fa11c7b264012b4ffb238"
+    },
+    {
+      "file": "assets/archive/audio-retirement-handoff-v3/assets/production/audio/manifest.json",
+      "sha256": "d32f146c055a939059cab2b7a90018d8ff2c5dc335229b4a614c7d6ee346be34"
+    },
+    {
+      "file": "assets/archive/audio-retirement-handoff-v3/assets/candidates/audio/style-starters-v1/manifest.json",
+      "sha256": "006cfbd88ec2351697f18410089a75a1277ab646ec5a26d1b245c1587ce6455f"
+    },
+    {
+      "file": "assets/archive/audio-retirement-handoff-v3/assets/candidates/audio/quay-found-v1/manifest.json",
+      "sha256": "74f0def0aca717b03290afac33785765975da262e2db3b769566282d441d0eaf"
+    },
+    {
+      "file": "assets/archive/audio-retirement-handoff-v3/assets/local-demo/install-manifest.json",
+      "sha256": "853b35c77ce9b83248447c1fffe10342b123983523dc02c17924a19ba1e26bf8"
+    },
+    {
+      "file": "assets/archive/audio-retirement-handoff-v3/assets/local-demo/content-provenance.json",
+      "sha256": "1973fbb759d1b8d0913fa9ba82eb483caccf730fef988274e2f96392873b8f21"
+    }
+  ]
+}

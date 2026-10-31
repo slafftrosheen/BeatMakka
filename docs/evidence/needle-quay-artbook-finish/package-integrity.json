@@ -1,0 +1,23 @@
+{
+  "zip_crc": "PASS",
+  "content_hashes_verified": 931,
+  "source_modules_match": [
+    "src/client/CompanionFollower.luau",
+    "src/client/DeviceAppearance.luau",
+    "src/client/LocalMaterials.luau",
+    "src/client/LocalPBRPlanes.luau",
+    "src/client/SuppliedCompanionSkin.luau",
+    "src/server/LocalArtLibrary.luau",
+    "src/server/NeedleQuayDemoWorld.luau",
+    "src/server/QuayAtmosphere.luau",
+    "src/server/QuayStreetScene.luau",
+    "src/server/QuayVista.luau",
+    "src/shared/LocalContent.luau",
+    "src/shared/LocalTextureBudget.luau",
+    "src/shared/QuayArchitectureCatalog.luau"
+  ],
+  "readme_matches": true,
+  "place_matches": true,
+  "zip_sha256": "9fc2fa9276f081f94c0d98383b81cd2febe7254a37ec07c89220d65d660dad39",
+  "uploads": 0
+}

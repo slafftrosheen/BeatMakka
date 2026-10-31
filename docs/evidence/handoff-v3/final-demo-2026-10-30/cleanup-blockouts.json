@@ -1,0 +1,49 @@
+{
+  "scope": "Three named obsolete generated blockout places and their proven stale locks; canonical asset sources preserved",
+  "items": [
+    {
+      "source": "output/needle-quay/NeedleQuayEnvironmentBlockout.rbxlx",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-final-v3\\blockouts-20261030T160703Z-da28f9d9\\output\\needle-quay\\NeedleQuayEnvironmentBlockout.rbxlx",
+      "bytes": 418029,
+      "sha256": "a21049b5196bc9d457bd47177af2b61b47be3e505d08b9af02ff5de8b09f6d3c",
+      "state": "archived_verified"
+    },
+    {
+      "source": "output/needle-quay/NeedleQuayEnvironmentBlockout.rbxlx.lock",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-final-v3\\blockouts-20261030T160703Z-da28f9d9\\output\\needle-quay\\NeedleQuayEnvironmentBlockout.rbxlx.lock",
+      "bytes": 70,
+      "sha256": "a73a1b0f0667cec099077f561025e5824c202bab46c2297f92f0aa97f9362603",
+      "state": "archived_verified"
+    },
+    {
+      "source": "output/needle-quay/NeedleQuayEnvironmentBlockout-v1.rbxlx",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-final-v3\\blockouts-20261030T160703Z-da28f9d9\\output\\needle-quay\\NeedleQuayEnvironmentBlockout-v1.rbxlx",
+      "bytes": 418029,
+      "sha256": "a21049b5196bc9d457bd47177af2b61b47be3e505d08b9af02ff5de8b09f6d3c",
+      "state": "archived_verified"
+    },
+    {
+      "source": "output/needle-quay/NeedleQuayEnvironmentBlockout-v1.rbxlx.lock",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-final-v3\\blockouts-20261030T160703Z-da28f9d9\\output\\needle-quay\\NeedleQuayEnvironmentBlockout-v1.rbxlx.lock",
+      "bytes": 71,
+      "sha256": "546f572a73115c24f78a380f3d1c3d908623ee5a50b9c29c1d77d0b634aebf5f",
+      "state": "archived_verified"
+    },
+    {
+      "source": "output/needle-quay/NeedleQuayEnvironmentBlockout-approved-concepts.rbxlx",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-final-v3\\blockouts-20261030T160703Z-da28f9d9\\output\\needle-quay\\NeedleQuayEnvironmentBlockout-approved-concepts.rbxlx",
+      "bytes": 418528,
+      "sha256": "fe9b3910e9a5dda20d32503a11d49f6e5a56fa5ecd3b5e5740145b27fe2fbe1b",
+      "state": "archived_verified"
+    },
+    {
+      "source": "output/needle-quay/NeedleQuayEnvironmentBlockout-approved-concepts.rbxlx.lock",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-final-v3\\blockouts-20261030T160703Z-da28f9d9\\output\\needle-quay\\NeedleQuayEnvironmentBlockout-approved-concepts.rbxlx.lock",
+      "bytes": 70,
+      "sha256": "dd26df97f3138bf66de7949ae8db1a0514803a6c88987c26e31173e30a08f8d4",
+      "state": "archived_verified"
+    }
+  ],
+  "archived_bytes": 1254797,
+  "deleted_bytes": 0
+}

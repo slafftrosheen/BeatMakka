@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-29",
+  "provider": "ElevenLabs connected plugin",
+  "status": "submitted; completion tracked by native speech views",
+  "runtimeIntegrated": false,
+  "robloxUploaded": false,
+  "creditsReported": 332,
+  "runs": [
+    {
+      "companion": "alissia",
+      "voiceId": "cgSgspJ2msm6clMCkdW9",
+      "model": "eleven_v4",
+      "prompt": "[warmly] Your turn! [pause] [pleased] Nice one! [pause] [gently] Over here.",
+      "flowId": "1RY5OElGIDhtXzuq8TNa",
+      "nodeId": "LYPIO9fcUZG79nw6nsqU",
+      "sessionIds": [
+        "h8SIuofIIp5K83QZfMzn",
+        "96HwTg9mjBGY4MOB39Rb"
+      ],
+      "generationIds": [
+        "Kfsmho03aSWjyhr1Wztn",
+        "sufdRUrIv26nAlcsw0Es"
+      ]
+    },
+    {
+      "companion": "nikolas",
+      "voiceId": "GDSfkP85ZRhua7ttCTmO",
+      "model": "eleven_v4",
+      "prompt": "[encouraging] You got this. [pause] [pleased] That's the groove! [pause] [warmly] This way.",
+      "flowId": "cRsB4mp7TwxTsSLsY7CE",
+      "nodeId": "nzEfaLI29E1Ifkls4I7R",
+      "sessionIds": [
+        "qAbeOBi987TErHpWYNgr",
+        "IeuAly07v0sLroyzRgzJ"
+      ],
+      "generationIds": [
+        "A25CIPw73nzdOXvdsS40",
+        "bzOsBeyO8AKHQOOYG9Dv"
+      ]
+    }
+  ]
+}

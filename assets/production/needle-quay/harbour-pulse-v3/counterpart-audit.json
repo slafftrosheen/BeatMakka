@@ -1,0 +1,92 @@
+{
+  "searched_roots": [
+    "assets/supplied",
+    "assets/archive",
+    "C:/Users/slavd/Downloads/NeedleQuay-Codex-Handoff-v3-Complete"
+  ],
+  "archives": [
+    {
+      "archive": "assets/supplied/needle-quay-handoff-v3/Needle_Quay_64_OneShot_Pack_174BPM.zip",
+      "audio_members": 64,
+      "counterpart_matches": [
+        {
+          "member": "NeedleQuay_Pack/Drums/01_Drop_Kick_Main.wav",
+          "sha256": "c0ca856d027e422dad450c8221d37c6efd7c1bb0172560ced285d9d7ebc2ef0f",
+          "all_zero": true
+        },
+        {
+          "member": "NeedleQuay_Pack/Drums/09_Closed_DnB_Hat_1.wav",
+          "sha256": "8f9d3ef27b13687c1e9c50e1455ffecc551bea6fef91a89cde4f3eefc9b91cd7",
+          "all_zero": true
+        },
+        {
+          "member": "NeedleQuay_Pack/Drums/10_Closed_DnB_Hat_2.wav",
+          "sha256": "8f9d3ef27b13687c1e9c50e1455ffecc551bea6fef91a89cde4f3eefc9b91cd7",
+          "all_zero": true
+        },
+        {
+          "member": "NeedleQuay_Pack/Bass/17_Drop_Sub_D1.wav",
+          "sha256": "af2484b7110124e5231aa21efc6bf1476e28afe383a25fda916406825ddfe79a",
+          "all_zero": true
+        },
+        {
+          "member": "NeedleQuay_Pack/Bass/30_Mid_Reese_Stab_2.wav",
+          "sha256": "477aee43717ac57688a3f849c7f3c38bc4a6ba6862c6202ac3ff93ba16e40e79",
+          "all_zero": true
+        },
+        {
+          "member": "NeedleQuay_Pack/Bass/31_Sub_Glide_Low.wav",
+          "sha256": "afe971ae2e9862b4254a63cd0992a31fc399cbdb25b4f572554d3edc63093072",
+          "all_zero": true
+        },
+        {
+          "member": "NeedleQuay_Pack/Bass/32_Sustained_Bass_Tail.wav",
+          "sha256": "d3eb86fddd3fcfe0d29215968da71280cd816fc2fbd2d485a2628c98e6946675",
+          "all_zero": true
+        }
+      ]
+    },
+    {
+      "archive": "C:/Users/slavd/Downloads/NeedleQuay-Codex-Handoff-v3-Complete/Needle_Quay_64_OneShot_Pack_174BPM.zip",
+      "audio_members": 64,
+      "counterpart_matches": [
+        {
+          "member": "NeedleQuay_Pack/Drums/01_Drop_Kick_Main.wav",
+          "sha256": "c0ca856d027e422dad450c8221d37c6efd7c1bb0172560ced285d9d7ebc2ef0f",
+          "all_zero": true
+        },
+        {
+          "member": "NeedleQuay_Pack/Drums/09_Closed_DnB_Hat_1.wav",
+          "sha256": "8f9d3ef27b13687c1e9c50e1455ffecc551bea6fef91a89cde4f3eefc9b91cd7",
+          "all_zero": true
+        },
+        {
+          "member": "NeedleQuay_Pack/Drums/10_Closed_DnB_Hat_2.wav",
+          "sha256": "8f9d3ef27b13687c1e9c50e1455ffecc551bea6fef91a89cde4f3eefc9b91cd7",
+          "all_zero": true
+        },
+        {
+          "member": "NeedleQuay_Pack/Bass/17_Drop_Sub_D1.wav",
+          "sha256": "af2484b7110124e5231aa21efc6bf1476e28afe383a25fda916406825ddfe79a",
+          "all_zero": true
+        },
+        {
+          "member": "NeedleQuay_Pack/Bass/30_Mid_Reese_Stab_2.wav",
+          "sha256": "477aee43717ac57688a3f849c7f3c38bc4a6ba6862c6202ac3ff93ba16e40e79",
+          "all_zero": true
+        },
+        {
+          "member": "NeedleQuay_Pack/Bass/31_Sub_Glide_Low.wav",
+          "sha256": "afe971ae2e9862b4254a63cd0992a31fc399cbdb25b4f572554d3edc63093072",
+          "all_zero": true
+        },
+        {
+          "member": "NeedleQuay_Pack/Bass/32_Sustained_Bass_Tail.wav",
+          "sha256": "d3eb86fddd3fcfe0d29215968da71280cd816fc2fbd2d485a2628c98e6946675",
+          "all_zero": true
+        }
+      ]
+    }
+  ],
+  "recoverable_counterparts": 0
+}

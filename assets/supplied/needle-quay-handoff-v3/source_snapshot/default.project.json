@@ -1,0 +1,49 @@
+{
+  "name": "FrequencyZero",
+  "tree": {
+    "$className": "DataModel",
+    "Lighting": {
+      "$className": "Lighting",
+      "$properties": { "Technology": "Future", "LightingStyle": "Realistic", "PrioritizeLightingQuality": true }
+    },
+    "Workspace": {
+      "$ignoreUnknownInstances": true,
+      "$properties": { "StreamingEnabled": true }
+    },
+    "ServerStorage": {
+      "$ignoreUnknownInstances": true,
+      "AssetLibrary": {
+        "$className": "Folder",
+        "$ignoreUnknownInstances": true
+      }
+    },
+    "ReplicatedStorage": {
+      "AppearanceLibrary": {
+        "$path": "assets/runtime/AppearanceLibrary.rbxmx"
+      },
+      "UiImageLibrary": {
+        "$className": "Folder",
+        "$ignoreUnknownInstances": true
+      },
+      "Shared": {
+        "$path": "src/shared"
+      }
+    },
+    "ServerScriptService": {
+      "Server": {
+        "$path": "src/server"
+      }
+    },
+    "StarterPlayer": {
+      "StarterPlayerScripts": {
+        "LocalContentLoading": { "$path": "src/local-loading.client.luau" },
+        "Client": {
+          "$path": "src/client"
+        }
+      }
+    },
+    "StarterGui": {
+      "$properties": { "ScreenOrientation": "Sensor" }
+    }
+  }
+}

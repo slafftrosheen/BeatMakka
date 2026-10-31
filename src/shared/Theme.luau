@@ -9,6 +9,8 @@ local Theme = {
     Graphite = Color3.fromRGB(44, 48, 49),
     Ink = Color3.fromRGB(22, 35, 34),
     White = Color3.fromRGB(250, 244, 230),
+    Paper = Color3.fromRGB(245, 238, 220),
+    Screen = Color3.fromRGB(16, 27, 26),
     Font = Enum.Font.Gotham,
     Bold = Enum.Font.GothamBold,
 }

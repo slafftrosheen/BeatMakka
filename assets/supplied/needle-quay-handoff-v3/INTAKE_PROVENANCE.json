@@ -1,0 +1,740 @@
+{
+  "schemaVersion": 1,
+  "source": "C:\\Users\\slavd\\Downloads\\NeedleQuay-Codex-Handoff-v3-Complete",
+  "copiedOn": "2026-10-30",
+  "stage": "supplied-unapproved",
+  "backup": "C:\\Users\\slavd\\.codex\\backups\\BeatMaka\\handoff-v3-20261030-141720",
+  "files": [
+    {
+      "path": "CODEX_UPDATE_V3.md",
+      "bytes": 4920,
+      "sha256": "bacd1cbecad6dca6d2fabe3f8d597ef4d1b17228492e8204a78d99bf0e344910"
+    },
+    {
+      "path": "EXPERIENCE_SCOPE.md",
+      "bytes": 12046,
+      "sha256": "57d053619e4a08fc7999434a290ec0a88abf61b0197b933ef38ea171b134ddef"
+    },
+    {
+      "path": "FIRST_PACK_64_SLOTS.json",
+      "bytes": 61894,
+      "sha256": "b86baa6151b97e557662e0e094ac66452d1a92336f7af368f69b93d7ba7920b9"
+    },
+    {
+      "path": "FIRST_PACK_SPEC.md",
+      "bytes": 13221,
+      "sha256": "45e71805240027e38007dcad595a7bbb5cbaa54e1556b280347db66eb2f253c2"
+    },
+    {
+      "path": "LOCAL_AGENT_PROMPT.txt",
+      "bytes": 1859,
+      "sha256": "6929714d1b574daa80b095d1e4a870dd4e59c1ae01f16359a4681a230e8973c8"
+    },
+    {
+      "path": "LOCAL_AGENT_TASK.md",
+      "bytes": 10299,
+      "sha256": "142c2202f587ca1c29a98556b473b02a7c7056f3c7489def968cca9007564f7d"
+    },
+    {
+      "path": "MANIFEST.json",
+      "bytes": 28884,
+      "sha256": "e6531f600a6e4f9e4954687a28b27bddd06b3d840c8061daab8db7f719c217db"
+    },
+    {
+      "path": "merge/base/README.md",
+      "bytes": 6284,
+      "sha256": "a0b8c9e5b5e2a5c59195da9c19d746d54f7337784389046fcc3ea7d8096d4066"
+    },
+    {
+      "path": "merge/base/src/client/QuayDemoView.luau",
+      "bytes": 26318,
+      "sha256": "cadb1f51f3dbd7cb682e78ba5a7cd751c24c520caf492ae5883718537fda29db"
+    },
+    {
+      "path": "merge/base/src/server/MusicService.luau",
+      "bytes": 24651,
+      "sha256": "dc46ba03dc0917c74af560c2dc1a038d0a12c292a7b5520b79068bfd5e34696e"
+    },
+    {
+      "path": "merge/base/src/server/ProfileStore.luau",
+      "bytes": 7515,
+      "sha256": "d2e3c5919d931bdee30bc45d1aeb161526d7e8667c02f4d113b5b27a4a8fd66c"
+    },
+    {
+      "path": "merge/base/src/server/QuayDemoService.luau",
+      "bytes": 20868,
+      "sha256": "bf7fb6ac53df70831214fba329c03f56cca989d93cf050f75311b32ca3a0e0a3"
+    },
+    {
+      "path": "merge/BASELINE.json",
+      "bytes": 4495,
+      "sha256": "aa3ccb531b32ce563faccdee76f9192f1c2887b6105d22353e6ad83fd23c1e83"
+    },
+    {
+      "path": "merge/NeedleQuay-Experience.patch",
+      "bytes": 225272,
+      "sha256": "b2d8adb8bb60891e1ec26ef78d5798ef79fa27e1cc5126354a8f0d8a81411400"
+    },
+    {
+      "path": "MPC_PROJECT_EXAMPLE.json",
+      "bytes": 77072,
+      "sha256": "36bdbded240e90126af3f39ea502942ee3ca6c97cf080d35ea6891a0f0dec84e"
+    },
+    {
+      "path": "MPC_WORKFLOW.md",
+      "bytes": 42167,
+      "sha256": "defff1a0ea6b65a7a1c85aa569a18c21099220caf27c9331812ec8d56833162c"
+    },
+    {
+      "path": "MPC_WORKFLOW_CONTRACT.json",
+      "bytes": 9003,
+      "sha256": "0cb17cf332d6d2b7f12d8b6ccbe8eaa4c8e86bcbc3b39e08376b8a740adcbdd4"
+    },
+    {
+      "path": "Needle Quay Waves.m4a",
+      "bytes": 3134154,
+      "sha256": "1b5f1bd9a500eaa07f4121bfdf115f8348fff0a6b11e47918d0964eb6f42443b"
+    },
+    {
+      "path": "Needle_Quay_64_OneShot_Pack_174BPM.zip",
+      "bytes": 10492340,
+      "sha256": "6cc62b98c3ba83d4c8f22783754cd537a0f803f97b0e6ca3728bb3991cb7a3ea"
+    },
+    {
+      "path": "reference/assets/candidates/audio/quay-found-v1/manifest.json",
+      "bytes": 28573,
+      "sha256": "74f0def0aca717b03290afac33785765975da262e2db3b769566282d441d0eaf"
+    },
+    {
+      "path": "reference/assets/candidates/audio/style-starters-v1/manifest.json",
+      "bytes": 288161,
+      "sha256": "006cfbd88ec2351697f18410089a75a1277ab646ec5a26d1b245c1587ce6455f"
+    },
+    {
+      "path": "reference/assets/local-demo/content-provenance.json",
+      "bytes": 70140,
+      "sha256": "08331aa14203b589d0b24f75202769523481055982c40e1ab261f231a5e9e609"
+    },
+    {
+      "path": "reference/assets/local-demo/install-manifest.json",
+      "bytes": 122264,
+      "sha256": "16cd0c1300f46bcb99d5d4ab433e097053c16394b39727c61939a7b3c0e559c8"
+    },
+    {
+      "path": "reference/assets/production/audio/manifest.json",
+      "bytes": 8534,
+      "sha256": "b08cbe169f8674f671a078aad72db9e878fcdcdecadd89f1258cdbebbc055157"
+    },
+    {
+      "path": "reference/assets/production/upload-manifest.json",
+      "bytes": 5554,
+      "sha256": "b17e00532217107a63b10979556d02b2d72488cbbbc4b3d5d7b3a5bb9db11b39"
+    },
+    {
+      "path": "reference/data/audio-source-revisions.json",
+      "bytes": 753,
+      "sha256": "a49b4c9e0a1baff48a4e8f7154439950ce10a70279d2f454618ed142749d566b"
+    },
+    {
+      "path": "reference/data/content-ids.example.json",
+      "bytes": 34,
+      "sha256": "ea3c14d53bd83c676caf6577875cea6e14e26ee2f71247643d5ff0633251ad52"
+    },
+    {
+      "path": "reference/data/content-ids.json",
+      "bytes": 4767,
+      "sha256": "747fd76cc202b1892912d82a51ac5081e05bb9c278dfb6289549e20244420da9"
+    },
+    {
+      "path": "reference/data/needle-quay-environment.v1.json",
+      "bytes": 90117,
+      "sha256": "89498b94c298127f7d4ec1d19189b89cd0d159f1a7bfed88bfcea8a0ef69ae90"
+    },
+    {
+      "path": "reference/data/style-upload-manifest.json",
+      "bytes": 54828,
+      "sha256": "9450903ca8b7d647e0dba5d2b3770352e99c1053b7b9ef54e83b033066e6ae13"
+    },
+    {
+      "path": "reference/data/world-districts.v1.json",
+      "bytes": 10474,
+      "sha256": "2fd360a85bd122802ad532edea940e59f31610918fecaba9a3e95f4245d67740"
+    },
+    {
+      "path": "reference/tools/build_content_sources.py",
+      "bytes": 19563,
+      "sha256": "5c1e1ba1f6515f678107a8e979e2d1b1f1cecb033b597d468b1a05f63a5d42a8"
+    },
+    {
+      "path": "reference/tools/build_sample_waveforms.py",
+      "bytes": 1061,
+      "sha256": "217939a0ce8c0e6e17aac3b1598dc1cb7c692c5fdd079b3264bf3210e76655aa"
+    },
+    {
+      "path": "reference/tools/build_style_auditions.py",
+      "bytes": 4853,
+      "sha256": "cf3f8da635790597ae5af088b8a428d8f0fc06e5061a9507c0bdea13906f12bf"
+    },
+    {
+      "path": "reference/tools/build_style_packs.py",
+      "bytes": 16006,
+      "sha256": "0dab950a5d1805bed8eab445cf21ecfd6cde23ce26401fa543593bb0dfe17e5b"
+    },
+    {
+      "path": "reference/tools/compile_needle_quay_register.py",
+      "bytes": 20466,
+      "sha256": "f71e921e21690e3eb94426ae39044f08daf4060f5e7064c63e306fffd06355b6"
+    },
+    {
+      "path": "reference/tools/configure_content.py",
+      "bytes": 7979,
+      "sha256": "032baf4a0bcb57f86801be4c16b750902fb177b0be104744fd90deb820324944"
+    },
+    {
+      "path": "reference/tools/install_local_demo_content.py",
+      "bytes": 1764,
+      "sha256": "2fe88b7b0ca5f79045c2dcc3433e71548e08ac228fe965abefc85b35b79c1d2c"
+    },
+    {
+      "path": "reference/tools/Launch-NeedleQuay.ps1",
+      "bytes": 2744,
+      "sha256": "33dac27916b2b1d02a1ffbcd89f4dd4ea3e37a1947f22ae7e3763174d155f0f8"
+    },
+    {
+      "path": "reference/tools/package_local_demo_content.py",
+      "bytes": 4355,
+      "sha256": "756b4b64c8f1303f2d7b770659ca5d6d1b10f7e03508a5fde52c84916895ac09"
+    },
+    {
+      "path": "reference/tools/package_needle_quay_demo.py",
+      "bytes": 1979,
+      "sha256": "30acdd0a79aa8d9ef0780e9e1c436284ea9abff31f5e8f137d7bb8bef1704c78"
+    },
+    {
+      "path": "reference/tools/project_style_packs.py",
+      "bytes": 2098,
+      "sha256": "559721bedda0d16397b6801dfc556c0567b5d2d3c875e44b67516a062b6714d6"
+    },
+    {
+      "path": "REMOVE_TEST_PACKS.md",
+      "bytes": 14827,
+      "sha256": "abbf98a2d0f402c2756baa1a0c0003989cb10bbc9609f97b4fd8266022c42350"
+    },
+    {
+      "path": "source_snapshot/AGENTS.md",
+      "bytes": 3721,
+      "sha256": "ff07523588fe95ee30f4b0a185e5b7ed18346d109a330a1fbc3e6bfeb70cea52"
+    },
+    {
+      "path": "source_snapshot/CODEX_START_HERE.md",
+      "bytes": 3222,
+      "sha256": "31a53f13c6ad7182d581723ba4ca8a320c284b1a424c83f6c10445857b5a2d84"
+    },
+    {
+      "path": "source_snapshot/default.project.json",
+      "bytes": 1211,
+      "sha256": "c0eae92f4a9893d71fe8eda79e68e4273fd23dea5eaae92e71a2897f16fc3bb5"
+    },
+    {
+      "path": "source_snapshot/docs/needle-quay/COMMERCE_SETUP.md",
+      "bytes": 10311,
+      "sha256": "2dbe368c8fec8b57907f20351345a3dd8bf695fe0118004c680cb92354cc9c22"
+    },
+    {
+      "path": "source_snapshot/docs/needle-quay/EXPERIENCE_IMPLEMENTATION_2026-10-30.md",
+      "bytes": 16444,
+      "sha256": "eed367ea0876e066eea5ba53929490f8d9ca7993ade9b6258a32536f30ae2ff7"
+    },
+    {
+      "path": "source_snapshot/docs/needle-quay/PLAYABLE_EXPERIENCE_BIBLE_2026-10-30.md",
+      "bytes": 41302,
+      "sha256": "71596f445b7b4190c936a4f880ffa412be13ccfe8393c8e56906ada9ace3b1b2"
+    },
+    {
+      "path": "source_snapshot/needle-quay.blockout.project.json",
+      "bytes": 455,
+      "sha256": "a4aec3defcab3dd4e425f88d2c9b4f87e0d9cef9b279d6256176ce3eb4c74c64"
+    },
+    {
+      "path": "source_snapshot/README.md",
+      "bytes": 7071,
+      "sha256": "5eb47be4602e2403a4e2c82f29f792542c002f2a2234b1c09169e7f77c36543b"
+    },
+    {
+      "path": "source_snapshot/rokit.toml",
+      "bytes": 329,
+      "sha256": "7ac5c71db04dfdf82ef9af41283d6ad9569fc7a29b3ab0b97ae0009e0dcd3930"
+    },
+    {
+      "path": "source_snapshot/src/client/AudioEngine.luau",
+      "bytes": 11379,
+      "sha256": "19615f564c21d7ccbb930db2165337c0f30ade4743b752ba708280262795bd45"
+    },
+    {
+      "path": "source_snapshot/src/client/BeatBookView.luau",
+      "bytes": 8553,
+      "sha256": "9bf7145bcf4382c26ca39b0ef8b5f3e6e34da4728777f5fb86c753a5f3a05e9c"
+    },
+    {
+      "path": "source_snapshot/src/client/CommandPolicy.luau",
+      "bytes": 751,
+      "sha256": "b98b6768615cced412e2eee867461c5451897f2e1a730668abca405d1b31bb56"
+    },
+    {
+      "path": "source_snapshot/src/client/ConcertScene.luau",
+      "bytes": 4941,
+      "sha256": "d30936941354f6633005727930541966209a42bc346a3ebc3c98284e404a2441"
+    },
+    {
+      "path": "source_snapshot/src/client/ConcertView.luau",
+      "bytes": 6024,
+      "sha256": "e079499be0ad89bfccff9499474021467864e9050d888d29a8de934f642d6df3"
+    },
+    {
+      "path": "source_snapshot/src/client/DeviceAppearance.luau",
+      "bytes": 7556,
+      "sha256": "cb0e8a765afc68c79f83d743e1a911d6b98c04819f2e89033949a34b4d717acb"
+    },
+    {
+      "path": "source_snapshot/src/client/GuiFactory.luau",
+      "bytes": 4104,
+      "sha256": "f01dd984c8f3fa8cec8c8246771768ebeb6e3327e2e422b2782d5d6762115642"
+    },
+    {
+      "path": "source_snapshot/src/client/init.client.luau",
+      "bytes": 17744,
+      "sha256": "bc758959dd8e67fc9bda0d670b24bc8505666dec9737e79dfe64ba3405e1750c"
+    },
+    {
+      "path": "source_snapshot/src/client/JamPlayback.luau",
+      "bytes": 10263,
+      "sha256": "87d43ecce563831115d7aacc82f08555d00e7827e0edb66a937ab7d5ebf25d95"
+    },
+    {
+      "path": "source_snapshot/src/client/JamView.luau",
+      "bytes": 5291,
+      "sha256": "9fd1e6cadad67e85f8411b79fdf7f1f5e694be788d6db5162453be72a1a3e45a"
+    },
+    {
+      "path": "source_snapshot/src/client/ListeningView.luau",
+      "bytes": 3756,
+      "sha256": "f1d371fa3c8d1aa0e5f1a029f1bbf58f37c08a377f59fad6e9cf3e18a30ddcb9"
+    },
+    {
+      "path": "source_snapshot/src/client/LocalMaterials.luau",
+      "bytes": 6621,
+      "sha256": "bcd632475839eb7ce2cdfe2a47fbece26241882f72ed5641af8886e7391928d3"
+    },
+    {
+      "path": "source_snapshot/src/client/PadInput.luau",
+      "bytes": 2276,
+      "sha256": "4ecdd27eaff7337686e3174a0270c686a8ef6c7edc0cd750ad6803162398ca63"
+    },
+    {
+      "path": "source_snapshot/src/client/PadVoiceProcessor.luau",
+      "bytes": 3288,
+      "sha256": "5785a49075d896734ea9ebd526dbba14216eca1093e18094ae41f939fa946f8d"
+    },
+    {
+      "path": "source_snapshot/src/client/QuayDemoView.luau",
+      "bytes": 32697,
+      "sha256": "773a93ba4214b903701ceb592ad8629a86a1d3a2222988ce44f93f53c302167c"
+    },
+    {
+      "path": "source_snapshot/src/client/QuayExperiencePanel.luau",
+      "bytes": 16498,
+      "sha256": "e0aa6585974d86276f635a3a09bb06fa9f317d3a0ad24db91786cbbd0fb2b1d7"
+    },
+    {
+      "path": "source_snapshot/src/client/QuayLife.luau",
+      "bytes": 3112,
+      "sha256": "a5061c1c3259e93532794c9ac6091f485bb51975159ae521e37d2b26303c43e8"
+    },
+    {
+      "path": "source_snapshot/src/client/QuayNeighbors.luau",
+      "bytes": 6724,
+      "sha256": "478943e6f63ed79df3427620eff262855f92d73c81ed7666c4f221119924c2fd"
+    },
+    {
+      "path": "source_snapshot/src/client/QuayShopPanel.luau",
+      "bytes": 12416,
+      "sha256": "fb85cd8b3898bde880da72730106ae09128ae0f726945ffede4863844115330a"
+    },
+    {
+      "path": "source_snapshot/src/client/QuayWardrobePreview.luau",
+      "bytes": 13537,
+      "sha256": "c23363330cb722e00dc29540b27576ef39ebcbf65b1de00303fc17aacb6ab790"
+    },
+    {
+      "path": "source_snapshot/src/client/RecorderGuide.luau",
+      "bytes": 3584,
+      "sha256": "00a40ad814d7f80a412eb1ba995691cdadb86bda987d89519fcb254667591e9b"
+    },
+    {
+      "path": "source_snapshot/src/client/Restoration.luau",
+      "bytes": 1504,
+      "sha256": "26fb21776897848c2d0a8ff35e9c144da0260f23c3bcc12118087f0fa5180b88"
+    },
+    {
+      "path": "source_snapshot/src/client/RoomSettings.luau",
+      "bytes": 3144,
+      "sha256": "23c10574dd0dacdaeaa432e380185f1e5a89b61bddb434ef724ccc69515254c6"
+    },
+    {
+      "path": "source_snapshot/src/client/SampleEditor.luau",
+      "bytes": 12757,
+      "sha256": "a46446134c4a2ec7b1e1dabf89c55681f8d6d073e2746d7c4ebdd640b25401d1"
+    },
+    {
+      "path": "source_snapshot/src/client/SkinnedNeighbors.luau",
+      "bytes": 11250,
+      "sha256": "35013d356a2d036f5a2480734b72b42395f6e683bb018c0f17e83a71dde86313"
+    },
+    {
+      "path": "source_snapshot/src/client/StageView.luau",
+      "bytes": 5521,
+      "sha256": "da4ec842f535df6cc1244ec3efc4c55513728988b694726bcbb0c4749e61f26c"
+    },
+    {
+      "path": "source_snapshot/src/client/WorkshopView.luau",
+      "bytes": 39228,
+      "sha256": "776632fba157baee91c24fbc78893c13ba33dd3de626512d780555c37cc2ae51"
+    },
+    {
+      "path": "source_snapshot/src/client/WorldFeedback.luau",
+      "bytes": 8006,
+      "sha256": "6a3cc153b740507b37859e6eeac936bac2645a96d67e10b7c2a0735af8ac9b05"
+    },
+    {
+      "path": "source_snapshot/src/local-loading.client.luau",
+      "bytes": 1080,
+      "sha256": "532f81002688261601537d430a155d1e7da0581b6e0d01ee5a3affb9ebdee87a"
+    },
+    {
+      "path": "source_snapshot/src/server/AssetDetails.luau",
+      "bytes": 5680,
+      "sha256": "f940faef29db8b426894ed5529ba9f470726783f3a047806d923928227ac46df"
+    },
+    {
+      "path": "source_snapshot/src/server/AssetSpawner.luau",
+      "bytes": 3006,
+      "sha256": "78cd87b10b5da15d33e500217f08176eb4f522d4778b5872c1acb4831e3a0670"
+    },
+    {
+      "path": "source_snapshot/src/server/CommerceService.luau",
+      "bytes": 7778,
+      "sha256": "325ab7958dda1cb46f43443cf5fdf4a679c99a0c1b74c381259c39d3e94c9c92"
+    },
+    {
+      "path": "source_snapshot/src/server/ConcertService.luau",
+      "bytes": 4207,
+      "sha256": "13c38901ed0aa9d1553d8519cb5509d6fa089a71cfef75200ffc645548d5fc8a"
+    },
+    {
+      "path": "source_snapshot/src/server/init.server.luau",
+      "bytes": 406,
+      "sha256": "7108fcda9ffb77d79f556d97063ea4df960287cbad92058641536aaa97da5f4f"
+    },
+    {
+      "path": "source_snapshot/src/server/JamService.luau",
+      "bytes": 7733,
+      "sha256": "74767fd0a5e2bec499ebe32fdf1b5e725b576b87a6f716552e97d836c51e26ab"
+    },
+    {
+      "path": "source_snapshot/src/server/ListeningSession.luau",
+      "bytes": 5735,
+      "sha256": "0c8d0b1889f5f20cdc82ea2ddca276c50f8f69eb4ad5936dd80e3634d436acf7"
+    },
+    {
+      "path": "source_snapshot/src/server/LocalArtLibrary.luau",
+      "bytes": 4980,
+      "sha256": "92cc1395a6e86574ec4278d29249b690e3f1ed1b71b7e0466e1e87c1ad9b240e"
+    },
+    {
+      "path": "source_snapshot/src/server/ModularKit.luau",
+      "bytes": 7425,
+      "sha256": "5ccdcea508ea2b6d135a83127d54aa6b2fa9b2076bd319e92822af7e3f9d19da"
+    },
+    {
+      "path": "source_snapshot/src/server/MusicService.luau",
+      "bytes": 25966,
+      "sha256": "b0972641033ead23fcece31619d22b14c6e86c46c677761cb9a5be9ae125fb2f"
+    },
+    {
+      "path": "source_snapshot/src/server/NeedleQuayDemoWorld.luau",
+      "bytes": 21010,
+      "sha256": "75b51255edfec61fa1365d19d72c5ceeaa4446de9f68dec9e0ce55309f710053"
+    },
+    {
+      "path": "source_snapshot/src/server/ProfileStore.luau",
+      "bytes": 8347,
+      "sha256": "d79759e402db39ff14b9ddf64b1c1ed4cac828e4557fe55ba0dc686b3e14251f"
+    },
+    {
+      "path": "source_snapshot/src/server/QuayAtmosphere.luau",
+      "bytes": 33054,
+      "sha256": "78c1d01fabb0be5afe081549566b9b200607f8d825cdbf440848e97238040482"
+    },
+    {
+      "path": "source_snapshot/src/server/QuayDemoService.luau",
+      "bytes": 23449,
+      "sha256": "cd305be2698d8a265d477f4d2a0c14fbf757952a5e38c2e0192167fbe087190e"
+    },
+    {
+      "path": "source_snapshot/src/server/QuayExperienceService.luau",
+      "bytes": 9743,
+      "sha256": "e5a6dc26bdea83d0067388d6feef93caeb995307ecce0ca683370c60b6fdb90e"
+    },
+    {
+      "path": "source_snapshot/src/server/RoomBuilder.luau",
+      "bytes": 2305,
+      "sha256": "ccbbc93e77b02250538fa47af6e4510da9e96b73a4b581795068a8dfcabb44c5"
+    },
+    {
+      "path": "source_snapshot/src/server/RoomService.luau",
+      "bytes": 5084,
+      "sha256": "c9628a6d5bf9a3c7486cc21608ad2948db0c60bb443b321c79e49826b0dccfb8"
+    },
+    {
+      "path": "source_snapshot/src/server/StageQueue.luau",
+      "bytes": 7034,
+      "sha256": "426f39be521a2fb5bc4d020d607a368340991259bf6c29780387e5b118ee04dd"
+    },
+    {
+      "path": "source_snapshot/src/server/WardrobeService.luau",
+      "bytes": 9194,
+      "sha256": "4362bc29fa7ddab2ec567c57683651dc165136952e5344e5a60cc7aae127d094"
+    },
+    {
+      "path": "source_snapshot/src/server/WorldBuilder.luau",
+      "bytes": 17039,
+      "sha256": "460e6550af334f1232a2da58efb063bb7b8bd0713a1c1e835b2267170620b63d"
+    },
+    {
+      "path": "source_snapshot/src/shared/ArchitectureGrid.luau",
+      "bytes": 913,
+      "sha256": "02b465b58e936b0fa266436f6b95dd6782d5e257754dcf7a7c656183fde22f57"
+    },
+    {
+      "path": "source_snapshot/src/shared/AssetContracts.luau",
+      "bytes": 852,
+      "sha256": "854260eccc884b82d05056171b07d824022e1e22a0f648d37d8c7c8b3e3bafb0"
+    },
+    {
+      "path": "source_snapshot/src/shared/BeatBook.luau",
+      "bytes": 6489,
+      "sha256": "a22014fb35de2656de03a8f96a6b41d5b0ad0383ebb63fe220adef22e2ad5c89"
+    },
+    {
+      "path": "source_snapshot/src/shared/ChapterConcert.luau",
+      "bytes": 8368,
+      "sha256": "62d8201360babce1cd1984117c317f2bbafacfef527e2adb909e9556a58daf3b"
+    },
+    {
+      "path": "source_snapshot/src/shared/CommerceCatalog.luau",
+      "bytes": 3237,
+      "sha256": "f58a003baa2840309679d7f9b07512ef900d05b33b9dff80228964e8bd2f83e5"
+    },
+    {
+      "path": "source_snapshot/src/shared/ContentIds.luau",
+      "bytes": 5675,
+      "sha256": "5d348bfa3c1f4764b2f7422a59120ef7582fc68de5571ea0546032a37f468134"
+    },
+    {
+      "path": "source_snapshot/src/shared/CosmeticCatalog.luau",
+      "bytes": 921,
+      "sha256": "e6672aa9258b562ecf8de8941a71a36e2579ef8f2e5f357e773f79634d1df971"
+    },
+    {
+      "path": "source_snapshot/src/shared/DiscoveryCatalog.luau",
+      "bytes": 799,
+      "sha256": "62dbf1228e3f5a5695b659fcbaf05d00d5517cb1fc128273364020dc7436ce91"
+    },
+    {
+      "path": "source_snapshot/src/shared/FirstPerformanceQuest.luau",
+      "bytes": 2519,
+      "sha256": "d11f1d3aa590b8985d28cbd6110a36d9835f50b2d6390513c5d1e727671d6c80"
+    },
+    {
+      "path": "source_snapshot/src/shared/JamProtocol.luau",
+      "bytes": 3284,
+      "sha256": "87cc805a257660df33e78d42c66d7dd2eeefe4cc93fe9f8b479179a16f1c8994"
+    },
+    {
+      "path": "source_snapshot/src/shared/LightingPresets.luau",
+      "bytes": 463,
+      "sha256": "b0b21c1be8b44cbb4a2fc9a8788fc625b1796c9ab1f58e980f533c5a15fff0f3"
+    },
+    {
+      "path": "source_snapshot/src/shared/LocalContent.luau",
+      "bytes": 18503,
+      "sha256": "f89b436695e3ca9b52164779a012998579f71560fdcca0de380fba7ebde83158"
+    },
+    {
+      "path": "source_snapshot/src/shared/LocalMeshCatalog.luau",
+      "bytes": 679,
+      "sha256": "6d7b61ed94fd731bb6f846f1118e300b21a60e3013d04dedef5c3f3adf52a560"
+    },
+    {
+      "path": "source_snapshot/src/shared/LocalMeshCatalogData1.luau",
+      "bytes": 140014,
+      "sha256": "1a67573ed9e80ff5cdc1460a0c57c5d18eda746dee13522e5b34feb5b6b3f52f"
+    },
+    {
+      "path": "source_snapshot/src/shared/LocalMeshCatalogData10.luau",
+      "bytes": 140014,
+      "sha256": "32fdc4f213dff95acb98aec552b5525bf54559b14c081e5fa6664a71574e129d"
+    },
+    {
+      "path": "source_snapshot/src/shared/LocalMeshCatalogData11.luau",
+      "bytes": 140014,
+      "sha256": "a4a56b6ab4590fde8ceec77b9dba275b08b29a88285f49dc7571ab81fbba9938"
+    },
+    {
+      "path": "source_snapshot/src/shared/LocalMeshCatalogData12.luau",
+      "bytes": 103284,
+      "sha256": "bb65f36c1ebe83f86c85eb75d31f18bd316b5f7386a4ae6be57d441ace33efe4"
+    },
+    {
+      "path": "source_snapshot/src/shared/LocalMeshCatalogData2.luau",
+      "bytes": 140014,
+      "sha256": "57b5d3f30c99c336349b8f407b79449ac12619cdc4dadcadc63dc764c9f105ce"
+    },
+    {
+      "path": "source_snapshot/src/shared/LocalMeshCatalogData3.luau",
+      "bytes": 140014,
+      "sha256": "57d2c7ad5774271918d662917ad51865d22b7a61e3c5853a87b7146f190a5538"
+    },
+    {
+      "path": "source_snapshot/src/shared/LocalMeshCatalogData4.luau",
+      "bytes": 140014,
+      "sha256": "36011bccf0f70a5a654437e25fa246af7c91819e2abf57d8e1f417390c17069e"
+    },
+    {
+      "path": "source_snapshot/src/shared/LocalMeshCatalogData5.luau",
+      "bytes": 140014,
+      "sha256": "03b9a8ea03d59cb9c432c6abe494244a3b698a5788f0bbb4fef953aaa70a6a74"
+    },
+    {
+      "path": "source_snapshot/src/shared/LocalMeshCatalogData6.luau",
+      "bytes": 140014,
+      "sha256": "fdf3dac7196e8d7884f687459fbffa3678b0c210501bc7f776c5de043949e6cf"
+    },
+    {
+      "path": "source_snapshot/src/shared/LocalMeshCatalogData7.luau",
+      "bytes": 140014,
+      "sha256": "1e7efd9cc8076f20d160689501bd9a739432761d0639237b54106366198d796b"
+    },
+    {
+      "path": "source_snapshot/src/shared/LocalMeshCatalogData8.luau",
+      "bytes": 140014,
+      "sha256": "52ae4e536a40e2de483d6aa98ae95297569bc9000595bc86c3d7f9f18be047be"
+    },
+    {
+      "path": "source_snapshot/src/shared/LocalMeshCatalogData9.luau",
+      "bytes": 140014,
+      "sha256": "16450d8ca73d74a5cb3a9845507d2639d82edd147b7314029d3b84f602a1b03c"
+    },
+    {
+      "path": "source_snapshot/src/shared/MotionPoses.luau",
+      "bytes": 485,
+      "sha256": "bc0e57ab3fe775a37d49ac5345f4a31184f869f0b28fcfec57846f597cbd50f8"
+    },
+    {
+      "path": "source_snapshot/src/shared/NeedleQuayCatalog.luau",
+      "bytes": 19493,
+      "sha256": "9630826a60bf18abf293588092107a9ae26db4beaa9ea843999b3514b0792cb2"
+    },
+    {
+      "path": "source_snapshot/src/shared/NeedleQuayCharacters.luau",
+      "bytes": 31868,
+      "sha256": "75565a742b91c97af991ac93383d66c75d6ffa1398f729831f7386699aefd36d"
+    },
+    {
+      "path": "source_snapshot/src/shared/NeedleQuayGeometry.luau",
+      "bytes": 64159,
+      "sha256": "2228901e09383c0048b06a082fc0ba65b864d2dd69a210fe8a79dd7d321fec47"
+    },
+    {
+      "path": "source_snapshot/src/shared/NeighborhoodMissions.luau",
+      "bytes": 4503,
+      "sha256": "a9204367451b5e097f894a632edecae5bd47379d3005ba8e1a60a2905b8bbe7d"
+    },
+    {
+      "path": "source_snapshot/src/shared/PadSound.luau",
+      "bytes": 2403,
+      "sha256": "5463796c558aebf2c1b61da1d75ad7541a21d1a1fb326317cf492965963b5f1d"
+    },
+    {
+      "path": "source_snapshot/src/shared/Pattern.luau",
+      "bytes": 2951,
+      "sha256": "f27619d3e4f02539fa795dfd7d898e85cc94fe37804013b508ba124544800cd4"
+    },
+    {
+      "path": "source_snapshot/src/shared/QuayActivities.luau",
+      "bytes": 6494,
+      "sha256": "ec8942324f61a0ed00fbead073defb896629d4f90bf44160a439c744a9269e2a"
+    },
+    {
+      "path": "source_snapshot/src/shared/QuayIdentity.luau",
+      "bytes": 12691,
+      "sha256": "99e97db6cce0d98663ae2a75d2a5f5cf060ba3e47b544e6d008c84be79b291c7"
+    },
+    {
+      "path": "source_snapshot/src/shared/QuayProgress.luau",
+      "bytes": 3342,
+      "sha256": "5e11ae54b6f12b5268b5c5c56231f2ae601247aeea381f3e59e72d333f54bf94"
+    },
+    {
+      "path": "source_snapshot/src/shared/QuayStory.luau",
+      "bytes": 20097,
+      "sha256": "ed0a96127ecc725acaaeef27073948ccb871e297cb0fd4a453b0978f2091d261"
+    },
+    {
+      "path": "source_snapshot/src/shared/RoomCatalog.luau",
+      "bytes": 1290,
+      "sha256": "7feea3cc3f7465537fdca1324396729f0a503e9daa46ebeb0f034922e62fbeea"
+    },
+    {
+      "path": "source_snapshot/src/shared/SampleCatalog.luau",
+      "bytes": 1788,
+      "sha256": "ef1e1aac2ec5b9ddbe99033b82e0acdf407baf310ba835b140fa9f1ecca4412e"
+    },
+    {
+      "path": "source_snapshot/src/shared/SamplerPadLayout.luau",
+      "bytes": 2428,
+      "sha256": "2a0841e5743815bc197e1a9bf5c9fe8f915f7c20b7d15ce9462ddb3c81b085f1"
+    },
+    {
+      "path": "source_snapshot/src/shared/SampleWaveforms.luau",
+      "bytes": 76571,
+      "sha256": "ba21b5952975a8aa92d1aa6217bd032a77ff1c70dc33a7efd58cd8a7915a7d6f"
+    },
+    {
+      "path": "source_snapshot/src/shared/StylePacks.luau",
+      "bytes": 14040,
+      "sha256": "37bbf2262fa5cc28d3764408c26b93f5a516cd2413c3cbfa9fc88fc91c41a100"
+    },
+    {
+      "path": "source_snapshot/src/shared/Theme.luau",
+      "bytes": 529,
+      "sha256": "c2e30bf93a1487fc6fcca03506f2c045878da79fddea9ff712401575b9e32e42"
+    },
+    {
+      "path": "source_snapshot/src/shared/UiAtlas.luau",
+      "bytes": 390,
+      "sha256": "daebf85670d7e37b68112b4b4ada8d37d1bb632bdac23ae1a29b9368c1a57516"
+    },
+    {
+      "path": "source_snapshot/src/shared/WardrobeCatalog.luau",
+      "bytes": 7836,
+      "sha256": "a69fd2b17155e3b49db8f5b6b631410f486075f40bd93b0505217c9f3353f3a2"
+    },
+    {
+      "path": "START_HERE.md",
+      "bytes": 5996,
+      "sha256": "da43078171721228d49e73e243fecbdfd4f42ba8c1751851243550162df77b3e"
+    }
+  ],
+  "audioApproval": "not established; later supplied audio is separate from original handoff manifest"
+}

@@ -21,4 +21,4 @@ These are deterministic, reversible blockout conventions derived from the suppli
 - M03 corner post: 1 x 12 x 1 studs.
 - M10 awning: 8 x 2 x 4 studs.
 - Use lower-left/rear-corner bay origins, local +X across the 8-stud width, +Y up, and the storefront front toward -Z. Repeat bays on an 8-stud cadence within the 4-stud planning grid.
-- `src/shared/ArchitectureGrid.luau` computes the corner-post center and a flush awning center from those interfaces. Exact window-opening dimensions are absent from the source documents and remain unset.
+- `tools/reference/ArchitectureGrid.luau` computes the corner-post center and a flush awning center from those interfaces. This offline reference is excluded from the replicated game. Exact window-opening dimensions are absent from the source documents and remain unset.

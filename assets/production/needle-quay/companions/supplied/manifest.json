@@ -1,0 +1,107 @@
+{
+  "characters": [
+    {
+      "id": "NQ-CMP-ALISSIA",
+      "source": "assets/supplied/companions/Alisija.glb",
+      "source_sha256": "9208a168622b696a76c8dd74675531a7d02257ac82100eaa226a9d3f0557d1eb",
+      "blend": "assets/production/needle-quay/companions/supplied/alissia.blend",
+      "height_studs": 4.1,
+      "triangles": 10295,
+      "bone_count": 65,
+      "original_texture_resolution": [
+        1024,
+        1024
+      ],
+      "runtime_texture_resolution": [
+        1024,
+        1024
+      ],
+      "runtime_content_files": [
+        "companions/alissia_supplied_color_8831567e6370.png",
+        "companions/alissia_supplied_0_cf7524e30370.mesh",
+        "companions/alissia_supplied_1_79c9532c768a.mesh"
+      ],
+      "source_animations": [
+        "afraid.001",
+        "agree.001",
+        "angry_01.001",
+        "cheer.001",
+        "clap.001",
+        "dance_01.001",
+        "dance_02.001",
+        "dance_03.001",
+        "dance_04.001",
+        "dance_06.001",
+        "heart_pose.001",
+        "idle.001",
+        "run.001",
+        "walk.001"
+      ],
+      "runtime_clips": {
+        "idle": "CompanionClipAlissiaIdle",
+        "walk": "CompanionClipAlissiaWalk",
+        "run": "CompanionClipAlissiaRun",
+        "cheer": "CompanionClipAlissiaCheer",
+        "clap": "CompanionClipAlissiaClap",
+        "dance_03": "CompanionClipAlissiaDance03",
+        "dance_06": "CompanionClipAlissiaDance06",
+        "agree": "CompanionClipAlissiaAgree"
+      },
+      "stage": "USER_SUPPLIED_LOCAL_ADAPTATION_PENDING_STUDIO_ACCEPTANCE",
+      "runtime_verified": false,
+      "uploads": 0,
+      "runtime_clip_sample_rate": 24,
+      "coordinate_basis": "blender_to_roblox_front_minus_z_v2"
+    },
+    {
+      "id": "NQ-CMP-NIKOLAS",
+      "source": "assets/supplied/companions/niklass.glb",
+      "source_sha256": "26f7be5756d32300c0eb585f67d00f17e624b52feb6c52130fd03dc44d836651",
+      "blend": "assets/production/needle-quay/companions/supplied/nikolas.blend",
+      "height_studs": 3.8,
+      "triangles": 10968,
+      "bone_count": 65,
+      "original_texture_resolution": [
+        1024,
+        1024
+      ],
+      "runtime_texture_resolution": [
+        1024,
+        1024
+      ],
+      "runtime_content_files": [
+        "companions/nikolas_supplied_color_f2c1ef8be0a3.png",
+        "companions/nikolas_supplied_0_5274cb37b357.mesh",
+        "companions/nikolas_supplied_1_9596881c3ca9.mesh"
+      ],
+      "source_animations": [
+        "bow.001",
+        "cheer.001",
+        "clap.001",
+        "dance_03.001",
+        "dance_06.001",
+        "freaky.001",
+        "idle.001",
+        "laugh_01.001",
+        "run.001",
+        "sing_03.001",
+        "walk.001"
+      ],
+      "runtime_clips": {
+        "idle": "CompanionClipNikolasIdle",
+        "walk": "CompanionClipNikolasWalk",
+        "run": "CompanionClipNikolasRun",
+        "cheer": "CompanionClipNikolasCheer",
+        "clap": "CompanionClipNikolasClap",
+        "dance_03": "CompanionClipNikolasDance03",
+        "dance_06": "CompanionClipNikolasDance06",
+        "bow": "CompanionClipNikolasBow"
+      },
+      "stage": "USER_SUPPLIED_LOCAL_ADAPTATION_PENDING_STUDIO_ACCEPTANCE",
+      "runtime_verified": false,
+      "uploads": 0,
+      "runtime_clip_sample_rate": 24,
+      "coordinate_basis": "blender_to_roblox_front_minus_z_v2"
+    }
+  ]
+}

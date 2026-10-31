@@ -69,7 +69,7 @@ function Guide:update(state)
         progress.completed,
         if self.open then "Close guide" else "Open guide"
     )
-    self.intro.Text = "Prerecorded game sounds, not microphone recording. Select a pad, choose the Needle Quay kit below, then choose a collected sound. Save your beat to the shelf and save your profile for job rewards.\nNEXT: "
+    self.intro.Text = "Prerecorded game sounds, not microphone recording. Choose a sound bank and pad, then assign a collected sound. Save named sequences; arrange sections in Song Mode and Save Draft. Finish & Save Song is separate and needs approved audio.\nNEXT: "
         .. progress.objective
         .. (
             if state.saveMode == "session"

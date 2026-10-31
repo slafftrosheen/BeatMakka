@@ -1,0 +1,47 @@
+{
+  "packNotebookObservation": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"questCompleted\":{\"NQ-Q06\":false,\"NQ-Q04\":false,\"NQ-Q09\":false,\"NQ-Q12\":false,\"NQ-Q03\":false,\"NQ-Q07\":false,\"NQ-Q08\":false,\"NQ-Q02\":false,\"NQ-Q00\":true,\"NQ-Q01\":false,\"NQ-Q05\":false,\"NQ-Q11\":false,\"NQ-Q10\":false},\"selected\":\"alissia\",\"journal\":{\"story\":{\"lines\":{\"1\":\"Tori hears the dock even when everyone else just hears work.\",\"2\":\"My notebook keeps the place with the sound. A metal strike feels different when you remember who was there.\"},\"context\":\"P1\",\"title\":\"Tori's dock\"},\"title\":\"The sound notebook\",\"caption\":\"Places and timbres from your collected sounds. No microphone.\",\"count\":1,\"pages\":{\"1\":{\"title\":\"Quay metal\",\"available\":true,\"place\":\"Dockside Exchange / Tori\",\"text\":\"A short, bright strike. The dock's work can become a pulse.\",\"status\":\"FOUND SOUND\"},\"3\":{\"title\":\"Helper chirp\",\"available\":false,\"place\":\"Breakwater / Mica\",\"text\":\"An empty page for a sound you may find here. Collect it through the existing activity when you want to.\",\"status\":\"UNWRITTEN PAGE\"},\"2\":{\"title\":\"Vent thump\",\"available\":false,\"place\":\"Repair Alley / Ivo\",\"text\":\"An empty page for a sound you may find here. Collect it through the existing activity when you want to.\",\"status\":\"UNWRITTEN PAGE\"}},\"total\":3},\"saveMode\":\"session\"}"
+      }
+    ],
+    "isError": false
+  },
+  "packUnsavedObservation": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"workingMetal\":\"metal_hit\",\"station\":\"Station_1\",\"workingSteps\":{\"1\":true,\"2\":true},\"journal\":{\"story\":{\"lines\":{\"1\":\"Tori says a useful rhythm leaves room for someone else's part.\",\"2\":\"I like trying one small change, then listening again. You decide which version belongs in your beat.\"},\"context\":\"P1\",\"title\":\"Tori's dock\"},\"title\":\"The beat bench\",\"caption\":\"Observations from your last successful shelf save. These do not complete Quay activities.\",\"count\":0,\"pages\":{\"1\":{\"title\":\"Pulse\",\"available\":false,\"place\":\"Quay metal / saved patterns\",\"text\":\"Try a metal pulse in MK-I. Keep a beat on your shelf and save when you want to remember it.\",\"status\":\"AN IDEA TO TRY\"},\"3\":{\"title\":\"Replies\",\"available\":false,\"place\":\"Helper chirp / saved patterns\",\"text\":\"Your saved shelf has no beats yet. You choose what to keep; I never store or change a beat for you.\",\"status\":\"AN IDEA TO TRY\"},\"2\":{\"title\":\"Layers\",\"available\":false,\"place\":\"Metal + vent / saved patterns\",\"text\":\"Metal and vent have different edges. Try both in one pattern, then save a version you like.\",\"status\":\"AN IDEA TO TRY\"}},\"total\":3},\"dirty\":true}"
+      }
+    ],
+    "isError": false
+  },
+  "packSavedObservation": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"savedBeat\":{\"populated\":1,\"exists\":true,\"version\":1,\"saved\":true},\"quayPulseComplete\":false,\"dirty\":false,\"journal\":{\"story\":{\"lines\":{\"1\":\"Tori says a useful rhythm leaves room for someone else's part.\",\"2\":\"I like trying one small change, then listening again. You decide which version belongs in your beat.\"},\"context\":\"P1\",\"title\":\"Tori's dock\"},\"title\":\"The beat bench\",\"caption\":\"Observations from your last successful shelf save. These do not complete Quay activities.\",\"count\":1,\"pages\":{\"1\":{\"title\":\"Pulse\",\"available\":true,\"place\":\"Quay metal / saved patterns\",\"text\":\"Your saved metal rhythm uses up to 2 different steps in a pattern. Change one moment and hear what happens.\",\"status\":\"SAVED OBSERVATION\"},\"3\":{\"title\":\"Replies\",\"available\":false,\"place\":\"Helper chirp / saved patterns\",\"text\":\"Your shelf's last successful save holds 0 different audible chirp rhythms. Try changing the reply in another pattern.\",\"status\":\"AN IDEA TO TRY\"},\"2\":{\"title\":\"Layers\",\"available\":false,\"place\":\"Metal + vent / saved patterns\",\"text\":\"Metal and vent have different edges. Try both in one pattern, then save a version you like.\",\"status\":\"AN IDEA TO TRY\"}},\"total\":3},\"saveMode\":\"session\"}"
+      }
+    ],
+    "isError": false
+  },
+  "packConversationObservation": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"1\":\"Nikolas: Tori says a useful rhythm leaves room for someone else's part.\"}"
+      }
+    ],
+    "isError": false
+  },
+  "packLifecycleObservation": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"sounds\":0,\"collisionFree\":true,\"loaded\":67,\"followers\":1,\"portraitModels\":0,\"parts\":15}"
+      }
+    ],
+    "isError": false
+  }
+}

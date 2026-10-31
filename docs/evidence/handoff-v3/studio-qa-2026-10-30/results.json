@@ -1,0 +1,320 @@
+{
+  "date": "2026-10-30",
+  "studio": "NeedleQuay-MPC-v3.rbxlx",
+  "studioId": "cfb019cc-0ae6-41bd-8369-2e7003c4f7cd",
+  "runtimeMode": "local Play",
+  "audioAdmissionChanged": false,
+  "uploads": 0,
+  "cloudWrites": 0,
+  "results": {
+    "regression_before": {
+      "audio": "Pending; synthetic readiness only used for isolated snapshot fixture",
+      "cloudWrites": 0,
+      "failures": 1,
+      "tests": 9,
+      "suite": "MPC Studio regression",
+      "results": {
+        "1": {
+          "name": "64 bank addresses and edits remain independent during playback",
+          "passed": true,
+          "detail": "A01/B01/C01/D01 events and settings retained; bank switch preserved epoch and anchor"
+        },
+        "2": {
+          "name": "fifth sequence, independent variation, multibar edits and undo/redo",
+          "passed": true,
+          "detail": "Five sequences; tick 7440 retained on bar two; variation and history independent"
+        },
+        "3": {
+          "name": "delayed recording preserves absolute identity and pinned dependencies",
+          "passed": true,
+          "detail": "Delayed B01 stayed B01 after bank D; velocity, request dedupe, stale epoch and pinned kit verified"
+        },
+        "4": {
+          "name": "Song Mode repeat edits preserve references and real tempo duration",
+          "passed": true,
+          "detail": "5 bars; 18 seconds at sequence tempos, 10 seconds at Song 120 BPM; step references stable"
+        },
+        "5": {
+          "name": "Song playback seeks by step, pins edits, ends and clears old queue",
+          "passed": true,
+          "detail": "Finite end and two-second tail; step audition and snapshot isolation verified"
+        },
+        "6": {
+          "name": "Play resumes the paused song instead of the selected sequence",
+          "passed": false,
+          "detail": "AssistantCommand:165: Resume replaced the paused song with the editor sequence\nAssistantCommand:165\nAssistantCommand:16\n"
+        },
+        "7": {
+          "name": "saved revisions, failed storage, pending finish and immutable fixture capture",
+          "passed": true,
+          "detail": "Session save accepted, outage retained previous save; pending finish refused; synthetic snapshot stayed immutable"
+        },
+        "8": {
+          "name": "conversion retains arrangement and refuses multi-tempo flattening",
+          "passed": true,
+          "detail": "Single-tempo conversion created a 3-bar editable sequence; mixed-tempo source refused without truncation"
+        },
+        "9": {
+          "name": "four working patterns and all six shelf bundles survive migration",
+          "passed": true,
+          "detail": "4 working + 24 shelf sequences; muted notes, retired identities, tempos and raw preimages retained; retry idempotent"
+        }
+      }
+    },
+    "regression_after": {
+      "audio": "Pending; synthetic readiness only used for isolated snapshot fixture",
+      "cloudWrites": 0,
+      "failures": 0,
+      "tests": 9,
+      "suite": "MPC Studio regression",
+      "results": {
+        "1": {
+          "name": "64 bank addresses and edits remain independent during playback",
+          "passed": true,
+          "detail": "A01/B01/C01/D01 events and settings retained; bank switch preserved epoch and anchor"
+        },
+        "2": {
+          "name": "fifth sequence, independent variation, multibar edits and undo/redo",
+          "passed": true,
+          "detail": "Five sequences; tick 7440 retained on bar two; variation and history independent"
+        },
+        "3": {
+          "name": "delayed recording preserves absolute identity and pinned dependencies",
+          "passed": true,
+          "detail": "Delayed B01 stayed B01 after bank D; velocity, request dedupe, stale epoch and pinned kit verified"
+        },
+        "4": {
+          "name": "Song Mode repeat edits preserve references and real tempo duration",
+          "passed": true,
+          "detail": "5 bars; 18 seconds at sequence tempos, 10 seconds at Song 120 BPM; step references stable"
+        },
+        "5": {
+          "name": "Song playback seeks by step, pins edits, ends and clears old queue",
+          "passed": true,
+          "detail": "Finite end and two-second tail; step audition and snapshot isolation verified"
+        },
+        "6": {
+          "name": "Play resumes the paused song instead of the selected sequence",
+          "passed": true,
+          "detail": "Paused song reference, snapshot and cursor retained across Play"
+        },
+        "7": {
+          "name": "saved revisions, failed storage, pending finish and immutable fixture capture",
+          "passed": true,
+          "detail": "Session save accepted, outage retained previous save; pending finish refused; synthetic snapshot stayed immutable"
+        },
+        "8": {
+          "name": "conversion retains arrangement and refuses multi-tempo flattening",
+          "passed": true,
+          "detail": "Single-tempo conversion created a 3-bar editable sequence; mixed-tempo source refused without truncation"
+        },
+        "9": {
+          "name": "four working patterns and all six shelf bundles survive migration",
+          "passed": true,
+          "detail": "4 working + 24 shelf sequences; muted notes, retired identities, tempos and raw preimages retained; retry idempotent"
+        }
+      }
+    },
+    "ui_before": {
+      "tests": 3,
+      "suite": "MPC UI assertions",
+      "failures": 3,
+      "results": {
+        "1": {
+          "name": "Song page exposes live position and pause control",
+          "passed": false,
+          "detail": "AssistantCommand:17: Song position is hidden in the Sequence page\nAssistantCommand:17\nAssistantCommand:6\n"
+        },
+        "2": {
+          "name": "Arrangement step labels and controls use authored order",
+          "passed": false,
+          "detail": "AssistantCommand:27: Song list sorts by instance name instead of step order\nAssistantCommand:27\nAssistantCommand:6\n"
+        },
+        "3": {
+          "name": "Bar and Song BPM fields reflect the selected objects",
+          "passed": false,
+          "detail": "AssistantCommand:35: Bars field shows another sequence's length\nAssistantCommand:35\nAssistantCommand:6\n"
+        }
+      }
+    },
+    "ui_after": {
+      "tests": 3,
+      "suite": "MPC UI assertions",
+      "failures": 0,
+      "results": {
+        "1": {
+          "name": "Song page exposes live position and pause control",
+          "passed": true,
+          "detail": "STOPPED / PAUSED / Step 1 of 2 / QA Harbour Intro / repeat 1 of 1 / bar 1 beat 1 / 0.0 of 4.0s"
+        },
+        "2": {
+          "name": "Arrangement step labels and controls use authored order",
+          "passed": true,
+          "detail": "Step headings stay paired with their controls"
+        },
+        "3": {
+          "name": "Bar and Song BPM fields reflect the selected objects",
+          "passed": true,
+          "detail": "Displayed values match server-owned selection"
+        }
+      }
+    },
+    "live_timing": {
+      "tail": 2,
+      "samples": {
+        "1": {
+          "seconds": 0.01,
+          "repetition": 1,
+          "step": 1
+        },
+        "2": {
+          "seconds": 0.78,
+          "repetition": 1,
+          "step": 1
+        },
+        "3": {
+          "seconds": 1.51,
+          "repetition": 1,
+          "step": 2
+        },
+        "4": {
+          "seconds": 2.25,
+          "repetition": 1,
+          "step": 2
+        },
+        "5": {
+          "seconds": 3.02,
+          "repetition": 2,
+          "step": 2
+        },
+        "6": {
+          "seconds": 3.75,
+          "repetition": 2,
+          "step": 2
+        },
+        "7": {
+          "seconds": 4.55,
+          "repetition": 2,
+          "step": 2
+        },
+        "8": {
+          "seconds": 5.28,
+          "repetition": 2,
+          "step": 2
+        },
+        "9": {
+          "seconds": 6.02,
+          "repetition": 2,
+          "step": 2
+        }
+      },
+      "duration": 4,
+      "passed": true,
+      "observedEndSeconds": 6.106839895248413
+    },
+    "pending_audio": {
+      "notice": "This song uses unavailable audio: nq.harbour.v1.a01",
+      "passed": true,
+      "finishedSongs": 0
+    },
+    "live_checks": {
+      "songDraft": {
+        "bpm": 180,
+        "revision": 5,
+        "name": "QA Harbour Song",
+        "id": "song_10",
+        "steps": {
+          "1": {
+            "repeats": 1,
+            "sequenceId": "seq_3",
+            "stepId": "step_11"
+          },
+          "2": {
+            "repeats": 2,
+            "sequenceId": "seq_5",
+            "stepId": "step_12"
+          }
+        },
+        "tempoMode": "song",
+        "savedRevision": 5
+      },
+      "checks": {
+        "actualDuration": {
+          "tail": 2,
+          "samples": {
+            "1": {
+              "seconds": 0.01,
+              "repetition": 1,
+              "step": 1
+            },
+            "2": {
+              "seconds": 0.78,
+              "repetition": 1,
+              "step": 1
+            },
+            "3": {
+              "seconds": 1.51,
+              "repetition": 1,
+              "step": 2
+            },
+            "4": {
+              "seconds": 2.25,
+              "repetition": 1,
+              "step": 2
+            },
+            "5": {
+              "seconds": 3.02,
+              "repetition": 2,
+              "step": 2
+            },
+            "6": {
+              "seconds": 3.75,
+              "repetition": 2,
+              "step": 2
+            },
+            "7": {
+              "seconds": 4.55,
+              "repetition": 2,
+              "step": 2
+            },
+            "8": {
+              "seconds": 5.28,
+              "repetition": 2,
+              "step": 2
+            },
+            "9": {
+              "seconds": 6.02,
+              "repetition": 2,
+              "step": 2
+            }
+          },
+          "duration": 4,
+          "passed": true,
+          "observedEndSeconds": 6.106839895248413
+        },
+        "pendingFinish": {
+          "notice": "This song uses unavailable audio: nq.harbour.v1.a01",
+          "passed": true,
+          "finishedSongs": 0
+        },
+        "finiteEnd": {
+          "kind": "song",
+          "audioTail": 2,
+          "duration": 4,
+          "passed": true,
+          "playing": false
+        },
+        "songResume": {
+          "offset": 0.6819398403167725,
+          "songId": "song_10",
+          "passed": true,
+          "position": "PLAYING / Step 1 of 2 / QA Harbour Intro / repeat 1 of 1 / bar 1 beat 3 / 0.8 of 4.0s"
+        }
+      },
+      "sequences": 5,
+      "station": "Station_1",
+      "saveMode": "session"
+    },
+    "console": "ContentId: rbxassetid://203785492 failed due to: Asset type does not match requested type\nContentId: rbxassetid://203785492 failed due to: Asset type does not match requested type\nContentId: rbxassetid://203785492 failed due to: Asset type does not match requested type"
+  }
+}

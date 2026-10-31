@@ -1,0 +1,82 @@
+[
+  {
+    "page": "Steps",
+    "result": {
+      "jsonrpc": "2.0",
+      "id": 2,
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"padBank\":true,\"selectedRow\":\"A / PAD 02 / 96 BPM\",\"pads\":16,\"padLabelColor\":\"0.909804, 0.847059, 0.717647\",\"pages\":[\"Steps\"],\"panelVisible\":true}"
+          }
+        ],
+        "isError": false
+      }
+    }
+  },
+  {
+    "page": "Sounds",
+    "result": {
+      "jsonrpc": "2.0",
+      "id": 2,
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"padBank\":true,\"selectedRow\":\"A / PAD 03 / 96 BPM\",\"pads\":16,\"padLabelColor\":\"0.909804, 0.847059, 0.717647\",\"pages\":[\"Sounds\"],\"panelVisible\":true}"
+          }
+        ],
+        "isError": false
+      }
+    }
+  },
+  {
+    "page": "Beats",
+    "result": {
+      "jsonrpc": "2.0",
+      "id": 2,
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"padBank\":true,\"selectedRow\":\"A / PAD 04 / 96 BPM\",\"pads\":16,\"padLabelColor\":\"0.909804, 0.847059, 0.717647\",\"pages\":[\"Beats\"],\"panelVisible\":true}"
+          }
+        ],
+        "isError": false
+      }
+    }
+  },
+  {
+    "page": "Settings",
+    "result": {
+      "jsonrpc": "2.0",
+      "id": 2,
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"padBank\":true,\"selectedRow\":\"A / PAD 05 / 96 BPM\",\"pads\":16,\"padLabelColor\":\"0.909804, 0.847059, 0.717647\",\"pages\":[\"Settings\"],\"panelVisible\":true}"
+          }
+        ],
+        "isError": false
+      }
+    }
+  },
+  {
+    "page": "Play",
+    "result": {
+      "jsonrpc": "2.0",
+      "id": 2,
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"padBank\":true,\"selectedRow\":\"A / PAD 06 / 96 BPM\",\"pads\":16,\"padLabelColor\":\"0.909804, 0.847059, 0.717647\",\"pages\":[\"Play\"],\"panelVisible\":true}"
+          }
+        ],
+        "isError": false
+      }
+    }
+  }
+]

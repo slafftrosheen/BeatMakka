@@ -1,0 +1,63 @@
+{
+  "scope": "source_and_package_only",
+  "listening_review": "NOT_RUN",
+  "studio_playback": "NOT_RUN by audio implementation agent; root owns Studio MCP execution",
+  "results": [
+    {
+      "name": "64 native ordinal mappings; approval separate; discovery IDs preserved",
+      "status": "PASS"
+    },
+    {
+      "name": "64 nonzero unique unclipped WAVs; deterministic repairs and level-only gain",
+      "status": "PASS"
+    },
+    {
+      "name": "package payload verification deferred until packaging",
+      "status": "NOT_RUN"
+    },
+    {
+      "name": "all seven silent WAVs identified; all-zero kick rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "duplicate PCM source rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "approval claim rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "runtime admission claim rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "wrong native source ordinal rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "incomplete local kit rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "wrong canonical address rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "changed source hash rejected",
+      "status": "PASS"
+    }
+  ],
+  "static_checks": {
+    "selene": "PASS - 0 errors, 0 warnings, 0 parse errors",
+    "stylua": "PASS",
+    "python_compile": "PASS",
+    "scoped_diff_check": "PASS"
+  },
+  "backup": "C:/Users/slavd/.codex/backups/BeatMaka/pack-native-audio-20261030-191906",
+  "user_mapping_decision": "also change mapping to the one which came with pack, so all 64 samples are playable",
+  "packaging": "Root coordinated after merged UI/source changes",
+  "human_listening_approval": false,
+  "provider_calls": 0,
+  "uploads": 0
+}

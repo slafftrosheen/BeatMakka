@@ -1,0 +1,9 @@
+{
+  "file": "assets/production/needle-quay/ui-hardware/enamel-faceplate.png",
+  "sha256": "5d0e7e624ada62374c9258e32f97ef07c02cad5c0f7763865b73aaefb34d4e04",
+  "generator": "built-in imagegen",
+  "prompt": "prompt.json",
+  "copied_unchanged": true,
+  "stage": "LOCAL_UI_CANDIDATE_PENDING_ACCEPTANCE",
+  "roblox_uploads": 0
+}

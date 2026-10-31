@@ -1,0 +1,71 @@
+{
+  "version": 1,
+  "provider": "elevenlabs",
+  "status": "local-clips-integrated-runtime-unverified",
+  "language": "en",
+  "direction": "Warm, natural neighborhood voices. Brief, relaxed and encouraging, without an announcer delivery. Original fictional characters; stock voices only, no cloning.",
+  "deployment": "local-only; no Roblox uploads",
+  "voiceIds": {
+    "alissia": "cgSgspJ2msm6clMCkdW9",
+    "nikolas": "GDSfkP85ZRhua7ttCTmO"
+  },
+  "clips": [
+    {
+      "id": "alissia_turn",
+      "companion": "alissia",
+      "trigger": "echo_response_start",
+      "text": "Your turn!",
+      "delivery": "Gentle invitation, with a small smile."
+    },
+    {
+      "id": "alissia_success",
+      "companion": "alissia",
+      "trigger": "activity_completed",
+      "text": "Nice one!",
+      "delivery": "Spontaneous, warm delight."
+    },
+    {
+      "id": "alissia_route",
+      "companion": "alissia",
+      "trigger": "explicit_navigation_help",
+      "text": "Over here.",
+      "delivery": "Friendly and reassuring."
+    },
+    {
+      "id": "nikolas_turn",
+      "companion": "nikolas",
+      "trigger": "echo_response_start",
+      "text": "You got this.",
+      "delivery": "Easygoing encouragement."
+    },
+    {
+      "id": "nikolas_success",
+      "companion": "nikolas",
+      "trigger": "activity_completed",
+      "text": "That's the groove!",
+      "delivery": "Pleased, rhythmic energy without shouting."
+    },
+    {
+      "id": "nikolas_route",
+      "companion": "nikolas",
+      "trigger": "explicit_navigation_help",
+      "text": "This way.",
+      "delivery": "Casual invitation."
+    }
+  ],
+  "runtimePolicy": {
+    "contextCooldownSeconds": 30,
+    "maxSimultaneousVoices": 1,
+    "cancelStaleCues": true,
+    "suppressDuringRecordingOrPerformance": true,
+    "duckAmbienceOnly": true,
+    "subtitlesIndependentOfVoiceVolume": true,
+    "auditoryHintsRequiredForProgress": false
+  },
+  "acceptance": {
+    "generated": true,
+    "auditioned": false,
+    "runtimeIntegrated": true,
+    "runtimeVerified": false
+  }
+}

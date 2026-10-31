@@ -1,0 +1,271 @@
+{
+  "version": 1,
+  "seed_base": 220026,
+  "samples": [
+    {
+      "id": "kick",
+      "file": "assets/production/audio/kick.wav",
+      "sample_rate": 44100,
+      "channels": 1,
+      "duration_seconds": 0.65,
+      "peak_dbfs": -3.74,
+      "rms_dbfs": -17.32,
+      "asset_id": null,
+      "rights": "Original mathematical synthesis in this project; no sampled third-party recording."
+    },
+    {
+      "id": "snare",
+      "file": "assets/production/audio/snare.wav",
+      "sample_rate": 44100,
+      "channels": 1,
+      "duration_seconds": 0.65,
+      "peak_dbfs": -3.74,
+      "rms_dbfs": -24.05,
+      "asset_id": null,
+      "rights": "Original mathematical synthesis in this project; no sampled third-party recording."
+    },
+    {
+      "id": "closed_hat",
+      "file": "assets/production/audio/closed_hat.wav",
+      "sample_rate": 44100,
+      "channels": 1,
+      "duration_seconds": 0.65,
+      "peak_dbfs": -3.74,
+      "rms_dbfs": -27.6,
+      "asset_id": null,
+      "rights": "Original mathematical synthesis in this project; no sampled third-party recording."
+    },
+    {
+      "id": "open_hat",
+      "file": "assets/production/audio/open_hat.wav",
+      "sample_rate": 44100,
+      "channels": 1,
+      "duration_seconds": 0.65,
+      "peak_dbfs": -3.74,
+      "rms_dbfs": -21.12,
+      "asset_id": null,
+      "rights": "Original mathematical synthesis in this project; no sampled third-party recording."
+    },
+    {
+      "id": "clap",
+      "file": "assets/production/audio/clap.wav",
+      "sample_rate": 44100,
+      "channels": 1,
+      "duration_seconds": 0.65,
+      "peak_dbfs": -3.74,
+      "rms_dbfs": -23.31,
+      "asset_id": null,
+      "rights": "Original mathematical synthesis in this project; no sampled third-party recording."
+    },
+    {
+      "id": "rim",
+      "file": "assets/production/audio/rim.wav",
+      "sample_rate": 44100,
+      "channels": 1,
+      "duration_seconds": 0.65,
+      "peak_dbfs": -3.74,
+      "rms_dbfs": -26.23,
+      "asset_id": null,
+      "rights": "Original mathematical synthesis in this project; no sampled third-party recording."
+    },
+    {
+      "id": "low_tom",
+      "file": "assets/production/audio/low_tom.wav",
+      "sample_rate": 44100,
+      "channels": 1,
+      "duration_seconds": 0.65,
+      "peak_dbfs": -3.74,
+      "rms_dbfs": -18.95,
+      "asset_id": null,
+      "rights": "Original mathematical synthesis in this project; no sampled third-party recording."
+    },
+    {
+      "id": "high_tom",
+      "file": "assets/production/audio/high_tom.wav",
+      "sample_rate": 44100,
+      "channels": 1,
+      "duration_seconds": 0.65,
+      "peak_dbfs": -3.74,
+      "rms_dbfs": -19.31,
+      "asset_id": null,
+      "rights": "Original mathematical synthesis in this project; no sampled third-party recording."
+    },
+    {
+      "id": "shaker",
+      "file": "assets/production/audio/shaker.wav",
+      "sample_rate": 44100,
+      "channels": 1,
+      "duration_seconds": 0.65,
+      "peak_dbfs": -3.74,
+      "rms_dbfs": -27.26,
+      "asset_id": null,
+      "rights": "Original mathematical synthesis in this project; no sampled third-party recording."
+    },
+    {
+      "id": "tambourine",
+      "file": "assets/production/audio/tambourine.wav",
+      "sample_rate": 44100,
+      "channels": 1,
+      "duration_seconds": 0.65,
+      "peak_dbfs": -3.74,
+      "rms_dbfs": -27.67,
+      "asset_id": null,
+      "rights": "Original mathematical synthesis in this project; no sampled third-party recording."
+    },
+    {
+      "id": "bell",
+      "file": "assets/production/audio/bell.wav",
+      "sample_rate": 44100,
+      "channels": 1,
+      "duration_seconds": 1.2,
+      "peak_dbfs": -3.74,
+      "rms_dbfs": -19.91,
+      "asset_id": null,
+      "rights": "Original mathematical synthesis in this project; no sampled third-party recording."
+    },
+    {
+      "id": "pluck",
+      "file": "assets/production/audio/pluck.wav",
+      "sample_rate": 44100,
+      "channels": 1,
+      "duration_seconds": 0.65,
+      "peak_dbfs": -3.74,
+      "rms_dbfs": -17.81,
+      "asset_id": null,
+      "rights": "Original mathematical synthesis in this project; no sampled third-party recording."
+    },
+    {
+      "id": "bass_c",
+      "file": "assets/production/audio/bass_c.wav",
+      "sample_rate": 44100,
+      "channels": 1,
+      "duration_seconds": 0.65,
+      "peak_dbfs": -3.74,
+      "rms_dbfs": -16.07,
+      "asset_id": null,
+      "rights": "Original mathematical synthesis in this project; no sampled third-party recording."
+    },
+    {
+      "id": "bass_eb",
+      "file": "assets/production/audio/bass_eb.wav",
+      "sample_rate": 44100,
+      "channels": 1,
+      "duration_seconds": 0.65,
+      "peak_dbfs": -3.74,
+      "rms_dbfs": -15.75,
+      "asset_id": null,
+      "rights": "Original mathematical synthesis in this project; no sampled third-party recording."
+    },
+    {
+      "id": "bass_g",
+      "file": "assets/production/audio/bass_g.wav",
+      "sample_rate": 44100,
+      "channels": 1,
+      "duration_seconds": 0.65,
+      "peak_dbfs": -3.74,
+      "rms_dbfs": -15.84,
+      "asset_id": null,
+      "rights": "Original mathematical synthesis in this project; no sampled third-party recording."
+    },
+    {
+      "id": "chord",
+      "file": "assets/production/audio/chord.wav",
+      "sample_rate": 44100,
+      "channels": 1,
+      "duration_seconds": 1.2,
+      "peak_dbfs": -3.74,
+      "rms_dbfs": -19.88,
+      "asset_id": null,
+      "rights": "Original mathematical synthesis in this project; no sampled third-party recording."
+    },
+    {
+      "id": "metal_hit",
+      "file": "assets/production/audio/metal_hit.wav",
+      "sample_rate": 44100,
+      "channels": 1,
+      "duration_seconds": 1.2,
+      "peak_dbfs": -3.74,
+      "rms_dbfs": -19.76,
+      "asset_id": null,
+      "rights": "Original mathematical synthesis in this project; no sampled third-party recording."
+    },
+    {
+      "id": "vent_thump",
+      "file": "assets/production/audio/vent_thump.wav",
+      "sample_rate": 44100,
+      "channels": 1,
+      "duration_seconds": 0.65,
+      "peak_dbfs": -3.74,
+      "rms_dbfs": -19.54,
+      "asset_id": null,
+      "rights": "Original mathematical synthesis in this project; no sampled third-party recording."
+    },
+    {
+      "id": "robot_chirp",
+      "file": "assets/production/audio/robot_chirp.wav",
+      "sample_rate": 44100,
+      "channels": 1,
+      "duration_seconds": 0.65,
+      "peak_dbfs": -3.74,
+      "rms_dbfs": -20.18,
+      "asset_id": null,
+      "rights": "Original mathematical synthesis in this project; no sampled third-party recording."
+    },
+    {
+      "id": "ui_tap",
+      "file": "assets/production/audio/ui_tap.wav",
+      "sample_rate": 44100,
+      "channels": 1,
+      "duration_seconds": 0.16,
+      "peak_dbfs": -12.04,
+      "rms_dbfs": -24.29,
+      "asset_id": null,
+      "rights": "Original mathematical synthesis in this project; no sampled third-party recording."
+    },
+    {
+      "id": "ui_collect",
+      "file": "assets/production/audio/ui_collect.wav",
+      "sample_rate": 44100,
+      "channels": 1,
+      "duration_seconds": 0.16,
+      "peak_dbfs": -12.04,
+      "rms_dbfs": -24.28,
+      "asset_id": null,
+      "rights": "Original mathematical synthesis in this project; no sampled third-party recording."
+    },
+    {
+      "id": "ui_save",
+      "file": "assets/production/audio/ui_save.wav",
+      "sample_rate": 44100,
+      "channels": 1,
+      "duration_seconds": 0.16,
+      "peak_dbfs": -12.04,
+      "rms_dbfs": -24.28,
+      "asset_id": null,
+      "rights": "Original mathematical synthesis in this project; no sampled third-party recording."
+    },
+    {
+      "id": "ui_error",
+      "file": "assets/production/audio/ui_error.wav",
+      "sample_rate": 44100,
+      "channels": 1,
+      "duration_seconds": 0.16,
+      "peak_dbfs": -12.04,
+      "rms_dbfs": -24.22,
+      "asset_id": null,
+      "rights": "Original mathematical synthesis in this project; no sampled third-party recording."
+    },
+    {
+      "id": "waterfront",
+      "file": "assets/production/audio/waterfront.wav",
+      "sample_rate": 44100,
+      "channels": 1,
+      "duration_seconds": 12.0,
+      "peak_dbfs": -21.94,
+      "rms_dbfs": -34.99,
+      "asset_id": null,
+      "rights": "Original mathematical synthesis in this project; no sampled third-party recording."
+    }
+  ],
+  "acceptance": "Source WAVs measured for format/peak/RMS only; listening, Roblox upload permissions and published playback remain pending."
+}

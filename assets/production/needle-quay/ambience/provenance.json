@@ -1,0 +1,268 @@
+{
+  "provider": "ElevenLabs",
+  "model": "eleven_text_to_sound_v2",
+  "flowId": "ClFZFmltk0AMqnJNojeY",
+  "parameters": {
+    "duration_seconds": 20,
+    "loop": true,
+    "prompt_influence": 0.55
+  },
+  "quotedCredits": 3200,
+  "quotedUsd": 0.64,
+  "records": [
+    {
+      "id": "waterfront",
+      "take": 1,
+      "file": "assets/production/needle-quay/ambience/source/waterfront-take1.mp3",
+      "generationId": "WVDXNF2ha75MC6pUbuGZ",
+      "prompt": "Quiet sheltered seaside quay: gentle water lapping against wooden pilings, soft coastal breeze, very distant occasional gulls. Natural unhurried atmosphere, no music, no speech, no boat engines, no loud waves. Seamless unobtrusive background loop.",
+      "duration": 20,
+      "price": {
+        "credits": 66.66666666666666,
+        "price_cents": 1.3333333333333333,
+        "cost_fiat_currency": "usd"
+      },
+      "sha256": "eec67b5121c1a5636978badd07161752877929e5eceef15e80fc25a5ac33aa3b"
+    },
+    {
+      "id": "waterfront",
+      "take": 2,
+      "file": "assets/production/needle-quay/ambience/source/waterfront-take2.mp3",
+      "generationId": "GYE9ZHiOuLqcJW7Hn3s4",
+      "prompt": "Quiet sheltered seaside quay: gentle water lapping against wooden pilings, soft coastal breeze, very distant occasional gulls. Natural unhurried atmosphere, no music, no speech, no boat engines, no loud waves. Seamless unobtrusive background loop.",
+      "duration": 20,
+      "price": {
+        "credits": 66.66666666666666,
+        "price_cents": 1.3333333333333333,
+        "cost_fiat_currency": "usd"
+      },
+      "sha256": "ddfb2ade9fc131b2e44641582f8eb19c4863bf3257ac889b72e0910fa5f4e8b5"
+    },
+    {
+      "id": "waterfront",
+      "take": 3,
+      "file": "assets/production/needle-quay/ambience/source/waterfront-take3.mp3",
+      "generationId": "2fk9ZJSApC5FDze8joBF",
+      "prompt": "Quiet sheltered seaside quay: gentle water lapping against wooden pilings, soft coastal breeze, very distant occasional gulls. Natural unhurried atmosphere, no music, no speech, no boat engines, no loud waves. Seamless unobtrusive background loop.",
+      "duration": 20,
+      "price": {
+        "credits": 66.66666666666666,
+        "price_cents": 1.3333333333333333,
+        "cost_fiat_currency": "usd"
+      },
+      "sha256": "1688e4ae733a60832ada83e366a62f71c85b4f38a44c6e3e435a419ec6048f30"
+    },
+    {
+      "id": "waterfront",
+      "take": 4,
+      "file": "assets/production/needle-quay/ambience/source/waterfront-take4.mp3",
+      "generationId": "EKLwxGS2y5Qryksa7WKb",
+      "prompt": "Quiet sheltered seaside quay: gentle water lapping against wooden pilings, soft coastal breeze, very distant occasional gulls. Natural unhurried atmosphere, no music, no speech, no boat engines, no loud waves. Seamless unobtrusive background loop.",
+      "duration": 20,
+      "price": {
+        "credits": 66.66666666666666,
+        "price_cents": 1.3333333333333333,
+        "cost_fiat_currency": "usd"
+      },
+      "sha256": "8d77d2b55bb60fce31172a79d7e86c1db9462cb1f601105a8633dfdeb97da9eb"
+    },
+    {
+      "id": "market",
+      "take": 1,
+      "file": "assets/production/needle-quay/ambience/source/market-take1.mp3",
+      "generationId": "79vrRS5y7xQY20wXM9DB",
+      "prompt": "Small friendly outdoor market ambience: soft indistinct nonverbal crowd murmur, occasional unhurried footsteps, light canvas rustle and subtle wooden crate handling. No intelligible words, no music, no shouting, no engines. Seamless quiet background loop.",
+      "duration": 20,
+      "price": {
+        "credits": 66.66666666666666,
+        "price_cents": 1.3333333333333333,
+        "cost_fiat_currency": "usd"
+      },
+      "sha256": "c2a910348c3944edd8efa7616783bc94d2ab3df9a6ab93490ddb2a3e71abce26"
+    },
+    {
+      "id": "market",
+      "take": 2,
+      "file": "assets/production/needle-quay/ambience/source/market-take2.mp3",
+      "generationId": "ZzcAVGGHuZaxbO1xf4CK",
+      "prompt": "Small friendly outdoor market ambience: soft indistinct nonverbal crowd murmur, occasional unhurried footsteps, light canvas rustle and subtle wooden crate handling. No intelligible words, no music, no shouting, no engines. Seamless quiet background loop.",
+      "duration": 20,
+      "price": {
+        "credits": 66.66666666666666,
+        "price_cents": 1.3333333333333333,
+        "cost_fiat_currency": "usd"
+      },
+      "sha256": "c894382a5fc32faf4ff394929e38e67c99adf96e70d5998dab9d9fc0bbbbfa3a"
+    },
+    {
+      "id": "market",
+      "take": 3,
+      "file": "assets/production/needle-quay/ambience/source/market-take3.mp3",
+      "generationId": "6BO06ksea7vr1n2SVmo4",
+      "prompt": "Small friendly outdoor market ambience: soft indistinct nonverbal crowd murmur, occasional unhurried footsteps, light canvas rustle and subtle wooden crate handling. No intelligible words, no music, no shouting, no engines. Seamless quiet background loop.",
+      "duration": 20,
+      "price": {
+        "credits": 66.66666666666666,
+        "price_cents": 1.3333333333333333,
+        "cost_fiat_currency": "usd"
+      },
+      "sha256": "b5e031626fa5e3331a9f4c9ccb73e723a7d0e9cb8e685e117299772c30ff2b01"
+    },
+    {
+      "id": "market",
+      "take": 4,
+      "file": "assets/production/needle-quay/ambience/source/market-take4.mp3",
+      "generationId": "W7HyarmBKm9HAe9tIRka",
+      "prompt": "Small friendly outdoor market ambience: soft indistinct nonverbal crowd murmur, occasional unhurried footsteps, light canvas rustle and subtle wooden crate handling. No intelligible words, no music, no shouting, no engines. Seamless quiet background loop.",
+      "duration": 20,
+      "price": {
+        "credits": 66.66666666666666,
+        "price_cents": 1.3333333333333333,
+        "cost_fiat_currency": "usd"
+      },
+      "sha256": "88a4b4fd4559cce774acdfaf5641de8e8362272dfe6a8b6a3286bf80ace88f71"
+    },
+    {
+      "id": "cafe",
+      "take": 1,
+      "file": "assets/production/needle-quay/ambience/source/cafe-take1.mp3",
+      "generationId": "I8ItdLirvxyQ9qetdP4Z",
+      "prompt": "Cozy small open-air cafe terrace: delicate ceramic cup and saucer clinks, subdued cutlery, gentle room air and quiet chair movement. No speech, no music, no loud espresso hiss. Warm intimate restrained seamless ambience loop.",
+      "duration": 20,
+      "price": {
+        "credits": 66.66666666666666,
+        "price_cents": 1.3333333333333333,
+        "cost_fiat_currency": "usd"
+      },
+      "sha256": "eac7a1dccd03c31fd5d9d1edc5c1b9f91e1419778a1088196a9105ff7f44141b"
+    },
+    {
+      "id": "cafe",
+      "take": 2,
+      "file": "assets/production/needle-quay/ambience/source/cafe-take2.mp3",
+      "generationId": "Hx7LxpLlEYNGkXu7pYRX",
+      "prompt": "Cozy small open-air cafe terrace: delicate ceramic cup and saucer clinks, subdued cutlery, gentle room air and quiet chair movement. No speech, no music, no loud espresso hiss. Warm intimate restrained seamless ambience loop.",
+      "duration": 20,
+      "price": {
+        "credits": 66.66666666666666,
+        "price_cents": 1.3333333333333333,
+        "cost_fiat_currency": "usd"
+      },
+      "sha256": "dbf72b3bde5dc4f4829c5b51242a22d3941f86da477ab72f19d55f23f58747ca"
+    },
+    {
+      "id": "cafe",
+      "take": 3,
+      "file": "assets/production/needle-quay/ambience/source/cafe-take3.mp3",
+      "generationId": "toaxGoMhOkglBtu71DFY",
+      "prompt": "Cozy small open-air cafe terrace: delicate ceramic cup and saucer clinks, subdued cutlery, gentle room air and quiet chair movement. No speech, no music, no loud espresso hiss. Warm intimate restrained seamless ambience loop.",
+      "duration": 20,
+      "price": {
+        "credits": 66.66666666666666,
+        "price_cents": 1.3333333333333333,
+        "cost_fiat_currency": "usd"
+      },
+      "sha256": "d1f31836005f250b78b821f25013e0ad5994c96f8ac3d8afd0452f4bed830eba"
+    },
+    {
+      "id": "cafe",
+      "take": 4,
+      "file": "assets/production/needle-quay/ambience/source/cafe-take4.mp3",
+      "generationId": "WH6hdU2acdNKCppF5QtR",
+      "prompt": "Cozy small open-air cafe terrace: delicate ceramic cup and saucer clinks, subdued cutlery, gentle room air and quiet chair movement. No speech, no music, no loud espresso hiss. Warm intimate restrained seamless ambience loop.",
+      "duration": 20,
+      "price": {
+        "credits": 66.66666666666666,
+        "price_cents": 1.3333333333333333,
+        "cost_fiat_currency": "usd"
+      },
+      "sha256": "4c1f07498e5bb6766c367ca97de20d583f4157f8b5d34edb7411acd32e3c705b"
+    },
+    {
+      "id": "repair",
+      "take": 1,
+      "file": "assets/production/needle-quay/ambience/source/repair-take1.mp3",
+      "generationId": "BcNvVJNgYbjGFkQ2gnVA",
+      "prompt": "Small coastal repair workshop ventilation: soft steady mechanical fan hum, gentle air through a grille, faint intermittent metal tool handling well in the distance. No music, no voices, no alarms, no harsh drilling. Quiet seamless ambient loop.",
+      "duration": 20,
+      "price": {
+        "credits": 66.66666666666666,
+        "price_cents": 1.3333333333333333,
+        "cost_fiat_currency": "usd"
+      },
+      "sha256": "758f3558a110420784558924478254a011426537858bfd5397093281ff42ab78"
+    },
+    {
+      "id": "repair",
+      "take": 2,
+      "file": "assets/production/needle-quay/ambience/source/repair-take2.mp3",
+      "generationId": "dJntKkpdaZbyDvT1PcHK",
+      "prompt": "Small coastal repair workshop ventilation: soft steady mechanical fan hum, gentle air through a grille, faint intermittent metal tool handling well in the distance. No music, no voices, no alarms, no harsh drilling. Quiet seamless ambient loop.",
+      "duration": 20,
+      "price": {
+        "credits": 66.66666666666666,
+        "price_cents": 1.3333333333333333,
+        "cost_fiat_currency": "usd"
+      },
+      "sha256": "458dd2f9cd346620e0f55c81c142b29d05181ce7eb876bd6bb08802730444675"
+    },
+    {
+      "id": "repair",
+      "take": 3,
+      "file": "assets/production/needle-quay/ambience/source/repair-take3.mp3",
+      "generationId": "oEP8HnjJQ0nVEAvEeCfG",
+      "prompt": "Small coastal repair workshop ventilation: soft steady mechanical fan hum, gentle air through a grille, faint intermittent metal tool handling well in the distance. No music, no voices, no alarms, no harsh drilling. Quiet seamless ambient loop.",
+      "duration": 20,
+      "price": {
+        "credits": 66.66666666666666,
+        "price_cents": 1.3333333333333333,
+        "cost_fiat_currency": "usd"
+      },
+      "sha256": "a3295719d23fc8b17c13b1217457960072e603100524fce9ed490d6add94ccdf"
+    },
+    {
+      "id": "repair",
+      "take": 4,
+      "file": "assets/production/needle-quay/ambience/source/repair-take4.mp3",
+      "generationId": "CC0fL5XvKsKrjFFeU4ue",
+      "prompt": "Small coastal repair workshop ventilation: soft steady mechanical fan hum, gentle air through a grille, faint intermittent metal tool handling well in the distance. No music, no voices, no alarms, no harsh drilling. Quiet seamless ambient loop.",
+      "duration": 20,
+      "price": {
+        "credits": 66.66666666666666,
+        "price_cents": 1.3333333333333333,
+        "cost_fiat_currency": "usd"
+      },
+      "sha256": "32f1f585372c98ab07ff2b61098b0d6153f75c78159cbc82c2e9a9de5b18f4ac"
+    }
+  ],
+  "runtimeVerified": false,
+  "robloxUploads": 0,
+  "runtime": [
+    {
+      "id": "waterfront",
+      "file": "assets/production/needle-quay/ambience/waterfront.mp3",
+      "source": "assets/production/needle-quay/ambience/source/waterfront-take1.mp3",
+      "sha256": "50ca93ad4cd0b5df2d28e379cb38a9b5c56146a2b302b2b9a55882fb23d3565d"
+    },
+    {
+      "id": "market",
+      "file": "assets/production/needle-quay/ambience/market.mp3",
+      "source": "assets/production/needle-quay/ambience/source/market-take1.mp3",
+      "sha256": "4b06233bff449e61e175f89f2be1a5d98af81611ded497607982eb9e065e3cbb"
+    },
+    {
+      "id": "cafe",
+      "file": "assets/production/needle-quay/ambience/cafe.mp3",
+      "source": "assets/production/needle-quay/ambience/source/cafe-take1.mp3",
+      "sha256": "1a29c9b62c5158cd03459d4b7a601efa1181712c14082d98bd8c336fd9e91c0c"
+    },
+    {
+      "id": "repair",
+      "file": "assets/production/needle-quay/ambience/repair.mp3",
+      "source": "assets/production/needle-quay/ambience/source/repair-take1.mp3",
+      "sha256": "176d852bd8321676eaadf5629da67548314fc92352530d8314d0f88ba186e4db"
+    }
+  ],
+  "processing": "Take 1 per zone; mono 44.1kHz MP3, loudnorm I=-23 TP=-6 LRA=7. All alternate source takes preserved.",
+  "acceptance": "Generated and locally prepared; perceptual loop quality and Studio playback remain unverified."
+}

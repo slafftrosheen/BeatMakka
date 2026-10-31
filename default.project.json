@@ -19,7 +19,7 @@
     },
     "ReplicatedStorage": {
       "AppearanceLibrary": {
-        "$path": "assets/runtime/AppearanceLibrary.rbxmx"
+        "$className": "Folder"
       },
       "UiImageLibrary": {
         "$className": "Folder",

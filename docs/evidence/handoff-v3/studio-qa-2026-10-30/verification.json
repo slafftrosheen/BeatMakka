@@ -1,0 +1,47 @@
+{
+  "date": "2026-10-30",
+  "files": [
+    {
+      "path": "src/client/QuayDemoView.luau",
+      "sha256": "33842590b5ffb3453746e820ed7e029aa358464ea568fd007dbfa3f78644a6fc"
+    },
+    {
+      "path": "src/server/MusicWorkspace.luau",
+      "sha256": "c6a9dcf0415e4e11c0394bf78f9ea26d88dde046159767bb1bc27ca884e0b4eb"
+    },
+    {
+      "path": "src/client/MusicWorkspaceView.luau",
+      "sha256": "8e97d938ff57f1affb011b5237f7f265a7ae57c72cd25ba7def766bf6f70def6"
+    },
+    {
+      "path": "tools/qa/mpc_studio_regression.luau",
+      "sha256": "59be7a6afef86611c2d851554ea57bd70f1a1da475a81adcddcf29d6bebac069"
+    },
+    {
+      "path": "tools/qa/mpc_client_probe.luau",
+      "sha256": "9850dc334a3e5378ecd9cd94a1e5c3ce8add14a157c7da5a65b1447b02c98f57"
+    },
+    {
+      "path": "tools/qa/mpc_ui_assertions.luau",
+      "sha256": "719a3a5250f499326f71f8203569334cafdcf12191f0281a6d45712b91455952"
+    }
+  ],
+  "checks": {
+    "format": {
+      "exitCode": 0,
+      "output": ""
+    },
+    "lint": {
+      "exitCode": 0,
+      "output": "Results:\n0 errors\n0 warnings\n0 parse errors\n"
+    }
+  },
+  "place": {
+    "bytes": 16756164,
+    "sha256": "b173519a56fd6ac6ea076df14d0b80b23740dd66416dce621d333f88e0c3b677"
+  },
+  "head": "8e8b91f6a5472eb6200599e60932e45a8c9ea56b",
+  "committed": false,
+  "uploaded": false,
+  "pendingMusicalAudio": true
+}

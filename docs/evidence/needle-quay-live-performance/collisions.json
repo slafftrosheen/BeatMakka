@@ -1,0 +1,44 @@
+[
+  {
+    "id": "NQ-BLD-01",
+    "proxyCollides": true,
+    "wallStops": "Workspace.NeedleQuay.DemoDistrict.NQ-BLD-01.ScenicShellCollision",
+    "perimeterBlockers": []
+  },
+  {
+    "id": "NQ-BLD-02",
+    "proxyCollides": true,
+    "wallStops": "Workspace.NeedleQuay.DemoDistrict.NQ-BLD-02.ScenicShellCollision",
+    "perimeterBlockers": []
+  },
+  {
+    "id": "NQ-BLD-03",
+    "proxyCollides": true,
+    "wallStops": "Workspace.NeedleQuay.DemoDistrict.NQ-BLD-03.ScenicShellCollision",
+    "perimeterBlockers": []
+  },
+  {
+    "id": "NQ-BLD-05",
+    "proxyCollides": true,
+    "wallStops": "Workspace.NeedleQuay.DemoDistrict.NQ-BLD-05.ScenicShellCollision",
+    "perimeterBlockers": []
+  },
+  {
+    "id": "NQ-BLD-06",
+    "proxyCollides": true,
+    "wallStops": "Workspace.NeedleQuay.DemoDistrict.NQ-BLD-06.ScenicShellCollision",
+    "perimeterBlockers": []
+  },
+  {
+    "id": "NQ-BLD-07",
+    "proxyCollides": true,
+    "wallStops": "Workspace.NeedleQuay.DemoDistrict.NQ-BLD-07.ScenicShellCollision",
+    "perimeterBlockers": []
+  },
+  {
+    "id": "NQ-BLD-08",
+    "proxyCollides": true,
+    "wallStops": "Workspace.NeedleQuay.DemoDistrict.NQ-BLD-08.ScenicShellCollision",
+    "perimeterBlockers": []
+  }
+]

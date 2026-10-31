@@ -5,6 +5,11 @@ local Catalog = require(Shared.NeedleQuayCatalog)
 local Geometry = require(Shared.NeedleQuayGeometry)
 local Characters = require(Shared.NeedleQuayCharacters)
 local Assets = require(script.Parent.AssetSpawner)
+local BuildingLayout = require(Shared.QuayBuildingLayout)
+local Architecture = {}
+for _, asset in require(Shared.QuayArchitectureCatalog) do
+    Architecture[asset.id] = asset
+end
 local Demo = {}
 local OFFSET = Vector3.new(450, 0, 0)
 local function position(x, y, z)
@@ -45,7 +50,7 @@ local function target(parent, name, at, title, action)
     prompt.ActionText = action or "Talk / activity"
     prompt.ObjectText = title
     prompt.MaxActivationDistance = 10
-    prompt.RequiresLineOfSight = false
+    prompt.RequiresLineOfSight = true
     prompt.HoldDuration = 0.3
     prompt.Parent = anchor
     sign(anchor, title)
@@ -56,7 +61,8 @@ function Demo.build(world)
     local root = Instance.new("Folder")
     root.Name = "DemoDistrict"
     root.Parent = world.root
-    local scene = { root = root, stops = {}, actions = {}, buildings = {}, vans = {} }
+    local scene =
+        { root = root, stops = {}, actions = {}, buildings = {}, vans = {}, encounters = {} }
     part(root, "QuayFoundation", Vector3.new(440, 2, 300), position(0, -1, 0), Theme.Stone, true)
     local sea = part(
         root,
@@ -99,15 +105,17 @@ function Demo.build(world)
         )
     end
     for _, spec in Geometry do
-        local accessible = spec.id == "NQ-BLD-01"
-            or spec.id == "NQ-BLD-02"
-            or spec.id == "NQ-BLD-04"
+        local replacement = BuildingLayout[spec.id]
+        local buildingScale = if replacement then (replacement.runtime_scale or 1) else 1
+        local accessible = not replacement
+            and (spec.id == "NQ-BLD-01" or spec.id == "NQ-BLD-02" or spec.id == "NQ-BLD-04")
         local model = Instance.new("Model")
         model.Name = spec.id
         model:SetAttribute("SourcePath", spec.source)
         model:SetAttribute("SourceSHA256", spec.sha256)
         model:SetAttribute("ArtStage", "LOCAL_ARTBOOK_REVISION_IN_REVIEW")
-        for _, entry in spec.parts do
+        model:SetAttribute("AuthoredCollision", true)
+        for _, entry in (if replacement then {} else spec.parts) do
             local p = position(
                 spec.center[1] + entry.position[1],
                 entry.position[2],
@@ -141,7 +149,7 @@ function Demo.build(world)
             object.Transparency = 1
             object.CastShadow = false
             object:SetAttribute("CollisionOnly", true)
-            if entry.name:match("^NQ%-SGN%-%d+$") then
+            if entry.name:match("^NQ%-SGN%-%d+$") and not Architecture[spec.id] then
                 local surface = Instance.new("SurfaceGui")
                 surface.Name = "AuthoredSignGraphic"
                 surface.Face = Enum.NormalId.Front
@@ -163,15 +171,49 @@ function Demo.build(world)
         assert(template, "Missing accepted local building: " .. spec.id)
         local art = template:Clone()
         art.Name = "Art"
-        art:PivotTo(CFrame.new(position(spec.center[1], 0, spec.center[2])))
+        if Architecture[spec.id] then
+            model:SetAttribute("SourcePath", Architecture[spec.id].source)
+            model:SetAttribute("SourceSHA256", Architecture[spec.id].source_sha256)
+        end
+        if replacement then
+            art:ScaleTo(art:GetScale() * buildingScale)
+        end
+        art:PivotTo(
+            CFrame.new(
+                position(
+                    spec.center[1],
+                    0,
+                    spec.center[2]
+                        + (if replacement then replacement.center_offset_z * buildingScale else 0)
+                )
+            )
+        )
+        if replacement then
+            model:SetAttribute("SourcePath", replacement.source)
+            model:SetAttribute("SourceSHA256", replacement.sha256)
+            model:SetAttribute("SuppliedBuilding", true)
+        end
         art.Parent = model
         -- Deterministic exterior collision independent of decorative source topology.
-        local w, d, h = table.unpack(spec.dimensions)
+        local w, d, h = table.unpack(if replacement then replacement.size_wdh else spec.dimensions)
+        w, d, h = w * buildingScale, d * buildingScale, h * buildingScale
+        model:SetAttribute("BuildingScale", buildingScale)
+        local centerZ = spec.center[2]
+            + (if replacement then replacement.center_offset_z * buildingScale else 0)
+        local bodyHeight = if replacement then h * 0.8 else h
         local collision = part(
             model,
             "ScenicShellCollision",
-            Vector3.new(w, h, d),
-            position(spec.center[1], h / 2, spec.center[2]),
+            Vector3.new(
+                if replacement then w * 0.82 else w,
+                bodyHeight,
+                if replacement then d * 0.76 else d
+            ),
+            position(
+                spec.center[1],
+                bodyHeight / 2,
+                centerZ + (if replacement then d * 0.04 else 0)
+            ),
             Theme.Ink,
             true
         )
@@ -179,7 +221,24 @@ function Demo.build(world)
         collision.CastShadow = false
         collision.CanCollide = not accessible
         collision.CanQuery = not accessible
-        local entrance = position(spec.center[1], 2, spec.center[2] - d / 2 - 4)
+        local entrance = if replacement
+            then position(
+                spec.center[1] + replacement.door_x * buildingScale,
+                2.5,
+                spec.center[2] + replacement.entrance_z * buildingScale
+            )
+            else position(spec.center[1], 2, spec.center[2] - d / 2 - 4)
+        if replacement then
+            local plinth = part(
+                model,
+                "StorefrontPlinthCollision",
+                Vector3.new(w, 0.35, d),
+                position(spec.center[1], 0.175, centerZ),
+                Theme.Stone,
+                true
+            )
+            plinth.Transparency, plinth.CastShadow = 1, false
+        end
         local marker = target(model, "Entrance", entrance, spec.name, "Visit")
         scene.buildings[spec.id] = marker
         model.Parent = root
@@ -231,11 +290,12 @@ function Demo.build(world)
     end
     for x = -204, 204, 24 do
         for _, z in { -44, 84 } do
+            local lampX = if x == 180 and z == 84 then x + 10 else x
             local post = part(
                 root,
                 "QuayLamp",
                 Vector3.new(0.5, 10, 0.5),
-                position(x, 5, z),
+                position(lampX, 5, z),
                 Theme.Graphite,
                 true
             )
@@ -269,7 +329,7 @@ function Demo.build(world)
             Assets.place(
                 root,
                 "H05",
-                CFrame.new(position(x, 0, z)),
+                CFrame.new(position(lampX, 0, z)),
                 Vector3.new(3, 10, 3),
                 Theme.Graphite,
                 false
@@ -277,6 +337,9 @@ function Demo.build(world)
         end
     end
     for _, spec in Geometry do
+        if BuildingLayout[spec.id] then
+            continue
+        end
         local width, depth = spec.dimensions[1], spec.dimensions[2]
         for _, side in { -1, 1 } do
             local at =
@@ -337,7 +400,7 @@ function Demo.build(world)
             end
         end
         local control = scene.actions["repair" .. i]
-        Assets.place(
+        local controlArt = Assets.place(
             root,
             "P14",
             CFrame.new(control.anchor.Position - Vector3.new(0, 1, 0)),
@@ -345,6 +408,11 @@ function Demo.build(world)
             Theme.Teal,
             false
         )
+        for _, mesh in controlArt:GetDescendants() do
+            if mesh:IsA("BasePart") then
+                mesh:SetAttribute("InteractionTarget", "repair" .. i)
+            end
+        end
     end
     scene.actions.radio = target(
         root,
@@ -385,6 +453,7 @@ function Demo.build(world)
     for index = 1, 2 do
         local model = Instance.new("Model")
         model.Name = "Roamer" .. index
+        model:SetAttribute("AuthoredCollision", true)
         model:SetAttribute("AssetId", "LOOPVAN-01")
         local base = Vector3.new(0, 0, 0)
         part(
@@ -460,6 +529,18 @@ function Demo.build(world)
                 collisionPart:SetAttribute("CollisionOnly", true)
             end
         end
+        local vanSize = require(game.ReplicatedStorage.Shared.QuayVanLayout)["LOOPVAN-01"].size_wdh
+        for _, proxy in model:GetChildren() do
+            if proxy:IsA("BasePart") then
+                proxy.CanCollide, proxy.CanQuery = false, false
+            end
+        end
+        -- Reserve the open counter side; the opaque body is the sole blocker.
+        body.Size = Vector3.new(vanSize[1] * 0.9, vanSize[3] * 0.72, vanSize[2] * 0.58)
+        body.CFrame = CFrame.new(0, vanSize[3] * 0.36 + 0.8, -vanSize[2] * 0.12)
+        body.PivotOffset = body.CFrame:ToObjectSpace(CFrame.new(-1.5, 5.5, 0))
+        body.CanCollide, body.CanQuery = true, true
+        body:SetAttribute("VanTint", nil)
         local vanArt = game.ServerStorage.AssetLibrary:FindFirstChild("LOOPVAN-01")
         assert(vanArt, "Missing local Roamer art")
         local visual = vanArt:Clone()
@@ -474,7 +555,7 @@ function Demo.build(world)
         local door = target(
             model,
             "StudioDoor",
-            Vector3.new(-6, 3, 5),
+            Vector3.new(0, 3, vanSize[2] / 2 + 2.5),
             "THE ROAMER / AVAILABLE",
             "Enter your studio"
         )
@@ -500,11 +581,19 @@ function Demo.build(world)
     actors.Parent = root
     local placements = {
         Tori = scene.stops.P1.anchor.Position + Vector3.new(4, -2, 0),
-        Ivo = scene.buildings["NQ-BLD-03"].anchor.Position + Vector3.new(5, -2, 0),
-        Naya = scene.buildings["NQ-BLD-02"].anchor.Position + Vector3.new(-5, -2, 0),
+        Ivo = scene.stops.P2.anchor.Position + Vector3.new(4, -2, 0),
+        Naya = scene.stops.P3.anchor.Position + Vector3.new(-4, -2, 0),
         ["Sana Bell"] = scene.buildings["NQ-BLD-04"].anchor.Position + Vector3.new(5, -2, 0),
         ["Ronan Wren"] = scene.finale.anchor.Position + Vector3.new(5, -2, 0),
         ["Nell Fen"] = scene.buildings["NQ-BLD-06"].anchor.Position + Vector3.new(4, -2, 0),
+    }
+    local hostIds = {
+        Tori = "P1",
+        Ivo = "P2",
+        Naya = "P3",
+        ["Sana Bell"] = "sana",
+        ["Ronan Wren"] = "finale",
+        ["Nell Fen"] = "cafe",
     }
     for _, source in Characters do
         local id = source.source:match("([^/]+)%.blend$")
@@ -512,20 +601,49 @@ function Demo.build(world)
         assert(template, "Missing accepted local NPC: " .. tostring(id))
         local model = template:Clone()
         model.Name = source.name
+        model:SetAttribute("QuayHost", hostIds[source.name])
         model:SetAttribute("SourcePath", template:GetAttribute("SourcePath") or source.source)
         model:SetAttribute("SourceSHA256", template:GetAttribute("SourceSHA256") or source.sha256)
-        model:PivotTo(CFrame.new(placements[source.name]))
+        local host = hostIds[source.name]
+        model:PivotTo(
+            CFrame.new(placements[source.name])
+                * CFrame.Angles(
+                    0,
+                    if host == "P1" or host == "P2" or host == "P3" then math.pi else 0,
+                    0
+                )
+        )
         model.Parent = actors
+    end
+    scene.encounters.cafe = target(
+        root,
+        "NellConversation",
+        placements["Nell Fen"] + Vector3.new(0, 2, -3),
+        "Nell / Warm Current Cafe",
+        "Talk with Nell"
+    )
+    scene.encounters.sana = target(
+        root,
+        "SanaConversation",
+        placements["Sana Bell"] + Vector3.new(0, 2, -3),
+        "Sana / market stage",
+        "Talk with Sana"
+    )
+    for id, node in scene.encounters do
+        node.anchor:SetAttribute("QuayInteraction", "encounter:" .. id)
     end
     local mica = world.discoveries.I03.anchor.Parent:Clone()
     mica.Name = "Mica"
+    mica:SetAttribute("QuayHost", "P4")
     mica:SetAttribute("DiscoveryId", nil)
     for _, item in mica:GetDescendants() do
         if item:IsA("ProximityPrompt") or item:IsA("BillboardGui") then
             item:Destroy()
         end
     end
-    mica:PivotTo(CFrame.new(scene.stops.P4.center + Vector3.new(4, 0, -15)))
+    mica:PivotTo(
+        CFrame.new(scene.stops.P4.center + Vector3.new(4, 0, -15)) * CFrame.Angles(0, math.pi, 0)
+    )
     mica.Parent = actors
     -- Interior presentation reuses the actual existing concert and sound controls.
     local hall = Instance.new("Model")
@@ -564,8 +682,13 @@ function Demo.build(world)
         Theme.Cream,
         false
     )
-    sign(marquee, "THE LANTERN ROOM / YOUR SIX-PART SET", 300)
+    sign(marquee, "THE LANTERN ROOM / YOUR FINISHED SONG", 300)
     require(script.Parent.QuayAtmosphere).build(scene)
+    require(script.Parent.QuayNeighborhoodScene).build(scene)
+    require(script.Parent.QuayPublicSpaces).build(scene)
+    require(script.Parent.QuayStreetLife).build(scene)
+    require(script.Parent.QuayStreetScene).build(scene)
+    require(script.Parent.QuayVista).build(scene)
     world.demo = scene
     return scene
 end

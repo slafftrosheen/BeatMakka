@@ -1,0 +1,60 @@
+{
+  "source": "User supplied BeatMakka_Companions.zip",
+  "attachment": "1-BeatMakka_Companions.zip",
+  "archive_sha256": "bf21a10b0e4e0e79262e21c554f2dc71602d6fc119651c8767c78dfcbd9d435d",
+  "usage": "Candidate reference and narrative specification. Imported source patch preserved for comparison; not applied over existing modules. No original photographs supplied or used.",
+  "files": [
+    {
+      "path": "art/Character_Turnarounds_CANDIDATE.png",
+      "sha256": "cea1a46fded9c2cfec3ca684c56da98d05f721c69c8d2617c7a664beb9bb7081"
+    },
+    {
+      "path": "art/Character_World_Scenes_CANDIDATE.png",
+      "sha256": "4d7335f1b6e64f9c0fb24683d6a23e3791289ef4066fecd20cc2fc76d0dbfb20"
+    },
+    {
+      "path": "BeatMakka_Companions_Artbook_RU.pdf",
+      "sha256": "bf2748c2f7cf10dfe56b86584388b1d4445b32cf8d7e26959775a62dd3a3670a"
+    },
+    {
+      "path": "data/companion-production.v1.json",
+      "sha256": "4a148d11bdaf2b29a39df983f766ae307ed418e0606f2ddf89f5bbd7697b3288"
+    },
+    {
+      "path": "docs/COMPANION_ARTBOOK_RU.md",
+      "sha256": "9589ad145d05d90a81245d55341788a8b916851862078680b622a7839a32fc9a"
+    },
+    {
+      "path": "docs/COMPANION_DEV_HANDOFF_RU.md",
+      "sha256": "7a940b5151c500e22fb992310cfda18c54ea760f235089b3c34665559aef31af"
+    },
+    {
+      "path": "README.md",
+      "sha256": "800af6bdbac4c456fb62e54e4e5c5e3df8ebca006484db7026e6886768be3f44"
+    },
+    {
+      "path": "src/client/CompanionFollower.luau",
+      "sha256": "25010ea470383c0f028ec0ef73261aa930045516f8485d3fc21e583a62e29370"
+    },
+    {
+      "path": "src/client/CompanionView.luau",
+      "sha256": "9f12d8c06f43ba9afea049512229a890d8ff99897a9181803852fd1c44499c45"
+    },
+    {
+      "path": "src/shared/CompanionCatalog.luau",
+      "sha256": "0b7db274af39b23cf10db8bacb91424acba310c6db0cae6e777336008d94a1ca"
+    },
+    {
+      "path": "src/shared/CompanionProgress.luau",
+      "sha256": "a62b069eb641d6b19a27cec32762287cde36dbf1f33c1b8e32a885bbe5540598"
+    },
+    {
+      "path": "tools/apply_companions.py",
+      "sha256": "7a826c1d2cf4c00209babcc9578aa7d26c3f364e8d2ad0781a3605d45825463b"
+    },
+    {
+      "path": "tools/build_companion_artbook.py",
+      "sha256": "5e63ce0385d1a7b59b84b03109481427afc722c69060531da7db00c9fdade382"
+    }
+  ]
+}

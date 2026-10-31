@@ -1,0 +1,9 @@
+{
+  "archive_crc": "pass",
+  "content_hashes": 1054,
+  "built_sources_match": 6,
+  "readme_matches": true,
+  "place_sha256": "eade22755c58f489f73d9c3d6218d32cd04792275ff8eb85fe50ef4bd9793303",
+  "package_sha256": "2faf2ed66a866e74efbc4b05c55ba810bf55b6451cfd23c55da3f13fb500550d",
+  "test_suites_run": 0
+}

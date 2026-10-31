@@ -1,0 +1,1 @@
+{"jsonrpc": "2.0", "id": 2, "result": {"content": [{"type": "text", "text": "{\"stationCleared\":true,\"entered\":\"Station_1\",\"position\":\"280, 3.207531213760376, 78\",\"notice\":\"Back beside your Roamer.\",\"distanceToVan\":5.803714275360107}"}], "isError": false}}

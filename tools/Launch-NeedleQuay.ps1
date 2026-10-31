@@ -1,4 +1,4 @@
-param([string]$StudioExe, [switch]$InstallOnly)
+param([string]$StudioExe, [switch]$InstallOnly, [string]$Place = 'NeedleQuay-Groovebox-v4.rbxlx')
 $ErrorActionPreference = 'Stop'
 if (-not $StudioExe) {
     $versions = Join-Path $env:LOCALAPPDATA 'Roblox/Versions'
@@ -15,9 +15,38 @@ if (-not (Test-Path -LiteralPath $sourceRoot)) {
     $sourceRoot = Join-Path $PSScriptRoot '../../assets/local-demo/content/needle-quay'
     $manifestPath = Join-Path $PSScriptRoot '../../assets/local-demo/install-manifest.json'
 }
+if (-not (Test-Path -LiteralPath $sourceRoot)) {
+    $sourceRoot = Join-Path $PSScriptRoot '../assets/local-demo/content/needle-quay'
+    $manifestPath = Join-Path $PSScriptRoot '../assets/local-demo/install-manifest.json'
+}
 $sourceRoot = [IO.Path]::GetFullPath($sourceRoot)
 $destinationRoot = [IO.Path]::GetFullPath((Join-Path (Split-Path $StudioExe) 'content/needle-quay'))
 $manifest = Get-Content -LiteralPath $manifestPath -Raw | ConvertFrom-Json
+if ($manifest.version -lt 2 -or $manifest.namespace -ne 'needle-quay' -or -not $manifest.active_content_sha256) { throw 'This package predates audio retirement. Rebuild the current package.' }
+$authorityPath = Join-Path (Split-Path $manifestPath) 'active-content.json'
+if (-not (Test-Path -LiteralPath $authorityPath -PathType Leaf) -or
+    (Get-FileHash -LiteralPath $authorityPath -Algorithm SHA256).Hash -ne $manifest.active_content_sha256) { throw 'Active content authority is missing or stale. Rebuild the current package.' }
+$allowedAudio = @($manifest.allowed_audio_files | Sort-Object)
+$packagedAudio = @($manifest.files | Where-Object { $_.file.StartsWith('audio/') } | ForEach-Object { $_.file } | Sort-Object)
+if (Compare-Object -ReferenceObject $allowedAudio -DifferenceObject $packagedAudio) { throw 'Packaged audio differs from its active allowlist.' }
+$authority = Get-Content -LiteralPath $authorityPath -Raw | ConvertFrom-Json
+$allowedPreviews = @($manifest.allowed_preview_audio_files | Sort-Object)
+$expectedPreviews = @($authority.local_preview_audio | ForEach-Object { 'preview-audio/' + $_.id + '.wav' } | Sort-Object)
+$packagedPreviews = @($manifest.files | Where-Object { $_.file.StartsWith('preview-audio/') } | ForEach-Object { $_.file } | Sort-Object)
+if (($allowedPreviews -join "`n") -ne ($expectedPreviews -join "`n") -or
+    ($packagedPreviews -join "`n") -ne ($expectedPreviews -join "`n")) { throw 'Packaged previews differ from their explicit local audition allowlist.' }
+foreach ($preview in $authority.local_preview_audio) {
+    if ($preview.audio_approved -ne $false -or $preview.runtime_admitted -ne $false -or
+        $preview.listening_review -ne 'pending') { throw 'A local preview cannot claim musical approval or admission.' }
+}
+foreach ($entry in $manifest.retired_audio_payloads) {
+    if ($entry.file -notmatch '^audio/[a-z0-9_.]+\.wav$') { throw 'Invalid retired audio path.' }
+    $retiredPath = [IO.Path]::GetFullPath((Join-Path $destinationRoot $entry.file))
+    if (-not $retiredPath.StartsWith($destinationRoot + [IO.Path]::DirectorySeparatorChar, [StringComparison]::OrdinalIgnoreCase)) { throw 'Retirement path outside namespace.' }
+    if ((Test-Path -LiteralPath $retiredPath -PathType Leaf) -and (Get-FileHash -LiteralPath $retiredPath -Algorithm SHA256).Hash -eq $entry.sha256) {
+        Remove-Item -LiteralPath $retiredPath
+    }
+}
 foreach ($entry in $manifest.files) {
     $sourcePath = [IO.Path]::GetFullPath((Join-Path $sourceRoot $entry.file))
     $destinationPath = [IO.Path]::GetFullPath((Join-Path $destinationRoot $entry.file))
@@ -32,7 +61,9 @@ foreach ($entry in $manifest.files) {
 }
 Write-Host "Installed and verified $($manifest.files.Count) local Needle Quay files. No uploads."
 if (-not $InstallOnly) {
-    $place = Join-Path $PSScriptRoot 'NeedleQuay-Artbook-Pass.rbxlx'
-    if (-not (Test-Path -LiteralPath $place -PathType Leaf)) { throw 'NeedleQuay-Artbook-Pass.rbxlx is missing.' }
-    Start-Process -FilePath $StudioExe -ArgumentList ('"' + $place + '"') -WindowStyle Hidden
+    if ([IO.Path]::GetFileName($Place) -ne $Place -or [IO.Path]::GetExtension($Place) -ne '.rbxlx') { throw 'Choose a package .rbxlx filename.' }
+    $placePath = Join-Path $PSScriptRoot $Place
+    if (-not (Test-Path -LiteralPath $placePath -PathType Leaf)) { $placePath = Join-Path $PSScriptRoot "../output/needle-quay-demo/$Place" }
+    if (-not (Test-Path -LiteralPath $placePath -PathType Leaf)) { throw "$Place is missing. Run tools/build_current_demo.ps1 first." }
+    Start-Process -FilePath $StudioExe -ArgumentList ('"' + [IO.Path]::GetFullPath($placePath) + '"') -WindowStyle Normal
 }

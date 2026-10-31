@@ -1,0 +1,124 @@
+{
+  "repository": "https://github.com/slafftrosheen/BeatMakka",
+  "commit": "8e8b91f6a5472eb6200599e60932e45a8c9ea56b",
+  "date": "2026-10-30",
+  "implementation_file_count": 19,
+  "pack_reset_implemented": false,
+  "sound_banks_implemented": false,
+  "changes": [
+    {
+      "path": "README.md",
+      "kind": "modified",
+      "incoming_sha256": "5eb47be4602e2403a4e2c82f29f792542c002f2a2234b1c09169e7f77c36543b",
+      "base_sha256": "a0b8c9e5b5e2a5c59195da9c19d746d54f7337784389046fcc3ea7d8096d4066"
+    },
+    {
+      "path": "src/client/QuayDemoView.luau",
+      "kind": "modified",
+      "incoming_sha256": "773a93ba4214b903701ceb592ad8629a86a1d3a2222988ce44f93f53c302167c",
+      "base_sha256": "cadb1f51f3dbd7cb682e78ba5a7cd751c24c520caf492ae5883718537fda29db"
+    },
+    {
+      "path": "src/server/MusicService.luau",
+      "kind": "modified",
+      "incoming_sha256": "b0972641033ead23fcece31619d22b14c6e86c46c677761cb9a5be9ae125fb2f",
+      "base_sha256": "dc46ba03dc0917c74af560c2dc1a038d0a12c292a7b5520b79068bfd5e34696e"
+    },
+    {
+      "path": "src/server/ProfileStore.luau",
+      "kind": "modified",
+      "incoming_sha256": "d79759e402db39ff14b9ddf64b1c1ed4cac828e4557fe55ba0dc686b3e14251f",
+      "base_sha256": "d2e3c5919d931bdee30bc45d1aeb161526d7e8667c02f4d113b5b27a4a8fd66c"
+    },
+    {
+      "path": "src/server/QuayDemoService.luau",
+      "kind": "modified",
+      "incoming_sha256": "cd305be2698d8a265d477f4d2a0c14fbf757952a5e38c2e0192167fbe087190e",
+      "base_sha256": "bf7fb6ac53df70831214fba329c03f56cca989d93cf050f75311b32ca3a0e0a3"
+    },
+    {
+      "path": "src/shared/QuayStory.luau",
+      "kind": "added",
+      "incoming_sha256": "ed0a96127ecc725acaaeef27073948ccb871e297cb0fd4a453b0978f2091d261",
+      "base_sha256": null
+    },
+    {
+      "path": "src/shared/QuayActivities.luau",
+      "kind": "added",
+      "incoming_sha256": "ec8942324f61a0ed00fbead073defb896629d4f90bf44160a439c744a9269e2a",
+      "base_sha256": null
+    },
+    {
+      "path": "src/shared/QuayIdentity.luau",
+      "kind": "added",
+      "incoming_sha256": "99e97db6cce0d98663ae2a75d2a5f5cf060ba3e47b544e6d008c84be79b291c7",
+      "base_sha256": null
+    },
+    {
+      "path": "src/shared/WardrobeCatalog.luau",
+      "kind": "added",
+      "incoming_sha256": "a69fd2b17155e3b49db8f5b6b631410f486075f40bd93b0505217c9f3353f3a2",
+      "base_sha256": null
+    },
+    {
+      "path": "src/shared/CommerceCatalog.luau",
+      "kind": "added",
+      "incoming_sha256": "f58a003baa2840309679d7f9b07512ef900d05b33b9dff80228964e8bd2f83e5",
+      "base_sha256": null
+    },
+    {
+      "path": "src/server/QuayExperienceService.luau",
+      "kind": "added",
+      "incoming_sha256": "e5a6dc26bdea83d0067388d6feef93caeb995307ecce0ca683370c60b6fdb90e",
+      "base_sha256": null
+    },
+    {
+      "path": "src/server/WardrobeService.luau",
+      "kind": "added",
+      "incoming_sha256": "4362bc29fa7ddab2ec567c57683651dc165136952e5344e5a60cc7aae127d094",
+      "base_sha256": null
+    },
+    {
+      "path": "src/server/CommerceService.luau",
+      "kind": "added",
+      "incoming_sha256": "325ab7958dda1cb46f43443cf5fdf4a679c99a0c1b74c381259c39d3e94c9c92",
+      "base_sha256": null
+    },
+    {
+      "path": "src/client/QuayExperiencePanel.luau",
+      "kind": "added",
+      "incoming_sha256": "e0aa6585974d86276f635a3a09bb06fa9f317d3a0ad24db91786cbbd0fb2b1d7",
+      "base_sha256": null
+    },
+    {
+      "path": "src/client/QuayWardrobePreview.luau",
+      "kind": "added",
+      "incoming_sha256": "c23363330cb722e00dc29540b27576ef39ebcbf65b1de00303fc17aacb6ab790",
+      "base_sha256": null
+    },
+    {
+      "path": "src/client/QuayShopPanel.luau",
+      "kind": "added",
+      "incoming_sha256": "fb85cd8b3898bde880da72730106ae09128ae0f726945ffede4863844115330a",
+      "base_sha256": null
+    },
+    {
+      "path": "docs/needle-quay/PLAYABLE_EXPERIENCE_BIBLE_2026-10-30.md",
+      "kind": "added",
+      "incoming_sha256": "71596f445b7b4190c936a4f880ffa412be13ccfe8393c8e56906ada9ace3b1b2",
+      "base_sha256": null
+    },
+    {
+      "path": "docs/needle-quay/EXPERIENCE_IMPLEMENTATION_2026-10-30.md",
+      "kind": "added",
+      "incoming_sha256": "eed367ea0876e066eea5ba53929490f8d9ca7993ade9b6258a32536f30ae2ff7",
+      "base_sha256": null
+    },
+    {
+      "path": "docs/needle-quay/COMMERCE_SETUP.md",
+      "kind": "added",
+      "incoming_sha256": "2dbe368c8fec8b57907f20351345a3dd8bf695fe0118004c680cb92354cc9c22",
+      "base_sha256": null
+    }
+  ]
+}

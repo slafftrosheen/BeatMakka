@@ -1,0 +1,79 @@
+{
+  "user_request": "Physical split groovebox UI, tactile pads/knobs/buttons and graphic child-friendly journal; 30 October 2026",
+  "source_board": "assets/references/needle-quay-approved-style-board.png",
+  "art_approval": "Not inferred from generation; local implementation/runtime review remains separate",
+  "assets": [
+    {
+      "id": "faceplate",
+      "file": "assets/production/needle-quay/ui-device-v3/faceplate.png",
+      "source": "C:\\Users\\slavd\\.codex\\generated_images\\01a18cbd-2b56-73d2-94ac-a64c0430a33e\\exec-b83956d5-b582-44cd-aa70-5b76cda42e0a.png",
+      "sha256": "0398c201cd320261d02f71119f9e20bf2afe0e77e1b562eb9ccec76041e4ebdd",
+      "size": [
+        1774,
+        887
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "stage": "local_ui_candidate",
+      "uploaded": false,
+      "provider": "built-in image_gen"
+    },
+    {
+      "id": "pad",
+      "file": "assets/production/needle-quay/ui-device-v3/pad.png",
+      "source": "C:\\Users\\slavd\\.codex\\generated_images\\01a18cbd-2b56-73d2-94ac-a64c0430a33e\\exec-ff30d92e-b465-441a-8d73-b696601787e1.png",
+      "sha256": "a162f252fc81549060c24708f3bd4629427e1bca7074e059ea19340ebb7fab86",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "stage": "local_ui_candidate",
+      "uploaded": false,
+      "provider": "built-in image_gen"
+    },
+    {
+      "id": "knob",
+      "file": "assets/production/needle-quay/ui-device-v3/knob.png",
+      "source": "C:\\Users\\slavd\\.codex\\generated_images\\01a18cbd-2b56-73d2-94ac-a64c0430a33e\\exec-5d6841e1-9b52-4a17-848a-ff4b93238302.png",
+      "sha256": "f9643e56eedcef8365a681fd7080225cd28967155ab165f2b75367dd89a8af62",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "stage": "local_ui_candidate",
+      "uploaded": false,
+      "provider": "built-in image_gen"
+    },
+    {
+      "id": "journal",
+      "file": "assets/production/needle-quay/ui-device-v3/journal.png",
+      "source": "C:\\Users\\slavd\\.codex\\generated_images\\01a18cbd-2b56-73d2-94ac-a64c0430a33e\\exec-6ba74f9d-9721-4700-ae4f-0dc6351f9411.png",
+      "sha256": "92bbb1d0698ca498033c7352f4ceaa1294ad23e2afa63c18284a996ea055dc50",
+      "size": [
+        1086,
+        1448
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "stage": "local_ui_candidate",
+      "uploaded": false,
+      "provider": "built-in image_gen"
+    }
+  ]
+}

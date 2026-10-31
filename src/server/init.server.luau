@@ -9,3 +9,4 @@ end
 local world = WorldBuilder.build()
 require(script.NeedleQuayDemoWorld).build(world)
 MusicService.start(world)
+require(script.QuaySolidScenery).install(world.root)

@@ -1,0 +1,282 @@
+{
+  "provider": "ElevenLabs",
+  "model": "eleven_v4",
+  "selection": "Take 1 of each resident; six measured phrase pauses separate seven authored lines.",
+  "processing": "Mono PCM16 44.1kHz; loudnorm target -19 LUFS, -2dB TP; 80ms lead,120ms tail.",
+  "runtimeVerified": false,
+  "robloxUploads": 0,
+  "records": [
+    {
+      "file": "assets/production/needle-quay/commission-voices/source/dock-take1.mp3",
+      "generationId": "UUXCmzUORP1GFzj27Bhv",
+      "sha256": "8fd02cd757f3a52916c644cf743489e3ee3d64cbfc7126d6295a3827304b2963",
+      "kind": "original"
+    },
+    {
+      "file": "assets/production/needle-quay/commission-voices/source/dock-take2.mp3",
+      "generationId": "3wolTcSHDKC65J6VFfLa",
+      "sha256": "e105b45fe2b23939beaf9110b4b14c32eafc227d2ad9a58c2dc133e89fb76509",
+      "kind": "original"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/commission-voices/clips/dock_brief.wav",
+      "source": "assets/production/needle-quay/commission-voices/source/dock-take1.mp3",
+      "start": 0,
+      "end": 6.166259,
+      "sha256": "3541414eb71e58d8d9c8e8da7cf58b881b6dba93e8d7b6b331c304b717943876"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/commission-voices/clips/dock_success.wav",
+      "source": "assets/production/needle-quay/commission-voices/source/dock-take1.mp3",
+      "start": 7.578889,
+      "end": 10.710272,
+      "sha256": "ae88cebbc376d9ce201ebc6092c290089a08a3b7fada80f32b3ed09e429a705d"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/commission-voices/clips/dock_slow.wav",
+      "source": "assets/production/needle-quay/commission-voices/source/dock-take1.mp3",
+      "start": 12.014014,
+      "end": 15.024239999999999,
+      "sha256": "d3f349a7f57b7e3876a4ab2a85c3ee0cc92f274b01d63c26d1ae149519ad3ca9"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/commission-voices/clips/dock_fast.wav",
+      "source": "assets/production/needle-quay/commission-voices/source/dock-take1.mp3",
+      "start": 16.422902,
+      "end": 19.632517,
+      "sha256": "dca6882d8122ff95b17e422193aad459f8ee573201a4bcd2a4a30236391bd4e4"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/commission-voices/clips/dock_layers.wav",
+      "source": "assets/production/needle-quay/commission-voices/source/dock-take1.mp3",
+      "start": 21.105578,
+      "end": 24.587007,
+      "sha256": "0c3f92ef068afd117c1e5f11f964d603d3f61fc8ad081949a0e6fd5790294e22"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/commission-voices/clips/dock_fx.wav",
+      "source": "assets/production/needle-quay/commission-voices/source/dock-take1.mp3",
+      "start": 26.138073000000002,
+      "end": 30.71,
+      "sha256": "328213eef2905a35c61dac0dfd50316071dac5d3999c4e56b5a0f1cf334fba62"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/commission-voices/clips/dock_save.wav",
+      "source": "assets/production/needle-quay/commission-voices/source/dock-take1.mp3",
+      "start": 32.099478000000005,
+      "end": 35.84,
+      "sha256": "572bc0f7b8cb786934be2a84c2547b570e1f92ce3100e736fbc2820eeab22b7a"
+    },
+    {
+      "file": "assets/production/needle-quay/commission-voices/source/repair-take1.mp3",
+      "generationId": "HzbVv9G6BJXdEDvBF89D",
+      "sha256": "3beb0c505e6606ae150dfc71bca52a005a580eda1da4e5fd0d35d4f6afe0301b",
+      "kind": "original"
+    },
+    {
+      "file": "assets/production/needle-quay/commission-voices/source/repair-take2.mp3",
+      "generationId": "GdtIjHkJr6kQ9ccM6Uuk",
+      "sha256": "5cac92d02f856de0d3967c74060abda8f3da30daeddca1aa0a425a31c3a76be7",
+      "kind": "original"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/commission-voices/clips/repair_brief.wav",
+      "source": "assets/production/needle-quay/commission-voices/source/repair-take1.mp3",
+      "start": 0,
+      "end": 6.15805,
+      "sha256": "d8cd58ffd2ca215a34d7c51a5b230699ad0e96c078f0ba88550720e96101a187"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/commission-voices/clips/repair_success.wav",
+      "source": "assets/production/needle-quay/commission-voices/source/repair-take1.mp3",
+      "start": 7.751746,
+      "end": 12.170067999999999,
+      "sha256": "c548abdcbe75345de9772fecb437e5d82fa26412bf920622b2479f2a9af884b4"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/commission-voices/clips/repair_slow.wav",
+      "source": "assets/production/needle-quay/commission-voices/source/repair-take1.mp3",
+      "start": 13.592562,
+      "end": 16.185011,
+      "sha256": "57e641208d337f8994629c7f82ce69d0617ca0ac165f52ebfebbbe50e2e62a96"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/commission-voices/clips/repair_fast.wav",
+      "source": "assets/production/needle-quay/commission-voices/source/repair-take1.mp3",
+      "start": 17.702902,
+      "end": 20.747506,
+      "sha256": "1a589f41ac0f0312d406ac846e03109b954bd24ebf5458492e592dac839f3547"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/commission-voices/clips/repair_layers.wav",
+      "source": "assets/production/needle-quay/commission-voices/source/repair-take1.mp3",
+      "start": 22.248435,
+      "end": 26.16356,
+      "sha256": "3bf6d66cd28d00943377e6820e7491e3547660bd18c20bc040d9762a9f793654"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/commission-voices/clips/repair_fx.wav",
+      "source": "assets/production/needle-quay/commission-voices/source/repair-take1.mp3",
+      "start": 27.677324000000002,
+      "end": 31.783175,
+      "sha256": "7d1e415eb66b28422af4511873a1ee26994a96d605d2434244b6768933ffc660"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/commission-voices/clips/repair_save.wav",
+      "source": "assets/production/needle-quay/commission-voices/source/repair-take1.mp3",
+      "start": 33.179864,
+      "end": 36.72,
+      "sha256": "c3556d3d780faed05619e2a038688dab97f1650c69d12695abcd293b0bbefabd"
+    },
+    {
+      "file": "assets/production/needle-quay/commission-voices/source/records-take1.mp3",
+      "generationId": "Naah0fRByKj5hVo57M2u",
+      "sha256": "c5879c5aa6ee55592e2db42c22a81496dec2e5e7884027194bd19390a23316e6",
+      "kind": "original"
+    },
+    {
+      "file": "assets/production/needle-quay/commission-voices/source/records-take2.mp3",
+      "generationId": "3Dao7CkHZqU5Yi4dtmHj",
+      "sha256": "8d73e243ef8e1927256ed63de55b0a3866e92578bf303a76c135aa92f4488b08",
+      "kind": "original"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/commission-voices/clips/records_brief.wav",
+      "source": "assets/production/needle-quay/commission-voices/source/records-take1.mp3",
+      "start": 0,
+      "end": 7.335918,
+      "sha256": "a2bd7b9f26f3d20e33aa8329ca17e6f44133c3a45d23523f0740f1914d736d32"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/commission-voices/clips/records_success.wav",
+      "source": "assets/production/needle-quay/commission-voices/source/records-take1.mp3",
+      "start": 8.546508,
+      "end": 12.216145,
+      "sha256": "325bb8cc83917def9c53b73da5f4d424f0af6261f84789f992470c21450cf338"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/commission-voices/clips/records_slow.wav",
+      "source": "assets/production/needle-quay/commission-voices/source/records-take1.mp3",
+      "start": 13.489025,
+      "end": 16.851429,
+      "sha256": "7d7c204e7da76f808edf30449238ee26577b0714ba92a0c6d25a01d7cbba0aa3"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/commission-voices/clips/records_fast.wav",
+      "source": "assets/production/needle-quay/commission-voices/source/records-take1.mp3",
+      "start": 18.010612000000002,
+      "end": 21.900839,
+      "sha256": "9f86706d4c3f594e8c14e5623e15fd988deb667d54588c2f83e383b990a7dbe8"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/commission-voices/clips/records_layers.wav",
+      "source": "assets/production/needle-quay/commission-voices/source/records-take1.mp3",
+      "start": 23.217415000000003,
+      "end": 27.204014,
+      "sha256": "549fa1ad49e9f64e6707b3126ba0c8546d2abcf71394d994e035bd7eaa8a1a17"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/commission-voices/clips/records_fx.wav",
+      "source": "assets/production/needle-quay/commission-voices/source/records-take1.mp3",
+      "start": 28.449002,
+      "end": 32.751926999999995,
+      "sha256": "a7be949f3afde10a630029f13423ffbd785e88b0519768f45982e1a81e86697b"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/commission-voices/clips/records_save.wav",
+      "source": "assets/production/needle-quay/commission-voices/source/records-take1.mp3",
+      "start": 34.128617,
+      "end": 38.24,
+      "sha256": "8556628ebad7c17c65aff4993f85c5d72bf1dc0534c905e82de8b8f138e6b831"
+    },
+    {
+      "file": "assets/production/needle-quay/commission-voices/source/signal-take1.mp3",
+      "generationId": "ahTtlJUP6JCRkvJsDm4a",
+      "sha256": "a3e878f245d42e0f510d66281901c52a88a07f44b92e81744e6e0c479eb55e5d",
+      "kind": "original"
+    },
+    {
+      "file": "assets/production/needle-quay/commission-voices/source/signal-take2.mp3",
+      "generationId": "OzO64RulzZ2Xn1xdP9SB",
+      "sha256": "b55c225b4ae9fc389580370598f522e25acad280db63338199a31071f99b59ff",
+      "kind": "original"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/commission-voices/clips/signal_brief.wav",
+      "source": "assets/production/needle-quay/commission-voices/source/signal-take1.mp3",
+      "start": 0,
+      "end": 7.427528,
+      "sha256": "aef1ce3109086333ccf7a959b6fb80aebb311b16658305cd373a72373ce6fe7c"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/commission-voices/clips/signal_success.wav",
+      "source": "assets/production/needle-quay/commission-voices/source/signal-take1.mp3",
+      "start": 8.891746,
+      "end": 13.000022999999999,
+      "sha256": "b43d189f3f30c41e87cb7722b43a29e81542085d604dffcc64fa566b86442918"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/commission-voices/clips/signal_slow.wav",
+      "source": "assets/production/needle-quay/commission-voices/source/signal-take1.mp3",
+      "start": 14.341633,
+      "end": 17.358435,
+      "sha256": "f842e2938325db06b02902b98f6ad12466d638b33e4ab25e8868668a8b47813d"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/commission-voices/clips/signal_fast.wav",
+      "source": "assets/production/needle-quay/commission-voices/source/signal-take1.mp3",
+      "start": 18.641927000000003,
+      "end": 21.819206,
+      "sha256": "2edf48656e7857159fa4e3198b0a06d3d513f5c88c8cc81483fae5fd00cfc345"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/commission-voices/clips/signal_layers.wav",
+      "source": "assets/production/needle-quay/commission-voices/source/signal-take1.mp3",
+      "start": 23.065578000000002,
+      "end": 26.677551,
+      "sha256": "8d7c6f7e11fad4d6f2a683f888fb2fdedff093e4a4f0add9b4961202c2e007dc"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/commission-voices/clips/signal_fx.wav",
+      "source": "assets/production/needle-quay/commission-voices/source/signal-take1.mp3",
+      "start": 27.937687,
+      "end": 32.084058999999996,
+      "sha256": "65706b1e72530c18159b05e3915e6e86c473eca6e589dff96530b600167b3696"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/commission-voices/clips/signal_save.wav",
+      "source": "assets/production/needle-quay/commission-voices/source/signal-take1.mp3",
+      "start": 33.299229000000004,
+      "end": 36.88,
+      "sha256": "cc8bd6c6c90d8061176159893cb4fb6055c58f86b461f911d9c6c9bf3bd9794d"
+    }
+  ]
+}

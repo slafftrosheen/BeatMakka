@@ -1,0 +1,2434 @@
+{
+  "assets": [
+    {
+      "id": "NQ-BLD-09",
+      "kind": "authored_architecture",
+      "source": "assets/production/needle-quay/architecture-artbook/NQ-BLD-09.blend",
+      "source_sha256": "14103e09b66719d2a32ee3253669569cf72ac3735e811c5af9cf67a76c49ed14",
+      "triangles": 15600,
+      "parts": [
+        {
+          "name": "stone",
+          "bone": "",
+          "center": [
+            0.09985733032226562,
+            0.26153117418289185,
+            0.04755115509033203
+          ],
+          "size": [
+            32.33476257324219,
+            0.5230623483657837,
+            19.52448844909668
+          ],
+          "color": [
+            0.9098039215686274,
+            0.8470588235294118,
+            0.7176470588235294
+          ],
+          "surface_family": "authored_stone",
+          "triangles": 216,
+          "sha256": "b463cde181d9771a5417c4368dc80d973ab615880ceebdbbdc2ff168be5b4ca3",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-BLD-09_stone_b463cde181d9.mesh"
+        },
+        {
+          "name": "brick",
+          "bone": "",
+          "center": [
+            0.09985685348510742,
+            7.394199371337891,
+            0.2995724678039551
+          ],
+          "size": [
+            31.992393493652344,
+            13.83737564086914,
+            18.678081512451172
+          ],
+          "color": [
+            1,
+            1,
+            1
+          ],
+          "surface_family": "authored_brick",
+          "triangles": 540,
+          "sha256": "a2ee0311df25d8f8fd9ff05b4dce6faaf9fe280ace21d06ffc4f4a3f06d315fe",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-BLD-09_brick_a2ee0311df25.mesh"
+        },
+        {
+          "name": "iron",
+          "bone": "",
+          "center": [
+            -0.4279608726501465,
+            7.441750526428223,
+            -0.1402759552001953
+          ],
+          "size": [
+            32.058963775634766,
+            14.883501052856445,
+            19.71944808959961
+          ],
+          "color": [
+            0.17254901960784313,
+            0.18823529411764706,
+            0.19215686274509805
+          ],
+          "surface_family": "authored_iron",
+          "triangles": 4472,
+          "sha256": "8dcc60feb9b30e1b003b137f3094a72ac3e2633e8cc199c6b0edb43e93bb7390",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-BLD-09_iron_8dcc60feb9b3.mesh"
+        },
+        {
+          "name": "cream",
+          "bone": "",
+          "center": [
+            0.0760812759399414,
+            7.429862976074219,
+            0.07132577896118164
+          ],
+          "size": [
+            32.762725830078125,
+            14.717071533203125,
+            19.857345581054688
+          ],
+          "color": [
+            0.9098039215686274,
+            0.8470588235294118,
+            0.7176470588235294
+          ],
+          "surface_family": "authored_cream",
+          "triangles": 4624,
+          "sha256": "13bd882126e46933586041d8309cb0eb09ed38196644dde8c8d74af2908c25c1",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-BLD-09_cream_13bd882126e4.mesh"
+        },
+        {
+          "name": "brass",
+          "bone": "",
+          "center": [
+            -0.22824621200561523,
+            6.704707622528076,
+            -9.182121276855469
+          ],
+          "size": [
+            30.594390869140625,
+            12.439372062683105,
+            1.2553491592407227
+          ],
+          "color": [
+            0.7450980392156863,
+            0.5647058823529412,
+            0.29411764705882354
+          ],
+          "surface_family": "authored_brass",
+          "triangles": 2184,
+          "sha256": "0acccdd49b4b612c60b2fddfe7825bf28aee42f5f4697946c15028e85bd7b77e",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-BLD-09_brass_0acccdd49b4b.mesh"
+        },
+        {
+          "name": "teal",
+          "bone": "",
+          "center": [
+            0.09985685348510742,
+            6.704707622528076,
+            -2.2491683959960938
+          ],
+          "size": [
+            31.497859954833984,
+            12.64859676361084,
+            14.607704162597656
+          ],
+          "color": [
+            0.1843137254901961,
+            0.3607843137254902,
+            0.34509803921568627
+          ],
+          "surface_family": "authored_teal",
+          "triangles": 864,
+          "sha256": "3bb7895b62a2dc7ba1f04a84954f48956945f7845a5ddfd07438f337f921d0e1",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-BLD-09_teal_3bb7895b62a2.mesh"
+        },
+        {
+          "name": "amber",
+          "bone": "",
+          "center": [
+            0.09985685348510742,
+            9.652876853942871,
+            -9.324774742126465
+          ],
+          "size": [
+            16.395626068115234,
+            0.6657161712646484,
+            0.36138916015625
+          ],
+          "color": [
+            0.6509803921568628,
+            0.4196078431372549,
+            0.21568627450980393
+          ],
+          "surface_family": "light",
+          "triangles": 216,
+          "sha256": "cea70ba385395dac9acad0c08057489fdc6a59884f2120206d3ff46c84a14f64",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-BLD-09_amber_cea70ba38539.mesh"
+        },
+        {
+          "name": "glass",
+          "bone": "",
+          "center": [
+            -1.062767505645752,
+            8.91631031036377,
+            0.19020462036132812
+          ],
+          "size": [
+            23.04802703857422,
+            10.460294723510742,
+            19.163103103637695
+          ],
+          "color": [
+            0.403921568627451,
+            0.5490196078431373,
+            0.5176470588235295
+          ],
+          "surface_family": "authored_glass",
+          "triangles": 540,
+          "sha256": "61061c8966a350d0c86b7b8a0cdf3ec3924fe5e914353920b1a9b17dcd7a7a66",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-BLD-09_glass_61061c8966a3.mesh"
+        },
+        {
+          "name": "wood",
+          "bone": "",
+          "center": [
+            0.09985685348510742,
+            5.74774169921875,
+            0.06419515609741211
+          ],
+          "size": [
+            29.82406234741211,
+            11.400381088256836,
+            19.69091796875
+          ],
+          "color": [
+            1,
+            1,
+            1
+          ],
+          "surface_family": "authored_wood",
+          "triangles": 1944,
+          "sha256": "2f1390c7dbd8f7d3a946f85657ba0a962e25358b37ed6b3e14c37d391a4759f8",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-BLD-09_wood_2f1390c7dbd8.mesh"
+        }
+      ],
+      "joints": {},
+      "dimensions": [
+        34,
+        20,
+        16
+      ],
+      "lights": [
+        [
+          8.088444709777832,
+          9.652876853942871,
+          -9.591059684753418
+        ],
+        [
+          -7.888731002807617,
+          9.652876853942871,
+          -9.591059684753418
+        ]
+      ],
+      "sign": {
+        "position": [
+          0.0998569130897522,
+          12.077983856201172,
+          -9.067997932434082
+        ],
+        "size": [
+          14.265335416512388,
+          1.2363290694310736
+        ],
+        "text": "CINDER COLD STORAGE"
+      },
+      "coordinate_basis": "blender_to_roblox_front_minus_z_v2"
+    },
+    {
+      "id": "NQ-BLD-10",
+      "kind": "authored_architecture",
+      "source": "assets/production/needle-quay/architecture-artbook/NQ-BLD-10.blend",
+      "source_sha256": "cb2175ce7207a3bf2d01a581f1a323eb27b6937f2b9acdae32e56f4ef2dcce07",
+      "triangles": 26584,
+      "parts": [
+        {
+          "name": "stone",
+          "bone": "",
+          "center": [
+            -0.0,
+            0.2550724744796753,
+            0.1484060287475586
+          ],
+          "size": [
+            35.246376037597656,
+            0.5101449489593506,
+            15.332174301147461
+          ],
+          "color": [
+            0.9098039215686274,
+            0.8470588235294118,
+            0.7176470588235294
+          ],
+          "surface_family": "authored_stone",
+          "triangles": 216,
+          "sha256": "75af30319e6ea0e70955af00aa0a50e8cd9dd3477dc6e9fa576257c3a2982a0c",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-BLD-10_stone_75af30319e6e.mesh"
+        },
+        {
+          "name": "brick",
+          "bone": "",
+          "center": [
+            -0.0,
+            11.849275588989258,
+            0.39420294761657715
+          ],
+          "size": [
+            34.9124641418457,
+            22.771015167236328,
+            14.50666618347168
+          ],
+          "color": [
+            1,
+            1,
+            1
+          ],
+          "surface_family": "authored_brick",
+          "triangles": 540,
+          "sha256": "841ffebdf400da188c8f5c59d9c43bab04ac0451e99cea5de7ae256cdce6a168",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-BLD-10_brick_841ffebdf400.mesh"
+        },
+        {
+          "name": "iron",
+          "bone": "",
+          "center": [
+            -0.009275436401367188,
+            12.034783363342285,
+            0.1460871696472168
+          ],
+          "size": [
+            33.96637725830078,
+            23.513044357299805,
+            15.160579681396484
+          ],
+          "color": [
+            0.17254901960784313,
+            0.18823529411764706,
+            0.19215686274509805
+          ],
+          "surface_family": "authored_iron",
+          "triangles": 3932,
+          "sha256": "2d5c78749746fdf74236b9286e3c68817f7a5bf264a0973ba8b532eb4b066b80",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-BLD-10_iron_2d5c78749746.mesh"
+        },
+        {
+          "name": "cream",
+          "bone": "",
+          "center": [
+            -0.0,
+            11.884058952331543,
+            0.0
+          ],
+          "size": [
+            35.617393493652344,
+            23.62898826599121,
+            16.0
+          ],
+          "color": [
+            0.9098039215686274,
+            0.8470588235294118,
+            0.7176470588235294
+          ],
+          "surface_family": "authored_cream",
+          "triangles": 9612,
+          "sha256": "f8136c69f6cd7c322925dd2bdb77c302bb4338b9734456cdcf2db4acf1116ccb",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-BLD-10_cream_f8136c69f6cd.mesh"
+        },
+        {
+          "name": "brass",
+          "bone": "",
+          "center": [
+            -0.1259908676147461,
+            10.75014591217041,
+            -6.88231897354126
+          ],
+          "size": [
+            33.93700408935547,
+            20.5542049407959,
+            0.9924631118774414
+          ],
+          "color": [
+            0.7450980392156863,
+            0.5647058823529412,
+            0.29411764705882354
+          ],
+          "surface_family": "authored_brass",
+          "triangles": 2216,
+          "sha256": "4a3eccd23fc96daaa785921370e238a8e92e4fdee31a3894777d1b98196221b7",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-BLD-10_brass_4a3eccd23fc9.mesh"
+        },
+        {
+          "name": "teal",
+          "bone": "",
+          "center": [
+            -0.0,
+            12.034782409667969,
+            -1.4191300868988037
+          ],
+          "size": [
+            34.430145263671875,
+            23.327537536621094,
+            11.417970657348633
+          ],
+          "color": [
+            0.1843137254901961,
+            0.3607843137254902,
+            0.34509803921568627
+          ],
+          "surface_family": "authored_teal",
+          "triangles": 1728,
+          "sha256": "bc3e140239f842e2b6ce9eb465bd80b1fcdb8cbb16cceb657e6c2342943db837",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-BLD-10_teal_bc3e140239f8.mesh"
+        },
+        {
+          "name": "amber",
+          "bone": "",
+          "center": [
+            -1.4399995803833008,
+            12.327420234680176,
+            -7.100289821624756
+          ],
+          "size": [
+            28.5449275970459,
+            10.927305221557617,
+            0.426666259765625
+          ],
+          "color": [
+            0.6509803921568628,
+            0.4196078431372549,
+            0.21568627450980393
+          ],
+          "surface_family": "light",
+          "triangles": 432,
+          "sha256": "f9948d9d101564b507590f468ff1d991195956c723250765d5cf2e2c2ee8438d",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-BLD-10_amber_f9948d9d1015.mesh"
+        },
+        {
+          "name": "wood",
+          "bone": "",
+          "center": [
+            -0.0,
+            9.689739227294922,
+            0.3501451015472412
+          ],
+          "size": [
+            33.5737190246582,
+            16.620059967041016,
+            15.123479843139648
+          ],
+          "color": [
+            1,
+            1,
+            1
+          ],
+          "surface_family": "authored_wood",
+          "triangles": 5076,
+          "sha256": "7d0af616378fa405d79de2e2827458f877988770de5029ad234ea83ad399ffda",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-BLD-10_wood_7d0af616378f.mesh"
+        },
+        {
+          "name": "leaf",
+          "bone": "",
+          "center": [
+            -0.0,
+            13.19976806640625,
+            -6.840579986572266
+          ],
+          "size": [
+            25.547630310058594,
+            0.7327537536621094,
+            0.4734001159667969
+          ],
+          "color": [
+            0.3176470588235294,
+            0.45098039215686275,
+            0.25098039215686274
+          ],
+          "surface_family": "authored_leaf",
+          "triangles": 240,
+          "sha256": "860702cde74e80e1fe8bf3d3d465984d974fe57e3b5aa94f3e017021cd1592bc",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-BLD-10_leaf_860702cde74e.mesh"
+        },
+        {
+          "name": "glass",
+          "bone": "",
+          "center": [
+            -0.0,
+            9.359304428100586,
+            0.2875361442565918
+          ],
+          "size": [
+            30.50666618347168,
+            16.863536834716797,
+            14.979710578918457
+          ],
+          "color": [
+            0.403921568627451,
+            0.5490196078431373,
+            0.5176470588235295
+          ],
+          "surface_family": "authored_glass",
+          "triangles": 648,
+          "sha256": "e6db0e71dc7e9fbf51362212292f69f70f9f68c8c2fea07bec3dbf254148addb",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-BLD-10_glass_e6db0e71dc7e.mesh"
+        },
+        {
+          "name": "coral",
+          "bone": "",
+          "center": [
+            -1.029256820678711,
+            15.7031888961792,
+            -1.9362316131591797
+          ],
+          "size": [
+            31.830570220947266,
+            15.990724563598633,
+            12.12753677368164
+          ],
+          "color": [
+            0.792156862745098,
+            0.4549019607843137,
+            0.3254901960784314
+          ],
+          "surface_family": "authored_coral",
+          "triangles": 1944,
+          "sha256": "a26528e8bbc6bc1b479cbe96fd8fd15974888534048cd23932482f228b1585ef",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-BLD-10_coral_a26528e8bbc6.mesh"
+        }
+      ],
+      "joints": {},
+      "dimensions": [
+        38,
+        16,
+        26
+      ],
+      "lights": [
+        [
+          6.344347953796387,
+          7.188405990600586,
+          -7.397100925445557
+        ],
+        [
+          -15.508405685424805,
+          7.188405990600586,
+          -7.397100925445557
+        ]
+      ],
+      "sign": {
+        "position": [
+          -0.0,
+          8.811594009399414,
+          -7.05391263961792
+        ],
+        "size": [
+          5.472463768115943,
+          0.9739130434782609
+        ],
+        "text": "QUAYSIDE FLATS"
+      },
+      "coordinate_basis": "blender_to_roblox_front_minus_z_v2"
+    },
+    {
+      "id": "NQ-BLD-11",
+      "kind": "authored_architecture",
+      "source": "assets/production/needle-quay/architecture-artbook/NQ-BLD-11.blend",
+      "source_sha256": "ec97ab410cad3ff5df0254fc720bfcb7779ff4fb3ee5e4e774425f06287e2003",
+      "triangles": 9644,
+      "parts": [
+        {
+          "name": "stone",
+          "bone": "",
+          "center": [
+            -0.0,
+            0.260740727186203,
+            -0.026073932647705078
+          ],
+          "size": [
+            17.066665649414062,
+            0.521481454372406,
+            15.67288875579834
+          ],
+          "color": [
+            0.9098039215686274,
+            0.8470588235294118,
+            0.7176470588235294
+          ],
+          "surface_family": "authored_stone",
+          "triangles": 216,
+          "sha256": "e3c39162b079d35591c2188ffa81491630f4b0c3ffad89857604528943a02a39",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-BLD-11_stone_e3c39162b079.mesh"
+        },
+        {
+          "name": "brick",
+          "bone": "",
+          "center": [
+            -0.0,
+            6.423703193664551,
+            0.22518539428710938
+          ],
+          "size": [
+            16.72533416748047,
+            11.899259567260742,
+            14.829036712646484
+          ],
+          "color": [
+            1,
+            1,
+            1
+          ],
+          "surface_family": "authored_brick",
+          "triangles": 540,
+          "sha256": "66ce52aeffafd9b161c947a46de2afb9d73c9c6cb216c95948ce4085539d49d5",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-BLD-11_brick_66ce52aeffaf.mesh"
+        },
+        {
+          "name": "iron",
+          "bone": "",
+          "center": [
+            -0.009481430053710938,
+            6.613332748413086,
+            -0.12562942504882812
+          ],
+          "size": [
+            15.758222579956055,
+            12.657777786254883,
+            15.691851615905762
+          ],
+          "color": [
+            0.17254901960784313,
+            0.18823529411764706,
+            0.19215686274509805
+          ],
+          "surface_family": "authored_iron",
+          "triangles": 2432,
+          "sha256": "3a5926be803734fef2e8df49134b0fc573c3b65267dedb188a116b87b3d86eed",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-BLD-11_iron_3a5926be8037.mesh"
+        },
+        {
+          "name": "cream",
+          "bone": "",
+          "center": [
+            -0.0,
+            6.459259033203125,
+            0.12800002098083496
+          ],
+          "size": [
+            17.445924758911133,
+            12.776294708251953,
+            15.743999481201172
+          ],
+          "color": [
+            0.9098039215686274,
+            0.8470588235294118,
+            0.7176470588235294
+          ],
+          "surface_family": "authored_cream",
+          "triangles": 2592,
+          "sha256": "90fc0dfc76634ad67f7a652187e9d2847226e9c492d14902b157b46e31866313",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-BLD-11_cream_90fc0dfc7663.mesh"
+        },
+        {
+          "name": "brass",
+          "bone": "",
+          "center": [
+            -0.256000280380249,
+            5.831110954284668,
+            -7.284148216247559
+          ],
+          "size": [
+            15.473777770996094,
+            10.695110321044922,
+            1.156740665435791
+          ],
+          "color": [
+            0.7450980392156863,
+            0.5647058823529412,
+            0.29411764705882354
+          ],
+          "surface_family": "authored_brass",
+          "triangles": 1100,
+          "sha256": "f07741262285d7d53cc22b3202b3f61ffa5e62b54b2d01e0da7f49bc89ebfda9",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-BLD-11_brass_f07741262285.mesh"
+        },
+        {
+          "name": "teal",
+          "bone": "",
+          "center": [
+            -0.0,
+            3.7925925254821777,
+            -1.82281494140625
+          ],
+          "size": [
+            16.2322940826416,
+            6.826666831970215,
+            12.060444831848145
+          ],
+          "color": [
+            0.1843137254901961,
+            0.3607843137254902,
+            0.34509803921568627
+          ],
+          "surface_family": "authored_teal",
+          "triangles": 648,
+          "sha256": "0373a529dd85759a8b0dffa912cd44a6e221d7dfa370de46c86f7fe62ed1ef36",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-BLD-11_teal_0373a529dd85.mesh"
+        },
+        {
+          "name": "coral",
+          "bone": "",
+          "center": [
+            -0.0,
+            10.145184516906738,
+            -7.075554847717285
+          ],
+          "size": [
+            15.170370101928711,
+            2.2755565643310547,
+            0.3792591094970703
+          ],
+          "color": [
+            0.792156862745098,
+            0.4549019607843137,
+            0.3254901960784314
+          ],
+          "surface_family": "authored_coral",
+          "triangles": 108,
+          "sha256": "98cfa470577b7256297d1f86d53397a76842dad5141d9d54ad7e572424637b16",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-BLD-11_coral_98cfa470577b.mesh"
+        },
+        {
+          "name": "glass",
+          "bone": "",
+          "center": [
+            -0.1422128677368164,
+            5.923545837402344,
+            -0.11377763748168945
+          ],
+          "size": [
+            13.217204093933105,
+            5.312492370605469,
+            15.772443771362305
+          ],
+          "color": [
+            0.403921568627451,
+            0.5490196078431373,
+            0.5176470588235295
+          ],
+          "surface_family": "authored_glass",
+          "triangles": 552,
+          "sha256": "a7dfbf11a23544b6adad37e2c73c7f2606c981d4802e626edeb4ab60513b6ec0",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-BLD-11_glass_a7dfbf11a235.mesh"
+        },
+        {
+          "name": "amber",
+          "bone": "",
+          "center": [
+            0.2560000419616699,
+            8.01185131072998,
+            -7.4737772941589355
+          ],
+          "size": [
+            14.24118423461914,
+            0.6637039184570312,
+            0.36029624938964844
+          ],
+          "color": [
+            0.6509803921568628,
+            0.4196078431372549,
+            0.21568627450980393
+          ],
+          "surface_family": "light",
+          "triangles": 216,
+          "sha256": "36813b4df749a5e9f03dd954da39ae9b72da7f5779907644ca8171fc9472840a",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-BLD-11_amber_36813b4df749.mesh"
+        },
+        {
+          "name": "wood",
+          "bone": "",
+          "center": [
+            -0.09955549240112305,
+            4.881777763366699,
+            0.18014860153198242
+          ],
+          "size": [
+            15.748740196228027,
+            9.005037307739258,
+            15.459555625915527
+          ],
+          "color": [
+            1,
+            1,
+            1
+          ],
+          "surface_family": "authored_wood",
+          "triangles": 1080,
+          "sha256": "01710caefb3d13986f304f56f4d9810a2f8dba41f39016e4020d1b5155680fd5",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-BLD-11_wood_01710caefb3d.mesh"
+        },
+        {
+          "name": "leaf",
+          "bone": "",
+          "center": [
+            -0.1237332820892334,
+            1.303703784942627,
+            -7.170370101928711
+          ],
+          "size": [
+            15.830793380737305,
+            0.7490371465682983,
+            0.4839200973510742
+          ],
+          "color": [
+            0.3176470588235294,
+            0.45098039215686275,
+            0.25098039215686274
+          ],
+          "surface_family": "authored_leaf",
+          "triangles": 160,
+          "sha256": "04bd7d8f43e1d84c2023ee68e402a5a86fe50c37a64f05f4692614f74167c869",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-BLD-11_leaf_04bd7d8f43e1.mesh"
+        }
+      ],
+      "joints": {},
+      "dimensions": [
+        18,
+        16,
+        14
+      ],
+      "lights": [
+        [
+          -6.655999660491943,
+          8.01185131072998,
+          -7.739258766174316
+        ],
+        [
+          7.167999744415283,
+          8.01185131072998,
+          -7.739258766174316
+        ]
+      ],
+      "sign": {
+        "position": [
+          -0.0,
+          10.145184516906738,
+          -7.293629169464111
+        ],
+        "size": [
+          14.222222222222223,
+          1.4222222222222223
+        ],
+        "text": "TIDEWASH LAUNDRY"
+      },
+      "coordinate_basis": "blender_to_roblox_front_minus_z_v2"
+    },
+    {
+      "id": "NQ-BLD-12",
+      "kind": "authored_architecture",
+      "source": "assets/production/needle-quay/architecture-artbook/NQ-BLD-12.blend",
+      "source_sha256": "c8199f5e34df6c3994d5771a1d7db73cb4602de29125edf06b9648d6f5fb5810",
+      "triangles": 8264,
+      "parts": [
+        {
+          "name": "stone",
+          "bone": "",
+          "center": [
+            -0.0,
+            0.25923019647598267,
+            -0.09426546096801758
+          ],
+          "size": [
+            11.31186294555664,
+            0.5184603929519653,
+            11.811470031738281
+          ],
+          "color": [
+            0.9098039215686274,
+            0.8470588235294118,
+            0.7176470588235294
+          ],
+          "surface_family": "authored_stone",
+          "triangles": 216,
+          "sha256": "661182007634e64006910ce69ce95aa3cdeb13562552b00b26489a97460aa939",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-BLD-12_stone_661182007634.mesh"
+        },
+        {
+          "name": "teal",
+          "bone": "",
+          "center": [
+            -0.0,
+            4.477612495422363,
+            -0.17910456657409668
+          ],
+          "size": [
+            10.482325553894043,
+            8.201101303100586,
+            10.84996223449707
+          ],
+          "color": [
+            0.1843137254901961,
+            0.3607843137254902,
+            0.34509803921568627
+          ],
+          "surface_family": "authored_teal",
+          "triangles": 432,
+          "sha256": "4dac3adedb86203ea886bca0be7214996b6d187b8a3316e5eefb647352e2e01e",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-BLD-12_teal_4dac3adedb86.mesh"
+        },
+        {
+          "name": "iron",
+          "bone": "",
+          "center": [
+            -0.009426355361938477,
+            5.1798906326293945,
+            -0.09662199020385742
+          ],
+          "size": [
+            10.010997772216797,
+            9.794187545776367,
+            11.637078285217285
+          ],
+          "color": [
+            0.17254901960784313,
+            0.18823529411764706,
+            0.19215686274509805
+          ],
+          "surface_family": "authored_iron",
+          "triangles": 2616,
+          "sha256": "dd5199c8ea0e7112fd593c6d3be2339daec3b05e25b309741340083ff47527eb",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-BLD-12_iron_dd5199c8ea0e.mesh"
+        },
+        {
+          "name": "cream",
+          "bone": "",
+          "center": [
+            -0.0,
+            5.007855415344238,
+            0.15553808212280273
+          ],
+          "size": [
+            11.688924789428711,
+            9.874313354492188,
+            11.688923835754395
+          ],
+          "color": [
+            0.9098039215686274,
+            0.8470588235294118,
+            0.7176470588235294
+          ],
+          "surface_family": "authored_cream",
+          "triangles": 2464,
+          "sha256": "eed337cdd6936a860689b9125962428252cc38106a19d87bafe4edbb2c3ed062",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-BLD-12_cream_eed337cdd693.mesh"
+        },
+        {
+          "name": "brick",
+          "bone": "",
+          "center": [
+            -0.0,
+            9.049489974975586,
+            0.15553808212280273
+          ],
+          "size": [
+            10.972506523132324,
+            0.8483905792236328,
+            10.972506523132324
+          ],
+          "color": [
+            1,
+            1,
+            1
+          ],
+          "surface_family": "authored_brick",
+          "triangles": 432,
+          "sha256": "7e0758614fefe3976b5dfd53bb6ab49ea2cf9c5e7cb293e18d7ee670d142a0ed",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-BLD-12_brick_7e0758614fef.mesh"
+        },
+        {
+          "name": "brass",
+          "bone": "",
+          "center": [
+            -0.8413195610046387,
+            3.855459451675415,
+            -5.354281425476074
+          ],
+          "size": [
+            8.554595947265625,
+            6.749411106109619,
+            1.0086407661437988
+          ],
+          "color": [
+            0.7450980392156863,
+            0.5647058823529412,
+            0.29411764705882354
+          ],
+          "surface_family": "authored_brass",
+          "triangles": 652,
+          "sha256": "f462e1da39db0fcacbcd1822cc10ebb460e814b51847cff95aa13daca9dccbd0",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-BLD-12_brass_f462e1da39db.mesh"
+        },
+        {
+          "name": "glass",
+          "bone": "",
+          "center": [
+            -0.0,
+            5.106363296508789,
+            0.04713273048400879
+          ],
+          "size": [
+            8.926944732666016,
+            3.227651596069336,
+            11.45326042175293
+          ],
+          "color": [
+            0.403921568627451,
+            0.5490196078431373,
+            0.5176470588235295
+          ],
+          "surface_family": "authored_glass",
+          "triangles": 324,
+          "sha256": "00dbfd53f1424b7906a9341371691af6ecb1a46253a5c9b74cd4b4eaa659df51",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-BLD-12_glass_00dbfd53f142.mesh"
+        },
+        {
+          "name": "amber",
+          "bone": "",
+          "center": [
+            0.009426593780517578,
+            5.019639015197754,
+            -5.62293815612793
+          ],
+          "size": [
+            5.82560920715332,
+            5.420267105102539,
+            0.3770618438720703
+          ],
+          "color": [
+            0.6509803921568628,
+            0.4196078431372549,
+            0.21568627450980393
+          ],
+          "surface_family": "light",
+          "triangles": 216,
+          "sha256": "3f79ce58f4f1d2eefe4a388806347c8b06d127530ed027eb2a1db37f9c2cd0e1",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-BLD-12_amber_3f79ce58f4f1.mesh"
+        },
+        {
+          "name": "wood",
+          "bone": "",
+          "center": [
+            -0.0,
+            5.466221809387207,
+            0.13244295120239258
+          ],
+          "size": [
+            9.068343162536621,
+            8.467401504516602,
+            11.556010246276855
+          ],
+          "color": [
+            1,
+            1,
+            1
+          ],
+          "surface_family": "authored_wood",
+          "triangles": 912,
+          "sha256": "c24e538d418a643775df3972f019cbdea495883330edbdd669fad06b8e2905da",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-BLD-12_wood_c24e538d418a.mesh"
+        }
+      ],
+      "joints": {},
+      "dimensions": [
+        12,
+        12,
+        11
+      ],
+      "lights": [
+        [
+          2.7148470878601074,
+          7.399843215942383,
+          -5.877455234527588
+        ]
+      ],
+      "sign": {
+        "position": [
+          -0.0,
+          7.776905536651611,
+          -5.4061279296875
+        ],
+        "size": [
+          6.7871172904081485,
+          0.6127258664951801
+        ],
+        "text": "QUAY RELAY"
+      },
+      "coordinate_basis": "blender_to_roblox_front_minus_z_v2"
+    },
+    {
+      "id": "NQ-BLD-13",
+      "kind": "authored_architecture",
+      "source": "assets/production/needle-quay/architecture-artbook/NQ-BLD-13.blend",
+      "source_sha256": "9049f92060c6d5dab6fe95fc6ef0025377b20bf257f67c5be3627337ab8f3d66",
+      "triangles": 15280,
+      "parts": [
+        {
+          "name": "stone",
+          "bone": "",
+          "center": [
+            -0.0,
+            0.2565733790397644,
+            0.3032231330871582
+          ],
+          "size": [
+            27.989822387695312,
+            0.5131467580795288,
+            21.020355224609375
+          ],
+          "color": [
+            0.9098039215686274,
+            0.8470588235294118,
+            0.7176470588235294
+          ],
+          "surface_family": "authored_stone",
+          "triangles": 216,
+          "sha256": "a351bb7730af14834f0b0993747f51dd859e892c5cb5da3d5c2f088d4b45ff0b",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-BLD-13_stone_a351bb7730af.mesh"
+        },
+        {
+          "name": "brick",
+          "bone": "",
+          "center": [
+            -0.0,
+            9.120016098022461,
+            0.5504665374755859
+          ],
+          "size": [
+            27.653945922851562,
+            17.30704116821289,
+            20.189992904663086
+          ],
+          "color": [
+            1,
+            1,
+            1
+          ],
+          "surface_family": "authored_brick",
+          "triangles": 540,
+          "sha256": "9e842d0bc6bde1e4959e5c8ca9064bf662902fc37958dc40468db6336c927b80",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-BLD-13_brick_9e842d0bc6bd.mesh"
+        },
+        {
+          "name": "iron",
+          "bone": "",
+          "center": [
+            -0.0,
+            9.321818351745605,
+            -0.12362146377563477
+          ],
+          "size": [
+            26.956459045410156,
+            18.64363670349121,
+            21.69677734375
+          ],
+          "color": [
+            0.17254901960784313,
+            0.18823529411764706,
+            0.19215686274509805
+          ],
+          "surface_family": "authored_iron",
+          "triangles": 3500,
+          "sha256": "b4bb126568ae902a3fd932be0d0720bf168cf5522c1a51218ecb336b543481ef",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-BLD-13_iron_b4bb126568ae.mesh"
+        },
+        {
+          "name": "cream",
+          "bone": "",
+          "center": [
+            -0.0,
+            9.15500545501709,
+            0.0
+          ],
+          "size": [
+            28.363018035888672,
+            18.170061111450195,
+            22.0
+          ],
+          "color": [
+            0.9098039215686274,
+            0.8470588235294118,
+            0.7176470588235294
+          ],
+          "surface_family": "authored_cream",
+          "triangles": 3564,
+          "sha256": "f2d90f257fe8523b23acf6a23bb3bdfdefcda4879c298433363afe989fbe2b2b",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-BLD-13_cream_f2d90f257fe8.mesh"
+        },
+        {
+          "name": "brass",
+          "bone": "",
+          "center": [
+            -2.6730284690856934,
+            8.014418601989746,
+            -9.567853927612305
+          ],
+          "size": [
+            21.580154418945312,
+            15.077183723449707,
+            0.9983043670654297
+          ],
+          "color": [
+            0.7450980392156863,
+            0.5647058823529412,
+            0.29411764705882354
+          ],
+          "surface_family": "authored_brass",
+          "triangles": 872,
+          "sha256": "c2846b7c214fa30c4a5014e869a34dc484840b7c3eb0a16f2a0b04682cc1eb56",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-BLD-13_brass_c2846b7c214f.mesh"
+        },
+        {
+          "name": "teal",
+          "bone": "",
+          "center": [
+            -0.0,
+            8.109583854675293,
+            0.24257850646972656
+          ],
+          "size": [
+            27.168785095214844,
+            15.472772598266602,
+            20.115352630615234
+          ],
+          "color": [
+            0.1843137254901961,
+            0.3607843137254902,
+            0.34509803921568627
+          ],
+          "surface_family": "authored_teal",
+          "triangles": 3348,
+          "sha256": "b6c7b15b1c96048b4c4c5bf7311514065aaa5ddabc6c23621867886eb57877bf",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-BLD-13_teal_b6c7b15b1c96.mesh"
+        },
+        {
+          "name": "wood",
+          "bone": "",
+          "center": [
+            0.5131468772888184,
+            8.326972961425781,
+            -0.006996631622314453
+          ],
+          "size": [
+            25.004241943359375,
+            16.560646057128906,
+            21.836727142333984
+          ],
+          "color": [
+            1,
+            1,
+            1
+          ],
+          "surface_family": "authored_wood",
+          "triangles": 2700,
+          "sha256": "f2d984f5922455c415ec0894bda263b35283724baebea19093269cb8c90eb8ff",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-BLD-13_wood_f2d984f59224.mesh"
+        },
+        {
+          "name": "amber",
+          "bone": "",
+          "center": [
+            -0.0,
+            9.749788284301758,
+            -9.824427604675293
+          ],
+          "size": [
+            16.084815979003906,
+            0.6530952453613281,
+            0.3545379638671875
+          ],
+          "color": [
+            0.6509803921568628,
+            0.4196078431372549,
+            0.21568627450980393
+          ],
+          "surface_family": "light",
+          "triangles": 216,
+          "sha256": "3dad9d5097c0a9f294981a389f63e9a3916827f9dd5c01b99803e3259ad9a7d6",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-BLD-13_amber_3dad9d5097c0.mesh"
+        },
+        {
+          "name": "glass",
+          "bone": "",
+          "center": [
+            -1.131256103515625,
+            7.8740034103393555,
+            0.4431724548339844
+          ],
+          "size": [
+            20.502544403076172,
+            8.302713394165039,
+            20.66581916809082
+          ],
+          "color": [
+            0.403921568627451,
+            0.5490196078431373,
+            0.5176470588235295
+          ],
+          "surface_family": "authored_glass",
+          "triangles": 324,
+          "sha256": "df2aa2972544141caf3cdb7d00bede9d7e5c5e1e2f1678d3ae67577d0808a949",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-BLD-13_glass_df2aa2972544.mesh"
+        }
+      ],
+      "joints": {},
+      "dimensions": [
+        30,
+        22,
+        20
+      ],
+      "lights": [
+        [
+          7.837149620056152,
+          9.749788284301758,
+          -10.085665702819824
+        ],
+        [
+          -7.837149620056152,
+          9.749788284301758,
+          -10.085665702819824
+        ]
+      ],
+      "sign": {
+        "position": [
+          -0.0,
+          11.195928573608398,
+          -9.6471586227417
+        ],
+        "size": [
+          9.70313828415143,
+          1.0262934723621706
+        ],
+        "text": "DOCKLINE DEPOT"
+      },
+      "coordinate_basis": "blender_to_roblox_front_minus_z_v2"
+    },
+    {
+      "id": "NQ-FACADE-01",
+      "kind": "authored_architecture",
+      "source": "assets/production/needle-quay/architecture-artbook/NQ-FACADE-01.blend",
+      "source_sha256": "785f30c4a4bcabe6f0d1710f867ff6111ef0cca9ae01507e989c2cdaece4f8ea",
+      "triangles": 26584,
+      "parts": [
+        {
+          "name": "stone",
+          "bone": "",
+          "center": [
+            -0.0,
+            0.2571428418159485,
+            0.1496105194091797
+          ],
+          "size": [
+            24.311687469482422,
+            0.514285683631897,
+            17.326753616333008
+          ],
+          "color": [
+            0.9098039215686274,
+            0.8470588235294118,
+            0.7176470588235294
+          ],
+          "surface_family": "authored_stone",
+          "triangles": 216,
+          "sha256": "f7b6586f104c683793016f6c49ce47cc48b983a736eb1894b10fe81825246e1b",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-FACADE-01_stone_f7b6586f104c.mesh"
+        },
+        {
+          "name": "brick",
+          "bone": "",
+          "center": [
+            -0.0,
+            12.412986755371094,
+            0.3974025249481201
+          ],
+          "size": [
+            23.975065231323242,
+            23.890907287597656,
+            16.494544982910156
+          ],
+          "color": [
+            1,
+            1,
+            1
+          ],
+          "surface_family": "authored_brick",
+          "triangles": 540,
+          "sha256": "8400b3399353580db0aa808701c999d011781b69cadd4c330868f19554888854",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-FACADE-01_brick_8400b3399353.mesh"
+        },
+        {
+          "name": "iron",
+          "bone": "",
+          "center": [
+            -0.009350299835205078,
+            12.59999942779541,
+            0.14727258682250977
+          ],
+          "size": [
+            23.021297454833984,
+            24.638959884643555,
+            17.153766632080078
+          ],
+          "color": [
+            0.17254901960784313,
+            0.18823529411764706,
+            0.19215686274509805
+          ],
+          "surface_family": "authored_iron",
+          "triangles": 3932,
+          "sha256": "c17e172100708b96df8124c082e70013d8936611b77c1263b8f64d2ba0d4c723",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-FACADE-01_iron_c17e17210070.mesh"
+        },
+        {
+          "name": "cream",
+          "bone": "",
+          "center": [
+            -0.0,
+            12.448051452636719,
+            0.0
+          ],
+          "size": [
+            24.685712814331055,
+            24.755844116210938,
+            18.0
+          ],
+          "color": [
+            0.9098039215686274,
+            0.8470588235294118,
+            0.7176470588235294
+          ],
+          "surface_family": "authored_cream",
+          "triangles": 9612,
+          "sha256": "d753fd864a053278d6d3f569f206f8cb231cb5fd4bf80e1abc32bed89f76c4a0",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-FACADE-01_cream_d753fd864a05.mesh"
+        },
+        {
+          "name": "brass",
+          "bone": "",
+          "center": [
+            -0.05220794677734375,
+            11.30493450164795,
+            -7.873246669769287
+          ],
+          "size": [
+            23.141298294067383,
+            21.656103134155273,
+            1.0005197525024414
+          ],
+          "color": [
+            0.7450980392156863,
+            0.5647058823529412,
+            0.29411764705882354
+          ],
+          "surface_family": "authored_brass",
+          "triangles": 2216,
+          "sha256": "f10bb286159d2de394954934ec6ab59b32987d12e33a970a488837a527e2c589",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-FACADE-01_brass_f10bb286159d.mesh"
+        },
+        {
+          "name": "teal",
+          "bone": "",
+          "center": [
+            -0.0,
+            12.59999942779541,
+            -1.7111690044403076
+          ],
+          "size": [
+            23.48883056640625,
+            24.451948165893555,
+            12.819740295410156
+          ],
+          "color": [
+            0.1843137254901961,
+            0.3607843137254902,
+            0.34509803921568627
+          ],
+          "surface_family": "authored_teal",
+          "triangles": 1728,
+          "sha256": "30718c47e00205401ec13a989205c6241abccbb562361dbbec8c5d9d9e6ca50b",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-FACADE-01_teal_30718c47e002.mesh"
+        },
+        {
+          "name": "amber",
+          "bone": "",
+          "center": [
+            -0.7784414291381836,
+            12.759428024291992,
+            -8.092987060546875
+          ],
+          "size": [
+            20.248830795288086,
+            11.679896354675293,
+            0.4301290512084961
+          ],
+          "color": [
+            0.6509803921568628,
+            0.4196078431372549,
+            0.21568627450980393
+          ],
+          "surface_family": "light",
+          "triangles": 432,
+          "sha256": "44699e062becbb57dc8e1fc7f31f58a2ef9bda4812b2d2528e3f9d2f3f76cb5c",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-FACADE-01_amber_44699e062bec.mesh"
+        },
+        {
+          "name": "wood",
+          "bone": "",
+          "center": [
+            -0.0,
+            10.100337982177734,
+            0.35298728942871094
+          ],
+          "size": [
+            22.92467498779297,
+            17.41885757446289,
+            17.116363525390625
+          ],
+          "color": [
+            1,
+            1,
+            1
+          ],
+          "surface_family": "authored_wood",
+          "triangles": 5076,
+          "sha256": "a6d8c901edefc6b06b634d220da68b36f06ef04079c0b474a27f695714ae0442",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-FACADE-01_wood_a6d8c901edef.mesh"
+        },
+        {
+          "name": "leaf",
+          "bone": "",
+          "center": [
+            -0.0,
+            13.970804214477539,
+            -7.8311686515808105
+          ],
+          "size": [
+            18.573699951171875,
+            0.7387018203735352,
+            0.47724246978759766
+          ],
+          "color": [
+            0.3176470588235294,
+            0.45098039215686275,
+            0.25098039215686274
+          ],
+          "surface_family": "authored_leaf",
+          "triangles": 240,
+          "sha256": "3df0991d45ef1b6c53f923ce138d1d51ab77ce34868a97850107c9c2985893dd",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-FACADE-01_leaf_3df0991d45ef.mesh"
+        },
+        {
+          "name": "glass",
+          "bone": "",
+          "center": [
+            -0.0,
+            9.767220497131348,
+            0.2898702621459961
+          ],
+          "size": [
+            20.880001068115234,
+            17.6643123626709,
+            16.97142791748047
+          ],
+          "color": [
+            0.403921568627451,
+            0.5490196078431373,
+            0.5176470588235295
+          ],
+          "surface_family": "authored_glass",
+          "triangles": 648,
+          "sha256": "86a0f1943fea361c44482eb5531d96a42a99de20cae194b52ff97db5fd813875",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-FACADE-01_glass_86a0f1943fea.mesh"
+        },
+        {
+          "name": "coral",
+          "bone": "",
+          "center": [
+            -0.677609920501709,
+            16.298181533813477,
+            -2.1857142448425293
+          ],
+          "size": [
+            21.887374877929688,
+            17.055583953857422,
+            13.628571510314941
+          ],
+          "color": [
+            0.792156862745098,
+            0.4549019607843137,
+            0.3254901960784314
+          ],
+          "surface_family": "authored_coral",
+          "triangles": 1944,
+          "sha256": "a95d5e31998591a0cf83f6713c5fa7e0d22706fae3d49f01dd416a2fb3546712",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-FACADE-01_coral_a95d5e319985.mesh"
+        }
+      ],
+      "joints": {},
+      "dimensions": [
+        26,
+        18,
+        27
+      ],
+      "lights": [
+        [
+          4.376103401184082,
+          7.246753215789795,
+          -8.392207145690918
+        ],
+        [
+          -10.697142601013184,
+          7.246753215789795,
+          -8.392207145690918
+        ]
+      ],
+      "sign": {
+        "position": [
+          -0.0,
+          8.883116722106934,
+          -8.046233177185059
+        ],
+        "size": [
+          5.516883116883117,
+          0.9818181818181818
+        ],
+        "text": "HARBOR STUDIOS"
+      },
+      "coordinate_basis": "blender_to_roblox_front_minus_z_v2"
+    },
+    {
+      "id": "NQ-FACADE-02",
+      "kind": "authored_architecture",
+      "source": "assets/production/needle-quay/architecture-artbook/NQ-FACADE-02.blend",
+      "source_sha256": "7fc020bd495e67e649d406fa6155a8ad080af3755102af99408cf585d59df91e",
+      "triangles": 26584,
+      "parts": [
+        {
+          "name": "stone",
+          "bone": "",
+          "center": [
+            -0.0,
+            0.2571428418159485,
+            0.1496105194091797
+          ],
+          "size": [
+            24.311687469482422,
+            0.514285683631897,
+            17.326753616333008
+          ],
+          "color": [
+            0.9098039215686274,
+            0.8470588235294118,
+            0.7176470588235294
+          ],
+          "surface_family": "authored_stone",
+          "triangles": 216,
+          "sha256": "f7b6586f104c683793016f6c49ce47cc48b983a736eb1894b10fe81825246e1b",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-FACADE-02_stone_f7b6586f104c.mesh"
+        },
+        {
+          "name": "brick",
+          "bone": "",
+          "center": [
+            -0.0,
+            10.54285717010498,
+            0.3974025249481201
+          ],
+          "size": [
+            23.975065231323242,
+            20.15064811706543,
+            16.494544982910156
+          ],
+          "color": [
+            1,
+            1,
+            1
+          ],
+          "surface_family": "authored_brick",
+          "triangles": 540,
+          "sha256": "66f2983cd182b53b46ed692d3aeb000c626e34e992499dacff9bc180fbdcded1",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-FACADE-02_brick_66f2983cd182.mesh"
+        },
+        {
+          "name": "iron",
+          "bone": "",
+          "center": [
+            -0.009350299835205078,
+            10.729869842529297,
+            0.14727258682250977
+          ],
+          "size": [
+            23.021297454833984,
+            20.898700714111328,
+            17.153766632080078
+          ],
+          "color": [
+            0.17254901960784313,
+            0.18823529411764706,
+            0.19215686274509805
+          ],
+          "surface_family": "authored_iron",
+          "triangles": 3932,
+          "sha256": "5ff57ab4561dfe7c57c73b457c087ac8c07c4d11b1a13c5082ca37f4b51cace2",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-FACADE-02_iron_5ff57ab4561d.mesh"
+        },
+        {
+          "name": "cream",
+          "bone": "",
+          "center": [
+            -0.0,
+            10.577921867370605,
+            0.0
+          ],
+          "size": [
+            24.685712814331055,
+            21.01558494567871,
+            18.0
+          ],
+          "color": [
+            0.9098039215686274,
+            0.8470588235294118,
+            0.7176470588235294
+          ],
+          "surface_family": "authored_cream",
+          "triangles": 9612,
+          "sha256": "1d63e73950ceb0c883b3b132d5903b8271432a979e0345b1a8e09f7d7b9fcefe",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-FACADE-02_cream_1d63e73950ce.mesh"
+        },
+        {
+          "name": "brass",
+          "bone": "",
+          "center": [
+            -0.05220794677734375,
+            9.481090545654297,
+            -7.873246669769287
+          ],
+          "size": [
+            23.141298294067383,
+            18.00841522216797,
+            1.0005197525024414
+          ],
+          "color": [
+            0.7450980392156863,
+            0.5647058823529412,
+            0.29411764705882354
+          ],
+          "surface_family": "authored_brass",
+          "triangles": 2216,
+          "sha256": "79e46dbf0948c93d64476aa4e241aa18eff9c5381e554aec62e864908866cb39",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-FACADE-02_brass_79e46dbf0948.mesh"
+        },
+        {
+          "name": "teal",
+          "bone": "",
+          "center": [
+            -0.0,
+            10.729869842529297,
+            -1.7111690044403076
+          ],
+          "size": [
+            23.48883056640625,
+            20.711688995361328,
+            12.819740295410156
+          ],
+          "color": [
+            0.1843137254901961,
+            0.3607843137254902,
+            0.34509803921568627
+          ],
+          "surface_family": "authored_teal",
+          "triangles": 1728,
+          "sha256": "7c657404959820619c7e5a00547cf127ca0f59509fddde1326c7fa1c999a06f6",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-FACADE-02_teal_7c6574049598.mesh"
+        },
+        {
+          "name": "amber",
+          "bone": "",
+          "center": [
+            -0.7784414291381836,
+            11.431636810302734,
+            -8.092987060546875
+          ],
+          "size": [
+            20.248830795288086,
+            9.024312019348145,
+            0.4301290512084961
+          ],
+          "color": [
+            0.6509803921568628,
+            0.4196078431372549,
+            0.21568627450980393
+          ],
+          "surface_family": "light",
+          "triangles": 432,
+          "sha256": "b0652540ee87fc030a54062c01bc86ca8abd90e9f7d275f4ab8417ca7dc1fb14",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-FACADE-02_amber_b0652540ee87.mesh"
+        },
+        {
+          "name": "wood",
+          "bone": "",
+          "center": [
+            -0.0,
+            8.77254581451416,
+            0.35298728942871094
+          ],
+          "size": [
+            22.92467498779297,
+            14.763273239135742,
+            17.116363525390625
+          ],
+          "color": [
+            1,
+            1,
+            1
+          ],
+          "surface_family": "authored_wood",
+          "triangles": 5076,
+          "sha256": "f820e8343394c6dd154cec0081ddc41236eee4e8634cebeed483ecdba316c363",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-FACADE-02_wood_f820e8343394.mesh"
+        },
+        {
+          "name": "leaf",
+          "bone": "",
+          "center": [
+            -0.0,
+            11.31521987915039,
+            -7.8311686515808105
+          ],
+          "size": [
+            18.573699951171875,
+            0.7387018203735352,
+            0.47724246978759766
+          ],
+          "color": [
+            0.3176470588235294,
+            0.45098039215686275,
+            0.25098039215686274
+          ],
+          "surface_family": "authored_leaf",
+          "triangles": 240,
+          "sha256": "dfd85a0fe1a4df92448e966013d13d976fc33fb5ea4f9506f7cc6ad7ec1f70d4",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-FACADE-02_leaf_dfd85a0fe1a4.mesh"
+        },
+        {
+          "name": "glass",
+          "bone": "",
+          "center": [
+            -0.0,
+            8.439428329467773,
+            0.2898702621459961
+          ],
+          "size": [
+            20.880001068115234,
+            15.00872802734375,
+            16.97142791748047
+          ],
+          "color": [
+            0.403921568627451,
+            0.5490196078431373,
+            0.5176470588235295
+          ],
+          "surface_family": "authored_glass",
+          "triangles": 648,
+          "sha256": "0f3ac201e8d3690a484767ec006954df1b016afefd6d54cae09ce1574946680b",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-FACADE-02_glass_0f3ac201e8d3.mesh"
+        },
+        {
+          "name": "coral",
+          "bone": "",
+          "center": [
+            -0.677609920501709,
+            14.428051948547363,
+            -2.1857142448425293
+          ],
+          "size": [
+            21.887374877929688,
+            13.315324783325195,
+            13.628571510314941
+          ],
+          "color": [
+            0.792156862745098,
+            0.4549019607843137,
+            0.3254901960784314
+          ],
+          "surface_family": "authored_coral",
+          "triangles": 1944,
+          "sha256": "9be195a46872537c36c58646218e15ce1881e3ec56fd04114c48e96d2ed3ecd8",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-FACADE-02_coral_9be195a46872.mesh"
+        }
+      ],
+      "joints": {},
+      "dimensions": [
+        26,
+        18,
+        23
+      ],
+      "lights": [
+        [
+          4.376103401184082,
+          7.246753215789795,
+          -8.392207145690918
+        ],
+        [
+          -10.697142601013184,
+          7.246753215789795,
+          -8.392207145690918
+        ]
+      ],
+      "sign": {
+        "position": [
+          -0.0,
+          8.883116722106934,
+          -8.046233177185059
+        ],
+        "size": [
+          5.516883116883117,
+          0.9818181818181818
+        ],
+        "text": "HARBOR STUDIOS"
+      },
+      "coordinate_basis": "blender_to_roblox_front_minus_z_v2"
+    },
+    {
+      "id": "NQ-FACADE-03",
+      "kind": "authored_architecture",
+      "source": "assets/production/needle-quay/architecture-artbook/NQ-FACADE-03.blend",
+      "source_sha256": "8e0a6c77070b6a246c4b5bdd3e98e9f1fe60af63aba281a56c88c94a6353fe52",
+      "triangles": 9644,
+      "parts": [
+        {
+          "name": "stone",
+          "bone": "",
+          "center": [
+            -0.0,
+            0.2622516453266144,
+            -0.026225566864013672
+          ],
+          "size": [
+            24.794700622558594,
+            0.5245032906532288,
+            17.67099380493164
+          ],
+          "color": [
+            0.9098039215686274,
+            0.8470588235294118,
+            0.7176470588235294
+          ],
+          "surface_family": "authored_stone",
+          "triangles": 216,
+          "sha256": "aa417aea9ba0a9ef31f7083493d52c31b524775a7f6c6ab16bfffa706f38ed5f",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-FACADE-03_stone_aa417aea9ba0.mesh"
+        },
+        {
+          "name": "brick",
+          "bone": "",
+          "center": [
+            -0.0,
+            8.36821174621582,
+            0.22649002075195312
+          ],
+          "size": [
+            24.451391220092773,
+            15.782780647277832,
+            16.82225227355957
+          ],
+          "color": [
+            1,
+            1,
+            1
+          ],
+          "surface_family": "authored_brick",
+          "triangles": 540,
+          "sha256": "3baf802c6e8b37bf051d8d2251694ef83849b29ec00062b3a544e44b84430c2d",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-FACADE-03_brick_3baf802c6e8b.mesh"
+        },
+        {
+          "name": "iron",
+          "bone": "",
+          "center": [
+            -0.009536266326904297,
+            8.558939933776855,
+            -0.1263575553894043
+          ],
+          "size": [
+            23.478675842285156,
+            16.54569435119629,
+            17.690067291259766
+          ],
+          "color": [
+            0.17254901960784313,
+            0.18823529411764706,
+            0.19215686274509805
+          ],
+          "surface_family": "authored_iron",
+          "triangles": 2432,
+          "sha256": "6a5f4c5ae7491cd71cd836331e010e871ff9976f39bbd3e02eb14630909aa9d7",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-FACADE-03_iron_6a5f4c5ae749.mesh"
+        },
+        {
+          "name": "cream",
+          "bone": "",
+          "center": [
+            -0.0,
+            8.403973579406738,
+            0.12874174118041992
+          ],
+          "size": [
+            25.176158905029297,
+            16.664899826049805,
+            17.742515563964844
+          ],
+          "color": [
+            0.9098039215686274,
+            0.8470588235294118,
+            0.7176470588235294
+          ],
+          "surface_family": "authored_cream",
+          "triangles": 2592,
+          "sha256": "7889950a8b5caf829e6d4dead9edded15a9f5563c53b98c31c67fdb5280c222b",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-FACADE-03_cream_7889950a8b5c.mesh"
+        },
+        {
+          "name": "brass",
+          "bone": "",
+          "center": [
+            -0.25748348236083984,
+            7.772185802459717,
+            -8.279999732971191
+          ],
+          "size": [
+            23.192583084106445,
+            14.571656227111816,
+            1.1634430885314941
+          ],
+          "color": [
+            0.7450980392156863,
+            0.5647058823529412,
+            0.29411764705882354
+          ],
+          "surface_family": "authored_brass",
+          "triangles": 1100,
+          "sha256": "452e31e29fc1d30d9914f93d738496934093707c4189c9009965e3a69ba2c700",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-FACADE-03_brass_452e31e29fc1.mesh"
+        },
+        {
+          "name": "teal",
+          "bone": "",
+          "center": [
+            -0.0,
+            4.434437274932861,
+            -2.1194701194763184
+          ],
+          "size": [
+            23.955493927001953,
+            8.10595989227295,
+            13.46543025970459
+          ],
+          "color": [
+            0.1843137254901961,
+            0.3607843137254902,
+            0.34509803921568627
+          ],
+          "surface_family": "authored_teal",
+          "triangles": 648,
+          "sha256": "6adfadc9599434fcef4b0fafd878aabebde692f3d05dde50807a0e2d65034c84",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-FACADE-03_teal_6adfadc95994.mesh"
+        },
+        {
+          "name": "coral",
+          "bone": "",
+          "center": [
+            -0.0,
+            14.018542289733887,
+            -8.070198059082031
+          ],
+          "size": [
+            22.88741683959961,
+            2.2887420654296875,
+            0.3814568519592285
+          ],
+          "color": [
+            0.792156862745098,
+            0.4549019607843137,
+            0.3254901960784314
+          ],
+          "surface_family": "authored_coral",
+          "triangles": 108,
+          "sha256": "18c3831906435297e34492901bdc449b59fabbec4ab220db41e780e79c2a6d32",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-FACADE-03_coral_18c383190643.mesh"
+        },
+        {
+          "name": "glass",
+          "bone": "",
+          "center": [
+            0.005312442779541016,
+            7.018741130828857,
+            -0.11443710327148438
+          ],
+          "size": [
+            18.778305053710938,
+            8.104187965393066,
+            17.77112579345703
+          ],
+          "color": [
+            0.403921568627451,
+            0.5490196078431373,
+            0.5176470588235295
+          ],
+          "surface_family": "authored_glass",
+          "triangles": 552,
+          "sha256": "b5a5950a5e8822bed8f5e63e7c56b129062af085976669c5ca1df7f000e16521",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-FACADE-03_glass_b5a5950a5e88.mesh"
+        },
+        {
+          "name": "amber",
+          "bone": "",
+          "center": [
+            0.371920108795166,
+            8.05827808380127,
+            -8.470727920532227
+          ],
+          "size": [
+            20.503311157226562,
+            0.6675496101379395,
+            0.3623847961425781
+          ],
+          "color": [
+            0.6509803921568628,
+            0.4196078431372549,
+            0.21568627450980393
+          ],
+          "surface_family": "light",
+          "triangles": 216,
+          "sha256": "1e48b35c6619f1cc02448987548cc5abfad713908a4750604a89eb2a190b4ddd",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-FACADE-03_amber_1e48b35c6619.mesh"
+        },
+        {
+          "name": "wood",
+          "bone": "",
+          "center": [
+            -0.0,
+            6.8173508644104,
+            0.18119239807128906
+          ],
+          "size": [
+            22.56317710876465,
+            12.871787071228027,
+            17.456424713134766
+          ],
+          "color": [
+            1,
+            1,
+            1
+          ],
+          "surface_family": "authored_wood",
+          "triangles": 1080,
+          "sha256": "547f0a276991519b3b235ca0618068a7608ad12b73453a4ee611e4d7b4c2ecbb",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-FACADE-03_wood_547f0a276991.mesh"
+        },
+        {
+          "name": "leaf",
+          "bone": "",
+          "center": [
+            -0.20074129104614258,
+            1.311258316040039,
+            -8.165562629699707
+          ],
+          "size": [
+            22.178421020507812,
+            0.7533775568008423,
+            0.4867234230041504
+          ],
+          "color": [
+            0.3176470588235294,
+            0.45098039215686275,
+            0.25098039215686274
+          ],
+          "surface_family": "authored_leaf",
+          "triangles": 160,
+          "sha256": "892514e08da3480375102730cf466eae862266f2c039ec0aa980b25d713a3162",
+          "uri": "rbxasset://needle-quay/architecture-artbook/NQ-FACADE-03_leaf_892514e08da3.mesh"
+        }
+      ],
+      "joints": {},
+      "dimensions": [
+        26,
+        18,
+        18
+      ],
+      "lights": [
+        [
+          -9.669934272766113,
+          8.05827808380127,
+          -8.737747192382812
+        ],
+        [
+          10.413774490356445,
+          8.05827808380127,
+          -8.737747192382812
+        ]
+      ],
+      "sign": {
+        "position": [
+          -0.0,
+          14.018542289733887,
+          -8.289536476135254
+        ],
+        "size": [
+          21.933774834437084,
+          1.4304635761589404
+        ],
+        "text": "WASH & FOLD"
+      },
+      "coordinate_basis": "blender_to_roblox_front_minus_z_v2"
+    }
+  ],
+  "provenance": [
+    {
+      "id": "NQ-BLD-09",
+      "reference": "assets/concepts/needle-quay/NQ-BLD-09-cinder-cold-storage-v1.png",
+      "reference_sha256": "00cef33f7bf0516865d082c827cb2ef27ab6463ac1abc59869262c58af9cf7ab",
+      "source": "assets/production/needle-quay/architecture-artbook/NQ-BLD-09.blend",
+      "sha256": "14103e09b66719d2a32ee3253669569cf72ac3735e811c5af9cf67a76c49ed14",
+      "triangles": 15600,
+      "stage": "DCC_CLEAN_PENDING_ART_APPROVAL",
+      "envelope": [
+        34,
+        20,
+        16
+      ],
+      "fit_scale": 0.9510223611008258,
+      "uploads": 0
+    },
+    {
+      "id": "NQ-BLD-10",
+      "reference": "assets/concepts/needle-quay/NQ-BLD-10-quayside-flats-v1.png",
+      "reference_sha256": "456928018fc737498ae959f993a5f3c66c78262a422f861573b75a16f3a91925",
+      "source": "assets/production/needle-quay/architecture-artbook/NQ-BLD-10.blend",
+      "sha256": "cb2175ce7207a3bf2d01a581f1a323eb27b6937f2b9acdae32e56f4ef2dcce07",
+      "triangles": 26584,
+      "stage": "DCC_CLEAN_PENDING_ART_APPROVAL",
+      "envelope": [
+        38,
+        16,
+        26
+      ],
+      "fit_scale": 0.927536231884058,
+      "uploads": 0
+    },
+    {
+      "id": "NQ-BLD-11",
+      "reference": "assets/concepts/needle-quay/NQ-BLD-11-tidewash-laundry-v1.png",
+      "reference_sha256": "239be48463f71bac3f2eecc32932c067682f5fd45c645041a8f228b8b6432863",
+      "source": "assets/production/needle-quay/architecture-artbook/NQ-BLD-11.blend",
+      "sha256": "ec97ab410cad3ff5df0254fc720bfcb7779ff4fb3ee5e4e774425f06287e2003",
+      "triangles": 9644,
+      "stage": "DCC_CLEAN_PENDING_ART_APPROVAL",
+      "envelope": [
+        18,
+        16,
+        14
+      ],
+      "fit_scale": 0.9481481481481482,
+      "uploads": 0
+    },
+    {
+      "id": "NQ-BLD-12",
+      "reference": "assets/concepts/needle-quay/NQ-BLD-12-relay-substation-v1.png",
+      "reference_sha256": "1ac1afe9323a12b80812a7df01f22302c3c1be3f9a2441818584dd46eeaaa370",
+      "source": "assets/production/needle-quay/architecture-artbook/NQ-BLD-12.blend",
+      "sha256": "c8199f5e34df6c3994d5771a1d7db73cb4602de29125edf06b9648d6f5fb5810",
+      "triangles": 8264,
+      "stage": "DCC_CLEAN_PENDING_ART_APPROVAL",
+      "envelope": [
+        12,
+        12,
+        11
+      ],
+      "fit_scale": 0.942655179223354,
+      "uploads": 0
+    },
+    {
+      "id": "NQ-BLD-13",
+      "reference": "assets/concepts/needle-quay/NQ-BLD-13-dockline-depot-v1.png",
+      "reference_sha256": "32f2720c0a4994454cae774e4919d655ee47e11caffd24b38b5ab53a48936824",
+      "source": "assets/production/needle-quay/architecture-artbook/NQ-BLD-13.blend",
+      "sha256": "9049f92060c6d5dab6fe95fc6ef0025377b20bf257f67c5be3627337ab8f3d66",
+      "triangles": 15280,
+      "stage": "DCC_CLEAN_PENDING_ART_APPROVAL",
+      "envelope": [
+        30,
+        22,
+        20
+      ],
+      "fit_scale": 0.9329940657837913,
+      "uploads": 0
+    },
+    {
+      "id": "NQ-FACADE-01",
+      "reference": "assets/concepts/needle-quay/NQ-BLD-10-quayside-flats-v1.png",
+      "reference_sha256": "456928018fc737498ae959f993a5f3c66c78262a422f861573b75a16f3a91925",
+      "source": "assets/production/needle-quay/architecture-artbook/NQ-FACADE-01.blend",
+      "sha256": "785f30c4a4bcabe6f0d1710f867ff6111ef0cca9ae01507e989c2cdaece4f8ea",
+      "triangles": 26584,
+      "stage": "DCC_CLEAN_PENDING_ART_APPROVAL",
+      "envelope": [
+        26,
+        18,
+        27
+      ],
+      "fit_scale": 0.935064935064935,
+      "uploads": 0
+    },
+    {
+      "id": "NQ-FACADE-02",
+      "reference": "assets/concepts/needle-quay/NQ-BLD-10-quayside-flats-v1.png",
+      "reference_sha256": "456928018fc737498ae959f993a5f3c66c78262a422f861573b75a16f3a91925",
+      "source": "assets/production/needle-quay/architecture-artbook/NQ-FACADE-02.blend",
+      "sha256": "7fc020bd495e67e649d406fa6155a8ad080af3755102af99408cf585d59df91e",
+      "triangles": 26584,
+      "stage": "DCC_CLEAN_PENDING_ART_APPROVAL",
+      "envelope": [
+        26,
+        18,
+        23
+      ],
+      "fit_scale": 0.935064935064935,
+      "uploads": 0
+    },
+    {
+      "id": "NQ-FACADE-03",
+      "reference": "assets/concepts/needle-quay/NQ-BLD-11-tidewash-laundry-v1.png",
+      "reference_sha256": "239be48463f71bac3f2eecc32932c067682f5fd45c645041a8f228b8b6432863",
+      "source": "assets/production/needle-quay/architecture-artbook/NQ-FACADE-03.blend",
+      "sha256": "8e0a6c77070b6a246c4b5bdd3e98e9f1fe60af63aba281a56c88c94a6353fe52",
+      "triangles": 9644,
+      "stage": "DCC_CLEAN_PENDING_ART_APPROVAL",
+      "envelope": [
+        26,
+        18,
+        18
+      ],
+      "fit_scale": 0.9536423841059603,
+      "uploads": 0
+    }
+  ],
+  "materials": {
+    "brick": [
+      [
+        202,
+        116,
+        83
+      ],
+      "brick"
+    ],
+    "teal": [
+      [
+        47,
+        92,
+        88
+      ],
+      "plaster"
+    ],
+    "faded": [
+      [
+        111,
+        145,
+        134
+      ],
+      "plaster"
+    ],
+    "cream": [
+      [
+        232,
+        216,
+        183
+      ],
+      "plaster"
+    ],
+    "coral": [
+      [
+        202,
+        116,
+        83
+      ],
+      "plaster"
+    ],
+    "wood": [
+      [
+        121,
+        81,
+        59
+      ],
+      "wood"
+    ],
+    "stone": [
+      [
+        232,
+        216,
+        183
+      ],
+      "stone"
+    ],
+    "iron": [
+      [
+        44,
+        48,
+        49
+      ],
+      "plaster"
+    ],
+    "brass": [
+      [
+        190,
+        144,
+        75
+      ],
+      "plaster"
+    ],
+    "glass": [
+      [
+        103,
+        140,
+        132
+      ],
+      "plaster"
+    ],
+    "amber": [
+      [
+        166,
+        107,
+        55
+      ],
+      "light"
+    ],
+    "leaf": [
+      [
+        81,
+        115,
+        64
+      ],
+      "plaster"
+    ]
+  },
+  "uploads": 0
+}

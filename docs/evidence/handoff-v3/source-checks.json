@@ -1,0 +1,320 @@
+{
+  "files": [
+    {
+      "path": "src/client/AudioEngine.luau",
+      "sha256": "a50b26ea610ab274c32e490ee6d757aab7bf5fcb2a05981f60af2b8ba632181e"
+    },
+    {
+      "path": "src/client/CommandPolicy.luau",
+      "sha256": "6d368057b666af745e4db09d61340f223ea3d784f3180b5d23127eadc17d0a7a"
+    },
+    {
+      "path": "src/client/CompanionVoice.luau",
+      "sha256": "bca83a888a83bd81333f659a66a7fcd991b7b114c4467aaf7bba4b43cbf5cf29"
+    },
+    {
+      "path": "src/client/ConcertScene.luau",
+      "sha256": "a128746e12eaa95e66707bafd99d28c2a2d3408ffdd651bfb3aa23f1716c3ed5"
+    },
+    {
+      "path": "src/client/ConcertView.luau",
+      "sha256": "cc2f96944aaea38c052701ac048761b5e3c8283d363b80d7febbf003477c8531"
+    },
+    {
+      "path": "src/client/init.client.luau",
+      "sha256": "3dcfc47bef1b00b2e622ba9abe18b7fe539368730526d457262a609d907e9dd5"
+    },
+    {
+      "path": "src/client/JamPlayback.luau",
+      "sha256": "0870b137a4d0a32257010c8e6f12538d790d9d3c0ec54a0d07a7e834699f99b0"
+    },
+    {
+      "path": "src/client/JamView.luau",
+      "sha256": "690f89014362c716b65912c5c9c414f9377272df005cd0f73f5f8c4b0a9df50a"
+    },
+    {
+      "path": "src/client/ListeningView.luau",
+      "sha256": "59b9b4ec57e6eebc77258e520b5830b8ee69683fe7a4b70ebb6bd7e3ccefc9d7"
+    },
+    {
+      "path": "src/client/MusicWorkspaceView.luau",
+      "sha256": "555f5107f8ca6accd7b8bfcbb503ad9ffe149440022530fea057c0fcc68738e2"
+    },
+    {
+      "path": "src/client/PadInput.luau",
+      "sha256": "ee1c8787fc03d1887de49c0db6409d14e6657b506ee9f98db6589dfc368b1ab8"
+    },
+    {
+      "path": "src/client/PadVoiceProcessor.luau",
+      "sha256": "792be4c6965a935f49a97c50662f3eec8a0f2cbbc9f4942eaaa15b11da616375"
+    },
+    {
+      "path": "src/client/QuayBeatGuide.luau",
+      "sha256": "79f6f64c810311c914471fa270a1377c1506b86f2a6e245c68e411c8d3252184"
+    },
+    {
+      "path": "src/client/QuayCommissionView.luau",
+      "sha256": "b57c0af3698fe593b2db9049827b74eb8d0c3364d90f9b5156c4a9a74439e1c6"
+    },
+    {
+      "path": "src/client/QuayCommissionVoice.luau",
+      "sha256": "765af22a5a0cb9a64faf9b758216b5324c105017072f73f891bc0d0acb26eea9"
+    },
+    {
+      "path": "src/client/QuayDemoView.luau",
+      "sha256": "bc8ca0890658a90e4e72655143e6d35b94c28cd07dc79c8b4a6f6c9b4ba794a4"
+    },
+    {
+      "path": "src/client/QuayExperiencePanel.luau",
+      "sha256": "5c2684a5fcbeef2494f3bfd6fb4c7500933fd116171dc3c4cb97e144e0aa794b"
+    },
+    {
+      "path": "src/client/QuayShopPanel.luau",
+      "sha256": "d38fc07bc061877d82a33092129105a0db70c51ade1028a96a06ffad61a08461"
+    },
+    {
+      "path": "src/client/QuaySideActivityView.luau",
+      "sha256": "e3bf5bd58402845323db511457c3cb46941e820c338ff7394308d504b42d5f4f"
+    },
+    {
+      "path": "src/client/QuayWardrobePreview.luau",
+      "sha256": "c23363330cb722e00dc29540b27576ef39ebcbf65b1de00303fc17aacb6ab790"
+    },
+    {
+      "path": "src/client/RecorderGuide.luau",
+      "sha256": "ea3243d0f81d2ab5595cb1013f47eb88f1f23dfc8a613177ec0ffb93ce6a7b9e"
+    },
+    {
+      "path": "src/client/SampleEditor.luau",
+      "sha256": "91866ff16ede1c87f8e237b5ea6087b32564d7503ad801d02882f540eef40350"
+    },
+    {
+      "path": "src/client/SchedulePlayback.luau",
+      "sha256": "e0e4969df1856e9433fab1236c383224ede08593275687eec49e5f4ada58b6a1"
+    },
+    {
+      "path": "src/client/StageView.luau",
+      "sha256": "48fc7a7ef8b7f7946ebc749138517140c115ba7ce91f68bcac649f3f7de31ea6"
+    },
+    {
+      "path": "src/client/StreetMusicPlayback.luau",
+      "sha256": "3700affc6d2044816aba98e742a7bfcac6b8e08c9cf4b4494e3e8d8afb0eb602"
+    },
+    {
+      "path": "src/client/WorldFeedback.luau",
+      "sha256": "0483006bd2c80471f954a071290182c7934eee4cfe928626f4720ce3fb55a039"
+    },
+    {
+      "path": "src/server/CommerceService.luau",
+      "sha256": "25a7c91aac6404d13662af36f17e3bcca58c5a96b767433d52131b52cdf35e64"
+    },
+    {
+      "path": "src/server/ConcertService.luau",
+      "sha256": "3fed12636d4b2099adce70ab8b099ff14300205971c35d1ec0817055ff851e3e"
+    },
+    {
+      "path": "src/server/JamService.luau",
+      "sha256": "4547a2ae9a2e84b4614ee42758152b7e936f78e0ecef1433a5a39c25079d3153"
+    },
+    {
+      "path": "src/server/ListeningSession.luau",
+      "sha256": "094a08c8a45619afb48591bb2d106d63b83133187e9cec9ae1e1ecfeccce51ec"
+    },
+    {
+      "path": "src/server/MusicService.luau",
+      "sha256": "6807aef6cbd8a896865588c07efc659e3769d3c44c809b755f9332fd174b7d45"
+    },
+    {
+      "path": "src/server/MusicWorkspace.luau",
+      "sha256": "f3fe56d21c84c7a0ed5388788761856bbdf8e4b47fabc7396a47e0a7ec6848a5"
+    },
+    {
+      "path": "src/server/ProfileStore.luau",
+      "sha256": "aea7dbeffc05e662190cd98c89e537143c248d8f1adf6c814e5904b9a79f85c7"
+    },
+    {
+      "path": "src/server/QuayCommissionService.luau",
+      "sha256": "aba7757e63decd209c5ea619c7e8941367aee7ad9798305a99b3510ba6f3050f"
+    },
+    {
+      "path": "src/server/QuayDemoService.luau",
+      "sha256": "150d1474b15e05454e2cb1dc2ecb5790306c269554eae33ea7f14014391754ab"
+    },
+    {
+      "path": "src/server/QuayExperienceService.luau",
+      "sha256": "7a6f62c1c9b6528d1f5cab98f82d128b774707c95eedff4bc7ae55eff9033a3b"
+    },
+    {
+      "path": "src/server/QuayLiveMusic.luau",
+      "sha256": "3a105a80caa5b8558dbd000d5096d1727461fbbee227801f4c943f88ecaeb95f"
+    },
+    {
+      "path": "src/server/StageQueue.luau",
+      "sha256": "b13a449980e5f5be18c145ba9e3b847e1faf47fb4d5be12dfb9f1900c8b6b2d5"
+    },
+    {
+      "path": "src/server/WardrobeService.luau",
+      "sha256": "4362bc29fa7ddab2ec567c57683651dc165136952e5344e5a60cc7aae127d094"
+    },
+    {
+      "path": "src/server/WorldBuilder.luau",
+      "sha256": "7f54699ff04c849abe6f3ca0a453e15146811b6f1a9741fdd55279bec5c17547"
+    },
+    {
+      "path": "src/shared/BeatExpression.luau",
+      "sha256": "57f269f86894a229c2c6b2fbbcb5aaa268e29b75f55f42ef4c5e1d627989bf38"
+    },
+    {
+      "path": "src/shared/ChapterConcert.luau",
+      "sha256": "6c7dcef0175bf587f96b2dfa826db830fc272bd47010ae4e68f71c8ab3afa4cb"
+    },
+    {
+      "path": "src/shared/CommerceCatalog.luau",
+      "sha256": "f58a003baa2840309679d7f9b07512ef900d05b33b9dff80228964e8bd2f83e5"
+    },
+    {
+      "path": "src/shared/CompanionJournal.luau",
+      "sha256": "6ddb5bbcf1cc5c0e879eaf334478cddbac20b5b48df99f2ffc37657dfaa0536c"
+    },
+    {
+      "path": "src/shared/CompanionProgress.luau",
+      "sha256": "cbd2acadfecd24a6635e55ed138bc1317a8f9a5765052cfe9571a7d5e7316abe"
+    },
+    {
+      "path": "src/shared/ContentIds.luau",
+      "sha256": "50a7dc37d6e99beff3164a1a8225fc8c425cdd675a94e9110e2c1f6fae4df0ab"
+    },
+    {
+      "path": "src/shared/DiscoveryCatalog.luau",
+      "sha256": "89cf82bf8905aaa12a3b00dacb9279156a3d909dc1ae92987462b86f538d74e7"
+    },
+    {
+      "path": "src/shared/FinishedSong.luau",
+      "sha256": "c9bf1a0326a28ad2b87275fbb9cd792dfdd0476fd8603743f144b6e44ccf0540"
+    },
+    {
+      "path": "src/shared/FirstPackSlots.luau",
+      "sha256": "a0ce7a6e5dd2782df90fd32c18080ac4588ec39e694f8968d4278ffa53e27b45"
+    },
+    {
+      "path": "src/shared/FirstPerformanceQuest.luau",
+      "sha256": "f917f932dd5af625f902eabe8371061c33c54f3e69c80633f67c78bfcfc17b36"
+    },
+    {
+      "path": "src/shared/JamProtocol.luau",
+      "sha256": "78c0b68736ba3eecd0b34a92610696a7aea31623cfe7a3ac9fdacf8955e13d79"
+    },
+    {
+      "path": "src/shared/LegacyMusicMigration.luau",
+      "sha256": "5fa7938889d79258d3b9cde7b48ace7cbdf2618692ee3456ac8a76e4513a2d23"
+    },
+    {
+      "path": "src/shared/LocalContent.luau",
+      "sha256": "97832f3089cfa64bb6ab283a4450255d6a53726bad6862f5a82ee743a418feb7"
+    },
+    {
+      "path": "src/shared/MusicProject.luau",
+      "sha256": "e9eb16cb6570e99b2bb830467e895b7a83ce83f3ae3524ca5be5f24cae607cf2"
+    },
+    {
+      "path": "src/shared/MusicSequence.luau",
+      "sha256": "52ab39ce3d91dc918844ba7d0c3203a801c95e847db6075decc8cdd7d8868c80"
+    },
+    {
+      "path": "src/shared/MusicTransport.luau",
+      "sha256": "714c5c79877186ffe5215a888f8725a738e5f37d94bea4a52bb4b8f61870aeeb"
+    },
+    {
+      "path": "src/shared/NeedleQuayCatalog.luau",
+      "sha256": "6c6a55e1720390de66c07b2e1f2b853d36e4f88b99792e53203a8e534a7a0c61"
+    },
+    {
+      "path": "src/shared/NeighborhoodMissions.luau",
+      "sha256": "fed93c2a0054a8f70a3fee3de39c877deed2b6a0edd0a5782a7a3ff513e1538c"
+    },
+    {
+      "path": "src/shared/QuayActivities.luau",
+      "sha256": "ec8942324f61a0ed00fbead073defb896629d4f90bf44160a439c744a9269e2a"
+    },
+    {
+      "path": "src/shared/QuayBeatCommissions.luau",
+      "sha256": "b06956f4a5a5dee77a2f74e673d9646f8c3898e45b306ddc48d9c0a170d1cf67"
+    },
+    {
+      "path": "src/shared/QuayConversations.luau",
+      "sha256": "15f5b72b703c6e37ec9fde36163870d34f11a0a5d7fa1d77096d963343ae8108"
+    },
+    {
+      "path": "src/shared/QuayIdentity.luau",
+      "sha256": "55c02bd9ed4ed4eac88984e12558262db6ead935975a78265ac6a500fd941f51"
+    },
+    {
+      "path": "src/shared/QuayMissionSteps.luau",
+      "sha256": "eed57c5f3d5a50849c6bba530d2366e2e2c9df52ced2d6fdf7ffa927a0f72b24"
+    },
+    {
+      "path": "src/shared/QuayMusicEvidence.luau",
+      "sha256": "969db61ae0ebb3c8f0345d44e9e7cbb8a3a66379652bca820a9f4e20b12a5a8a"
+    },
+    {
+      "path": "src/shared/QuayObjectives.luau",
+      "sha256": "f044f464ee22c2c44912e50c6a41c023672dd9d772797d8cbd50eea975c4daa2"
+    },
+    {
+      "path": "src/shared/QuayProgress.luau",
+      "sha256": "d7f55fbf1f3b6accc04414a6a5dd706cb919de60d31d5864e7bc8ebe044380ea"
+    },
+    {
+      "path": "src/shared/QuayStory.luau",
+      "sha256": "e923c69bc0eb13ef7cf38fb0192502c5fbc479f0ed4a7a0d17bd0792bf75b062"
+    },
+    {
+      "path": "src/shared/QuayVoiceHints.luau",
+      "sha256": "2281622d4de9bd50db82423351ccd03c652272a5cb192430cb45470fa99356cf"
+    },
+    {
+      "path": "src/shared/RetiredSamples.luau",
+      "sha256": "dc8c8cdd63d2fd79b7f94e3477c10dac9f4be1c00ac1206d17be0a2f03617b43"
+    },
+    {
+      "path": "src/shared/SampleCatalog.luau",
+      "sha256": "c3fd3aba571b183273d38ee95bf53e807731f972e7063b90b09cc62ddbeeceed"
+    },
+    {
+      "path": "src/shared/SamplerPadLayout.luau",
+      "sha256": "cccf659721535d441b4029c172f5d2f8d3686c6339e4c02f848b4d4e6a6951ad"
+    },
+    {
+      "path": "src/shared/SampleWaveforms.luau",
+      "sha256": "e0b713c3ae92acac23695a354e71823a6327ba027cd95571ce63cb0f46caa3c3"
+    },
+    {
+      "path": "src/shared/SongArrangement.luau",
+      "sha256": "aa194b9bd8c4d946db2dba9ffa438d459f0b4d5e565f1d6bb9dcbd26dcda76f2"
+    },
+    {
+      "path": "src/shared/StylePacks.luau",
+      "sha256": "db6b592c1dc98101a3c6a459804bf3077d1049c5a9c5134808515336f428d2c5"
+    },
+    {
+      "path": "src/shared/WardrobeCatalog.luau",
+      "sha256": "a69fd2b17155e3b49db8f5b6b631410f486075f40bd93b0505217c9f3353f3a2"
+    }
+  ],
+  "checks": {
+    "stylua": {
+      "exitCode": 0,
+      "output": ""
+    },
+    "stylua-check": {
+      "exitCode": 0,
+      "output": ""
+    },
+    "selene": {
+      "exitCode": 0,
+      "output": "Results:\n0 errors\n0 warnings\n0 parse errors\n"
+    }
+  },
+  "testsRun": false,
+  "runtimeRun": false
+}

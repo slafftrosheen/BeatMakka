@@ -1,0 +1,9 @@
+{
+  "package": "output/needle-quay-demo/NeedleQuay-LivePerformance.zip",
+  "bytes": 119226444,
+  "sha256": "44893b5cc080ad818c51c0b47ed696c2b164fab1fd0850271ac422b59f589bc7",
+  "companion_files": 1016,
+  "place_sha256": "c37ddeec3db785f44a86ad0c985121db510685096b5418cff386321880509f5b",
+  "uploads": 0,
+  "tripo_spend_credits": 0
+}

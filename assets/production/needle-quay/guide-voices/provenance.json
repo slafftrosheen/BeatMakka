@@ -1,0 +1,378 @@
+{
+  "provider": "ElevenLabs",
+  "model": "eleven_v4",
+  "selection": "Take 4 of each speaker; 19 measured phrase pauses separate 20 authored lines.",
+  "processing": "Mono PCM16 44.1kHz; loudnorm target -19 LUFS, -2dB TP; 80ms lead,120ms tail.",
+  "runtimeVerified": false,
+  "robloxUploads": 0,
+  "records": [
+    {
+      "file": "assets/production/needle-quay/guide-voices/source/alissia-take1.mp3",
+      "generationId": "eG3HyqzEo0hVfTKrFWtb",
+      "sha256": "16dc1a1b5e94e1a9dd79a343f2e1160c16ddbdaa17f9bd8816e2d6252fda6609",
+      "kind": "original"
+    },
+    {
+      "file": "assets/production/needle-quay/guide-voices/source/alissia-take2.mp3",
+      "generationId": "mBqBYz2inIoFpDqN2e5L",
+      "sha256": "96b8ecdc98b7f34021a696fd3c87d1e6ff39ae9bb1f394b0fa5654908724447e",
+      "kind": "original"
+    },
+    {
+      "file": "assets/production/needle-quay/guide-voices/source/alissia-take3.mp3",
+      "generationId": "xpiBUvu5oJhCRr5yfDaz",
+      "sha256": "209947891d7b73858f49c3ebe17ea3ce02fd4dde3cc870c7cfcc5c763220ef16",
+      "kind": "original"
+    },
+    {
+      "file": "assets/production/needle-quay/guide-voices/source/alissia-take4.mp3",
+      "generationId": "zbOOzhkalbZpcdXN73tN",
+      "sha256": "5472e59aced3a2a8887384e57aca85314abfd250fd5e41696ed2c0d5f3f755f1",
+      "kind": "original"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/guide-voices/clips/alissia_meet.wav",
+      "source": "assets/production/needle-quay/guide-voices/source/alissia-take4.mp3",
+      "start": 0,
+      "end": 2.816531,
+      "sha256": "f3d6abda71aa09d63bcbf410a0015af94fe9b93ee951382a9570d58f05bb874d"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/guide-voices/clips/alissia_cases.wav",
+      "source": "assets/production/needle-quay/guide-voices/source/alissia-take4.mp3",
+      "start": 3.49093,
+      "end": 5.55161,
+      "sha256": "8a5b2fdf010005f463d65792029ab995fb38a10be6d2036f65992cfd86e423c7"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/guide-voices/clips/alissia_power.wav",
+      "source": "assets/production/needle-quay/guide-voices/source/alissia-take4.mp3",
+      "start": 6.214422,
+      "end": 8.066077,
+      "sha256": "ecf4ed6d5f0579b13ecf14e06481430b9e66a6ff5b4f4fa0006501e509fc7be8"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/guide-voices/clips/alissia_clear.wav",
+      "source": "assets/production/needle-quay/guide-voices/source/alissia-take4.mp3",
+      "start": 8.767347,
+      "end": 10.243243,
+      "sha256": "556af2d80861c8f1f85bc2645a656c91b0232c378c157c6bf49996ba2e47bde8"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/guide-voices/clips/alissia_restart.wav",
+      "source": "assets/production/needle-quay/guide-voices/source/alissia-take4.mp3",
+      "start": 10.979592,
+      "end": 12.541383,
+      "sha256": "c38c99f199739550c9c69a644c069290480cf6df3687e7bd6f67ced2ec7f505e"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/guide-voices/clips/alissia_records.wav",
+      "source": "assets/production/needle-quay/guide-voices/source/alissia-take4.mp3",
+      "start": 13.319773,
+      "end": 16.370454000000002,
+      "sha256": "e55c3f1bf7cb056547a6c925d9e77704ce89faaf6c446850754684eb33f637a5"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/guide-voices/clips/alissia_metal.wav",
+      "source": "assets/production/needle-quay/guide-voices/source/alissia-take4.mp3",
+      "start": 17.047256,
+      "end": 20.465125,
+      "sha256": "d06decff68c0b1bf2fefc00fa70045c04eac672b698cb146461ae8d7f86d10eb"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/guide-voices/clips/alissia_chirp.wav",
+      "source": "assets/production/needle-quay/guide-voices/source/alissia-take4.mp3",
+      "start": 21.148005,
+      "end": 26.319184,
+      "sha256": "283e965d192dd0b628b23b09643ff6443d9c29a62658c64242e5ecb00d64f9cb"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/guide-voices/clips/alissia_variation.wav",
+      "source": "assets/production/needle-quay/guide-voices/source/alissia-take4.mp3",
+      "start": 27.084036,
+      "end": 30.681066,
+      "sha256": "214c9fda80f130fe8f9dce36f02227d6a2c97c4992056e91c8e3c1c5758fa82a"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/guide-voices/clips/alissia_save.wav",
+      "source": "assets/production/needle-quay/guide-voices/source/alissia-take4.mp3",
+      "start": 31.412336000000003,
+      "end": 33.867506,
+      "sha256": "bff941b94b09e01405f7a52c45f90073bfc7ad3cc83477074ba4f320a7b6aaf3"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/guide-voices/clips/alissia_return_host.wav",
+      "source": "assets/production/needle-quay/guide-voices/source/alissia-take4.mp3",
+      "start": 34.636984,
+      "end": 37.621973,
+      "sha256": "d32e512df6c52cf21fa600e18e65406d3636453730b9a35486b07a1ca9d1397a"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/guide-voices/clips/alissia_finale.wav",
+      "source": "assets/production/needle-quay/guide-voices/source/alissia-take4.mp3",
+      "start": 38.345011,
+      "end": 40.598912,
+      "sha256": "d1521a753aff898498e1d0b30539a497a6ea3eb36a4135aace32e2d19f30d267"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/guide-voices/clips/alissia_fx_echo.wav",
+      "source": "assets/production/needle-quay/guide-voices/source/alissia-take4.mp3",
+      "start": 41.372494,
+      "end": 44.425034,
+      "sha256": "0c04f4f5497d468c8fc8091e0edf8a46e13af15bf56674f1fd622da55f2b71e7"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/guide-voices/clips/alissia_fx_vent.wav",
+      "source": "assets/production/needle-quay/guide-voices/source/alissia-take4.mp3",
+      "start": 45.287279000000005,
+      "end": 48.430408,
+      "sha256": "a13e486da21e3a8428b6119db02d8a8ba71737ae14045b7d418ac148a029d95e"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/guide-voices/clips/alissia_fx_lantern.wav",
+      "source": "assets/production/needle-quay/guide-voices/source/alissia-take4.mp3",
+      "start": 49.319569,
+      "end": 52.668865999999994,
+      "sha256": "fa4327846a17bf0adbd44cf6f601ed68967f5488ffb2df0926f4ddd8d1f375a3"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/guide-voices/clips/alissia_fx_signal.wav",
+      "source": "assets/production/needle-quay/guide-voices/source/alissia-take4.mp3",
+      "start": 53.531315,
+      "end": 56.62229,
+      "sha256": "cb06209150c8ac616d8bdc49752e147227781fb3102e569b75d3419248f7bbfd"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/guide-voices/clips/alissia_fx_select.wav",
+      "source": "assets/production/needle-quay/guide-voices/source/alissia-take4.mp3",
+      "start": 57.49966,
+      "end": 59.387505999999995,
+      "sha256": "c1c9d7ede0d714d09c4806b9d84fa54248c58eb69cde96def7a5b149121cbd12"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/guide-voices/clips/alissia_fx_apply.wav",
+      "source": "assets/production/needle-quay/guide-voices/source/alissia-take4.mp3",
+      "start": 60.169297,
+      "end": 62.669388,
+      "sha256": "47be54c66c40075dca6dd3af434b196c3fa66ae47dc36914ccf466d57a7ffdb6"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/guide-voices/clips/alissia_fx_audition.wav",
+      "source": "assets/production/needle-quay/guide-voices/source/alissia-take4.mp3",
+      "start": 63.534875,
+      "end": 66.210431,
+      "sha256": "4cb28002e46d2b8d1d635f11546d12fcacd188095d1105f67007119ef040c2e8"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/guide-voices/clips/alissia_fx_done.wav",
+      "source": "assets/production/needle-quay/guide-voices/source/alissia-take4.mp3",
+      "start": 67.003401,
+      "end": 69.84,
+      "sha256": "2eff6cb828fb61098d6077a638fd7367e155fc238eb3f403b8a1ea9ccd53b3e2"
+    },
+    {
+      "file": "assets/production/needle-quay/guide-voices/source/nikolas-take1.mp3",
+      "generationId": "VWU2md9lwHnNBVIOgzv1",
+      "sha256": "b12157de5d6a93d81be6e519859df8fba4c022c4c552f817bf90e8951b8bdf79",
+      "kind": "original"
+    },
+    {
+      "file": "assets/production/needle-quay/guide-voices/source/nikolas-take2.mp3",
+      "generationId": "4IuC5p9XYMazb9okkLWS",
+      "sha256": "d15e5879c5480271c3e1d2634ab82fbfeb374c75eec760c43bfa85896c74591c",
+      "kind": "original"
+    },
+    {
+      "file": "assets/production/needle-quay/guide-voices/source/nikolas-take3.mp3",
+      "generationId": "t8bjTM2Xx5oQ8T0e6pXW",
+      "sha256": "bd0d21f4952af86c3f0effa2dad5fa37ebf36d6fe1513f92b181913d2d1d0ec7",
+      "kind": "original"
+    },
+    {
+      "file": "assets/production/needle-quay/guide-voices/source/nikolas-take4.mp3",
+      "generationId": "HFq6Rqc8OOiT8tbhPWvT",
+      "sha256": "5b8b1f0a70677d1269260dceeb8eccb0d91631f9c7da73668ef975ee5b999669",
+      "kind": "original"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/guide-voices/clips/nikolas_meet.wav",
+      "source": "assets/production/needle-quay/guide-voices/source/nikolas-take4.mp3",
+      "start": 0,
+      "end": 2.84195,
+      "sha256": "f3d21302765b8778ba0e8db95d5f7bf1731445093c379032cddb312529e8a610"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/guide-voices/clips/nikolas_cases.wav",
+      "source": "assets/production/needle-quay/guide-voices/source/nikolas-take4.mp3",
+      "start": 3.9768479999999995,
+      "end": 6.006327,
+      "sha256": "9a12375e1614904131d8ef81c9561a94679a8431210d2735a30acc8be10252cc"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/guide-voices/clips/nikolas_power.wav",
+      "source": "assets/production/needle-quay/guide-voices/source/nikolas-take4.mp3",
+      "start": 6.67517,
+      "end": 8.602245,
+      "sha256": "7591ec34eb4f9a77aa5238185338e75a67f1bfb1d5127e89e671e86c860e78aa"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/guide-voices/clips/nikolas_clear.wav",
+      "source": "assets/production/needle-quay/guide-voices/source/nikolas-take4.mp3",
+      "start": 9.342562,
+      "end": 10.922970999999999,
+      "sha256": "9a33edf299fd59ee93c301a47ac4ddc0ed1128445bb5ed9f3865d37a67f40776"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/guide-voices/clips/nikolas_restart.wav",
+      "source": "assets/production/needle-quay/guide-voices/source/nikolas-take4.mp3",
+      "start": 11.596983999999999,
+      "end": 13.154988999999999,
+      "sha256": "5948039d6f9a6e895411259049e401ce6c34020ed6009e8e9c4a958f13435962"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/guide-voices/clips/nikolas_records.wav",
+      "source": "assets/production/needle-quay/guide-voices/source/nikolas-take4.mp3",
+      "start": 13.916122,
+      "end": 16.842676,
+      "sha256": "a6e25503083a59b9c3323afb3fdebb56bf71bdea46bde6534f978f48ee5d2726"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/guide-voices/clips/nikolas_metal.wav",
+      "source": "assets/production/needle-quay/guide-voices/source/nikolas-take4.mp3",
+      "start": 17.633469,
+      "end": 20.950113,
+      "sha256": "49d513f93a9ac4243c05a9f694e5cace8e2c1154c9af34810921ba54ececa8b8"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/guide-voices/clips/nikolas_chirp.wav",
+      "source": "assets/production/needle-quay/guide-voices/source/nikolas-take4.mp3",
+      "start": 21.571610000000003,
+      "end": 26.664943,
+      "sha256": "da0fd66fd265f4445f7636782b81e21744b8ca3278d2d3a4e362742c1faf735d"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/guide-voices/clips/nikolas_variation.wav",
+      "source": "assets/production/needle-quay/guide-voices/source/nikolas-take4.mp3",
+      "start": 27.424512,
+      "end": 30.885782000000003,
+      "sha256": "0f0fdb35a9e1a15fb9a104ff58b472548c23fac27f26d358b9bb8d8126ab9529"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/guide-voices/clips/nikolas_save.wav",
+      "source": "assets/production/needle-quay/guide-voices/source/nikolas-take4.mp3",
+      "start": 31.61483,
+      "end": 34.11,
+      "sha256": "4e6f23cf6a84befd729e0b280ba8d343321c4d1d7f3e73886abbb99dabb21d35"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/guide-voices/clips/nikolas_return_host.wav",
+      "source": "assets/production/needle-quay/guide-voices/source/nikolas-take4.mp3",
+      "start": 34.873923000000005,
+      "end": 37.723197,
+      "sha256": "5ce195e2c2840d127764aa643e4c7005679a9862f792dc218b1670e8c3fb4a10"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/guide-voices/clips/nikolas_finale.wav",
+      "source": "assets/production/needle-quay/guide-voices/source/nikolas-take4.mp3",
+      "start": 38.418254000000005,
+      "end": 40.664853,
+      "sha256": "252493e2d01ff9b5d66f845185199180a224a789ec6f8936820394dd1479a111"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/guide-voices/clips/nikolas_fx_echo.wav",
+      "source": "assets/production/needle-quay/guide-voices/source/nikolas-take4.mp3",
+      "start": 41.379955,
+      "end": 44.356054,
+      "sha256": "a83702214b203cd129a83526d468ee2ff46f820f563fdf42cb1df2f37bd27e45"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/guide-voices/clips/nikolas_fx_vent.wav",
+      "source": "assets/production/needle-quay/guide-voices/source/nikolas-take4.mp3",
+      "start": 45.027302,
+      "end": 48.036417,
+      "sha256": "14cb94663ddad6d9379baf4fe8c14a6532a0d25301bbeb1531275ba788fa94e5"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/guide-voices/clips/nikolas_fx_lantern.wav",
+      "source": "assets/production/needle-quay/guide-voices/source/nikolas-take4.mp3",
+      "start": 48.65941,
+      "end": 51.809728,
+      "sha256": "03126e8a9f0d6d3c3215fd6e2ee28431c74f64714598c68db59eaa62d25d3c21"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/guide-voices/clips/nikolas_fx_signal.wav",
+      "source": "assets/production/needle-quay/guide-voices/source/nikolas-take4.mp3",
+      "start": 52.457506,
+      "end": 55.547982,
+      "sha256": "b67ccbe9effe1f38b766b48ab730c19f1a7e6c898f5013202b71c5d43331bcb9"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/guide-voices/clips/nikolas_fx_select.wav",
+      "source": "assets/production/needle-quay/guide-voices/source/nikolas-take4.mp3",
+      "start": 56.211247,
+      "end": 57.988344999999995,
+      "sha256": "698aa860d8e4c793d61b5a8d7b2bd4cd8aadcf8217daaceedfaff31914638bae"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/guide-voices/clips/nikolas_fx_apply.wav",
+      "source": "assets/production/needle-quay/guide-voices/source/nikolas-take4.mp3",
+      "start": 58.649773,
+      "end": 61.125125,
+      "sha256": "aa665e07daffb9f19253e4af63091b57ffdff37c567c8965096b611b08b54be9"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/guide-voices/clips/nikolas_fx_audition.wav",
+      "source": "assets/production/needle-quay/guide-voices/source/nikolas-take4.mp3",
+      "start": 61.728776,
+      "end": 64.325125,
+      "sha256": "ff110a9cd7f156be5998a9280a3afba67e3bbca6fa558acc2ad6b31263c45bbc"
+    },
+    {
+      "kind": "runtime-clip",
+      "file": "assets/production/needle-quay/guide-voices/clips/nikolas_fx_done.wav",
+      "source": "assets/production/needle-quay/guide-voices/source/nikolas-take4.mp3",
+      "start": 64.946304,
+      "end": 67.68,
+      "sha256": "d7d3473a8653cd76f3a6b40e4a959b040c26cfa9b61d2a11bbb986d057447e72"
+    }
+  ]
+}

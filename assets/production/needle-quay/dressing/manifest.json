@@ -1,0 +1,348 @@
+{
+  "assets": [
+    {
+      "id": "NQ-MARKET-CRATE",
+      "kind": "supplied_dressing",
+      "source": "assets/production/needle-quay/dressing/NQ-MARKET-CRATE.blend",
+      "source_sha256": "7e04b5f8e43e081bffe4bb75bb95e884b2843507257e504d10b8e18f4ece07c9",
+      "triangles": 188,
+      "parts": [
+        {
+          "name": "Surface0",
+          "bone": "",
+          "center": [
+            -0.0,
+            0.3999999761581421,
+            0.0
+          ],
+          "size": [
+            2.222776412963867,
+            0.7999999523162842,
+            1.6209381818771362
+          ],
+          "color": [
+            1,
+            1,
+            1
+          ],
+          "surface_family": "supplied_dressing_be8d8f0d2ac6",
+          "triangles": 188,
+          "sha256": "64caecc47d8ebbcda5ab36f8d04bf8b9aca85d4b2042b6299753f809ab85320a",
+          "uri": "rbxasset://needle-quay/dressing/NQ-MARKET-CRATE_0_64caecc47d8e.mesh"
+        }
+      ],
+      "joints": {},
+      "dimensions": [
+        2.222776412963867,
+        0.7999999523162842,
+        1.6209381818771362
+      ],
+      "coordinate_basis": "blender_to_roblox_front_minus_z_v2"
+    },
+    {
+      "id": "NQ-MARKET-TOMATO",
+      "kind": "supplied_dressing",
+      "source": "assets/production/needle-quay/dressing/NQ-MARKET-TOMATO.blend",
+      "source_sha256": "ef83c4e1ee5501f03bcf239b0496b6eb51f3063a046e892c6c7013139816b55f",
+      "triangles": 4356,
+      "parts": [
+        {
+          "name": "Surface0",
+          "bone": "",
+          "center": [
+            -0.0,
+            0.44999998807907104,
+            0.0
+          ],
+          "size": [
+            1.927883505821228,
+            0.8999999761581421,
+            1.4580738544464111
+          ],
+          "color": [
+            1,
+            1,
+            1
+          ],
+          "surface_family": "supplied_dressing_be8d8f0d2ac6",
+          "triangles": 4356,
+          "sha256": "e9233b3e26ef3a6a4ff12cb04fcb04b98fd510243ccebdcf06ba45bf2b064d78",
+          "uri": "rbxasset://needle-quay/dressing/NQ-MARKET-TOMATO_0_e9233b3e26ef.mesh"
+        }
+      ],
+      "joints": {},
+      "dimensions": [
+        1.927883505821228,
+        0.8999999761581421,
+        1.4580738544464111
+      ],
+      "coordinate_basis": "blender_to_roblox_front_minus_z_v2"
+    },
+    {
+      "id": "NQ-MARKET-ORANGE",
+      "kind": "supplied_dressing",
+      "source": "assets/production/needle-quay/dressing/NQ-MARKET-ORANGE.blend",
+      "source_sha256": "3fb50256aba6fb207cf7765ac7c1fbc289a867cfbd590822f87bb350cd361732",
+      "triangles": 6480,
+      "parts": [
+        {
+          "name": "Surface0",
+          "bone": "",
+          "center": [
+            2.980232238769531e-07,
+            0.44999998807907104,
+            -5.662441253662109e-07
+          ],
+          "size": [
+            2.4775214195251465,
+            0.8999999761581421,
+            1.6565625667572021
+          ],
+          "color": [
+            1,
+            1,
+            1
+          ],
+          "surface_family": "supplied_dressing_be8d8f0d2ac6",
+          "triangles": 6480,
+          "sha256": "01cf4e6c122d52e9d533d9964552c388f3c1c7a0d67c7af23ac36684b3b45483",
+          "uri": "rbxasset://needle-quay/dressing/NQ-MARKET-ORANGE_0_01cf4e6c122d.mesh"
+        }
+      ],
+      "joints": {},
+      "dimensions": [
+        2.4775216579437256,
+        0.8999999761581421,
+        1.6565625667572021
+      ],
+      "coordinate_basis": "blender_to_roblox_front_minus_z_v2"
+    },
+    {
+      "id": "NQ-MARKET-DISPLAY",
+      "kind": "supplied_dressing",
+      "source": "assets/production/needle-quay/dressing/NQ-MARKET-DISPLAY.blend",
+      "source_sha256": "e203a6726887ed09b579473a048222233c8bcea7445bbbf71fffefb661413057",
+      "triangles": 158,
+      "parts": [
+        {
+          "name": "Surface0",
+          "bone": "",
+          "center": [
+            -0.0,
+            1.5824335813522339,
+            1.1920928955078125e-07
+          ],
+          "size": [
+            2.138461112976074,
+            3.1648671627044678,
+            3.0
+          ],
+          "color": [
+            1,
+            1,
+            1
+          ],
+          "surface_family": "supplied_dressing_be8d8f0d2ac6",
+          "triangles": 158,
+          "sha256": "fae68ab8d68086227d9405be32bdb848d169dccb9c715aa2160da224b0d41ed0",
+          "uri": "rbxasset://needle-quay/dressing/NQ-MARKET-DISPLAY_0_fae68ab8d680.mesh"
+        }
+      ],
+      "joints": {},
+      "dimensions": [
+        2.138461112976074,
+        3.1648671627044678,
+        3.0
+      ],
+      "coordinate_basis": "blender_to_roblox_front_minus_z_v2"
+    },
+    {
+      "id": "NQ-MARKET-CART",
+      "kind": "supplied_dressing",
+      "source": "assets/production/needle-quay/dressing/NQ-MARKET-CART.blend",
+      "source_sha256": "85d633961757d4139f20b429efa23b57784e6f751f60a47fbb4e290d83202d0a",
+      "triangles": 3778,
+      "parts": [
+        {
+          "name": "Surface0",
+          "bone": "",
+          "center": [
+            -0.0,
+            1.2505172491073608,
+            0.0
+          ],
+          "size": [
+            2.5,
+            2.5010344982147217,
+            1.5336573123931885
+          ],
+          "color": [
+            1,
+            1,
+            1
+          ],
+          "surface_family": "supplied_dressing_be8d8f0d2ac6",
+          "triangles": 3778,
+          "sha256": "b235196a491b7864c83dd636f89dd4fe327f9257abc5d0bb5d8a59c981cf8edb",
+          "uri": "rbxasset://needle-quay/dressing/NQ-MARKET-CART_0_b235196a491b.mesh"
+        }
+      ],
+      "joints": {},
+      "dimensions": [
+        2.5,
+        2.5010344982147217,
+        1.5336573123931885
+      ],
+      "coordinate_basis": "blender_to_roblox_front_minus_z_v2"
+    },
+    {
+      "id": "NQ-POWER-CABINET",
+      "kind": "supplied_dressing",
+      "source": "assets/production/needle-quay/dressing/NQ-POWER-CABINET.blend",
+      "source_sha256": "2bc336de7b2d803627cd4e2edd8758a4757d782736e5cf73153ba43fcacc4a25",
+      "triangles": 110,
+      "parts": [
+        {
+          "name": "Surface0",
+          "bone": "",
+          "center": [
+            -0.0,
+            0.6666668057441711,
+            0.0
+          ],
+          "size": [
+            0.933333694934845,
+            1.3333336114883423,
+            0.5
+          ],
+          "color": [
+            1,
+            1,
+            1
+          ],
+          "surface_family": "supplied_dressing_f80c6402f81d",
+          "triangles": 110,
+          "sha256": "964fa76ef14c267c1f61239bb0bd7e38018f9e6a7c749c5b1d691e86370e3ca1",
+          "uri": "rbxasset://needle-quay/dressing/NQ-POWER-CABINET_0_964fa76ef14c.mesh"
+        }
+      ],
+      "joints": {},
+      "dimensions": [
+        0.933333694934845,
+        1.3333336114883423,
+        0.5
+      ],
+      "coordinate_basis": "blender_to_roblox_front_minus_z_v2"
+    },
+    {
+      "id": "NQ-REPAIR-LAPTOP",
+      "kind": "supplied_dressing",
+      "source": "assets/production/needle-quay/dressing/NQ-REPAIR-LAPTOP.blend",
+      "source_sha256": "70094c5fd1daeee750bc3e0190ca713e95ee4874db73b3be34098e34b7c50f05",
+      "triangles": 1948,
+      "parts": [
+        {
+          "name": "Surface0",
+          "bone": "",
+          "center": [
+            -0.0,
+            0.6054366827011108,
+            0.0
+          ],
+          "size": [
+            1.4826246500015259,
+            1.2108733654022217,
+            1.899999976158142
+          ],
+          "color": [
+            1,
+            1,
+            1
+          ],
+          "surface_family": "supplied_dressing_f17b68636d7d",
+          "triangles": 1948,
+          "sha256": "e2958d52d8486503d0d9a1e9dc2524dfd2056182953701b0280a2d91d39670a8",
+          "uri": "rbxasset://needle-quay/dressing/NQ-REPAIR-LAPTOP_0_e2958d52d848.mesh"
+        }
+      ],
+      "joints": {},
+      "dimensions": [
+        1.4826246500015259,
+        1.2108733654022217,
+        1.899999976158142
+      ],
+      "coordinate_basis": "blender_to_roblox_front_minus_z_v2"
+    }
+  ],
+  "materials": {
+    "supplied_dressing_be8d8f0d2ac6": "rbxasset://needle-quay/dressing/color_be8d8f0d2ac6.png",
+    "supplied_dressing_f80c6402f81d": "rbxasset://needle-quay/dressing/color_f80c6402f81d.png",
+    "supplied_dressing_f17b68636d7d": "rbxasset://needle-quay/dressing/color_f17b68636d7d.png"
+  },
+  "provenance": [
+    {
+      "id": "NQ-MARKET-CRATE",
+      "original": "assets/market_-_stylized_modular_low_poly_asset_pack.glb",
+      "original_sha256": "c99efdd73f40865b5f7de03c1995aa2a4cda2bcf086b46a1466b7c907786f12d",
+      "selected_object": "FruitBox_M_SUpermarket_0",
+      "uniform_scale": 1.0696391162058807,
+      "grounded_pivot": true,
+      "stage": "LOCAL_ADAPTATION_PENDING_ACCEPTANCE"
+    },
+    {
+      "id": "NQ-MARKET-TOMATO",
+      "original": "assets/market_-_stylized_modular_low_poly_asset_pack.glb",
+      "original_sha256": "c99efdd73f40865b5f7de03c1995aa2a4cda2bcf086b46a1466b7c907786f12d",
+      "selected_object": "FruitBox_Tomato_M_SUpermarket_0",
+      "uniform_scale": 1.012042936722544,
+      "grounded_pivot": true,
+      "stage": "LOCAL_ADAPTATION_PENDING_ACCEPTANCE"
+    },
+    {
+      "id": "NQ-MARKET-ORANGE",
+      "original": "assets/market_-_stylized_modular_low_poly_asset_pack.glb",
+      "original_sha256": "c99efdd73f40865b5f7de03c1995aa2a4cda2bcf086b46a1466b7c907786f12d",
+      "selected_object": "FruitBox_Orange_M_SUpermarket_0",
+      "uniform_scale": 1.2214512135241018,
+      "grounded_pivot": true,
+      "stage": "LOCAL_ADAPTATION_PENDING_ACCEPTANCE"
+    },
+    {
+      "id": "NQ-MARKET-DISPLAY",
+      "original": "assets/market_-_stylized_modular_low_poly_asset_pack.glb",
+      "original_sha256": "c99efdd73f40865b5f7de03c1995aa2a4cda2bcf086b46a1466b7c907786f12d",
+      "selected_object": "Grocery_Stagger_M_SUpermarket_0",
+      "uniform_scale": 0.9999996026358594,
+      "grounded_pivot": true,
+      "stage": "LOCAL_ADAPTATION_PENDING_ACCEPTANCE"
+    },
+    {
+      "id": "NQ-MARKET-CART",
+      "original": "assets/market_-_stylized_modular_low_poly_asset_pack.glb",
+      "original_sha256": "c99efdd73f40865b5f7de03c1995aa2a4cda2bcf086b46a1466b7c907786f12d",
+      "selected_object": "ShoppingCart_M_SUpermarket_0",
+      "uniform_scale": 0.8058053742592853,
+      "grounded_pivot": true,
+      "stage": "LOCAL_ADAPTATION_PENDING_ACCEPTANCE"
+    },
+    {
+      "id": "NQ-POWER-CABINET",
+      "original": "assets/electrical_boxes.glb",
+      "original_sha256": "21d9cdc3955e14f203e1cdfa28c8f3ecb6294a967341ec3e42a6b090c1174c74",
+      "selected_object": "modular-box-02_electrical boxes_0",
+      "uniform_scale": 3.3333332008785725,
+      "grounded_pivot": true,
+      "stage": "LOCAL_ADAPTATION_PENDING_ACCEPTANCE"
+    },
+    {
+      "id": "NQ-REPAIR-LAPTOP",
+      "original": "assets/old_low-poly_laptop__psx_retro_prop.glb",
+      "original_sha256": "95122cf3362cd951629abd326136bd3edd484dc6b51341d42549b25fc9d449de",
+      "selected_object": null,
+      "uniform_scale": 0.7371373917998183,
+      "grounded_pivot": true,
+      "stage": "LOCAL_ADAPTATION_PENDING_ACCEPTANCE"
+    }
+  ],
+  "uploads": 0
+}

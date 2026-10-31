@@ -1,0 +1,98 @@
+{
+  "date": "2026-10-30",
+  "studio": "NeedleQuay-Current.rbxlx",
+  "mode": "single-player local Studio",
+  "artEntriesLoaded": 80,
+  "localTextureFailures": 0,
+  "graffitiBound": 10,
+  "trafficVehicles": 4,
+  "companion": {
+    "name": "Alissia",
+    "suppliedSkinReady": true,
+    "clip": "clap"
+  },
+  "desktop": {
+    "steps": [
+      85,
+      44
+    ],
+    "columns": 8
+  },
+  "phone": {
+    "model": "iPhone 17 Pro",
+    "orientationSupport": "Sensor",
+    "portrait": {
+      "pads": [
+        66,
+        66
+      ],
+      "steps": [
+        81,
+        44
+      ],
+      "columns": 4
+    },
+    "landscape": {
+      "viewport": [
+        749,
+        381
+      ],
+      "pads": [
+        47,
+        47
+      ],
+      "all16Visible": true
+    }
+  },
+  "activities": [
+    {
+      "action": "dock postcard",
+      "xpBefore": 25,
+      "xpAfter": 40
+    },
+    {
+      "action": "cafe care",
+      "xpAfter": 60
+    },
+    {
+      "action": "parcel pickup",
+      "parcel": 1
+    },
+    {
+      "action": "parcel delivered",
+      "parcel": 2,
+      "xpAfter": 105,
+      "rank": "Familiar Face"
+    },
+    {
+      "action": "repeat cafe care in second session",
+      "xpBefore": 45,
+      "xpAfter": 45,
+      "flowerPetals": 15
+    }
+  ],
+  "fxTapeAt96Bpm": {
+    "tone": -0.25,
+    "drive": 0.22,
+    "echo": 0.08,
+    "reverb": 0.08,
+    "delay": 0.3125
+  },
+  "knownWarning": "rbxassetid://203785492 asset type mismatch",
+  "projectScriptExceptionsObserved": 0,
+  "texturePackFailuresAfterRefactor": 0,
+  "lint": {
+    "errors": 0,
+    "warnings": 0,
+    "parseErrors": 0
+  },
+  "physicalDevicesVerified": false,
+  "multiplayerVerified": false,
+  "cloudSaveVerified": false,
+  "audibilityVerified": false,
+  "finalArtApproved": false,
+  "testSuitesRun": 0,
+  "uploads": 0,
+  "paidTripo": 0,
+  "studioEnd": "Edit mode; default viewport restored"
+}

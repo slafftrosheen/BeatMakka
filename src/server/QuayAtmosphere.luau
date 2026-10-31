@@ -3,6 +3,11 @@ local Lighting = game:GetService("Lighting")
 local Shared = game.ReplicatedStorage.Shared
 local Theme = require(Shared.Theme)
 local Geometry = require(Shared.NeedleQuayGeometry)
+local Supplied = require(Shared.QuayBuildingLayout)
+local Authored = {}
+for _, asset in require(Shared.QuayArchitectureCatalog) do
+    Authored[asset.id] = true
+end
 local Assets = require(script.Parent.AssetSpawner)
 local World = {}
 local OFFSET = Vector3.new(450, 0, 0)
@@ -16,11 +21,14 @@ end
 local function tile(p, family, scale, face)
     local texture = Instance.new("Texture")
     texture.Name = "AuthoredSurface"
+    texture:SetAttribute("LocalMaterialKey", "env_" .. family)
     texture.Texture = require(Shared.LocalContent).Materials["env_" .. family .. "_color"]
     texture.StudsPerTileU, texture.StudsPerTileV = scale, scale
     texture.Face = face or Enum.NormalId.Top
-    texture.Color3 = p.Color
-    texture.Transparency = 0.12
+    -- The color map already contains the stone palette; multiplying it by the
+    -- base stone again crushed the paving into brown and hid the joints.
+    texture.Color3 = if family == "stone" then Color3.fromRGB(255, 247, 232) else p.Color
+    texture.Transparency = if family == "stone" then 0.28 else 0.12
     texture.Parent = p
 end
 local function beam(parent, name, a, b, width, color, material)
@@ -66,6 +74,7 @@ local function image(parent, name, at, width, height, file)
     label.BackgroundTransparency = 1
     label.Size = UDim2.fromScale(1, 1)
     label.Image = "rbxasset://needle-quay/graphics/" .. file .. ".png"
+    label:SetAttribute("QuayGraphicUri", label.Image)
     label.Parent = gui
     return backing
 end
@@ -77,10 +86,10 @@ function World.build(scene)
     art.Parent = root
     Lighting.ClockTime = 17.65
     Lighting.Brightness = 2.2
-    Lighting.ExposureCompensation = 0.12
-    Lighting.Ambient = Color3.fromRGB(139, 125, 115)
-    Lighting.OutdoorAmbient = Color3.fromRGB(172, 163, 148)
-    Lighting.ColorShift_Top = Color3.fromRGB(28, 12, 0)
+    Lighting.ExposureCompensation = 0
+    Lighting.Ambient = Color3.fromRGB(72, 72, 89)
+    Lighting.OutdoorAmbient = Color3.fromRGB(112, 116, 136)
+    Lighting.ColorShift_Top = Color3.new()
     Lighting.GlobalShadows = true
     Lighting.ShadowSoftness = 0.3
     Lighting.EnvironmentDiffuseScale = 0.8
@@ -93,6 +102,8 @@ function World.build(scene)
         sky.SkyboxFt, sky.SkyboxBk = skyMaps.ft, skyMaps.bk
         sky.SkyboxUp, sky.SkyboxDn = skyMaps.up, skyMaps.dn
         sky.StarCount = 0
+        sky.SkyboxOrientation = Vector3.new(0, 180, 0)
+        sky.SunAngularSize = 8
         sky.Parent = Lighting
     end
     for _, name in { "QuayHaze", "QuayGrade", "QuayBloom", "QuaySun" } do
@@ -103,15 +114,15 @@ function World.build(scene)
     end
     local atmosphere = Instance.new("Atmosphere")
     atmosphere.Name = "QuayHaze"
-    atmosphere.Density, atmosphere.Offset = 0.2, 0.1
-    atmosphere.Color = Color3.fromRGB(219, 207, 217)
-    atmosphere.Decay = Color3.fromRGB(126, 112, 142)
-    atmosphere.Haze, atmosphere.Glare = 0.7, 0.12
+    atmosphere.Density, atmosphere.Offset = 0.18, 0.1
+    atmosphere.Color = Color3.fromRGB(211, 211, 221)
+    atmosphere.Decay = Color3.fromRGB(136, 140, 163)
+    atmosphere.Haze, atmosphere.Glare = 0.6, 0.02
     atmosphere.Parent = Lighting
     local grade = Instance.new("ColorCorrectionEffect")
     grade.Name = "QuayGrade"
-    grade.TintColor = Color3.fromRGB(255, 248, 237)
-    grade.Contrast, grade.Saturation = 0.04, -0.05
+    grade.TintColor = Color3.fromRGB(255, 252, 248)
+    grade.Contrast, grade.Saturation = 0.04, -0.12
     grade.Parent = Lighting
     local bloom = Instance.new("BloomEffect")
     bloom.Name = "QuayBloom"
@@ -126,11 +137,12 @@ function World.build(scene)
     terrain.WaterReflectance, terrain.WaterTransparency = 0.45, 0.35
     terrain.WaterWaveSize, terrain.WaterWaveSpeed = 0.22, 7
     terrain:FillBlock(CFrame.new(450, -9, 300), Vector3.new(1100, 12, 300), Enum.Material.Water)
-    local clouds = terrain:FindFirstChild("QuayClouds") or Instance.new("Clouds")
-    clouds.Name = "QuayClouds"
-    clouds.Cover, clouds.Density = 0.28, 0.18
-    clouds.Color = Color3.fromRGB(255, 220, 194)
-    clouds.Parent = terrain
+    -- Broad cloud shapes are authored into the artbook panorama. A second
+    -- procedural cloud layer obscures that silhouette and changes its palette.
+    local clouds = terrain:FindFirstChild("QuayClouds")
+    if clouds then
+        clouds:Destroy()
+    end
     local foundation = root:FindFirstChild("QuayFoundation")
     foundation.Color = Color3.fromRGB(183, 162, 137)
     foundation.Material = Enum.Material.Cobblestone
@@ -277,6 +289,9 @@ function World.build(scene)
     end
     -- Buildings keep their envelopes; the frontages gain usable thresholds and stories.
     for index, spec in Geometry do
+        if Supplied[spec.id] then
+            continue
+        end
         local x, z = spec.center[1], spec.center[2]
         local w, d, h = table.unpack(spec.dimensions)
         local front = z - d / 2
@@ -289,6 +304,11 @@ function World.build(scene)
             Enum.Material.Concrete
         )
         tile(terrace, "stone", 8)
+        -- These DCC assets already carry their own windows, signs, lamps and
+        -- roof equipment. Generic facade dressing intersects the authored art.
+        if Authored[spec.id] then
+            continue
+        end
         for _, side in { -1, 1 } do
             local lightPosition = OFFSET + Vector3.new(x + side * (w / 2 - 2), 8, front - 0.8)
             bulb(art, lightPosition, 1.8, 17)
@@ -398,6 +418,9 @@ function World.build(scene)
     end
     -- Dense, authored record-shop vignette from the approved board.
     for _, spec in { Geometry[2], Geometry[6] } do
+        if Supplied[spec.id] then
+            continue
+        end
         local x, z = spec.center[1], spec.center[2]
         local w, d, h = table.unpack(spec.dimensions)
         for _, side in { -1, 1 } do
@@ -423,271 +446,218 @@ function World.build(scene)
     end
     local shop = Geometry[2]
     local sx, sz = shop.center[1], shop.center[2] - shop.dimensions[2] / 2
-    for _, dx in { -11, 10 } do
-        Assets.place(
-            art,
-            "H03",
-            CFrame.new(OFFSET + Vector3.new(sx + dx, 0.35, sz - 3.8)),
-            Vector3.new(4, 3, 2),
-            Theme.Walnut,
-            false
-        )
-        for sleeve = 1, 7 do
-            local cover = block(
+    if not Supplied[shop.id] then
+        for _, dx in { -11, 10 } do
+            Assets.place(
                 art,
-                "CrateRecordSleeve",
-                Vector3.new(2.25, 2.25, 0.065),
-                OFFSET + Vector3.new(sx + dx, 2.6 + (sleeve % 3) * 0.08, sz - 4.5 + sleeve * 0.2),
-                if sleeve % 3 == 0
-                    then Theme.Teal
-                    elseif sleeve % 3 == 1 then Theme.Coral
-                    else Theme.Cream
+                "H03",
+                CFrame.new(OFFSET + Vector3.new(sx + dx, 0.35, sz - 3.8)),
+                Vector3.new(4, 3, 2),
+                Theme.Walnut,
+                false
             )
-            cover.CFrame *= CFrame.Angles(math.rad(-6), 0, math.rad((sleeve % 3 - 1) * 3))
-            if sleeve == 1 then
-                local disc = block(
+            for sleeve = 1, 7 do
+                local cover = block(
                     art,
-                    "SleeveVinylGraphic",
-                    Vector3.new(0.025, 1.3, 1.3),
-                    cover.Position,
-                    Theme.Graphite
+                    "CrateRecordSleeve",
+                    Vector3.new(2.25, 2.25, 0.065),
+                    OFFSET
+                        + Vector3.new(sx + dx, 2.6 + (sleeve % 3) * 0.08, sz - 4.5 + sleeve * 0.2),
+                    if sleeve % 3 == 0
+                        then Theme.Teal
+                        elseif sleeve % 3 == 1 then Theme.Coral
+                        else Theme.Cream
                 )
-                disc.Shape = Enum.PartType.Cylinder
-                disc.CFrame = cover.CFrame
-                    * CFrame.new(0, 0.1, -0.05)
-                    * CFrame.Angles(0, math.pi / 2, 0)
-                local label = block(
-                    art,
-                    "VinylCenterLabel",
-                    Vector3.new(0.03, 0.38, 0.38),
-                    cover.Position,
-                    Theme.Cream
-                )
-                label.Shape = Enum.PartType.Cylinder
-                label.CFrame = disc.CFrame * CFrame.new(-0.02, 0, 0)
+                cover.CFrame *= CFrame.Angles(math.rad(-6), 0, math.rad((sleeve % 3 - 1) * 3))
+                if sleeve == 1 then
+                    local disc = block(
+                        art,
+                        "SleeveVinylGraphic",
+                        Vector3.new(0.025, 1.3, 1.3),
+                        cover.Position,
+                        Theme.Graphite
+                    )
+                    disc.Shape = Enum.PartType.Cylinder
+                    disc.CFrame = cover.CFrame
+                        * CFrame.new(0, 0.1, -0.05)
+                        * CFrame.Angles(0, math.pi / 2, 0)
+                    local label = block(
+                        art,
+                        "VinylCenterLabel",
+                        Vector3.new(0.03, 0.38, 0.38),
+                        cover.Position,
+                        Theme.Cream
+                    )
+                    label.Shape = Enum.PartType.Cylinder
+                    label.CFrame = disc.CFrame * CFrame.new(-0.02, 0, 0)
+                end
             end
+            Assets.place(
+                art,
+                "P02",
+                CFrame.new(
+                    OFFSET + Vector3.new(sx + (if dx > 0 then 6 else dx + 3), 0.35, sz - 4.5)
+                ),
+                Vector3.new(2, 3, 2),
+                Theme.Walnut,
+                false
+            )
         end
         Assets.place(
             art,
-            "P02",
-            CFrame.new(OFFSET + Vector3.new(sx + (if dx > 0 then 6 else dx + 3), 0.35, sz - 4.5)),
-            Vector3.new(2, 3, 2),
-            Theme.Walnut,
+            "H02",
+            CFrame.new(OFFSET + Vector3.new(sx + 13, 0.35, sz - 2.7)),
+            Vector3.new(4, 8, 3),
+            Theme.Teal,
             false
         )
-    end
-    Assets.place(
-        art,
-        "H02",
-        CFrame.new(OFFSET + Vector3.new(sx + 13, 0.35, sz - 2.7)),
-        Vector3.new(4, 8, 3),
-        Theme.Teal,
-        false
-    )
-    local rug = block(
-        art,
-        "ListeningRug",
-        Vector3.new(8, 0.04, 5),
-        OFFSET + Vector3.new(sx, 0.37, sz - 4),
-        Theme.Coral,
-        Enum.Material.Fabric
-    )
-    tile(rug, "canvas", 5)
-    -- A legible public shop entrance and a warm, furnished sales floor.
-    local doorFront = OFFSET + Vector3.new(sx, 0, sz - 0.55)
-    for _, side in { -1, 1 } do
+        local rug = block(
+            art,
+            "ListeningRug",
+            Vector3.new(8, 0.04, 5),
+            OFFSET + Vector3.new(sx, 0.37, sz - 4),
+            Theme.Coral,
+            Enum.Material.Fabric
+        )
+        tile(rug, "canvas", 5)
+        -- A legible public shop entrance and a warm, furnished sales floor.
+        local doorFront = OFFSET + Vector3.new(sx, 0, sz - 0.55)
+        for _, side in { -1, 1 } do
+            block(
+                art,
+                "EntryJamb",
+                Vector3.new(0.45, 8, 0.55),
+                doorFront + Vector3.new(side * 4, 4, 0),
+                Theme.Walnut,
+                Enum.Material.Wood
+            )
+            local hinge = CFrame.new(doorFront + Vector3.new(side * 3.8, 0, 0))
+                * CFrame.Angles(0, math.rad(side * 68), 0)
+            local leaf = block(
+                art,
+                "OpenShopDoor",
+                Vector3.new(3.5, 7.5, 0.22),
+                Vector3.zero,
+                Theme.Walnut,
+                Enum.Material.Wood
+            )
+            leaf.CFrame = hinge * CFrame.new(-side * 1.75, 3.75, 0)
+            local pane = block(
+                art,
+                "DoorGlass",
+                Vector3.new(2.8, 3.6, 0.05),
+                Vector3.zero,
+                Theme.Cream,
+                Enum.Material.Glass
+            )
+            pane.CFrame = hinge * CFrame.new(-side * 1.75, 5, 0.14)
+            pane.Transparency = 0.4
+        end
         block(
             art,
-            "EntryJamb",
-            Vector3.new(0.45, 8, 0.55),
-            doorFront + Vector3.new(side * 4, 4, 0),
+            "EntryHeader",
+            Vector3.new(8.5, 0.5, 0.65),
+            doorFront + Vector3.new(0, 7.9, 0),
             Theme.Walnut,
             Enum.Material.Wood
         )
-        local hinge = CFrame.new(doorFront + Vector3.new(side * 3.8, 0, 0))
-            * CFrame.Angles(0, math.rad(side * 68), 0)
-        local leaf = block(
+        local floor = block(
             art,
-            "OpenShopDoor",
-            Vector3.new(3.5, 7.5, 0.22),
-            Vector3.zero,
+            "RecordShopFloor",
+            Vector3.new(28, 0.12, 12),
+            OFFSET + Vector3.new(sx, 0.4, 0),
             Theme.Walnut,
-            Enum.Material.Wood
+            Enum.Material.WoodPlanks
         )
-        leaf.CFrame = hinge * CFrame.new(-side * 1.75, 3.75, 0)
-        local pane = block(
-            art,
-            "DoorGlass",
-            Vector3.new(2.8, 3.6, 0.05),
-            Vector3.zero,
-            Theme.Cream,
-            Enum.Material.Glass
-        )
-        pane.CFrame = hinge * CFrame.new(-side * 1.75, 5, 0.14)
-        pane.Transparency = 0.4
-    end
-    block(
-        art,
-        "EntryHeader",
-        Vector3.new(8.5, 0.5, 0.65),
-        doorFront + Vector3.new(0, 7.9, 0),
-        Theme.Walnut,
-        Enum.Material.Wood
-    )
-    local floor = block(
-        art,
-        "RecordShopFloor",
-        Vector3.new(28, 0.12, 12),
-        OFFSET + Vector3.new(sx, 0.4, 0),
-        Theme.Walnut,
-        Enum.Material.WoodPlanks
-    )
-    tile(floor, "wood", 7)
-    for _, dx in { -10, 10 } do
-        for _, depth in { -2, 4 } do
+        tile(floor, "wood", 7)
+        for _, dx in { -10, 10 } do
+            for _, depth in { -2, 4 } do
+                Assets.place(
+                    art,
+                    "P04",
+                    CFrame.new(OFFSET + Vector3.new(sx + dx, 0.5, depth)),
+                    Vector3.new(4, 3, 2),
+                    Theme.Walnut,
+                    false
+                )
+            end
+        end
+        for _, dx in { -7, 0, 7 } do
             Assets.place(
                 art,
-                "P04",
-                CFrame.new(OFFSET + Vector3.new(sx + dx, 0.5, depth)),
+                "H03",
+                CFrame.new(OFFSET + Vector3.new(sx + dx, 0.5, 5)),
                 Vector3.new(4, 3, 2),
                 Theme.Walnut,
                 false
             )
         end
+        bulb(art, OFFSET + Vector3.new(sx, 7, 1), 2.5, 20)
+        image(art, "ShopPoster", OFFSET + Vector3.new(sx, 5, 6.8), 2.8, 3.8, "POST-02")
     end
-    for _, dx in { -7, 0, 7 } do
-        Assets.place(
-            art,
-            "H03",
-            CFrame.new(OFFSET + Vector3.new(sx + dx, 0.5, 5)),
-            Vector3.new(4, 3, 2),
-            Theme.Walnut,
-            false
-        )
-    end
-    bulb(art, OFFSET + Vector3.new(sx, 7, 1), 2.5, 20)
-    image(art, "ShopPoster", OFFSET + Vector3.new(sx, 5, 6.8), 2.8, 3.8, "POST-02")
-    local fan = Instance.new("Model")
-    fan.Name = "MorrowFanRotor"
-    fan.WorldPivot = CFrame.new(OFFSET + Vector3.new(-121, 6, -117.9))
-    local center = fan:GetPivot()
-    for i = 0, 3 do
-        local blade = block(
+    if not Supplied["NQ-BLD-03"] then
+        local fan = Instance.new("Model")
+        fan.Name = "MorrowFanRotor"
+        fan.WorldPivot = CFrame.new(OFFSET + Vector3.new(-121, 6, -117.9))
+        local center = fan:GetPivot()
+        for i = 0, 3 do
+            local blade = block(
+                fan,
+                "FanBlade",
+                Vector3.new(0.55, 1.4, 0.12),
+                Vector3.zero,
+                Theme.Graphite,
+                Enum.Material.Metal
+            )
+            blade.CFrame = center * CFrame.Angles(0, 0, i * math.pi / 2) * CFrame.new(0, 0.65, 0)
+        end
+        local hub = block(
             fan,
-            "FanBlade",
-            Vector3.new(0.55, 1.4, 0.12),
-            Vector3.zero,
-            Theme.Graphite,
+            "FanHub",
+            Vector3.new(0.5, 0.5, 0.25),
+            center.Position,
+            Theme.Cream,
             Enum.Material.Metal
         )
-        blade.CFrame = center * CFrame.Angles(0, 0, i * math.pi / 2) * CFrame.new(0, 0.65, 0)
+        hub.Shape = Enum.PartType.Ball
+        fan:SetAttribute("QuayFan", true)
+        fan.Parent = art
     end
-    local hub = block(
-        fan,
-        "FanHub",
-        Vector3.new(0.5, 0.5, 0.25),
-        center.Position,
-        Theme.Cream,
-        Enum.Material.Metal
-    )
-    hub.Shape = Enum.PartType.Ball
-    fan:SetAttribute("QuayFan", true)
-    fan.Parent = art
-    -- Cafe furniture, no blockers across entrances or music interaction targets.
-    for _, dx in { -7, 11 } do
-        local at = OFFSET + Vector3.new(-65 + dx, 0, 76)
-        Assets.place(
-            art,
-            "NQ-TABLE-01",
-            CFrame.new(at),
-            Vector3.new(3.6, 2.7, 3.6),
-            Theme.Walnut,
-            false
-        )
-        for _, dz in { -2.5, 2.5 } do
+    if not Supplied["NQ-BLD-06"] then
+        -- Cafe seating and market frontage are authored in QuayPublicSpaces.
+        for i = 1, 4 do
             Assets.place(
                 art,
-                "NQ-CHAIR-01",
-                CFrame.new(at + Vector3.new(0, 0, dz)),
-                Vector3.new(2, 3, 2),
-                Theme.Coral,
+                "NQ-COFFEE-01",
+                CFrame.new(OFFSET + Vector3.new(-60 + i * 0.75, 3.5, 81)),
+                Vector3.one,
+                Theme.Cream,
                 false
             )
         end
-        Assets.place(
-            art,
-            if dx < 0 then "NQ-CAKE-01" else "NQ-CAKE-02",
-            CFrame.new(at + Vector3.new(0, 2.72, 0)),
-            Vector3.one,
-            Theme.Cream,
-            false
-        )
-        local cup = block(
-            art,
-            "CeramicCup",
-            Vector3.new(0.5, 0.6, 0.6),
-            at + Vector3.new(1, 2.99, 0),
-            Theme.Cream
-        )
-        cup.Shape = Enum.PartType.Cylinder
-        cup.CFrame *= CFrame.Angles(0, 0, math.pi / 2)
-        local coffee = block(
-            art,
-            "CoffeeSurface",
-            Vector3.new(0.025, 0.48, 0.48),
-            cup.Position + Vector3.new(0, 0.26, 0),
-            Theme.Walnut
-        )
-        coffee.Shape = Enum.PartType.Cylinder
-        coffee.CFrame *= CFrame.Angles(0, 0, math.pi / 2)
-        Assets.place(
-            art,
-            "NQ-MILK-01",
-            CFrame.new(at + Vector3.new(-1, 2.72, 0.4)),
-            Vector3.one,
-            Theme.Cream,
-            false
-        )
-    end
-    for _, dx in { -13, 15 } do
-        Assets.place(
-            art,
-            "NQ-PRODUCE-01",
-            CFrame.new(OFFSET + Vector3.new(10 + dx, 0.35, -20)),
-            Vector3.one,
-            Theme.Walnut,
-            false
-        )
-    end
-    for i = 1, 4 do
-        Assets.place(
-            art,
-            "NQ-COFFEE-01",
-            CFrame.new(OFFSET + Vector3.new(-60 + i * 0.75, 3.5, 81)),
-            Vector3.one,
-            Theme.Cream,
-            false
-        )
-    end
-    block(
-        art,
-        "CafeServingLedge",
-        Vector3.new(3.9, 0.25, 1.1),
-        OFFSET + Vector3.new(-58.125, 3.36, 81),
-        Theme.Walnut,
-        Enum.Material.Wood
-    )
-    for _, x in { -59.6, -56.65 } do
         block(
             art,
-            "CafeLedgeSupport",
-            Vector3.new(0.18, 3.2, 0.18),
-            OFFSET + Vector3.new(x, 1.72, 81),
-            Theme.Teal,
-            Enum.Material.Metal
+            "CafeServingLedge",
+            Vector3.new(3.9, 0.25, 1.1),
+            OFFSET + Vector3.new(-58.125, 3.36, 81),
+            Theme.Walnut,
+            Enum.Material.Wood
         )
+        for _, x in { -59.6, -56.65 } do
+            block(
+                art,
+                "CafeLedgeSupport",
+                Vector3.new(0.18, 3.2, 0.18),
+                OFFSET + Vector3.new(x, 1.72, 81),
+                Theme.Teal,
+                Enum.Material.Metal
+            )
+        end
     end
     for _, spec in { Geometry[2], Geometry[3], Geometry[6], Geometry[9] } do
+        if Supplied[spec.id] then
+            continue
+        end
         Assets.place(
             art,
             "NQ-UTILITY-01",
@@ -704,14 +674,16 @@ function World.build(scene)
             false
         )
     end
-    Assets.place(
-        art,
-        "NQ-VINYL-01",
-        CFrame.new(OFFSET + Vector3.new(sx + 8, 3.35, sz + 3)),
-        Vector3.one,
-        Theme.Graphite,
-        false
-    )
+    if not Supplied[shop.id] then
+        Assets.place(
+            art,
+            "NQ-VINYL-01",
+            CFrame.new(OFFSET + Vector3.new(sx + 8, 3.35, sz + 3)),
+            Vector3.one,
+            Theme.Graphite,
+            false
+        )
+    end
     -- Greenery clusters soften the industrial silhouettes without random tiny clutter.
     for _, position in
         {
@@ -751,7 +723,7 @@ function World.build(scene)
     Assets.place(
         art,
         "NQ-COUNTER-01",
-        CFrame.new(403, 0, 84),
+        CFrame.new(402, 0, 98),
         Vector3.new(9, 3.3, 3),
         Theme.Walnut,
         false
@@ -759,7 +731,7 @@ function World.build(scene)
     Assets.place(
         art,
         "NQ-SHELF-01",
-        CFrame.new(408, 0, 84),
+        CFrame.new(402, 0, 94),
         Vector3.new(4, 4.6, 1.4),
         Theme.Walnut,
         false
@@ -825,12 +797,31 @@ function World.build(scene)
             end
         end
     end
+    -- Drying line sits on the laundry roof, clear of its sign and shop window.
+    for _, x in { 136, 153 } do
+        beam(
+            art,
+            "LaundryRoofPost",
+            OFFSET + Vector3.new(x, 12.5, -104),
+            OFFSET + Vector3.new(x, 16.5, -104),
+            0.12,
+            Theme.Graphite
+        )
+    end
+    beam(
+        art,
+        "LaundryRoofLine",
+        OFFSET + Vector3.new(136, 16.5, -104),
+        OFFSET + Vector3.new(153, 16.5, -104),
+        0.045,
+        Theme.Graphite
+    )
     for i = 1, 6 do
         local cloth = block(
             art,
             "LaundryCloth",
             Vector3.new(1.6, 2.4, 0.05),
-            OFFSET + Vector3.new(136 + i * 2.4, 9 - math.sin(i / 6 * math.pi), -114),
+            OFFSET + Vector3.new(136 + i * 2.4, 15.2, -104),
             if i % 2 == 0 then Theme.Cream else Theme.FadedTeal,
             Enum.Material.Fabric
         )
@@ -970,10 +961,10 @@ function World.build(scene)
     end
     for index, row in
         {
-            { "NQ-NPC-TORI", Vector3.new(-110, 0, 84) },
-            { "NQ-NPC-NAYA", Vector3.new(-38, 0, -44) },
-            { "NQ-NPC-NELL", Vector3.new(75, 0, 84) },
-            { "NQ-NPC-IVO", Vector3.new(110, 0, -44) },
+            { "NQ-NPC-TORI", Vector3.new(-160, 0, 118) },
+            { "NQ-NPC-NAYA", Vector3.new(64, 0, 2) },
+            { "NQ-NPC-NELL", Vector3.new(-45, 0, 126) },
+            { "NQ-NPC-IVO", Vector3.new(-110, 0, -99) },
         }
     do
         local actor = game.ServerStorage.AssetLibrary[row[1]]:Clone()
@@ -981,6 +972,13 @@ function World.build(scene)
         actor:ScaleTo(0.92 + index * 0.025)
         actor:PivotTo(CFrame.new(OFFSET + row[2]))
         actor:SetAttribute("AmbientWalk", 18)
+        local routes = {
+            { { -12, 0, 0 }, { 12, 0, 0 }, { 12, 0, 7 }, { -12, 0, 7 } },
+            { { 0, 0, -28 }, { 0, 0, 30 }, { 4, 0, 30 }, { 4, 0, -28 } },
+            { { 0, 0, 0 }, { 24, 0, 0 }, { 24, 0, 6 }, { 0, 0, 6 } },
+            { { 0, 0, -10 }, { 6, 0, -10 }, { 6, 0, 10 }, { 0, 0, 10 } },
+        }
+        actor:SetAttribute("AmbientRoute", game:GetService("HttpService"):JSONEncode(routes[index]))
         actor:SetAttribute("AmbientPhase", index * 2)
         actor.Parent = root.Neighbors
     end

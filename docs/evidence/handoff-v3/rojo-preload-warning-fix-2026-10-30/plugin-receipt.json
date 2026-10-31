@@ -1,0 +1,13 @@
+{
+  "tool": "Rojo 7.7.0",
+  "plugin": "C:\\Users\\slavd\\AppData\\Local\\Roblox\\Plugins\\RojoManagedPlugin.rbxm",
+  "backup": "C:\\Users\\slavd\\.codex\\backups\\BeatMaka\\rojo-preload-20261030-root-preserved\\RojoManagedPlugin.rbxm",
+  "root_name": "Rojo",
+  "original_sha256": "de8cac278030b37f7d4f7efb931fe68087be0a851a31c33312f592b802a23714",
+  "patched_sha256": "15418f42d9d3f8d5ad805384e0696df5586ebf8ff7ef4f77c578ccb8756443c3",
+  "replacement_source_sha256": "36d07ce095de4fffde2c044a158d8f949c58c74b3d11f43e399d557a02dbaa59",
+  "only_preload_source_changed": true,
+  "roundtrip_verified": true,
+  "installed": true,
+  "upstream": "https://github.com/rojo-rbx/rojo/pull/1344"
+}

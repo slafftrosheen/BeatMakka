@@ -15,7 +15,12 @@ function GuiFactory.make(className, parent, properties)
 end
 
 function GuiFactory.round(object, radius)
-    GuiFactory.make("UICorner", object, { CornerRadius = UDim.new(0, radius or 10) })
+    local corner = object:FindFirstChildWhichIsA("UICorner")
+    if corner then
+        corner.CornerRadius = UDim.new(0, radius or 10)
+    else
+        GuiFactory.make("UICorner", object, { CornerRadius = UDim.new(0, radius or 10) })
+    end
     return object
 end
 
@@ -37,7 +42,7 @@ function GuiFactory.button(parent, text, callback, options)
         Text = text,
         BackgroundColor3 = Theme.Teal,
         TextColor3 = Theme.Cream,
-        Font = Theme.Bold,
+        Font = Enum.Font.Code,
         TextSize = 14,
         TextWrapped = true,
         BorderSizePixel = 0,
@@ -46,6 +51,75 @@ function GuiFactory.button(parent, text, callback, options)
         Size = UDim2.fromOffset(100, 44),
     })
     GuiFactory.round(button, 8)
+    local Skin = require(script.Parent.DeviceSkin)
+    Skin.cap(button)
+    local function renderActionIcon()
+        -- Module loading can yield: finish it before replacing the owned glyph.
+        local Icons = require(script.Parent.GameIcons)
+        for _, previous in button:GetChildren() do
+            if previous.Name == "ActionIcon" then
+                previous:Destroy()
+            end
+        end
+        local cap = button:FindFirstChild("DeviceCap")
+        local caption = cap and cap:FindFirstChild("CapCaption")
+        if caption then
+            caption.Position, caption.Size = UDim2.fromOffset(8, 2), UDim2.new(1, -16, 1, -4)
+        end
+        if
+            not caption
+            or button:GetAttribute("GraphicPad")
+            or button:GetAttribute("NoActionIcon")
+        then
+            return
+        end
+        local name = button:GetAttribute("UiIcon") or Icons.forText(button.Text)
+        if name and button.AbsoluteSize.X >= 44 then
+            local icon = Icons.make(button, name, button.TextColor3, 22)
+            icon.Name = "ActionIcon"
+            icon.Position = UDim2.new(0, 12, 0.5, -11)
+            icon.ZIndex = button.ZIndex + 3
+            for _, child in icon:GetDescendants() do
+                if child:IsA("GuiObject") then
+                    child.ZIndex = icon.ZIndex
+                end
+            end
+            caption.Position, caption.Size = UDim2.fromOffset(40, 2), UDim2.new(1, -48, 1, -4)
+            if button.AbsoluteSize.X < 100 then
+                icon.Size = UDim2.fromOffset(18, 18)
+                icon.Position = UDim2.new(0.5, -9, 0, 3)
+                caption.Position, caption.Size = UDim2.fromOffset(3, 22), UDim2.new(1, -6, 1, -24)
+            end
+        else
+            caption.Position, caption.Size = UDim2.fromOffset(8, 2), UDim2.new(1, -16, 1, -4)
+        end
+    end
+    local updatingIcon, pendingIcon = false, false
+    local updateActionIcon
+    updateActionIcon = function()
+        if updatingIcon then
+            pendingIcon = true
+            return
+        end
+        updatingIcon, pendingIcon = true, false
+        renderActionIcon()
+        updatingIcon = false
+        if pendingIcon then
+            task.defer(updateActionIcon)
+        end
+    end
+    button:GetPropertyChangedSignal("Text"):Connect(function()
+        if button.Text ~= "" and not button:GetAttribute("GraphicPad") then
+            Skin.cap(button)
+        end
+        updateActionIcon()
+    end)
+    button:GetPropertyChangedSignal("TextColor3"):Connect(updateActionIcon)
+    button:GetPropertyChangedSignal("AbsoluteSize"):Connect(updateActionIcon)
+    button:GetAttributeChangedSignal("UiIcon"):Connect(updateActionIcon)
+    button:GetAttributeChangedSignal("NoActionIcon"):Connect(updateActionIcon)
+    button:GetAttributeChangedSignal("GraphicPad"):Connect(updateActionIcon)
+    task.defer(updateActionIcon)
     local ring = GuiFactory.make("UIStroke", button, {
         Name = "FocusRing",
         Color = Theme.Ink,

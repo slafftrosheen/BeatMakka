@@ -1,0 +1,181 @@
+{
+  "reference_sources": [
+    {
+      "source": "01_Visual_Artbook.pdf",
+      "sha256": "596526821d23869b7e92ab0b1d7643aadc596303edc3a9a3d888a09087383496"
+    },
+    {
+      "source": "02_Production_Atlas.pdf",
+      "sha256": "70f8d7462526b01b04c576f0d9343ea28b40ba327bc619f0e101264d7465bd12"
+    },
+    {
+      "source": "Asset_Production_Register.xlsx",
+      "sha256": "62a48c5ced5642a4c1ccba54d47b277ff39aa1384999d44cc43e94c1e15e46d3"
+    },
+    {
+      "source": "assets/references/needle-quay-approved-style-board.png",
+      "sha256": "ed1febe208e798110905653ac6f2a60778830de00b2ff112cacf2e36c3bf3463"
+    },
+    {
+      "source": "BeatMakka_World_v2/BeatMakka_World_Artbook_v2_RU.pdf",
+      "sha256": "0ab9dade9cf7be3f873c41ab1cc6edf5ba54a0883bf675a43f31f273cc862a07"
+    },
+    {
+      "source": "BeatMakka_Companions_v1/BeatMakka_Companions_Artbook_RU.pdf",
+      "sha256": "bf2748c2f7cf10dfe56b86584388b1d4445b32cf8d7e26959775a62dd3a3670a"
+    },
+    {
+      "source": "output/needle-quay/BeatMakka_Needle_Quay_Environment_Quest_Artbook_Vol01.pdf",
+      "sha256": "8942fa5039f7b329428848b78252ce5a4ee1bb6bcad4f2e552572af4166c6101"
+    }
+  ],
+  "architecture": [
+    {
+      "id": "NQ-BLD-09",
+      "triangles": 15600,
+      "registered_envelope_wdh": [
+        34,
+        20,
+        16
+      ],
+      "measured_bounds_xyz": [
+        32.91488214859009,
+        14.883502,
+        19.999998734161377
+      ],
+      "floor_y": -4.7357177734852485e-07,
+      "normal_length_max_error": 1.3309113544579532e-07,
+      "source_and_mesh_hashes_match": true,
+      "within_envelope": true
+    },
+    {
+      "id": "NQ-BLD-10",
+      "triangles": 26584,
+      "registered_envelope_wdh": [
+        38,
+        16,
+        26
+      ],
+      "measured_bounds_xyz": [
+        35.6174,
+        23.791303388862612,
+        16.0
+      ],
+      "floor_y": -2.5520324686834073e-08,
+      "normal_length_max_error": 1.434823504453675e-07,
+      "source_and_mesh_hashes_match": true,
+      "within_envelope": true
+    },
+    {
+      "id": "NQ-BLD-11",
+      "triangles": 9644,
+      "registered_envelope_wdh": [
+        18,
+        16,
+        14
+      ],
+      "measured_bounds_xyz": [
+        17.445924,
+        12.942221721226883,
+        15.999999658462524
+      ],
+      "floor_y": 2.718620301100927e-08,
+      "normal_length_max_error": 1.49283733041905e-07,
+      "source_and_mesh_hashes_match": true,
+      "within_envelope": true
+    },
+    {
+      "id": "NQ-BLD-12",
+      "triangles": 8264,
+      "registered_envelope_wdh": [
+        12,
+        12,
+        11
+      ],
+      "measured_bounds_xyz": [
+        11.688924,
+        10.07698463615341,
+        12.00000054309082
+      ],
+      "floor_y": -3.524017355704956e-09,
+      "normal_length_max_error": 1.3703689316635348e-07,
+      "source_and_mesh_hashes_match": true,
+      "within_envelope": true
+    },
+    {
+      "id": "NQ-BLD-13",
+      "triangles": 15280,
+      "registered_envelope_wdh": [
+        30,
+        22,
+        20
+      ],
+      "measured_bounds_xyz": [
+        28.36302,
+        18.643636372705842,
+        22.0
+      ],
+      "floor_y": -2.0960235602718313e-08,
+      "normal_length_max_error": 1.5625971072630307e-07,
+      "source_and_mesh_hashes_match": true,
+      "within_envelope": true
+    },
+    {
+      "id": "NQ-FACADE-01",
+      "triangles": 26584,
+      "registered_envelope_wdh": [
+        26,
+        18,
+        27
+      ],
+      "measured_bounds_xyz": [
+        24.68572,
+        24.91947938597946,
+        18.00000024484253
+      ],
+      "floor_y": 4.1815948481627174e-08,
+      "normal_length_max_error": 1.5961849220147428e-07,
+      "source_and_mesh_hashes_match": true,
+      "within_envelope": true
+    },
+    {
+      "id": "NQ-FACADE-02",
+      "triangles": 26584,
+      "registered_envelope_wdh": [
+        26,
+        18,
+        23
+      ],
+      "measured_bounds_xyz": [
+        24.68572,
+        21.17921980071335,
+        18.00000024484253
+      ],
+      "floor_y": 4.1815948481627174e-08,
+      "normal_length_max_error": 1.5961849220147428e-07,
+      "source_and_mesh_hashes_match": true,
+      "within_envelope": true
+    },
+    {
+      "id": "NQ-FACADE-03",
+      "triangles": 9644,
+      "registered_envelope_wdh": [
+        26,
+        18,
+        18
+      ],
+      "measured_bounds_xyz": [
+        25.17616,
+        16.83178688845024,
+        17.999999844451903
+      ],
+      "floor_y": 4.532661440626029e-08,
+      "normal_length_max_error": 1.4984684038044094e-07,
+      "source_and_mesh_hashes_match": true,
+      "within_envelope": true
+    }
+  ],
+  "uploads": 0,
+  "art_approval": "PENDING_USER_REVIEW",
+  "note": "Source geometry integrity review; not a performance qualification or art approval."
+}

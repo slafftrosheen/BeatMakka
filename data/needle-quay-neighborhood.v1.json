@@ -1,0 +1,60 @@
+{
+  "schema": "needle-quay.neighborhood.v1",
+  "stage": "LOCAL_IMPLEMENTATION_PENDING_ACCEPTANCE",
+  "date": "2026-10-26",
+  "sources": [
+    "assets/references/needle-quay-approved-style-board.png",
+    "docs/needle-quay/ENVIRONMENT_REGISTER.md"
+  ],
+  "canonical_hosts": {
+    "P1": "NQ-NPC-TORI",
+    "P2": "NQ-NPC-IVO",
+    "P3": "NQ-NPC-NAYA",
+    "sana": "NQ-NPC-SANA",
+    "P4": "H04",
+    "finale": "NQ-NPC-RONAN",
+    "cafe": "NQ-NPC-NELL"
+  },
+  "optional_encounters": [
+    "cafe",
+    "sana"
+  ],
+  "dialogue_choices": [
+    "place",
+    "music",
+    "quay"
+  ],
+  "new_remote_events": 0,
+  "new_profile_fields": 0,
+  "new_rewards": 0,
+  "reused_assets": [
+    "NQ-BENCH-01",
+    "P11",
+    "P12",
+    "NQ-TABLE-01",
+    "NQ-COFFEE-01",
+    "NQ-CAKE-02"
+  ],
+  "authored_scene_targets_not_platform_limits": {
+    "resident_update_hz": 20,
+    "resident_active_distance_studs": 100,
+    "guide_update_hz": 5,
+    "one_guide_marker_per_client": true
+  },
+  "acceptance": {
+    "final_art": false,
+    "physical_device": false,
+    "multiplayer": false,
+    "cloud_rejoin": false
+  },
+  "uploads": 0,
+  "provider_spend": 0,
+  "evidence": "docs/evidence/needle-quay-neighborhood/runtime-summary.json",
+  "local_observations": {
+    "main_activity_count": 12,
+    "added_base_parts": 58,
+    "added_mesh_instances": 24,
+    "added_sounds": 0,
+    "guide_survived_respawn": true
+  }
+}

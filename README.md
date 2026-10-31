@@ -1,8 +1,8 @@
 # Frequency Zero
 
-Frequency Zero is a Roblox music-making game built around a playable sampler and a cozy creative neighborhood. The proposed first zone is Needle Quay. The instrument and creation loop lead; the world supports them.
+Current local delivery: **NeedleQuay-Groovebox-v4**. Open [Launch-NeedleQuay.cmd](output/needle-quay-demo/Launch-NeedleQuay.cmd), or extract the [complete local ZIP](output/needle-quay-demo/NeedleQuay-Groovebox-v4.zip). The groovebox has fixed pads/knobs/transport beside Sequence, Song, Sounds, Crates and Setup screens. See the [demo guide](docs/needle-quay/FINAL_DEMO_README.md) and [current Roblox MCP checks](docs/evidence/handoff-v4/groovebox-2026-10-30/README.md).
 
-The [Needle Quay local demo](docs/needle-quay/LOCAL_DEMO_2026-10-25.md) integrates the district map, four parking venues, personal Roamers, thirteen activities and the six-phase finale. Run `output/needle-quay-demo/Launch-NeedleQuay.ps1` to install the checksum-checked local content and open Studio. Final art is accepted: exact meshes replace the visible proxies, with local PBR finishes and 184 WAV bindings. Multiplayer, real-device and cloud rejoin acceptance remain separate.
+The user's latest choice makes the pack-native 64-sample order authoritative: A drums, B bass, C vocals, D harbour FX/melodics. All 64 technical local sources support Studio playing, recording, Finished Songs and public performance. Human approval metadata stays separate from working local functionality. Retired musical IDs remain archived. Studio saves are session-only; cloud rejoin, independent multiplayer clients, real devices and human listening/art approval remain separate evidence. Older pattern/shelf/six-loop instructions and build names below are historical.
 
 The project starts as a file-system-first Luau project. Roblox Studio is the place/runtime editor, Rojo syncs local source into Studio, and Rokit pins project tools. Blender is the DCC for authored geometry and cleanup. Tripo is an optional offline asset-production route; it is not a game runtime dependency.
 
@@ -65,4 +65,7 @@ The [Alpha 01 work package](docs/ALPHA_01.md) links the 18 GitHub development ta
 
 Paid provider work is disabled until a named asset batch, current quote, and total credit cap are explicitly authorized and the offline preflight passes. See `docs/EXECUTION_BATCHES.md` and `tools/preflight_gate.py`.
 
-Large supplied source models that exceed GitHub file limits are retained as verified gzip archives. Restore the city model with python tools/restore_supplied_asset.py low_poly_city_pack; SHA-256 and source size are checked before writing the original filename.
+Large supplied source models that exceed GitHub file limits are retained as verified, lossless gzip archives. Restore them with `python tools/restore_supplied_asset.py low_poly_city_pack` or `python tools/restore_supplied_asset.py european_city_assetpack`. Compressed and restored SHA-256 hashes and source size are checked. The unchanged raw originals remain local; the archives preserve their full bytes in regular Git without requiring Git LFS.
+
+
+The latest [neighborhood development pass](docs/needle-quay/NEIGHBORHOOD_PASS_2026-10-26.md) adds distinct host conversations, Nell's optional cafe, objective tracking, personal restoration and resident routines. [Run the local neighborhood demo](output/needle-quay-demo/NeedleQuay-Neighborhood.zip). Current additions remain in review, with no new Roblox publishing or provider spend.

@@ -1,0 +1,1123 @@
+{
+  "status": "PASS",
+  "builtScripts": 223,
+  "studioScripts": 223,
+  "differences": [],
+  "builtFingerprints": {
+    "ReplicatedStorage.Shared.BeatBook": {
+      "bytes": 6489,
+      "hash": "77876266",
+      "sha256": "a22014fb35de2656de03a8f96a6b41d5b0ad0383ebb63fe220adef22e2ad5c89"
+    },
+    "ReplicatedStorage.Shared.BeatExpression": {
+      "bytes": 5956,
+      "hash": "d74bd895",
+      "sha256": "57f269f86894a229c2c6b2fbbcb5aaa268e29b75f55f42ef4c5e1d627989bf38"
+    },
+    "ReplicatedStorage.Shared.ChapterConcert": {
+      "bytes": 7582,
+      "hash": "3c2afe70",
+      "sha256": "aa55c2bbc81b9946e2fc5d7609da6ca462f31c81be55068a798c903da6f27efb"
+    },
+    "ReplicatedStorage.Shared.CommerceCatalog": {
+      "bytes": 3237,
+      "hash": "586aea36",
+      "sha256": "f58a003baa2840309679d7f9b07512ef900d05b33b9dff80228964e8bd2f83e5"
+    },
+    "ReplicatedStorage.Shared.CompanionCatalog": {
+      "bytes": 1574,
+      "hash": "cb18e567",
+      "sha256": "a7c287d2544a926762a64277744d8145c670204e2049d99c178f0110f109b58f"
+    },
+    "ReplicatedStorage.Shared.CompanionClipAlissiaAgree": {
+      "bytes": 310174,
+      "hash": "58a206b0",
+      "sha256": "7c03fa7cec3fbfd7267954acf5da12affb39749b718dca56cd3f6d39c3f96b35"
+    },
+    "ReplicatedStorage.Shared.CompanionClipAlissiaCheer": {
+      "bytes": 942967,
+      "hash": "f9aaa134",
+      "sha256": "0d7900fcbc83c74807255ac0f4ade6bb18c82e3546fa035c6709749be2647f4e"
+    },
+    "ReplicatedStorage.Shared.CompanionClipAlissiaClap": {
+      "bytes": 1060575,
+      "hash": "73492176",
+      "sha256": "609f96045a75fdf7cd278c15f1056a3d35136ee98ad5bdab8cc2a434936b51c0"
+    },
+    "ReplicatedStorage.Shared.CompanionClipAlissiaDance03": {
+      "bytes": 985640,
+      "hash": "44ecc43d",
+      "sha256": "c2af76f429bb9adb9e3e9e7952ef4b23286fe9bfbc9532ba356255a9407c17fe"
+    },
+    "ReplicatedStorage.Shared.CompanionClipAlissiaDance06": {
+      "bytes": 841268,
+      "hash": "8a746c8e",
+      "sha256": "69ca3271eed922727905ecbfd400a7df3cd36273d141e1c6a5c7f6832338bcfa"
+    },
+    "ReplicatedStorage.Shared.CompanionClipAlissiaIdle": {
+      "bytes": 1174588,
+      "hash": "40ff804c",
+      "sha256": "9f8793213712896d7faa2ee9d0e0fada02d3bfbc7a13d95079168f73e6e84cf4"
+    },
+    "ReplicatedStorage.Shared.CompanionClipAlissiaRun": {
+      "bytes": 100218,
+      "hash": "67ec87de",
+      "sha256": "d86f1af6d0a3825382a6009ab3f2f96d90aa574dbc7ab5555fd79cc40cc593c9"
+    },
+    "ReplicatedStorage.Shared.CompanionClipAlissiaWalk": {
+      "bytes": 183079,
+      "hash": "8c1c8ab7",
+      "sha256": "00a4309ad86c094702f03f1f8bd4c40fb1cdc12170273ff950e2e598d62534a2"
+    },
+    "ReplicatedStorage.Shared.CompanionClipNikolasBow": {
+      "bytes": 463827,
+      "hash": "2a338227",
+      "sha256": "9548517415e0cf780b79428feb97c91b6f630aaa3225544646e5a36fbe748d68"
+    },
+    "ReplicatedStorage.Shared.CompanionClipNikolasCheer": {
+      "bytes": 937947,
+      "hash": "31be3bca",
+      "sha256": "b62d3691e05215a165cdf9dcead87177107caae261d62a5c47082b08cf70c052"
+    },
+    "ReplicatedStorage.Shared.CompanionClipNikolasClap": {
+      "bytes": 1059862,
+      "hash": "bc0f9d85",
+      "sha256": "588f8e725cfdafc99b2800137af0184c531e2e9076303d1072f4eef2cb5a2a9e"
+    },
+    "ReplicatedStorage.Shared.CompanionClipNikolasDance03": {
+      "bytes": 986870,
+      "hash": "409cbbaa",
+      "sha256": "466bee5964cce3aeb655332d10ab3ae1dffeb7390e2264bee48ac41f78766163"
+    },
+    "ReplicatedStorage.Shared.CompanionClipNikolasDance06": {
+      "bytes": 839617,
+      "hash": "0ed4d7c4",
+      "sha256": "375fda69bb12219776e16211aa677b46adab8afe8dca6534ca01395123948768"
+    },
+    "ReplicatedStorage.Shared.CompanionClipNikolasIdle": {
+      "bytes": 1181029,
+      "hash": "310be018",
+      "sha256": "1f415f503dee2ce6156b1114da978bf8fac77b177f27685b079d7a59c8bbd48d"
+    },
+    "ReplicatedStorage.Shared.CompanionClipNikolasRun": {
+      "bytes": 99576,
+      "hash": "f1aae763",
+      "sha256": "3055f70b089132e9304ce74f28077c5a0eb636ba5861c25ebd172a25d8a70def"
+    },
+    "ReplicatedStorage.Shared.CompanionClipNikolasWalk": {
+      "bytes": 182795,
+      "hash": "92a57bc2",
+      "sha256": "98fcd536efd8ec8729e2a127123d4c41b963313ec37062964093cb2320ce9b13"
+    },
+    "ReplicatedStorage.Shared.CompanionJournal": {
+      "bytes": 8293,
+      "hash": "264798f0",
+      "sha256": "6ddb5bbcf1cc5c0e879eaf334478cddbac20b5b48df99f2ffc37657dfaa0536c"
+    },
+    "ReplicatedStorage.Shared.CompanionModels": {
+      "bytes": 1755173,
+      "hash": "099412de",
+      "sha256": "6f146d08579625c221323544c5c0eb02ff16fbd97d829a8e07b07fc234c26f9b"
+    },
+    "ReplicatedStorage.Shared.CompanionProgress": {
+      "bytes": 8006,
+      "hash": "6e99cec3",
+      "sha256": "cbd2acadfecd24a6635e55ed138bc1317a8f9a5765052cfe9571a7d5e7316abe"
+    },
+    "ReplicatedStorage.Shared.ContentIds": {
+      "bytes": 889,
+      "hash": "48d8ac8b",
+      "sha256": "50a7dc37d6e99beff3164a1a8225fc8c425cdd675a94e9110e2c1f6fae4df0ab"
+    },
+    "ReplicatedStorage.Shared.CosmeticCatalog": {
+      "bytes": 921,
+      "hash": "a33de04b",
+      "sha256": "e6672aa9258b562ecf8de8941a71a36e2579ef8f2e5f357e773f79634d1df971"
+    },
+    "ReplicatedStorage.Shared.DiscoveryCatalog": {
+      "bytes": 2224,
+      "hash": "96d6ab58",
+      "sha256": "dba769054590b15bc2514e19fa48e850e34eba7f87bc0d699207dc9a00e4507c"
+    },
+    "ReplicatedStorage.Shared.FinishedSong": {
+      "bytes": 5611,
+      "hash": "76ea228c",
+      "sha256": "9c730e3f6672244e528925780667ddb425e3d21dac02c5841d704a3a999308cf"
+    },
+    "ReplicatedStorage.Shared.FirstPackSlots": {
+      "bytes": 191172,
+      "hash": "d3ecada9",
+      "sha256": "904ad37152d3871f333e1f3faf78512e42621ca1c7a85c1485115d576f5a9e2d"
+    },
+    "ReplicatedStorage.Shared.FirstPerformanceQuest": {
+      "bytes": 3223,
+      "hash": "0075406a",
+      "sha256": "f917f932dd5af625f902eabe8371061c33c54f3e69c80633f67c78bfcfc17b36"
+    },
+    "ReplicatedStorage.Shared.JamProtocol": {
+      "bytes": 4410,
+      "hash": "64a7f201",
+      "sha256": "2c09aadfcf0d95cc4ee9e5324c99e43b4af4b3d6380150644ea70597eb1c67ec"
+    },
+    "ReplicatedStorage.Shared.LegacyMusicMigration": {
+      "bytes": 13596,
+      "hash": "2c7b7877",
+      "sha256": "5fa7938889d79258d3b9cde7b48ace7cbdf2618692ee3456ac8a76e4513a2d23"
+    },
+    "ReplicatedStorage.Shared.LightingPresets": {
+      "bytes": 463,
+      "hash": "b623d630",
+      "sha256": "b0b21c1be8b44cbb4a2fc9a8788fc625b1796c9ab1f58e980f533c5a15fff0f3"
+    },
+    "ReplicatedStorage.Shared.LocalContent": {
+      "bytes": 11507,
+      "hash": "0dde83c5",
+      "sha256": "4408c933573fd0a356c880b72fe31f58ac864332ffb0c6872b5828aad838a4d2"
+    },
+    "ReplicatedStorage.Shared.LocalMeshCatalog": {
+      "bytes": 842,
+      "hash": "26770f8c",
+      "sha256": "a89dd09bdfb4630295b8eca65cca443e57e777c46efdec5be36a3e12bb8eb50b"
+    },
+    "ReplicatedStorage.Shared.LocalMeshCatalogData1": {
+      "bytes": 140014,
+      "hash": "ac12d177",
+      "sha256": "82c7153afb7e51b15ed0a6f024efe377f251a9d754f8b017d1e8de1dfbadb282"
+    },
+    "ReplicatedStorage.Shared.LocalMeshCatalogData10": {
+      "bytes": 140014,
+      "hash": "036621ac",
+      "sha256": "e675544b208d21b2211023705a243b2d76b3c848a8a249772cb85a3fc32ea9fc"
+    },
+    "ReplicatedStorage.Shared.LocalMeshCatalogData11": {
+      "bytes": 140014,
+      "hash": "9289c2ac",
+      "sha256": "f2bae4c7377fdbca6a43b89f6438f504087cfb8db3555bf17dd00959628ba68a"
+    },
+    "ReplicatedStorage.Shared.LocalMeshCatalogData12": {
+      "bytes": 140014,
+      "hash": "f2ed9713",
+      "sha256": "68d0f7b696f88185d609a6027f6551b9952d33047273c5fd2d17a88831850634"
+    },
+    "ReplicatedStorage.Shared.LocalMeshCatalogData13": {
+      "bytes": 140014,
+      "hash": "d394fe3c",
+      "sha256": "9fa730307dd0047b00f68d0a0612d067ec71689577c6014dec4b86450996dfbd"
+    },
+    "ReplicatedStorage.Shared.LocalMeshCatalogData14": {
+      "bytes": 140014,
+      "hash": "f57ccac0",
+      "sha256": "dfd9882ed13373331c8605fe0b0911ec8f45d1a07b3f15e1be44120231a2f26d"
+    },
+    "ReplicatedStorage.Shared.LocalMeshCatalogData15": {
+      "bytes": 140014,
+      "hash": "8911deb7",
+      "sha256": "19141b9322beac158f7825100d66512927958ad83927afe3b13503b4ad3b596a"
+    },
+    "ReplicatedStorage.Shared.LocalMeshCatalogData16": {
+      "bytes": 24938,
+      "hash": "39005d90",
+      "sha256": "33d1af69df034496b30768026eb2020c1471956e71e2848ab541defc328abc2e"
+    },
+    "ReplicatedStorage.Shared.LocalMeshCatalogData2": {
+      "bytes": 140014,
+      "hash": "53f969e5",
+      "sha256": "46299021dce2fec37be97b7ee412e7c6219070fa0177c3384f2df93dff4da2b1"
+    },
+    "ReplicatedStorage.Shared.LocalMeshCatalogData3": {
+      "bytes": 140014,
+      "hash": "90eab60e",
+      "sha256": "a08c8fb9627d64d96b0ba207c3b0c09345202dc18d9d176c24ef028a69f344a2"
+    },
+    "ReplicatedStorage.Shared.LocalMeshCatalogData4": {
+      "bytes": 140014,
+      "hash": "3faffe00",
+      "sha256": "017de16b8eb32b3d2f290d52029e69b1a644edb9973672587dccad829c67a069"
+    },
+    "ReplicatedStorage.Shared.LocalMeshCatalogData5": {
+      "bytes": 140014,
+      "hash": "be7ca698",
+      "sha256": "a145234a9fc409d54e5f5b744a7874816aae3c97df609ee033f2f2a477e01b95"
+    },
+    "ReplicatedStorage.Shared.LocalMeshCatalogData6": {
+      "bytes": 140014,
+      "hash": "23cbd960",
+      "sha256": "c19f385aa44120ddde92217e4a11a60e1984fd293366e9a4a7d29782d3a7daa7"
+    },
+    "ReplicatedStorage.Shared.LocalMeshCatalogData7": {
+      "bytes": 140014,
+      "hash": "0b69130c",
+      "sha256": "9b0084e6ff1685ce16d0942d2b19d2bc75e34ed792d719ab8e63fc9c0f9e5399"
+    },
+    "ReplicatedStorage.Shared.LocalMeshCatalogData8": {
+      "bytes": 140014,
+      "hash": "ebcf77dc",
+      "sha256": "552c8aec559397de8e205789d43a517a2b2eee00201de6f233369fc9628c4abd"
+    },
+    "ReplicatedStorage.Shared.LocalMeshCatalogData9": {
+      "bytes": 140014,
+      "hash": "51645e9f",
+      "sha256": "3117a36b3d71d0c44400be5db0375e77d049a90320593e955e28a0ce855c0bda"
+    },
+    "ReplicatedStorage.Shared.LocalTextureBudget": {
+      "bytes": 20716,
+      "hash": "482e7e9d",
+      "sha256": "86f34511928a489172df833d2e3edf0d897715572b84958cb7db619db5c04b67"
+    },
+    "ReplicatedStorage.Shared.MotionPoses": {
+      "bytes": 485,
+      "hash": "fe625163",
+      "sha256": "bc0e57ab3fe775a37d49ac5345f4a31184f869f0b28fcfec57846f597cbd50f8"
+    },
+    "ReplicatedStorage.Shared.MusicProject": {
+      "bytes": 33105,
+      "hash": "a11165af",
+      "sha256": "5e2b245523031b00ffeb4c01d3b0cd66e4d709c34cb97a9de63b24c3c17088a4"
+    },
+    "ReplicatedStorage.Shared.MusicSequence": {
+      "bytes": 7222,
+      "hash": "25de9219",
+      "sha256": "52ab39ce3d91dc918844ba7d0c3203a801c95e847db6075decc8cdd7d8868c80"
+    },
+    "ReplicatedStorage.Shared.MusicTransport": {
+      "bytes": 16776,
+      "hash": "45fbe452",
+      "sha256": "21bc1a1ef18205f7dfdcf1b355affebd984ca0a79d5016179c1b34822d2887f8"
+    },
+    "ReplicatedStorage.Shared.NeedleQuayCatalog": {
+      "bytes": 21286,
+      "hash": "f34dba0a",
+      "sha256": "e2677c3cf1e558da9ae528e451fe5774ddd5ff5ea80823a41a8df73b4c89da29"
+    },
+    "ReplicatedStorage.Shared.NeedleQuayCharacters": {
+      "bytes": 32235,
+      "hash": "2f7a454b",
+      "sha256": "71865897839e3df29dd6b30a01cd9829a8e90655072c6241dc50282905458a5f"
+    },
+    "ReplicatedStorage.Shared.NeedleQuayGeometry": {
+      "bytes": 65115,
+      "hash": "947c3eae",
+      "sha256": "0a5f0b3f721ed30faa9bf6e84264a2759c5979e2fe2117c6bc1d52084d3e09e9"
+    },
+    "ReplicatedStorage.Shared.NeighborhoodMissions": {
+      "bytes": 4265,
+      "hash": "255342ea",
+      "sha256": "fed93c2a0054a8f70a3fee3de39c877deed2b6a0edd0a5782a7a3ff513e1538c"
+    },
+    "ReplicatedStorage.Shared.PadSound": {
+      "bytes": 2798,
+      "hash": "fa614dfc",
+      "sha256": "6e329f88b4b928d293488344fefb8c2281977488f251b5d7b497d7095efc3c40"
+    },
+    "ReplicatedStorage.Shared.Pattern": {
+      "bytes": 2951,
+      "hash": "16c623d4",
+      "sha256": "f27619d3e4f02539fa795dfd7d898e85cc94fe37804013b508ba124544800cd4"
+    },
+    "ReplicatedStorage.Shared.PatternTools": {
+      "bytes": 897,
+      "hash": "35218dee",
+      "sha256": "bdcf623c2cff5c5feb759b4d0c5116f262166b955e1c20f903fd0202c11f03f0"
+    },
+    "ReplicatedStorage.Shared.QuayActivities": {
+      "bytes": 6494,
+      "hash": "7bc37ce2",
+      "sha256": "ec8942324f61a0ed00fbead073defb896629d4f90bf44160a439c744a9269e2a"
+    },
+    "ReplicatedStorage.Shared.QuayArchitectureCatalog": {
+      "bytes": 39352,
+      "hash": "324195d4",
+      "sha256": "d69c35f8430a593217ae4ee8675982f677d8dbc432fc9f0b8b51d1e483401318"
+    },
+    "ReplicatedStorage.Shared.QuayBadges": {
+      "bytes": 1720,
+      "hash": "38d4c435",
+      "sha256": "081e438d56237ec4e9b7282295c458b1b9143d6f003157ba00987c50ab5175aa"
+    },
+    "ReplicatedStorage.Shared.QuayBeatCommissions": {
+      "bytes": 6032,
+      "hash": "0e82a5f4",
+      "sha256": "b06956f4a5a5dee77a2f74e673d9646f8c3898e45b306ddc48d9c0a170d1cf67"
+    },
+    "ReplicatedStorage.Shared.QuayBuildingCatalog": {
+      "bytes": 5187,
+      "hash": "2a45b02e",
+      "sha256": "74ccc692952b86dcba50633deedb6b7553622ce3016ec725a7d873fca7ae3883"
+    },
+    "ReplicatedStorage.Shared.QuayBuildingLayout": {
+      "bytes": 2728,
+      "hash": "8948f52b",
+      "sha256": "aa9911da37c438c0bcf219ed50c1cec998dba639b93989058aa72246f8a72dbe"
+    },
+    "ReplicatedStorage.Shared.QuayBuildingMaterials": {
+      "bytes": 702,
+      "hash": "9d29dee6",
+      "sha256": "37b7ae470b3b6a5273e243e7d85c600a89c03610e48b93788bb2917510d21e3b"
+    },
+    "ReplicatedStorage.Shared.QuayCommissionVoiceClips": {
+      "bytes": 3905,
+      "hash": "fdde5ec6",
+      "sha256": "245818567cc78ba0228befa8b72e0ef4396c4f5b2f33c51efaf5268b3939f267"
+    },
+    "ReplicatedStorage.Shared.QuayConversations": {
+      "bytes": 6299,
+      "hash": "b2b256c2",
+      "sha256": "1ecd8674f93511d2e5f16afbac2e80fe0a3b4a0b959b0617687438668416c4c3"
+    },
+    "ReplicatedStorage.Shared.QuayDressingCatalog": {
+      "bytes": 5315,
+      "hash": "fac815f5",
+      "sha256": "ddd5d1dedcccbe75ae4595135771b41be12e8834559d06494d19b23f445cb929"
+    },
+    "ReplicatedStorage.Shared.QuayDressingMaterials": {
+      "bytes": 328,
+      "hash": "0ac12f0a",
+      "sha256": "ccbd7d2a95d7275191cb22d5bda08abdef5ea805b79ff66891db67044cf74df0"
+    },
+    "ReplicatedStorage.Shared.QuayFxRecipes": {
+      "bytes": 1683,
+      "hash": "39ccf437",
+      "sha256": "a1a2e5850e1226691963cd0736ba0d412b38ec7f386ff41ecc59f6a0a6674222"
+    },
+    "ReplicatedStorage.Shared.QuayGraffitiAnchors": {
+      "bytes": 4773,
+      "hash": "5ab887c0",
+      "sha256": "6b656bf72c98d0ddf61466ec4f632ecadad3869cf3bac3452b7b873d598e4cd5"
+    },
+    "ReplicatedStorage.Shared.QuayGuideVoiceClips": {
+      "bytes": 4831,
+      "hash": "b50ae9a5",
+      "sha256": "a2f7b5dde66ce497f734996803e918cea56f3b2e56b86a0167a9eb98562bd0a7"
+    },
+    "ReplicatedStorage.Shared.QuayIdentity": {
+      "bytes": 12691,
+      "hash": "c81e0692",
+      "sha256": "55c02bd9ed4ed4eac88984e12558262db6ead935975a78265ac6a500fd941f51"
+    },
+    "ReplicatedStorage.Shared.QuayLifeCatalog": {
+      "bytes": 4134,
+      "hash": "4362b234",
+      "sha256": "94d0e0b13b78b6038ebc08e3d1e9ce79c8eaa1e57b98ce9588af9be2463f7e40"
+    },
+    "ReplicatedStorage.Shared.QuayLiftupCatalog": {
+      "bytes": 8597,
+      "hash": "365a100a",
+      "sha256": "ef7307ccb4d2a684ae945bafb986cd6cddff9c66cb74a748c89dc14081432d26"
+    },
+    "ReplicatedStorage.Shared.QuayLiftupMaterials": {
+      "bytes": 746,
+      "hash": "f7c7c757",
+      "sha256": "b79b44f44b1d41192cbf99591fde85b22f1e1d87051a9a76244c64e85759b091"
+    },
+    "ReplicatedStorage.Shared.QuayMissionSteps": {
+      "bytes": 2782,
+      "hash": "a5326fc3",
+      "sha256": "eed57c5f3d5a50849c6bba530d2366e2e2c9df52ced2d6fdf7ffa927a0f72b24"
+    },
+    "ReplicatedStorage.Shared.QuayMusicEvidence": {
+      "bytes": 5947,
+      "hash": "dbd58819",
+      "sha256": "42825050fb17a2faa7b6b02947cb837f2cae55eaf744c2496fc9ff729e2ca30c"
+    },
+    "ReplicatedStorage.Shared.QuayObjectives": {
+      "bytes": 5954,
+      "hash": "8f1f9d40",
+      "sha256": "66deb03fe4cd0b6fe6d70c402d30aaa3dfc5f0fc1ad536b00f8448195c9d0c73"
+    },
+    "ReplicatedStorage.Shared.QuayOcclusion": {
+      "bytes": 1790,
+      "hash": "229dfd88",
+      "sha256": "0b1b2647024433bf4c011328f546b3ca1cb76198d9f50b9b67c5875086e24dd9"
+    },
+    "ReplicatedStorage.Shared.QuayProgress": {
+      "bytes": 6634,
+      "hash": "25e49558",
+      "sha256": "d7f55fbf1f3b6accc04414a6a5dd706cb919de60d31d5864e7bc8ebe044380ea"
+    },
+    "ReplicatedStorage.Shared.QuayResidentStyle": {
+      "bytes": 2702,
+      "hash": "27faceb7",
+      "sha256": "a276e253d06a6e5a0a77d8476c85506f3c6eb425932313245dd7416c75fae8d7"
+    },
+    "ReplicatedStorage.Shared.QuayRewardVoiceClips": {
+      "bytes": 4012,
+      "hash": "9c92178a",
+      "sha256": "61d1f55f3d1322f099cedb73c5a5bd5f801f189654c100e086ac3bc97702c2dc"
+    },
+    "ReplicatedStorage.Shared.QuayRewards": {
+      "bytes": 4043,
+      "hash": "e19594d9",
+      "sha256": "c68bdb029ebb9825e85e6ed44db85ef687340a98b1b507849f97af19917ec00d"
+    },
+    "ReplicatedStorage.Shared.QuayStory": {
+      "bytes": 20603,
+      "hash": "afab08b2",
+      "sha256": "e923c69bc0eb13ef7cf38fb0192502c5fbc479f0ed4a7a0d17bd0792bf75b062"
+    },
+    "ReplicatedStorage.Shared.QuayStreetGames": {
+      "bytes": 1259,
+      "hash": "84b23297",
+      "sha256": "96a807682c72e58c6c2dd52de60e5bd8830322764668e3777f5978bc6f319f65"
+    },
+    "ReplicatedStorage.Shared.QuayStreetLayout": {
+      "bytes": 2080,
+      "hash": "9ee59518",
+      "sha256": "3dd10cbea1c0a87c5082aed9d29d422c31795cf3ea0878ae1ced0bc94f161660"
+    },
+    "ReplicatedStorage.Shared.QuayVanCatalog": {
+      "bytes": 795,
+      "hash": "0ca6d2b3",
+      "sha256": "fc10ad5aadafab285954c45735d60bd3ac42b2574160c86c92c733ec4b38d087"
+    },
+    "ReplicatedStorage.Shared.QuayVanLayout": {
+      "bytes": 504,
+      "hash": "d92f8b8f",
+      "sha256": "fe9d0f87ca8f780ddd4a2609801d48c2bd7a78027d7055a1fdc78ea672004f90"
+    },
+    "ReplicatedStorage.Shared.QuayVanMaterials": {
+      "bytes": 142,
+      "hash": "6aa8f797",
+      "sha256": "560ff74570f5d23a100f4936132cb7566d2cd140c732b264facd5a915c2ea109"
+    },
+    "ReplicatedStorage.Shared.QuayVoiceHints": {
+      "bytes": 3620,
+      "hash": "cdc276ad",
+      "sha256": "2281622d4de9bd50db82423351ccd03c652272a5cb192430cb45470fa99356cf"
+    },
+    "ReplicatedStorage.Shared.RetiredSamples": {
+      "bytes": 23761,
+      "hash": "52f3c6cf",
+      "sha256": "be759a0434f53234211e12abfac741ad089e0be632d9116ef6b0dda2f9e4cbbf"
+    },
+    "ReplicatedStorage.Shared.RoomCatalog": {
+      "bytes": 1290,
+      "hash": "6f78efe8",
+      "sha256": "7feea3cc3f7465537fdca1324396729f0a503e9daa46ebeb0f034922e62fbeea"
+    },
+    "ReplicatedStorage.Shared.SampleCatalog": {
+      "bytes": 9219,
+      "hash": "f0278275",
+      "sha256": "9190f3b31dcec1c1b92465c5c62aa61d36650750d3c04cb219a9c5920ff83143"
+    },
+    "ReplicatedStorage.Shared.SampleWaveforms": {
+      "bytes": 26984,
+      "hash": "4df14227",
+      "sha256": "5046043974359c4bcf43515496d52ac85604190533a7a3a4944ef49ee47e4a1a"
+    },
+    "ReplicatedStorage.Shared.SamplerPadLayout": {
+      "bytes": 2633,
+      "hash": "2e2f8ca0",
+      "sha256": "cccf659721535d441b4029c172f5d2f8d3686c6339e4c02f848b4d4e6a6951ad"
+    },
+    "ReplicatedStorage.Shared.SongArrangement": {
+      "bytes": 6507,
+      "hash": "25a6eddf",
+      "sha256": "aa194b9bd8c4d946db2dba9ffa438d459f0b4d5e565f1d6bb9dcbd26dcda76f2"
+    },
+    "ReplicatedStorage.Shared.StudioLocalMusicRoles": {
+      "bytes": 1981,
+      "hash": "e30f4bf0",
+      "sha256": "cc56804e542571cb51255ba636c685d2b40dfbd127b51e7e20a3afff912c6a3a"
+    },
+    "ReplicatedStorage.Shared.StylePacks": {
+      "bytes": 86,
+      "hash": "056250bf",
+      "sha256": "db6b592c1dc98101a3c6a459804bf3077d1049c5a9c5134808515336f428d2c5"
+    },
+    "ReplicatedStorage.Shared.Theme": {
+      "bytes": 613,
+      "hash": "14a91d61",
+      "sha256": "3b9b4fa8eb48097669410ad0cb06e5e66c6acb85efb7e3e13fd90341d397d0f8"
+    },
+    "ReplicatedStorage.Shared.UiAtlas": {
+      "bytes": 390,
+      "hash": "0a5eff3b",
+      "sha256": "daebf85670d7e37b68112b4b4ada8d37d1bb632bdac23ae1a29b9368c1a57516"
+    },
+    "ReplicatedStorage.Shared.WardrobeCatalog": {
+      "bytes": 7869,
+      "hash": "8180f03f",
+      "sha256": "ebb5504631d57a4555bda64c558f2bfb00096a7a834bb2a37c71dfd4f914fa51"
+    },
+    "ServerScriptService.Server": {
+      "bytes": 459,
+      "hash": "47d5fa58",
+      "sha256": "0400930062e14fe5d4851a2993954399e988b053dfe00e9926990d38c0f3366e"
+    },
+    "ServerScriptService.Server.AssetDetails": {
+      "bytes": 5680,
+      "hash": "328db8d3",
+      "sha256": "f940faef29db8b426894ed5529ba9f470726783f3a047806d923928227ac46df"
+    },
+    "ServerScriptService.Server.AssetSpawner": {
+      "bytes": 3006,
+      "hash": "644bdde5",
+      "sha256": "78cd87b10b5da15d33e500217f08176eb4f522d4778b5872c1acb4831e3a0670"
+    },
+    "ServerScriptService.Server.CommerceService": {
+      "bytes": 7927,
+      "hash": "a89f5f20",
+      "sha256": "25a7c91aac6404d13662af36f17e3bcca58c5a96b767433d52131b52cdf35e64"
+    },
+    "ServerScriptService.Server.CompanionService": {
+      "bytes": 6432,
+      "hash": "fcd1d18b",
+      "sha256": "34c558b3097a84f6d85ced2c4413987ef6c19a766e9c0a9597460b1a4b038323"
+    },
+    "ServerScriptService.Server.ConcertService": {
+      "bytes": 5444,
+      "hash": "73c02f83",
+      "sha256": "4a17fc6cf512ac6cbee5807122be7a36c6e41db918e6780763f9b471a709afb3"
+    },
+    "ServerScriptService.Server.JamService": {
+      "bytes": 8572,
+      "hash": "fff8cf5b",
+      "sha256": "4547a2ae9a2e84b4614ee42758152b7e936f78e0ecef1433a5a39c25079d3153"
+    },
+    "ServerScriptService.Server.ListeningSession": {
+      "bytes": 11421,
+      "hash": "a821ae39",
+      "sha256": "4e5a98fbf804b9f39bcf0259cd34926463c9fe5f37c79f93bf02144c8bba35e0"
+    },
+    "ServerScriptService.Server.LocalArtLibrary": {
+      "bytes": 8950,
+      "hash": "50773855",
+      "sha256": "448898d102ccedda4c6369746e51a5560ccf243e46ef80121e1b89aa875b54a7"
+    },
+    "ServerScriptService.Server.ModularKit": {
+      "bytes": 7425,
+      "hash": "d38e53c7",
+      "sha256": "5ccdcea508ea2b6d135a83127d54aa6b2fa9b2076bd319e92822af7e3f9d19da"
+    },
+    "ServerScriptService.Server.MusicService": {
+      "bytes": 25070,
+      "hash": "9f223f09",
+      "sha256": "37ceca1b6fc1be492194ce83ecbdc0ccc07df615756118fb4c025454447f619a"
+    },
+    "ServerScriptService.Server.MusicWorkspace": {
+      "bytes": 37510,
+      "hash": "3d614012",
+      "sha256": "a803f57aabfe45ae306e8ae45daff23c49422975ca058f63b55ae67f03cba60a"
+    },
+    "ServerScriptService.Server.NeedleQuayDemoWorld": {
+      "bytes": 25944,
+      "hash": "032ddc0d",
+      "sha256": "3d7fc24fb7fbe567847ba59d96b4dea3f73948008d01ed2dadca0789bd62f887"
+    },
+    "ServerScriptService.Server.PatternHistory": {
+      "bytes": 1820,
+      "hash": "3d940aa9",
+      "sha256": "2bd493115e036f6b215a6be181ea728d791cfdf70c30e2ec28355c33c6623542"
+    },
+    "ServerScriptService.Server.ProfileStore": {
+      "bytes": 12347,
+      "hash": "4308ab75",
+      "sha256": "aea7dbeffc05e662190cd98c89e537143c248d8f1adf6c814e5904b9a79f85c7"
+    },
+    "ServerScriptService.Server.QuayAtmosphere": {
+      "bytes": 34243,
+      "hash": "19f417e0",
+      "sha256": "7eed934e8a7de8590e1df26e563b378dfbeb86cc0be8e8f9809025b2de4a3ae6"
+    },
+    "ServerScriptService.Server.QuayCommissionService": {
+      "bytes": 6593,
+      "hash": "46815d3a",
+      "sha256": "aba7757e63decd209c5ea619c7e8941367aee7ad9798305a99b3510ba6f3050f"
+    },
+    "ServerScriptService.Server.QuayDemoService": {
+      "bytes": 34414,
+      "hash": "c1edcb1d",
+      "sha256": "fa96c9e9acd0d1b25f4ab1d2e46e5bdf3d15bdb8ed765b7a595057c2027f282d"
+    },
+    "ServerScriptService.Server.QuayExperienceService": {
+      "bytes": 11175,
+      "hash": "2078cb30",
+      "sha256": "7a6f62c1c9b6528d1f5cab98f82d128b774707c95eedff4bc7ae55eff9033a3b"
+    },
+    "ServerScriptService.Server.QuayGraffitiPlacement": {
+      "bytes": 2248,
+      "hash": "f570931e",
+      "sha256": "c67a92f7409e6868c1c62baa141c739c22d6410075d18c126c0e73b3c0731b8e"
+    },
+    "ServerScriptService.Server.QuayLifeService": {
+      "bytes": 6724,
+      "hash": "67cebb4c",
+      "sha256": "f1e5677c15a1437c7a0dbd0c549da7abe3868d1a9c5c71c168c00126b96bea7d"
+    },
+    "ServerScriptService.Server.QuayLiveMusic": {
+      "bytes": 1784,
+      "hash": "5c875122",
+      "sha256": "3a105a80caa5b8558dbd000d5096d1727461fbbee227801f4c943f88ecaeb95f"
+    },
+    "ServerScriptService.Server.QuayNeighborhoodScene": {
+      "bytes": 5880,
+      "hash": "e68866c6",
+      "sha256": "107bf60768f08e7d38b26e971348e4f6d862ebb3e209e71dda076819cd598251"
+    },
+    "ServerScriptService.Server.QuayPublicSpaces": {
+      "bytes": 7456,
+      "hash": "87d27bbc",
+      "sha256": "66434a4e786f36a90c51c337c12940d9788fafb5606d25b85da5a8a7d5e595e3"
+    },
+    "ServerScriptService.Server.QuayRewardPresentation": {
+      "bytes": 1277,
+      "hash": "e2f061d0",
+      "sha256": "3c56e13b30cfef05d3ae1218ee26271f3274c47c6230b5fbfcf2cf94b9ec069b"
+    },
+    "ServerScriptService.Server.QuaySideActivities": {
+      "bytes": 6276,
+      "hash": "1fad4c59",
+      "sha256": "6cb005484d3b87131d03c704abfa0f94f5e02cc3c32eb5b801e315df2aabc085"
+    },
+    "ServerScriptService.Server.QuaySolidScenery": {
+      "bytes": 3120,
+      "hash": "6be685e0",
+      "sha256": "1bc75ff7ee3624be70e12eeddca23757f1dbea02b8775c5be131f77525e9980b"
+    },
+    "ServerScriptService.Server.QuayStreetLife": {
+      "bytes": 3522,
+      "hash": "c5ca736e",
+      "sha256": "18cdaf086b00c5582bd5e28db34dfc5e46210e3bf2b38df3165f37ec3043b04c"
+    },
+    "ServerScriptService.Server.QuayStreetScene": {
+      "bytes": 9148,
+      "hash": "616d352d",
+      "sha256": "9005c9d82b2f38fdfd6ef812861e4bf382542001dbe8423e6b14bbc2b3d4d791"
+    },
+    "ServerScriptService.Server.QuayVista": {
+      "bytes": 4194,
+      "hash": "7ad1d700",
+      "sha256": "3b38270e9b1d6a074532cd46b3e98ecdd64fc3df0042ac25929370b7071a6ff2"
+    },
+    "ServerScriptService.Server.RoomBuilder": {
+      "bytes": 2305,
+      "hash": "178a6b3d",
+      "sha256": "ccbbc93e77b02250538fa47af6e4510da9e96b73a4b581795068a8dfcabb44c5"
+    },
+    "ServerScriptService.Server.RoomService": {
+      "bytes": 5516,
+      "hash": "a40d2783",
+      "sha256": "398bccf7b32613f0d901cca5f1fe7d8e7a189353aa8f3e5bd1a6069683edbf3d"
+    },
+    "ServerScriptService.Server.StageQueue": {
+      "bytes": 8869,
+      "hash": "157aa955",
+      "sha256": "8520e08e389c43d369421efac7150c9bdd722855031e864975a0077852849285"
+    },
+    "ServerScriptService.Server.WardrobeService": {
+      "bytes": 9194,
+      "hash": "8ac871d5",
+      "sha256": "4362bc29fa7ddab2ec567c57683651dc165136952e5344e5a60cc7aae127d094"
+    },
+    "ServerScriptService.Server.WorldBuilder": {
+      "bytes": 17813,
+      "hash": "dcb30145",
+      "sha256": "fe95d9e22b481835587dd61d958a0765ae5bcf0689c84d3fdf857e2bd49cb10f"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client": {
+      "bytes": 28120,
+      "hash": "c0b4b953",
+      "sha256": "e3b47406229035dfb25dabd8955afc01311696db2b9fda0b80b92fa47b782efe"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.ArtbookColorGrade": {
+      "bytes": 2299,
+      "hash": "1d9c68dd",
+      "sha256": "2cc6e2a48db7146a660b9917e4cec2af31ff1e5a7203d9536b9fae16f7ebe79c"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.AudioEngine": {
+      "bytes": 18476,
+      "hash": "ceb2f8e4",
+      "sha256": "836e9b56960e37235e1cef932b908b9f2d00330509f57d93c7e29329b1011a78"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.AudioMix": {
+      "bytes": 618,
+      "hash": "655f6d93",
+      "sha256": "d799a41b449e07f5fc656a90f9d635c4ba968aaab51d4f24f9dbe08e189a1559"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.AudioMixView": {
+      "bytes": 2330,
+      "hash": "0315f38d",
+      "sha256": "bbe15d263ce9e4e512cab91887eb174c10663acf26da197e0b1c9e6f92ed3600"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.BeatBookView": {
+      "bytes": 8553,
+      "hash": "5a670de0",
+      "sha256": "9bf7145bcf4382c26ca39b0ef8b5f3e6e34da4728777f5fb86c753a5f3a05e9c"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.CommandPolicy": {
+      "bytes": 1096,
+      "hash": "b737ba54",
+      "sha256": "6d368057b666af745e4db09d61340f223ea3d784f3180b5d23127eadc17d0a7a"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.CompanionAnimation": {
+      "bytes": 1876,
+      "hash": "b6b7d808",
+      "sha256": "1fc9059400912960c1075a125a0ecbd4053b03fbabcd8a88a8bee214771125b6"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.CompanionFollower": {
+      "bytes": 18028,
+      "hash": "fe18ad4e",
+      "sha256": "21878a96abee4559ad8182c6b7807b2841eea8c22b0bc478132a1c66373fe5bd"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.CompanionPortrait": {
+      "bytes": 4053,
+      "hash": "f1dfc72f",
+      "sha256": "52e3257c2c3d79e7b2d41ac2199a401e18e9d07cec74b2f262fd16cebd2474bc"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.CompanionView": {
+      "bytes": 11945,
+      "hash": "fc13e74f",
+      "sha256": "a95b83ecea835f164cfa5577fa2109d461b1ab64925fb3c2a04e9511e5139d29"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.CompanionVoice": {
+      "bytes": 9523,
+      "hash": "c6bb216a",
+      "sha256": "bca83a888a83bd81333f659a66a7fcd991b7b114c4467aaf7bba4b43cbf5cf29"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.ConcertScene": {
+      "bytes": 5230,
+      "hash": "0c353582",
+      "sha256": "a128746e12eaa95e66707bafd99d28c2a2d3408ffdd651bfb3aa23f1716c3ed5"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.ConcertView": {
+      "bytes": 16785,
+      "hash": "0fd1be1b",
+      "sha256": "11128b5b1dfd54f3de4ee354b9e7b0a9f165d6d4d1d7e770a5195e5f5a3cba58"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.DeviceAppearance": {
+      "bytes": 9215,
+      "hash": "e7bd8074",
+      "sha256": "a01471438fd64c51048af3550e7189b3a1e5d9f3fb0e7542db73e04e09246ffa"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.DeviceGrooveboxView": {
+      "bytes": 49377,
+      "hash": "0b776a60",
+      "sha256": "dd7c259f0a39c41da54fa1948116e7a631f41c69a63352691ce112b83b7fc439"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.DeviceLibraryScreen": {
+      "bytes": 21193,
+      "hash": "e218667d",
+      "sha256": "9f211b3ed12d43e913582c177113f9c1e5e27ac9f6daab2ab3fb7fc6bd6a5979"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.DevicePadControls": {
+      "bytes": 15262,
+      "hash": "c68ccaf3",
+      "sha256": "6efb844996fa562c89f4c117bbe07da49da8104ebddddf626f97c8b935fdc995"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.DeviceSequencerScreen": {
+      "bytes": 8599,
+      "hash": "8a9eb6e2",
+      "sha256": "e818f06db9a47aa61b35a2d01ffa79bf9798af0d74ea120e1895b0bb6f93def3"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.DeviceSkin": {
+      "bytes": 14249,
+      "hash": "bd705cc8",
+      "sha256": "a5b32c9b3d203782eec3a306de5beeb3406ebe3e74e779d046a85d305af37a19"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.DeviceSongScreen": {
+      "bytes": 33711,
+      "hash": "593fdcbb",
+      "sha256": "b4cb05601ec777687b88732441389df2e74e9f124da167d55062b3bcadd9a979"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.DeviceSoundScreen": {
+      "bytes": 43881,
+      "hash": "932995e9",
+      "sha256": "3de090760fd6458bb9b902c94dbaba2ea17954a628a3c0c1d551e11ddc0b1809"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.DeviceWidgets": {
+      "bytes": 5781,
+      "hash": "7735e830",
+      "sha256": "762218b08d60857a3edffddd69c61fd82bdea488c2978146da518ee326ab8780"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.DigitalDisplay": {
+      "bytes": 2178,
+      "hash": "00881fce",
+      "sha256": "12d2f6423fcb0db30d12213edfd5630bbf7c0fa93a2b137864930d8c0f95d639"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.GameIcons": {
+      "bytes": 11677,
+      "hash": "9b4193c5",
+      "sha256": "1efbe3ffcb4cd5764ddbf4d06fb58625d6cdda975b3dfc60716ff4b148c42c32"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.GrooveboxMotion": {
+      "bytes": 2527,
+      "hash": "a8bebf80",
+      "sha256": "07042e850374e9f3f00df2dc6d72766b360d7dcda1566c3ae2b57bee21751258"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.GrooveboxSkin": {
+      "bytes": 6289,
+      "hash": "1224bb70",
+      "sha256": "5d8589da9715d92de2f4e2ab23cf4ac90f6fdb77dd40476a89ae875e9b32a2ed"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.GrooveboxTools": {
+      "bytes": 3983,
+      "hash": "32ef37fc",
+      "sha256": "ac4995c11dd4eff8d1ba9021ddf454a6034907bac17882e5c5138827ad3be8a4"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.GuiFactory": {
+      "bytes": 7153,
+      "hash": "22b3ba9e",
+      "sha256": "9a0b02af9dafee2d815d01e57af2b281c0705531fcb89318aa4190e7544cc43f"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.HardwareFaceplate": {
+      "bytes": 8484,
+      "hash": "c526074d",
+      "sha256": "c69b24a62be67972ec35ac812a13172bbb9dda861036fb138388bf23aa566ee7"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.HardwarePadControls": {
+      "bytes": 8885,
+      "hash": "57a70fd5",
+      "sha256": "10a7f1a23617aa50e889736bb04d053845fee8f16dfacbd20a11dcae9845d52e"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.JamPlayback": {
+      "bytes": 9412,
+      "hash": "da79f9fa",
+      "sha256": "0870b137a4d0a32257010c8e6f12538d790d9d3c0ec54a0d07a7e834699f99b0"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.JamView": {
+      "bytes": 14127,
+      "hash": "fe90d0ab",
+      "sha256": "5ee6e9f7aedf5002038440ead21ef718af7804b8f14aaf9103a919853c5a15bf"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.ListeningView": {
+      "bytes": 7952,
+      "hash": "da1fa5c7",
+      "sha256": "00975a72994ef07a96642922b463be82e3c86789e29c46c9953ebc93ae59b318"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.LocalMaterials": {
+      "bytes": 11734,
+      "hash": "4bde9a17",
+      "sha256": "990ff26a29ab347f4aa5e43ab9d9711338619f5838a25f4952d0292256b9f840"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.LocalMeshQueue": {
+      "bytes": 814,
+      "hash": "d2f147a4",
+      "sha256": "4848bdd98509fcd0af6c0ca4a84c47843245fddf4a27186bf6b84fa9d126025a"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.LocalMutableMesh": {
+      "bytes": 3302,
+      "hash": "6685bbc7",
+      "sha256": "9a7861276cd3ea76fbdc80c7e1b0d518c3f7107abdee96810160817f6be79713"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.LocalPBRPlanes": {
+      "bytes": 5648,
+      "hash": "30f09b1c",
+      "sha256": "465b0feebf61fb07d90680484bfdfd0e2ee5714cceb58059bb9cf4328d0f5880"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.LocalTextureUri": {
+      "bytes": 225,
+      "hash": "8ab2ccae",
+      "sha256": "7f11038409f1884195eccbc6b603ef4c5f920cd6eb6a70fd01d911bef45bd22d"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.MusicWorkspaceView": {
+      "bytes": 57801,
+      "hash": "0e92d971",
+      "sha256": "051fc9b1128664753a0108f1a1aea1364a6e68e67032daff325a67357405b969"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.PadInput": {
+      "bytes": 2276,
+      "hash": "fae6f5cd",
+      "sha256": "ee1c8787fc03d1887de49c0db6409d14e6657b506ee9f98db6589dfc368b1ab8"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.PadVoiceProcessor": {
+      "bytes": 8797,
+      "hash": "4850db17",
+      "sha256": "f4ba2a4cc3e349e8d31aa5f03a6edc2660e4f58f2bf7d5729f607bb5932b0df5"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.QuayAmbientMotion": {
+      "bytes": 5915,
+      "hash": "ee144ac1",
+      "sha256": "503eb343434f7cf233a8728ac2a93512a15ee1f78b4acc8ac1ec3b3376cc2aa9"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.QuayBadgeView": {
+      "bytes": 7101,
+      "hash": "78945f29",
+      "sha256": "c4aabcd84643c71d1531863c87a8efdd61b1544fc482155039f39a66d15bab6b"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.QuayBeatGuide": {
+      "bytes": 1828,
+      "hash": "16245797",
+      "sha256": "79f6f64c810311c914471fa270a1377c1506b86f2a6e245c68e411c8d3252184"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.QuayCelebrations": {
+      "bytes": 5916,
+      "hash": "96c9da8b",
+      "sha256": "89e5c6109905214355659345a4de0f967fd258b33f4835d67264ca1fcca84f01"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.QuayCommissionView": {
+      "bytes": 8298,
+      "hash": "3f0bae8a",
+      "sha256": "b57c0af3698fe593b2db9049827b74eb8d0c3364d90f9b5156c4a9a74439e1c6"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.QuayCommissionVoice": {
+      "bytes": 5708,
+      "hash": "80c321af",
+      "sha256": "765af22a5a0cb9a64faf9b758216b5324c105017072f73f891bc0d0acb26eea9"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.QuayCompanionCharm": {
+      "bytes": 1641,
+      "hash": "553cf88d",
+      "sha256": "29ca29a1072a3efce947459f204ff556d402e7fc4d8aad22c7c051462d6150ff"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.QuayDemoView": {
+      "bytes": 51526,
+      "hash": "a85be1e4",
+      "sha256": "272dd226cddeeab3ec0cdda042ef3de3edc1324b7c84984d5c3a5d74d80837fd"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.QuayDialogueView": {
+      "bytes": 4471,
+      "hash": "a80a3f05",
+      "sha256": "a47f8e44fbea14c5f46aee2089151e0dca6952aca753198dae198fb4d0c648ab"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.QuayEquippedPins": {
+      "bytes": 3298,
+      "hash": "7141118a",
+      "sha256": "bb00c8725963d3c05649cf3bdc1bc2e1bec4e93557e77cd48fbf9325e62b2781"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.QuayExperiencePanel": {
+      "bytes": 26741,
+      "hash": "5824b6b7",
+      "sha256": "e4cdf209968b84289dc26a13f117550cb2df80761a3e6d1a2637d7b4d7d4dd07"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.QuayGraphics": {
+      "bytes": 2131,
+      "hash": "428325cd",
+      "sha256": "1c4d860eb384d5864bfcce4e01422bc66e27290031e62df79e8de2c4f0ff78c9"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.QuayInteriorVisibility": {
+      "bytes": 2508,
+      "hash": "f4f9f4df",
+      "sha256": "bffaac052fc6897ee8c732f2f5f52f354afde23819705b89aae5c948bdab4f14"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.QuayLife": {
+      "bytes": 3112,
+      "hash": "9fad6029",
+      "sha256": "a5061c1c3259e93532794c9ac6091f485bb51975159ae521e37d2b26303c43e8"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.QuayLifeView": {
+      "bytes": 11074,
+      "hash": "93d638ab",
+      "sha256": "1d37ca95a3df2f984eb86a59547ef0d68bb1be7120f02901543cf0e85c77b9eb"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.QuayMusicField": {
+      "bytes": 1741,
+      "hash": "727c45f6",
+      "sha256": "baac30a1037dc5300a375ed9aa97c2bb7d6244ce56b29fa46032c6b6a16a250f"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.QuayNeighbors": {
+      "bytes": 18562,
+      "hash": "6519a4be",
+      "sha256": "430caa9ddc182dd87c08bee44051c79fb41710a44531d66e21c8ff064b1302ee"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.QuayObjectiveView": {
+      "bytes": 16665,
+      "hash": "b9b70469",
+      "sha256": "f1baca7aab019518ce65050ef37470fcfdf6ddb70df2a9edfd6140d3afd5ff0f"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.QuayRewardRecognition": {
+      "bytes": 13336,
+      "hash": "6e5b1f18",
+      "sha256": "981e36986af5c9ae874b788a216fd0d90e0f252e4abdd3161aeba2d8db9cda76"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.QuayShopPanel": {
+      "bytes": 15247,
+      "hash": "c18b772d",
+      "sha256": "fef9f54522d2c892ba0086f9bd455e1f38988a19630f475b8a595dcd09a6bd42"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.QuaySideActivityView": {
+      "bytes": 10826,
+      "hash": "b9e43467",
+      "sha256": "9d5dd4fb058cd715444bbca98c09ba1d48e2597b864c6db92c93052868e6c89f"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.QuaySoundscape": {
+      "bytes": 3739,
+      "hash": "81765687",
+      "sha256": "712329a6c9465973f4bc08fd48f4e373db6d66e25117c7c4d0592f12aab2e5a5"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.QuayTraffic": {
+      "bytes": 3880,
+      "hash": "096e87bc",
+      "sha256": "8a50378b5749acec0191495457a5f3a2cdb02bafda78269b9d8a53bd7c99215e"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.QuayWardrobePreview": {
+      "bytes": 13537,
+      "hash": "ceab4e30",
+      "sha256": "c23363330cb722e00dc29540b27576ef39ebcbf65b1de00303fc17aacb6ab790"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.QuayWardrobeView": {
+      "bytes": 6121,
+      "hash": "b9ef774c",
+      "sha256": "4d61d0f3d99f781b6370639d31bbac619f5644cd8f3fc7d875ada13d93b2bc18"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.QuayWayfinder": {
+      "bytes": 4088,
+      "hash": "a835b30e",
+      "sha256": "7faa33913bfb10581bd00c93d1adabc4115a0a006c034c1fc61bed0c40f94c8f"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.RecorderGuide": {
+      "bytes": 3623,
+      "hash": "4e08d5b0",
+      "sha256": "ea3243d0f81d2ab5595cb1013f47eb88f1f23dfc8a613177ec0ffb93ce6a7b9e"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.Restoration": {
+      "bytes": 1504,
+      "hash": "47ceefcb",
+      "sha256": "26fb21776897848c2d0a8ff35e9c144da0260f23c3bcc12118087f0fa5180b88"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.RoomSettings": {
+      "bytes": 3144,
+      "hash": "50a999e0",
+      "sha256": "23c10574dd0dacdaeaa432e380185f1e5a89b61bddb434ef724ccc69515254c6"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.SampleEditor": {
+      "bytes": 23119,
+      "hash": "b896ad33",
+      "sha256": "91866ff16ede1c87f8e237b5ea6087b32564d7503ad801d02882f540eef40350"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.SchedulePlayback": {
+      "bytes": 3621,
+      "hash": "8ad5ddea",
+      "sha256": "d0867975bafb532e4ffc0859d245d54cebd777167fa2e623e5a7a0cf7c80d3d7"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.SkinWeightLookup": {
+      "bytes": 1300,
+      "hash": "7f4ffc0f",
+      "sha256": "8f83ec93ebf886b9c35c8c1bd78e56cf1772d091705b509b2e8f765d7669fe94"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.SkinnedNeighbors": {
+      "bytes": 9742,
+      "hash": "3021dc87",
+      "sha256": "415e80690a89313d5be07607025b1cfa4bd33551232d60bbf36f252ee7df52d0"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.StageView": {
+      "bytes": 21978,
+      "hash": "ed9bea7c",
+      "sha256": "37b43221c0aa06df57e7dd926dd8d7e42bc69aa955e46cda806e038b5ab41ca1"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.StreetMusicPlayback": {
+      "bytes": 1650,
+      "hash": "80ede904",
+      "sha256": "3700affc6d2044816aba98e742a7bfcac6b8e08c9cf4b4494e3e8d8afb0eb602"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.SuppliedCompanionSkin": {
+      "bytes": 9177,
+      "hash": "018c5a4f",
+      "sha256": "32e8afeb59ac6111c6f5b8dfd4d0975d9601906c20a781ad01b837ff2557fcba"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.WorkshopView": {
+      "bytes": 52630,
+      "hash": "cb28cbd7",
+      "sha256": "3faf69f23f00de298b6666aab295c13aa095b6243909240c0817b75b301f60ee"
+    },
+    "StarterPlayer.StarterPlayerScripts.Client.WorldFeedback": {
+      "bytes": 8487,
+      "hash": "5506743e",
+      "sha256": "0483006bd2c80471f954a071290182c7934eee4cfe928626f4720ce3fb55a039"
+    },
+    "StarterPlayer.StarterPlayerScripts.LocalContentLoading": {
+      "bytes": 2522,
+      "hash": "5235c5e7",
+      "sha256": "ac06998cd57aa523cbb650d706dd9d0b4378f856e0775082efe93f3ca23510c4"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "package": "output/needle-quay-demo/NeedleQuay-MPC-v3.zip",
+  "bytes": 123641990,
+  "sha256": "b8b6e7c2942c2f93842028454cde0b434ae28e3f4949d310fe92fba3490a965b",
+  "companion_files": 752,
+  "place_sha256": "732dabddbc6f047c74b80017c528f155b5b11889b735ee365778db05a07bc43e",
+  "uploads": 0,
+  "tripo_spend_credits": 0
+}

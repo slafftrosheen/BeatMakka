@@ -1,0 +1,21 @@
+{
+  "prompt": "Create a production sky texture for the Needle Quay game, using the attached approved artbook board ONLY as a STYLE AND COLOR REFERENCE. Output a single complete 360-degree equirectangular environment panorama, exact 2:1 aspect ratio, highest practical resolution. SKY ONLY, no skyline, buildings, silhouettes, trees, sea, land, objects, lettering, frames or labels. The scene is a cozy stylized late-sunset harbor sky matching the upper left sky in the board: warm luminous apricot/peach horizon, dusty lavender upper sky, broad softly sculpted painterly cumulus cloud islands with coral-lit undersides, restrained brush texture. Large deliberate cloud masses with generous clear sky between them, NOT fine fractal noise, photographic clouds, grain, storm or dense gray overcast. Horizon at image vertical center, the bottom hemisphere a calm extension of warm peach color with little detail; zenith soft muted lavender. Diffuse warm glow to one side but no visible solar disc (engine will add sun). Longitude seamlessly wraps: matching colors and cloud continuity at left and right edges; progressively quiet and uniform color at top and bottom poles. No dramatic saturated orange, no hard black shadows. This is a game cubemap source panorama, not a mockup or display board. Preserve the reference palette and stylized softness.",
+  "source": "C:/Users/slavd/.codex/generated_images/01a189c7-16df-7981-833b-812e745451a1/exec-769d940c-9d11-494f-94c7-ec765c6c5bac.png",
+  "reference": "assets/references/needle-quay-approved-style-board.png",
+  "stage": "candidate",
+  "provider": "OpenAI built-in image generation",
+  "uploaded": false,
+  "projection": "Blender environment projection, 90 degree cube faces; no procedural cloud field",
+  "generator": "tools/build_artbook_sky.py",
+  "faces": {
+    "rt.png": "0e76f0936adb81721d444591f5338a8e5ac9411c8edfdc2d42a18c5a541d259f",
+    "lf.png": "f47e0545e9ae87a79fb296b2cca72df0b02f41eb38ac8eb7a61b7ce9749858db",
+    "ft.png": "cea66e3f2a91875feae6417a1ddb59d5c1e53adf879bdd9a7507492a5b600b44",
+    "bk.png": "cec9711f6eb854d2771642b926478d19da4f40cfeef20e632f9b173dd6b4c4dd",
+    "up.png": "22591bcfc419d5f4f2057e347d41fa33e8cb92413763a5ace62c8e6d38eed0bb",
+    "dn.png": "ba484b0a54608ec47530807794b26a8ee753064012abe4b009174a668f317c4e"
+  },
+  "panorama_sha256": "7f081f6a6e25b2dde14d56135d19e5f54417d5f7e713d13c24bbc1c235178cbd",
+  "reference_sha256": "ed1febe208e798110905653ac6f2a60778830de00b2ff112cacf2e36c3bf3463",
+  "blend_sha256": "a28f06877b8bb0b609cd1205bd92b0cc040ede8334c6a3269cd5c70dcacc2994"
+}

@@ -1,0 +1,488 @@
+[
+  {
+    "id": "NQ-NPC-TORI",
+    "source": "assets/production/needle-quay/models/refined/NQ-NPC-TORI.blend",
+    "source_sha256": "37a06dc46ad3382f9f8f2a16251d4f61a29922a59d46c7c3729f1f2ac145d85b",
+    "before": {
+      "walk": {
+        "max": 31.523,
+        "p99": 6.213,
+        "over2": 2527
+      },
+      "dance": {
+        "max": 101.74,
+        "p99": 25.984,
+        "over2": 4545
+      },
+      "cheer": {
+        "max": 131.129,
+        "p99": 37.085,
+        "over2": 5174
+      },
+      "greet": {
+        "max": 92.292,
+        "p99": 18.8,
+        "over2": 2517
+      }
+    },
+    "after": {
+      "walk": {
+        "max": 1.244,
+        "p99": 1.061,
+        "over2": 0
+      },
+      "dance": {
+        "max": 1.618,
+        "p99": 1.296,
+        "over2": 0
+      },
+      "cheer": {
+        "max": 1.83,
+        "p99": 1.552,
+        "over2": 0
+      },
+      "greet": {
+        "max": 1.693,
+        "p99": 1.388,
+        "over2": 0
+      }
+    },
+    "vertices": 1979,
+    "max_influences": 4,
+    "weight_sum_error": 2.220446049250313e-16,
+    "art_approved": false,
+    "weights_only": {
+      "walk": {
+        "max": 1.244,
+        "p99": 1.061,
+        "over2": 0
+      },
+      "dance": {
+        "max": 1.618,
+        "p99": 1.296,
+        "over2": 0
+      },
+      "cheer": {
+        "max": 1.83,
+        "p99": 1.552,
+        "over2": 0
+      },
+      "greet": {
+        "max": 1.693,
+        "p99": 1.388,
+        "over2": 0
+      }
+    },
+    "motion_gains": {
+      "walk": 1.0,
+      "dance": 1.0,
+      "cheer": 1.0,
+      "greet": 1.0
+    }
+  },
+  {
+    "id": "NQ-NPC-IVO",
+    "source": "assets/production/needle-quay/models/refined/NQ-NPC-IVO.blend",
+    "source_sha256": "0f1575b0d024887ad08587470d23b65862f2fff4a3be07f222bb0969e1f25b77",
+    "before": {
+      "walk": {
+        "max": 11.162,
+        "p99": 1.977,
+        "over2": 965
+      },
+      "dance": {
+        "max": 32.816,
+        "p99": 7.274,
+        "over2": 2157
+      },
+      "cheer": {
+        "max": 44.069,
+        "p99": 10.439,
+        "over2": 2720
+      },
+      "greet": {
+        "max": 29.553,
+        "p99": 4.855,
+        "over2": 1392
+      }
+    },
+    "after": {
+      "walk": {
+        "max": 1.848,
+        "p99": 1.108,
+        "over2": 0
+      },
+      "dance": {
+        "max": 1.842,
+        "p99": 1.344,
+        "over2": 0
+      },
+      "cheer": {
+        "max": 1.841,
+        "p99": 1.464,
+        "over2": 0
+      },
+      "greet": {
+        "max": 1.847,
+        "p99": 1.38,
+        "over2": 0
+      }
+    },
+    "vertices": 2048,
+    "max_influences": 4,
+    "weight_sum_error": 2.220446049250313e-16,
+    "art_approved": false,
+    "weights_only": {
+      "walk": {
+        "max": 2.079,
+        "p99": 1.134,
+        "over2": 3
+      },
+      "dance": {
+        "max": 3.091,
+        "p99": 1.973,
+        "over2": 924
+      },
+      "cheer": {
+        "max": 4.26,
+        "p99": 3.036,
+        "over2": 2809
+      },
+      "greet": {
+        "max": 3.141,
+        "p99": 1.932,
+        "over2": 877
+      }
+    },
+    "motion_gains": {
+      "walk": 0.851562,
+      "dance": 0.472656,
+      "cheer": 0.324219,
+      "greet": 0.492188
+    }
+  },
+  {
+    "id": "NQ-NPC-NAYA",
+    "source": "assets/production/needle-quay/models/refined/NQ-NPC-NAYA.blend",
+    "source_sha256": "d50f0aeebfe08cb654e45e8ed9b596fc02881256f50152d6d5826a9ea4156746",
+    "before": {
+      "walk": {
+        "max": 66.866,
+        "p99": 2.13,
+        "over2": 1008
+      },
+      "dance": {
+        "max": 204.145,
+        "p99": 9.512,
+        "over2": 2284
+      },
+      "cheer": {
+        "max": 263.126,
+        "p99": 14.969,
+        "over2": 2688
+      },
+      "greet": {
+        "max": 183.191,
+        "p99": 4.644,
+        "over2": 1447
+      }
+    },
+    "after": {
+      "walk": {
+        "max": 1.847,
+        "p99": 1.089,
+        "over2": 0
+      },
+      "dance": {
+        "max": 1.848,
+        "p99": 1.359,
+        "over2": 0
+      },
+      "cheer": {
+        "max": 1.845,
+        "p99": 1.4,
+        "over2": 0
+      },
+      "greet": {
+        "max": 1.85,
+        "p99": 1.446,
+        "over2": 0
+      }
+    },
+    "vertices": 2014,
+    "max_influences": 4,
+    "weight_sum_error": 2.220446049250313e-16,
+    "art_approved": false,
+    "weights_only": {
+      "walk": {
+        "max": 2.079,
+        "p99": 1.103,
+        "over2": 2
+      },
+      "dance": {
+        "max": 2.162,
+        "p99": 1.515,
+        "over2": 28
+      },
+      "cheer": {
+        "max": 2.72,
+        "p99": 2.017,
+        "over2": 1020
+      },
+      "greet": {
+        "max": 2.306,
+        "p99": 1.726,
+        "over2": 195
+      }
+    },
+    "motion_gains": {
+      "walk": 0.875,
+      "dance": 0.699219,
+      "cheer": 0.445312,
+      "greet": 0.652344
+    }
+  },
+  {
+    "id": "NQ-NPC-SANA",
+    "source": "assets/production/needle-quay/models/refined/NQ-NPC-SANA.blend",
+    "source_sha256": "bddf5f701d4745f5dead08cf70ada45235d2122b860cbc103fb54e30aa62d97c",
+    "before": {
+      "walk": {
+        "max": 33.11,
+        "p99": 3.317,
+        "over2": 2566
+      },
+      "dance": {
+        "max": 106.704,
+        "p99": 18.429,
+        "over2": 4574
+      },
+      "cheer": {
+        "max": 137.738,
+        "p99": 29.106,
+        "over2": 5174
+      },
+      "greet": {
+        "max": 96.932,
+        "p99": 8.467,
+        "over2": 2522
+      }
+    },
+    "after": {
+      "walk": {
+        "max": 1.849,
+        "p99": 1.082,
+        "over2": 0
+      },
+      "dance": {
+        "max": 1.847,
+        "p99": 1.282,
+        "over2": 0
+      },
+      "cheer": {
+        "max": 1.842,
+        "p99": 1.328,
+        "over2": 0
+      },
+      "greet": {
+        "max": 1.705,
+        "p99": 1.231,
+        "over2": 0
+      }
+    },
+    "vertices": 3787,
+    "max_influences": 4,
+    "weight_sum_error": 2.220446049250313e-16,
+    "art_approved": false,
+    "weights_only": {
+      "walk": {
+        "max": 2.144,
+        "p99": 1.111,
+        "over2": 4
+      },
+      "dance": {
+        "max": 2.556,
+        "p99": 1.473,
+        "over2": 217
+      },
+      "cheer": {
+        "max": 3.418,
+        "p99": 1.91,
+        "over2": 1123
+      },
+      "greet": {
+        "max": 1.705,
+        "p99": 1.231,
+        "over2": 0
+      }
+    },
+    "motion_gains": {
+      "walk": 0.757812,
+      "dance": 0.636719,
+      "cheer": 0.414062,
+      "greet": 1.0
+    }
+  },
+  {
+    "id": "NQ-NPC-RONAN",
+    "source": "assets/production/needle-quay/models/refined/NQ-NPC-RONAN.blend",
+    "source_sha256": "345190980c9b70fa26a6db93610503900ad76f9d59d68766bd06e7ea98e8b412",
+    "before": {
+      "walk": {
+        "max": 13.557,
+        "p99": 2.2,
+        "over2": 1042
+      },
+      "dance": {
+        "max": 51.11,
+        "p99": 7.622,
+        "over2": 2132
+      },
+      "cheer": {
+        "max": 66.457,
+        "p99": 11.046,
+        "over2": 2578
+      },
+      "greet": {
+        "max": 50.464,
+        "p99": 4.417,
+        "over2": 1296
+      }
+    },
+    "after": {
+      "walk": {
+        "max": 1.849,
+        "p99": 1.147,
+        "over2": 0
+      },
+      "dance": {
+        "max": 1.846,
+        "p99": 1.355,
+        "over2": 0
+      },
+      "cheer": {
+        "max": 1.839,
+        "p99": 1.4,
+        "over2": 0
+      },
+      "greet": {
+        "max": 1.844,
+        "p99": 1.393,
+        "over2": 0
+      }
+    },
+    "vertices": 1969,
+    "max_influences": 4,
+    "weight_sum_error": 2.220446049250313e-16,
+    "art_approved": false,
+    "weights_only": {
+      "walk": {
+        "max": 2.025,
+        "p99": 1.17,
+        "over2": 1
+      },
+      "dance": {
+        "max": 2.727,
+        "p99": 1.743,
+        "over2": 377
+      },
+      "cheer": {
+        "max": 3.633,
+        "p99": 2.412,
+        "over2": 2145
+      },
+      "greet": {
+        "max": 2.778,
+        "p99": 1.846,
+        "over2": 558
+      }
+    },
+    "motion_gains": {
+      "walk": 0.878906,
+      "dance": 0.546875,
+      "cheer": 0.355469,
+      "greet": 0.53125
+    }
+  },
+  {
+    "id": "NQ-NPC-NELL",
+    "source": "assets/production/needle-quay/models/refined/NQ-NPC-NELL.blend",
+    "source_sha256": "dd572827261cceb228fcf4aeb733f609a42ce8c7c6c16692e3cb3aa1796a5549",
+    "before": {
+      "walk": {
+        "max": 30.415,
+        "p99": 3.394,
+        "over2": 2017
+      },
+      "dance": {
+        "max": 97.776,
+        "p99": 18.452,
+        "over2": 3702
+      },
+      "cheer": {
+        "max": 125.854,
+        "p99": 28.287,
+        "over2": 4306
+      },
+      "greet": {
+        "max": 88.589,
+        "p99": 7.403,
+        "over2": 2095
+      }
+    },
+    "after": {
+      "walk": {
+        "max": 1.847,
+        "p99": 1.077,
+        "over2": 0
+      },
+      "dance": {
+        "max": 1.847,
+        "p99": 1.311,
+        "over2": 0
+      },
+      "cheer": {
+        "max": 1.849,
+        "p99": 1.487,
+        "over2": 0
+      },
+      "greet": {
+        "max": 1.832,
+        "p99": 1.442,
+        "over2": 0
+      }
+    },
+    "vertices": 3257,
+    "max_influences": 4,
+    "weight_sum_error": 2.220446049250313e-16,
+    "art_approved": false,
+    "weights_only": {
+      "walk": {
+        "max": 2.252,
+        "p99": 1.122,
+        "over2": 18
+      },
+      "dance": {
+        "max": 1.953,
+        "p99": 1.344,
+        "over2": 0
+      },
+      "cheer": {
+        "max": 1.953,
+        "p99": 1.631,
+        "over2": 0
+      },
+      "greet": {
+        "max": 1.832,
+        "p99": 1.442,
+        "over2": 0
+      }
+    },
+    "motion_gains": {
+      "walk": 0.679688,
+      "dance": 0.914062,
+      "cheer": 0.785156,
+      "greet": 1.0
+    }
+  }
+]

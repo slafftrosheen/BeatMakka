@@ -1,0 +1,29 @@
+{
+  "provider": "built-in image_gen",
+  "requests": [
+    {
+      "prompt": "Use case: stylized-concept. Production game UI asset, NOT a mockup: a single blank horizontal retro groovebox outer faceplate/enclosure, directly facing camera, strict orthographic top view, landscape aspect ratio 2:1. Inspired by a welcoming retrofuture harbour music workshop: deep faded petrol teal enamel metal, slim warm ivory chamfered rim, restrained brushed brass corner fasteners, beautifully tactile rounded edges, fine worn enamel speckles and a few gentle edge scuffs. Front-on near-flat studio lighting, controlled highlights and soft bevel shading, refined game-ready hand-painted 3D look. The entire broad central 85% is uninterrupted uniform teal metal; absolutely NO pads, knobs, screens, holes, slots, text, letters, numbers, brand, logos, icons or controls. The UI will overlay all functioning controls in code. Border detail concentrated in outer 6%, suitable as a scalable device frame. Enclosure fills the canvas with 4% transparent margin. Genuinely transparent background outside the enclosure. No perspective tilt, no table, no environmental scene, no cast shadow far outside edges. Strong material quality and a friendly physical musical-device identity; not flat web UI.",
+      "transparent_background": true,
+      "call_id": "call_3f86f2fafcb14f9c8bb83d580af858f1",
+      "asset": "faceplate"
+    },
+    {
+      "prompt": "Production game UI sprite: ONE unlabelled square performance drum pad, strictly orthographic straight-on top view, centered, fills 86% of a square canvas with transparent margin. A premium playful vintage groovebox pad: pale neutral ivory silicone rubber face, softly rounded corners, thick tactile bevel, inset dark charcoal mounting gasket, fine matte rubber microtexture, slight concavity and a crisp soft edge highlight. Substantial physical depth visible only as even bevels around all four edges, NO perspective. Neutral grayscale/ivory shading so code can tint it coral, amber or teal. Gentle uniform ambient light, restrained shadow directly behind pad only, no directional long cast shadow. Game-ready stylized realistic 3D render matching a warm hand-built retro music machine. No text, number, symbol, logo, LED, finger, table, extra pads or background. Real transparent background, clean alpha edges.",
+      "transparent_background": true,
+      "call_id": "call_5b51444cafd24b0ea5a312aafd13b790",
+      "asset": "pad"
+    },
+    {
+      "prompt": "Production game UI sprite: ONE circular rotary knob for a premium vintage groovebox, precisely orthographic straight-on top view with circular silhouette. Dark charcoal hard-rubber knurled grip, subtle concentric cap, very slim warm brushed-brass lower ring and a single short ivory position indicator exactly at twelve o'clock on the top cap. Tactile realistic stylized game asset, careful small highlights, neutral even ambient shading that will remain plausible when rotated in code. Centered on a square canvas, knob diameter 82% of canvas, transparent padding, no separate tick-mark dial around it. No text, letters, numbers, labels, wires, screws, hands or background. No perspective tilt. Genuine transparent background and clean alpha edges. Designed to read clearly at 56-96px in an amber/teal retro musical device interface.",
+      "transparent_background": true,
+      "call_id": "call_5b51444cafd24b0ea5a312aafd13b790",
+      "asset": "knob"
+    },
+    {
+      "prompt": "Production game UI asset: a single blank field-journal / adventure-card outer panel for a welcoming children's retrofuture harbour music game. Strict orthographic front view. Portrait rectangle 3:4 with softly rounded corners, warm ivory paper centre, slim faded-teal canvas binding along the left edge, restrained brass corner guards, a few subtle paper fibers and tiny edge scuffs, subtle craftsmanship like a cool personal music-adventure notebook. Broad central 85 percent is completely blank light cream paper with excellent text contrast space. Outer edge details only, clean game-ready stylized 3D asset. Real transparent background outside the panel, no large shadows outside. No text, letters, numbers, labels, icons, stickers, photos, drawings, controls or content. No perspective tilt, no hand, table or environment. Designed for a resizable native game journal: texture should be quiet enough behind interactive icons/cards and short captions; lively physical identity without looking like a web form.",
+      "transparent_background": true,
+      "call_id": "call_acfb89dc12fb447a8f54d2a3bda41e88",
+      "asset": "journal"
+    }
+  ]
+}

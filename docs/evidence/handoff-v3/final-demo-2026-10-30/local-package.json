@@ -1,0 +1,22 @@
+{
+  "package": "output/needle-quay-demo/NeedleQuay-Final-v3.zip",
+  "bytes": 123709584,
+  "sha256": "3a5100c4d46849a86136f728e9b00179959f2cb7dd388d48f1ecac7353641cda",
+  "companion_files": 752,
+  "place_sha256": "3a09bed08e9c6a47a645ed27553fc452d4101008b12cca4ec2bd72837cb4e1e9",
+  "readme": "docs/needle-quay/FINAL_DEMO_README.md",
+  "reports": [
+    "FINAL_DEMO_QA.md",
+    "results.json",
+    "presentation.json",
+    "cleanup.json",
+    "cleanup-blockouts.json",
+    "cleanup-final.json",
+    "ROJO_WARNING_FIX.md",
+    "IMPLEMENTATION.md",
+    "STUDIO_QA.md"
+  ],
+  "archive_crc": "PASS",
+  "uploads": 0,
+  "tripo_spend_credits": 0
+}

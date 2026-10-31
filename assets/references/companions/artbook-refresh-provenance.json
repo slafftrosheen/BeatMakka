@@ -1,0 +1,49 @@
+{
+  "date": "2026-10-28",
+  "source": "User-designated BeatMakka_Companions_v1 folder",
+  "use": "Design reference for deterministic DCC refinement; no family source photographs used",
+  "asset_folder_inventory": [
+    "400 Vintage Alpha",
+    "45 Unholy Brushes",
+    "860 Rune Alpha 40 2 version",
+    "Brush - Wood Surface",
+    "Brush Animal Ornament",
+    "ChatGPT Image Sep 30, 2026, 10_25_01 AM.png",
+    "Favelas",
+    "ice_surface_alpha_defined_cracks_500x500mm_8192_16bit.tif",
+    "JR Stylized Alpha Pack",
+    "latvian_elements_blender_pack",
+    "Stylized Brushset + alphas",
+    "Stylized Edition",
+    "Stylized Materials Library -",
+    "Wall Maker"
+  ],
+  "asset_folder_materials_used": [],
+  "files": [
+    {
+      "source": "BeatMakka_Companions_v1/art/Character_Turnarounds_CANDIDATE.png",
+      "repository_copy": "assets/references/companions/provided-pack-v1/art/Character_Turnarounds_CANDIDATE.png",
+      "sha256": "cea1a46fded9c2cfec3ca684c56da98d05f721c69c8d2617c7a664beb9bb7081"
+    },
+    {
+      "source": "BeatMakka_Companions_v1/art/Character_World_Scenes_CANDIDATE.png",
+      "repository_copy": "assets/references/companions/provided-pack-v1/art/Character_World_Scenes_CANDIDATE.png",
+      "sha256": "4d7335f1b6e64f9c0fb24683d6a23e3791289ef4066fecd20cc2fc76d0dbfb20"
+    },
+    {
+      "source": "BeatMakka_Companions_v1/BeatMakka_Companions_Artbook_RU.pdf",
+      "repository_copy": "assets/references/companions/provided-pack-v1/BeatMakka_Companions_Artbook_RU.pdf",
+      "sha256": "bf2748c2f7cf10dfe56b86584388b1d4445b32cf8d7e26959775a62dd3a3670a"
+    },
+    {
+      "source": "BeatMakka_Companions_v1/docs/COMPANION_ARTBOOK_RU.md",
+      "repository_copy": "assets/references/companions/provided-pack-v1/docs/COMPANION_ARTBOOK_RU.md",
+      "sha256": "9589ad145d05d90a81245d55341788a8b916851862078680b622a7839a32fc9a"
+    },
+    {
+      "source": "BeatMakka_Companions_v1/docs/COMPANION_DEV_HANDOFF_RU.md",
+      "repository_copy": "assets/references/companions/provided-pack-v1/docs/COMPANION_DEV_HANDOFF_RU.md",
+      "sha256": "7a940b5151c500e22fb992310cfda18c54ea760f235089b3c34665559aef31af"
+    }
+  ]
+}

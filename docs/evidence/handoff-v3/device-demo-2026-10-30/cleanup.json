@@ -1,0 +1,110 @@
+{
+  "schema": 1,
+  "applied": true,
+  "source_boundary": "C:\\Users\\slavd\\BeatMaka\\output\\needle-quay-demo",
+  "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-final-v3",
+  "run": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-final-v3\\run-20261030T181435Z-c11f6085",
+  "items": [
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-Final-v3.rbxlx",
+      "bytes": 16756496,
+      "files": [
+        {
+          "file": "NeedleQuay-Final-v3.rbxlx",
+          "bytes": 16756496,
+          "sha256": "3a09bed08e9c6a47a645ed27553fc452d4101008b12cca4ec2bd72837cb4e1e9"
+        }
+      ],
+      "obsolete_lock": false,
+      "state": "archived_verified",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-final-v3\\run-20261030T181435Z-c11f6085\\output\\needle-quay-demo\\NeedleQuay-Final-v3.rbxlx"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-Final-v3.zip",
+      "bytes": 123709584,
+      "files": [
+        {
+          "file": "NeedleQuay-Final-v3.zip",
+          "bytes": 123709584,
+          "sha256": "3a5100c4d46849a86136f728e9b00179959f2cb7dd388d48f1ecac7353641cda"
+        }
+      ],
+      "obsolete_lock": false,
+      "state": "archived_verified",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-final-v3\\run-20261030T181435Z-c11f6085\\output\\needle-quay-demo\\NeedleQuay-Final-v3.zip"
+    }
+  ],
+  "kept": [
+    {
+      "source": "output/needle-quay-demo/cleanup-blockouts.json",
+      "reason": "not_a_generated_old_demo"
+    },
+    {
+      "source": "output/needle-quay-demo/cleanup-final.json",
+      "reason": "not_a_generated_old_demo"
+    },
+    {
+      "source": "output/needle-quay-demo/cleanup.json",
+      "reason": "not_a_generated_old_demo"
+    },
+    {
+      "source": "output/needle-quay-demo/device-results.json",
+      "reason": "not_a_generated_old_demo"
+    },
+    {
+      "source": "output/needle-quay-demo/DEVICE_DEMO_QA.md",
+      "reason": "not_a_generated_old_demo"
+    },
+    {
+      "source": "output/needle-quay-demo/FINAL_DEMO_QA.md",
+      "reason": "not_a_generated_old_demo"
+    },
+    {
+      "source": "output/needle-quay-demo/IMPLEMENTATION.md",
+      "reason": "not_a_generated_old_demo"
+    },
+    {
+      "source": "output/needle-quay-demo/Launch-NeedleQuay.cmd",
+      "reason": "not_a_generated_old_demo"
+    },
+    {
+      "source": "output/needle-quay-demo/Launch-NeedleQuay.ps1",
+      "reason": "not_a_generated_old_demo"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-Device-v3.rbxlx",
+      "reason": "final_demo"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-Device-v3.rbxlx.lock",
+      "reason": "final_demo"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-Device-v3.zip",
+      "reason": "final_demo"
+    },
+    {
+      "source": "output/needle-quay-demo/presentation.json",
+      "reason": "not_a_generated_old_demo"
+    },
+    {
+      "source": "output/needle-quay-demo/README.md",
+      "reason": "not_a_generated_old_demo"
+    },
+    {
+      "source": "output/needle-quay-demo/results.json",
+      "reason": "not_a_generated_old_demo"
+    },
+    {
+      "source": "output/needle-quay-demo/ROJO_WARNING_FIX.md",
+      "reason": "not_a_generated_old_demo"
+    },
+    {
+      "source": "output/needle-quay-demo/STUDIO_QA.md",
+      "reason": "not_a_generated_old_demo"
+    }
+  ],
+  "archived_bytes": 140466080,
+  "deleted_bytes": 0,
+  "studio_processes_closed": 0
+}

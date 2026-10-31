@@ -1,5 +1,8 @@
 local Workspace = game:GetService("Workspace")
-local Pattern = require(game:GetService("ReplicatedStorage").Shared.Pattern)
+local Shared = game.ReplicatedStorage.Shared
+local Project = require(Shared.MusicProject)
+local Transport = require(Shared.MusicTransport)
+local Catalog = require(Shared.SampleCatalog)
 local StageQueue = require(script.Parent.StageQueue)
 local ListeningSession = {}
 ListeningSession.__index = ListeningSession
@@ -17,73 +20,187 @@ function ListeningSession.new(podium, profiles, send, release, nearby, lifecycle
     }, ListeningSession)
     self.stage =
         StageQueue.new(self, podium, profiles, send, release, nearby, lifecycle and lifecycle.clock)
-    podium.prompt.Triggered:Connect(function(player)
+    local street = Instance.new("Part")
+    street.Name, street.Size = "QuayStreetBusking", Vector3.new(5, 1.2, 4)
+    street.Position = require(Shared.QuayStreetGames).ById.busk.position
+    street.Anchored, street.Color, street.Parent = true, Color3.fromRGB(37, 83, 82), Workspace
+    local sign = Instance.new("BillboardGui")
+    sign.Size, sign.StudsOffset, sign.MaxDistance, sign.Parent =
+        UDim2.fromOffset(190, 42), Vector3.new(0, 4, 0), 65, street
+    local caption = Instance.new("TextLabel")
+    caption.Size, caption.Text, caption.Font, caption.TextSize =
+        UDim2.fromScale(1, 1), "STREET SET / YOUR MUSIC", Enum.Font.Code, 15
+    caption.BackgroundColor3, caption.TextColor3, caption.Parent =
+        Color3.fromRGB(28, 33, 36), Color3.fromRGB(245, 182, 72), sign
+    local prompt = Instance.new("ProximityPrompt")
+    prompt.ObjectText, prompt.ActionText = "STREET SET / YOUR MUSIC", "Share / join / stop"
+    prompt.MaxActivationDistance, prompt.RequiresLineOfSight, prompt.Parent = 10, false, street
+    local function interact(player, anchor)
         local profile = profiles[player]
-        if not profile or not profile.ready or not nearby(player, podium.anchor, 11) then
+        if not profile or not profile.ready or not nearby(player, anchor, 11) then
             return
         end
-        local now = os.clock()
-        if profile.lastListening and now - profile.lastListening < 0.5 then
+        if os.clock() - (profile.lastListening or 0) < 0.5 then
             return
         end
-        profile.lastListening = now
-        if self.owner == player then
-            self:stop("The listening session has ended.")
-        elseif self.owner then
-            if self.members[player] then
+        profile.lastListening = os.clock()
+        if self.owner then
+            if self.activeAnchor ~= anchor then
+                send(player, "A set is already playing at the other listening area.")
+                return
+            end
+            if self.owner == player then
+                self:stop("The listening set has ended.")
+            elseif self.members[player] then
                 self:leave(player)
             else
                 release(player)
                 self.members[player] = true
-                send(player, "Joined the courtyard loop. Mute or leave at any time.")
+                send(player, "Joined by choice. Mute or leave at any time.")
             end
-        else
-            self.stage:tick()
-            if self.stage.queue[1] then
-                self.stage:open(player)
-                send(player, "A prepared set has the next turn. Use the stage board when offered.")
-                return
-            end
-            local snapshot = Pattern.sanitize(profile.pattern, profile.unlocked)
-            local audible = false
-            for pad, row in snapshot.rows do
-                if not snapshot.muted[pad] then
-                    for _, enabled in row do
-                        audible = audible or enabled
-                    end
-                end
-            end
-            if not audible then
-                send(player, "Make a loop with an unmuted step at a workshop sampler first.")
-                return
-            end
-            self:start(player, snapshot)
+            return
         end
+        self.stage:tick()
+        if self.stage.queue[1] then
+            send(player, "A prepared set has the next courtyard turn. Use the stage board.")
+            return
+        end
+        local prepared, message = self:prepare(player)
+        if not prepared then
+            send(player, message)
+            return
+        end
+        self:start(player, prepared, if anchor == podium.anchor then nil else anchor)
+    end
+    prompt.Triggered:Connect(function(player)
+        interact(player, street)
+    end)
+    podium.prompt.Triggered:Connect(function(player)
+        interact(player, podium.anchor)
     end)
     return self
 end
 
-function ListeningSession:start(player, snapshot)
-    self.release(player)
-    self.owner = player
-    self.pattern = snapshot
-    self.startedAt = Workspace:GetServerTimeNow() + 0.3
-    self.firstLoopEndsAt = self.startedAt + Pattern.Steps * Pattern.stepDuration(snapshot.bpm)
-    self.firstBarReported = false
-    self.performanceEligible = self.lifecycle.eligible ~= nil
-        and self.lifecycle.eligible(player, snapshot) == true
-    self.revision += 1
-    local revision = self.revision
-    task.delay(self.firstLoopEndsAt - Workspace:GetServerTimeNow(), function()
-        if self.owner == player and self.revision == revision then
-            self:reportFirstLoop()
+-- Prepare uses server-owned data only. Finished Songs must exist in the actual
+-- accepted save, and a Sequence remains an explicitly looped preview.
+function ListeningSession:prepare(player, requested)
+    local profile = self.profiles[player]
+    if not profile or not profile.music then
+        return nil, "Your music is still loading."
+    end
+    local project = profile.music.project
+    local ref = Project.clone(
+        requested
+            or profile.listeningRef
+            or { kind = "sequence", id = profile.sequenceId or project.sequenceOrder[1] }
+    )
+    if type(ref) ~= "table" then
+        return nil, "Choose a Sequence or saved Finished Song."
+    end
+    if ref.kind == "Sequence" then
+        ref.kind = "sequence"
+    end
+    if ref.kind == "FinishedSong" then
+        ref.kind = "finished"
+    end
+    if ref.kind ~= "sequence" and ref.kind ~= "finished" then
+        return nil, "Sharing supports a Sequence or saved Finished Song."
+    end
+    local songs = profile.saved and profile.saved.music and profile.saved.music.finishedSongs or {}
+    if ref.kind == "finished" then
+        local song = songs[ref.id]
+        if not song then
+            return nil, "Choose a successfully saved Finished Song."
         end
-    end)
+        if ref.revision ~= nil and ref.revision ~= song.revision then
+            return nil, "That Finished Song revision changed."
+        end
+        ref.revision = song.revision
+    else
+        local sequence = project.sequences[ref.id]
+        if not sequence then
+            return nil, "Choose a named Sequence."
+        end
+        if ref.revision ~= nil and ref.revision ~= sequence.revision then
+            return nil, "That Sequence changed. Select it again."
+        end
+        ref.revision = sequence.revision
+    end
+    local schedule, message = Transport.resolve(project, ref, songs, {
+        requireReady = true,
+        ready = function(id)
+            return Catalog.isPlaybackReady(id, profile.unlocked)
+        end,
+    })
+    if not schedule then
+        return nil, message
+    end
+    if #schedule.events == 0 then
+        return nil, "Add an available audible note before sharing."
+    end
+    local prepared = {
+        schema = 1,
+        ref = ref,
+        schedule = schedule,
+        title = schedule.title,
+        loop = ref.kind == "sequence",
+        duration = schedule.duration,
+        localOnly = schedule.localOnly == true,
+    }
+    local bytes, problem = Project.serializedBytes(prepared, 700000)
+    if not bytes then
+        return nil, problem
+    end
+    return prepared
+end
+
+function ListeningSession:start(player, prepared, anchor)
+    if type(prepared) ~= "table" or type(prepared.schedule) ~= "table" then
+        return false
+    end
+    self.release(player)
+    self.owner, self.prepared = player, Project.clone(prepared)
+    self.activeAnchor = anchor or self.podium.anchor
+    self.startedAt = Workspace:GetServerTimeNow() + 0.3
+    self.firstLoopEndsAt = self.startedAt + prepared.schedule.duration
+    self.firstBarReported = false
+    self.performanceEligible = prepared.ref.kind == "sequence"
+        and anchor == nil
+        and self.lifecycle.eligible ~= nil
+        and self.lifecycle.eligible(player, prepared.ref) == true
+    self.revision += 1
     self.members[player] = true
     self.podium.prompt.ActionText = "Join / leave listening"
-    self.podium.label.Text = "LIVE LOOP / " .. player.DisplayName
-    self.send(player, "Sharing a snapshot of your loop. Stop sharing from the listening controls.")
+    self.podium.label.Text = (if prepared.loop then "SEQUENCE LOOP / " else "FINISHED SONG / ")
+        .. player.DisplayName
+    -- Compact musical features for nearby NPCs; no profile/library broadcast.
+    local expression = {
+        active = true,
+        bpm = prepared.schedule.sections[1].bpm,
+        startedAt = self.startedAt,
+        epoch = self.revision,
+        intensity = math.clamp(#prepared.schedule.events / 40, 0, 1),
+        steps = table.create(16, 0),
+        echo = 0,
+        reverb = 0,
+        tone = 0,
+        drive = 0,
+        style = "groove",
+    }
+    for _, event in prepared.schedule.events do
+        expression.steps[math.floor(event.tick % 3840 / 240) + 1] += event.velocity / 127
+    end
+    local at = self.activeAnchor.Position
+    expression.x, expression.y, expression.z = at.X, at.Y, at.Z
+    Workspace:SetAttribute("QuayPublicBeat", game:GetService("HttpService"):JSONEncode(expression))
+    self.send(
+        player,
+        if prepared.loop
+            then "Sharing a pinned Sequence loop."
+            else "Playing your saved Finished Song from beginning to end."
+    )
     self.stage:refresh()
+    return true
 end
 
 function ListeningSession:state(player)
@@ -91,11 +208,18 @@ function ListeningSession:state(player)
         return nil
     end
     return {
-        pattern = self.pattern,
+        schema = 1,
+        ref = self.prepared.ref,
+        schedule = self.prepared.schedule,
+        title = self.prepared.title,
         startedAt = self.startedAt,
         epoch = self.revision,
+        loop = self.prepared.loop,
+        offset = 0,
+        playing = true,
         performer = self.owner.DisplayName,
         hosting = self.owner == player,
+        localOnly = self.prepared.localOnly,
         questPerformance = self.owner == player
             and self.performanceEligible
             and not self.firstBarReported,
@@ -108,11 +232,11 @@ function ListeningSession:reportFirstLoop()
         self.owner
         and not self.firstBarReported
         and Workspace:GetServerTimeNow() >= self.firstLoopEndsAt
-        and self.nearby(self.owner, self.podium.anchor, 32)
+        and self.nearby(self.owner, self.activeAnchor or self.podium.anchor, 32)
     then
         self.firstBarReported = true
         if self.performanceEligible and self.lifecycle.performed then
-            self.lifecycle.performed(self.owner, self.pattern)
+            self.lifecycle.performed(self.owner, self.prepared.ref)
         end
     end
 end
@@ -120,12 +244,11 @@ end
 function ListeningSession:stop(notice)
     self:reportFirstLoop()
     local members = self.members
-    self.members = {}
-    self.owner = nil
-    self.pattern = nil
-    self.performanceEligible = false
-    self.podium.prompt.ActionText = "Share your loop"
-    self.podium.label.Text = "LISTENING COURT / IDLE"
+    self.members, self.owner, self.prepared, self.performanceEligible = {}, nil, nil, false
+    self.revision += 1
+    Workspace:SetAttribute("QuayPublicBeat", nil)
+    self.podium.prompt.ActionText, self.podium.label.Text =
+        "Share selected music", "LISTENING COURT / IDLE"
     for player in members do
         self.send(player, notice)
     end
@@ -134,38 +257,57 @@ end
 
 function ListeningSession:leave(player)
     if self.owner == player then
-        self:stop("The listening session has ended.")
+        self:stop("The listening set has ended.")
     elseif self.members[player] then
         self.members[player] = nil
-        self.send(player, "Left listening. Your own pattern is unchanged.")
+        self.send(player, "Left listening. Your project is unchanged.")
     end
 end
 
 function ListeningSession:tick()
-    if self.owner and not self.nearby(self.owner, self.podium.anchor, 32) then
-        self:stop("The performer left the courtyard. Listening has ended.")
+    if self.owner and not self.nearby(self.owner, self.activeAnchor or self.podium.anchor, 32) then
+        self:stop("The performer left the listening area. The set has ended.")
         return
     end
-    for player in self.members do
-        if not self.nearby(player, self.podium.anchor, 32) then
+    for player in table.clone(self.members) do
+        if not self.nearby(player, self.activeAnchor or self.podium.anchor, 32) then
             self:leave(player)
         end
     end
-    self.stage:tick()
     self:reportFirstLoop()
+    if
+        self.owner
+        and not self.prepared.loop
+        and Workspace:GetServerTimeNow() >= self.startedAt + self.prepared.schedule.completeAt
+    then
+        self:stop("The Finished Song reached its end.")
+    end
+    self.stage:tick()
 end
 
-function ListeningSession:openBoard(p)
-    self.stage:open(p)
+function ListeningSession:openBoard(player)
+    self.stage:open(player)
 end
-function ListeningSession:stageState(p)
-    return self.stage:state(p)
+function ListeningSession:stageState(player)
+    return self.stage:state(player)
 end
-function ListeningSession:command(p, action)
-    self.stage:command(p, action)
+function ListeningSession:command(player, action, payload)
+    if action == "ListeningSelect" then
+        local prepared, message = self:prepare(player, payload)
+        if not prepared then
+            self.send(player, message)
+            return
+        end
+        self.profiles[player].listeningRef = prepared.ref
+        self.send(player, "Selected " .. prepared.title .. " for the next listening set.")
+    elseif action == "ListeningLeave" then
+        self:leave(player)
+    else
+        self.stage:command(player, action, payload)
+    end
 end
-function ListeningSession:depart(p)
-    self.stage:depart(p)
+function ListeningSession:depart(player)
+    self.stage:depart(player)
 end
 
 return ListeningSession

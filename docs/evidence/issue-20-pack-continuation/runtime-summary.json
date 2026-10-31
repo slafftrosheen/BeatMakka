@@ -1,0 +1,39 @@
+{
+  "scope": "One local Studio Play, supplied-pack continuation, 2026-10-26",
+  "local_import_prototype_observed": true,
+  "stage_promoted": false,
+  "observed": {
+    "default_alone": true,
+    "both_character_cards_load": true,
+    "notebook_page_navigation": true,
+    "two_line_place_conversation": true,
+    "discovery_page_fills_after_actual_tori_activity": true,
+    "unsaved_pattern_not_shown_as_saved": true,
+    "saved_two_step_metal_observation": true,
+    "four_step_quay_quest_remains_incomplete": true,
+    "portrait_models_after_close": 0,
+    "workspace_followers": 1,
+    "follower_parts": 15,
+    "follower_collision_touch_query": false,
+    "follower_sounds": 0,
+    "local_art_loaded": 67
+  },
+  "source_inspected_only": [
+    "string preference migration",
+    "gesture direction and deferred presentation",
+    "journal cache invalidation",
+    "async portrait disposal"
+  ],
+  "not_run": [
+    "physical phone/tablet/gamepad",
+    "independent multiplayer clients",
+    "cloud save conflicts and rejoin",
+    "full Q00-Q12/concert route",
+    "facial animation",
+    "final art approval"
+  ],
+  "existing_warning": "rbxassetid://203785492 asset type mismatch, unchanged; no new companion errors observed",
+  "new_tests_added_or_run": false,
+  "uploads": 0,
+  "provider_spend": 0
+}

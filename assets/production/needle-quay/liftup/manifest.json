@@ -1,0 +1,563 @@
+{
+  "assets": [
+    {
+      "id": "NQ-TRAFFIC-TAXI",
+      "kind": "supplied_liftup",
+      "source": "assets/production/needle-quay/liftup/NQ-TRAFFIC-TAXI.blend",
+      "source_sha256": "36c1d556ad78338ab32f7403ac79a551dd294e9e1761924f6679644aae2932b0",
+      "parts": [
+        {
+          "name": "Surface0",
+          "bone": "",
+          "center": [
+            -0.0,
+            1.626136064529419,
+            0.0
+          ],
+          "size": [
+            4.32361364364624,
+            3.252272129058838,
+            11.000000953674316
+          ],
+          "color": [
+            1,
+            1,
+            1
+          ],
+          "transparency": 0,
+          "surface_family": "supplied_liftup_2c998f489aae",
+          "triangles": 6852,
+          "sha256": "d20b7fad49b52995d959ca29d54d4488b254fec1f14eb70249c9d6f189925c4e",
+          "uri": "rbxasset://needle-quay/liftup/NQ-TRAFFIC-TAXI_0_d20b7fad49b5.mesh"
+        },
+        {
+          "name": "Surface1",
+          "bone": "",
+          "center": [
+            4.76837158203125e-07,
+            2.1750802993774414,
+            -0.8699637651443481
+          ],
+          "size": [
+            4.023906707763672,
+            2.1296749114990234,
+            2.1972663402557373
+          ],
+          "color": [
+            1,
+            1,
+            1
+          ],
+          "transparency": 0,
+          "surface_family": "supplied_liftup_958c3e86d3f6",
+          "triangles": 20,
+          "sha256": "d6a27c1cb0a3b64cd98b35ff54cfe0774f837c8003c6e2b384c04f3c46d652d2",
+          "uri": "rbxasset://needle-quay/liftup/NQ-TRAFFIC-TAXI_1_d6a27c1cb0a3.mesh"
+        },
+        {
+          "name": "Surface2",
+          "bone": "",
+          "center": [
+            5.364418029785156e-07,
+            2.4843015670776367,
+            0.5543067455291748
+          ],
+          "size": [
+            3.5490989685058594,
+            0.9468741416931152,
+            5.856464862823486
+          ],
+          "color": [
+            1,
+            1,
+            1
+          ],
+          "transparency": 0.28,
+          "surface_family": "supplied_liftup_2c998f489aae",
+          "triangles": 128,
+          "sha256": "aa325a53a81d38e5c93ef3430e85b45773474404712b94a13a97aa69b1176a56",
+          "uri": "rbxasset://needle-quay/liftup/NQ-TRAFFIC-TAXI_2_aa325a53a81d.mesh"
+        },
+        {
+          "name": "Surface3",
+          "bone": "",
+          "center": [
+            -8.344650268554688e-07,
+            2.0175044536590576,
+            -0.06628847122192383
+          ],
+          "size": [
+            3.5972840785980225,
+            2.460378646850586,
+            10.57420539855957
+          ],
+          "color": [
+            1,
+            1,
+            1
+          ],
+          "transparency": 0,
+          "surface_family": "supplied_liftup_95824bd9852d",
+          "triangles": 282,
+          "sha256": "8ff61595e6b036901da046e297bc961266109c16c98df9b0803fc73862ac09a3",
+          "uri": "rbxasset://needle-quay/liftup/NQ-TRAFFIC-TAXI_3_8ff61595e6b0.mesh"
+        }
+      ],
+      "triangles": 7282,
+      "joints": {},
+      "dimensions": [
+        4.32361364364624,
+        3.252272129058838,
+        11.000000953674316
+      ],
+      "coordinate_basis": "blender_to_roblox_front_minus_z_v2"
+    },
+    {
+      "id": "NQ-TRAFFIC-POST",
+      "kind": "supplied_liftup",
+      "source": "assets/production/needle-quay/liftup/NQ-TRAFFIC-POST.blend",
+      "source_sha256": "5f12541a090f04de2c494655aa387884d5e79d89fe1cd47c117c68e414246d41",
+      "parts": [
+        {
+          "name": "Surface0",
+          "bone": "",
+          "center": [
+            0.009352684020996094,
+            2.866665840148926,
+            0.10587477684020996
+          ],
+          "size": [
+            3.9310338497161865,
+            1.7924150228500366,
+            11.219600677490234
+          ],
+          "color": [
+            1,
+            1,
+            1
+          ],
+          "transparency": 0,
+          "surface_family": "supplied_liftup_95824bd9852d",
+          "triangles": 170,
+          "sha256": "96b16474024dd316714298e46754162a02b96b33bedf93b82f746db0de6dd330",
+          "uri": "rbxasset://needle-quay/liftup/NQ-TRAFFIC-POST_0_96b16474024d.mesh"
+        },
+        {
+          "name": "Surface1",
+          "bone": "",
+          "center": [
+            -0.0,
+            2.2212870121002197,
+            0.0
+          ],
+          "size": [
+            4.910639762878418,
+            4.4425740242004395,
+            12.0
+          ],
+          "color": [
+            1,
+            1,
+            1
+          ],
+          "transparency": 0,
+          "surface_family": "supplied_liftup_1b02f4b8abd9",
+          "triangles": 5771,
+          "sha256": "d0671d474b34e3b0d26ad961e5b48970832426ba213e75c24b67eaa44ac3c565",
+          "uri": "rbxasset://needle-quay/liftup/NQ-TRAFFIC-POST_1_d0671d474b34.mesh"
+        },
+        {
+          "name": "Surface2",
+          "bone": "",
+          "center": [
+            0.009352445602416992,
+            3.4751200675964355,
+            3.7449698448181152
+          ],
+          "size": [
+            3.8961987495422363,
+            1.0371778011322021,
+            2.3962042331695557
+          ],
+          "color": [
+            1,
+            1,
+            1
+          ],
+          "transparency": 0,
+          "surface_family": "supplied_liftup_88d02694611d",
+          "triangles": 24,
+          "sha256": "85a3a65f9bccdf2bb89ddbfec6a0532246d18330db8318dfa5077cabe903f469",
+          "uri": "rbxasset://needle-quay/liftup/NQ-TRAFFIC-POST_2_85a3a65f9bcc.mesh"
+        },
+        {
+          "name": "Surface3",
+          "bone": "",
+          "center": [
+            0.009352266788482666,
+            3.483365058898926,
+            -2.5709540843963623
+          ],
+          "size": [
+            3.9769039154052734,
+            1.31355881690979,
+            2.97224760055542
+          ],
+          "color": [
+            1,
+            1,
+            1
+          ],
+          "transparency": 0.28,
+          "surface_family": "supplied_liftup_1b02f4b8abd9",
+          "triangles": 64,
+          "sha256": "49bf4df10db13de500fefbd6e56e1c132006320295f793a5910d79b6ee30da67",
+          "uri": "rbxasset://needle-quay/liftup/NQ-TRAFFIC-POST_3_49bf4df10db1.mesh"
+        }
+      ],
+      "triangles": 6029,
+      "joints": {},
+      "dimensions": [
+        4.910639762878418,
+        4.4425740242004395,
+        12.0
+      ],
+      "coordinate_basis": "blender_to_roblox_front_minus_z_v2"
+    },
+    {
+      "id": "NQ-TRAFFIC-BUS",
+      "kind": "supplied_liftup",
+      "source": "assets/production/needle-quay/liftup/NQ-TRAFFIC-BUS.blend",
+      "source_sha256": "064f21e5f19befb6df58fe734b7da8975fcc6e779eae0ffe332cf1d28f269318",
+      "parts": [
+        {
+          "name": "Surface0",
+          "bone": "",
+          "center": [
+            -0.0,
+            2.5283312797546387,
+            4.76837158203125e-07
+          ],
+          "size": [
+            5.095823764801025,
+            5.056662559509277,
+            20.0
+          ],
+          "color": [
+            1,
+            1,
+            1
+          ],
+          "transparency": 0,
+          "surface_family": "supplied_liftup_3a6b2a03877c",
+          "triangles": 8734,
+          "sha256": "f408c3c7e6fe5884111ac0cc209b5082376f8cd574cc6029d5763f945ece1312",
+          "uri": "rbxasset://needle-quay/liftup/NQ-TRAFFIC-BUS_0_f408c3c7e6fe.mesh"
+        },
+        {
+          "name": "Surface1",
+          "bone": "",
+          "center": [
+            -1.1920928955078125e-07,
+            3.4367809295654297,
+            0.03891801834106445
+          ],
+          "size": [
+            4.218999862670898,
+            2.6093780994415283,
+            19.300926208496094
+          ],
+          "color": [
+            1,
+            1,
+            1
+          ],
+          "transparency": 0,
+          "surface_family": "supplied_liftup_23ad7fe2ac8f",
+          "triangles": 14,
+          "sha256": "d643995b68d7db9f330ca021c604fb4df9baa8f87c32dbb05c01233e75b94c7d",
+          "uri": "rbxasset://needle-quay/liftup/NQ-TRAFFIC-BUS_1_d643995b68d7.mesh"
+        },
+        {
+          "name": "Surface2",
+          "bone": "",
+          "center": [
+            -0.0,
+            3.4659295082092285,
+            -1.2589383125305176
+          ],
+          "size": [
+            4.162024974822998,
+            1.9363844394683838,
+            16.761234283447266
+          ],
+          "color": [
+            1,
+            1,
+            1
+          ],
+          "transparency": 0.28,
+          "surface_family": "supplied_liftup_3a6b2a03877c",
+          "triangles": 148,
+          "sha256": "855feeb5a4babd9052cc85e4fe7a4c39915eb3428e196d4070ffc9980583ba0c",
+          "uri": "rbxasset://needle-quay/liftup/NQ-TRAFFIC-BUS_2_855feeb5a4ba.mesh"
+        },
+        {
+          "name": "Surface3",
+          "bone": "",
+          "center": [
+            -0.0,
+            4.648706436157227,
+            -8.73682975769043
+          ],
+          "size": [
+            1.833985686302185,
+            0.31095075607299805,
+            0.21269893646240234
+          ],
+          "color": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "transparency": 0.28,
+          "surface_family": null,
+          "triangles": 4,
+          "sha256": "a911b2c5dec1eeabf439e5b99c86a898171bf3febbf0128fc3ba8940e1e676b9",
+          "uri": "rbxasset://needle-quay/liftup/NQ-TRAFFIC-BUS_3_a911b2c5dec1.mesh"
+        },
+        {
+          "name": "Surface4",
+          "bone": "",
+          "center": [
+            -0.0,
+            3.2940800189971924,
+            -0.029206275939941406
+          ],
+          "size": [
+            4.132331371307373,
+            3.4343457221984863,
+            19.07618522644043
+          ],
+          "color": [
+            1,
+            1,
+            1
+          ],
+          "transparency": 0,
+          "surface_family": "supplied_liftup_95824bd9852d",
+          "triangles": 162,
+          "sha256": "7f622f70cf6b238275bf2e0adf25b22edc681494de78aa4633ac6f89137a7fe5",
+          "uri": "rbxasset://needle-quay/liftup/NQ-TRAFFIC-BUS_4_7f622f70cf6b.mesh"
+        }
+      ],
+      "triangles": 9062,
+      "joints": {},
+      "dimensions": [
+        5.095823764801025,
+        5.056662559509277,
+        20.0
+      ],
+      "coordinate_basis": "blender_to_roblox_front_minus_z_v2"
+    },
+    {
+      "id": "NQ-SCENIC-01",
+      "kind": "supplied_liftup",
+      "source": "assets/production/needle-quay/liftup/NQ-SCENIC-01.blend",
+      "source_sha256": "50493f269535fe89fcaa3e3f811ad13355116ed3decd0fd349dd1ee493259b3f",
+      "parts": [
+        {
+          "name": "Surface0",
+          "bone": "",
+          "center": [
+            4.76837158203125e-07,
+            6.767448425292969,
+            0.0
+          ],
+          "size": [
+            24.0,
+            13.534896850585938,
+            12.685941696166992
+          ],
+          "color": [
+            1,
+            1,
+            1
+          ],
+          "transparency": 0,
+          "surface_family": "supplied_liftup_3bb5bfcd2ac8",
+          "triangles": 632,
+          "sha256": "829f432c93f3b35ff278376484f864b62987d0d35973790874674a4145a9b59e",
+          "uri": "rbxasset://needle-quay/liftup/NQ-SCENIC-01_0_829f432c93f3.mesh"
+        }
+      ],
+      "triangles": 632,
+      "joints": {},
+      "dimensions": [
+        24.0,
+        13.534896850585938,
+        12.685941696166992
+      ],
+      "coordinate_basis": "blender_to_roblox_front_minus_z_v2"
+    },
+    {
+      "id": "NQ-SCENIC-02",
+      "kind": "supplied_liftup",
+      "source": "assets/production/needle-quay/liftup/NQ-SCENIC-02.blend",
+      "source_sha256": "94e30afd04c4af72743ddc2775ed9cb8872d44221d99fb67edf30436dc166b21",
+      "parts": [
+        {
+          "name": "Surface0",
+          "bone": "",
+          "center": [
+            4.76837158203125e-07,
+            6.203496932983398,
+            0.0
+          ],
+          "size": [
+            22.0,
+            12.406993865966797,
+            11.968674659729004
+          ],
+          "color": [
+            1,
+            1,
+            1
+          ],
+          "transparency": 0,
+          "surface_family": "supplied_liftup_3bb5bfcd2ac8",
+          "triangles": 632,
+          "sha256": "70f34a294a6e1b9280197fae65341b391308d18d05345f3274426d66296817ca",
+          "uri": "rbxasset://needle-quay/liftup/NQ-SCENIC-02_0_70f34a294a6e.mesh"
+        }
+      ],
+      "triangles": 632,
+      "joints": {},
+      "dimensions": [
+        22.0,
+        12.406993865966797,
+        11.968674659729004
+      ],
+      "coordinate_basis": "blender_to_roblox_front_minus_z_v2"
+    },
+    {
+      "id": "NQ-SCENIC-03",
+      "kind": "supplied_liftup",
+      "source": "assets/production/needle-quay/liftup/NQ-SCENIC-03.blend",
+      "source_sha256": "3091647bce087702adfcd445f76a61d835cc30ccb358e950f17daedb284bc90f",
+      "parts": [
+        {
+          "name": "Surface0",
+          "bone": "",
+          "center": [
+            -1.9073486328125e-06,
+            8.004936218261719,
+            0.0
+          ],
+          "size": [
+            28.0,
+            16.009872436523438,
+            15.005677223205566
+          ],
+          "color": [
+            1,
+            1,
+            1
+          ],
+          "transparency": 0,
+          "surface_family": "supplied_liftup_3bb5bfcd2ac8",
+          "triangles": 580,
+          "sha256": "6d2df4201c7ece0f5e9bb9b81a4d1e83dc98e8ef00c7ba71884b97ac3d57f6e3",
+          "uri": "rbxasset://needle-quay/liftup/NQ-SCENIC-03_0_6d2df4201c7e.mesh"
+        }
+      ],
+      "triangles": 580,
+      "joints": {},
+      "dimensions": [
+        28.0,
+        16.009872436523438,
+        15.005677223205566
+      ],
+      "coordinate_basis": "blender_to_roblox_front_minus_z_v2"
+    }
+  ],
+  "materials": {
+    "supplied_liftup_2c998f489aae": "rbxasset://needle-quay/liftup/color_2c998f489aae.png",
+    "supplied_liftup_95824bd9852d": "rbxasset://needle-quay/liftup/color_95824bd9852d.png",
+    "supplied_liftup_958c3e86d3f6": "rbxasset://needle-quay/liftup/color_958c3e86d3f6.png",
+    "supplied_liftup_1b02f4b8abd9": "rbxasset://needle-quay/liftup/color_1b02f4b8abd9.png",
+    "supplied_liftup_88d02694611d": "rbxasset://needle-quay/liftup/color_88d02694611d.png",
+    "supplied_liftup_3a6b2a03877c": "rbxasset://needle-quay/liftup/color_3a6b2a03877c.png",
+    "supplied_liftup_23ad7fe2ac8f": "rbxasset://needle-quay/liftup/color_23ad7fe2ac8f.png",
+    "supplied_liftup_3bb5bfcd2ac8": "rbxasset://needle-quay/liftup/color_3bb5bfcd2ac8.png"
+  },
+  "provenance": [
+    {
+      "id": "NQ-TRAFFIC-TAXI",
+      "original": "assets/generic_civil_service_vehicles_pack.glb",
+      "original_sha256": "7a02f1d46d9f4bdf7268d7737445e6fd08a98c44371a289d89aef6c4d7a78e31",
+      "selected_object": "taxi",
+      "uniform_scale": 2.1631168379131163,
+      "stage": "LOCAL_ADAPTATION_PENDING_ACCEPTANCE",
+      "art_approved": false,
+      "studio_imported": false,
+      "runtime_verified": false
+    },
+    {
+      "id": "NQ-TRAFFIC-POST",
+      "original": "assets/generic_civil_service_vehicles_pack.glb",
+      "original_sha256": "7a02f1d46d9f4bdf7268d7737445e6fd08a98c44371a289d89aef6c4d7a78e31",
+      "selected_object": "postvan",
+      "uniform_scale": 2.2459154503214234,
+      "stage": "LOCAL_ADAPTATION_PENDING_ACCEPTANCE",
+      "art_approved": false,
+      "studio_imported": false,
+      "runtime_verified": false
+    },
+    {
+      "id": "NQ-TRAFFIC-BUS",
+      "original": "assets/generic_civil_service_vehicles_pack.glb",
+      "original_sha256": "7a02f1d46d9f4bdf7268d7737445e6fd08a98c44371a289d89aef6c4d7a78e31",
+      "selected_object": "citybus",
+      "uniform_scale": 2.0098855818748103,
+      "stage": "LOCAL_ADAPTATION_PENDING_ACCEPTANCE",
+      "art_approved": false,
+      "studio_imported": false,
+      "runtime_verified": false
+    },
+    {
+      "id": "NQ-SCENIC-01",
+      "original": "assets/city_game_ready_free.glb",
+      "original_sha256": "1dd0039ee46d44d274d4dc9cad238dba400110b222fe7e4e6f847e948c62d6e6",
+      "selected_object": "Building.001",
+      "uniform_scale": 5.874279365183108,
+      "stage": "LOCAL_ADAPTATION_PENDING_ACCEPTANCE",
+      "art_approved": false,
+      "studio_imported": false,
+      "runtime_verified": false
+    },
+    {
+      "id": "NQ-SCENIC-02",
+      "original": "assets/city_game_ready_free.glb",
+      "original_sha256": "1dd0039ee46d44d274d4dc9cad238dba400110b222fe7e4e6f847e948c62d6e6",
+      "selected_object": "Building.002",
+      "uniform_scale": 5.384756084751183,
+      "stage": "LOCAL_ADAPTATION_PENDING_ACCEPTANCE",
+      "art_approved": false,
+      "studio_imported": false,
+      "runtime_verified": false
+    },
+    {
+      "id": "NQ-SCENIC-03",
+      "original": "assets/city_game_ready_free.glb",
+      "original_sha256": "1dd0039ee46d44d274d4dc9cad238dba400110b222fe7e4e6f847e948c62d6e6",
+      "selected_object": "Building.013",
+      "uniform_scale": 6.948442943793471,
+      "stage": "LOCAL_ADAPTATION_PENDING_ACCEPTANCE",
+      "art_approved": false,
+      "studio_imported": false,
+      "runtime_verified": false
+    }
+  ],
+  "uploads": 0
+}

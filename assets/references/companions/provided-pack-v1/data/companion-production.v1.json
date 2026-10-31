@@ -1,0 +1,55 @@
+{
+  "schema": "beatmakka.companion-production.v1",
+  "reference_repo": "slafftrosheen/BeatMakka",
+  "base_commit": "a4a309bdb5b8db90ddad4ddb6f07a7f61d74a29c",
+  "status": "CONCEPT_AND_SOURCE_CANDIDATE_ONLY",
+  "approved_world_style": "assets/references/needle-quay-approved-style-board.png",
+  "privacy": "Raw child photos are not part of this package; do not upload photographs, face scans, or child voices",
+  "companions": [
+    {
+      "asset_id": "NQ-CMP-ALISSIA",
+      "runtime_id": "alissia",
+      "display_name": "Alissia",
+      "role": "sound-collector",
+      "visual_signifiers": ["pink-coral goggles on head", "faded teal loose jacket", "denim trousers", "small listening field bag", "matte rubber shoes"],
+      "gameplay_read_only_inputs": ["quest.accepted", "unlocked.I01", "unlocked.I02", "unlocked.I03", "neighborhood.nextId"],
+      "triangle_target_lod0": 4500,
+      "triangle_target_lod1": 2000,
+      "triangle_target_lod2": 800,
+      "authoring_rough_height_studs": [3.7, 4.2],
+      "texture_target": "1x 512 square atlas; no photographed skin textures",
+      "rig_target": "15-17 bones proposed, not measured or accepted",
+      "source_reference": "art/Character_Turnarounds_CANDIDATE.png",
+      "stage": "CONCEPT_CANDIDATE",
+      "studio_imported": false,
+      "runtime_verified": false
+    },
+    {
+      "asset_id": "NQ-CMP-NIKOLAS",
+      "runtime_id": "nikolas",
+      "display_name": "Nikolas",
+      "role": "rhythm-builder",
+      "visual_signifiers": ["short sandy-blond hair", "teal utility vest", "cream tee", "warm walnut cargo shorts", "small amber beat-counter"],
+      "gameplay_read_only_inputs": ["quest.accepted", "unlocked.I01", "unlocked.I02", "unlocked.I03", "neighborhood.nextId", "chapter.completed"],
+      "triangle_target_lod0": 4500,
+      "triangle_target_lod1": 2000,
+      "triangle_target_lod2": 800,
+      "authoring_rough_height_studs": [3.7, 4.2],
+      "texture_target": "1x 512 square atlas; no photographed skin textures",
+      "rig_target": "15-17 bones proposed, not measured or accepted",
+      "source_reference": "art/Character_Turnarounds_CANDIDATE.png",
+      "stage": "CONCEPT_CANDIDATE",
+      "studio_imported": false,
+      "runtime_verified": false
+    }
+  ],
+  "references": {
+    "turnaround": "art/Character_Turnarounds_CANDIDATE.png",
+    "world_scene": "art/Character_World_Scenes_CANDIDATE.png",
+    "existing_npcs": "assets/production/needle-quay/npcs/npc-manifest.json",
+    "existing_missions": "src/shared/NeighborhoodMissions.luau",
+    "existing_quest": "src/shared/FirstPerformanceQuest.luau"
+  },
+  "publishing_authorized": false,
+  "tripo_spend_authorized": false
+}

@@ -1,0 +1,14 @@
+{
+  "place": "NeedleQuay-VintageQuay.rbxlx",
+  "connection": "Fresh official StudioMCP, local Studio Play",
+  "materials": {"status":"PASS","failed":0,"buildings":7,"vintage_van":true},
+  "companions": {"status":"PASS","ids":["alissia","nikolas"],"visible_textured_skin_parts_each":2,"portraits_each":1,"resident_skins_ready":26},
+  "entrances": {"status":"PASS","building_approaches_and_server_actions":7},
+  "collisions": {"status":"PASS","building_walk_segments":28,"van_walk_segments":8,"avatar_sweep_buildings":7,"remaining_sweep_obstacles":0,"solid_body_ray_checks":7},
+  "van_access": {"status":"PASS","entered_station":"Station_1","exit_walk_return":"Back at Needle Quay.","note":"Return requested away from the visible exit is correctly rejected by line-of-sight checking."},
+  "groovebox": {"status":"PASS","tabs":["Steps","Sounds","Beats","Settings","Play"],"visible_pads_each":16,"different_pad_selected_per_tab":true,"pad_release_contrast":true,"visual_evidence":"groovebox-sounds.jpg"},
+  "scope_limits":["Desktop viewport tested; not every device size","Local Play only; no published or multiplayer acceptance","Building activity targets verified, not every mission branch"],
+  "source_checks":"Pinned Selene zero errors, warnings or parse errors; pinned Rojo build passed",
+  "uploads":0,
+  "commits":0
+}

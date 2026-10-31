@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "revision": "quay-found-v1-candidate",
-  "stage": "candidate",
+  "stage": "archival_retired_unavailable",
   "listening_approved": true,
   "runtime_admitted": false,
   "candidates": [
@@ -622,5 +622,8 @@
     "index.html": "c75d7e5d047e2d9dd89809a4b842083c2e553d8e818adebf2b2429134547077c",
     "original-pattern.wav": "a58e50f2ca1dd76a1401dfd6496d65cdae9b79d4c550b7d70002fba07e3118f5"
   },
-  "approval_record": "selection.json"
+  "approval_record": "selection.json",
+  "active": false,
+  "retirement": "handoff_v3",
+  "active_content_authority": "data/active-content.json"
 }

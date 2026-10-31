@@ -1,0 +1,21 @@
+{
+  "name": "NeedleQuayEnvironmentBlockout",
+  "tree": {
+    "$className": "DataModel",
+    "Workspace": {
+      "$properties": {
+        "StreamingEnabled": true
+      },
+      "NeedleQuayEnvironmentBlockout": {
+        "$path": "assets/blockouts/needle-quay/NeedleQuayEnvironmentBlockout.rbxmx"
+      }
+    },
+    "Lighting": {
+      "$properties": {
+        "ClockTime": 16.5,
+        "Brightness": 2,
+        "GlobalShadows": true
+      }
+    }
+  }
+}

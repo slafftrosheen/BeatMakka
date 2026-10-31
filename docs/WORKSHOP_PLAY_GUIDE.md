@@ -1,5 +1,7 @@
 # Workshop milestone: setup and current status
 
+> Historical workshop guide. Current controls and saving are described in [MPC v3](needle-quay/MPC_V3_README.md): A–D are sound banks, music uses named sequences and Song Mode, and the finale plays a pinned Finished Song to its actual end. The four-pattern, Beat Shelf and one-loop chapter instructions below are superseded. The dated upload/import procedure below is historical; the current local-only deployment policy in `AGENTS.md` applies.
+
 For the subsequent complete first-zone source batch, current checks and fixes, see [implementation coverage](IMPLEMENTATION_COVERAGE.md) and [runtime verification](RUNTIME_VERIFICATION.md). The upload outcomes below remain asset-stage evidence, not a substitute for those runtime checks.
 
 ## What is implemented

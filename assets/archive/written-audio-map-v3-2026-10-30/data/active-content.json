@@ -1,0 +1,156 @@
+{
+  "schema": 1,
+  "revision": "handoff-v3-local-personal-preview",
+  "planned_contract": "data/first-pack-slots.v3.json",
+  "retired_catalog": "data/retired-audio.json",
+  "nonmusical_audio": [
+    {
+      "id": "ui_tap",
+      "file": "assets/production/audio/ui_tap.wav",
+      "sha256": "280de6747c8664c8b1317ec4ee13f7f4abcfb676aed8fbbdbab8f112a2df866b",
+      "category": "ui-cue"
+    },
+    {
+      "id": "ui_collect",
+      "file": "assets/production/audio/ui_collect.wav",
+      "sha256": "6d8557d07d1351ed32f1b1cf40b6e89fdd2039a9fcd6f3193c0438e555cc2bc1",
+      "category": "ui-cue"
+    },
+    {
+      "id": "ui_save",
+      "file": "assets/production/audio/ui_save.wav",
+      "sha256": "2d866485005c6070e8acadd63ccfe65642a17c4e29037d7bdaa3f5dfc52a26da",
+      "category": "ui-cue"
+    },
+    {
+      "id": "ui_error",
+      "file": "assets/production/audio/ui_error.wav",
+      "sha256": "258bb16773360140308aef47d37cbeaf6587d1f52d9c3a63133737b4ec9eb8a7",
+      "category": "ui-cue"
+    },
+    {
+      "id": "waterfront",
+      "file": "assets/production/audio/waterfront.wav",
+      "sha256": "74f7ecb9e28dbfe8662c97a620cc78dbe9c41faaa0b49decf06385eeeaceb4b0",
+      "category": "ambience"
+    }
+  ],
+  "musical_audio": [],
+  "policy": "Only musical_audio grants approved runtime admission. Explicit local_preview_audio permits Studio personal auditions only, with pending listening review; it does not grant quest, semantic-role, Finished Song or public playback readiness. Source archives and planned roles never grant admission.",
+  "local_preview_audio": [
+    {
+      "id": "nq.harbour.v1.a02",
+      "address": "A02",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Drums/02_Drop_Kick_2.wav",
+      "sha256": "d84000a246b903b5ec6e0815c8044f42be3da7bfce1d02813fd76db4f79dc925",
+      "source_label": "02_Drop_Kick_2",
+      "mapping_basis": "Kick role matches; punch timbre remains unreviewed.",
+      "preview_status": "local_personal_preview_pending_listening",
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "listening_review": "pending",
+      "verified_pitch": null,
+      "source_provenance": {
+        "intake_manifest": "assets/production/needle-quay/harbour-pulse-v3/intake-manifest.json",
+        "archive_member": "NeedleQuay_Pack/Drums/02_Drop_Kick_2.wav",
+        "source_archive": "assets/supplied/needle-quay-handoff-v3/Needle_Quay_64_OneShot_Pack_174BPM.zip",
+        "source_archive_sha256": "6cc62b98c3ba83d4c8f22783754cd537a0f803f97b0e6ca3728bb3991cb7a3ea"
+      }
+    },
+    {
+      "id": "nq.harbour.v1.a03",
+      "address": "A03",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Drums/05_Main_Backbeat_Snare.wav",
+      "sha256": "ec25805af70109a473115081cad8b2f292077d05327e69c6ef7672ab0e6cc180",
+      "source_label": "05_Main_Backbeat_Snare",
+      "mapping_basis": "Main-snare role matches the supplied filename.",
+      "preview_status": "local_personal_preview_pending_listening",
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "listening_review": "pending",
+      "verified_pitch": null,
+      "source_provenance": {
+        "intake_manifest": "assets/production/needle-quay/harbour-pulse-v3/intake-manifest.json",
+        "archive_member": "NeedleQuay_Pack/Drums/05_Main_Backbeat_Snare.wav",
+        "source_archive": "assets/supplied/needle-quay-handoff-v3/Needle_Quay_64_OneShot_Pack_174BPM.zip",
+        "source_archive_sha256": "6cc62b98c3ba83d4c8f22783754cd537a0f803f97b0e6ca3728bb3991cb7a3ea"
+      }
+    },
+    {
+      "id": "nq.harbour.v1.a07",
+      "address": "A07",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Drums/11_Open_Hat_Splash.wav",
+      "sha256": "8908dc914951de8adb3c32f2874e87bb249c962b55fd71ee18d4830ead043056",
+      "source_label": "11_Open_Hat_Splash",
+      "mapping_basis": "Open-hi-hat role matches the supplied filename.",
+      "preview_status": "local_personal_preview_pending_listening",
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "listening_review": "pending",
+      "verified_pitch": null,
+      "source_provenance": {
+        "intake_manifest": "assets/production/needle-quay/harbour-pulse-v3/intake-manifest.json",
+        "archive_member": "NeedleQuay_Pack/Drums/11_Open_Hat_Splash.wav",
+        "source_archive": "assets/supplied/needle-quay-handoff-v3/Needle_Quay_64_OneShot_Pack_174BPM.zip",
+        "source_archive_sha256": "6cc62b98c3ba83d4c8f22783754cd537a0f803f97b0e6ca3728bb3991cb7a3ea"
+      }
+    },
+    {
+      "id": "nq.harbour.v1.a15",
+      "address": "A15",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/Drums/12_Shaker_Ghost.wav",
+      "sha256": "06873d95756ae2f609869d61b28034f43777954fea760ea73a394a49d443ccff",
+      "source_label": "12_Shaker_Ghost",
+      "mapping_basis": "Short shaker role matches the filename and measured duration.",
+      "preview_status": "local_personal_preview_pending_listening",
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "listening_review": "pending",
+      "verified_pitch": null,
+      "source_provenance": {
+        "intake_manifest": "assets/production/needle-quay/harbour-pulse-v3/intake-manifest.json",
+        "archive_member": "NeedleQuay_Pack/Drums/12_Shaker_Ghost.wav",
+        "source_archive": "assets/supplied/needle-quay-handoff-v3/Needle_Quay_64_OneShot_Pack_174BPM.zip",
+        "source_archive_sha256": "6cc62b98c3ba83d4c8f22783754cd537a0f803f97b0e6ca3728bb3991cb7a3ea"
+      }
+    },
+    {
+      "id": "nq.harbour.v1.d13",
+      "address": "D13",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/MC_Vocals/33__Needle_Quay__.wav",
+      "sha256": "8755ffe1f03e6dc5e546e2752c1631e9c29a146df051f0b883595640fb02b030",
+      "source_label": "33__Needle_Quay__",
+      "mapping_basis": "Filename matches suggested location call; actual wording/listening review pending.",
+      "preview_status": "local_personal_preview_pending_listening",
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "listening_review": "pending",
+      "verified_pitch": null,
+      "source_provenance": {
+        "intake_manifest": "assets/production/needle-quay/harbour-pulse-v3/intake-manifest.json",
+        "archive_member": "NeedleQuay_Pack/MC_Vocals/33__Needle_Quay__.wav",
+        "source_archive": "assets/supplied/needle-quay-handoff-v3/Needle_Quay_64_OneShot_Pack_174BPM.zip",
+        "source_archive_sha256": "6cc62b98c3ba83d4c8f22783754cd537a0f803f97b0e6ca3728bb3991cb7a3ea"
+      }
+    },
+    {
+      "id": "nq.harbour.v1.d14",
+      "address": "D14",
+      "file": "assets/production/needle-quay/harbour-pulse-v3/source-pack/NeedleQuay_Pack/MC_Vocals/34__We_Make_Waves__.wav",
+      "sha256": "6580a038c9f74651892b2bb67802497e90812eeb41a887937799d26d88bc9b56",
+      "source_label": "34__We_Make_Waves__",
+      "mapping_basis": "Filename matches suggested response; actual wording/listening review pending.",
+      "preview_status": "local_personal_preview_pending_listening",
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "listening_review": "pending",
+      "verified_pitch": null,
+      "source_provenance": {
+        "intake_manifest": "assets/production/needle-quay/harbour-pulse-v3/intake-manifest.json",
+        "archive_member": "NeedleQuay_Pack/MC_Vocals/34__We_Make_Waves__.wav",
+        "source_archive": "assets/supplied/needle-quay-handoff-v3/Needle_Quay_64_OneShot_Pack_174BPM.zip",
+        "source_archive_sha256": "6cc62b98c3ba83d4c8f22783754cd537a0f803f97b0e6ca3728bb3991cb7a3ea"
+      }
+    }
+  ]
+}

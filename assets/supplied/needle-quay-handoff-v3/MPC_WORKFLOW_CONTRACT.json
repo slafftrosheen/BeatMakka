@@ -1,0 +1,307 @@
+{
+  "contract_id": "mpc_workflow_v3",
+  "revision": 3,
+  "date": "2026-10-30",
+  "kind": "local_agent_implementation_requirements_not_runtime_code",
+  "supersedes": [
+    "revision_1_keep_four_pattern_slots",
+    "renaming_pattern_A_D_to_1_4",
+    "bundled_beat_shelf_as_finished_song",
+    "revision_2_instrumental_demo_and_D13_D16_effect_role_plan"
+  ],
+  "implementation_status": {
+    "four_sound_banks": "required_not_implemented_in_supplied_baseline",
+    "named_sequences": "required_not_implemented_in_supplied_baseline",
+    "song_mode": "required_not_implemented_in_supplied_baseline",
+    "finished_songs": "required_not_implemented_in_supplied_baseline"
+  },
+  "pad_addressing": {
+    "physical_pads": 16,
+    "sound_banks": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "program_pad_count": 64,
+    "absolute_pad_formula": "(bankIndex - 1) * 16 + physicalPad",
+    "bank_switch_changes": [
+      "visible_pad_page",
+      "new_input_mapping"
+    ],
+    "bank_switch_must_not_change": [
+      "sequence_selection",
+      "song_step",
+      "recorded_events",
+      "program_assignments",
+      "transport_epoch",
+      "audible_hidden_bank_events"
+    ],
+    "capture_absolute_pad_at_input": true
+  },
+  "objects": {
+    "program": {
+      "purpose": "64 sound assignments and supported playback settings",
+      "fixed_pad_count": 64,
+      "empty_and_unavailable_references_explicit": true
+    },
+    "track": {
+      "purpose": "stable musical part and instrument routing",
+      "identity_is_not_pad_or_bank": true,
+      "stable_across_sequences": true
+    },
+    "sequence": {
+      "purpose": "named reusable musical section",
+      "fixed_four_slot_model": false,
+      "required_fields": [
+        "id",
+        "revision",
+        "name",
+        "bars",
+        "bpm",
+        "trackEvents",
+        "trackPadMutes"
+      ],
+      "has_own_tempo": true,
+      "normal_save_creates_finished_song": false,
+      "track_pad_mutes": {
+        "field": "trackPadMutes",
+        "shape": "map[trackId][stringAbsolutePad] = boolean",
+        "missing_entry": false,
+        "distinct_from": [
+          "track_mix_muted",
+          "program_gain"
+        ],
+        "muted_events_are_retained": true
+      }
+    },
+    "song_draft": {
+      "purpose": "editable finite ordered arrangement",
+      "steps": [
+        "stepId",
+        "sequenceId",
+        "repeats"
+      ],
+      "repeat_one_means_one_play": true,
+      "source_edits_update_draft_references": true,
+      "playback_uses_pinned_snapshot": true
+    },
+    "finished_song": {
+      "purpose": "explicitly finished, successfully saved immutable arrangement revision",
+      "snapshot_dependencies": [
+        "ordered_steps",
+        "sequence_revisions_and_events",
+        "track_routing",
+        "program_pad_definitions",
+        "mix",
+        "tempo_schedule",
+        "cover",
+        "sequence_track_and_pad_mutes"
+      ],
+      "mutable_source_links_allowed": false,
+      "created_by_import_or_sequence_save": false,
+      "is_audio_file": false,
+      "edit_opens_draft_copy": true,
+      "finish_requires_revisions": [
+        "draftRevision",
+        "project_or_complete_dependencyRevision"
+      ],
+      "snapshot_capture_is_consistent_without_yield": true,
+      "finish_request_idempotent": true,
+      "cover_change_creates_new_revision": true,
+      "edits_during_save_leave_newer_draft_dirty": true
+    }
+  },
+  "timing": {
+    "proposed_ppq": 960,
+    "default_meter": [
+      4,
+      4
+    ],
+    "ticks_per_default_bar": 3840,
+    "tempo_modes": [
+      "sequence",
+      "song"
+    ],
+    "preserve_legacy_sequence_bpm": true,
+    "snapshot_at_song_play_start": true,
+    "half_open_event_intervals": true,
+    "stop_seek_invalidate_scheduled_events": true,
+    "event_tick_domain": "zero-based integer: 0 <= tick < bars * 3840 for 4/4 at 960 PPQ",
+    "velocity_domain": {
+      "min": 1,
+      "max": 127,
+      "full_level": 127,
+      "zero_is_audible_note_on": false
+    }
+  },
+  "required_workflow": [
+    "new_rename_duplicate_sequence",
+    "multi_bar_record_and_overdub",
+    "track_selection_and_mix",
+    "velocity_and_full_level",
+    "timing_correct_swing_note_repeat",
+    "count_in_metronome",
+    "grid_edit_and_undo_redo",
+    "next_sequence_queue_cancel_hold",
+    "song_steps_insert_duplicate_move_remove",
+    "song_repeat_counts",
+    "save_sequence",
+    "save_project",
+    "save_song_draft",
+    "finish_and_save_song",
+    "non_destructive_convert_to_sequence"
+  ],
+  "audio_export": {
+    "separate_from_arrangement_save": true,
+    "requires_real_renderer_and_delivery": true,
+    "not_claimed_by_this_package": true
+  },
+  "commands": {
+    "song_finish": "SongFinish",
+    "reserved_existing_action": {
+      "Finish": "Roamer cosmetic finish"
+    },
+    "capture_on_note_input": [
+      "projectId",
+      "sequenceId",
+      "trackId",
+      "absolutePad",
+      "transportEpoch"
+    ],
+    "do_not_overload_revisions": [
+      "storageRevision",
+      "editRevision",
+      "objectRevision",
+      "transportEpoch",
+      "jamGeneration"
+    ]
+  },
+  "library_categories": [
+    "projects_and_drafts",
+    "sequences",
+    "finished_songs",
+    "imported_legacy_work"
+  ],
+  "recommended_authored_budgets": {
+    "named_sequences_per_project": 32,
+    "tracks_per_project": 8,
+    "song_drafts_per_project": 8,
+    "song_steps": 128,
+    "repeats_per_step_min": 1,
+    "repeats_per_step_max": 32,
+    "normal_sequence_bars_min": 1,
+    "normal_sequence_bars_max": 64,
+    "long_sequence_conversion_has_separate_bound": true,
+    "additional_required_budgets": [
+      "total_events",
+      "expanded_song_duration",
+      "serialized_record_bytes",
+      "voice_and_effect_resources"
+    ],
+    "platform_limits": false,
+    "never_silently_truncate": true
+  },
+  "legacy_migration": {
+    "working_patterns_to_named_sequences": true,
+    "all_six_shelf_bundles_preserved": true,
+    "each_old_mapping_isolated": true,
+    "old_16_pads_in_bank": "A",
+    "new_banks_initially_empty": [
+      "B",
+      "C",
+      "D"
+    ],
+    "infer_arrangement_from_slot_order": false,
+    "create_finished_songs": false,
+    "preserve_old_sample_ids_as_unavailable": true,
+    "preserve_independent_bpm_and_pad_edits": true,
+    "idempotent": true,
+    "retain_recoverable_preimage": true,
+    "preserve_post_migration_work_on_rollback": true,
+    "old_step_to_tick": "(oldStep - 1) * 240",
+    "default_event_velocity": 127,
+    "original_PadSound_gain_preserved_separately": true
+  },
+  "quest_semantics": {
+    "Q02": "first_playable_sequence_with_I01",
+    "Q03": "optional_loop_sharing",
+    "Q05": "two_saved_musically_distinct_named_sequences",
+    "Q07": "saved_song_draft_not_finished_song",
+    "Q09": "I03 at relative ticks 0/960/1920/2880 in the explicitly selected teaching bar",
+    "Q11": "select_saved_ready_finished_song",
+    "Q12": "complete_pinned_finished_song_from_start_to_actual_end"
+  },
+  "preserve": [
+    "all_earned_quest_history",
+    "XP_award_keys_and_amounts",
+    "wardrobe_and_three_outfit_presets",
+    "discovery_IDs_I01_I02_I03",
+    "world_and_story_relationships",
+    "local_uncommitted_work"
+  ],
+  "must_migrate_consumers": [
+    "input",
+    "sample_editor",
+    "recording",
+    "sequence_editor",
+    "Song_Mode",
+    "music_library",
+    "profile_store",
+    "audio_engine",
+    "pad_FX",
+    "jam_protocol",
+    "jam_playback",
+    "listening",
+    "stage_queue",
+    "world_feedback",
+    "quest_evidence",
+    "canonical_quest_data",
+    "NPC_copy",
+    "concert_transport",
+    "concert_UI",
+    "active_help_and_docs",
+    "content_packaging"
+  ],
+  "content": {
+    "first_pack": "nq_harbour_01",
+    "unique_sample_count": 64,
+    "planned_slots_file": "FIRST_PACK_64_SLOTS.json",
+    "new_audio_approval_reported": false,
+    "legacy_test_packs_active": false,
+    "pending_audio_can_complete_music_quests": false,
+    "flow_demo_is_player_authored_song": false,
+    "pack_planning_revision": 3,
+    "proposed_song_has_original_clean_vocals": true,
+    "vocal_slots": [
+      "D13",
+      "D14",
+      "D15",
+      "D16"
+    ],
+    "vocal_slot_count": 4,
+    "harbour_slots_in_bank_D": 12,
+    "vocal_samples_are_included_in_64": true,
+    "vocal_wording_approved": false,
+    "full_song_or_stems_are_additional_instrument_samples": false,
+    "player_microphone_required": false,
+    "player_vocal_use_required_for_story": false,
+    "production_order": [
+      "vocal_demo_song",
+      "user_song_approval",
+      "64_clean_one_shots_including_4_vocals",
+      "sample_approval_and_admission",
+      "runtime_integration"
+    ],
+    "pre_v3_placeholder_mappings": "preserve_and_reconcile_deliberately_without_silent_sound_substitution"
+  },
+  "permissions": {
+    "commit": false,
+    "push": false,
+    "Roblox_upload": false,
+    "Roblox_publish": false,
+    "shop_activation": false,
+    "new_paid_generation": false,
+    "test_suites": "follow_current_local_AGENTS_requires_separate_user_request"
+  }
+}

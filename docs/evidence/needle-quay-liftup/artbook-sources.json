@@ -1,0 +1,30 @@
+[
+  {
+    "source": "01_Visual_Artbook.pdf",
+    "sha256": "596526821d23869b7e92ab0b1d7643aadc596303edc3a9a3d888a09087383496"
+  },
+  {
+    "source": "02_Production_Atlas.pdf",
+    "sha256": "70f8d7462526b01b04c576f0d9343ea28b40ba327bc619f0e101264d7465bd12"
+  },
+  {
+    "source": "Asset_Production_Register.xlsx",
+    "sha256": "62a48c5ced5642a4c1ccba54d47b277ff39aa1384999d44cc43e94c1e15e46d3"
+  },
+  {
+    "source": "assets/references/needle-quay-approved-style-board.png",
+    "sha256": "ed1febe208e798110905653ac6f2a60778830de00b2ff112cacf2e36c3bf3463"
+  },
+  {
+    "source": "BeatMakka_World_v2/BeatMakka_World_Artbook_v2_RU.pdf",
+    "sha256": "0ab9dade9cf7be3f873c41ab1cc6edf5ba54a0883bf675a43f31f273cc862a07"
+  },
+  {
+    "source": "BeatMakka_Companions_v1/BeatMakka_Companions_Artbook_RU.pdf",
+    "sha256": "bf2748c2f7cf10dfe56b86584388b1d4445b32cf8d7e26959775a62dd3a3670a"
+  },
+  {
+    "source": "output/needle-quay/BeatMakka_Needle_Quay_Environment_Quest_Artbook_Vol01.pdf",
+    "sha256": "8942fa5039f7b329428848b78252ce5a4ee1bb6bcad4f2e552572af4166c6101"
+  }
+]

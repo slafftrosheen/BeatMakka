@@ -1,16 +1,16 @@
 {
   "schema": 1,
   "kind": "DESIGN_PROPOSAL_NOT_RUNTIME_ACCEPTANCE",
-  "date": "2026-10-24",
+  "date": "2026-10-30",
   "project": "BeatMakka / Frequency Zero",
   "cityWorkingName": "Resonance City",
   "firstDistrict": "N00",
   "totalDistricts": 11,
-  "styleGenreCount": 10,
-  "originalBankCount": 1,
+  "styleGenreCount": 0,
+  "originalBankCount": 0,
   "visualAuthority": "assets/references/needle-quay-approved-style-board.png",
-  "canonicalKitEvidence": "docs/STYLE_STARTER_PACKS.md",
-  "kitPolicy": "Genres are not story-locked; gameplay audio requires valid bound IDs and permissions.",
+  "canonicalKitEvidence": "data/first-pack-slots.v3.json",
+  "kitPolicy": "User-selected pack-native order: A drums, B bass, C MC vocals, D harbour FX/melodics. All 64 sounds support local Studio creation and performance; listening/art approval and Roblox runtime admission remain pending.",
   "personalWorldProgress": true,
   "sharedWorldPresentation": "public venues with private player unlock and locally projected restoration",
   "initialCityMap": {
@@ -25,7 +25,7 @@
       "id": "P1",
       "name": "Dockside Exchange",
       "activity": "sequencing and rhythm",
-      "existingBinding": "I01 metal_hit at Dockside Exchange; metal_pulse remains legacy mission evidence",
+      "existingBinding": "I01 discovery ID preserved; native A15 metal candidate pending listening/approval; no D01 bell-as-metal binding",
       "previous_display_name": "Rusty Workshop",
       "environment_stop_id": "NQ-STOP-01",
       "building_ids": [
@@ -36,8 +36,8 @@
     {
       "id": "P2",
       "name": "Repair Alley",
-      "activity": "repair ventilation; sequencing and A/B rhythm variation",
-      "existingBinding": "I02 vent_thump; canonical runtime mission vent_duet is unchanged",
+      "activity": "safe ventilation repair; original named sequence and saved musical variation",
+      "existingBinding": "I02 discovery ID preserved; no exact native vent-pulse role supplied; binding pending",
       "previous_display_name": "Vinyl Corner",
       "environment_stop_id": "NQ-STOP-02",
       "building_ids": [
@@ -48,7 +48,7 @@
     {
       "id": "P3",
       "name": "Vinyl Market",
-      "activity": "listen/preview/assign; sort music and save to Beat Shelf; optional performance",
+      "activity": "ready semantic record matching; saved Song Mode draft; optional loop-sharing",
       "existingBinding": "H06 Needle Records + H03; existing StageQueue where supported",
       "previous_display_name": "Harbor Market",
       "environment_stop_id": "NQ-STOP-03",
@@ -61,7 +61,7 @@
       "id": "P4",
       "name": "Breakwater Steps",
       "activity": "virtual acoustics/world sound collection",
-      "existingBinding": "I03 robot_chirp; helper_reply remains legacy mission evidence",
+      "existingBinding": "I03 discovery ID preserved; no exact native helper/radio-reply role supplied; binding pending",
       "previous_display_name": "Echo Pier",
       "environment_stop_id": "NQ-STOP-04",
       "building_ids": [
@@ -72,18 +72,10 @@
   ],
   "finale": {
     "name": "The Lantern Room",
-    "implementation": "proposed art/venue wrapper reusing existing six-phase courtyard ChapterConcert",
+    "implementation": "local finite saved FinishedSong performance; pinned immutable revision, actual musical end plus bounded 2-second tail; pause freezes and stop/leave cancels incomplete traversal",
     "previous_display_name": "The Lighthouse Club"
   },
   "verifiedRepoStatusAt": "2026-10-24",
-  "soundStatus": {
-    "genreWavsAuthored": 160,
-    "genreAudioIdsBound": 100,
-    "genreAudioIdsPending": 60,
-    "originalSourceWavs": 24,
-    "originalAudioBindings": "pending",
-    "microphoneCapture": "unsupported in current game"
-  },
   "sourceDocs": [
     "README.md",
     "docs/STYLE_STARTER_PACKS.md",
@@ -438,5 +430,22 @@
       "accent": "#B2A168"
     }
   ],
-  "environmentRegistry": "data/needle-quay-environment.v1.json"
+  "environmentRegistry": "data/needle-quay-environment.v1.json",
+  "historicalSoundStatus_2026_10_24": {
+    "genreWavsAuthored": 160,
+    "genreAudioIdsBound": 100,
+    "genreAudioIdsPending": 60,
+    "originalSourceWavs": 24,
+    "originalAudioBindings": "pending",
+    "microphoneCapture": "unsupported in current game"
+  },
+  "soundStatus": {
+    "plannedSoundBanks": 4,
+    "physicalPads": 16,
+    "plannedSampleSlots": 64,
+    "approvedSamples": 0,
+    "loadedPlannedSamples": 0,
+    "microphoneCapture": "unsupported in current game",
+    "status": "pending original demo approval and 64 approved one-shots; no Flow generation started here"
+  }
 }

@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-28",
+  "asset": "LOOPVAN-01",
+  "stage": "CONCEPT_CANDIDATE",
+  "tool": "built-in image_gen",
+  "file": "beatmakka-loopvan-white-v1.png",
+  "original_output": "C:\\Users\\slavd\\.codex\\generated_images\\01a16fa4-2645-78f1-93da-fb64d5ebdaf1\\exec-6156194c-101b-436d-984e-997825fc2f13.png",
+  "visual_references": [
+    "assets/references/needle-quay-approved-style-board.png",
+    "BeatMakka_World_v2/maps/BeatMakka_LoopVan_Concept.png"
+  ],
+  "reference_usage": "Viewed locally; translated into art direction in the prompt. Existing project references retained with their provenance.",
+  "user_assets_inventory": {
+    "files": 6343,
+    "new_external_assets_used": 0
+  },
+  "prompt": "Create a single beautiful hero product mockup of the BEATMAKKA LoopVan, a mobile beat-making studio and tiny pop-up performance stage for a cozy stylized harbor music game. Full vehicle isolated on a seamless PURE WHITE background, white studio floor, soft grounded contact shadow only. No scenery, no people, no diagram, no callouts, no collage. Three-quarter front-and-passenger-side view with the whole van, roof and tires comfortably inside the frame, generous white negative space. Premium stylized 3D game concept render, tactile hand-painted materials, rounded chunky bevels, appealing handcrafted proportions and sophisticated art direction. The vehicle should feel like a memorable game mascot: a compact retro-futurist coachbuilt camper van, cream upper body, faded deep teal lower body (#2f5c58), one restrained dusty coral stripe (#ca7453), warm walnut details, graphite rubber tires, small amber lamps, soft sage glazing. Original body silhouette, no recognizable manufacturer, no VW badge. Rounded forward cab, broad slightly curved split windshield, charming round headlamps with cream bezels, practical graphite bumper, cream steel wheels with teal hubs, subtly flared wheel arches. Tastefully aged paint with only a few curated edge chips and repaired seams, lovingly maintained rather than rusty junk. Large expertly lettered exact 'BEATMAKKA' wordmark on the visible teal body panel, paired with a small original vinyl-disc emblem; no other text or random lettering. The rear half of the visible side has an open raised gullwing studio hatch acting as a short canopy, exposing a warm walnut built-in beat-making counter: a compact teal sampler with exactly a clear 4 by 4 grid of colorful pads, small knobs and a little screen, two small monitor speakers neatly integrated at either end, a slim shelf of record sleeves below. A shallow hinged walnut mini-stage/step folds out just below the studio opening and stays structurally attached to the van. Keep the front cab and wheels fully legible; this is clearly one coherent working vehicle, not a food truck or shop building. Small functional roof rack with one compact enclosed speaker unit, a short radio mast and a low amber marker light, no towering sound systems or roof clutter. Cream fabric rolled canopy edge, discreet brass hardware, believable hinges and panel joins. Warm inviting interior light, neutral softbox studio lighting outside, no orange background or colored light spill. Rich material separation, polished cinematic ambient occlusion, crisp silhouette, high detail on the vehicle but calm surfaces. A confident collectible-quality game vehicle mockup on absolute white. Landscape composition. Do not add labels, borders, extra props, separate equipment floating around, characters, road, landscape, graffiti-covered body, aggressive off-road accessories, or watermarks.",
+  "roblox_uploaded": false,
+  "production_dimensions_verified": false
+}

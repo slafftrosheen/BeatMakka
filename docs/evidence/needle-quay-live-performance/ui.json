@@ -1,0 +1,12 @@
+{
+  "pattern": {
+    "bpm": 96,
+    "step1": true,
+    "drive": 0.05
+  },
+  "speaker": "STREET SPEAKER / LIVE",
+  "errors": [],
+  "step16AboveFX": true,
+  "play": "PAUSE",
+  "saveVisible": true
+}

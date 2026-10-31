@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-29",
+  "source_formatting": "COMPLETE",
+  "rojo_build": "SUCCESS",
+  "package": "NeedleQuay-PlayfulQuay.zip",
+  "local_content_files": 739,
+  "studio_play": "NOT_RUN",
+  "tests": "NOT_RUN_PER_PROJECT_INSTRUCTIONS",
+  "animation_deformation_acceptance": "NOT_RUN",
+  "visual_layout_acceptance": "NOT_RUN",
+  "cloud_persistence": "NOT_RUN",
+  "roblox_uploads": 0,
+  "tripo_spend": 0,
+  "commit_push": "NOT_REQUESTED",
+  "prior_runtime_evidence": "Previous user-run Studio logs reported Companion skin memory unavailable; no claim that the new allocation fix has passed a new runtime run."
+}

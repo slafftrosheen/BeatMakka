@@ -31,6 +31,13 @@ function Appearance:reset()
             if backup.surface then
                 backup.surface.Parent = part
             end
+            if backup.texture then
+                part.TextureContent = backup.texture
+            end
+            if backup.materialKey then
+                part:SetAttribute("LocalMaterialKey", backup.materialKey)
+                require(script.Parent.LocalMaterials).bind(part, backup.materialKey)
+            end
         elseif backup.surface then
             backup.surface:Destroy()
         end
@@ -144,6 +151,33 @@ function Appearance:apply(state)
             end
             local compatible = layout == Cosmetics.TextureLayout
                 and (resolution == 512 or resolution == 1024)
+            if compatible and game:GetService("RunService"):IsStudio() then
+                local image =
+                    require(script.Parent.LocalMaterials).get(state.finish .. "_" .. resolution)
+                self.status = if image
+                    then "Local finish preview applied."
+                    else "Local finish loading…"
+                if image and art then
+                    local parts = art:GetDescendants()
+                    if art:IsA("MeshPart") then
+                        table.insert(parts, art)
+                    end
+                    for _, part in parts do
+                        if part:IsA("MeshPart") then
+                            if not self.originals[part] then
+                                self.originals[part] = {
+                                    texture = part.TextureContent,
+                                    materialKey = part:GetAttribute("LocalMaterialKey"),
+                                }
+                            end
+                            local key = state.finish .. "_" .. resolution
+                            part:SetAttribute("LocalMaterialKey", key)
+                            require(script.Parent.LocalMaterials).bind(part, key)
+                        end
+                    end
+                end
+                continue
+            end
             local template = if compatible then self:template(state.finish, resolution) else nil
             self.status = if not art
                 then "Finish preview shown on the temporary device shape."

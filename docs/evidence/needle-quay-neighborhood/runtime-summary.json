@@ -1,0 +1,39 @@
+{
+  "scope": "MCP-assisted single-client desktop observations; not full route or physical-device acceptance",
+  "source_scripts_synced": 96,
+  "local_art_loaded": 67,
+  "new_scene": {
+    "base_parts": 58,
+    "mesh_instances": 24,
+    "sounds": 0
+  },
+  "observed": [
+    "Tori dialogue and music question",
+    "registered custom nearby prompts on fresh startup",
+    "missing pulse feedback reports 0 of 4 steps without completion",
+    "three real dock stows update board to 1 of 2 and local lighting",
+    "guide targets own Roamer for music task",
+    "clicking repair task tracks control 1",
+    "Nell optional cafe dialogue without new completion flags",
+    "Sana encounter routes to Naya record activity",
+    "respawn retains tracked task and one guide marker"
+  ],
+  "source_inspected_only": [
+    "late-attribute prompt watcher and cleanup",
+    "Effects OFF light/pose handling",
+    "touch HUD compact placement",
+    "all remaining host dialogue branches",
+    "other-player state isolation"
+  ],
+  "not_run": [
+    "physical phone/tablet/gamepad",
+    "full Q00-Q12 and six-phase concert replay",
+    "independent multiplayer",
+    "cloud conflicts/rejoin",
+    "final art approval"
+  ],
+  "existing_warning": "rbxassetid://203785492 asset type mismatch; no new game-script errors observed",
+  "uploads": 0,
+  "provider_spend": 0,
+  "test_suites_added_or_run": false
+}

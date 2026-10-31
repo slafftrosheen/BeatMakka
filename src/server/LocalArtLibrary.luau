@@ -2,7 +2,36 @@
 local Service = game:GetService("AssetService")
 local Storage = game:GetService("ServerStorage")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local Catalog = require(ReplicatedStorage.Shared.LocalMeshCatalog)
+local Catalog = table.clone(require(ReplicatedStorage.Shared.LocalMeshCatalog))
+for _, companion in require(ReplicatedStorage.Shared.CompanionModels) do
+    table.insert(Catalog, companion)
+end
+for _, asset in require(ReplicatedStorage.Shared.QuayDressingCatalog) do
+    table.insert(Catalog, asset)
+end
+for _, asset in require(ReplicatedStorage.Shared.QuayLiftupCatalog) do
+    table.insert(Catalog, asset)
+end
+for _, asset in require(ReplicatedStorage.Shared.QuayArchitectureCatalog) do
+    for i = #Catalog, 1, -1 do
+        if Catalog[i].id == asset.id then
+            table.remove(Catalog, i)
+        end
+    end
+    table.insert(Catalog, asset)
+end
+local suppliedBuildings = table.clone(require(ReplicatedStorage.Shared.QuayBuildingCatalog))
+for _, van in require(ReplicatedStorage.Shared.QuayVanCatalog) do
+    table.insert(suppliedBuildings, van)
+end
+for _, replacement in suppliedBuildings do
+    for i = #Catalog, 1, -1 do
+        if Catalog[i].id == replacement.id then
+            table.remove(Catalog, i)
+        end
+    end
+    table.insert(Catalog, replacement)
+end
 local Library = {}
 
 function Library.build()
@@ -10,6 +39,10 @@ function Library.build()
         return
     end
     local folder = Storage:FindFirstChild("AssetLibrary")
+    local companionLibrary = ReplicatedStorage:FindFirstChild("CompanionLibrary")
+        or Instance.new("Folder")
+    companionLibrary.Name = "CompanionLibrary"
+    companionLibrary.Parent = ReplicatedStorage
     ReplicatedStorage:SetAttribute("LocalArtTotal", #Catalog)
     ReplicatedStorage:SetAttribute("LocalArtLoaded", 0)
     for _, asset in Catalog do
@@ -18,7 +51,15 @@ function Library.build()
         model.WorldPivot = CFrame.identity
         model:SetAttribute("SourceSHA256", asset.source_sha256)
         model:SetAttribute("SourcePath", asset.source)
-        local revised = asset.source:find("/refined/", 1, true) ~= nil
+        model:SetAttribute("CoordinateBasis", asset.coordinate_basis or "legacy_reflected_v1")
+        model:SetAttribute("ArtKind", asset.kind)
+        local revised = asset.kind == "supplied_building"
+            or asset.kind == "authored_architecture"
+            or asset.kind == "supplied_van"
+            or asset.kind == "companion"
+            or asset.kind == "supplied_dressing"
+            or asset.kind == "supplied_liftup"
+            or asset.source:find("/refined/", 1, true) ~= nil
             or asset.source:find("/user-adapted/", 1, true) ~= nil
         model:SetAttribute("ArtApproved", not revised)
         model:SetAttribute("LocalFileArt", true)
@@ -28,7 +69,12 @@ function Library.build()
         end
         model:SetAttribute(
             "ArtStage",
-            if revised then "LOCAL_ARTBOOK_REVISION_IN_REVIEW" else "ART_APPROVED_LOCAL_MESH"
+            if asset.kind == "companion"
+                then (if asset.suppliedSkin
+                    then "USER_SUPPLIED_LOCAL_ADAPTATION_PENDING_ACCEPTANCE"
+                    else "DCC_CANDIDATE_PENDING_ART_REVIEW")
+                elseif revised then "LOCAL_ARTBOOK_REVISION_IN_REVIEW"
+                else "ART_APPROVED_LOCAL_MESH"
         )
         model:SetAttribute("MeasuredTriangles", asset.triangles)
         if asset.resolution then
@@ -56,6 +102,7 @@ function Library.build()
             mesh.CanCollide, mesh.CanTouch, mesh.CanQuery = false, false, false
             mesh.CFrame = CFrame.new(Vector3.new(table.unpack(entry.center)))
             mesh.Color = Color3.new(table.unpack(entry.color))
+            mesh.Transparency = entry.transparency or 0
             if entry.name == "Glass" then
                 mesh.Material = Enum.Material.Glass
                 mesh.Reflectance = 0.12
@@ -63,7 +110,8 @@ function Library.build()
                 mesh.Material = Enum.Material.Metal
             end
             if entry.surface_family == "light" then
-                mesh.Material = if entry.size[2] < 2
+                mesh.Material = if asset.kind == "authored_architecture"
+                        or entry.size[2] < 2
                     then Enum.Material.Neon
                     else Enum.Material.SmoothPlastic
             elseif
@@ -71,6 +119,7 @@ function Library.build()
                 and (
                     entry.surface_family:sub(1, 10) == "character_"
                     or entry.surface_family:sub(1, 9) == "supplied_"
+                    or entry.surface_family:sub(1, 9) == "authored_"
                 )
             then
                 mesh:SetAttribute("LocalMaterialKey", entry.surface_family)
@@ -99,11 +148,42 @@ function Library.build()
             mesh.Parent = model
             task.wait()
         end
-        local old = folder:FindFirstChild(asset.id)
+        for _, at in asset.lights or {} do
+            local anchor = Instance.new("Part")
+            anchor.Name = "AuthoredLampAnchor"
+            anchor.Size, anchor.CFrame =
+                Vector3.one * 0.1, CFrame.new(Vector3.new(table.unpack(at)))
+            anchor.Anchored, anchor.Transparency = true, 1
+            anchor.CanCollide, anchor.CanTouch, anchor.CanQuery, anchor.CastShadow =
+                false, false, false, false
+            local light = Instance.new("PointLight")
+            light.Color, light.Brightness, light.Range = Color3.fromRGB(255, 193, 122), 1.3, 13
+            light.Shadows, light.Parent = true, anchor
+            anchor.Parent = model
+        end
+        if asset.sign then
+            local anchor = Instance.new("Part")
+            anchor.Name, anchor.Anchored, anchor.Transparency = "AuthoredNameplate", true, 1
+            anchor.Size = Vector3.new(asset.sign.size[1], asset.sign.size[2], 0.02)
+            anchor.CFrame = CFrame.new(Vector3.new(table.unpack(asset.sign.position)))
+            anchor.CanCollide, anchor.CanTouch, anchor.CanQuery, anchor.CastShadow =
+                false, false, false, false
+            local gui = Instance.new("SurfaceGui")
+            gui.Face, gui.SizingMode, gui.PixelsPerStud =
+                Enum.NormalId.Front, Enum.SurfaceGuiSizingMode.PixelsPerStud, 90
+            gui.LightInfluence, gui.MaxDistance, gui.Parent = 0.6, 150, anchor
+            local text = Instance.new("TextLabel")
+            text.Size, text.BackgroundTransparency = UDim2.fromScale(1, 1), 1
+            text.Font, text.TextColor3 = Enum.Font.GothamBold, Color3.fromRGB(232, 216, 183)
+            text.TextScaled, text.Text, text.Parent = true, asset.sign.text, gui
+            anchor.Parent = model
+        end
+        local destination = if asset.kind == "companion" then companionLibrary else folder
+        local old = destination:FindFirstChild(asset.id)
         if old then
             old:Destroy()
         end
-        model.Parent = folder
+        model.Parent = destination
         ReplicatedStorage:SetAttribute(
             "LocalArtLoaded",
             ReplicatedStorage:GetAttribute("LocalArtLoaded") + 1

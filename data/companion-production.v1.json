@@ -1,0 +1,225 @@
+{
+  "schema": "needle-quay.companions.v1",
+  "issue": 20,
+  "base_sha": "8e8b91f6a5472eb6200599e60932e45a8c9ea56b",
+  "stage": "USER_SUPPLIED_LOCAL_ADAPTATION_PENDING_ACCEPTANCE",
+  "default": "none",
+  "choices": [
+    "none",
+    "alissia",
+    "nikolas"
+  ],
+  "followers_per_client": 1,
+  "privacy": {
+    "family_photographs_used": false,
+    "biometric_data": false,
+    "real_voice": false,
+    "external_generation": false,
+    "supplied_candidate_art_used": true
+  },
+  "targets_are_authored_not_platform_limits": true,
+  "targets": {
+    "lod_triangles": [
+      4500,
+      2000,
+      800
+    ],
+    "atlas": [
+      512,
+      512
+    ],
+    "bones": [
+      15,
+      17
+    ],
+    "height_studs": [
+      3.7,
+      4.2
+    ]
+  },
+  "characters": [
+    {
+      "id": "NQ-CMP-ALISSIA",
+      "source": "assets/supplied/companions/Alisija.glb",
+      "source_sha256": "9208a168622b696a76c8dd74675531a7d02257ac82100eaa226a9d3f0557d1eb",
+      "blend": "assets/production/needle-quay/companions/supplied/alissia.blend",
+      "height_studs": 4.1,
+      "triangles": 10295,
+      "bone_count": 65,
+      "original_texture_resolution": [
+        1024,
+        1024
+      ],
+      "runtime_texture_resolution": [
+        1024,
+        1024
+      ],
+      "runtime_content_files": [
+        "companions/alissia_supplied_color_8831567e6370.png",
+        "companions/alissia_supplied_0_51de58ebd2cc.mesh",
+        "companions/alissia_supplied_1_480a47e62e1a.mesh"
+      ],
+      "source_animations": [
+        "afraid.001",
+        "agree.001",
+        "angry_01.001",
+        "cheer.001",
+        "clap.001",
+        "dance_01.001",
+        "dance_02.001",
+        "dance_03.001",
+        "dance_04.001",
+        "dance_06.001",
+        "heart_pose.001",
+        "idle.001",
+        "run.001",
+        "walk.001"
+      ],
+      "runtime_clips": {
+        "idle": "CompanionClipAlissiaIdle",
+        "walk": "CompanionClipAlissiaWalk",
+        "run": "CompanionClipAlissiaRun",
+        "cheer": "CompanionClipAlissiaCheer",
+        "clap": "CompanionClipAlissiaClap",
+        "dance_03": "CompanionClipAlissiaDance03",
+        "dance_06": "CompanionClipAlissiaDance06",
+        "agree": "CompanionClipAlissiaAgree"
+      },
+      "stage": "USER_SUPPLIED_LOCAL_ADAPTATION_PENDING_STUDIO_ACCEPTANCE",
+      "runtime_verified": false,
+      "uploads": 0,
+      "runtime_clip_sample_rate": 24
+    },
+    {
+      "id": "NQ-CMP-NIKOLAS",
+      "source": "assets/supplied/companions/niklass.glb",
+      "source_sha256": "26f7be5756d32300c0eb585f67d00f17e624b52feb6c52130fd03dc44d836651",
+      "blend": "assets/production/needle-quay/companions/supplied/nikolas.blend",
+      "height_studs": 3.8,
+      "triangles": 10968,
+      "bone_count": 65,
+      "original_texture_resolution": [
+        1024,
+        1024
+      ],
+      "runtime_texture_resolution": [
+        1024,
+        1024
+      ],
+      "runtime_content_files": [
+        "companions/nikolas_supplied_color_f2c1ef8be0a3.png",
+        "companions/nikolas_supplied_0_a7f311ac6b82.mesh",
+        "companions/nikolas_supplied_1_2cedc004b3c0.mesh"
+      ],
+      "source_animations": [
+        "bow.001",
+        "cheer.001",
+        "clap.001",
+        "dance_03.001",
+        "dance_06.001",
+        "freaky.001",
+        "idle.001",
+        "laugh_01.001",
+        "run.001",
+        "sing_03.001",
+        "walk.001"
+      ],
+      "runtime_clips": {
+        "idle": "CompanionClipNikolasIdle",
+        "walk": "CompanionClipNikolasWalk",
+        "run": "CompanionClipNikolasRun",
+        "cheer": "CompanionClipNikolasCheer",
+        "clap": "CompanionClipNikolasClap",
+        "dance_03": "CompanionClipNikolasDance03",
+        "dance_06": "CompanionClipNikolasDance06",
+        "bow": "CompanionClipNikolasBow"
+      },
+      "stage": "USER_SUPPLIED_LOCAL_ADAPTATION_PENDING_STUDIO_ACCEPTANCE",
+      "runtime_verified": false,
+      "uploads": 0,
+      "runtime_clip_sample_rate": 24
+    }
+  ],
+  "acceptance": {
+    "art_approval": false,
+    "phone": false,
+    "multiplayer": false,
+    "cloud_conflict": false,
+    "full_solo_route_replay": false
+  },
+  "source_files": [
+    "src/shared/CompanionCatalog.luau",
+    "src/shared/CompanionProgress.luau",
+    "src/server/CompanionService.luau",
+    "src/client/CompanionView.luau",
+    "src/client/CompanionFollower.luau",
+    "src/client/CompanionAnimation.luau"
+  ],
+  "notes": "Local prototype observations are recorded separately from asset-stage acceptance.",
+  "supplied_reference_pack": "assets/references/companions/provided-pack-v1/provenance.json",
+  "implementation_features": [
+    "optional selection",
+    "graduated hints",
+    "read-only sound notebook",
+    "saved-beat observations",
+    "place conversations",
+    "static local 3D character card"
+  ],
+  "visual_refresh": {
+    "date": "2026-10-28",
+    "source": "user-supplied Alisija.glb and niklass.glb",
+    "studio": "NOT_RUN",
+    "tests": "NOT_RUN"
+  },
+  "historical_local_prototype_observations": {
+    "scope": "One local Studio Play, supplied-pack continuation, 2026-10-26",
+    "local_import_prototype_observed": true,
+    "stage_promoted": false,
+    "observed": {
+      "default_alone": true,
+      "both_character_cards_load": true,
+      "notebook_page_navigation": true,
+      "two_line_place_conversation": true,
+      "discovery_page_fills_after_actual_tori_activity": true,
+      "unsaved_pattern_not_shown_as_saved": true,
+      "saved_two_step_metal_observation": true,
+      "four_step_quay_quest_remains_incomplete": true,
+      "portrait_models_after_close": 0,
+      "workspace_followers": 1,
+      "follower_parts": 15,
+      "follower_collision_touch_query": false,
+      "follower_sounds": 0,
+      "local_art_loaded": 67
+    },
+    "source_inspected_only": [
+      "string preference migration",
+      "gesture direction and deferred presentation",
+      "journal cache invalidation",
+      "async portrait disposal"
+    ],
+    "not_run": [
+      "physical phone/tablet/gamepad",
+      "independent multiplayer clients",
+      "cloud save conflicts and rejoin",
+      "full Q00-Q12/concert route",
+      "facial animation",
+      "final art approval"
+    ],
+    "existing_warning": "rbxassetid://203785492 asset type mismatch, unchanged; no new companion errors observed",
+    "new_tests_added_or_run": false,
+    "uploads": 0,
+    "provider_spend": 0
+  },
+  "source_budget_review": {
+    "authored_lod0_target": 4500,
+    "original_geometry_preserved": true,
+    "target_met": false,
+    "note": "Supplied models intentionally retained at original 10295 and 10968 triangles; no unapproved visual reduction. LOD and device performance acceptance pending."
+  },
+  "animation_refresh": {
+    "date": "2026-10-29",
+    "exporter": "tools/export_companion_clips.py",
+    "mutable_mesh_builders": "serialized",
+    "runtime_verification": "NOT_RUN"
+  }
+}

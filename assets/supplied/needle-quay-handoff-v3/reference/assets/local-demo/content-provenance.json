@@ -1,0 +1,1652 @@
+[
+  {
+    "source": "assets/production/audio/kick.wav",
+    "file": "audio/kick.wav",
+    "sha256": "4c8dc34846bc857a953bd176edca6567dbd73207abd34c9c2cd4d2056913e767"
+  },
+  {
+    "source": "assets/production/audio/snare.wav",
+    "file": "audio/snare.wav",
+    "sha256": "53620a276a570a7cb9a9b0ed95cc6f1ce14bf11a4694248076d7eae8569033bc"
+  },
+  {
+    "source": "assets/production/audio/closed_hat.wav",
+    "file": "audio/closed_hat.wav",
+    "sha256": "a539eaa196c8d5aeff2e77a02df5ea1d773c5f14d0392caecde2bf0033332220"
+  },
+  {
+    "source": "assets/production/audio/open_hat.wav",
+    "file": "audio/open_hat.wav",
+    "sha256": "1bdb037bfcd91d7d2532c6c71124e35db3c47bdd6dce9c097ff58bb48317b98c"
+  },
+  {
+    "source": "assets/production/audio/clap.wav",
+    "file": "audio/clap.wav",
+    "sha256": "620957faffd6389e72e4bc4e03b74f6c94ab8a032d27ebcd8c285cefa033f0c5"
+  },
+  {
+    "source": "assets/production/audio/rim.wav",
+    "file": "audio/rim.wav",
+    "sha256": "4b4a2d4105cebcd011f984b3a1806cc827801736b9a2eca239d2ba4abfaba2eb"
+  },
+  {
+    "source": "assets/production/audio/low_tom.wav",
+    "file": "audio/low_tom.wav",
+    "sha256": "33b1cef1507f2c2fb9e4453123d016ff81ccb65343d4a53a6ecbde9e37c072f8"
+  },
+  {
+    "source": "assets/production/audio/high_tom.wav",
+    "file": "audio/high_tom.wav",
+    "sha256": "2309262b49825d700fcb3d54b0f0dbe17e8176a548b68b1e3755a8103639d4c8"
+  },
+  {
+    "source": "assets/production/audio/shaker.wav",
+    "file": "audio/shaker.wav",
+    "sha256": "da00eef741ed5a4ebc80a3ed5f4db9370ad66b4d58fd9ad60418d10ef4989f95"
+  },
+  {
+    "source": "assets/production/audio/tambourine.wav",
+    "file": "audio/tambourine.wav",
+    "sha256": "c31e99bf37c75aef00781775e53b5d07cc815319686b73e5ae51dd036f967646"
+  },
+  {
+    "source": "assets/production/audio/bell.wav",
+    "file": "audio/bell.wav",
+    "sha256": "c2325a94572ed15c0d5f1b74d5cdc77893a12881db21088a28595ab6a3f4eea7"
+  },
+  {
+    "source": "assets/production/audio/pluck.wav",
+    "file": "audio/pluck.wav",
+    "sha256": "a837797565703c867e415309134ea5f41b9eab06b0044a6092d7b50a85fc807a"
+  },
+  {
+    "source": "assets/production/audio/bass_c.wav",
+    "file": "audio/bass_c.wav",
+    "sha256": "61e4f3de0fd518d5f3184e9b7e7b40f574325279a929a1fd7e8348d0a58a8046"
+  },
+  {
+    "source": "assets/production/audio/bass_eb.wav",
+    "file": "audio/bass_eb.wav",
+    "sha256": "2f2263b10de934b8dafc499412665df6e0e924cedf784d63749fe062f17ea429"
+  },
+  {
+    "source": "assets/production/audio/bass_g.wav",
+    "file": "audio/bass_g.wav",
+    "sha256": "e39dcfa3ac5cf59d4d9c5a7f841a06ccc18300d63d74f5dc6b00b96acd3c3ac7"
+  },
+  {
+    "source": "assets/production/audio/chord.wav",
+    "file": "audio/chord.wav",
+    "sha256": "10098a7c6329b2926012e2947dfb772b1e8ca646d297d6c38b7084c5175cc0b3"
+  },
+  {
+    "source": "assets/production/audio/metal_hit.wav",
+    "file": "audio/metal_hit.wav",
+    "sha256": "c2f2b4b40d49116931cfe4566e8885d788e7a2b693a38053e90f9b3e907f89fe"
+  },
+  {
+    "source": "assets/production/audio/vent_thump.wav",
+    "file": "audio/vent_thump.wav",
+    "sha256": "b7f980ff73900f63497ed9054b914b1c5b8defacc7658552e158ad3ab657eb6e"
+  },
+  {
+    "source": "assets/production/audio/robot_chirp.wav",
+    "file": "audio/robot_chirp.wav",
+    "sha256": "ad587dd6e2ae8cb2f6145ea2a10fcb40cf35a31c2efff07e52a77ad9bc9381bc"
+  },
+  {
+    "source": "assets/production/audio/ui_tap.wav",
+    "file": "audio/ui_tap.wav",
+    "sha256": "280de6747c8664c8b1317ec4ee13f7f4abcfb676aed8fbbdbab8f112a2df866b"
+  },
+  {
+    "source": "assets/production/audio/ui_collect.wav",
+    "file": "audio/ui_collect.wav",
+    "sha256": "6d8557d07d1351ed32f1b1cf40b6e89fdd2039a9fcd6f3193c0438e555cc2bc1"
+  },
+  {
+    "source": "assets/production/audio/ui_save.wav",
+    "file": "audio/ui_save.wav",
+    "sha256": "2d866485005c6070e8acadd63ccfe65642a17c4e29037d7bdaa3f5dfc52a26da"
+  },
+  {
+    "source": "assets/production/audio/ui_error.wav",
+    "file": "audio/ui_error.wav",
+    "sha256": "258bb16773360140308aef47d37cbeaf6587d1f52d9c3a63133737b4ec9eb8a7"
+  },
+  {
+    "source": "assets/production/audio/waterfront.wav",
+    "file": "audio/waterfront.wav",
+    "sha256": "74f7ecb9e28dbfe8662c97a620cc78dbe9c41faaa0b49decf06385eeeaceb4b0"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/triphop/samples/01_drum.wav",
+    "file": "audio/style.triphop.01.wav",
+    "sha256": "85da707c8ad52033318df2016a285af96e7ea62c75c16367495a5c53466b3009"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/triphop/samples/02_drum.wav",
+    "file": "audio/style.triphop.02.wav",
+    "sha256": "73cc87759a764724bbc5713c621e2813677d5f70f48f55e2ac99224b7174ea3a"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/triphop/samples/03_drum.wav",
+    "file": "audio/style.triphop.03.wav",
+    "sha256": "126f1ffd04617fea31adcd3817f77e476caa44d9771c63e48ba8cd8a268c78c8"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/triphop/samples/04_drum.wav",
+    "file": "audio/style.triphop.04.wav",
+    "sha256": "ead545cb75be54aea718b23aeb874eb6c2cdcca63c6f95f72d677586c9cb4179"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/triphop/samples/05_drum.wav",
+    "file": "audio/style.triphop.05.wav",
+    "sha256": "6c98609f70aa19e328ed6228535b0ee8386396c94489f3b0b2923d5ae201212d"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/triphop/samples/06_drum.wav",
+    "file": "audio/style.triphop.06.wav",
+    "sha256": "d8904ca74e6273f60724c0e9ad87214517981dae438f2797cef7d4d038bd3f7c"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/triphop/samples/07_drum.wav",
+    "file": "audio/style.triphop.07.wav",
+    "sha256": "57cdfc861a10a04a44591802146a7ea2931acefc358f06169d7311e718c9ca5c"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/triphop/samples/08_drum.wav",
+    "file": "audio/style.triphop.08.wav",
+    "sha256": "cffae31ab361f62fb410d291ca4028f2b28ef6680cccf6059b8b0821ac58044f"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/triphop/samples/09_guitar.wav",
+    "file": "audio/style.triphop.09.wav",
+    "sha256": "3c7874bd0a48c51ab9cb8fc4cbc262fd79b317e599294399c7d585abdebd3e9d"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/triphop/samples/10_guitar.wav",
+    "file": "audio/style.triphop.10.wav",
+    "sha256": "8145b4cefb065d84da9aea6b2b73cb93bfd2ef26b6a376a924180c187347ee19"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/triphop/samples/11_guitar.wav",
+    "file": "audio/style.triphop.11.wav",
+    "sha256": "a59dc535df8cbd3356bbf2b06bda1418a4547ac3121f9cba559d0ae452a76bec"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/triphop/samples/12_guitar.wav",
+    "file": "audio/style.triphop.12.wav",
+    "sha256": "3339a73888ecc4e04d35b7cd096b37941030a65815b9bf06abadfba50968e23b"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/triphop/samples/13_keys.wav",
+    "file": "audio/style.triphop.13.wav",
+    "sha256": "11d14566e84b6e2b39cac631e2ea4b1b64f50c29a9678e4f311678da53376555"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/triphop/samples/14_keys.wav",
+    "file": "audio/style.triphop.14.wav",
+    "sha256": "5417f2ededc188f1e40577a89f85f707eaa13fa68b9d82707a70ad521e90ceb9"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/triphop/samples/15_keys.wav",
+    "file": "audio/style.triphop.15.wav",
+    "sha256": "bf536764acbcc26c4a11f779f3d5e447158d0790270ef9efd213208cf965bc8d"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/triphop/samples/16_keys.wav",
+    "file": "audio/style.triphop.16.wav",
+    "sha256": "0ba06ebdae4c4d1a10746bd8251adfabaeebdc09d52176178f55ed4507a1f02c"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/dance/samples/01_kick.wav",
+    "file": "audio/style.dance.01.wav",
+    "sha256": "c1ded79c446a325453b25e11252b34b83efac5a3bd115f50fde486fbfc65b15b"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/dance/samples/02_kick.wav",
+    "file": "audio/style.dance.02.wav",
+    "sha256": "0c6105867429e8e666bdc69084fed20f0fa6485cd26f2cf9e2186a34dd7a0915"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/dance/samples/03_snare.wav",
+    "file": "audio/style.dance.03.wav",
+    "sha256": "5ad740f50d492c0bdf2fbea1d8486707b93cb1bd493e459babf94b152b7bce3c"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/dance/samples/04_snare.wav",
+    "file": "audio/style.dance.04.wav",
+    "sha256": "460d105b0f1cf2769c298e635ea2d7300cbba1525cc23dd1711bc226ed35dd2f"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/dance/samples/05_hat.wav",
+    "file": "audio/style.dance.05.wav",
+    "sha256": "7146e060e220ef19673095f48bc099e6d4968b59617b5430557a756ccc5f5c36"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/dance/samples/06_hat.wav",
+    "file": "audio/style.dance.06.wav",
+    "sha256": "8848b38812640fdbd9cc1d249da54d0a6d402feb2d23d9a69fcf1b00ce5a40e9"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/dance/samples/07_clap.wav",
+    "file": "audio/style.dance.07.wav",
+    "sha256": "a7971cbfdbce0f9b7fbaa39f1f91872e37aeebb789e3aef74cca9c36462b3a78"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/dance/samples/08_clap.wav",
+    "file": "audio/style.dance.08.wav",
+    "sha256": "a2f842eeb4c7e837da5a1d3eb13333dd721771cc1311440609013edad6eea354"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/dance/samples/09_bass.wav",
+    "file": "audio/style.dance.09.wav",
+    "sha256": "8da14d7a52739289f2cd6bf51a8238ad13802051fa9d99ac098029a00f12346d"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/dance/samples/10_bass.wav",
+    "file": "audio/style.dance.10.wav",
+    "sha256": "938779a07c4f87b0d92c2850190d65b350568b984ef341b20d4c59605eef30c1"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/dance/samples/11_keys.wav",
+    "file": "audio/style.dance.11.wav",
+    "sha256": "47e928ba48d2bb56f15d70d2f8629b1178e0e6eb75cf4946c9cc0639228b6657"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/dance/samples/12_keys.wav",
+    "file": "audio/style.dance.12.wav",
+    "sha256": "f8bd4fcf3d81b3c012e03527f68d929bcc38f9f266849ec33562749beca71912"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/dance/samples/13_keys.wav",
+    "file": "audio/style.dance.13.wav",
+    "sha256": "0e5b1731ffbd230f0df1b3c36b60829859793b39fd6c18c34b1f2255182d223e"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/dance/samples/14_keys.wav",
+    "file": "audio/style.dance.14.wav",
+    "sha256": "bff85b268ccca49d4ff3086ca5b71472a10280709aade14a5f0c726be0fb1f8a"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/dance/samples/15_fx.wav",
+    "file": "audio/style.dance.15.wav",
+    "sha256": "5b722dd545fc27b82defbefe28e65b3df08ddce0493f1cfac35a3120b353bec1"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/dance/samples/16_fx.wav",
+    "file": "audio/style.dance.16.wav",
+    "sha256": "a856d616b155e9e2355f845fe4609d7ea7113cb05a78a835df5ea5921d33edfa"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/grunge/samples/01_drum_cut.wav",
+    "file": "audio/style.grunge.01.wav",
+    "sha256": "8276e60f45635ee1314a3f35ad0c759885f479851250c7af7d0afca32dd39363"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/grunge/samples/02_drum_cut.wav",
+    "file": "audio/style.grunge.02.wav",
+    "sha256": "fade35d07ac38d5e2e38f87f5c76d515c2928faaa9b4004618ca575dc6e10adc"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/grunge/samples/03_drum_cut.wav",
+    "file": "audio/style.grunge.03.wav",
+    "sha256": "e83b784fe066c350d2759f23b74b5086e544feed50e04bb20efbbd5a87e6afc8"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/grunge/samples/04_drum_cut.wav",
+    "file": "audio/style.grunge.04.wav",
+    "sha256": "ef42e27bfb2e1d855d681fd4ff0b5c7768e0000a56848edf575e868d435432de"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/grunge/samples/05_percussion_cut.wav",
+    "file": "audio/style.grunge.05.wav",
+    "sha256": "eb4bdf486feb097ce400d7eecacaa384446e83b9e959ed2d632e77551fd43243"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/grunge/samples/06_percussion_cut.wav",
+    "file": "audio/style.grunge.06.wav",
+    "sha256": "72ecbd5a7349a024fd20646cdd127d53a032f6326173f95e7c856ba28006d354"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/grunge/samples/07_guitar.wav",
+    "file": "audio/style.grunge.07.wav",
+    "sha256": "d5245eee1a207a3b3439c78026ede3d6fc817aa053abc0a20963a22a49734f9b"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/grunge/samples/08_guitar.wav",
+    "file": "audio/style.grunge.08.wav",
+    "sha256": "e5eb2bbdd29595e162f40e80f6bad641e4e784e7e9725a735d77096365d7954a"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/grunge/samples/09_guitar.wav",
+    "file": "audio/style.grunge.09.wav",
+    "sha256": "c4da7dab820f7c433a6f2ecdf0538b3817b644249f1ac4077db45ee5992d6eeb"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/grunge/samples/10_guitar.wav",
+    "file": "audio/style.grunge.10.wav",
+    "sha256": "fd922534996b549637828e131fc0e1ddc794bdd35f065150709a36d91ae2168c"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/grunge/samples/11_organ.wav",
+    "file": "audio/style.grunge.11.wav",
+    "sha256": "42c44880a198dee8c306954215644bf592955b7a01d0d274d48a90931750f1a6"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/grunge/samples/12_organ.wav",
+    "file": "audio/style.grunge.12.wav",
+    "sha256": "a969d8aeb3ded45e9d903e5a6a1e4460ffffa524779d617eeeb6741726990d0d"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/grunge/samples/13_organ.wav",
+    "file": "audio/style.grunge.13.wav",
+    "sha256": "d8599626550aef1093ab05f60e788717f5c59dbb9d0971300bd5f7b68034a10d"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/grunge/samples/14_organ.wav",
+    "file": "audio/style.grunge.14.wav",
+    "sha256": "b1871771d32e15a944b1679cdc1016eb3e9a1b8d28cbf12839ba9307f1fa6d2d"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/grunge/samples/15_strings.wav",
+    "file": "audio/style.grunge.15.wav",
+    "sha256": "b40b033b582c66db5f71eb3cc5e91f0beeb502daaccb75e0d2bcdd61e54319bd"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/grunge/samples/16_strings.wav",
+    "file": "audio/style.grunge.16.wav",
+    "sha256": "75b814821f54fc543c1b60afff2422b24ff301e8880863fd7cd25856740c67f6"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/hardtrance/samples/01_kick.wav",
+    "file": "audio/style.hardtrance.01.wav",
+    "sha256": "93fb8ffa60cb4368743c992c75cea521189ee07b2a69360409382670033e4d6d"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/hardtrance/samples/02_kick.wav",
+    "file": "audio/style.hardtrance.02.wav",
+    "sha256": "e9c94a8dc11fb460c30ad31be0a93b60449c565d738c35bc76a3f411307932ab"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/hardtrance/samples/03_snare.wav",
+    "file": "audio/style.hardtrance.03.wav",
+    "sha256": "1e01de1a4c4a12efddef0a388a710d08b3ea6d356da30c23c75873c17b10bc1a"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/hardtrance/samples/04_snare.wav",
+    "file": "audio/style.hardtrance.04.wav",
+    "sha256": "8778120a40585f19fde7885873b805a9f94ef90b38de2082fa55fbff3f265b28"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/hardtrance/samples/05_clap.wav",
+    "file": "audio/style.hardtrance.05.wav",
+    "sha256": "87b3233055de0d946c4f3246f91c46b275b4ea4c2fa2d9ad3271498c20a343b2"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/hardtrance/samples/06_percussion.wav",
+    "file": "audio/style.hardtrance.06.wav",
+    "sha256": "f4404af78e86cc54633b8801294e7cd043d4a439e52f3567d8317a98c80977a2"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/hardtrance/samples/07_percussion.wav",
+    "file": "audio/style.hardtrance.07.wav",
+    "sha256": "d067c57e44f4c12be0e3610678672780fe5621235056e3202ea4d5ac66f26992"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/hardtrance/samples/08_percussion.wav",
+    "file": "audio/style.hardtrance.08.wav",
+    "sha256": "c0a9901ae453386d54b973d6d5a3df099195562d8de407f61ef2ed20406a405b"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/hardtrance/samples/09_bass.wav",
+    "file": "audio/style.hardtrance.09.wav",
+    "sha256": "c110bb8ace8d0bb54469fbdd2db079b0ede6b6a1ab7f1b70da0af7a11ce56f70"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/hardtrance/samples/10_bass.wav",
+    "file": "audio/style.hardtrance.10.wav",
+    "sha256": "bc2ec90edef52be3dcba4d3587ba65c892fbd668c6c225dc40146187a1979b3f"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/hardtrance/samples/11_bass.wav",
+    "file": "audio/style.hardtrance.11.wav",
+    "sha256": "0d85a67451fa4994d10f826c7eb47e53975597613a5dbf0fea23067b5635c64e"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/hardtrance/samples/12_synth.wav",
+    "file": "audio/style.hardtrance.12.wav",
+    "sha256": "0c3ca3d298d7519203a036fdcf9dbfd9c71f5499d70814bf360953e1c720b8c2"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/hardtrance/samples/13_synth.wav",
+    "file": "audio/style.hardtrance.13.wav",
+    "sha256": "deface559a2225b028c862efdba16e069dfbd291d5fc4839bc9b7e46af62cc97"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/hardtrance/samples/14_synth.wav",
+    "file": "audio/style.hardtrance.14.wav",
+    "sha256": "02a462618ca3ede4cf7f6889eb6993dc83eb5041c3ae047c653cdaaacfe5f72a"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/hardtrance/samples/15_fx.wav",
+    "file": "audio/style.hardtrance.15.wav",
+    "sha256": "567c8f17d538ad783aa145b9ca832de7a64afbc2fd8ea58688998bb95f0d271d"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/hardtrance/samples/16_fx.wav",
+    "file": "audio/style.hardtrance.16.wav",
+    "sha256": "5c97ca1f338333f61c1341e1fcb9dd07daf338f76f8fa3341e2f45c9e64f0d12"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/hiphop/samples/01_drum.wav",
+    "file": "audio/style.hiphop.01.wav",
+    "sha256": "c72f06e09579a63ee8c14e95cdff7d6be2e11c330040bdaaa3881460ef511689"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/hiphop/samples/02_drum.wav",
+    "file": "audio/style.hiphop.02.wav",
+    "sha256": "b475bcfe7ac645e8efd964e7184d5af8ccfd27f11338c281d39cb627bd822dd2"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/hiphop/samples/03_drum.wav",
+    "file": "audio/style.hiphop.03.wav",
+    "sha256": "27e13792a375d885950c9bf4b96ab1c849b40cab965e9202c0e755ff5aeb1822"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/hiphop/samples/04_drum.wav",
+    "file": "audio/style.hiphop.04.wav",
+    "sha256": "6edfb6692fcc9b36ac28ed37e453623ddb1728e2dd7195f507eac59549f8141b"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/hiphop/samples/05_drum.wav",
+    "file": "audio/style.hiphop.05.wav",
+    "sha256": "07eb1883852254f316ad84d6c9aa93c9ef98d3dd7c008ee63c955be99e9a40bf"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/hiphop/samples/06_drum.wav",
+    "file": "audio/style.hiphop.06.wav",
+    "sha256": "96cfa551f34b37d2ff8fafe5323fd95d87499981aa787dd520ea35f4a2ab9631"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/hiphop/samples/07_drum.wav",
+    "file": "audio/style.hiphop.07.wav",
+    "sha256": "1a400501f29e53a5cb8746c08092836df8bd0f2827fdbcbd76ca261a43476002"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/hiphop/samples/08_drum.wav",
+    "file": "audio/style.hiphop.08.wav",
+    "sha256": "d69d98ca6b8aa9bf126710e42581ca52c9317d20fbe990d2df70ab7faa6d515f"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/hiphop/samples/09_bass.wav",
+    "file": "audio/style.hiphop.09.wav",
+    "sha256": "2163ff35cfd9ad91fcfa9572ad27dacd8d8e013420619bbc51182f2f83e75b4d"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/hiphop/samples/10_bass.wav",
+    "file": "audio/style.hiphop.10.wav",
+    "sha256": "ef2ca35a8f8f172dc0884050a2b2796e726193b6272dee420f896e75ff1fffe1"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/hiphop/samples/11_guitar.wav",
+    "file": "audio/style.hiphop.11.wav",
+    "sha256": "e608dc49e8665a43a46a861982b9113518b89717146aabc7d5ef3f26c4869fbe"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/hiphop/samples/12_guitar.wav",
+    "file": "audio/style.hiphop.12.wav",
+    "sha256": "34d4c890618a925ecd32668f7d732916617afb4f62426b79f480ab573d22ae85"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/hiphop/samples/13_keys.wav",
+    "file": "audio/style.hiphop.13.wav",
+    "sha256": "706819d89260e76f554430663379ef41ec5786e61b40dc60209359e848748da8"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/hiphop/samples/14_keys.wav",
+    "file": "audio/style.hiphop.14.wav",
+    "sha256": "fedd1fa8c6184776d80af71b833b1c6f41675034d669a2481e708a7394fc15f5"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/hiphop/samples/15_fx.wav",
+    "file": "audio/style.hiphop.15.wav",
+    "sha256": "8386f07f9baa79c15741df83a977cecf059fe62337e7c461b44b91a8d4bd6769"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/hiphop/samples/16_fx.wav",
+    "file": "audio/style.hiphop.16.wav",
+    "sha256": "b031a2bc915759b6678c65e3798ecb8414d48cf6d75aaad4f17abb5bc073b3b5"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/industrial/samples/01_snare.wav",
+    "file": "audio/style.industrial.01.wav",
+    "sha256": "4579d64f443872a1dc1d9311d4d96c48a70d6b106ba8781df9135d650030a178"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/industrial/samples/02_snare.wav",
+    "file": "audio/style.industrial.02.wav",
+    "sha256": "30a6fa0c8324bb64eb71383545eac1695108acb96c8b8fbbb792c24272c8fa92"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/industrial/samples/03_snare.wav",
+    "file": "audio/style.industrial.03.wav",
+    "sha256": "18ee5b8be2ce2cd28cc501300473a1c9f16effdd3ba60f5eab405675c3429df7"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/industrial/samples/04_snare.wav",
+    "file": "audio/style.industrial.04.wav",
+    "sha256": "4e4f21d5cd141a5272b7e23eb3fac0bee3c94cc63381a558e81763c08718d7de"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/industrial/samples/05_tom.wav",
+    "file": "audio/style.industrial.05.wav",
+    "sha256": "773df743c3044966c1cc92868e6ec0f1ae307608a6e44c341dcaa8344dc0a2d0"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/industrial/samples/06_tom.wav",
+    "file": "audio/style.industrial.06.wav",
+    "sha256": "5f8661bedd4915be0e9be1f5d9404f78e9706854b1db767f173a807e8e12f773"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/industrial/samples/07_fx.wav",
+    "file": "audio/style.industrial.07.wav",
+    "sha256": "ebe984d4c0eeab4f40a0a84892275ab7b239aa73a0052c6e0ef0c3dbdc8988f7"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/industrial/samples/08_fx.wav",
+    "file": "audio/style.industrial.08.wav",
+    "sha256": "819d2eeaeb39299f6e608fc56202e5a70ba20c8dda1e8dbe96ceccdb49ef14d1"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/industrial/samples/09_fx.wav",
+    "file": "audio/style.industrial.09.wav",
+    "sha256": "c5d40b855197fe3c5b5cec800d24b1bd839d26f5c263eca8bb634846321814ac"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/industrial/samples/10_fx.wav",
+    "file": "audio/style.industrial.10.wav",
+    "sha256": "af4a1450828498e6b7a28924ae418e2ec7ca2adef899add80d6c4b9e430e5b08"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/industrial/samples/11_synth.wav",
+    "file": "audio/style.industrial.11.wav",
+    "sha256": "1f622bd26892342ab2b63b140c4747ee2d8f579b296a1aa766569176b865b1a1"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/industrial/samples/12_synth.wav",
+    "file": "audio/style.industrial.12.wav",
+    "sha256": "aff7ef49e6379a52f76fcc96653505c9ea779668595095538f9a0cfbdafc24dd"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/industrial/samples/13_synth.wav",
+    "file": "audio/style.industrial.13.wav",
+    "sha256": "a5fe87aaaa918647786b374dc285156de69b78a49b6b061cf35c907baa7d83cc"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/industrial/samples/14_synth.wav",
+    "file": "audio/style.industrial.14.wav",
+    "sha256": "f9e422e8be66067ec24579b010ebc826e97822607e24e44f97422ed31a5bbf0f"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/industrial/samples/15_percussion_cut.wav",
+    "file": "audio/style.industrial.15.wav",
+    "sha256": "3fcf9ac1ff8967091d7cd405b12c927228a7ed40cd80415f4f60cce0b1742cc9"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/industrial/samples/16_percussion_cut.wav",
+    "file": "audio/style.industrial.16.wav",
+    "sha256": "74a0efdcf7c112632728d0719d72cb63a906004a8adde4c9769701aac226f4d3"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/pop/samples/01_percussion.wav",
+    "file": "audio/style.pop.01.wav",
+    "sha256": "ac84655e482ed28665f60bb5ac1cd5a754e2916e5a17ff3a2df1d25ccd7d422e"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/pop/samples/02_percussion.wav",
+    "file": "audio/style.pop.02.wav",
+    "sha256": "45fafba917c7648ace93f8f34322ceb2315094d92889f538a74d6f76cfbc8938"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/pop/samples/03_percussion.wav",
+    "file": "audio/style.pop.03.wav",
+    "sha256": "4c23931a1d5f322579c9a7d97c510639a8c336b00eefa7705717ae3c739481f3"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/pop/samples/04_percussion.wav",
+    "file": "audio/style.pop.04.wav",
+    "sha256": "031a0560dae3b56a0d479034a4dc956e08d8e199922223dd54518987fb533061"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/pop/samples/05_percussion.wav",
+    "file": "audio/style.pop.05.wav",
+    "sha256": "467aeead8eabece0dd7c4db3cf067c1e7240a9391fc2050aa7b67e46b275da08"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/pop/samples/06_percussion.wav",
+    "file": "audio/style.pop.06.wav",
+    "sha256": "9afc4f91c12855fd6768fc3e588ea137a4f05656f091e159e8f15cb0a9559ab8"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/pop/samples/07_drum_cut.wav",
+    "file": "audio/style.pop.07.wav",
+    "sha256": "7df122e8540027d9584a0f4dc07f5d906bb12f745fd8ce7f49c26d152e307bb5"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/pop/samples/08_drum_cut.wav",
+    "file": "audio/style.pop.08.wav",
+    "sha256": "95f81d5d374a7754b91f4a80fd0c27c3053436a1db4fdde6e33c6af8060dfdc7"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/pop/samples/09_bass.wav",
+    "file": "audio/style.pop.09.wav",
+    "sha256": "52f24c6c9756763624a926780d05653d1a832d8eae9c2cfeeaff8bdc347dbab7"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/pop/samples/10_bass.wav",
+    "file": "audio/style.pop.10.wav",
+    "sha256": "af213ee56e8260064cca33215640332d36dd129e6e196586243f6d2f388b211e"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/pop/samples/11_guitar.wav",
+    "file": "audio/style.pop.11.wav",
+    "sha256": "42911c6a964f12edfcd3c2eb016061f9b0da17eff2a0d8f975069e7bd1269c54"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/pop/samples/12_guitar.wav",
+    "file": "audio/style.pop.12.wav",
+    "sha256": "aacd442e658a3149493049ce831cd6c481c4963848008e6cb3597db249c12ad1"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/pop/samples/13_piano.wav",
+    "file": "audio/style.pop.13.wav",
+    "sha256": "289754ac13a500fc16377e5233108c55a9f9b9e520ed1ae397a0efccf11c5483"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/pop/samples/14_piano.wav",
+    "file": "audio/style.pop.14.wav",
+    "sha256": "60aa903dedc1c6f4f9739cb6606afa1a22d2782f496873a2ba0db7008af30102"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/pop/samples/15_piano.wav",
+    "file": "audio/style.pop.15.wav",
+    "sha256": "63778542ac04cad3ddb213ce899a27817394de3eb60969e98acee543a6af7001"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/pop/samples/16_piano.wav",
+    "file": "audio/style.pop.16.wav",
+    "sha256": "be30e9bd8be99df7981323ecd7cf7065062ed45a23190b4c7e0c32b5f7b454a4"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/reggae/samples/01_drum.wav",
+    "file": "audio/style.reggae.01.wav",
+    "sha256": "8fdd7724aa7d3dd0cfb3b6b401b7427f74e033e5e6a807e9cc3cec033263d931"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/reggae/samples/02_drum.wav",
+    "file": "audio/style.reggae.02.wav",
+    "sha256": "75359f5038980668bc640d3e252b56ab286b24c89c26907e640e3b3c29a188f3"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/reggae/samples/03_drum.wav",
+    "file": "audio/style.reggae.03.wav",
+    "sha256": "c2761ca29b8b08fbe86370f4acfe0cee149513030d1dc75daa61550f8506669b"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/reggae/samples/04_drum.wav",
+    "file": "audio/style.reggae.04.wav",
+    "sha256": "8d6612a0046dfbc710b898ed00e2f283befa018e8564d74949590f596ecd296a"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/reggae/samples/05_drum.wav",
+    "file": "audio/style.reggae.05.wav",
+    "sha256": "fc25fe347cfee4dc2db50164c771bb91f3f08f0222310a93ae3913ab006be340"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/reggae/samples/06_drum.wav",
+    "file": "audio/style.reggae.06.wav",
+    "sha256": "46eee838e226c75980985488a7408db8b29942bae4db1eba1c0d17abb2ae22cb"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/reggae/samples/07_percussion.wav",
+    "file": "audio/style.reggae.07.wav",
+    "sha256": "cd16cb8681416d4dfe561ce11bb9446f9bc487b4f62004398dfe61d6a6bebcc1"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/reggae/samples/08_percussion.wav",
+    "file": "audio/style.reggae.08.wav",
+    "sha256": "0a9ff6ca3b12c8e5b5948a483cfa8475cd2f44e389a2a212d6767bda44f088b2"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/reggae/samples/09_bass.wav",
+    "file": "audio/style.reggae.09.wav",
+    "sha256": "11beedfe489354020ea0e8c0341a41e435e860aba658be15c435c8f9e127ba75"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/reggae/samples/10_bass.wav",
+    "file": "audio/style.reggae.10.wav",
+    "sha256": "f6b5185a02a9de96e04930d5398ca284f7e590fed162defa1edeb8ed40103f23"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/reggae/samples/11_guitar.wav",
+    "file": "audio/style.reggae.11.wav",
+    "sha256": "8f2a40fac9dfb814c43b3213b80495e2545fadbe390e32f14e5eb53c76376053"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/reggae/samples/12_guitar.wav",
+    "file": "audio/style.reggae.12.wav",
+    "sha256": "5498c09ba1b774e2a1bb53cee824641e544448674dd1472cad135b38103703d6"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/reggae/samples/13_guitar.wav",
+    "file": "audio/style.reggae.13.wav",
+    "sha256": "ea7a2e9eafcf7defaf0feb26d03a3ae790d40e2a0cc46b510ca336c20bbca588"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/reggae/samples/14_guitar.wav",
+    "file": "audio/style.reggae.14.wav",
+    "sha256": "3c7a9b6c5052b62b716f7b1d9b24c6f37095d1fe5c173b580e72e8369f95cc93"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/reggae/samples/15_keys.wav",
+    "file": "audio/style.reggae.15.wav",
+    "sha256": "b49dbdb90b90da98e56b6759388a3abb66c82911a0a33e7c0ab3f63be6e4b32a"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/reggae/samples/16_keys.wav",
+    "file": "audio/style.reggae.16.wav",
+    "sha256": "5262c2141d0765fd9da510ae44bfdd43a2daafdf1d3b271f4083dc47c142e4f2"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/techno/samples/01_kick.wav",
+    "file": "audio/style.techno.01.wav",
+    "sha256": "cae53dd2b7a9a3a6e5f0a5432d8b6ce338cfe13fef45e0d44f76e36fc9a21c70"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/techno/samples/02_kick.wav",
+    "file": "audio/style.techno.02.wav",
+    "sha256": "333b2df95375d7af84fffb14b187b9e0555fd5ced1eddd793f3e7ed4d89a414c"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/techno/samples/03_snare.wav",
+    "file": "audio/style.techno.03.wav",
+    "sha256": "ce333e8c6be7a3e5eaf7fb36787461a611abf1fb6afe39710c321a19ba6ff7b7"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/techno/samples/04_snare.wav",
+    "file": "audio/style.techno.04.wav",
+    "sha256": "7d4a26d12860637c4878f95dd8747e65199fb8d061b03af354bd55e2d6dcd36f"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/techno/samples/05_hat.wav",
+    "file": "audio/style.techno.05.wav",
+    "sha256": "6c92aecf2acf6dfd33a0afe7f7682a9f1a3488915460cf2558599f8a545c51b0"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/techno/samples/06_hat.wav",
+    "file": "audio/style.techno.06.wav",
+    "sha256": "fae4f359ef6734a2f6842fe274a087b381ba30bed8164fd3aca3a89d221154ef"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/techno/samples/07_clap.wav",
+    "file": "audio/style.techno.07.wav",
+    "sha256": "f70ebfa357ceaff8d9d68299ab6e0d06761da43c609d3c4966fc02082afa50e0"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/techno/samples/08_clap.wav",
+    "file": "audio/style.techno.08.wav",
+    "sha256": "f9b86b48dafd84601fa5f0e92e8b49f81d2615958200300083e0474803c3309e"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/techno/samples/09_bass.wav",
+    "file": "audio/style.techno.09.wav",
+    "sha256": "06082ecb3f41d5331e64d04b82abb4a178301dcdb91583eb0a3c4d7b8d576e66"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/techno/samples/10_bass.wav",
+    "file": "audio/style.techno.10.wav",
+    "sha256": "e60ab75bfe20b5a63aa7bf5e0986a3dfce4256564b5a7675c843af0fa34a2619"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/techno/samples/11_keys.wav",
+    "file": "audio/style.techno.11.wav",
+    "sha256": "fff0aecd4f40321596b257eb6bc01556b17d15571a02a4cbfd640ad62d0eeb2f"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/techno/samples/12_keys.wav",
+    "file": "audio/style.techno.12.wav",
+    "sha256": "457d7634e9bd3e2c2cbbe545a0177d59f279691fb273cad38071d207a210f619"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/techno/samples/13_keys.wav",
+    "file": "audio/style.techno.13.wav",
+    "sha256": "7ad6c888a0e87d416aedbb09c1307c42e80ce4d5fe6505b8ebb837d1eb485cf6"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/techno/samples/14_keys.wav",
+    "file": "audio/style.techno.14.wav",
+    "sha256": "b7011ec483733c96de3562dcc8580024ae98ad278574dceb8ba6400959dd51f7"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/techno/samples/15_fx.wav",
+    "file": "audio/style.techno.15.wav",
+    "sha256": "963ae0afb3106ba8ddf7f9e617a5ab1bc0138207e51315cd8ae75724dc00faa6"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/techno/samples/16_fx.wav",
+    "file": "audio/style.techno.16.wav",
+    "sha256": "1c3966f5f6203cd0ac86e42b72961baf5e9835af914993cd7281e4c2c187230c"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/trance/samples/01_kick.wav",
+    "file": "audio/style.trance.01.wav",
+    "sha256": "608333b3f35b4d6828857ae2a163b326ca1174b12b453ae883ee932a8ecfcbad"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/trance/samples/02_kick.wav",
+    "file": "audio/style.trance.02.wav",
+    "sha256": "095e4b9ea53ffe70067562edffa8bf6ae328fa3228ab371ccbcb841c1e40717d"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/trance/samples/03_snare.wav",
+    "file": "audio/style.trance.03.wav",
+    "sha256": "a93a3e398e82cf119057572de4de1b347b2c28cac770c091d319afec51d2eb9a"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/trance/samples/04_snare.wav",
+    "file": "audio/style.trance.04.wav",
+    "sha256": "3127850a8208eac87d509bdc75aaebfa9aa536ede21973b90960bd50cc716baf"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/trance/samples/05_clap.wav",
+    "file": "audio/style.trance.05.wav",
+    "sha256": "9b3f5fbf0b43da6879c710bf2485bfaf1406b015f646d6e3af9911c3fee6ce15"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/trance/samples/06_clap.wav",
+    "file": "audio/style.trance.06.wav",
+    "sha256": "7794c9de69b0e96c4a98ca4964a408a3e12d15a5540b16eca6e57a21184d57a8"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/trance/samples/07_percussion.wav",
+    "file": "audio/style.trance.07.wav",
+    "sha256": "cc3f1dc28ed1018678d2a86a5c0a1ba25e49b54b028725b656ee6ac6d856f598"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/trance/samples/08_percussion.wav",
+    "file": "audio/style.trance.08.wav",
+    "sha256": "6534e01fac77f39cf3cfb243356ab9f0f80cc4cb3dc04120cdbdf9f503a30ed5"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/trance/samples/09_bass.wav",
+    "file": "audio/style.trance.09.wav",
+    "sha256": "c580fff1b818e5335f5bd869d59e60ecc010e525fdbf05752e2ae84b6b6b3b97"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/trance/samples/10_bass.wav",
+    "file": "audio/style.trance.10.wav",
+    "sha256": "7ecd77b32c1d83b52a3cf718dd403af352585058f35fa8f2918c7596766d81f2"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/trance/samples/11_synth.wav",
+    "file": "audio/style.trance.11.wav",
+    "sha256": "78a24e24a36369abd1ebf5c2035528c879a1ee7467cbc480ba12846ff09afd48"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/trance/samples/12_synth.wav",
+    "file": "audio/style.trance.12.wav",
+    "sha256": "72397e9b055b620f0df4ddadccb0e7d0eb98db456436a625f6118c6b12dcb61e"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/trance/samples/13_synth.wav",
+    "file": "audio/style.trance.13.wav",
+    "sha256": "4d3a7b4ede116fe3fa4fe1c2a7ea2173608dcb0f20ab86029cac412a3e42f492"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/trance/samples/14_synth.wav",
+    "file": "audio/style.trance.14.wav",
+    "sha256": "d0160719f36b4fd6aaccfd6b1e34ffaf2017dbdb0bb50551703931f742ce89bd"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/trance/samples/15_fx.wav",
+    "file": "audio/style.trance.15.wav",
+    "sha256": "036e66ce864b2aeb3cfc3bed00e1ab8aa66527c12b7ded3c1b20a887b37c3a8d"
+  },
+  {
+    "source": "assets/candidates/audio/style-starters-v1/trance/samples/16_fx.wav",
+    "file": "audio/style.trance.16.wav",
+    "sha256": "e808e365df3c703d3bed9deb0441ac0b8e1aa155f5af4fcdb96aa98d292bf64c"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/GRA-01.png",
+    "file": "graphics/GRA-01.png",
+    "sha256": "77767e6dbbc32265cbdaca3460a8334f744c5476a013698a6be5ca1ec86c89fc"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/GRA-02.png",
+    "file": "graphics/GRA-02.png",
+    "sha256": "ba1773664601daa26162e1d7fbad7048cfc972c6e169d0d2200ab083ec5b000c"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/GRA-03.png",
+    "file": "graphics/GRA-03.png",
+    "sha256": "8802fe8fd3e9669f4aef140bb51f5bf0b78ca3e0ee00cb1285f836423e2f7115"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/GRA-04.png",
+    "file": "graphics/GRA-04.png",
+    "sha256": "0b19d4d335a1aafe87284c82ac46536435e1bf02d38b959cbf4fea4818950236"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/GRA-05.png",
+    "file": "graphics/GRA-05.png",
+    "sha256": "ad034509d5bbcd3f1494e71450aec94c35f6bea336ba86b25b7c5fe069cfd615"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/GRA-06.png",
+    "file": "graphics/GRA-06.png",
+    "sha256": "df366aa41be8ec0b2a380a19577be0a11b86ef9ae08c9bbf786d811ad142f967"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/GRA-07.png",
+    "file": "graphics/GRA-07.png",
+    "sha256": "06384ad80b5a69efa2c529dc227022a3a35ec6ca26a8a6eda53d4829f8619478"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/GRA-08.png",
+    "file": "graphics/GRA-08.png",
+    "sha256": "43f157f17def45884fc94a185014885ad2c6f3616c6438db21e9cd953613c943"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/GRA-09.png",
+    "file": "graphics/GRA-09.png",
+    "sha256": "160041e3636d06b9a3570c4e01c66603876949233cdbb624d45565015d4cc4df"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/GRA-10.png",
+    "file": "graphics/GRA-10.png",
+    "sha256": "e9fd466490684ffce030cd3e6d4be9941a969dfc47d336d17cd3362e0c2535f3"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/NQ-COMMUNITY-01.png",
+    "file": "graphics/NQ-COMMUNITY-01.png",
+    "sha256": "eecdb1dcfb1d060840f5ebd56e99e516def2bcd44b16e939c636048da2bb9a0a"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/NQ-COMMUNITY-02.png",
+    "file": "graphics/NQ-COMMUNITY-02.png",
+    "sha256": "9d2fe3e60f867717c53d07cd014fe0f495e09d956dbd564228dc4ab4071a5466"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/NQ-COMMUNITY-03.png",
+    "file": "graphics/NQ-COMMUNITY-03.png",
+    "sha256": "748d27d323f0288005c658e53097f9af06f947db2b7d642e092c71f1e9d1c1cd"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/NQ-COMMUNITY-04.png",
+    "file": "graphics/NQ-COMMUNITY-04.png",
+    "sha256": "f0708459f17032b6d094f492ceef4111522c9a2302e81bbd899c6b6f67952e64"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/NQ-DOCK-01.png",
+    "file": "graphics/NQ-DOCK-01.png",
+    "sha256": "09536ea04fd97931a6340cc444a54261bbf47d18c13b21dfe6f2000036d313f7"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/NQ-DOCK-02.png",
+    "file": "graphics/NQ-DOCK-02.png",
+    "sha256": "8333c807ff88373cf8bae64ef5680df70f6f34caeef41cc1fbd12e0082abbff7"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/NQ-DOCK-03.png",
+    "file": "graphics/NQ-DOCK-03.png",
+    "sha256": "b18b88e9d730cfb019925043e8b4640183421a269fb9b55a04c1f49b8fc75c62"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/NQ-DOCK-04.png",
+    "file": "graphics/NQ-DOCK-04.png",
+    "sha256": "8328fe71650cb014b04fd5336aed776c1bc76ed09ebde472d199dfb6900ae9e6"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/NQ-DOCK-05.png",
+    "file": "graphics/NQ-DOCK-05.png",
+    "sha256": "c346a1a1a473c9e582250b40a021641b99bcd25450db6412ec86aa4f1cf144a2"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/NQ-DOCK-06.png",
+    "file": "graphics/NQ-DOCK-06.png",
+    "sha256": "48e4484b0c6588272715864c2d12528bda196ebff60e055d3a54cdc4520c2a92"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/NQ-MUSIC-01.png",
+    "file": "graphics/NQ-MUSIC-01.png",
+    "sha256": "3a2041031b5d93153a92fda8639cddaaee1ee4c150a3933d69a12b7211ad27a8"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/NQ-MUSIC-02.png",
+    "file": "graphics/NQ-MUSIC-02.png",
+    "sha256": "dedf3cb4933a08713b2bf6e17383871f70d8b9dc04eef055f49233ad4c664ecf"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/NQ-MUSIC-03.png",
+    "file": "graphics/NQ-MUSIC-03.png",
+    "sha256": "a779046afac6faeba862227c5cd4980a5e7e40f83f0d3322fa2f525e91abb341"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/NQ-MUSIC-04.png",
+    "file": "graphics/NQ-MUSIC-04.png",
+    "sha256": "4fe5e9e0c322f58ae3c514bcd6566a68563674339d546d1ce8aa222a5d9a720f"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/NQ-MUSIC-05.png",
+    "file": "graphics/NQ-MUSIC-05.png",
+    "sha256": "423c50a05aa5a4bf6ecb548d9083c69e5d84cb5aa9fb983671336820e1e179fc"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/NQ-SGN-01.png",
+    "file": "graphics/NQ-SGN-01.png",
+    "sha256": "7ab97b97253973207dd4571d4ac88ded3b2374a395c5bb4793f3d6b1d4214335"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/NQ-SGN-02.png",
+    "file": "graphics/NQ-SGN-02.png",
+    "sha256": "c70a1ad52203ebc0f021ce3a91f1b8f90f9960c46e8d98edbbbf3497d84f556b"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/NQ-SGN-03.png",
+    "file": "graphics/NQ-SGN-03.png",
+    "sha256": "c46a72395682c8a7d1ae2c4ee255c503bd0d3e19c6e4889ff3ba90cd4153d0a5"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/NQ-SGN-04.png",
+    "file": "graphics/NQ-SGN-04.png",
+    "sha256": "1e78e512a33d76066cbf220f7159c523bb6fc3e37bd4d91ef46fca2a9ea81e43"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/NQ-SGN-05.png",
+    "file": "graphics/NQ-SGN-05.png",
+    "sha256": "f44717abc58c86e8e596976b7639327e85b2c6869af9828f7950e8ca8da24abc"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/NQ-SGN-06.png",
+    "file": "graphics/NQ-SGN-06.png",
+    "sha256": "4dd981e846d6cde9353dcebb3cca82e489f8c604a246b90a01b8ae43f50633ac"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/NQ-SGN-07.png",
+    "file": "graphics/NQ-SGN-07.png",
+    "sha256": "3f58ffd7cddf3d13a832e6daec6361446da50d99ea43c6738f64c05551a6df94"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/NQ-SGN-08.png",
+    "file": "graphics/NQ-SGN-08.png",
+    "sha256": "5041d7729b0c3c6d878e537f06e00a9b9a7daffcc135cf553afb7823cca9f341"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/NQ-SGN-09.png",
+    "file": "graphics/NQ-SGN-09.png",
+    "sha256": "e0e362f0088f2e9898d704b9567ba82675c6a11b1ba6b469f767a8de7ef368f7"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/NQ-SGN-10.png",
+    "file": "graphics/NQ-SGN-10.png",
+    "sha256": "78ac95776927b9f6a066b60ebb4dccdd971bb3e02d8048ebcfd0dc12b652109b"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/NQ-SGN-11.png",
+    "file": "graphics/NQ-SGN-11.png",
+    "sha256": "5a38f9c7491bcf9176f188053eb583b628748b44167373dd868868a54f70d3a2"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/NQ-SGN-12.png",
+    "file": "graphics/NQ-SGN-12.png",
+    "sha256": "f995a31de7d3ba4c101ca6c93cd0d150870b5b19fdf878502517435ae1c6095c"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/NQ-SGN-13.png",
+    "file": "graphics/NQ-SGN-13.png",
+    "sha256": "97895230db47c531ae1f0baa21a2a46890165496fd7584f4cd22344591a1763e"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/NQ-SIGNAL-01.png",
+    "file": "graphics/NQ-SIGNAL-01.png",
+    "sha256": "88248788d46b7dc89ae71f71c6a3dd56a70743257da3be233ef5910e1b858cf3"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/NQ-SIGNAL-02.png",
+    "file": "graphics/NQ-SIGNAL-02.png",
+    "sha256": "042217e6a225e35ce10ad84e3820846e5dc6a88e5f9c3b7a2276da9bf4538d03"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/NQ-SIGNAL-03.png",
+    "file": "graphics/NQ-SIGNAL-03.png",
+    "sha256": "d3d8452b57ad272e42b52f601c84918b3429b94d9607e68f9d03155f7a25dd38"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/NQ-SIGNAL-04.png",
+    "file": "graphics/NQ-SIGNAL-04.png",
+    "sha256": "cad4b5f9d1b269ebcd111bbd342a227d24772469214af562eb50e3b928a24d4d"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/NQ-WAY-01.png",
+    "file": "graphics/NQ-WAY-01.png",
+    "sha256": "019d84e1e970025637eb3594c70bf7c266b0b4c0707b13660e8a5343d9642e3f"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/NQ-WAY-02.png",
+    "file": "graphics/NQ-WAY-02.png",
+    "sha256": "014c713024f639bea8647a9295ab9c112883ad3eb8f5b7271d57de150a406550"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/NQ-WAY-03.png",
+    "file": "graphics/NQ-WAY-03.png",
+    "sha256": "22f36ca77a90761d0045d23955e910bb561c7971913c58d114aefe42cc915e0d"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/NQ-WAY-04.png",
+    "file": "graphics/NQ-WAY-04.png",
+    "sha256": "e2fba3f3561fdbc67025503226b1c49504a3c6cbbf670882a64978023159402e"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/NQ-WAY-05.png",
+    "file": "graphics/NQ-WAY-05.png",
+    "sha256": "d4c150ef559098991cbe22a6abbed70f347923fb606a3cd7ea319b25cf56a7da"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/NQ-WAY-06.png",
+    "file": "graphics/NQ-WAY-06.png",
+    "sha256": "f990af787bc16effd7374088662b9bbab2dbcbeb1940456eb39f2db2d5aa57e3"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/NQ-WORKSHOP-01.png",
+    "file": "graphics/NQ-WORKSHOP-01.png",
+    "sha256": "996a594b741bb098434f519db2092e46e67a21b367d68d88c8f78c93bfabcfb7"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/NQ-WORKSHOP-02.png",
+    "file": "graphics/NQ-WORKSHOP-02.png",
+    "sha256": "27739f5deecaa5ffc3a4e29997f7ddae4f1206c4dd8f7c2f7d31246a357e4e1a"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/NQ-WORKSHOP-03.png",
+    "file": "graphics/NQ-WORKSHOP-03.png",
+    "sha256": "5732eb7261d85cac155f25addcf496f48d43331bf094379bad739aacc91d06fa"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/NQ-WORKSHOP-04.png",
+    "file": "graphics/NQ-WORKSHOP-04.png",
+    "sha256": "9678d947bb9447378165b50bf01b630268f1a0569a37674728de93e7ceca7a00"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/NQ-WORKSHOP-05.png",
+    "file": "graphics/NQ-WORKSHOP-05.png",
+    "sha256": "02c61a09515e9879de5ee5fe7b92ede6d9bbd086d0aa3cfd0aa578c906aa20e8"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/POST-01-faded.png",
+    "file": "graphics/POST-01-faded.png",
+    "sha256": "fc02661fd5e81d36d4d956b44bf75c8e56ddcf879914d7b11a350f3fb9b95f28"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/POST-01.png",
+    "file": "graphics/POST-01.png",
+    "sha256": "b2115ff6ef2441b2759c4472a5c5a6c1751556ff7048c1b1e20026d8e4ca9175"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/POST-02-faded.png",
+    "file": "graphics/POST-02-faded.png",
+    "sha256": "8c6a5469b2ee84e085e9b8a0f75e2bb691e48a6683309fdee6aafc4416eb0579"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/POST-02.png",
+    "file": "graphics/POST-02.png",
+    "sha256": "427cff6c7cb7a14bdb0369c17d2647e0b439cb73bb13fade5c86ec8f07b9832c"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/POST-03-faded.png",
+    "file": "graphics/POST-03-faded.png",
+    "sha256": "547830c355251ead3c6cd850d5efb2573df242ec9f029fbc495ed50f849c3d71"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/POST-03.png",
+    "file": "graphics/POST-03.png",
+    "sha256": "776f991cc2aca227adf10e3ffcec7b38d0a48308de674c0494434312e42aaa81"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/POST-04-faded.png",
+    "file": "graphics/POST-04-faded.png",
+    "sha256": "77b70ec7e67804b4c7aee4b270ff903a0d9100b319a3add99c2e146b5e91d821"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/POST-04.png",
+    "file": "graphics/POST-04.png",
+    "sha256": "9a2657eacf069fb5950c2fc9ffa4270615f7310e9eecafa874e2009119878104"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/POST-05-faded.png",
+    "file": "graphics/POST-05-faded.png",
+    "sha256": "57853758af178c6f57ac6c6fa1eabdf6c52e31985a247536a708a49ad3f25ffe"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/POST-05.png",
+    "file": "graphics/POST-05.png",
+    "sha256": "b90c679ff209422706c7bd796f2bb4b1873bd11505ca1ed9df92584a1656592c"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/POST-06-faded.png",
+    "file": "graphics/POST-06-faded.png",
+    "sha256": "f6c86e7e79126fef8495ebdb21b7e2e1536947dbf683131280cc1198fe5c58ee"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/POST-06.png",
+    "file": "graphics/POST-06.png",
+    "sha256": "4cc7e69bd8379cb33af5395cbe16582a2ababb93074c399093172ac73182da09"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/POST-07-faded.png",
+    "file": "graphics/POST-07-faded.png",
+    "sha256": "5caf8d2dbb0f1cd1f6cd53abf5b61ed00bed8605159b2710d46f65db2946a81c"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/POST-07.png",
+    "file": "graphics/POST-07.png",
+    "sha256": "8c9381e45f95d39877fe38948cdeaa1a2723f646a6802c487acc54556c6dc8c7"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/POST-08-faded.png",
+    "file": "graphics/POST-08-faded.png",
+    "sha256": "b08169e131e0c1959ee1461d621b4e7e66bda3f332d57e251bbe819d8ba6cf50"
+  },
+  {
+    "source": "assets/production/needle-quay/graphics/POST-08.png",
+    "file": "graphics/POST-08.png",
+    "sha256": "fe9eec413a2c88123f619cf3e1ab9a135b50ca7c240aabf0c6a8e802ea5d8187"
+  },
+  {
+    "source": "assets/production/needle-quay/surface-tiles/brick_color.png",
+    "file": "materials/env_brick_color_fa90cb27ee05.png",
+    "sha256": "fa90cb27ee05ffe7f45959d27ad6f7464ada71a91e8e1e573a19861cca0a4524"
+  },
+  {
+    "source": "assets/production/needle-quay/surface-tiles/brick_normal.png",
+    "file": "materials/env_brick_normal_8bb779624613.png",
+    "sha256": "8bb779624613995ba5fa40899f19c42ebb15b9ddaa21ceb30ccbdc57e715a7cb"
+  },
+  {
+    "source": "assets/production/needle-quay/surface-tiles/brick_rough.png",
+    "file": "materials/env_brick_rough_0666bac802c9.png",
+    "sha256": "0666bac802c9aaa5c1d21f575235f5d175d6d44ad0424848551ec613a2eea21f"
+  },
+  {
+    "source": "assets/production/needle-quay/surface-tiles/canvas_color.png",
+    "file": "materials/env_canvas_color_48c90ffc4e3f.png",
+    "sha256": "48c90ffc4e3f1417c0e2b5b8da78aa4562696f1b8eec65b2959d20a9390cd301"
+  },
+  {
+    "source": "assets/production/needle-quay/surface-tiles/canvas_normal.png",
+    "file": "materials/env_canvas_normal_90459b7a0f33.png",
+    "sha256": "90459b7a0f33f618d6455be21e122ed95288326cee9d0778f65b960d101a09b2"
+  },
+  {
+    "source": "assets/production/needle-quay/surface-tiles/canvas_rough.png",
+    "file": "materials/env_canvas_rough_0d4fe9e5ec57.png",
+    "sha256": "0d4fe9e5ec576dbf6edad302b97bbd338b8148da088fd29a8a394d23fae90e62"
+  },
+  {
+    "source": "assets/production/needle-quay/surface-tiles/metal_color.png",
+    "file": "materials/env_metal_color_fdeeed165aed.png",
+    "sha256": "fdeeed165aed3c7d75a7eaa4a91c8a2b71eb8170017a65a42c56beccddc20f8d"
+  },
+  {
+    "source": "assets/production/needle-quay/surface-tiles/metal_normal.png",
+    "file": "materials/env_metal_normal_54d0e2b939b4.png",
+    "sha256": "54d0e2b939b467b55fbeca2899506231674c30ab04242c3941a4f21573eae6ef"
+  },
+  {
+    "source": "assets/production/needle-quay/surface-tiles/metal_rough.png",
+    "file": "materials/env_metal_rough_bb15859b7c31.png",
+    "sha256": "bb15859b7c311033aa133872a5c7ec51d2ee60a08bb7307fd69952d1626eec7b"
+  },
+  {
+    "source": "assets/production/needle-quay/surface-tiles/plaster_color.png",
+    "file": "materials/env_plaster_color_f342f36fd8fd.png",
+    "sha256": "f342f36fd8fdb65face22b74025244fd1299f246e9da2ea5c2cfa8d5a61119f5"
+  },
+  {
+    "source": "assets/production/needle-quay/surface-tiles/plaster_normal.png",
+    "file": "materials/env_plaster_normal_fb3b1173a956.png",
+    "sha256": "fb3b1173a956094cb8dc3585b756f17653e9974e1129c604ae8601c221823e1b"
+  },
+  {
+    "source": "assets/production/needle-quay/surface-tiles/plaster_rough.png",
+    "file": "materials/env_plaster_rough_8cb68d4004f9.png",
+    "sha256": "8cb68d4004f93f13df0ccf7dacbe8b51857c1428183f002b03fd9c38c1767080"
+  },
+  {
+    "source": "assets/production/needle-quay/surface-tiles/stone_color.png",
+    "file": "materials/env_stone_color_664914c7835a.png",
+    "sha256": "664914c7835adbc8f82401a67c5dfe252932f7321ef8988a865c311a11825510"
+  },
+  {
+    "source": "assets/production/needle-quay/surface-tiles/stone_normal.png",
+    "file": "materials/env_stone_normal_8aad3f5657a3.png",
+    "sha256": "8aad3f5657a3940cc76639abf9ed6201a0f77dcc73ee2cece5003cfa05dbafe4"
+  },
+  {
+    "source": "assets/production/needle-quay/surface-tiles/stone_rough.png",
+    "file": "materials/env_stone_rough_cbcd42d63dfa.png",
+    "sha256": "cbcd42d63dfa5da13ae41f6e62f60b940f4a7e9ab5d31006ce7438682a094185"
+  },
+  {
+    "source": "assets/production/needle-quay/surface-tiles/wood_color.png",
+    "file": "materials/env_wood_color_bbf988c41a23.png",
+    "sha256": "bbf988c41a2339b446d025b70e7d226beff2cce1c23e6ea1ec370058c9a85e00"
+  },
+  {
+    "source": "assets/production/needle-quay/surface-tiles/wood_normal.png",
+    "file": "materials/env_wood_normal_9f5d38305081.png",
+    "sha256": "9f5d38305081b365646ad95b3322314ca445de4f3ecd219cb04236dfbdd40b92"
+  },
+  {
+    "source": "assets/production/needle-quay/surface-tiles/wood_rough.png",
+    "file": "materials/env_wood_rough_42a602bd8a4e.png",
+    "sha256": "42a602bd8a4edbb1149dd358b13a35320124008c121ea32e21f1b9e012e8ce97"
+  },
+  {
+    "source": "assets/production/needle-quay/sky/bk.png",
+    "file": "sky/bk_440e1974e582.png",
+    "sha256": "440e1974e582b6818832e4be02243b1e596e497f063d817e8cf41e7294687a37"
+  },
+  {
+    "source": "assets/production/needle-quay/sky/dn.png",
+    "file": "sky/dn_3f106d1b9fcf.png",
+    "sha256": "3f106d1b9fcf485795b88a91277816ce7386bbb167d4d7831eec82179098fda5"
+  },
+  {
+    "source": "assets/production/needle-quay/sky/ft.png",
+    "file": "sky/ft_0bd800a0ef84.png",
+    "sha256": "0bd800a0ef8414694ce46562096d4df4a7b3df97dbbe88be0ab80e42fa83d83c"
+  },
+  {
+    "source": "assets/production/needle-quay/sky/lf.png",
+    "file": "sky/lf_e26e89d68307.png",
+    "sha256": "e26e89d683070397fd414ec9489a75cc57de9005d9d632c3ad487949b63b1b7a"
+  },
+  {
+    "source": "assets/production/needle-quay/sky/rt.png",
+    "file": "sky/rt_e2fd91b8b1ca.png",
+    "sha256": "e2fd91b8b1ca3704ec9a7bb9dc0d02548abd3b00d95bf321206ac152cbda95e5"
+  },
+  {
+    "source": "assets/production/needle-quay/sky/up.png",
+    "file": "sky/up_930c92334e42.png",
+    "sha256": "930c92334e429634b39925391619621114e3bc7ba54f85b9b2c1d3647f063723"
+  },
+  {
+    "source": "assets/production/needle-quay/character-maps/ivo_color.png",
+    "file": "materials/character_ivo_color_508db5669409.png",
+    "sha256": "508db566940905fef74d27ce29724d056feb6e9107b531763a99fc24a6dece35"
+  },
+  {
+    "source": "assets/production/needle-quay/character-maps/ivo_normal.png",
+    "file": "materials/character_ivo_normal_2729a833abf1.png",
+    "sha256": "2729a833abf1e5ba2badd159ca93be7daafacc80812afee038c3728334a51948"
+  },
+  {
+    "source": "assets/production/needle-quay/character-maps/ivo_rough.png",
+    "file": "materials/character_ivo_rough_8515f79df6ff.png",
+    "sha256": "8515f79df6ff2dc9b16bdb2909cdc5861b02a2d4374b50f831125f7a1881a9f5"
+  },
+  {
+    "source": "assets/production/needle-quay/character-maps/naya_color.png",
+    "file": "materials/character_naya_color_60dba329f19b.png",
+    "sha256": "60dba329f19b40f6e203776b57bdd03ac9af559da29cc93776492d9606837473"
+  },
+  {
+    "source": "assets/production/needle-quay/character-maps/naya_normal.png",
+    "file": "materials/character_naya_normal_860ca617fb0d.png",
+    "sha256": "860ca617fb0dd09ce63d65acfa279fef3c285f5b99b31d44580c2080273a7086"
+  },
+  {
+    "source": "assets/production/needle-quay/character-maps/naya_rough.png",
+    "file": "materials/character_naya_rough_d75de9f0bf55.png",
+    "sha256": "d75de9f0bf55ad740e63866e7d8dde750440571c15a9ffb76d614eead978a22f"
+  },
+  {
+    "source": "assets/production/needle-quay/character-maps/nell_color.png",
+    "file": "materials/character_nell_color_0b718b989ee7.png",
+    "sha256": "0b718b989ee775124d020d1a09d1811a027dfa0469e2da67c256efc87574db7f"
+  },
+  {
+    "source": "assets/production/needle-quay/character-maps/nell_normal.png",
+    "file": "materials/character_nell_normal_d552b369f761.png",
+    "sha256": "d552b369f7611866e9273b3f76177da38d15b2589f8eb8b16c2ce69014df0d6b"
+  },
+  {
+    "source": "assets/production/needle-quay/character-maps/nell_rough.png",
+    "file": "materials/character_nell_rough_8a72c4df33bb.png",
+    "sha256": "8a72c4df33bbb73c00c0ec22ecc9290014592775f13f0d6e0033c9a33d0a3a1a"
+  },
+  {
+    "source": "assets/production/needle-quay/character-maps/ronan_color.png",
+    "file": "materials/character_ronan_color_16e57eff2abf.png",
+    "sha256": "16e57eff2abf4539fe913316f98be65fc693664a37894995dff36717a8867e87"
+  },
+  {
+    "source": "assets/production/needle-quay/character-maps/ronan_normal.png",
+    "file": "materials/character_ronan_normal_12161eda2294.png",
+    "sha256": "12161eda229426cce56718460355061b9500b4c23393c7ae58e1519c887497b3"
+  },
+  {
+    "source": "assets/production/needle-quay/character-maps/ronan_rough.png",
+    "file": "materials/character_ronan_rough_c1f08c6a6578.png",
+    "sha256": "c1f08c6a65787a725df9127b38f840689fa185a0ace0c20def29b325f9fe210d"
+  },
+  {
+    "source": "assets/production/needle-quay/character-maps/sana_color.png",
+    "file": "materials/character_sana_color_e6d3a6452546.png",
+    "sha256": "e6d3a6452546b8f7aee9de2579db249b3f38d3d68b2e323fc5d762a6182767a5"
+  },
+  {
+    "source": "assets/production/needle-quay/character-maps/sana_normal.png",
+    "file": "materials/character_sana_normal_d552b369f761.png",
+    "sha256": "d552b369f7611866e9273b3f76177da38d15b2589f8eb8b16c2ce69014df0d6b"
+  },
+  {
+    "source": "assets/production/needle-quay/character-maps/sana_rough.png",
+    "file": "materials/character_sana_rough_8a72c4df33bb.png",
+    "sha256": "8a72c4df33bbb73c00c0ec22ecc9290014592775f13f0d6e0033c9a33d0a3a1a"
+  },
+  {
+    "source": "assets/production/needle-quay/character-maps/tori_color.png",
+    "file": "materials/character_tori_color_9c08a8b4be36.png",
+    "sha256": "9c08a8b4be3657c192d889e35c16b4262874c59e8b2c966e7ad4a3056651bb3d"
+  },
+  {
+    "source": "assets/production/needle-quay/character-maps/tori_normal.png",
+    "file": "materials/character_tori_normal_c55a490945ff.png",
+    "sha256": "c55a490945ffc3f3152ceed20cdc622bd10dcafa04f695e0364eed44e7c96db9"
+  },
+  {
+    "source": "assets/production/needle-quay/character-maps/tori_rough.png",
+    "file": "materials/character_tori_rough_52c9e855ccbe.png",
+    "sha256": "52c9e855ccbed61b2e18b536a943c36b665ff2fbd71e500fec8038356369835b"
+  },
+  {
+    "source": "assets/production/needle-quay/user-model-maps/supplied_midi_0_color.png",
+    "file": "materials/supplied_midi_0_color_c94987420bc6.png",
+    "sha256": "c94987420bc67cd351caf38d79fc2cc3f6bbcd85537c91866f24f15c9758799f"
+  },
+  {
+    "source": "assets/production/needle-quay/user-model-maps/supplied_midi_4_color.png",
+    "file": "materials/supplied_midi_4_color_818bbc1ffe92.png",
+    "sha256": "818bbc1ffe9221379fc2d8702b432788d919e3d3471cbaf7b57996982c8de532"
+  },
+  {
+    "source": "assets/production/needle-quay/user-model-maps/supplied_radio_0_color.png",
+    "file": "materials/supplied_radio_0_color_a0db55e1e270.png",
+    "sha256": "a0db55e1e270046f03c88f1cf44e8df8181aacd8cc8a8b8697d70df1de59c6fe"
+  },
+  {
+    "source": "assets/production/needle-quay/user-model-maps/supplied_radio_1_color.png",
+    "file": "materials/supplied_radio_1_color_21b497e2cce8.png",
+    "sha256": "21b497e2cce84f9d18d963e4db6ee7a5eea647fff03f966f0d212d7d7547beea"
+  },
+  {
+    "source": "assets/production/needle-quay/user-model-maps/supplied_city_0_color.png",
+    "file": "materials/supplied_city_0_color_66574aee45fb.png",
+    "sha256": "66574aee45fb790be646cc5fc1c677c6a603797caed4b82a8bd4f4bb627f9b26"
+  },
+  {
+    "source": "assets/production/needle-quay/user-model-maps/supplied_furniture_0_color.png",
+    "file": "materials/supplied_furniture_0_color_c76a378e66b5.png",
+    "sha256": "c76a378e66b58dab3fd0cddc4207188ca331ee27029da030ef2a9315358201d6"
+  },
+  {
+    "source": "assets/production/needle-quay/user-model-maps/supplied_utility_0_color.png",
+    "file": "materials/supplied_utility_0_color_7f21c3c769e0.png",
+    "sha256": "7f21c3c769e0963dfa92af35b8c2449480553e618af5921a2a058e66f28e7546"
+  },
+  {
+    "source": "assets/production/needle-quay/user-model-maps/supplied_produce_0_color.png",
+    "file": "materials/supplied_produce_0_color_42930ed7e086.png",
+    "sha256": "42930ed7e086c5849ada6867807d8334b02a9045aa46fa9efd8e00d9cf46c8cb"
+  },
+  {
+    "source": "assets/production/needle-quay/user-model-maps/supplied_groceries_0_color.png",
+    "file": "materials/supplied_groceries_0_color_a87fef3b82c1.png",
+    "sha256": "a87fef3b82c13f4c167ef6031561eca778a0e384878932810ca1bd72b98e2875"
+  },
+  {
+    "source": "assets/production/needle-quay/user-model-maps/supplied_vinyl_0_color.png",
+    "file": "materials/supplied_vinyl_0_color_33243e5b37d6.png",
+    "sha256": "33243e5b37d66f895f38ed27b699695baf057ecb3008dd3ae67abc333e80d6a6"
+  },
+  {
+    "source": "assets/production/needle-quay/user-model-maps/supplied_shore_rock_0_color.png",
+    "file": "materials/supplied_shore_rock_0_color_5d487c894514.png",
+    "sha256": "5d487c894514ecc0f4fedc8ee518c01e351355f16363ac55af297bda7a905134"
+  },
+  {
+    "source": "assets/production/materials/sets/quay/atlas_basecolor_512.png",
+    "file": "materials/quay_512.png",
+    "sha256": "890720e2b19cf2d9d3f55a429d893d0c54493019b7cdb82bb4a3352fbe033009"
+  },
+  {
+    "source": "assets/production/materials/shared/atlas_roughness_512.png",
+    "file": "materials/roughness_512.png",
+    "sha256": "f7cbac79a62e6498f986591c071111710d8112b7dcbae338619552398411d277"
+  },
+  {
+    "source": "assets/production/materials/shared/atlas_metalness_512.png",
+    "file": "materials/metalness_512.png",
+    "sha256": "2f5537207895c626bad32a88d93038ebcf023221adede6d208d53ee80e7e0f22"
+  },
+  {
+    "source": "assets/production/materials/sets/quay/atlas_basecolor.png",
+    "file": "materials/quay_1024.png",
+    "sha256": "3a8c1c74de6a310628feb7aa2cbd1042de38c1d8905764dc1b4407717275da41"
+  },
+  {
+    "source": "assets/production/materials/shared/atlas_roughness.png",
+    "file": "materials/roughness_1024.png",
+    "sha256": "7752c9e4fb0cabccf33f0ba3d26d697b6c364531ca14ccf02934c2e922e3ba5b"
+  },
+  {
+    "source": "assets/production/materials/shared/atlas_metalness.png",
+    "file": "materials/metalness_1024.png",
+    "sha256": "d2f1433b85dd698ac2617204c24c5384ed45d0d583916fc70b4e73451cbb966d"
+  },
+  {
+    "source": "assets/production/materials/sets/chalk/atlas_basecolor_512.png",
+    "file": "materials/chalk_512.png",
+    "sha256": "c184103aa2c001f8c26e18139535ff3ef909e4a662aff70c86e9f013a2db31b3"
+  },
+  {
+    "source": "assets/production/materials/shared/atlas_roughness_512.png",
+    "file": "materials/roughness_512.png",
+    "sha256": "f7cbac79a62e6498f986591c071111710d8112b7dcbae338619552398411d277"
+  },
+  {
+    "source": "assets/production/materials/shared/atlas_metalness_512.png",
+    "file": "materials/metalness_512.png",
+    "sha256": "2f5537207895c626bad32a88d93038ebcf023221adede6d208d53ee80e7e0f22"
+  },
+  {
+    "source": "assets/production/materials/sets/chalk/atlas_basecolor.png",
+    "file": "materials/chalk_1024.png",
+    "sha256": "ca807fa10ed5f6e8abb1241fd5b7ed4caea4adbc12d3204394d01941c3a43b68"
+  },
+  {
+    "source": "assets/production/materials/shared/atlas_roughness.png",
+    "file": "materials/roughness_1024.png",
+    "sha256": "7752c9e4fb0cabccf33f0ba3d26d697b6c364531ca14ccf02934c2e922e3ba5b"
+  },
+  {
+    "source": "assets/production/materials/shared/atlas_metalness.png",
+    "file": "materials/metalness_1024.png",
+    "sha256": "d2f1433b85dd698ac2617204c24c5384ed45d0d583916fc70b4e73451cbb966d"
+  },
+  {
+    "source": "assets/production/materials/sets/coral/atlas_basecolor_512.png",
+    "file": "materials/coral_512.png",
+    "sha256": "ce6d0f067b0403cc5f04f602cf31c0893232c041a40300a99f476dde968530a6"
+  },
+  {
+    "source": "assets/production/materials/shared/atlas_roughness_512.png",
+    "file": "materials/roughness_512.png",
+    "sha256": "f7cbac79a62e6498f986591c071111710d8112b7dcbae338619552398411d277"
+  },
+  {
+    "source": "assets/production/materials/shared/atlas_metalness_512.png",
+    "file": "materials/metalness_512.png",
+    "sha256": "2f5537207895c626bad32a88d93038ebcf023221adede6d208d53ee80e7e0f22"
+  },
+  {
+    "source": "assets/production/materials/sets/coral/atlas_basecolor.png",
+    "file": "materials/coral_1024.png",
+    "sha256": "c6bd4d35ad73253c9bda1698e01eb46a751031a17f1056b000d7896a934e6a25"
+  },
+  {
+    "source": "assets/production/materials/shared/atlas_roughness.png",
+    "file": "materials/roughness_1024.png",
+    "sha256": "7752c9e4fb0cabccf33f0ba3d26d697b6c364531ca14ccf02934c2e922e3ba5b"
+  },
+  {
+    "source": "assets/production/materials/shared/atlas_metalness.png",
+    "file": "materials/metalness_1024.png",
+    "sha256": "d2f1433b85dd698ac2617204c24c5384ed45d0d583916fc70b4e73451cbb966d"
+  },
+  {
+    "source": "assets/production/materials/sets/afterhours/atlas_basecolor_512.png",
+    "file": "materials/afterhours_512.png",
+    "sha256": "0e79de899c33175372e31fd9cc0b0605682852922571ecb25341ea2ded1b3a25"
+  },
+  {
+    "source": "assets/production/materials/shared/atlas_roughness_512.png",
+    "file": "materials/roughness_512.png",
+    "sha256": "f7cbac79a62e6498f986591c071111710d8112b7dcbae338619552398411d277"
+  },
+  {
+    "source": "assets/production/materials/shared/atlas_metalness_512.png",
+    "file": "materials/metalness_512.png",
+    "sha256": "2f5537207895c626bad32a88d93038ebcf023221adede6d208d53ee80e7e0f22"
+  },
+  {
+    "source": "assets/production/materials/sets/afterhours/atlas_basecolor.png",
+    "file": "materials/afterhours_1024.png",
+    "sha256": "cfdc17cc38ee09825e8e8fbc5b66c7f63ddb6c451ac25c9bcfa00bbabadd3c21"
+  },
+  {
+    "source": "assets/production/materials/shared/atlas_roughness.png",
+    "file": "materials/roughness_1024.png",
+    "sha256": "7752c9e4fb0cabccf33f0ba3d26d697b6c364531ca14ccf02934c2e922e3ba5b"
+  },
+  {
+    "source": "assets/production/materials/shared/atlas_metalness.png",
+    "file": "materials/metalness_1024.png",
+    "sha256": "d2f1433b85dd698ac2617204c24c5384ed45d0d583916fc70b4e73451cbb966d"
+  }
+]

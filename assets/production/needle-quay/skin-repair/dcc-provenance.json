@@ -1,0 +1,82 @@
+[
+  {
+    "id": "NQ-NPC-TORI",
+    "source": "assets/production/needle-quay/models/refined/NQ-NPC-TORI.blend",
+    "source_sha256": "37a06dc46ad3382f9f8f2a16251d4f61a29922a59d46c7c3729f1f2ac145d85b",
+    "output": "assets/production/needle-quay/skin-repair/NQ-NPC-TORI.blend",
+    "output_sha256": "18f85b767a49c2993f553383a208012a86c9e3049215dc39b4363b6472a70235",
+    "max_vertex_match_error": 8.68996085046092e-06,
+    "geometry_changed": false,
+    "art_approved": false
+  },
+  {
+    "id": "NQ-NPC-IVO",
+    "source": "assets/production/needle-quay/models/refined/NQ-NPC-IVO.blend",
+    "source_sha256": "0f1575b0d024887ad08587470d23b65862f2fff4a3be07f222bb0969e1f25b77",
+    "output": "assets/production/needle-quay/skin-repair/NQ-NPC-IVO.blend",
+    "output_sha256": "f27c6f20abd8ca4a034b6eaf471e31968530eda67c39ebc2ec4901e417451fae",
+    "max_vertex_match_error": 8.527631507604383e-06,
+    "geometry_changed": false,
+    "art_approved": false
+  },
+  {
+    "id": "NQ-NPC-NAYA",
+    "source": "assets/production/needle-quay/models/refined/NQ-NPC-NAYA.blend",
+    "source_sha256": "d50f0aeebfe08cb654e45e8ed9b596fc02881256f50152d6d5826a9ea4156746",
+    "output": "assets/production/needle-quay/skin-repair/NQ-NPC-NAYA.blend",
+    "output_sha256": "1412abc912c22d48be3b31402efbe42cb11aa15b9ce9e33b8586e3cac957a99a",
+    "max_vertex_match_error": 8.78375067259185e-06,
+    "geometry_changed": false,
+    "art_approved": false
+  },
+  {
+    "id": "NQ-NPC-SANA",
+    "source": "assets/production/needle-quay/models/refined/NQ-NPC-SANA.blend",
+    "source_sha256": "bddf5f701d4745f5dead08cf70ada45235d2122b860cbc103fb54e30aa62d97c",
+    "output": "assets/production/needle-quay/skin-repair/NQ-NPC-SANA.blend",
+    "output_sha256": "77af952d06c2c171b601cefed36b3e9334ab5f365e7aa1d070289fb34448a06d",
+    "max_vertex_match_error": 8.762807738094125e-06,
+    "geometry_changed": false,
+    "art_approved": false
+  },
+  {
+    "id": "NQ-NPC-RONAN",
+    "source": "assets/production/needle-quay/models/refined/NQ-NPC-RONAN.blend",
+    "source_sha256": "345190980c9b70fa26a6db93610503900ad76f9d59d68766bd06e7ea98e8b412",
+    "output": "assets/production/needle-quay/skin-repair/NQ-NPC-RONAN.blend",
+    "output_sha256": "0b3a6ee6271137cb450df90ce8247f1e5ef4a4e684831569a6cf7f9dff25970a",
+    "max_vertex_match_error": 9.122918527282309e-06,
+    "geometry_changed": false,
+    "art_approved": false
+  },
+  {
+    "id": "NQ-NPC-NELL",
+    "source": "assets/production/needle-quay/models/refined/NQ-NPC-NELL.blend",
+    "source_sha256": "dd572827261cceb228fcf4aeb733f609a42ce8c7c6c16692e3cb3aa1796a5549",
+    "output": "assets/production/needle-quay/skin-repair/NQ-NPC-NELL.blend",
+    "output_sha256": "be0ab068f300df0c6e864e2eb08357345461f215057eb209024c1839a94b0ae6",
+    "max_vertex_match_error": 8.485711077810265e-06,
+    "geometry_changed": false,
+    "art_approved": false
+  },
+  {
+    "id": "NQ-CMP-ALISSIA",
+    "source": "assets/production/needle-quay/companions/supplied/alissia.blend",
+    "source_sha256": "94969578a74e94b885b70f1fdf5e4e6ef0968fa153cc7602c5705c4974dfd28d",
+    "output": "assets/production/needle-quay/skin-repair/NQ-CMP-ALISSIA.blend",
+    "output_sha256": "0d68434cc9110b76c48b81fbd57f2ca7b27159fbe581b87afd0c5b0af88a7cd2",
+    "max_vertex_match_error": 9.143098395725247e-06,
+    "geometry_changed": false,
+    "art_approved": false
+  },
+  {
+    "id": "NQ-CMP-NIKOLAS",
+    "source": "assets/production/needle-quay/companions/supplied/nikolas.blend",
+    "source_sha256": "0635b6501a36cab83d236330417cfda0d9d334d9c9adfda5a852e2703ecddaf6",
+    "output": "assets/production/needle-quay/skin-repair/NQ-CMP-NIKOLAS.blend",
+    "output_sha256": "bdd04380d595f4dec25496917d07e9c49cf0a8beb5cebfcde0038f667f1c7038",
+    "max_vertex_match_error": 9.246122317563277e-06,
+    "geometry_changed": false,
+    "art_approved": false
+  }
+]

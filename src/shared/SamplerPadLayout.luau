@@ -1,6 +1,9 @@
 -- Canonical sampler mapping: Pad_01 is the far/top-left control, Pad_16 is
 -- the near/bottom-right control when viewed from above with the front at -Z.
 local SamplerPadLayout = {}
+-- Physical controls are independent of catalog order and audio admission.
+SamplerPadLayout.KeyboardKeys =
+    { "One", "Two", "Three", "Four", "Q", "W", "E", "R", "A", "S", "D", "F", "Z", "X", "C", "V" }
 
 local PAD_SIZE = 0.72
 local PAD_GAP = 0.13

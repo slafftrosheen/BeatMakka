@@ -138,23 +138,25 @@ Shared atlas reuse, 12 procedural material sources, new brick/brass finishes. Fi
 
 ## Quest/world contracts
 
+The musical evidence below follows the [v3 MPC workflow](../../assets/supplied/needle-quay-handoff-v3/MPC_WORKFLOW.md). Canonical quest IDs and earned history are preserved.
+
 | ID | Quest | NPC | Completion contract |
 | --- | --- | --- | --- |
-| NQ-Q00 | The Van Arrives | Mica | Interact with van tutorial anchor |
+| NQ-Q00 | The Van Arrives | Mica | Meet Tori or enter the owned Roamer instrument; no song required |
 | NQ-Q01 | Make Room for Music | Tori | Interact with three removable dock dressing targets |
-| NQ-Q02 | Rhythm in the Metal | Tori | Unlock I01 and author four active beat steps |
-| NQ-Q03 | First Dockside Jam | Tori | Accept performance invitation or skip without progression penalty |
+| NQ-Q02 | Rhythm in the Metal | Tori | Unlock I01; ready audible I01 notes at four distinct rhythmic tick positions in a named sequence across all 64 pads |
+| NQ-Q03 | First Dockside Jam | Tori | Share an owned saved sequence as a loop if wanted, or skip reward-neutrally; no Finished Song or audience required |
 | NQ-Q04 | The Vent Has a Pulse | Ivo | Repair P16 then unlock I02 |
-| NQ-Q05 | One Beat, Two Ways | Ivo | Save distinct A and B patterns |
-| NQ-Q06 | Records Remember | Naya | Match three authored record tags |
-| NQ-Q07 | Keep Your Sound | Naya | Persist composition in existing Beat Shelf contract |
+| NQ-Q05 | One Beat, Two Ways | Ivo | Successfully Save Sequence for two owned named sequences with musically distinct audible note/sound/timing content; names, IDs and unused pad edits are insufficient |
+| NQ-Q06 | Records Remember | Naya | Match three authored roles after approved preview_kick, preview_closed_hat and preview_pluck audio is available; preserve existing earned matches |
+| NQ-Q07 | Keep Your Sound | Naya | Successfully Save Draft containing at least one owned saved ready sequence reference; finishing the song is not required |
 | NQ-Q08 | Market Is Listening | Sana Bell | Clear performance nook without moving any of four stalls |
-| NQ-Q09 | Signal, Not Noise | Mica | Unlock I03 then submit matching rhythmic pattern |
+| NQ-Q09 | Signal, Not Noise | Mica | Unlock I03; explicitly select a teaching bar of the selected sequence; ready I03 notes exactly at relative ticks 0/960/1920/2880, ignoring unrelated bars and instruments |
 | NQ-Q10 | Light the Breakwater | Mica | Commit personal radio-restored flag |
-| NQ-Q11 | Open the Lantern Room | Ronan Wren | Complete Ronan conversation then stage-ready flag |
-| NQ-Q12 | The Quay Plays Again | Ronan Wren and residents | Advance six concert phases from personal server-owned completion events |
+| NQ-Q11 | Open the Lantern Room | Ronan Wren | Complete existing required neighbourhood milestones; select a successfully saved immutable Finished Song with ordered arrangement, two musically distinct sections and a collected sound layered with another part |
+| NQ-Q12 | The Quay Plays Again | Ronan Wren and residents | Server pins a ready saved FinishedSong id/revision and traverses from position 0 to schedule.completeAt including bounded 2-second audio tail; pause freezes position, stop/leave cancels incomplete traversal, no seek or audience requirement |
 
-[Geometry, sound, recovery, personal restoration and finale phase contracts](../../assets/production/needle-quay/quest-world-contracts.json). These are design contracts, not an executable accepted Q00–Q12 implementation.
+[Geometry, sound, recovery, personal restoration and finale contracts](../../assets/production/needle-quay/quest-world-contracts.json) project the canonical register unchanged. The six finale ideas are presentation cues only; completion follows the pinned Finished Song to its actual end. Runtime acceptance requires its own evidence.
 
 ## Integrity and sources
 

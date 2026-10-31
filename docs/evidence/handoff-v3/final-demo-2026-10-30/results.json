@@ -1,0 +1,699 @@
+{
+  "date": "2026-10-30",
+  "studioId": "f5e07968-4ebb-4618-8dd2-5dfd9f7d4af0",
+  "place": "output/needle-quay-demo/NeedleQuay-Final-v3.rbxlx",
+  "placeSha256": "3a09bed08e9c6a47a645ed27553fc452d4101008b12cca4ec2bd72837cb4e1e9",
+  "runtimeInterface": "Roblox Studio MCP",
+  "computerUse": false,
+  "freshBuild": {
+    "mpcServer": {
+      "audio": "Pending; synthetic readiness only used for isolated snapshot fixture",
+      "cloudWrites": 0,
+      "failures": 0,
+      "tests": 9,
+      "suite": "MPC Studio regression",
+      "results": {
+        "1": {
+          "name": "64 bank addresses and edits remain independent during playback",
+          "passed": true,
+          "detail": "A01/B01/C01/D01 events and settings retained; bank switch preserved epoch and anchor"
+        },
+        "2": {
+          "name": "fifth sequence, independent variation, multibar edits and undo/redo",
+          "passed": true,
+          "detail": "Five sequences; tick 7440 retained on bar two; variation and history independent"
+        },
+        "3": {
+          "name": "delayed recording preserves absolute identity and pinned dependencies",
+          "passed": true,
+          "detail": "Delayed B01 stayed B01 after bank D; velocity, request dedupe, stale epoch and pinned kit verified"
+        },
+        "4": {
+          "name": "Song Mode repeat edits preserve references and real tempo duration",
+          "passed": true,
+          "detail": "5 bars; 18 seconds at sequence tempos, 10 seconds at Song 120 BPM; step references stable"
+        },
+        "5": {
+          "name": "Song playback seeks by step, pins edits, ends and clears old queue",
+          "passed": true,
+          "detail": "Finite end and two-second tail; step audition and snapshot isolation verified"
+        },
+        "6": {
+          "name": "Play resumes the paused song instead of the selected sequence",
+          "passed": true,
+          "detail": "Paused song reference, snapshot and cursor retained across Play"
+        },
+        "7": {
+          "name": "saved revisions, failed storage, pending finish and immutable fixture capture",
+          "passed": true,
+          "detail": "Session save accepted, outage retained previous save; pending finish refused; synthetic snapshot stayed immutable"
+        },
+        "8": {
+          "name": "conversion retains arrangement and refuses multi-tempo flattening",
+          "passed": true,
+          "detail": "Single-tempo conversion created a 3-bar editable sequence; mixed-tempo source refused without truncation"
+        },
+        "9": {
+          "name": "four working patterns and all six shelf bundles survive migration",
+          "passed": true,
+          "detail": "4 working + 24 shelf sequences; muted notes, retired identities, tempos and raw preimages retained; retry idempotent"
+        }
+      }
+    },
+    "identity": {
+      "tests": 3,
+      "suite": "V3 identity and preservation",
+      "failures": 0,
+      "results": {
+        "1": {
+          "name": "Finite first-time ledger totals 575 XP and cannot mint replay XP",
+          "passed": true,
+          "detail": "210 Listener + 180 Beatmaker + 185 Neighbour; repeated reconciliation unchanged"
+        },
+        "2": {
+          "name": "Earned history grants canonical cosmetics without creating Finished Songs",
+          "passed": true,
+          "detail": "Earned title and accessories preserved; no premium ownership or phantom songs"
+        },
+        "3": {
+          "name": "Saved looks copy selections independently and enforce ownership",
+          "passed": true,
+          "detail": "Three independent presets; unavailable cosmetics and fourth preset rejected"
+        }
+      }
+    },
+    "clientSetup": {
+      "summary": {
+        "1": {
+          "bpm": 180,
+          "revision": 5,
+          "id": "song_10",
+          "duration": 4,
+          "totalBars": 3,
+          "name": "QA Harbour Song",
+          "steps": {
+            "1": {
+              "index": 1,
+              "repeats": 1,
+              "duration": 1.3333333333333333,
+              "sequenceId": "seq_3",
+              "stepId": "step_11",
+              "hasTempoMap": false,
+              "name": "QA Harbour Intro",
+              "effectiveBpm": 180,
+              "bars": 1,
+              "startBar": 1,
+              "startAt": 0
+            },
+            "2": {
+              "index": 2,
+              "repeats": 2,
+              "duration": 2.6666666666666665,
+              "sequenceId": "seq_5",
+              "stepId": "step_12",
+              "hasTempoMap": false,
+              "name": "QA Main",
+              "effectiveBpm": 180,
+              "bars": 1,
+              "startBar": 2,
+              "startAt": 1.3333333333333333
+            }
+          },
+          "tempoMode": "song",
+          "savedRevision": 5
+        }
+      },
+      "sequences": 5,
+      "draft": {
+        "bpm": 180,
+        "revision": 5,
+        "name": "QA Harbour Song",
+        "id": "song_10",
+        "steps": {
+          "1": {
+            "repeats": 1,
+            "sequenceId": "seq_3",
+            "stepId": "step_11"
+          },
+          "2": {
+            "repeats": 2,
+            "sequenceId": "seq_5",
+            "stepId": "step_12"
+          }
+        },
+        "tempoMode": "song",
+        "savedRevision": 5
+      },
+      "station": "Station_1",
+      "ready": true
+    },
+    "mpcUI": {
+      "tests": 3,
+      "suite": "MPC UI assertions",
+      "failures": 0,
+      "results": {
+        "1": {
+          "name": "Song page exposes live position and pause control",
+          "passed": true,
+          "detail": "Stopped / add sections, then play your song from the beginning."
+        },
+        "2": {
+          "name": "Arrangement step labels and controls use authored order",
+          "passed": true,
+          "detail": "Step headings stay paired with their controls"
+        },
+        "3": {
+          "name": "Bar and Song BPM fields reflect the selected objects",
+          "passed": true,
+          "detail": "Displayed values match server-owned selection"
+        }
+      }
+    },
+    "presentation": {
+      "tests": 4,
+      "suite": "V3 presentation",
+      "failures": 0,
+      "results": {
+        "1": {
+          "name": "Chapter story remains readable on the journal panel",
+          "passed": true,
+          "detail": "Text contrast 11.51:1"
+        },
+        "2": {
+          "name": "Hardware display follows all four absolute bank addresses",
+          "passed": true,
+          "detail": "A01 / B01 / C01 / D01; transport stopped, sequence unchanged"
+        },
+        "3": {
+          "name": "First Light pin teaches the finished-song finale",
+          "passed": true,
+          "detail": "Perform your saved Finished Song from beginning to end in the Lantern Room."
+        },
+        "4": {
+          "name": "Wardrobe mirror allocates no hidden world or camera",
+          "passed": true,
+          "detail": "Mirror is on demand; journal is closed during the instrument session"
+        }
+      }
+    },
+    "world": {
+      "buildingAnchors": 13,
+      "marquee": {
+        "1": "THE LANTERN ROOM / YOUR FINISHED SONG"
+      },
+      "serverEnabled": true,
+      "interactionAnchors": 44,
+      "passed": true,
+      "characterAutoLoads": true
+    },
+    "songPreview": {
+      "pendingFinishRejected": true,
+      "tailSeconds": 2,
+      "observedSeconds": 6.172160863876343,
+      "sections": {
+        "main1": true,
+        "intro": true,
+        "main2": true
+      },
+      "notice": "This song uses unavailable audio: nq.harbour.v1.a01",
+      "passed": true,
+      "musicalSeconds": 4
+    },
+    "console": {
+      "edit": "",
+      "play": ""
+    }
+  },
+  "preFinalLiveExperience": {
+    "completed": {
+      "NQ-Q06": false,
+      "NQ-Q04": true,
+      "NQ-Q09": false,
+      "NQ-Q12": false,
+      "NQ-Q03": false,
+      "NQ-Q07": false,
+      "NQ-Q08": true,
+      "NQ-Q02": false,
+      "NQ-Q00": true,
+      "NQ-Q01": true,
+      "NQ-Q05": false,
+      "NQ-Q11": false,
+      "NQ-Q10": false
+    },
+    "activities": {
+      "sound_safari": true,
+      "sleeve_studio": true,
+      "memory_walk": true,
+      "pattern_bench": true
+    },
+    "cloudWrites": 0,
+    "music": {
+      "draft": {
+        "bpm": 180,
+        "revision": 6,
+        "name": "QA Harbour Song",
+        "cover": {
+          "palette": "coral",
+          "motif": "lantern"
+        },
+        "id": "song_10",
+        "steps": {
+          "1": {
+            "repeats": 1,
+            "sequenceId": "seq_3",
+            "stepId": "step_11"
+          },
+          "2": {
+            "repeats": 2,
+            "sequenceId": "seq_5",
+            "stepId": "step_12"
+          }
+        },
+        "tempoMode": "song",
+        "savedRevision": 6
+      },
+      "finishedCount": 0,
+      "sequenceCount": 5
+    },
+    "identity": {
+      "owned": {
+        "dock_patch": true,
+        "vinyl_scarf": false,
+        "lantern_pin": false,
+        "memory_pin": true,
+        "weekend_earmuffs": false,
+        "sleeve_bag": true,
+        "sound_satchel": true,
+        "weekend_satchel": false,
+        "work_scarf": true,
+        "workshop_earmuffs": true,
+        "weekend_patch": false,
+        "pattern_patch": true,
+        "afterglow_badge": false,
+        "afterglow_headphones": false,
+        "afterglow_scarf": false,
+        "quay_headphones": true
+      },
+      "titleLabel": "Sound Scout",
+      "items": {
+        "1": {
+          "id": "quay_headphones",
+          "unlockHint": "Yours from the start.",
+          "source": "starter",
+          "label": "Quay headphones",
+          "owned": true,
+          "description": "Matte teal cups and cream cushions. Wear your listening habit.",
+          "equipped": false,
+          "slot": "head"
+        },
+        "2": {
+          "id": "work_scarf",
+          "unlockHint": "Yours from the start.",
+          "source": "starter",
+          "label": "Canvas scarf",
+          "owned": true,
+          "description": "A soft cream scarf for breezy afternoons by the water.",
+          "equipped": false,
+          "slot": "neck"
+        },
+        "3": {
+          "id": "dock_patch",
+          "unlockHint": "Help Tori make room at Dockside Exchange.",
+          "source": "earned",
+          "label": "Dock crew patch",
+          "owned": true,
+          "description": "Tori's little thank-you for making room for everyone.",
+          "equipped": false,
+          "slot": "pin"
+        },
+        "4": {
+          "id": "sound_satchel",
+          "unlockHint": "Finish the Sound Safari activity with your sound collection.",
+          "source": "earned",
+          "label": "Sound scout satchel",
+          "owned": true,
+          "description": "A faded canvas bag with space for the stories behind your sounds.",
+          "equipped": false,
+          "slot": "back"
+        },
+        "5": {
+          "id": "workshop_earmuffs",
+          "unlockHint": "Help Ivo restore the workshop vent.",
+          "source": "earned",
+          "label": "Morrow workshop headphones",
+          "owned": true,
+          "description": "Ivo repaired the amber cups and kept the old cream band.",
+          "equipped": false,
+          "slot": "head"
+        },
+        "6": {
+          "id": "vinyl_scarf",
+          "unlockHint": "Help Naya sort the three musical roles.",
+          "source": "earned",
+          "label": "Record stall scarf",
+          "owned": false,
+          "description": "Dusty coral cloth chosen by Naya at the market.",
+          "equipped": false,
+          "slot": "neck"
+        },
+        "7": {
+          "id": "sleeve_bag",
+          "unlockHint": "Finish a cover at the Sleeve Studio activity.",
+          "source": "earned",
+          "label": "Sleeve maker's bag",
+          "owned": true,
+          "description": "A cream record bag for your first cover design.",
+          "equipped": true,
+          "slot": "back"
+        },
+        "8": {
+          "id": "memory_pin",
+          "unlockHint": "Finish Nell's Memory Walk around the Quay.",
+          "source": "earned",
+          "label": "Nell's memory pin",
+          "owned": true,
+          "description": "A little cream record pin for the stories you stopped to hear.",
+          "equipped": false,
+          "slot": "pin"
+        },
+        "9": {
+          "id": "pattern_patch",
+          "unlockHint": "Solve three repeating patterns at Ivo's Pattern Bench.",
+          "source": "earned",
+          "label": "Pattern bench patch",
+          "owned": true,
+          "description": "A repaired canvas patch for trying a new way to build a beat.",
+          "equipped": false,
+          "slot": "pin"
+        },
+        "10": {
+          "id": "lantern_pin",
+          "unlockHint": "Finish your own six-part Lantern Room set.",
+          "source": "earned",
+          "label": "First Light pin",
+          "owned": false,
+          "description": "A small amber lantern. You helped the Quay play again.",
+          "equipped": false,
+          "slot": "pin"
+        },
+        "11": {
+          "unlockHint": "Harbor Afterglow cosmetic bundle. Use in BeatMakka only.",
+          "description": "Dusty coral cups with warm amber cushions.",
+          "label": "Afterglow headphones",
+          "id": "afterglow_headphones",
+          "bundle": "harbor_afterglow",
+          "slot": "head",
+          "owned": false,
+          "equipped": false,
+          "source": "premium"
+        },
+        "12": {
+          "unlockHint": "Harbor Afterglow cosmetic bundle. Use in BeatMakka only.",
+          "description": "Amber cloth with a quiet coral seam.",
+          "label": "Afterglow scarf",
+          "id": "afterglow_scarf",
+          "bundle": "harbor_afterglow",
+          "slot": "neck",
+          "owned": false,
+          "equipped": false,
+          "source": "premium"
+        },
+        "13": {
+          "unlockHint": "Harbor Afterglow cosmetic bundle. Use in BeatMakka only.",
+          "description": "A coral and cream record pin for evening walks.",
+          "label": "Afterglow enamel pin",
+          "id": "afterglow_badge",
+          "bundle": "harbor_afterglow",
+          "slot": "pin",
+          "owned": false,
+          "equipped": false,
+          "source": "premium"
+        },
+        "14": {
+          "unlockHint": "Workshop Weekend cosmetic bundle. Use in BeatMakka only.",
+          "description": "Cream cups with faded teal cushions.",
+          "label": "Weekend headphones",
+          "id": "weekend_earmuffs",
+          "bundle": "workshop_weekend",
+          "slot": "head",
+          "owned": false,
+          "equipped": false,
+          "source": "premium"
+        },
+        "15": {
+          "unlockHint": "Workshop Weekend cosmetic bundle. Use in BeatMakka only.",
+          "description": "Walnut canvas with an amber flap and room for records.",
+          "label": "Weekend record bag",
+          "id": "weekend_satchel",
+          "bundle": "workshop_weekend",
+          "slot": "back",
+          "owned": false,
+          "equipped": false,
+          "source": "premium"
+        },
+        "16": {
+          "unlockHint": "Workshop Weekend cosmetic bundle. Use in BeatMakka only.",
+          "description": "A cream and teal patch from the workshop counter.",
+          "label": "Weekend maker patch",
+          "id": "weekend_patch",
+          "bundle": "workshop_weekend",
+          "slot": "pin",
+          "owned": false,
+          "equipped": false,
+          "source": "premium"
+        }
+      },
+      "tracks": {
+        "1": {
+          "levelLabel": "Quay regular",
+          "label": "Listener",
+          "id": "listener",
+          "level": 4,
+          "xp": 130
+        },
+        "2": {
+          "nextAt": 75,
+          "label": "Beatmaker",
+          "id": "beatmaker",
+          "level": 2,
+          "xp": 60,
+          "levelLabel": "Practising"
+        },
+        "3": {
+          "nextAt": 130,
+          "label": "Neighbour",
+          "id": "neighbour",
+          "level": 3,
+          "xp": 110,
+          "levelLabel": "Finding your voice"
+        }
+      },
+      "title": "sound_scout",
+      "titles": {
+        "1": {
+          "owned": true,
+          "id": "new_voice",
+          "label": "New Voice"
+        },
+        "2": {
+          "owned": true,
+          "id": "sound_scout",
+          "label": "Sound Scout"
+        },
+        "3": {
+          "owned": false,
+          "id": "beat_builder",
+          "label": "Beat Builder"
+        },
+        "4": {
+          "owned": true,
+          "id": "good_neighbour",
+          "label": "Good Neighbour"
+        },
+        "5": {
+          "owned": false,
+          "id": "quay_original",
+          "label": "Quay Original"
+        }
+      },
+      "equipped": {
+        "back": "sleeve_bag"
+      },
+      "outfits": {
+        "1": {
+          "index": 1,
+          "saved": true
+        },
+        "2": {
+          "index": 2,
+          "saved": true
+        },
+        "3": {
+          "index": 3,
+          "saved": true
+        }
+      },
+      "rank": {
+        "nextAt": 340,
+        "level": 3,
+        "xp": 300,
+        "label": "Beat Explorer"
+      }
+    },
+    "results": {
+      "1": {
+        "name": "Unowned premium equipment rejected",
+        "passed": true,
+        "detail": "Harbor Afterglow cosmetic bundle. Use in BeatMakka only."
+      },
+      "2": {
+        "name": "Far memory cannot grant progress",
+        "passed": true,
+        "detail": "Walk up to the postcard's building to read it."
+      },
+      "3": {
+        "name": "Both bundles stay unavailable with commerce disabled",
+        "passed": true,
+        "detail": {
+          "status": "unavailable",
+          "enabled": false,
+          "bundles": {
+            "harbor_afterglow": {
+              "status": "unavailable",
+              "available": false
+            },
+            "workshop_weekend": {
+              "status": "unavailable",
+              "available": false
+            }
+          },
+          "owned": []
+        }
+      },
+      "4": {
+        "name": "Three memory postcards complete Memory Walk",
+        "passed": true,
+        "detail": {
+          "lantern": true,
+          "ferry": true,
+          "cafe": true
+        }
+      },
+      "5": {
+        "name": "All canonical discoveries complete Sound Safari",
+        "passed": true,
+        "detail": {
+          "I01": true,
+          "I03": true,
+          "I02": true
+        }
+      },
+      "6": {
+        "name": "Sleeve Studio keeps chosen design and unlocks earned bag",
+        "passed": true,
+        "detail": {
+          "palette": "coral",
+          "motif": "lantern"
+        }
+      },
+      "7": {
+        "name": "Sleeve copy targets selected draft without creating a Finished Song",
+        "passed": true,
+        "detail": {
+          "palette": "coral",
+          "motif": "lantern"
+        }
+      },
+      "8": {
+        "passed": true,
+        "name": "Dedication choice remembered"
+      },
+      "9": {
+        "passed": true,
+        "name": "Pattern Bench offers untimed hint"
+      },
+      "10": {
+        "passed": true,
+        "name": "Three pattern answers complete the activity"
+      },
+      "11": {
+        "passed": true,
+        "name": "Mirror creates one worn-avatar preview on demand"
+      },
+      "12": {
+        "passed": true,
+        "name": "Mirror includes actual equipped headphones"
+      },
+      "13": {
+        "passed": true,
+        "name": "All three saved looks restore equipped items"
+      },
+      "14": {
+        "passed": true,
+        "name": "Reset removes only BeatMakka items"
+      },
+      "15": {
+        "passed": true,
+        "name": "Hiding My style releases mirror world and camera"
+      },
+      "16": {
+        "passed": true,
+        "name": "Companion hints can be disabled"
+      },
+      "17": {
+        "passed": true,
+        "name": "Companion switches without changing music identities"
+      },
+      "18": {
+        "passed": true,
+        "name": "Solo choice leaves all activities available"
+      },
+      "19": {
+        "passed": true,
+        "name": "Appearance and companion actions do not mint XP"
+      },
+      "20": {
+        "name": "Replaying all three puzzle rounds cannot mint XP",
+        "passed": true,
+        "detail": {
+          "before": 300,
+          "after": 300
+        }
+      }
+    }
+  },
+  "beforeFix": {
+    "storyContrast": {
+      "text": "Tori / A corner for music\n\nWe used to leave this corner clear for music. Then the crates took over.\n\nMake room at the dock, then try Quay metal on four distinct rhythmic positions in a named sequence in your Roamer.",
+      "background": "0.909804, 0.847059, 0.717647",
+      "passed": false,
+      "textColor": "0.909804, 0.847059, 0.717647"
+    },
+    "hardwareObserved": "PAD 17 / READY"
+  },
+  "deviceSimulator": {
+    "preset": "iphone_17_pro",
+    "landscapeViewport": [
+      750,
+      381
+    ],
+    "portraitViewport": [
+      401,
+      778
+    ],
+    "checked": [
+      "Shop landscape",
+      "Shop portrait",
+      "Instrument portrait"
+    ],
+    "resetToDefault": true,
+    "physicalDeviceAcceptance": false
+  },
+  "uploads": 0,
+  "cloudWrites": 0,
+  "commits": 0,
+  "pushes": 0,
+  "audioAdmission": "All 64 written-map slots pending by explicit user decision",
+  "commerce": "Disabled intentionally",
+  "sourceBackup": "C:/Users/slavd/.codex/backups/BeatMaka/v3-final-audit-20261030-174157"
+}

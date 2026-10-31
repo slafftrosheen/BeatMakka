@@ -1,0 +1,1419 @@
+{
+  "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup",
+  "applied": true,
+  "items": [
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-BeatCommissions",
+      "bytes": 170850533,
+      "action": "remove_exact_extracted_copy",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-BeatCommissions.zip",
+      "retained_zip_sha256": "1b93161d75bd698c759dbb4a5cad43f6568615e1d47b00b6937c4e454710dbf7"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-Celebrations",
+      "bytes": 156571398,
+      "action": "remove_exact_extracted_copy",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-Celebrations.zip",
+      "retained_zip_sha256": "51920193542ec9dee7711569e32727acc3a8a4080f5a1866e1dbab1338fa3203"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-CompanionGuide",
+      "bytes": 170831090,
+      "action": "remove_exact_extracted_copy",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-CompanionGuide.zip",
+      "retained_zip_sha256": "fac34d76c534e7c1548f5320e27956d964d19777ede8f03bfe68fbe86dcf6013"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-LivePerformance",
+      "bytes": 217738167,
+      "action": "remove_exact_extracted_copy",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-LivePerformance.zip",
+      "retained_zip_sha256": "44893b5cc080ad818c51c0b47ed696c2b164fab1fd0850271ac422b59f589bc7"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-LivingQuay",
+      "bytes": 143750779,
+      "action": "remove_exact_extracted_copy",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-LivingQuay.zip",
+      "retained_zip_sha256": "f3bf7e3826dbdadaad71974edf011428f96a56b756f63b327f6ff0cb8baf5bff"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-MissionDiscovery",
+      "bytes": 161156273,
+      "action": "remove_exact_extracted_copy",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-MissionDiscovery.zip",
+      "retained_zip_sha256": "4e745506eb1ff7c71353f8f57098afb0b6ab5720df69bf1cc3e6d63ee5412e81"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-NaturalMotion",
+      "bytes": 217720387,
+      "action": "remove_exact_extracted_copy",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-NaturalMotion.zip",
+      "retained_zip_sha256": "79ed84016919fee19fb8628d3971f3161825caf5b5d98958158bdee7dfb021fb"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-NewStorefronts",
+      "bytes": 197445897,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-NewStorefronts"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-PlayfulQuay",
+      "bytes": 154680533,
+      "action": "remove_exact_extracted_copy",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-PlayfulQuay.zip",
+      "retained_zip_sha256": "5ea7d62386ab5e46cf619159bb9113b2da6885f6b8e961c7216bf578d931c962"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-PlayfulQuay-Voices",
+      "bytes": 155253300,
+      "action": "remove_exact_extracted_copy",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-PlayfulQuay-Voices.zip",
+      "retained_zip_sha256": "bf3671f23380d35beec3944d2f3709aa003b48b713c5d255ec2e0fb3a5787ce9"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-Recognition",
+      "bytes": 156606425,
+      "action": "remove_exact_extracted_copy",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-Recognition.zip",
+      "retained_zip_sha256": "e3332edbd759ff821dd30b680b0e8ef78f80e591f07daeb9d63c26ead920b6a0"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-RemixPolish",
+      "bytes": 217305883,
+      "action": "remove_exact_extracted_copy",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-RemixPolish.zip",
+      "retained_zip_sha256": "66b1ae27acd94ad23816b3f2ae9455bae4717a6703b965e673dd41873f04ee85"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-StreetLife",
+      "bytes": 156551817,
+      "action": "remove_exact_extracted_copy",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-StreetLife.zip",
+      "retained_zip_sha256": "effbaa9ed437eb39ac6bbe33b9dba01d1aa2305b5cb7ed859498e8e453f86b16"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-StreetPlay",
+      "bytes": 156563228,
+      "action": "remove_exact_extracted_copy",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-StreetPlay.zip",
+      "retained_zip_sha256": "33038468704b0d958b36c590b46d5f77263d7dc84354f48c88ea998e68c0bc38"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-VintageQuay",
+      "bytes": 207096697,
+      "action": "remove_exact_extracted_copy",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-VintageQuay.zip",
+      "retained_zip_sha256": "1411d29551b19a8e992e9a25655b07bc26669b954630e3e274d2c9ff7fd7ac34"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-VisualGuide",
+      "bytes": 155261083,
+      "action": "remove_exact_extracted_copy",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-VisualGuide.zip",
+      "retained_zip_sha256": "2cf857e8d41d035e08f9ef0e787a55266b6c3cbe8a423decf80df0d504aa7d6f"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-VoicedCommissions",
+      "bytes": 180976203,
+      "action": "remove_exact_extracted_copy",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-VoicedCommissions.zip",
+      "retained_zip_sha256": "c5c2f2e519418799f9eff20bbaf70593217c83525d4018e5b47d5d726dc5f3da"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-VoicedRewards",
+      "bytes": 161152263,
+      "action": "remove_exact_extracted_copy",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-VoicedRewards.zip",
+      "retained_zip_sha256": "0c3c06c00fc23f378028018f3806d08204c2c3542353790eb2adabf7987014d7"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-Wardrobe",
+      "bytes": 156592443,
+      "action": "remove_exact_extracted_copy",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-Wardrobe.zip",
+      "retained_zip_sha256": "8c37604e6ba43e6178fa3b20ae88bb1460498b2e7e65414fd9c7ce4438da8a7b"
+    },
+    {
+      "source": "BeatMakaAssetReview.rbxl",
+      "bytes": 88138,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\BeatMakaAssetReview.rbxl",
+      "sha256": "95605ad05342a4176480406b32cee1852173d2cfbcac6da7e6413533b9069823"
+    },
+    {
+      "source": "docs/BeatMakka_Companions_Artbook_v2_CANDIDATE_RU.pdf",
+      "bytes": 932866,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\docs\\BeatMakka_Companions_Artbook_v2_CANDIDATE_RU.pdf",
+      "sha256": "47ef4d1985248c61131bb3f3e02803f805a22ec880c8211620cbde35b4252594"
+    },
+    {
+      "source": "docs/BeatMakka_Companions_Artbook_v3_CANDIDATE_RU.pdf",
+      "bytes": 2029333,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\docs\\BeatMakka_Companions_Artbook_v3_CANDIDATE_RU.pdf",
+      "sha256": "abfd4eb44b62102d9ba92cf84fa79afb249b83007a653645bb2e7c4e53e5a778"
+    },
+    {
+      "source": "output/add_transport_icons.py",
+      "bytes": 954,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\add_transport_icons.py",
+      "sha256": "741b27edb4b63d710d5422a5fc64e07b6b6d641d0cfc056a06bfba2619aafd01"
+    },
+    {
+      "source": "output/after_comp_edges.py",
+      "bytes": 613,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\after_comp_edges.py",
+      "sha256": "0abb516491e9afb2f89a333c73222e06938845b752cade3f8681ea24475801bb"
+    },
+    {
+      "source": "output/apply_motion_envelopes.py",
+      "bytes": 2161,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\apply_motion_envelopes.py",
+      "sha256": "b1af79a1b32b0c74fd3c68e6925ebbbdbd5ced4faf80e008986c425a6426c88f"
+    },
+    {
+      "source": "output/audit_skin_data.py",
+      "bytes": 1346,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\audit_skin_data.py",
+      "sha256": "a127e3d2d7e1e6e9985ff40e4de9bb81e11cd7a14b2c2a097bba10d1a12f4074"
+    },
+    {
+      "source": "output/audit_ui.luau",
+      "bytes": 595,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\audit_ui.luau",
+      "sha256": "e92602ac338d2236b39f26c87eab9c6016d08cad6d85a54c70725f185abc4137"
+    },
+    {
+      "source": "output/bind_runtime_textures.py",
+      "bytes": 602,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\bind_runtime_textures.py",
+      "sha256": "e4488e45cb8d8a86ce022d51e7e6f8b469f3fcb2c6f5f7653804354bf8aade28"
+    },
+    {
+      "source": "output/bind_vintage_van.py",
+      "bytes": 3158,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\bind_vintage_van.py",
+      "sha256": "3891edb5ce9ad1c589d9586f0e9f4aed044fb2f65db23bf8579687cfca04c33d"
+    },
+    {
+      "source": "output/building-intake-set-01.log",
+      "bytes": 3871,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\building-intake-set-01.log",
+      "sha256": "18773d357f3947975e077c5521120187543abd9b0a320f1e2a174245255a3c3b"
+    },
+    {
+      "source": "output/capture_live.json",
+      "bytes": 157,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\capture_live.json",
+      "sha256": "ca39a6b24f4deb8cf103d16efb4ca993e0c9289775af71d9522a78f14659d57c"
+    },
+    {
+      "source": "output/check_both_companions.luau",
+      "bytes": 946,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\check_both_companions.luau",
+      "sha256": "f118250b62f5d63844da00de36db5144f6aceec5e14809d3ec9832a2d86d8dac"
+    },
+    {
+      "source": "output/check_collisions.luau",
+      "bytes": 1183,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\check_collisions.luau",
+      "sha256": "fae6bff2f984dc51bc28b356a5deaf62356c148ecaeb0f5dec2f9d8b510e04cf"
+    },
+    {
+      "source": "output/check_companion.luau",
+      "bytes": 545,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\check_companion.luau",
+      "sha256": "b1dd75c7610f60f0776e3068993a67618115d98740fecb38b815ccfa0e40b0be"
+    },
+    {
+      "source": "output/check_entrances.luau",
+      "bytes": 1240,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\check_entrances.luau",
+      "sha256": "b42157620aa8f9e3f872d7924eb8a68be3a41446aca4c6c031fcab0e3c120cf6"
+    },
+    {
+      "source": "output/check_exit_walk.luau",
+      "bytes": 692,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\check_exit_walk.luau",
+      "sha256": "d77ced02c4c0ea896ec092219f805ee76b60f16a11055b868703937038a0239f"
+    },
+    {
+      "source": "output/check_expression.luau",
+      "bytes": 841,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\check_expression.luau",
+      "sha256": "00d0192877f44f8fee74a6cc50470cc1487f5bd485fa7cb2b68ea0fbedcce85f"
+    },
+    {
+      "source": "output/check_final_dancing.luau",
+      "bytes": 847,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\check_final_dancing.luau",
+      "sha256": "cb7e82003b721d1a6ac9beee4e4f98c3bdad9b39cc45a30715b83f03a12852e9"
+    },
+    {
+      "source": "output/check_final_motion.luau",
+      "bytes": 865,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\check_final_motion.luau",
+      "sha256": "4d8ccc48f4100543e44269e8f4e6be7818c2cacc136fedae2c7832f12a5896c6"
+    },
+    {
+      "source": "output/check_hosts.luau",
+      "bytes": 505,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\check_hosts.luau",
+      "sha256": "eeab4aea190ea81dbd22f131820f805763485bc6eb0c52942c4f227ef48c737b"
+    },
+    {
+      "source": "output/check_leave_return.luau",
+      "bytes": 770,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\check_leave_return.luau",
+      "sha256": "ec877e6ac2882adbc06ce52497fd282b318567c13f71a5f4533d78136079cd03"
+    },
+    {
+      "source": "output/check_live_music.luau",
+      "bytes": 976,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\check_live_music.luau",
+      "sha256": "f22df8460ee8a54873641f0d83476acc37c85e67a504dd98a1549ad1f426b9f9"
+    },
+    {
+      "source": "output/check_live_ui.luau",
+      "bytes": 865,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\check_live_ui.luau",
+      "sha256": "b66bd6ff816c256c4a189227b8077f1ac45b5479d9a9a7cd12537deacac70103"
+    },
+    {
+      "source": "output/check_music_reactions.luau",
+      "bytes": 1564,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\check_music_reactions.luau",
+      "sha256": "f92a0825d311969edeb3efa22f25bff8a0339bfede213daffa2d72fa436925bf"
+    },
+    {
+      "source": "output/check_niklass.luau",
+      "bytes": 547,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\check_niklass.luau",
+      "sha256": "2567d710cf527a064465c68bcde998c1b4c527b379247d99d76663a0aed2bca0"
+    },
+    {
+      "source": "output/check_nikolas_dance.luau",
+      "bytes": 567,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\check_nikolas_dance.luau",
+      "sha256": "27f1b97de177bbad800e3aea1acecab1a065332b796add7a6278e729fba82cc3"
+    },
+    {
+      "source": "output/check_remix_rules.luau",
+      "bytes": 829,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\check_remix_rules.luau",
+      "sha256": "49353f6cd2f4a72d4490a315f628205f76e941aa4596f4e84460895912b9dedb"
+    },
+    {
+      "source": "output/check_skin_load.luau",
+      "bytes": 671,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\check_skin_load.luau",
+      "sha256": "84e728aa6a057d0ef909785994c0ca2f4edab5a5e7d936d18dfc59528734d167"
+    },
+    {
+      "source": "output/check_ui.luau",
+      "bytes": 303,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\check_ui.luau",
+      "sha256": "08833a0f42f557074fbaeaf9e95525571a7ab283c9eca1124793486cccdccb59"
+    },
+    {
+      "source": "output/check_van_return.luau",
+      "bytes": 595,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\check_van_return.luau",
+      "sha256": "0ec1e7209c2b679955cbd7e59a05fc2c3092bba7093864d5d507cad8c5a09183"
+    },
+    {
+      "source": "output/clean_van_export.py",
+      "bytes": 271,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\clean_van_export.py",
+      "sha256": "c0b5c48455ff3bce2d02d0c36b445628bc67284f7fb156468e0a6ceb88d2808c"
+    },
+    {
+      "source": "output/click_live.json",
+      "bytes": 845,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\click_live.json",
+      "sha256": "8a66993299c90d5ffe0b599b02711f7a5e6d0ce42be5a13a0740a059aa4b3d5f"
+    },
+    {
+      "source": "output/click_live.py",
+      "bytes": 534,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\click_live.py",
+      "sha256": "fb1eff35b1a0d5f8cd36a54d7b1d87e103b3caf31380074cdf76afa0894613fc"
+    },
+    {
+      "source": "output/companion-final-load.txt",
+      "bytes": 293,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\companion-final-load.txt",
+      "sha256": "39c3fbb00f748855701a3d5475772c443c0535e61773484b8e72adc964d36ea7"
+    },
+    {
+      "source": "output/companion_edges.py",
+      "bytes": 519,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\companion_edges.py",
+      "sha256": "2cff1ad67b7ef98ffa2e67cb7e5f0a2c98970969526b5d6118be71f9c9659677"
+    },
+    {
+      "source": "output/console_live.json",
+      "bytes": 129,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\console_live.json",
+      "sha256": "59acf9fe3d094af1bbb4ff9cad2fc326261a27d7988221eb6cb2e9c53d07bd70"
+    },
+    {
+      "source": "output/derive_van_export.py",
+      "bytes": 1279,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\derive_van_export.py",
+      "sha256": "acf6570c2b0a624db038b75aa206cb03a482349e0c3cbe2dba6908a609a8d08f"
+    },
+    {
+      "source": "output/enter-current.txt",
+      "bytes": 21346,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\enter-current.txt",
+      "sha256": "0f1b2d5ecf42975854f034177e4f207f2e9592c926948c3e0063607654a491fe"
+    },
+    {
+      "source": "output/enter-live.txt",
+      "bytes": 23425,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\enter-live.txt",
+      "sha256": "f0993f0f861145b523181d7c9df624dfd5690126e207f3b5f2f59853a6b6656a"
+    },
+    {
+      "source": "output/enter-van-final.json",
+      "bytes": 20562,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\enter-van-final.json",
+      "sha256": "3a07ece514f15b3760acef4f6ed8304cb0f287bbf49080fb774062e77f679cb1"
+    },
+    {
+      "source": "output/enter_live_only.luau",
+      "bytes": 159,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\enter_live_only.luau",
+      "sha256": "517446de6f460eb252f5b87a02470f1a4e6b97a150979d76912469d706137d2e"
+    },
+    {
+      "source": "output/enter_van.luau",
+      "bytes": 750,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\enter_van.luau",
+      "sha256": "36952c4c0465c8caa52ed0cfc68a36ce4177862801e62f2aa4a124276f27eb9c"
+    },
+    {
+      "source": "output/expand_remix_requests.py",
+      "bytes": 4031,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\expand_remix_requests.py",
+      "sha256": "f6e123c113facaee7d9f8567b21d7d1f0b26b6a8df2e5f6426786afa90279e2d"
+    },
+    {
+      "source": "output/final_dance_margin.py",
+      "bytes": 1283,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\final_dance_margin.py",
+      "sha256": "6474e5fc2fd1c7f1ca35178000aca072fdb0a9adb0f53ca7aabafa509e191b72"
+    },
+    {
+      "source": "output/final_live_evidence.py",
+      "bytes": 1374,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\final_live_evidence.py",
+      "sha256": "f112e12ad05f38ccb7da18b694e8e1d148aba962e93ee35afa825785ee45a7b0"
+    },
+    {
+      "source": "output/finish_live_performance.py",
+      "bytes": 3392,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\finish_live_performance.py",
+      "sha256": "b78326d354052418d686185c016bbf87a2a298f9ac35d4520f768d498713f34d"
+    },
+    {
+      "source": "output/fix_clip_blending.py",
+      "bytes": 1608,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\fix_clip_blending.py",
+      "sha256": "b06e0a9a8edf4d9ac56e446c2c8c100a04d3c1123ba34f69253171202c1900a0"
+    },
+    {
+      "source": "output/fix_current_demo.py",
+      "bytes": 6306,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\fix_current_demo.py",
+      "sha256": "1da001b113b77bdbb721e172c65faac068e32f98f2391995b478d18c838514fb"
+    },
+    {
+      "source": "output/fix_inspection_findings.py",
+      "bytes": 803,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\fix_inspection_findings.py",
+      "sha256": "d13022af3a2b62f2546589883ec880ce79ead6a0f72853bb432a4381ec405ef6"
+    },
+    {
+      "source": "output/fix_lamp_live.luau",
+      "bytes": 547,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\fix_lamp_live.luau",
+      "sha256": "2b67a84e1891d1aeeffd2158aa965a09e68276e51ef5663e3d00cff64516b261"
+    },
+    {
+      "source": "output/fix_live_layout.py",
+      "bytes": 709,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\fix_live_layout.py",
+      "sha256": "af6359c363d79735a3c59bcfd66d7bba6155c32fa10852617d17237bb02e4de8"
+    },
+    {
+      "source": "output/fix_material_lifecycle.py",
+      "bytes": 1411,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\fix_material_lifecycle.py",
+      "sha256": "fc8cedde1cc5b68e3160259fb7ff5e94993c246a9e57afb36548c7238327702b"
+    },
+    {
+      "source": "output/fix_reaction_priority.py",
+      "bytes": 816,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\fix_reaction_priority.py",
+      "sha256": "2004d08dccf974008a7813774c6dad0d1f3d1ca61daf76e615daf9057944c0a5"
+    },
+    {
+      "source": "output/fix_remix_hint.py",
+      "bytes": 252,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\fix_remix_hint.py",
+      "sha256": "fdb14710b5b21e526f85562dfd76b758ceebe205669e99c164738b51b6d32011"
+    },
+    {
+      "source": "output/fix_skin_motion.py",
+      "bytes": 1307,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\fix_skin_motion.py",
+      "sha256": "257867fcd7818a2428ffd714bcd325a0d95c9788409a2d8d07254026efbfabe2"
+    },
+    {
+      "source": "output/fix_van_live.luau",
+      "bytes": 400,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\fix_van_live.luau",
+      "sha256": "a0ea4cd1707185c702c140b01579150d3ca6a6bbb52b00c7b9c533653226bfb3"
+    },
+    {
+      "source": "output/fix_van_pivot.py",
+      "bytes": 338,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\fix_van_pivot.py",
+      "sha256": "180cb099c2e36fd151b950dba837f0ec7319a8b7461ea33b467a92f4a529725f"
+    },
+    {
+      "source": "output/fix_weight_lookup.py",
+      "bytes": 1019,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\fix_weight_lookup.py",
+      "sha256": "99d6690ca6d246b933d84826a64e2c012bbdde0d65432753b19a2c767fd32d20"
+    },
+    {
+      "source": "output/get_workshop_source.luau",
+      "bytes": 75,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\get_workshop_source.luau",
+      "sha256": "8742afd1690f1a13f0a35244fab3a9e3851cbcf3b53720ad19a1472e7062a071"
+    },
+    {
+      "source": "output/harmonic-NQ-CMP-ALISSIA.npy",
+      "bytes": 3098288,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\harmonic-NQ-CMP-ALISSIA.npy",
+      "sha256": "1c5161be2f01f15204f34167fdb253c760df2cde4b373da4bd6713754806b9b1"
+    },
+    {
+      "source": "output/harmonic-NQ-CMP-NIKOLAS.npy",
+      "bytes": 2966208,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\harmonic-NQ-CMP-NIKOLAS.npy",
+      "sha256": "87fc77f8db66f0e505f1a6b8ac8efb515c7861b4dc645520c3ca019791d26a28"
+    },
+    {
+      "source": "output/inspect_cafe_roof.py",
+      "bytes": 512,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\inspect_cafe_roof.py",
+      "sha256": "0dffeec953e7abde64efb42dd2524def398d23cd81b1885df1b37fc2b5fdbba8"
+    },
+    {
+      "source": "output/inspect_lamps.luau",
+      "bytes": 250,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\inspect_lamps.luau",
+      "sha256": "0dc1286d2920b621691db1c9899c2aeb83c8f8d5b2baea6da7434d4ac2b0e75b"
+    },
+    {
+      "source": "output/inspect_memory.luau",
+      "bytes": 483,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\inspect_memory.luau",
+      "sha256": "61d13a09f0bd7e4dc3d08724ae3263f0be8dfc27863648fc765a26d8eeb4c627"
+    },
+    {
+      "source": "output/inspect_routes.luau",
+      "bytes": 580,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\inspect_routes.luau",
+      "sha256": "5782ce36d3637335cf269145132795a50457b29bbcf89380a041c97f3c904758"
+    },
+    {
+      "source": "output/inspect_skin_weights.py",
+      "bytes": 299,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\inspect_skin_weights.py",
+      "sha256": "23d94e230743ec6aac12926a009cfdb44621a8c5eac797fe74a860ce26b1c0f4"
+    },
+    {
+      "source": "output/inspect_van.py",
+      "bytes": 496,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\inspect_van.py",
+      "sha256": "27e2359bb8230b010fa6d6b4b08483ac4e9fc5bbbe194628de5af0c982d47700"
+    },
+    {
+      "source": "output/inspect_van_live.luau",
+      "bytes": 285,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\inspect_van_live.luau",
+      "sha256": "08d5ff62cf3aa012a880314cef504797763b0fd360c75d49c5e3bf960dcc1c63"
+    },
+    {
+      "source": "output/live-collisions.json",
+      "bytes": 1181,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\live-collisions.json",
+      "sha256": "101bba04b92fbda0447d315fe9ec5144c40435abe102f2d9707d5021e2811c8f"
+    },
+    {
+      "source": "output/live-companions.json",
+      "bytes": 294,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\live-companions.json",
+      "sha256": "95ee4f053fc3e9e76ccd32cadf87ea194bde9a725a345021e810f8dacfdd85f2"
+    },
+    {
+      "source": "output/live-console.json",
+      "bytes": 17325,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\live-console.json",
+      "sha256": "35cb119c60b908b7d3c41bb4bc880f87c1a09229622d1aee5a64a807ce05351d"
+    },
+    {
+      "source": "output/live-entrances.json",
+      "bytes": 1480,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\live-entrances.json",
+      "sha256": "bf35cce6452776eb7d1cc12076dc2427f56f9f5061e4b1d1ccd41f7e4175b3d9"
+    },
+    {
+      "source": "output/live-expression.json",
+      "bytes": 213,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\live-expression.json",
+      "sha256": "1909a0686055691dc8532754dba991159eb6a3e1b3b69e39b816263ae408780e"
+    },
+    {
+      "source": "output/live-hosts.json",
+      "bytes": 104,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\live-hosts.json",
+      "sha256": "d0d5b2778d184f4b9de4a00c24ab00a21b6e8fc57213c1467498af9bdf1d6c13"
+    },
+    {
+      "source": "output/live-music.json",
+      "bytes": 16315,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\live-music.json",
+      "sha256": "3f4abe148843a697ee0f1dcda58f9bf3fe8d15a75c32b42da205f10693504711"
+    },
+    {
+      "source": "output/live-nikolas-dance.json",
+      "bytes": 609,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\live-nikolas-dance.json",
+      "sha256": "fddb750680ad0d28701210d94d9e14e69e23c2abe3b5f2aac09668b1edc7d934"
+    },
+    {
+      "source": "output/live-reactions.json",
+      "bytes": 4074,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\live-reactions.json",
+      "sha256": "01190a3a22a36e3eba040cada6d5501a5135efdbe0c5bde56a2752c1ccf4397d"
+    },
+    {
+      "source": "output/live-ui.json",
+      "bytes": 273,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\live-ui.json",
+      "sha256": "7d9adb0ab2204d9e24092f69bd3d0996f4629950137852c29b5074f3b0199e5c"
+    },
+    {
+      "source": "output/live_files.txt",
+      "bytes": 491,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\live_files.txt",
+      "sha256": "9d6dde4e6d26620b6ce72c92ab6365d074e7ad394955a9642c41f83d60581958"
+    },
+    {
+      "source": "output/needle-quay-demo/BeatMakka_Companions_v2_Development.zip",
+      "bytes": 36974834,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\BeatMakka_Companions_v2_Development.zip",
+      "sha256": "16c154f64af3ddc6a4f6cc643d072449aeab6fb89ccf5646069ca3fb08f7d272"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-Artbook-Pass.zip",
+      "bytes": 60451973,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-Artbook-Pass.zip",
+      "sha256": "f3d2071a277429df7dbf10de759b91d25911f5d0876b00188605f8eeb3950285"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-BeatCommissions.rbxlx",
+      "bytes": 15822402,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-BeatCommissions.rbxlx",
+      "sha256": "0febf040148fba1678080f0331eec206db875b2cc8d9b2089534cd4c36d52199"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-BeatCommissions.zip",
+      "bytes": 88850559,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-BeatCommissions.zip",
+      "sha256": "1b93161d75bd698c759dbb4a5cad43f6568615e1d47b00b6937c4e454710dbf7"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-Celebrations.rbxlx",
+      "bytes": 15732699,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-Celebrations.rbxlx",
+      "sha256": "672b28e1e53c78ea29b4ee032625f0a6e912f13be0977992befabc0fdefc3e95"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-Celebrations.zip",
+      "bytes": 77035207,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-Celebrations.zip",
+      "sha256": "51920193542ec9dee7711569e32727acc3a8a4080f5a1866e1dbab1338fa3203"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-CompanionGuide.rbxlx",
+      "bytes": 15801991,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-CompanionGuide.rbxlx",
+      "sha256": "f89f88ec05068ef970b79c52a09f7af79217ec79b4450058ae22f81d23af080d"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-CompanionGuide.zip",
+      "bytes": 88846552,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-CompanionGuide.zip",
+      "sha256": "fac34d76c534e7c1548f5320e27956d964d19777ede8f03bfe68fbe86dcf6013"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-Companions.rbxlx",
+      "bytes": 2442796,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-Companions.rbxlx",
+      "sha256": "70403bf69eb5ce88e7f2bd9d891fb6823fe638f7e82d670f2b6db1e11e44f010"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-Companions.zip",
+      "bytes": 61392095,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-Companions.zip",
+      "sha256": "2433e1cd33a6164c237fb1a9d4332426cff6b2ad55d43017573e61200a566745"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-Demo.rbxlx",
+      "bytes": 630716,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-Demo.rbxlx",
+      "sha256": "c04514add605a799534ae7650e049da5676a058d5fdaed8c9e973ad7dc990525"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-Groovebox.rbxlx",
+      "bytes": 2335545,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-Groovebox.rbxlx",
+      "sha256": "3f6f3a541f1f90931b526bbbbfee38ca27d4247e17e940d15e67cbb0334a1e81"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-Groovebox.zip",
+      "bytes": 60478181,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-Groovebox.zip",
+      "sha256": "b0fa27e5bdae9ee23e4f96272d218aa1916586cce11846f74b8a6c900c4ecf9e"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-LivePerformance.rbxlx",
+      "bytes": 16320953,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-LivePerformance.rbxlx",
+      "sha256": "c37ddeec3db785f44a86ad0c985121db510685096b5418cff386321880509f5b"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-LivePerformance.zip",
+      "bytes": 119226444,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-LivePerformance.zip",
+      "sha256": "44893b5cc080ad818c51c0b47ed696c2b164fab1fd0850271ac422b59f589bc7"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-LivingQuay.rbxlx",
+      "bytes": 7760326,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-LivingQuay.rbxlx",
+      "sha256": "c72215a0b0168c3697bf1266c41432ce27fb6f7f28b2bcec3188f9f3b5eab76f"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-LivingQuay.zip",
+      "bytes": 70461888,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-LivingQuay.zip",
+      "sha256": "f3bf7e3826dbdadaad71974edf011428f96a56b756f63b327f6ff0cb8baf5bff"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-Local-Demo.zip",
+      "bytes": 37474095,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-Local-Demo.zip",
+      "sha256": "eb6e6736d25246ebbc2835703c65381dadc89b784b4335407a425f895a90cc6c"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-MissionDiscovery.rbxlx",
+      "bytes": 15783470,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-MissionDiscovery.rbxlx",
+      "sha256": "d67e4d29f38ae8f722e42d54b4c5c52b7038927b5b9d693962889a59241b0949"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-MissionDiscovery.zip",
+      "bytes": 80816662,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-MissionDiscovery.zip",
+      "sha256": "4e745506eb1ff7c71353f8f57098afb0b6ab5720df69bf1cc3e6d63ee5412e81"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-NaturalMotion.rbxlx",
+      "bytes": 16302949,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-NaturalMotion.rbxlx",
+      "sha256": "eeb3d75eb4f9937b44a8b67cddae301d2b1a87f401f68a8e1333349204b2ad9a"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-NaturalMotion.zip",
+      "bytes": 119222241,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-NaturalMotion.zip",
+      "sha256": "79ed84016919fee19fb8628d3971f3161825caf5b5d98958158bdee7dfb021fb"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-Neighborhood.rbxlx",
+      "bytes": 2485624,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-Neighborhood.rbxlx",
+      "sha256": "688dd9a1f87db9b1d74d3266e6c73ffb130aba0dd8698a672ef10aaa14c3511d"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-Neighborhood.zip",
+      "bytes": 61402448,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-Neighborhood.zip",
+      "sha256": "386ecfe733bdc15d70cbd00148d9f459e8bacce1d4f15f8deb6751526a8b7dcf"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-NewStorefronts.rbxlx",
+      "bytes": 15853427,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-NewStorefronts.rbxlx",
+      "sha256": "56d4ce3a7e2447bf01f9f562ebe0d5b8fec8b7e174d64559367d98b4b1c8aea0"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-NewStorefronts.zip",
+      "bytes": 101146466,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-NewStorefronts.zip",
+      "sha256": "97bc8932bc16097ee6fd3753d8f27e3eb89c0ddcf21fbb30cffbd649780a5aaa"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-PlayfulQuay-Voices.rbxlx",
+      "bytes": 15702485,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-PlayfulQuay-Voices.rbxlx",
+      "sha256": "9762af6623cab47bdd1df7ba2efe35ef40965699752c852f1fded65b54307a34"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-PlayfulQuay-Voices.zip",
+      "bytes": 75755529,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-PlayfulQuay-Voices.zip",
+      "sha256": "bf3671f23380d35beec3944d2f3709aa003b48b713c5d255ec2e0fb3a5787ce9"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-PlayfulQuay.rbxlx",
+      "bytes": 15696812,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-PlayfulQuay.rbxlx",
+      "sha256": "8093e7549f31182fce35488311f99255af90938e5ba4c9f9e6ce2c3c09726610"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-PlayfulQuay.zip",
+      "bytes": 75305952,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-PlayfulQuay.zip",
+      "sha256": "5ea7d62386ab5e46cf619159bb9113b2da6885f6b8e961c7216bf578d931c962"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-Recognition.rbxlx",
+      "bytes": 15764194,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-Recognition.rbxlx",
+      "sha256": "49091a06885619c99b991a0abedf9859b31bd200ccab99d413fd613bcbef5080"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-Recognition.zip",
+      "bytes": 77042830,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-Recognition.zip",
+      "sha256": "e3332edbd759ff821dd30b680b0e8ef78f80e591f07daeb9d63c26ead920b6a0"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-RemixPolish.rbxlx",
+      "bytes": 15889040,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-RemixPolish.rbxlx",
+      "sha256": "a7483281256acfbcb7ca7f7854e9487bcdd22c42ea5663fa8512cf50543ef92d"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-RemixPolish.zip",
+      "bytes": 119106478,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-RemixPolish.zip",
+      "sha256": "66b1ae27acd94ad23816b3f2ae9455bae4717a6703b965e673dd41873f04ee85"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-SplitPads.rbxlx",
+      "bytes": 15857070,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-SplitPads.rbxlx",
+      "sha256": "314ee476cda20ab0178d837ea37b8caddb174b84c4b1dcd7961d75e33f7dabc2"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-SplitPads.zip",
+      "bytes": 101146935,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-SplitPads.zip",
+      "sha256": "c65d57f0e2da9e46d47c1bc541281e9110d759627838cc5e34c21671340d00b6"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-StreetLife.rbxlx",
+      "bytes": 15715123,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-StreetLife.rbxlx",
+      "sha256": "cdc85fb01629ecbb70c908be9c47ad6bf4e3fedfe4fd9758d2cd3c724e0f3ab8"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-StreetLife.zip",
+      "bytes": 77030414,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-StreetLife.zip",
+      "sha256": "effbaa9ed437eb39ac6bbe33b9dba01d1aa2305b5cb7ed859498e8e453f86b16"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-StreetPlay.rbxlx",
+      "bytes": 15725478,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-StreetPlay.rbxlx",
+      "sha256": "870f69185cb952e10f7150340c3bae9311d53486c892c518119f16009c109337"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-StreetPlay.zip",
+      "bytes": 77033046,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-StreetPlay.zip",
+      "sha256": "33038468704b0d958b36c590b46d5f77263d7dc84354f48c88ea998e68c0bc38"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-VintageQuay.rbxlx",
+      "bytes": 15879599,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-VintageQuay.rbxlx",
+      "sha256": "54debc10a09edc120bc8bd7f18669e620abeb3cf4a0e519a6e69c824afc30a1c"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-VintageQuay.zip",
+      "bytes": 108936383,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-VintageQuay.zip",
+      "sha256": "1411d29551b19a8e992e9a25655b07bc26669b954630e3e274d2c9ff7fd7ac34"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-VisualGuide.rbxlx",
+      "bytes": 15709816,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-VisualGuide.rbxlx",
+      "sha256": "a7c8c96f013c88ec7b505ed8f962772c88050563f6f6ae296eb34618a6dd23d9"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-VisualGuide.zip",
+      "bytes": 75757421,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-VisualGuide.zip",
+      "sha256": "2cf857e8d41d035e08f9ef0e787a55266b6c3cbe8a423decf80df0d504aa7d6f"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-VoicedCommissions.rbxlx",
+      "bytes": 15834537,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-VoicedCommissions.rbxlx",
+      "sha256": "c25505a60af773cdbfa12a853f5af72371e48ce76e6993d3e14be42c2a089ae4"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-VoicedCommissions.zip",
+      "bytes": 97239428,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-VoicedCommissions.zip",
+      "sha256": "c5c2f2e519418799f9eff20bbaf70593217c83525d4018e5b47d5d726dc5f3da"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-VoicedRewards.rbxlx",
+      "bytes": 15771784,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-VoicedRewards.rbxlx",
+      "sha256": "856669f41f0c7cb217e670ad556cc9d9fe95a09359de1330e67393750cdb96e1"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-VoicedRewards.zip",
+      "bytes": 80817107,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-VoicedRewards.zip",
+      "sha256": "0c3c06c00fc23f378028018f3806d08204c2c3542353790eb2adabf7987014d7"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-Wardrobe.rbxlx",
+      "bytes": 15752140,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-Wardrobe.rbxlx",
+      "sha256": "00b1afca3435983aff1a69d348ca3d6685aa5a2d90e28c55c61983a0f2ac60f9"
+    },
+    {
+      "source": "output/needle-quay-demo/NeedleQuay-Wardrobe.zip",
+      "bytes": 77039790,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\needle-quay-demo\\NeedleQuay-Wardrobe.zip",
+      "sha256": "8c37604e6ba43e6178fa3b20ae88bb1460498b2e7e65414fd9c7ce4438da8a7b"
+    },
+    {
+      "source": "output/probe_current_studio.py",
+      "bytes": 1108,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\probe_current_studio.py",
+      "sha256": "9c9f01de9c4175c59d171d1726b2ab4420a73b764e5be1fae6bf9931cadc34bb"
+    },
+    {
+      "source": "output/probe_official_studio.py",
+      "bytes": 1106,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\probe_official_studio.py",
+      "sha256": "d18f6f898b188109bf482d9a5a6c6c16f958a34bbc1e849c7abff0e5e9081f23"
+    },
+    {
+      "source": "output/redesign_performance_deck.py",
+      "bytes": 7794,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\redesign_performance_deck.py",
+      "sha256": "4105a0c27063ea78ca71a35067a74f8e2c1c0a7a6253231112d768dfb690b798"
+    },
+    {
+      "source": "output/refine_motion.py",
+      "bytes": 1656,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\refine_motion.py",
+      "sha256": "8ec9cd9c8bc0dcabec0a94a9d8e12193e357129a61ed7c4c3c2a5facde049ddf"
+    },
+    {
+      "source": "output/refine_music_reactions.py",
+      "bytes": 637,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\refine_music_reactions.py",
+      "sha256": "13ea9a5242b91d800804e05b81495ff32774582f157d513d7ee1f0485f1ef249"
+    },
+    {
+      "source": "output/refine_ui_check.py",
+      "bytes": 475,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\refine_ui_check.py",
+      "sha256": "e23ce900b1358acb9df0a2a122791cfeb04525d038ce5ea5f972f1e4248dffa3"
+    },
+    {
+      "source": "output/release_live.luau",
+      "bytes": 127,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\release_live.luau",
+      "sha256": "d3c6864a3acee6fa8c03a62c77a4f279ea4d1364ad75ecc596aa416709ee4b31"
+    },
+    {
+      "source": "output/resize_storefronts.py",
+      "bytes": 1812,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\resize_storefronts.py",
+      "sha256": "d87a8bdc6fa84f5ecf9dd807baed9c87e9e8243d5d00fb49e384e93404852ff0"
+    },
+    {
+      "source": "output/save_live_evidence.py",
+      "bytes": 722,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\save_live_evidence.py",
+      "sha256": "5d5ddc30b4a0706f30003a05306b2354135f48cda3cc198a7475b2d0f2fdba71"
+    },
+    {
+      "source": "output/short_music_cues.py",
+      "bytes": 493,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\short_music_cues.py",
+      "sha256": "a2e59fe6fc31f91aadad2e025456e78c72de5c904d8b221856878e03fd607ca5"
+    },
+    {
+      "source": "output/skin-load-final.txt",
+      "bytes": 2399,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\skin-load-final.txt",
+      "sha256": "275e6fc6bd00cdcb4c5cbe152e530eb5cc12fabdf973cee61716b4357add87f4"
+    },
+    {
+      "source": "output/smooth_motion_cadence.py",
+      "bytes": 721,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\smooth_motion_cadence.py",
+      "sha256": "4d75cd715b4123bc9400d35256582564a920562f0dd54bdcdf88e7a63c70d6d5"
+    },
+    {
+      "source": "output/start_live.json",
+      "bytes": 142,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\start_live.json",
+      "sha256": "c21a50046bf300a28dc97ff6992c6834ca652074d430f7365ce7387fba1dec65"
+    },
+    {
+      "source": "output/start_nikolas_review.luau",
+      "bytes": 1879,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\start_nikolas_review.luau",
+      "sha256": "a2f84acc9627e67bd1353d64bc18a26ade32059245859440d71485abbd926344"
+    },
+    {
+      "source": "output/start_skin_review.luau",
+      "bytes": 1877,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\start_skin_review.luau",
+      "sha256": "7907f162fa37f699195173bcfa024e997e424d95d76f169503a73aed2eacf544"
+    },
+    {
+      "source": "output/stop_live.json",
+      "bytes": 143,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\stop_live.json",
+      "sha256": "b7c24c780bec1dc52dc00e55e60fd64222629cfd9fe8c592cffc1266d1006a32"
+    },
+    {
+      "source": "output/studio-capture.png",
+      "bytes": 202651,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\studio-capture.png",
+      "sha256": "0e7c017bd9e01732b706a8af0651b0b25675e5a8f5113b94456eed27318d4f1c"
+    },
+    {
+      "source": "output/studio-request.json",
+      "bytes": 157,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\studio-request.json",
+      "sha256": "bec323de9c3121d5122c6e9287906fdefedf2f3bfbcec53630bbba9633f7dc8c"
+    },
+    {
+      "source": "output/studio-response.json",
+      "bytes": 104,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\studio-response.json",
+      "sha256": "085bf28dc326cd2fad311ed7cb9e8666a25551adfaf9f08a0643a85cc47b6775"
+    },
+    {
+      "source": "output/studio_call.py",
+      "bytes": 1883,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\studio_call.py",
+      "sha256": "8c22d0fb6ff4741bd4cdbe23e7aa7d579a4d978717b7c8229fb4ad82a5af7890"
+    },
+    {
+      "source": "output/supplied-buildings-adaptation.log",
+      "bytes": 3822,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\supplied-buildings-adaptation.log",
+      "sha256": "9c7c5d0bf67d694da8e667ca2029c2565f75a8b929bcfef6bbed6b37bac26704"
+    },
+    {
+      "source": "output/supplied-van.log",
+      "bytes": 1031,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\supplied-van.log",
+      "sha256": "a2ec0bb6a1dcbe26b300cde336d2ba04825311c92c3e547c3d99d05b14700c60"
+    },
+    {
+      "source": "output/sync_live_performance.luau",
+      "bytes": 206103,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\sync_live_performance.luau",
+      "sha256": "477c5143fee7c66514ca7c19ac531aca856448a82401e6afa146d5d666922f15"
+    },
+    {
+      "source": "output/sync_live_performance.py",
+      "bytes": 1261,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\sync_live_performance.py",
+      "sha256": "316b2d005566ec034d21f3a6bad587f3aa8e19963d19df594e0a5136828284da"
+    },
+    {
+      "source": "output/sync_memory_fix.luau",
+      "bytes": 151192,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\sync_memory_fix.luau",
+      "sha256": "264053b586fd6fc93e57a122efce19c8f22445d303fea024710be647c6e33441"
+    },
+    {
+      "source": "output/sync_memory_fix.py",
+      "bytes": 862,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\sync_memory_fix.py",
+      "sha256": "6ca058ae36ba7648518fcab7ecb81101208f4d5054670e2fc85953f4396cd870"
+    },
+    {
+      "source": "output/sync_polish.luau",
+      "bytes": 234008,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\sync_polish.luau",
+      "sha256": "443c78160d7d22fcbab7b0815d71c88338765f0552346bbc8ce79a5ce4da922f"
+    },
+    {
+      "source": "output/sync_polish.py",
+      "bytes": 1175,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\sync_polish.py",
+      "sha256": "3ffbf45097870341152148dc3b8a080cb2ab871d11a6b732cf4ec57a92267f57"
+    },
+    {
+      "source": "output/sync_skin_repair.luau",
+      "bytes": 3939761,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\sync_skin_repair.luau",
+      "sha256": "f479645169c2c61c57023c23dddfeaf90fbe33e7ddd215e217f9e16216060c4f"
+    },
+    {
+      "source": "output/sync_skin_repair.py",
+      "bytes": 1454,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\sync_skin_repair.py",
+      "sha256": "27451d955a35155bd32b7d2f372cf6b67adc64103fded1f3d2bf4634d45895ac"
+    },
+    {
+      "source": "output/teleport_audience.luau",
+      "bytes": 216,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\teleport_audience.luau",
+      "sha256": "115e0eafd801050afcdcf805d9fdc5a5d261dddefabc17fe4b8fd195636fdf66"
+    },
+    {
+      "source": "output/teleport_live.luau",
+      "bytes": 266,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\teleport_live.luau",
+      "sha256": "2094a928707f5b4a239c6f2cfe31d44fc416338ec5920cabe2edaa9b4d56a0f5"
+    },
+    {
+      "source": "output/test_ui_tabs.py",
+      "bytes": 1209,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\test_ui_tabs.py",
+      "sha256": "b549014b1d14c455ea4a8ef7e027b33289d27623374ca105bce70307ea888330"
+    },
+    {
+      "source": "output/tori-heat.json",
+      "bytes": 413442,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\tori-heat.json",
+      "sha256": "1852ca2084b1529a9421cc6745cd23f597db56063737a0c709cf72b089dd220d"
+    },
+    {
+      "source": "output/try_anatomical.py",
+      "bytes": 1292,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\try_anatomical.py",
+      "sha256": "9f85709b83fd225196aac5c1897c584931568b49011f4819f13616dee4ede78b"
+    },
+    {
+      "source": "output/try_blender_weights.py",
+      "bytes": 766,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\try_blender_weights.py",
+      "sha256": "1d4b02070da45619691f8293ff966e9fe62499c4142c88ffc491effca569d6fe"
+    },
+    {
+      "source": "output/try_companion_weights.py",
+      "bytes": 624,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\try_companion_weights.py",
+      "sha256": "0ef1a89aa3c297806d09adba259cd202c7372723f57e9eb6a197bf610245fb9e"
+    },
+    {
+      "source": "output/try_harmonic.py",
+      "bytes": 870,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\try_harmonic.py",
+      "sha256": "35de22261925da809b7efe3d1f7a353dadcc722f2cbe7ce922a3b4bc39a0d008"
+    },
+    {
+      "source": "output/try_skin_weights.py",
+      "bytes": 1737,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\try_skin_weights.py",
+      "sha256": "31f38bcf961b2420ddc6d1a1c108054005eb859be8f9f5e7165937253402b8ab"
+    },
+    {
+      "source": "output/try_transfer_weights.py",
+      "bytes": 749,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\try_transfer_weights.py",
+      "sha256": "3b26df0ba36886ae1dce046208b38c05011a53841b91ea8b9faa2babedee57ea"
+    },
+    {
+      "source": "output/upgrade_fx_texture.py",
+      "bytes": 1827,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\upgrade_fx_texture.py",
+      "sha256": "c4f61ac1d13b6feae4358b0dbd3f6172a4fdf1116c34f8080215730c6a519668"
+    },
+    {
+      "source": "output/verify_live_skin_motion.luau",
+      "bytes": 1564,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\verify_live_skin_motion.luau",
+      "sha256": "e286bc222e6a47d09f11a6b17e1d9f9e3e0dc72ae9502944a76643648a8bdc45"
+    },
+    {
+      "source": "output/verify_street_motion.luau",
+      "bytes": 735,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\verify_street_motion.luau",
+      "sha256": "197ad0cc5b56951d4338a4af7444fd9803f9c73a89f72736f6258dbaab091f70"
+    },
+    {
+      "source": "output/view_vintage_van.luau",
+      "bytes": 686,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\view_vintage_van.luau",
+      "sha256": "ae01f6dd1e530f62f1b904daf740a561fc698f2192c603c7e7c70f7aecd4fba0"
+    },
+    {
+      "source": "output/wait_load.luau",
+      "bytes": 210,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\wait_load.luau",
+      "sha256": "5b6e560395676cd328003e9e3eed5aa60d0f94c9b599afe57534d591669a7cf4"
+    },
+    {
+      "source": "output/walk_perimeters.luau",
+      "bytes": 1044,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\walk_perimeters.luau",
+      "sha256": "ac92dc856da503fa88e92c45902bcda101ce8ab617949cc5c4314990dfdf62d5"
+    },
+    {
+      "source": "output/walk_perimeters_2.luau",
+      "bytes": 1058,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\walk_perimeters_2.luau",
+      "sha256": "0eaff8fd618cf60f8139a38aec1f333c66aefe24345122fddb57f55f0a07343d"
+    },
+    {
+      "source": "output/walk_vans.luau",
+      "bytes": 1030,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\walk_vans.luau",
+      "sha256": "e99037277d297b6f8d88176700db89fde8c6f8d795c86c04df3a5022ca27a7d5"
+    },
+    {
+      "source": "output/wire_beat_expression.py",
+      "bytes": 1251,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\wire_beat_expression.py",
+      "sha256": "e6869a9542d8ccd657d83a95469ffac3b2a7b1d29ed6ec67b6942ef652ed466a"
+    },
+    {
+      "source": "output/wire_live_reactions.py",
+      "bytes": 4911,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\wire_live_reactions.py",
+      "sha256": "c72dcca77ddc154d0f6fd5006f46fd17d00ee50bc0def9af3257db41323286ac"
+    },
+    {
+      "source": "output/workshop-source-response.txt",
+      "bytes": 45684,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\workshop-source-response.txt",
+      "sha256": "c2be4feac80ff1e14c461cc7f1c995c4b8820bad700f5ec01aee8cfaa9b8ba33"
+    },
+    {
+      "source": "output/worst_edges.py",
+      "bytes": 452,
+      "action": "archive",
+      "archive": "C:\\Users\\slavd\\BeatMaka-Archive\\2026-10-30-pre-liftup\\output\\worst_edges.py",
+      "sha256": "e8581a0cc51a350100ae8b59e41db153194dd74abc76583ee9e47b14be185b07"
+    }
+  ],
+  "reclaimed_duplicate_bytes": 3096658502,
+  "archived_bytes": 2634542697,
+  "locked_places_kept": [
+    "NeedleQuay-Artbook-Pass.rbxlx",
+    "NeedleQuay-Local-Final.rbxlx",
+    "NeedleQuay-SplitPads/NeedleQuay-SplitPads.rbxlx"
+  ]
+}

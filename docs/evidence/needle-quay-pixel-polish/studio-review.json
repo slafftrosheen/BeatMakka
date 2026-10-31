@@ -1,0 +1,58 @@
+{
+  "runtime": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"repeatGardenXp\":45,\"textureFailures\":0,\"artLoaded\":80,\"graffiti\":{\"GRA-06\":\"Enum.ContentSourceType.Object\",\"GRA-10\":\"Enum.ContentSourceType.Object\",\"GRA-01\":\"Enum.ContentSourceType.Object\",\"GRA-02\":\"Enum.ContentSourceType.Object\",\"GRA-07\":\"Enum.ContentSourceType.Object\",\"GRA-03\":\"Enum.ContentSourceType.Object\",\"GRA-04\":\"Enum.ContentSourceType.Object\",\"GRA-09\":\"Enum.ContentSourceType.Object\",\"GRA-05\":\"Enum.ContentSourceType.Object\",\"GRA-08\":\"Enum.ContentSourceType.Object\"},\"device\":\"default\",\"artTotal\":80,\"skinsBuilt\":true}"
+      }
+    ],
+    "isError": false
+  },
+  "console": {
+    "content": [
+      {
+        "type": "text",
+        "text": "ContentId: rbxassetid://203785492 failed due to: Asset type does not match requested type\nContentId: rbxassetid://203785492 failed due to: Asset type does not match requested type\nContentId: rbxassetid://203785492 failed due to: Asset type does not match requested type"
+      }
+    ],
+    "isError": false
+  },
+  "studio_id": "87b72f67-950b-407c-a0ca-3db468590934",
+  "place": "NeedleQuay-Current.rbxlx",
+  "review": "local single-player visual inspection; no test suite",
+  "viewport": {
+    "desktop_pad": [
+      97,
+      97
+    ],
+    "phone_portrait": [
+      400,
+      777
+    ],
+    "portrait_pad": [
+      65,
+      65
+    ],
+    "phone_landscape": [
+      749,
+      381
+    ],
+    "landscape_pad": [
+      47,
+      47
+    ]
+  },
+  "sources": [
+    "client/GrooveboxSkin",
+    "client/HardwarePadControls",
+    "client/HardwareFaceplate",
+    "client/GrooveboxTools",
+    "client/WorkshopView",
+    "client/QuayCelebrations",
+    "server/QuayAtmosphere",
+    "server/QuayStreetScene",
+    "server/QuayLifeService",
+    "server/QuayVista",
+    "client/QuayDemoView"
+  ]
+}

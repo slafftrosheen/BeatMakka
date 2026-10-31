@@ -1,6 +1,6 @@
 local Shared = game.ReplicatedStorage.Shared
 local Protocol = require(Shared.JamProtocol)
-local Pattern = require(Shared.Pattern)
+local Sequence = require(Shared.MusicSequence)
 local Service = {}
 Service.__index = Service
 
@@ -29,6 +29,7 @@ end
 
 function Service:state(player)
     return {
+        schema = Protocol.Schema,
         generation = self.generation,
         revision = self.revision,
         open = self.panels[player] == true,
@@ -71,7 +72,7 @@ function Service:leave(player)
         self.session = nil
     end
     -- Tempo is shared, so a conductor handoff preserves an accepted tempo change.
-    self:changed(player, "Left the jam. Your own pattern is unchanged.")
+    self:changed(player, "Left the jam. Your project is unchanged.")
 end
 
 function Service:command(player, action, packet)
@@ -113,14 +114,23 @@ function Service:command(player, action, packet)
             self.send(player, "Wait for queued changes before changing tempo.")
             return
         end
-        if not Pattern.integer(packet.value, 60, 180) then
+        if not Sequence.integer(packet.value, 60, 180) then
             self.send(player, "Tempo must be 60–180 BPM.")
             return
         end
         session.tempo = {
             bpm = packet.value,
             applyAt = Protocol.boundary(session.anchor, session.bpm, self.now()),
+            phaseTicks = {},
         }
+        for key, part in session.tracks do
+            if part.snapshot then
+                session.tempo.phaseTicks[key] = (
+                    (part.phaseTick or 0)
+                    + math.max(0, session.tempo.applyAt - part.sinceAt) * session.bpm * 960 / 60
+                ) % (part.snapshot.bars * 3840)
+            end
+        end
         self:changed(player, "Shared tempo queued for the next available bar.")
         return
     end
@@ -136,8 +146,11 @@ function Service:command(player, action, packet)
         self.send(player, "Wait for your queued change before publishing again.")
         return
     end
-    local snapshot, err =
-        Protocol.capture(profile.pattern, profile.unlocked, self.session and self.session.pack)
+    local project = profile.music and profile.music.project
+    local sequenceId = project and (profile.sequenceId or project.sequenceOrder[1])
+    local sequence = project and project.sequences[sequenceId]
+    local bpm = if self.session then self.session.bpm else sequence and sequence.bpm
+    local snapshot, err = Protocol.capture(project, sequenceId, profile.unlocked, bpm)
     if not snapshot then
         self.send(player, err)
         return
@@ -158,11 +171,11 @@ function Service:command(player, action, packet)
         if not self.session then
             self.generation += 1
             self.session = {
+                schema = Protocol.Schema,
                 generation = self.generation,
                 revision = self.revision,
-                bpm = profile.pattern.bpm,
+                bpm = bpm,
                 anchor = self.now() + Protocol.Lead,
-                pack = snapshot.pack,
                 tracks = {},
                 pending = {},
             }
@@ -196,7 +209,7 @@ function Service:command(player, action, packet)
             version = track.version + 1,
             applyAt = Protocol.boundary(self.session.anchor, self.session.bpm, self.now()),
         }
-        self:changed(player, "Your pattern copy is queued; the other track stays unchanged.")
+        self:changed(player, "Your Sequence copy is queued; the other player keeps their own part.")
     end
 end
 
@@ -216,11 +229,16 @@ function Service:tick()
         if now >= pending.applyAt then
             local t = s.tracks[tostring(slot)]
             t.snapshot, t.version, t.sinceAt = pending.snapshot, pending.version, pending.applyAt
+            t.phaseTick = 0
             s.pending[tostring(slot)] = nil
             changed = true
         end
     end
     if s.tempo and now >= s.tempo.applyAt then
+        for key, part in s.tracks do
+            part.phaseTick = s.tempo.phaseTicks[key] or 0
+            part.sinceAt = s.tempo.applyAt
+        end
         s.anchor, s.bpm = s.tempo.applyAt, s.tempo.bpm
         s.tempo = nil
         changed = true

@@ -1,5 +1,6 @@
 -- Ephemeral rights for one courtyard stage; does not own music or profile progress.
-local Pattern = require(game.ReplicatedStorage.Shared.Pattern)
+local Project = require(game.ReplicatedStorage.Shared.MusicProject)
+local Catalog = require(game.ReplicatedStorage.Shared.SampleCatalog)
 local Workspace = game:GetService("Workspace")
 local Stage = {}
 Stage.__index = Stage
@@ -79,17 +80,59 @@ function Stage:open(p)
 end
 
 function Stage:state(p)
-    local queue, position = {}, nil
+    local queue, entries, position = {}, {}, nil
     for i, entry in self.queue do
         table.insert(queue, entry.player.DisplayName)
+        table.insert(entries, {
+            performer = entry.player.DisplayName,
+            title = entry.snapshot.title,
+            ref = entry.snapshot.ref,
+            duration = entry.snapshot.schedule.duration,
+            loop = entry.snapshot.loop,
+        })
         if entry.player == p then
             position = i
+        end
+    end
+    local available = {}
+    local profile = self.profiles[p]
+    local project = profile and profile.music and profile.music.project
+    if project then
+        for _, id in project.sequenceOrder do
+            local sequence = project.sequences[id]
+            table.insert(available, {
+                kind = "sequence",
+                id = id,
+                revision = sequence.revision,
+                title = sequence.name,
+                bars = sequence.bars,
+                bpm = sequence.bpm,
+                loop = true,
+            })
+        end
+        local saved = profile.saved and profile.saved.music
+        for _, id in saved and saved.finishedOrder or {} do
+            local song = saved.finishedSongs[id]
+            table.insert(available, {
+                kind = "finished",
+                id = id,
+                revision = song.revision,
+                title = song.title,
+                duration = song.duration,
+                loop = false,
+            })
         end
     end
     return {
         open = self.opened[p] == true,
         performer = self.session.owner and self.session.owner.DisplayName,
         queue = queue,
+        entries = entries,
+        available = available,
+        selectedRef = profile and profile.listeningRef,
+        title = self.session.prepared and self.session.prepared.title,
+        performanceRef = self.session.prepared and self.session.prepared.ref,
+        duration = self.session.prepared and self.session.prepared.duration,
         position = position,
         requesting = position ~= nil,
         canStart = self.session.owner == nil and position == 1,
@@ -148,7 +191,7 @@ function Stage:depart(p)
     end
 end
 
-function Stage:command(p, action)
+function Stage:command(p, action, payload)
     if action == "StageClose" then
         self:depart(p)
         self.send(p, "Left the stage. Your music and earned progress are unchanged.")
@@ -179,19 +222,12 @@ function Stage:command(p, action)
             self.send(p, "Four sets are waiting. Try again after a turn opens.")
             return
         end
-        local snapshot = Pattern.sanitize(profile.pattern, profile.unlocked)
-        local audible = false
-        for pad, row in snapshot.rows do
-            if not snapshot.muted[pad] then
-                for _, on in row do
-                    audible = audible or on
-                end
-            end
-        end
-        if not audible then
-            self.send(p, "Build an unmuted loop at a sampler before preparing a set.")
+        local snapshot, message = self.session:prepare(p, payload)
+        if not snapshot then
+            self.send(p, message)
             return
         end
+        profile.listeningRef = Project.clone(snapshot.ref)
         table.insert(self.queue, { player = p, snapshot = snapshot, createdAt = self.clock() })
         self:refresh()
         self.send(
@@ -208,6 +244,15 @@ function Stage:command(p, action)
         if self.session.owner or not entry or entry.player ~= p then
             self.send(p, "Wait for your own offered turn.")
             return
+        end
+        for _, event in entry.snapshot.schedule.events do
+            if not Catalog.isPlaybackReady(event.sampleId, profile.unlocked) then
+                self.send(
+                    p,
+                    "This prepared set has unavailable audio. Cancel and review it before playing."
+                )
+                return
+            end
         end
         table.remove(self.queue, 1)
         self.session:start(p, entry.snapshot)

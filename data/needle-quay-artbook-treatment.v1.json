@@ -1,0 +1,409 @@
+{
+  "version": 1,
+  "date": "2026-10-30",
+  "scope": "active local color-material catalogs; original files and UVs unchanged",
+  "sources": [
+    "BeatMakka_World_v2/BeatMakka_World_Artbook_v2_RU.pdf p12-13",
+    "output/needle-quay/BeatMakka_Needle_Quay_Environment_Quest_Artbook_Vol01.pdf p77-78",
+    "BeatMakka_Companions_v1/BeatMakka_Companions_Artbook_RU.pdf p2"
+  ],
+  "rules": [
+    {
+      "key": "env_brick_color",
+      "uri": "rbxasset://needle-quay/materials/env_brick_color_fa90cb27ee05.png",
+      "treatment": "retain_authored_environment_palette"
+    },
+    {
+      "key": "env_brick_normal",
+      "uri": "rbxasset://needle-quay/materials/env_brick_normal_8bb779624613.png",
+      "treatment": "retain_data_map"
+    },
+    {
+      "key": "env_brick_rough",
+      "uri": "rbxasset://needle-quay/materials/env_brick_rough_0666bac802c9.png",
+      "treatment": "retain_data_map"
+    },
+    {
+      "key": "env_canvas_color",
+      "uri": "rbxasset://needle-quay/materials/env_canvas_color_48c90ffc4e3f.png",
+      "treatment": "retain_authored_environment_palette"
+    },
+    {
+      "key": "env_canvas_normal",
+      "uri": "rbxasset://needle-quay/materials/env_canvas_normal_90459b7a0f33.png",
+      "treatment": "retain_data_map"
+    },
+    {
+      "key": "env_canvas_rough",
+      "uri": "rbxasset://needle-quay/materials/env_canvas_rough_0d4fe9e5ec57.png",
+      "treatment": "retain_data_map"
+    },
+    {
+      "key": "env_metal_color",
+      "uri": "rbxasset://needle-quay/materials/env_metal_color_fdeeed165aed.png",
+      "treatment": "retain_authored_environment_palette"
+    },
+    {
+      "key": "env_metal_normal",
+      "uri": "rbxasset://needle-quay/materials/env_metal_normal_54d0e2b939b4.png",
+      "treatment": "retain_data_map"
+    },
+    {
+      "key": "env_metal_rough",
+      "uri": "rbxasset://needle-quay/materials/env_metal_rough_bb15859b7c31.png",
+      "treatment": "retain_data_map"
+    },
+    {
+      "key": "env_plaster_color",
+      "uri": "rbxasset://needle-quay/materials/env_plaster_color_f342f36fd8fd.png",
+      "treatment": "retain_authored_environment_palette"
+    },
+    {
+      "key": "env_plaster_normal",
+      "uri": "rbxasset://needle-quay/materials/env_plaster_normal_fb3b1173a956.png",
+      "treatment": "retain_data_map"
+    },
+    {
+      "key": "env_plaster_rough",
+      "uri": "rbxasset://needle-quay/materials/env_plaster_rough_8cb68d4004f9.png",
+      "treatment": "retain_data_map"
+    },
+    {
+      "key": "env_stone_color",
+      "uri": "rbxasset://needle-quay/materials/env_stone_color_664914c7835a.png",
+      "treatment": "retain_authored_environment_palette"
+    },
+    {
+      "key": "env_stone_normal",
+      "uri": "rbxasset://needle-quay/materials/env_stone_normal_8aad3f5657a3.png",
+      "treatment": "retain_data_map"
+    },
+    {
+      "key": "env_stone_rough",
+      "uri": "rbxasset://needle-quay/materials/env_stone_rough_cbcd42d63dfa.png",
+      "treatment": "retain_data_map"
+    },
+    {
+      "key": "env_wood_color",
+      "uri": "rbxasset://needle-quay/materials/env_wood_color_bbf988c41a23.png",
+      "treatment": "retain_authored_environment_palette"
+    },
+    {
+      "key": "env_wood_normal",
+      "uri": "rbxasset://needle-quay/materials/env_wood_normal_9f5d38305081.png",
+      "treatment": "retain_data_map"
+    },
+    {
+      "key": "env_wood_rough",
+      "uri": "rbxasset://needle-quay/materials/env_wood_rough_42a602bd8a4e.png",
+      "treatment": "retain_data_map"
+    },
+    {
+      "key": "character_ivo_color",
+      "uri": "rbxasset://needle-quay/materials/character_ivo_color_508db5669409.png",
+      "treatment": "retain_authored_face_and_clothing_texture; generic wardrobe uses bone-weighted vertex colors"
+    },
+    {
+      "key": "character_ivo_normal",
+      "uri": "rbxasset://needle-quay/materials/character_ivo_normal_2729a833abf1.png",
+      "treatment": "retain_data_map"
+    },
+    {
+      "key": "character_ivo_rough",
+      "uri": "rbxasset://needle-quay/materials/character_ivo_rough_8515f79df6ff.png",
+      "treatment": "retain_data_map"
+    },
+    {
+      "key": "character_naya_color",
+      "uri": "rbxasset://needle-quay/materials/character_naya_color_60dba329f19b.png",
+      "treatment": "retain_authored_face_and_clothing_texture; generic wardrobe uses bone-weighted vertex colors"
+    },
+    {
+      "key": "character_naya_normal",
+      "uri": "rbxasset://needle-quay/materials/character_naya_normal_860ca617fb0d.png",
+      "treatment": "retain_data_map"
+    },
+    {
+      "key": "character_naya_rough",
+      "uri": "rbxasset://needle-quay/materials/character_naya_rough_d75de9f0bf55.png",
+      "treatment": "retain_data_map"
+    },
+    {
+      "key": "character_nell_color",
+      "uri": "rbxasset://needle-quay/materials/character_nell_color_0b718b989ee7.png",
+      "treatment": "retain_authored_face_and_clothing_texture; generic wardrobe uses bone-weighted vertex colors"
+    },
+    {
+      "key": "character_nell_normal",
+      "uri": "rbxasset://needle-quay/materials/character_nell_normal_d552b369f761.png",
+      "treatment": "retain_data_map"
+    },
+    {
+      "key": "character_nell_rough",
+      "uri": "rbxasset://needle-quay/materials/character_nell_rough_8a72c4df33bb.png",
+      "treatment": "retain_data_map"
+    },
+    {
+      "key": "character_ronan_color",
+      "uri": "rbxasset://needle-quay/materials/character_ronan_color_16e57eff2abf.png",
+      "treatment": "retain_authored_face_and_clothing_texture; generic wardrobe uses bone-weighted vertex colors"
+    },
+    {
+      "key": "character_ronan_normal",
+      "uri": "rbxasset://needle-quay/materials/character_ronan_normal_12161eda2294.png",
+      "treatment": "retain_data_map"
+    },
+    {
+      "key": "character_ronan_rough",
+      "uri": "rbxasset://needle-quay/materials/character_ronan_rough_c1f08c6a6578.png",
+      "treatment": "retain_data_map"
+    },
+    {
+      "key": "character_sana_color",
+      "uri": "rbxasset://needle-quay/materials/character_sana_color_e6d3a6452546.png",
+      "treatment": "retain_authored_face_and_clothing_texture; generic wardrobe uses bone-weighted vertex colors"
+    },
+    {
+      "key": "character_sana_normal",
+      "uri": "rbxasset://needle-quay/materials/character_sana_normal_d552b369f761.png",
+      "treatment": "retain_data_map"
+    },
+    {
+      "key": "character_sana_rough",
+      "uri": "rbxasset://needle-quay/materials/character_sana_rough_8a72c4df33bb.png",
+      "treatment": "retain_data_map"
+    },
+    {
+      "key": "character_tori_color",
+      "uri": "rbxasset://needle-quay/materials/character_tori_color_9c08a8b4be36.png",
+      "treatment": "retain_authored_face_and_clothing_texture; generic wardrobe uses bone-weighted vertex colors"
+    },
+    {
+      "key": "character_tori_normal",
+      "uri": "rbxasset://needle-quay/materials/character_tori_normal_c55a490945ff.png",
+      "treatment": "retain_data_map"
+    },
+    {
+      "key": "character_tori_rough",
+      "uri": "rbxasset://needle-quay/materials/character_tori_rough_52c9e855ccbe.png",
+      "treatment": "retain_data_map"
+    },
+    {
+      "key": "supplied_midi_0_color",
+      "uri": "rbxasset://needle-quay/materials/supplied_midi_0_color_c94987420bc6.png",
+      "treatment": "supplied_material_palette_treatment"
+    },
+    {
+      "key": "supplied_midi_1_color",
+      "uri": "rbxasset://needle-quay/materials/supplied_midi_0_color_c94987420bc6.png",
+      "treatment": "supplied_material_palette_treatment"
+    },
+    {
+      "key": "supplied_midi_2_color",
+      "uri": "rbxasset://needle-quay/materials/supplied_midi_0_color_c94987420bc6.png",
+      "treatment": "supplied_material_palette_treatment"
+    },
+    {
+      "key": "supplied_midi_3_color",
+      "uri": "rbxasset://needle-quay/materials/supplied_midi_0_color_c94987420bc6.png",
+      "treatment": "supplied_material_palette_treatment"
+    },
+    {
+      "key": "supplied_midi_4_color",
+      "uri": "rbxasset://needle-quay/materials/supplied_midi_4_color_818bbc1ffe92.png",
+      "treatment": "supplied_material_palette_treatment"
+    },
+    {
+      "key": "supplied_midi_5_color",
+      "uri": "rbxasset://needle-quay/materials/supplied_midi_0_color_c94987420bc6.png",
+      "treatment": "supplied_material_palette_treatment"
+    },
+    {
+      "key": "supplied_midi_6_color",
+      "uri": "rbxasset://needle-quay/materials/supplied_midi_4_color_818bbc1ffe92.png",
+      "treatment": "supplied_material_palette_treatment"
+    },
+    {
+      "key": "supplied_midi_7_color",
+      "uri": "rbxasset://needle-quay/materials/supplied_midi_0_color_c94987420bc6.png",
+      "treatment": "supplied_material_palette_treatment"
+    },
+    {
+      "key": "supplied_radio_0_color",
+      "uri": "rbxasset://needle-quay/materials/supplied_radio_0_color_a0db55e1e270.png",
+      "treatment": "supplied_material_palette_treatment"
+    },
+    {
+      "key": "supplied_radio_1_color",
+      "uri": "rbxasset://needle-quay/materials/supplied_radio_1_color_21b497e2cce8.png",
+      "treatment": "supplied_material_palette_treatment"
+    },
+    {
+      "key": "supplied_city_0_color",
+      "uri": "rbxasset://needle-quay/materials/supplied_city_0_color_66574aee45fb.png",
+      "treatment": "supplied_material_palette_treatment"
+    },
+    {
+      "key": "supplied_furniture_0_color",
+      "uri": "rbxasset://needle-quay/materials/supplied_furniture_0_color_c76a378e66b5.png",
+      "treatment": "supplied_material_palette_treatment"
+    },
+    {
+      "key": "supplied_furniture_1_color",
+      "uri": "rbxasset://needle-quay/materials/supplied_furniture_0_color_c76a378e66b5.png",
+      "treatment": "supplied_material_palette_treatment"
+    },
+    {
+      "key": "supplied_utility_0_color",
+      "uri": "rbxasset://needle-quay/materials/supplied_utility_0_color_7f21c3c769e0.png",
+      "treatment": "supplied_material_palette_treatment"
+    },
+    {
+      "key": "supplied_produce_0_color",
+      "uri": "rbxasset://needle-quay/materials/supplied_produce_0_color_42930ed7e086.png",
+      "treatment": "supplied_material_palette_treatment"
+    },
+    {
+      "key": "supplied_groceries_0_color",
+      "uri": "rbxasset://needle-quay/materials/supplied_groceries_0_color_a87fef3b82c1.png",
+      "treatment": "supplied_material_palette_treatment"
+    },
+    {
+      "key": "supplied_vinyl_0_color",
+      "uri": "rbxasset://needle-quay/materials/supplied_vinyl_0_color_33243e5b37d6.png",
+      "treatment": "supplied_material_palette_treatment"
+    },
+    {
+      "key": "supplied_shore_rock_0_color",
+      "uri": "rbxasset://needle-quay/materials/supplied_shore_rock_0_color_5d487c894514.png",
+      "treatment": "supplied_material_palette_treatment"
+    },
+    {
+      "key": "supplied_building_NQ-BLD-02",
+      "uri": "rbxasset://needle-quay/buildings-set-01/NQ-BLD-02_color.png",
+      "treatment": "supplied_material_palette_treatment; shared matte roughness",
+      "catalog": "QuayBuildingMaterials"
+    },
+    {
+      "key": "supplied_building_NQ-BLD-01",
+      "uri": "rbxasset://needle-quay/buildings-set-01/NQ-BLD-01_color.png",
+      "treatment": "supplied_material_palette_treatment; shared matte roughness",
+      "catalog": "QuayBuildingMaterials"
+    },
+    {
+      "key": "supplied_building_NQ-BLD-08",
+      "uri": "rbxasset://needle-quay/buildings-set-01/NQ-BLD-08_color.png",
+      "treatment": "supplied_material_palette_treatment; shared matte roughness",
+      "catalog": "QuayBuildingMaterials"
+    },
+    {
+      "key": "supplied_building_NQ-BLD-07",
+      "uri": "rbxasset://needle-quay/buildings-set-01/NQ-BLD-07_color.png",
+      "treatment": "supplied_material_palette_treatment; shared matte roughness",
+      "catalog": "QuayBuildingMaterials"
+    },
+    {
+      "key": "supplied_building_NQ-BLD-06",
+      "uri": "rbxasset://needle-quay/buildings-set-01/NQ-BLD-06_color.png",
+      "treatment": "supplied_material_palette_treatment; shared matte roughness",
+      "catalog": "QuayBuildingMaterials"
+    },
+    {
+      "key": "supplied_building_NQ-BLD-05",
+      "uri": "rbxasset://needle-quay/buildings-set-01/NQ-BLD-05_color.png",
+      "treatment": "supplied_material_palette_treatment; shared matte roughness",
+      "catalog": "QuayBuildingMaterials"
+    },
+    {
+      "key": "supplied_building_NQ-BLD-03",
+      "uri": "rbxasset://needle-quay/buildings-set-01/NQ-BLD-03_color.png",
+      "treatment": "supplied_material_palette_treatment; shared matte roughness",
+      "catalog": "QuayBuildingMaterials"
+    },
+    {
+      "key": "supplied_van_LOOPVAN-01",
+      "uri": "rbxasset://needle-quay/vintage-van/LOOPVAN-01_color.png",
+      "treatment": "supplied_material_palette_treatment; shared matte roughness",
+      "catalog": "QuayVanMaterials"
+    },
+    {
+      "key": "supplied_dressing_be8d8f0d2ac6",
+      "uri": "rbxasset://needle-quay/dressing/color_be8d8f0d2ac6.png",
+      "treatment": "supplied_material_palette_treatment; shared matte roughness",
+      "catalog": "QuayDressingMaterials"
+    },
+    {
+      "key": "supplied_dressing_f80c6402f81d",
+      "uri": "rbxasset://needle-quay/dressing/color_f80c6402f81d.png",
+      "treatment": "supplied_material_palette_treatment; shared matte roughness",
+      "catalog": "QuayDressingMaterials"
+    },
+    {
+      "key": "supplied_dressing_f17b68636d7d",
+      "uri": "rbxasset://needle-quay/dressing/color_f17b68636d7d.png",
+      "treatment": "supplied_material_palette_treatment; shared matte roughness",
+      "catalog": "QuayDressingMaterials"
+    },
+    {
+      "key": "supplied_liftup_2c998f489aae",
+      "uri": "rbxasset://needle-quay/liftup/color_2c998f489aae.png",
+      "treatment": "supplied_material_palette_treatment; shared matte roughness",
+      "catalog": "QuayLiftupMaterials"
+    },
+    {
+      "key": "supplied_liftup_95824bd9852d",
+      "uri": "rbxasset://needle-quay/liftup/color_95824bd9852d.png",
+      "treatment": "supplied_material_palette_treatment; shared matte roughness",
+      "catalog": "QuayLiftupMaterials"
+    },
+    {
+      "key": "supplied_liftup_958c3e86d3f6",
+      "uri": "rbxasset://needle-quay/liftup/color_958c3e86d3f6.png",
+      "treatment": "supplied_material_palette_treatment; shared matte roughness",
+      "catalog": "QuayLiftupMaterials"
+    },
+    {
+      "key": "supplied_liftup_1b02f4b8abd9",
+      "uri": "rbxasset://needle-quay/liftup/color_1b02f4b8abd9.png",
+      "treatment": "supplied_material_palette_treatment; shared matte roughness",
+      "catalog": "QuayLiftupMaterials"
+    },
+    {
+      "key": "supplied_liftup_88d02694611d",
+      "uri": "rbxasset://needle-quay/liftup/color_88d02694611d.png",
+      "treatment": "supplied_material_palette_treatment; shared matte roughness",
+      "catalog": "QuayLiftupMaterials"
+    },
+    {
+      "key": "supplied_liftup_3a6b2a03877c",
+      "uri": "rbxasset://needle-quay/liftup/color_3a6b2a03877c.png",
+      "treatment": "supplied_material_palette_treatment; shared matte roughness",
+      "catalog": "QuayLiftupMaterials"
+    },
+    {
+      "key": "supplied_liftup_23ad7fe2ac8f",
+      "uri": "rbxasset://needle-quay/liftup/color_23ad7fe2ac8f.png",
+      "treatment": "supplied_material_palette_treatment; shared matte roughness",
+      "catalog": "QuayLiftupMaterials"
+    },
+    {
+      "key": "supplied_liftup_3bb5bfcd2ac8",
+      "uri": "rbxasset://needle-quay/liftup/color_3bb5bfcd2ac8.png",
+      "treatment": "supplied_material_palette_treatment; shared matte roughness",
+      "catalog": "QuayLiftupMaterials"
+    },
+    {
+      "key": "NQ-CMP-ALISSIA",
+      "uri": "rbxasset://needle-quay/companions/alissia_supplied_color_8831567e6370.png",
+      "treatment": "retain_user_designated_companion_atlas"
+    },
+    {
+      "key": "NQ-CMP-NIKOLAS",
+      "uri": "rbxasset://needle-quay/companions/nikolas_supplied_color_f2c1ef8be0a3.png",
+      "treatment": "retain_user_designated_companion_atlas"
+    }
+  ],
+  "graphics": "Existing GRA-01 through GRA-10, native signs and authored posters retain authored palette and alpha.",
+  "art_acceptance": false,
+  "runtime_verified": false
+}

@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "id": "style-starters-v1",
-  "stage": "local candidate; upload and listening pending",
+  "stage": "archival_retired_unavailable",
   "rights": {
     "source": "User-supplied archives",
     "user_declaration": "freware,use them as wished,just sort and rename properly",
@@ -7286,5 +7286,9 @@
         }
       ]
     }
-  ]
+  ],
+  "active": false,
+  "runtime_admitted": false,
+  "retirement": "handoff_v3",
+  "active_content_authority": "data/active-content.json"
 }

@@ -1,0 +1,51 @@
+[
+  {
+    "approachDistance": 0.7625046968460083,
+    "lineOfSight": true,
+    "opened": "building:NQ-BLD-01",
+    "id": "NQ-BLD-01",
+    "notice": "This place has a neighborhood activity. Meet its host to begin."
+  },
+  {
+    "approachDistance": 0.8958264589309692,
+    "lineOfSight": true,
+    "opened": "building:NQ-BLD-02",
+    "id": "NQ-BLD-02",
+    "notice": "This place has a neighborhood activity. Meet its host to begin."
+  },
+  {
+    "approachDistance": 0.762497067451477,
+    "lineOfSight": true,
+    "opened": "building:NQ-BLD-03",
+    "id": "NQ-BLD-03",
+    "notice": "This place has a neighborhood activity. Meet its host to begin."
+  },
+  {
+    "approachDistance": 0.829139769077301,
+    "lineOfSight": true,
+    "opened": "building:NQ-BLD-05",
+    "id": "NQ-BLD-05",
+    "notice": "This place has a neighborhood activity. Meet its host to begin."
+  },
+  {
+    "approachDistance": 0.8291627168655396,
+    "lineOfSight": true,
+    "opened": "building:NQ-BLD-06",
+    "id": "NQ-BLD-06",
+    "notice": "This place has a neighborhood activity. Meet its host to begin."
+  },
+  {
+    "approachDistance": 0.7861253023147583,
+    "lineOfSight": true,
+    "opened": "building:NQ-BLD-07",
+    "id": "NQ-BLD-07",
+    "notice": "This place has a neighborhood activity. Meet its host to begin."
+  },
+  {
+    "approachDistance": 0.8291417360305786,
+    "lineOfSight": true,
+    "opened": "building:NQ-BLD-08",
+    "id": "NQ-BLD-08",
+    "notice": "This place has a neighborhood activity. Meet its host to begin."
+  }
+]

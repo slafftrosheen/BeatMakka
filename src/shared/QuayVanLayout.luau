@@ -1,0 +1,2 @@
+-- Generated local geometry; proper source basis, original UV corner associations.
+return game:GetService("HttpService"):JSONDecode([=[{"LOOPVAN-01":{"size_wdh":[13.77365779876709,9.40000057220459,8.848246574401855],"center_offset_z":2.861022947442393e-07,"door_x":-0.0,"entrance_z":-7.2,"source":"assets/production/needle-quay/models/supplied-van/LOOPVAN-01.blend","sha256":"c4745b99acc1b24295e98a992f90985c3fe68bee39d1bf506bf0a3c1478b8150","coordinate_basis":"blender_to_roblox_front_minus_z_v2"}}]=])

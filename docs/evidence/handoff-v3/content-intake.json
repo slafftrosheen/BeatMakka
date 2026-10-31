@@ -1,0 +1,162 @@
+{
+  "schema": 1,
+  "date": "2026-10-30",
+  "stage": "source_implementation_and_native_audio_intake_not_runtime_verified",
+  "mapping_decision": "Keep the written map; leave mismatched slots pending",
+  "sources": {
+    "intake_manifest": "assets/production/needle-quay/harbour-pulse-v3/intake-manifest.json",
+    "supplied_provenance": "assets/supplied/needle-quay-handoff-v3/INTAKE_PROVENANCE.json",
+    "written_slots": "data/first-pack-slots.v3.json",
+    "pending_bindings": "assets/production/needle-quay/harbour-pulse-v3/pending-slot-bindings.json"
+  },
+  "native_audio": {
+    "named_wav_files": 64,
+    "unique_wav_hashes": 63,
+    "wav_format": {
+      "sample_rate_hz": 44100,
+      "channels": 2,
+      "pcm_bit_depth": 16
+    },
+    "measured_clipped_pcm_samples": 0,
+    "duplicates": [
+      {
+        "sha256": "8f9d3ef27b13687c1e9c50e1455ffecc551bea6fef91a89cde4f3eefc9b91cd7",
+        "members": [
+          "NeedleQuay_Pack/Drums/09_Closed_DnB_Hat_1.wav",
+          "NeedleQuay_Pack/Drums/10_Closed_DnB_Hat_2.wav"
+        ]
+      }
+    ],
+    "full_song": {
+      "file": "assets/production/needle-quay/harbour-pulse-v3/source-song/Needle Quay Waves.m4a",
+      "source": "assets/supplied/needle-quay-handoff-v3/Needle Quay Waves.m4a",
+      "sha256": "1b5f1bd9a500eaa07f4121bfdf115f8348fff0a6b11e47918d0964eb6f42443b",
+      "bytes": 3134154,
+      "duration_seconds": 158.4,
+      "codec": "aac",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "audio_approved": false,
+      "runtime_admitted": false,
+      "purpose": "production_reference_only"
+    },
+    "source_audio_modified": false,
+    "listening_review": "pending",
+    "verified_pitch": null
+  },
+  "retirement": {
+    "musical_ids": 179,
+    "kits": 11,
+    "removed_local_payload_files": 179,
+    "historical_sources_deleted": 0,
+    "retired_cloud_audio_ids_removed": 100,
+    "image_bindings_preserved": 14,
+    "installed_studio_namespaces_audited": 1,
+    "installed_retired_files_found": 179,
+    "installed_files_changed": 0,
+    "preimages": "assets/archive/audio-retirement-handoff-v3"
+  },
+  "active_graph": {
+    "authority": "data/active-content.json",
+    "musical_samples": 0,
+    "planned_slots": 64,
+    "playable_planned_slots": 0,
+    "selectable_musical_kits": 0,
+    "nonmusical_sample_ids": [
+      "ui_tap",
+      "ui_collect",
+      "ui_save",
+      "ui_error",
+      "waterfront"
+    ],
+    "cloud_audio_bindings": 0,
+    "packaged_files": 752,
+    "packaged_audio_files": 5,
+    "musical_waveforms": 0,
+    "other_voice_ambience_visual_sources": "preserved by existing package paths"
+  },
+  "runtime_source_changes": {
+    "catalog": [
+      "List",
+      "ById",
+      "DefaultPadIds",
+      "Packs",
+      "PackById",
+      "PlannedPack",
+      "PlannedPacks",
+      "RetiredById",
+      "ByDiscoveryId",
+      "ByRole",
+      "isUnlocked",
+      "isReady",
+      "isPlayable",
+      "plannedForRole",
+      "sampleForRole",
+      "resolveRole",
+      "label",
+      "packFor"
+    ],
+    "sample_ids": "nq.harbour.v1.a01 through nq.harbour.v1.d16",
+    "discovery_keys": {
+      "I01": "nq.harbour.v1.d01",
+      "I02": "nq.harbour.v1.d02",
+      "I03": "nq.harbour.v1.d03"
+    },
+    "musical_sound_budget_per_client": 256,
+    "musical_sound_budget_per_engine": 64,
+    "maximum_voices_per_sample": 2,
+    "route_effect_channel_budget_per_client": 256,
+    "route_effect_channel_budget_per_engine": 64,
+    "pad_hit_creates_sound_instance": false,
+    "voice_stealing": "oldest voice of the requested sample",
+    "choke_groups": "only actual admitted choke metadata, scoped by project/track/program",
+    "tails": "bank switches retain playing voices; idle second voices shrink when a schedule needs more than32 distinct samples; schedule end/Stop cuts at the shared authored tail boundary",
+    "velocity": "MIDI1..127; omitted velocity is full level",
+    "inactive_mode_dependencies": "pinned schedules and selections released; empty musical engines release effect channels",
+    "ui_review": [
+      "physical key mapping independent of catalog order",
+      "nil first-state guards",
+      "pending Assign rows disabled",
+      "ordered dynamic library items",
+      "responsive button and step grids",
+      "SampleEditor UTF-8 repairs",
+      "Delta note/revision/schedule merge without full world redraw",
+      "recovery and delete controls",
+      "pinned count-in tempo"
+    ]
+  },
+  "static_actions": {
+    "python_source_files_parsed": 12,
+    "powershell_launcher_parsed": true,
+    "luau_files_formatted": [
+      "SampleCatalog",
+      "SamplerPadLayout",
+      "AudioEngine",
+      "PadVoiceProcessor",
+      "SchedulePlayback",
+      "JamPlayback",
+      "init.client",
+      "MusicWorkspaceView",
+      "SampleEditor"
+    ],
+    "test_suites_run": false,
+    "studio_runtime_run": false,
+    "installed_payload_cleanup_run": false
+  },
+  "external_actions": {
+    "generation_requests": 0,
+    "spend": 0,
+    "uploads": 0,
+    "publish": false,
+    "commit": false,
+    "push": false
+  },
+  "remaining_acceptance": [
+    "Approve the exact source song and palette separately.",
+    "Reconcile source roles to the retained written slot map without ordinal aliases.",
+    "Review the duplicate hats, stereo format, isolated one-shot usability, pitch and levels before any admission.",
+    "The64 planned slots remain pending; no final-pack sound is playable.",
+    "Studio/device/runtime and saved-music migration acceptance are not established by this source receipt.",
+    "Existing installed legacy files were audited only; current installer/launcher remove only exact known prior files on the next authorized install."
+  ]
+}

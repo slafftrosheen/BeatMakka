@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "date": "2026-10-30",
+  "place": "NeedleQuay-Groovebox-v4.rbxlx",
+  "studio_id": "59069653-9a58-4ba2-92bd-f8c8075019c0",
+  "studio_mode": "Play",
+  "page": "Song",
+  "saved_example": "QUAY SUNSET",
+  "example_sections": [
+    "DOCKSIDE",
+    "LANTERN LIFT"
+  ],
+  "example_tracks": 2,
+  "example_notes": 32,
+  "example_scope": "Current Studio session only; fresh profiles remain editable and empty.",
+  "ui_artwork_sets_loaded": 7,
+  "scrolling_frames": 0,
+  "content_files": 830,
+  "uploads": 0,
+  "computer_use": 0
+}

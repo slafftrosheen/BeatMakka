@@ -1,0 +1,82 @@
+[
+  {
+    "speaker": "alissia",
+    "generationId": "1jeGc310H7fKbhxCsJcu",
+    "source": "alissia-take1.mp3"
+  },
+  {
+    "speaker": "alissia",
+    "generationId": "ReDxmXfsddu7Qiy67MMW",
+    "source": "alissia-take2.mp3"
+  },
+  {
+    "speaker": "alissia",
+    "generationId": "4EX2IU8QswPXasQWrN5Q",
+    "source": "alissia-take3.mp3"
+  },
+  {
+    "speaker": "alissia",
+    "generationId": "oGRaE8lf4YVm70kl65XZ",
+    "source": "alissia-take4.mp3"
+  },
+  {
+    "speaker": "nikolas",
+    "generationId": "TAfRfrYQ5ogcqlp7tPBJ",
+    "source": "nikolas-take1.mp3"
+  },
+  {
+    "speaker": "nikolas",
+    "generationId": "GJNHQ8nlLM2rPevV2WfQ",
+    "source": "nikolas-take2.mp3"
+  },
+  {
+    "speaker": "nikolas",
+    "generationId": "12Lb5r6WPmuIWPyAFkre",
+    "source": "nikolas-take3.mp3"
+  },
+  {
+    "speaker": "nikolas",
+    "generationId": "Bn6XGdddF3T93tAxpE8R",
+    "source": "nikolas-take4.mp3"
+  },
+  {
+    "speaker": "street_roger",
+    "generationId": "4A21t3xcEd5pyi02Ud8N",
+    "source": "street_roger-take1.mp3"
+  },
+  {
+    "speaker": "street_roger",
+    "generationId": "IwSvK75sac2IydzJClKb",
+    "source": "street_roger-take2.mp3"
+  },
+  {
+    "speaker": "street_roger",
+    "generationId": "Ok6uiNmkqHngPF0rI5n6",
+    "source": "street_roger-take3.mp3"
+  },
+  {
+    "speaker": "street_roger",
+    "generationId": "LtABAsotTTXlSunDSkCs",
+    "source": "street_roger-take4.mp3"
+  },
+  {
+    "speaker": "street_sarah",
+    "generationId": "yUSGXlXeMMSThSt1OUmI",
+    "source": "street_sarah-take1.mp3"
+  },
+  {
+    "speaker": "street_sarah",
+    "generationId": "r6Xep6s8kKiP0jarXXTl",
+    "source": "street_sarah-take2.mp3"
+  },
+  {
+    "speaker": "street_sarah",
+    "generationId": "ZGeuQ4nNs6jgJKqgmJ1T",
+    "source": "street_sarah-take3.mp3"
+  },
+  {
+    "speaker": "street_sarah",
+    "generationId": "7arQbWm3sou1lwZyjOoN",
+    "source": "street_sarah-take4.mp3"
+  }
+]

@@ -1,20 +1,17 @@
+local WeightLookup = require(script.Parent.SkinWeightLookup)
+local MeshQueue = require(script.Parent.LocalMeshQueue)
+local MutableMesh = require(script.Parent.LocalMutableMesh)
 -- Local continuous character surfaces, using the preserved Blender skin weights.
 local Assets = game:GetService("AssetService")
 local Storage = game:GetService("ReplicatedStorage")
 local Catalog = require(Storage.Shared.LocalMeshCatalog)
+local ResidentStyle = require(Storage.Shared.QuayResidentStyle)
 local Skins = {}
 Skins.__index = Skins
 local function vector(row)
     return Vector3.new(table.unpack(row))
 end
-local function key(v)
-    return string.format(
-        "%d:%d:%d",
-        math.floor(v.X * 1000 + 0.5),
-        math.floor(v.Y * 1000 + 0.5),
-        math.floor(v.Z * 1000 + 0.5)
-    )
-end
+
 function Skins.new()
     local self = setmetatable({ entries = {}, dead = false }, Skins)
     task.spawn(function()
@@ -31,60 +28,18 @@ function Skins.new()
         for _, actor in actors:GetChildren() do
             local source = sources[actor:GetAttribute("LocalCharacterId")]
             if source and not self.dead then
+                local release = MeshQueue.acquire(function()
+                    return self.dead
+                end)
+                if not release then
+                    break
+                end
                 local editable, part, imported
                 local ok, failure = pcall(function()
                     local skin = source.skin
-                    imported = Assets:CreateEditableMeshAsync(Content.fromUri(skin.uri))
-                    editable = Assets:CreateEditableMesh()
-                    assert(editable, "Local character mesh memory exhausted")
-                    -- Imported local files are fixed-size even with FixedSize=false.
-                    -- Copy exact attributes into a mutable mesh before adding skin bones.
-                    local vertices, uvs, normals = {}, {}, {}
-                    local uniquePositions, uniqueUvs, uniqueNormals = {}, {}, {}
-                    for _, id in imported:GetVertices() do
-                        local value = imported:GetPosition(id)
-                        local lookup = string.format("%.7g:%.7g:%.7g", value.X, value.Y, value.Z)
-                        uniquePositions[lookup] = uniquePositions[lookup]
-                            or editable:AddVertex(value)
-                        vertices[id] = uniquePositions[lookup]
-                    end
-                    for _, id in imported:GetUVs() do
-                        local value = imported:GetUV(id)
-                        local lookup = string.format("%.7g:%.7g", value.X, value.Y)
-                        uniqueUvs[lookup] = uniqueUvs[lookup] or editable:AddUV(value)
-                        uvs[id] = uniqueUvs[lookup]
-                    end
-                    for _, id in imported:GetNormals() do
-                        local value = imported:GetNormal(id)
-                        local lookup = string.format("%.7g:%.7g:%.7g", value.X, value.Y, value.Z)
-                        uniqueNormals[lookup] = uniqueNormals[lookup] or editable:AddNormal(value)
-                        normals[id] = uniqueNormals[lookup]
-                    end
-                    for i, face in imported:GetFaces() do
-                        local original = imported:GetFaceVertices(face)
-                        local added = editable:AddTriangle(
-                            vertices[original[1]],
-                            vertices[original[2]],
-                            vertices[original[3]]
-                        )
-                        for _, vertex in original do
-                            editable:SetVertexFaceUV(
-                                vertices[vertex],
-                                added,
-                                uvs[imported:GetVertexFaceUV(vertex, face)]
-                            )
-                            editable:SetVertexFaceNormal(
-                                vertices[vertex],
-                                added,
-                                normals[imported:GetVertexFaceNormal(vertex, face)]
-                            )
-                        end
-                        if i % 500 == 0 then
-                            task.wait()
-                        end
-                    end
-                    imported:Destroy()
-                    imported = nil
+                    editable = MutableMesh(skin.uri, function()
+                        return self.dead
+                    end)
                     local center, boneIds = vector(skin.center), {}
                     local function addBone(name)
                         if boneIds[name] then
@@ -105,27 +60,12 @@ function Skins.new()
                     for name in source.joints do
                         addBone(name)
                     end
-                    local weights = {}
-                    for _, row in skin.weights do
-                        weights[key(vector(row[1]))] = row[2]
-                    end
+                    local lookup = WeightLookup.new(skin.weights)
+                    local maxMatchError = 0
+                    local vertexColors, colorIds = {}, {}
                     for i, vertex in editable:GetVertices() do
-                        local position = editable:GetPosition(vertex)
-                        local row = weights[key(position)]
-                        if not row then
-                            local closest, distance
-                            for _, candidate in skin.weights do
-                                local delta = (vector(candidate[1]) - position).Magnitude
-                                if not distance or delta < distance then
-                                    closest, distance = candidate[2], delta
-                                end
-                            end
-                            assert(
-                                distance and distance < 0.002,
-                                "Local character weight position mismatch"
-                            )
-                            row = closest
-                        end
+                        local row, matchError = lookup(editable:GetPosition(vertex))
+                        maxMatchError = math.max(maxMatchError, matchError)
                         local ids, values = {}, {}
                         for _, weight in row do
                             table.insert(ids, boneIds[weight[1]])
@@ -133,8 +73,30 @@ function Skins.new()
                         end
                         editable:SetVertexBones(vertex, ids)
                         editable:SetVertexBoneWeights(vertex, values)
+                        if actor:GetAttribute("GenericResident") then
+                            local tint = ResidentStyle.vertexColor(
+                                actor,
+                                row,
+                                editable:GetPosition(vertex).Y + center.Y
+                            )
+                            local key = tint:ToHex()
+                            colorIds[key] = colorIds[key] or editable:AddColor(tint, 1)
+                            vertexColors[vertex] = colorIds[key]
+                        end
                         if i % 500 == 0 then
                             task.wait()
+                        end
+                    end
+                    if actor:GetAttribute("GenericResident") then
+                        for i, face in editable:GetFaces() do
+                            local colors = {}
+                            for _, vertex in editable:GetFaceVertices(face) do
+                                table.insert(colors, vertexColors[vertex])
+                            end
+                            editable:SetFaceColors(face, colors)
+                            if i % 1000 == 0 then
+                                task.wait()
+                            end
                         end
                     end
                     -- Mutable meshes reserve maximum topology capacity. Freeze a compact
@@ -150,12 +112,19 @@ function Skins.new()
                     -- Ephemeral content belongs only to this local DataModel; this is not an asset upload.
                     part = Assets:CreateMeshPartAsync(content)
                     part.Name = "LocalSkinnedBody"
+                    part:SetAttribute("WeightMatchError", maxMatchError)
                     part.Anchored, part.CanCollide, part.CanQuery, part.CanTouch =
                         true, false, false, false
-                    part.Size = vector(skin.size)
-                    part.CFrame = actor:GetPivot() * CFrame.new(center)
+                    local scale = actor:GetScale()
+                    part.Size = vector(skin.size) * scale
+                    part.CFrame = actor:GetPivot() * CFrame.new(center * scale)
                     part.Color = Color3.new(1, 1, 1)
-                    part:SetAttribute("SkinCenter", center)
+                    part:SetAttribute("SkinCenter", center * scale)
+                    part:SetAttribute("AuthoredScale", scale)
+                    for action, gain in skin.motionGains or {} do
+                        part:SetAttribute("Motion_" .. action, gain)
+                    end
+                    part:SetAttribute("WeightRevision", skin.weightRevision)
                     part:SetAttribute(
                         "LocalMaterialKey",
                         "character_" .. source.id:match("NQ%-NPC%-(.+)"):lower()
@@ -169,16 +138,18 @@ function Skins.new()
                         local parent = if type(parentName) == "string"
                             then instanceBone(parentName)
                             else part
-                        local bone = Instance.new("Bone")
+                        local bone = part:FindFirstChild(name, true) or Instance.new("Bone")
                         bone.Name = name
                         local at = vector(source.joints[name])
                         bone.CFrame = CFrame.new(
-                            at
+                            (
+                                at
                                 - (
                                     if parent:IsA("Bone")
                                         then vector(source.joints[parentName])
                                         else center
                                 )
+                            ) * scale
                         )
                         bone.Parent = parent
                         bones[name] = bone
@@ -205,6 +176,7 @@ function Skins.new()
                         { actor = actor, part = part, editable = editable, hidden = hidden }
                     )
                 end)
+                release()
                 if not ok then
                     if imported then
                         imported:Destroy()

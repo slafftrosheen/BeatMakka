@@ -51,10 +51,11 @@ def manifest_keys(manifest: object) -> dict[str, set[str]]:
 
 
 def allowed_content_keys() -> dict[str, set[str]]:
+    from active_content import active_audio
     allowed = manifest_keys(read_json(ROOT / "assets/production/upload-manifest.json"))
-    style_keys = manifest_keys(read_json(ROOT / "data/style-upload-manifest.json"))
-    for section in SECTIONS:
-        allowed[section].update(style_keys[section])
+    # Historical manifests never grant an audio key. Inactive bindings cannot
+    # survive merge semantics or return through an incremental configuration.
+    allowed["Audio"] = set(active_audio())
     return allowed
 
 
@@ -158,6 +159,8 @@ def main(argv: list[str] | None = None) -> int:
         base_data = json.loads(originals[canonical].decode("utf-8-sig"), object_pairs_hook=unique_object)
         if not isinstance(base_data, dict) or set(base_data) != set(SECTIONS):
             raise ValueError("Canonical content-ids.json must explicitly contain Audio and Images")
+        retired_audio = sorted(set(base_data["Audio"]) - allowed["Audio"])
+        base_data["Audio"] = {key: value for key, value in base_data["Audio"].items() if key in allowed["Audio"]}
         base = validate_mapping(base_data, allowed)
         incoming = validate_mapping(read_json(args.mapping), allowed)
         merged, changes = merge_mapping(base, incoming, args.allow_rebind)
@@ -171,6 +174,7 @@ def main(argv: list[str] | None = None) -> int:
         "unbound": {s: sorted(allowed[s] - set(merged[s])) for s in SECTIONS},
         "canonical_mapping_written": args.write, "runtime_bindings_written": args.write,
         "permissions_verified": False,
+        "retired_audio_removed": retired_audio,
     }, indent=2))
     return 0
 

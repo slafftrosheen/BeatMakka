@@ -1,0 +1,9 @@
+{
+  "package": "output/needle-quay-demo/NeedleQuay-LivingQuay.zip",
+  "bytes": 70461888,
+  "sha256": "f3bf7e3826dbdadaad71974edf011428f96a56b756f63b327f6ff0cb8baf5bff",
+  "companion_files": 738,
+  "place_sha256": "c72215a0b0168c3697bf1266c41432ce27fb6f7f28b2bcec3188f9f3b5eab76f",
+  "uploads": 0,
+  "tripo_spend_credits": 0
+}

@@ -1,0 +1,16 @@
+{
+  "MusicBeat": 11.991979598999023,
+  "MusicStyle": "groove",
+  "OwnerUserId": 10739641331,
+  "ArtKind": "companion",
+  "ArtApproved": false,
+  "ArtStage": "USER_SUPPLIED_LOCAL_ADAPTATION_PENDING_ACCEPTANCE",
+  "ContinuousSkin": false,
+  "SuppliedSkinReady": true,
+  "MeasuredTriangles": 10968,
+  "SourceSHA256": "26f7be5756d32300c0eb585f67d00f17e624b52feb6c52130fd03dc44d836651",
+  "SourcePath": "assets/supplied/companions/niklass.glb",
+  "LocalFileArt": true,
+  "PresentationClip": "dance_06",
+  "MusicIntensity": 0.65
+}

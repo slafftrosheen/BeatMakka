@@ -1,0 +1,75 @@
+{
+  "assets": [
+    {
+      "id": "LOOPVAN-01",
+      "kind": "supplied_van",
+      "source": "assets/production/needle-quay/models/supplied-van/LOOPVAN-01.blend",
+      "source_sha256": "c4745b99acc1b24295e98a992f90985c3fe68bee39d1bf506bf0a3c1478b8150",
+      "triangles": 9571,
+      "parts": [
+        {
+          "name": "Surface0",
+          "bone": "",
+          "center": [
+            -0.0,
+            4.424123287200928,
+            0.0
+          ],
+          "size": [
+            13.77365779876709,
+            8.848246574401855,
+            9.40000057220459
+          ],
+          "color": [
+            1,
+            1,
+            1
+          ],
+          "surface_family": "supplied_van_LOOPVAN-01",
+          "triangles": 9571,
+          "sha256": "ab8372badc642e3a66f63b9c0f5fb70517b728a76a5006b12ec86a6fb3842ff6",
+          "uri": "rbxasset://needle-quay/vintage-van/LOOPVAN-01_0_ab8372badc64.mesh"
+        }
+      ],
+      "joints": {},
+      "coordinate_basis": "blender_to_roblox_front_minus_z_v2"
+    }
+  ],
+  "materials": {
+    "supplied_van_LOOPVAN-01": "rbxasset://needle-quay/vintage-van/LOOPVAN-01_color.png"
+  },
+  "layout": {
+    "LOOPVAN-01": {
+      "size_wdh": [
+        13.77365779876709,
+        9.40000057220459,
+        8.848246574401855
+      ],
+      "center_offset_z": 2.861022947442393e-07,
+      "door_x": -0.0,
+      "entrance_z": -7.2,
+      "source": "assets/production/needle-quay/models/supplied-van/LOOPVAN-01.blend",
+      "sha256": "c4745b99acc1b24295e98a992f90985c3fe68bee39d1bf506bf0a3c1478b8150",
+      "coordinate_basis": "blender_to_roblox_front_minus_z_v2"
+    }
+  },
+  "provenance": [
+    {
+      "id": "LOOPVAN-01",
+      "original": "assets/supplied/vehicles/vintage-van.glb",
+      "original_sha256": "891398a6fe602426d453ef25252c1fc1e163270b2fbf13179e4f8a757a9dfda2",
+      "uniform_scale": 13.780386542591268,
+      "size_wdh": [
+        13.77365779876709,
+        9.40000057220459,
+        8.848246574401855
+      ],
+      "repair": null,
+      "stage": "LOCAL_ADAPTATION_PENDING_ACCEPTANCE",
+      "art_approved": false,
+      "studio_imported": false,
+      "runtime_verified": false
+    }
+  ],
+  "uploads": 0
+}

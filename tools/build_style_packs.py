@@ -111,6 +111,8 @@ def save_wav(path, signal):
 
 
 def build(music):
+    if (ROOT/'data/active-content.json').exists():
+        raise RuntimeError('Historical style samples are retired and cannot be regenerated.')
     if DEST.exists(): raise SystemExit('Pack destination exists; use --verify, never overwrite reviewed sources')
     packs = []
     for name,(label,key,notes,groups) in STYLES.items():
@@ -207,6 +209,8 @@ def verify():
 
 
 def refresh_derived():
+    if (ROOT/'data/active-content.json').exists():
+        raise RuntimeError('Historical style samples are retired and cannot be regenerated.')
     assert not (ROOT/'docs/evidence/style-starters/user-approval.json').exists(), 'Approved audio is frozen; create a new version for further edits'
     manifest=json.loads((DEST/'manifest.json').read_text(encoding='utf-8'))
     assert manifest['stage'].startswith('local candidate')
@@ -234,6 +238,8 @@ def refresh_derived():
 
 
 if __name__=='__main__':
+    if (ROOT/'data/active-content.json').exists():
+        raise SystemExit('Historical style production is retired. Use the explicit first-pack admission workflow.')
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--music',type=Path,default=Path('C:/Users/slavd/Music'));group=parser.add_mutually_exclusive_group();group.add_argument('--verify',action='store_true');group.add_argument('--refresh-derived',action='store_true');args=parser.parse_args()
     if args.refresh_derived:refresh_derived()
     elif not args.verify: build(args.music)

@@ -1,0 +1,237 @@
+{
+  "date": "2026-10-29",
+  "provider": "ElevenLabs",
+  "model": "eleven_v4",
+  "speechCredits": 5532,
+  "robloxUploads": 0,
+  "runs": [
+    {
+      "speaker": "alissia",
+      "voice_id": "cgSgspJ2msm6clMCkdW9",
+      "lines": [
+        "That title suits you!",
+        "You earned that pin!",
+        "Our Roamer looks good!",
+        "Love my new charm!"
+      ],
+      "flow_id": "6ExjEyK8zburcYiSdjpY",
+      "node_id": "m6FY62dAx79udNN5XGFc",
+      "session_ids": [
+        "WgADABzSKNWY99mrYun2",
+        "69gL1DF0JPxD5ENODeV6",
+        "h2MHmid5HSlLQf0us7VN",
+        "OZTmUziCWIZuKuyIScq7"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "m6FY62dAx79udNN5XGFc",
+          "session_id": "WgADABzSKNWY99mrYun2",
+          "credit_costs": {
+            "1jeGc310H7fKbhxCsJcu": 159
+          }
+        },
+        {
+          "success": true,
+          "node_id": "m6FY62dAx79udNN5XGFc",
+          "session_id": "69gL1DF0JPxD5ENODeV6",
+          "credit_costs": {
+            "ReDxmXfsddu7Qiy67MMW": 159
+          }
+        },
+        {
+          "success": true,
+          "node_id": "m6FY62dAx79udNN5XGFc",
+          "session_id": "h2MHmid5HSlLQf0us7VN",
+          "credit_costs": {
+            "4EX2IU8QswPXasQWrN5Q": 159
+          }
+        },
+        {
+          "success": true,
+          "node_id": "m6FY62dAx79udNN5XGFc",
+          "session_id": "OZTmUziCWIZuKuyIScq7",
+          "credit_costs": {
+            "oGRaE8lf4YVm70kl65XZ": 159
+          }
+        }
+      ]
+    },
+    {
+      "speaker": "nikolas",
+      "voice_id": "GDSfkP85ZRhua7ttCTmO",
+      "lines": [
+        "Looking like a headliner!",
+        "That's a keeper!",
+        "Now that's our ride!",
+        "A little extra style!"
+      ],
+      "flow_id": "6yo48xVwUP94Qeh1IT7C",
+      "node_id": "aqfYSUfZFSxsgQEMRrEr",
+      "session_ids": [
+        "0MbkIPGNUgWxaZYpal0S",
+        "DRNXA32UGCtHduLopixn",
+        "I7DcxeZBj3G3Kf4X6GIB",
+        "2nBK2KcuuTG7PdiATHk3"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "aqfYSUfZFSxsgQEMRrEr",
+          "session_id": "0MbkIPGNUgWxaZYpal0S",
+          "credit_costs": {
+            "TAfRfrYQ5ogcqlp7tPBJ": 160
+          }
+        },
+        {
+          "success": true,
+          "node_id": "aqfYSUfZFSxsgQEMRrEr",
+          "session_id": "DRNXA32UGCtHduLopixn",
+          "credit_costs": {
+            "GJNHQ8nlLM2rPevV2WfQ": 160
+          }
+        },
+        {
+          "success": true,
+          "node_id": "aqfYSUfZFSxsgQEMRrEr",
+          "session_id": "I7DcxeZBj3G3Kf4X6GIB",
+          "credit_costs": {
+            "12Lb5r6WPmuIWPyAFkre": 160
+          }
+        },
+        {
+          "success": true,
+          "node_id": "aqfYSUfZFSxsgQEMRrEr",
+          "session_id": "2nBK2KcuuTG7PdiATHk3",
+          "credit_costs": {
+            "Bn6XGdddF3T93tAxpE8R": 160
+          }
+        }
+      ]
+    },
+    {
+      "speaker": "street_roger",
+      "voice_id": "CwhRBWXzGAHq8TQ4Fs17",
+      "lines": [
+        "Hey, Quay Friend!",
+        "Our block favorite!",
+        "The Quay Icon!",
+        "Quick hands!",
+        "Light keeper!",
+        "Thanks for the dock!",
+        "Good neighbor!",
+        "Crate digger!",
+        "You lit the quay!",
+        "An ear for echoes!",
+        "Pocket rhythm!",
+        "Our headliner!",
+        "Love those lights!",
+        "Nice companion charm!"
+      ],
+      "flow_id": "KMOo7I8aTyFUsptQ2aOw",
+      "node_id": "1fIlb8OgBxHTQyshECjt",
+      "session_ids": [
+        "fViklW9cq17iwJUUH6uK",
+        "0coaw6IwUHhCMarqqWqS",
+        "Y7INJWdKbSdGH5GP3ABa",
+        "dQjeTy9aZPSfQ45NMfs0"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "1fIlb8OgBxHTQyshECjt",
+          "session_id": "fViklW9cq17iwJUUH6uK",
+          "credit_costs": {
+            "4A21t3xcEd5pyi02Ud8N": 532
+          }
+        },
+        {
+          "success": true,
+          "node_id": "1fIlb8OgBxHTQyshECjt",
+          "session_id": "0coaw6IwUHhCMarqqWqS",
+          "credit_costs": {
+            "IwSvK75sac2IydzJClKb": 532
+          }
+        },
+        {
+          "success": true,
+          "node_id": "1fIlb8OgBxHTQyshECjt",
+          "session_id": "Y7INJWdKbSdGH5GP3ABa",
+          "credit_costs": {
+            "Ok6uiNmkqHngPF0rI5n6": 532
+          }
+        },
+        {
+          "success": true,
+          "node_id": "1fIlb8OgBxHTQyshECjt",
+          "session_id": "dQjeTy9aZPSfQ45NMfs0",
+          "credit_costs": {
+            "LtABAsotTTXlSunDSkCs": 532
+          }
+        }
+      ]
+    },
+    {
+      "speaker": "street_sarah",
+      "voice_id": "EXAVITQu4vr4xnSDxMaL",
+      "lines": [
+        "Hey, Quay Friend!",
+        "Our block favorite!",
+        "The Quay Icon!",
+        "Quick hands!",
+        "Light keeper!",
+        "Thanks for the dock!",
+        "Good neighbor!",
+        "Crate digger!",
+        "You lit the quay!",
+        "An ear for echoes!",
+        "Pocket rhythm!",
+        "Our headliner!",
+        "Love those lights!",
+        "Nice companion charm!"
+      ],
+      "flow_id": "em1Z2OwPwMSWMTWrlIFV",
+      "node_id": "SpKbfrankQnkMykUUr0Q",
+      "session_ids": [
+        "ZpzxyJRhk2tRju5xX5jT",
+        "QQ76tm5OnWsL1aQj0U6m",
+        "MYr1IvRwzYEbV8MG1AfK",
+        "VK1loeYTQGoBpzGECSwF"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "SpKbfrankQnkMykUUr0Q",
+          "session_id": "ZpzxyJRhk2tRju5xX5jT",
+          "credit_costs": {
+            "yUSGXlXeMMSThSt1OUmI": 532
+          }
+        },
+        {
+          "success": true,
+          "node_id": "SpKbfrankQnkMykUUr0Q",
+          "session_id": "QQ76tm5OnWsL1aQj0U6m",
+          "credit_costs": {
+            "r6Xep6s8kKiP0jarXXTl": 532
+          }
+        },
+        {
+          "success": true,
+          "node_id": "SpKbfrankQnkMykUUr0Q",
+          "session_id": "MYr1IvRwzYEbV8MG1AfK",
+          "credit_costs": {
+            "ZGeuQ4nNs6jgJKqgmJ1T": 532
+          }
+        },
+        {
+          "success": true,
+          "node_id": "SpKbfrankQnkMykUUr0Q",
+          "session_id": "VK1loeYTQGoBpzGECSwF",
+          "credit_costs": {
+            "7arQbWm3sou1lwZyjOoN": 532
+          }
+        }
+      ]
+    }
+  ]
+}

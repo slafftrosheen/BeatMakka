@@ -12,6 +12,8 @@ Sound.Spec = {
     echo = { 0, 0.7, 0, 0.05 },
     delay = { 0.05, 1, 0.25, 0.025 },
     reverb = { 0, 0.7, 0, 0.05 },
+    tone = { -1, 1, 0, 0.05 },
+    drive = { 0, 0.6, 0, 0.05 },
 }
 function Sound.sanitize(raw)
     local result = {}
@@ -66,10 +68,17 @@ function Sound.preset(raw, name, bpm)
     end
     if name == "dry" then
         s.echo, s.reverb = 0, 0
+        s.tone, s.drive = 0, 0
     elseif name == "dub" then
         s.echo, s.delay, s.reverb = 0.35, math.clamp(60 / bpm * 0.75, 0.05, 1), 0.12
     elseif name == "room" then
         s.echo, s.reverb = 0, 0.25
+    elseif name == "tape" then
+        s.tone, s.drive, s.echo, s.reverb = -0.25, 0.22, 0.08, 0.08
+        s.delay = math.clamp(60 / bpm * 0.5, 0.05, 1)
+    elseif name == "air" then
+        s.tone, s.drive, s.echo, s.reverb = 0.3, 0, 0.12, 0.4
+        s.delay = math.clamp(60 / bpm * 0.75, 0.05, 1)
     else
         return nil
     end

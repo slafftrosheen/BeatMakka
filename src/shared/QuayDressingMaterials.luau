@@ -1,0 +1,1 @@
+return game:GetService("HttpService"):JSONDecode([=[{"supplied_dressing_be8d8f0d2ac6":"rbxasset://needle-quay/dressing/color_be8d8f0d2ac6.png","supplied_dressing_f80c6402f81d":"rbxasset://needle-quay/dressing/color_f80c6402f81d.png","supplied_dressing_f17b68636d7d":"rbxasset://needle-quay/dressing/color_f17b68636d7d.png"}]=])

@@ -1,0 +1,28 @@
+{
+  "package": "output/needle-quay-demo/NeedleQuay-Groovebox-v4.zip",
+  "bytes": 151663361,
+  "sha256": "df653f6d2f983408430da713f1feb25e61e815c044bb916077f8091403cab1ae",
+  "companion_files": 830,
+  "place_sha256": "b69f516b156155b371c8b02effd8379fc26dddfff9016a17fe7097a3a13d4db3",
+  "readme": "docs/needle-quay/FINAL_DEMO_README.md",
+  "reports": [
+    "DEVICE_DEMO_QA.md",
+    "device-results.json",
+    "FINAL_DEMO_QA.md",
+    "results.json",
+    "presentation.json",
+    "cleanup.json",
+    "IMPLEMENTATION.md",
+    "source-parity.json",
+    "ui-art-provenance.json",
+    "ui-art-prompts.json",
+    "onset-audit.json",
+    "groovebox-desktop.jpg",
+    "groovebox-portrait.jpg",
+    "groovebox-landscape-fx.jpg",
+    "public-performance.jpg"
+  ],
+  "archive_crc": "PASS",
+  "uploads": 0,
+  "tripo_spend_credits": 0
+}

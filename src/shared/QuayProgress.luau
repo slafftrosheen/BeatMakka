@@ -1,6 +1,9 @@
 -- Additive schema-2 field. No client award flags, genre locks or global restoration.
-local Book = require(script.Parent.BeatBook)
+local Music = require(script.Parent.QuayMusicEvidence)
 local Pattern = require(script.Parent.Pattern)
+local Games = require(script.Parent.QuayStreetGames)
+local Commissions = require(script.Parent.QuayBeatCommissions)
+local Life = require(script.Parent.QuayLifeCatalog)
 local Quay = {}
 Quay.Order = {}
 for i = 0, 12 do
@@ -9,7 +12,18 @@ end
 
 function Quay.sanitize(raw)
     raw = if type(raw) == "table" then raw else {}
-    local result = { parking = "P1", completed = {}, dock = {}, market = {}, repair = 0, sort = 0 }
+    local result =
+        { parking = "P1", completed = {}, dock = {}, market = {}, side = {}, repair = 0, sort = 0 }
+    result.commissions = {}
+    result.life = Life.sanitize(raw.life)
+    result.commission = if Commissions.find(raw.commission) then raw.commission else nil
+    for _, item in Commissions.List do
+        result.commissions[item.id] = type(raw.commissions) == "table"
+            and raw.commissions[item.id] == true
+    end
+    for _, id in Games.Order do
+        result.side[id] = type(raw.side) == "table" and raw.side[id] == true
+    end
     if raw.parking == "P2" or raw.parking == "P3" or raw.parking == "P4" then
         result.parking = raw.parking
     end
@@ -28,6 +42,22 @@ end
 
 function Quay.equal(a, b)
     a, b = Quay.sanitize(a), Quay.sanitize(b)
+    if not Life.equal(a.life, b.life) then
+        return false
+    end
+    if a.commission ~= b.commission then
+        return false
+    end
+    for _, item in Commissions.List do
+        if a.commissions[item.id] ~= b.commissions[item.id] then
+            return false
+        end
+    end
+    for _, id in Games.Order do
+        if a.side[id] ~= b.side[id] then
+            return false
+        end
+    end
     if a.parking ~= b.parking or a.repair ~= b.repair or a.sort ~= b.sort then
         return false
     end
@@ -44,53 +74,103 @@ function Quay.equal(a, b)
     return true
 end
 
-function Quay.rhythm(pattern, sample)
-    local steps, count = {}, 0
-    for pad = 1, 16 do
-        if pattern.assignments[pad] == sample and not pattern.muted[pad] then
-            for step = 1, 16 do
-                if pattern.rows[pad][step] then
-                    steps[step] = true
+function Quay.rhythm(sequenceEvidence, discoveryId, bar)
+    local result, count = {}, 0
+    for tick in (sequenceEvidence and sequenceEvidence.positions[discoveryId]) or {} do
+        if not bar or (tick >= (bar - 1) * 3840 and tick < bar * 3840) then
+            result[if bar then tick - (bar - 1) * 3840 else tick] = true
+            count += 1
+        end
+    end
+    return result, count
+end
+
+function Quay.evidence(profile)
+    local project = profile.music and profile.music.project
+    local savedMusic = profile.saved and profile.saved.music
+    local unlockedKey = tostring(profile.unlocked.I01)
+        .. tostring(profile.unlocked.I02)
+        .. tostring(profile.unlocked.I03)
+    local cache = profile.quayMusicEvidence
+    if
+        cache
+        and cache.project == project
+        and cache.revision == (project and project.revision)
+        and cache.savedMusic == savedMusic
+        and cache.unlockedKey == unlockedKey
+        and cache.sequenceId == profile.sequenceId
+        and cache.teachingBar == profile.teachingBar
+        and cache.finishedId == profile.selectedFinishedSongId
+    then
+        return cache.result
+    end
+    local metal, reply, metalSteps = false, false, 0
+    for _, id in (project and project.sequenceOrder) or {} do
+        local sequence = Music.sequence(project, id, profile.unlocked)
+        if sequence then
+            local _, count = Quay.rhythm(sequence, "I01")
+            metalSteps = math.max(metalSteps, count)
+            metal = metal or count >= 4
+            if id == profile.sequenceId then
+                local positions, hits = Quay.rhythm(sequence, "I03", profile.teachingBar or 1)
+                reply = hits == 4
+                    and positions[0]
+                    and positions[960]
+                    and positions[1920]
+                    and positions[2880]
+            end
+        end
+    end
+    local saved, savedProject = Music.savedSequences(profile)
+    local signatures, variation = {}, false
+    for _, sequence in saved do
+        signatures[sequence.signature] = true
+    end
+    local distinct = 0
+    for _ in signatures do
+        distinct += 1
+    end
+    variation = distinct >= 2
+    local draftSaved = false
+    for _, id in (savedProject and savedProject.draftOrder) or {} do
+        local draft = savedProject.drafts[id]
+        if draft and (draft.savedRevision or 0) > 0 and draft.savedRevision == draft.revision then
+            for _, step in draft.steps or {} do
+                local owned = savedProject.sequences[step.sequenceId]
+                if
+                    owned
+                    and (owned.savedRevision or 0) > 0
+                    and owned.savedRevision == owned.revision
+                    and Music.sequence(savedProject, step.sequenceId, profile.unlocked)
+                then
+                    draftSaved = true
                 end
             end
         end
     end
-    for _ in steps do
-        count += 1
-    end
-    return steps, count
-end
-
-function Quay.evidence(profile)
-    local metal, reply = false, false
-    for _, pattern in profile.slots do
-        local _, count = Quay.rhythm(pattern, "metal_hit")
-        metal = metal or count >= 4
-        local steps, hits = Quay.rhythm(pattern, "robot_chirp")
-        reply = reply or (hits == 4 and steps[1] and steps[5] and steps[9] and steps[13])
-    end
-    local saved, variation = false, false
-    for _, entry in (profile.saved and profile.saved.shelf) or {} do
-        if type(entry) ~= "table" then
-            continue
-        end
-        local a, b = entry.slots[1], entry.slots[2]
-        for _, pattern in entry.slots do
-            saved = saved or Book.hasPlayableNotes(pattern)
-        end
-        variation = variation
-            or (
-                Book.hasPlayableNotes(a)
-                and Book.hasPlayableNotes(b)
-                and not Book.samePattern(a, b)
-            )
-    end
-    return {
+    local finished = profile.selectedFinishedSongId
+        and Music.finished(profile, profile.selectedFinishedSongId)
+    local result = {
         metal = metal and profile.unlocked.I01 == true,
-        reply = reply and profile.unlocked.I03 == true,
-        saved = saved,
+        metalSteps = metalSteps,
+        reply = reply == true and profile.unlocked.I03 == true,
+        saved = #saved > 0,
         variation = variation,
+        draft = draftSaved,
+        finished = finished ~= nil and finished ~= false,
+        teachingBar = profile.teachingBar or 1,
     }
+    profile.quayMusicEvidence = {
+        project = project,
+        revision = project and project.revision,
+        savedMusic = savedMusic,
+        unlockedKey = unlockedKey,
+        sequenceId = profile.sequenceId,
+        teachingBar = profile.teachingBar,
+        finishedId = profile.selectedFinishedSongId,
+        result = result,
+    }
+    return result
 end
 
 function Quay.readyForFinale(profile)

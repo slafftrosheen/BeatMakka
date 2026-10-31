@@ -1,0 +1,9 @@
+{
+  "silent": true,
+  "muted": true,
+  "density": true,
+  "clock": true,
+  "echo": true,
+  "zeroGain": true,
+  "drive": true
+}

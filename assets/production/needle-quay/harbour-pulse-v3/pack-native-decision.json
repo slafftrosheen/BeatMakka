@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "user_request": "also change mapping to the one which came with pack, so all 64 samples are playable",
+  "supersedes": "Keep the written map; leave mismatched slots pending",
+  "archived_contract": "assets/archive/written-audio-map-v3-2026-10-30/data/first-pack-slots.v3.json",
+  "archived_contract_sha256": "a1edabba4eec0dedfa04ae5238076a82f111e04063a3c0cd29212a26a610e199",
+  "canonical_sample_ids_preserved": true,
+  "original_sources_preserved": true,
+  "layout": [
+    "Drums",
+    "Bass",
+    "MC vocals",
+    "Harbour FX and melodics"
+  ],
+  "source_order": "native numeric filename prefix 01..64",
+  "repair_authority": "Local deterministic instrumental silence repair, level-only source15 normalization, and conservative onset trim derivatives authorized for responsive all-64 local playback",
+  "human_listening_approval": false,
+  "runtime_admitted": false
+}

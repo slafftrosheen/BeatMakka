@@ -1,0 +1,19 @@
+{
+  "src/client/WorkshopView.luau": "8c101b33fa2b0f0c0aa689b5e16a53f2f9e5ae438905cb07cc53857f1270e391",
+  "src/client/HardwareFaceplate.luau": "428fc2bd0dd15c6ed7763db99f7f9b9b7049a2df9783d64b052bd492dd7800fa",
+  "src/client/HardwarePadControls.luau": "4de348d8e1fa2c1fb6f47f388cf9afaa55ae3d09073b3e59477d9f522e0b24e3",
+  "src/client/QuayBeatGuide.luau": "d55a715775c2c1f8c693093be3f4b9435f02c173ec21e4be577da0327f7f71b8",
+  "src/client/QuayMusicField.luau": "baac30a1037dc5300a375ed9aa97c2bb7d6244ce56b29fa46032c6b6a16a250f",
+  "src/client/StreetMusicPlayback.luau": "ae8ee50a02a817d4ddedd30d076f021331ca925a65c92abd000ae1526ac7e1f7",
+  "src/client/QuayNeighbors.luau": "430caa9ddc182dd87c08bee44051c79fb41710a44531d66e21c8ff064b1302ee",
+  "src/client/CompanionFollower.luau": "66794edff10e90d9e11d42430f7f59842066ca1c08994ab13339b3df01bc21c4",
+  "src/client/SuppliedCompanionSkin.luau": "bba4d1999b1ba43a6a578df4a474b96822b7d3e51be990fbfc380e342987f53b",
+  "src/server/QuayLiveMusic.luau": "188136776f11f70bdb5a787f821e08afa2c286151e557e3e3e08164a47d30961",
+  "src/server/MusicService.luau": "cbd606a02ff54c4c2fd422138f76ef8db81d10891e35b8444566290383aed73f",
+  "src/server/ListeningSession.luau": "b53a9559c49266b557ed7697bacb64acb3a884de2783f4501a7fa3f96f9586e6",
+  "src/server/NeedleQuayDemoWorld.luau": "9407b33a40eaf7e70bb5127785a05e5584741848d8f6f5c9cd48d8838ff468c5",
+  "src/shared/BeatExpression.luau": "b22496b0bb1f69159acc94090bd90fb9244bb039862941b72472d882cdfc822d",
+  "src/shared/QuayBuildingLayout.luau": "b674f3436dad71063f9f9bd078f386f11b78d299c318938ed784195a3b9f5d9b",
+  "src/client/init.client.luau": "7d2a5783bfa388050356a5dc751669e5ff9e40387f68a7e73ed301109391d6da",
+  "data/needle-quay-supplied-buildings-set-01.json": "60bbb5087cd8654db59cbb5ec2757afc154e7a6d54a14b01f9f9334207a443b8"
+}

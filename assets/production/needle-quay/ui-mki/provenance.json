@@ -1,0 +1,30 @@
+{
+  "stage": "GENERATED_UI_CANDIDATE_LOCAL_ONLY",
+  "generator": "built-in image_gen",
+  "date": "2026-10-30",
+  "reference": "assets/references/needle-quay-approved-style-board.png",
+  "assets": [
+    {
+      "file": "enamel.png",
+      "prompt": "Generate one production game UI material asset for the BeatMakka MK-I sampler from Needle Quay. Use-case: stylized-concept game texture. Exactly square 1024x1024, opaque, edge-to-edge flat painted metal surface, front-on orthographic, no object silhouette, no perspective. Restrained worn deep teal enamel (#2F5C58) with very fine irregular paint grain, a few soft faded teal (#6F9186) scuffs and subtly rubbed warm edges, handcrafted cozy repaired music hardware from a warm harbor artbook. The texture must be quiet and readable behind crisp native UI. Even diffuse lighting across the whole surface, low contrast, no directional cast shadows, no glossy photographic noise, no illustration or scene, no pads, knobs, buttons, screws, holes, lettering, logos, symbols, labels, gradients, orange neon or cyberpunk. Keep a nearly uniform teal value throughout, with tasteful tiny wear details.",
+      "sha256": "b19064dfda9b727d282653dbeba3610335c60f57191a9f94fb91fc68310f1615",
+      "originalBytes": 3067078,
+      "generatedSource": "C:/Users/slavd/.codex/generated_images/01a189c7-16df-7981-833b-812e745451a1/exec-b5a80836-37b2-4f01-93d6-a97d01edbb3f.png"
+    },
+    {
+      "file": "pad.png",
+      "prompt": "Generate ONE production UI sprite, square 1024x1024 with a genuine transparent background. A single unlabelled ivory rubber performance pad for the BeatMakka MK-I cozy harbor music sampler. Perfectly straight front-on orthographic top view, precise rounded square occupying 88 percent of the canvas, centered with equal transparent margins. Gently raised soft silicone ivory (#F5EEDC), broad completely blank clean flat top occupying at least 78 percent of the square, small neat bevel, subtle warm shading at lower edge and tiny restrained top highlight, thin dark desaturated teal rubber gasket around the outer edge. Handmade warm material quality but exact square geometry, low-noise matte texture. No perspective, no text, no letters, numbers, icon, logo, screws, buttons, LEDs, seam down center, scene, dramatic shadow or glow. The asset will be tinted cream, amber and coral in a live game UI, so keep the face near neutral warm white. True isolated transparent sprite, not a checkerboard baked into pixels.",
+      "sha256": "ca3e6fee80fb536c9fe86f5a7e2cbf9a7936f21ed648447770e6c51f0549feaa",
+      "originalBytes": 1692243,
+      "generatedSource": "C:/Users/slavd/.codex/generated_images/01a189c7-16df-7981-833b-812e745451a1/exec-3509078f-aa1e-4a9a-87a8-70173cab4901.png"
+    },
+    {
+      "file": "knob.png",
+      "prompt": "One game UI sprite on a truly transparent background, square 1024x1024. A single physical rotary potentiometer knob for the BeatMakka MK-I music sampler. Exact top-down orthographic front view, perfect circle centered and occupying 82 percent of canvas, equal transparent margins. Matte warm charcoal rubber (#2C3031), thin warm cream metallic rim, broad dark circular top face, tiny fine radial knurling on its outer edge, a single ivory position marker at 12 o'clock INSIDE the knob, soft restrained bevel and evenly diffused handcrafted painted shading. Warm repairable harbor instrument style, no photo realism. No perspective, no stem, no panel, no scale ticks outside the knob, no text, no letters or numbers, no labels, no logo, no extra objects, no dramatic shadows, no neon, no orange glow. It must look like a clean usable UI component and rotate as a single sprite.",
+      "sha256": "b09edbd0ce7e1d3ec325c99dd3e14dafdaa5787a4db2402bbb1b34fd7ba3b008",
+      "originalBytes": 1546546,
+      "generatedSource": "C:/Users/slavd/.codex/generated_images/01a189c7-16df-7981-833b-812e745451a1/exec-f4871ff8-b8b1-45e7-9a34-6efbaca21a03.png"
+    }
+  ],
+  "runtime": "Local EditableImage UI sprites. Native labels and controls. No Roblox upload."
+}

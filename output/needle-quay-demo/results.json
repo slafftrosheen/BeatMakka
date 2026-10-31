@@ -1,0 +1,973 @@
+{
+  "schema": 1,
+  "date": "2026-10-30",
+  "studio": "59069653-9a58-4ba2-92bd-f8c8075019c0",
+  "mode": "Roblox Studio MCP only",
+  "status": "PASS",
+  "studioProbeChecks": 41,
+  "studioProbeFailures": 0,
+  "probes": [
+    {
+      "file": "tools/qa/sequence_transport_server.luau",
+      "datamodel": "Server",
+      "result": {
+        "passed": 9,
+        "failed": 0,
+        "checks": {
+          "1": {
+            "name": "schedule lookup preserves half-open bounds and seeks past elapsed notes",
+            "passed": true,
+            "detail": "65,536 sorted events retain duplicate-time and exclusive-end semantics"
+          },
+          "2": {
+            "name": "live add, toggle removal and event removal replace the personal schedule",
+            "passed": true,
+            "detail": "Live additions preserve tails; erasure cancels voices at the existing loop anchor"
+          },
+          "3": {
+            "name": "live knobs, source, mixer and kit edits update future triggers without restarting",
+            "passed": true,
+            "detail": "Future triggers receive current FX, source and mixer; existing voices retain their tails"
+          },
+          "4": {
+            "name": "pad clear, legacy track clear and explicit whole-sequence clear retain their scope",
+            "passed": true,
+            "detail": "Pad, track and whole-sequence erasure match their visible controls"
+          },
+          "5": {
+            "name": "deleting a playing or paused sequence invalidates its resume snapshot",
+            "passed": true,
+            "detail": "Neither active nor paused deleted music can restart"
+          },
+          "6": {
+            "name": "deleting a queued sequence cancels the queue without stopping the current loop",
+            "passed": true,
+            "detail": "ok"
+          },
+          "7": {
+            "name": "recording clear removes pinned notes, rejects old taps and prevents delayed resurrection",
+            "passed": true,
+            "detail": "Clear survives subsequent overdub; old input and pending deltas cannot restore it"
+          },
+          "8": {
+            "name": "undo and redo update the live loop instead of keeping stale notes",
+            "passed": true,
+            "detail": "ok"
+          },
+          "9": {
+            "name": "song and Finished Song performances retain immutable captured notes",
+            "passed": true,
+            "detail": "Editing remains independent of immutable song/performance and saved-revision snapshots"
+          }
+        }
+      }
+    },
+    {
+      "file": "tools/qa/sequence_transport_client.luau",
+      "datamodel": "Client",
+      "result": {
+        "passed": 4,
+        "failed": 0,
+        "checks": {
+          "1": {
+            "name": "replacement epoch stops voices and does not replay pre-edit hits",
+            "passed": true,
+            "detail": "ok"
+          },
+          "2": {
+            "name": "same-epoch FX revision preserves tails and changes only future trigger parameters",
+            "passed": true,
+            "detail": "Unchanged transport epoch retains voices; changed revision advances the consumption floor"
+          },
+          "3": {
+            "name": "cleared replacement and deleted transport cannot produce looping notes",
+            "passed": true,
+            "detail": "ok"
+          },
+          "4": {
+            "name": "resume and seek never replay notes before the explicit cursor",
+            "passed": true,
+            "detail": "ok"
+          }
+        }
+      }
+    },
+    {
+      "file": "tools/qa/local_finished_performance_probe.luau",
+      "datamodel": "Server",
+      "result": {
+        "acousticOutput": "NOT_CHECKED_BY_SERVER_PROBE",
+        "checks": {
+          "1": "all 64 local bindings playable without catalog admission",
+          "2": "failed save never advertises a finished revision",
+          "3": "real SongFinish saves immutable local revision and deduplicates retries",
+          "4": "finished private playback starts pauses resumes and reaches finite end",
+          "5": "later editor changes cannot mutate saved playback or musical evidence",
+          "6": "actual local discovery rhythms and three record lessons unlock musical route evidence",
+          "7": "local listening selection and stage preparation use accepted saved revision",
+          "8": "local stage stop cancels audio without deleting saved music",
+          "9": "actual concert selection start pause resume cancel and completion stay local"
+        },
+        "catalogAdmissionChanged": false,
+        "duration": 2.6666666666666665,
+        "acceptedSessionSaves": 5,
+        "notices": {
+          "1": "Saved for this Studio session only.",
+          "2": "Saved for this Studio session only.",
+          "3": "Deliberately rejected local save",
+          "4": "Finished song — saved for this session.",
+          "5": "Saved for this Studio session only.",
+          "6": "Saved for this Studio session only.",
+          "7": "Saved for this Studio session only.",
+          "8": "Selected Local Finished Performance for the next listening set.",
+          "9": "One stage. Prepare your snapshot or choose to listen. Nothing joins automatically.",
+          "10": "Snapshot prepared. Start when your turn is offered. You have not joined anyone's audio.",
+          "11": "Your prepared snapshot was removed.",
+          "12": "Snapshot prepared. Start when your turn is offered. You have not joined anyone's audio.",
+          "13": "Playing your saved Finished Song from beginning to end.",
+          "14": "Joined voluntarily. Mute or leave at any time.",
+          "15": "Left listening. Your project is unchanged.",
+          "16": "The Finished Song reached its end.",
+          "17": "Snapshot prepared. Start when your turn is offered. You have not joined anyone's audio.",
+          "18": "Playing your saved Finished Song from beginning to end.",
+          "19": "This set ended. Choose to join the next performer when ready.",
+          "20": "Choose your Finished Song. A quiet room is enough for this evening.",
+          "21": "Selected the saved Finished Song revision.",
+          "22": "Ronan: From the beginning to the last sound. This evening is yours.",
+          "23": "Paused. Progress is frozen; resume this same song from this position.",
+          "24": "Resumed the pinned song revision.",
+          "25": "Performance stopped. Start from the beginning next time; earned history stays with you.",
+          "26": "Choose your Finished Song. A quiet room is enough for this evening.",
+          "27": "Ronan: From the beginning to the last sound. This evening is yours.",
+          "28": "Your finished song reached its end. The Lantern Room has a new evening to remember."
+        },
+        "localOnly": true,
+        "events": 4,
+        "timingMode": "deterministic_end_boundary_with_real_pause_wait",
+        "status": "PASS",
+        "sections": 2,
+        "finishedSongId": "song_8ab8b658-3fa2-484c-b2f3-e3a6111244c6",
+        "saveMode": "session"
+      }
+    },
+    {
+      "file": "tools/qa/local_audio_preview_client.luau",
+      "datamodel": "Client",
+      "result": {
+        "scope": "studio_client_voice_state",
+        "failures": 0,
+        "human_listening_approval": false,
+        "results": [
+          {
+            "passed": true,
+            "name": "local public-performance engine loads and starts the same pending local sources",
+            "detail": "Studio public performance starts local audio; strict admission stays false"
+          },
+          {
+            "passed": true,
+            "name": "personal engine loads 64 native candidates and starts their actual Sound voices",
+            "detail": "64 locally loaded Sound voices started; human listening approval remains pending"
+          },
+          {
+            "passed": true,
+            "name": "stopping transport retains the visible pad audition selection",
+            "detail": "Schedule selection cleared while 64 pad audition voices remain prepared"
+          },
+          {
+            "passed": true,
+            "name": "mute and stop suppress audition playback",
+            "detail": "Muted play rejected and every disposable voice stopped"
+          }
+        ]
+      }
+    },
+    {
+      "file": "tools/qa/fixed_public_panels_client.luau",
+      "datamodel": "Client",
+      "result": {
+        "callbackCalls": 0,
+        "actualViewport": {
+          "y": 753,
+          "x": 1539
+        },
+        "createdAcrossUpdates": 0,
+        "checks": {
+          "1": {
+            "name": "Concert crafted empty/ready/active/paused/ended/closed states",
+            "passed": true,
+            "detail": "ok"
+          },
+          "2": {
+            "name": "Jam crafted idle/active/conductor handoff/closed states",
+            "passed": true,
+            "detail": "ok"
+          },
+          "3": {
+            "name": "jam fixed geometry and stable widgets at 1539x695 host",
+            "passed": true,
+            "detail": "Panel 960x660; footer targets >=44; GUI count 263"
+          },
+          "4": {
+            "name": "jam bounded INFO pagination at 1539x695 host",
+            "passed": true,
+            "detail": "1 readable fixed pages"
+          },
+          "5": {
+            "name": "concert fixed geometry and stable widgets at 1539x695 host",
+            "passed": true,
+            "detail": "Panel 960x660; footer targets >=44; GUI count 263"
+          },
+          "6": {
+            "name": "concert bounded INFO pagination at 1539x695 host",
+            "passed": true,
+            "detail": "1 readable fixed pages"
+          },
+          "7": {
+            "name": "jam fixed geometry and stable widgets at 627x252 host",
+            "passed": true,
+            "detail": "Panel 603x228; footer targets >=44; GUI count 263"
+          },
+          "8": {
+            "name": "jam bounded INFO pagination at 627x252 host",
+            "passed": true,
+            "detail": "5 readable fixed pages"
+          },
+          "9": {
+            "name": "concert fixed geometry and stable widgets at 627x252 host",
+            "passed": true,
+            "detail": "Panel 603x228; footer targets >=44; GUI count 263"
+          },
+          "10": {
+            "name": "concert bounded INFO pagination at 627x252 host",
+            "passed": true,
+            "detail": "4 readable fixed pages"
+          },
+          "11": {
+            "name": "jam fixed geometry and stable widgets at 401x720 host",
+            "passed": true,
+            "detail": "Panel 377x660; footer targets >=44; GUI count 263"
+          },
+          "12": {
+            "name": "jam bounded INFO pagination at 401x720 host",
+            "passed": true,
+            "detail": "1 readable fixed pages"
+          },
+          "13": {
+            "name": "concert fixed geometry and stable widgets at 401x720 host",
+            "passed": true,
+            "detail": "Panel 377x660; footer targets >=44; GUI count 263"
+          },
+          "14": {
+            "name": "concert bounded INFO pagination at 401x720 host",
+            "passed": true,
+            "detail": "1 readable fixed pages"
+          },
+          "15": {
+            "name": "UI-model updates have no command, storage or audio side effect",
+            "passed": true,
+            "detail": "Callbacks were local log functions; no action was synthesized"
+          }
+        },
+        "scope": "Crafted UI states and disposable fixed-size host geometry only; no server, acoustic, physical-input or multiplayer acceptance",
+        "failed": 0,
+        "uiObjects": 263,
+        "passed": 15
+      }
+    }
+  ],
+  "interactive": {
+    "v4All64Input": {
+      "input": {
+        "DeviceUiRevision": 4,
+        "LastInputPad": 64,
+        "GraphicSurface": "device",
+        "InputSubmitted": 64,
+        "InputMaxMs": 0.5010000004403992,
+        "InputP95Ms": 0.4090000002179295,
+        "InputHits": 64,
+        "DeviceSkinVersion": 3,
+        "DeviceLayout": "landscape"
+      },
+      "unique": 64,
+      "starts": 64,
+      "ids": {
+        "nq.harbour.v1.c03_1": 0.85,
+        "nq.harbour.v1.b03_1": 0.65,
+        "nq.harbour.v1.d13_1": 1.8,
+        "nq.harbour.v1.b05_1": 0.43507936507936507,
+        "nq.harbour.v1.d07_1": 0.8,
+        "nq.harbour.v1.a14_1": 0.1619954648526077,
+        "nq.harbour.v1.b10_1": 0.75,
+        "nq.harbour.v1.d04_1": 1.2,
+        "nq.harbour.v1.b09_1": 0.6769614512471656,
+        "nq.harbour.v1.a12_1": 0.25,
+        "nq.harbour.v1.a11_1": 0.48124716553287983,
+        "nq.harbour.v1.c02_1": 0.9,
+        "nq.harbour.v1.d15_1": 1.2,
+        "nq.harbour.v1.b08_1": 0.65,
+        "nq.harbour.v1.d06_1": 1.5,
+        "nq.harbour.v1.c09_1": 1.6168027210884355,
+        "nq.harbour.v1.b13_1": 0.55,
+        "nq.harbour.v1.b15_1": 0.85,
+        "nq.harbour.v1.a13_1": 0.3792290249433107,
+        "nq.harbour.v1.a15_1": 0.45,
+        "nq.harbour.v1.b07_1": 0.6999773242630386,
+        "nq.harbour.v1.b14_1": 0.55,
+        "nq.harbour.v1.d08_1": 0.9,
+        "nq.harbour.v1.d03_1": 1,
+        "nq.harbour.v1.a04_1": 0.3,
+        "nq.harbour.v1.a07_1": 0.3045124716553288,
+        "nq.harbour.v1.c14_1": 1.8,
+        "nq.harbour.v1.a02_1": 0.18213151927437643,
+        "nq.harbour.v1.c13_1": 1.8,
+        "nq.harbour.v1.a01_1": 0.38,
+        "nq.harbour.v1.d05_1": 0.8,
+        "nq.harbour.v1.a06_1": 0.02197278911564626,
+        "nq.harbour.v1.d02_1": 1,
+        "nq.harbour.v1.b01_1": 0.65,
+        "nq.harbour.v1.c11_1": 1.8,
+        "nq.harbour.v1.d16_1": 1.2,
+        "nq.harbour.v1.d12_1": 0.9,
+        "nq.harbour.v1.a09_1": 0.22,
+        "nq.harbour.v1.c16_1": 2,
+        "nq.harbour.v1.c04_1": 0.85,
+        "nq.harbour.v1.a08_1": 0.13176870748299319,
+        "nq.harbour.v1.c08_1": 1.6817913832199547,
+        "nq.harbour.v1.d11_1": 1.3999773242630384,
+        "nq.harbour.v1.d10_1": 1,
+        "nq.harbour.v1.b11_1": 0.6999773242630386,
+        "nq.harbour.v1.c15_1": 1.8,
+        "nq.harbour.v1.b04_1": 0.8,
+        "nq.harbour.v1.d01_1": 1,
+        "nq.harbour.v1.c10_1": 1.7275963718820861,
+        "nq.harbour.v1.d14_1": 0.8,
+        "nq.harbour.v1.a16_1": 0.9,
+        "nq.harbour.v1.a10_1": 0.22,
+        "nq.harbour.v1.c05_1": 1.45,
+        "nq.harbour.v1.a03_1": 0.28217687074829934,
+        "nq.harbour.v1.c01_1": 0.9,
+        "nq.harbour.v1.c12_1": 2.2,
+        "nq.harbour.v1.b06_1": 0.75,
+        "nq.harbour.v1.c07_1": 1,
+        "nq.harbour.v1.b16_1": 1.1,
+        "nq.harbour.v1.b12_1": 0.65,
+        "nq.harbour.v1.d09_1": 0.6999773242630386,
+        "nq.harbour.v1.c06_1": 0.95,
+        "nq.harbour.v1.a05_1": 0.45,
+        "nq.harbour.v1.b02_1": 0.55
+      }
+    },
+    "v4ClearHeld": {
+      "heldBefore": true,
+      "notes": 0,
+      "flashAfter": false,
+      "heldAfter": false,
+      "startsAfterClear": 0
+    },
+    "v4DeletePlaying": {
+      "transportInvalidated": true,
+      "selected": "seq_7",
+      "startsAfterDelete": 0,
+      "playing": false
+    },
+    "v4ProtectedDeleteUI": {
+      "notice": "A song draft uses this sequence. Remove or replace its steps first.",
+      "startsAfterDelete": 0,
+      "keptDependencies": 2,
+      "playing": false
+    },
+    "v4KnobDrag": {
+      "gainAfterDrag": 0,
+      "restored": 1
+    },
+    "v4TrimDrag": {
+      "trimAfterDrag": 0.98,
+      "dragging": false,
+      "restored": 0
+    },
+    "v4EnvelopeDrag": {
+      "restored": 0,
+      "attackAfterDrag": 2
+    },
+    "v4SongReorder": {
+      "restoredFirst": "seq_3",
+      "afterDrag": {
+        "1": "seq_6",
+        "2": "seq_3"
+      },
+      "expectedFirst": "seq_6"
+    },
+    "v4SongRepeat": {
+      "repeatsAfterClick": {
+        "1": 2,
+        "2": 1
+      },
+      "restored": {
+        "1": 1,
+        "2": 1
+      }
+    },
+    "v4MuteUI": {
+      "startedWhileMuted": 0,
+      "legend": "SOUND OFF"
+    },
+    "v4RepeatRelease": {
+      "whileHeld": 7,
+      "held": false,
+      "afterRelease": 0
+    },
+    "v4LandscapeLayout": {
+      "recipeTiles": {
+        "1": {
+          "name": "RecipeTile_1",
+          "size": "74, 26"
+        },
+        "2": {
+          "name": "RecipeTile_2",
+          "size": "74, 26"
+        },
+        "3": {
+          "name": "RecipeTile_3",
+          "size": "74, 26"
+        },
+        "4": {
+          "name": "RecipeTile_4",
+          "size": "74, 26"
+        }
+      },
+      "soundScreen": "316, 153",
+      "transport": true,
+      "padTarget": 47,
+      "size": "750, 323"
+    },
+    "v4PortraitLayout": {
+      "root": "321, 259",
+      "transport": true,
+      "padTarget": 49,
+      "size": "401, 720"
+    },
+    "v4SettingsLayout": {
+      "controls": {
+        "1": {
+          "rootBottom": 263,
+          "h": 47,
+          "name": "Option1",
+          "bottom": 189
+        },
+        "2": {
+          "rootBottom": 263,
+          "h": 47,
+          "name": "Option2",
+          "bottom": 189
+        },
+        "3": {
+          "rootBottom": 263,
+          "h": 47,
+          "name": "Option3",
+          "bottom": 189
+        },
+        "4": {
+          "rootBottom": 263,
+          "h": 47,
+          "name": "Option4",
+          "bottom": 241
+        },
+        "5": {
+          "rootBottom": 263,
+          "h": 47,
+          "name": "Option5",
+          "bottom": 241
+        },
+        "6": {
+          "rootBottom": 263,
+          "h": 47,
+          "name": "Option6",
+          "bottom": 241
+        }
+      },
+      "transport": true
+    },
+    "v4FinalInputPerf": {
+      "p50": 16.545100137591362,
+      "voices": 16,
+      "p95": 21.50600031018257,
+      "adds": 0,
+      "removes": 0,
+      "input": {
+        "DeviceUiRevision": 4,
+        "LastInputPad": 16,
+        "GraphicSurface": "device",
+        "InputSubmitted": 16,
+        "InputMaxMs": 0.2817999993567355,
+        "InputP95Ms": 0.2817999993567355,
+        "InputHits": 16,
+        "DeviceSkinVersion": 3,
+        "DeviceLayout": "landscape"
+      },
+      "frames": 226,
+      "max": 34.828998148441315
+    },
+    "v4PrivatePause": {
+      "offset": 1.294548749923706,
+      "paused": true,
+      "newStarts": 0,
+      "expected": 32,
+      "frozen": true
+    },
+    "v4PrivateFinishedUI": {
+      "played": 32,
+      "ended": true,
+      "expected": 32,
+      "loop": false,
+      "hits": {
+        "1": {
+          "at": 3239.3822868999996,
+          "duration": 0.22,
+          "name": "nq.harbour.v1.a09_1",
+          "group": "PersonalSampler"
+        },
+        "2": {
+          "at": 3239.382469799999,
+          "duration": 0.38,
+          "name": "nq.harbour.v1.a01_1",
+          "group": "PersonalSampler"
+        },
+        "3": {
+          "at": 3239.6821304999994,
+          "duration": 0.22,
+          "name": "nq.harbour.v1.a09_1",
+          "group": "PersonalSampler"
+        },
+        "4": {
+          "at": 3239.9982901999992,
+          "duration": 0.22,
+          "name": "nq.harbour.v1.a09_1",
+          "group": "PersonalSampler"
+        },
+        "5": {
+          "at": 3239.9983896999984,
+          "duration": 0.38,
+          "name": "nq.harbour.v1.a01_1",
+          "group": "PersonalSampler"
+        },
+        "6": {
+          "at": 3239.9984926999987,
+          "duration": 0.45,
+          "name": "nq.harbour.v1.a05_1",
+          "group": "PersonalSampler"
+        },
+        "7": {
+          "at": 3240.316430699999,
+          "duration": 0.22,
+          "name": "nq.harbour.v1.a09_1",
+          "group": "PersonalSampler"
+        },
+        "8": {
+          "at": 3240.6203496,
+          "duration": 0.22,
+          "name": "nq.harbour.v1.a09_1",
+          "group": "PersonalSampler"
+        },
+        "9": {
+          "at": 3240.6204924999984,
+          "duration": 0.38,
+          "name": "nq.harbour.v1.a01_1",
+          "group": "PersonalSampler"
+        },
+        "10": {
+          "at": 3242.0484610999993,
+          "duration": 0.22,
+          "name": "nq.harbour.v1.a09_1",
+          "group": "PersonalSampler"
+        },
+        "11": {
+          "at": 3242.3661379999994,
+          "duration": 0.22,
+          "name": "nq.harbour.v1.a09_1",
+          "group": "PersonalSampler"
+        },
+        "12": {
+          "at": 3242.366306,
+          "duration": 0.38,
+          "name": "nq.harbour.v1.a01_1",
+          "group": "PersonalSampler"
+        },
+        "13": {
+          "at": 3242.3664525999993,
+          "duration": 0.45,
+          "name": "nq.harbour.v1.a05_1",
+          "group": "PersonalSampler"
+        },
+        "14": {
+          "at": 3242.682217399999,
+          "duration": 0.22,
+          "name": "nq.harbour.v1.a09_1",
+          "group": "PersonalSampler"
+        },
+        "15": {
+          "at": 3242.9898613999994,
+          "duration": 0.65,
+          "name": "nq.harbour.v1.b01_1",
+          "group": "PersonalSampler"
+        },
+        "16": {
+          "at": 3242.9899769999993,
+          "duration": 0.22,
+          "name": "nq.harbour.v1.a09_1",
+          "group": "PersonalSampler"
+        },
+        "17": {
+          "at": 3242.9900204999994,
+          "duration": 0.38,
+          "name": "nq.harbour.v1.a01_1",
+          "group": "PersonalSampler"
+        },
+        "18": {
+          "at": 3243.319329599999,
+          "duration": 0.22,
+          "name": "nq.harbour.v1.a09_1",
+          "group": "PersonalSampler"
+        },
+        "19": {
+          "at": 3243.615124099999,
+          "duration": 1,
+          "name": "nq.harbour.v1.d01_1",
+          "group": "PersonalSampler"
+        },
+        "20": {
+          "at": 3243.6152685999987,
+          "duration": 0.22,
+          "name": "nq.harbour.v1.a09_1",
+          "group": "PersonalSampler"
+        },
+        "21": {
+          "at": 3243.6153282999985,
+          "duration": 0.38,
+          "name": "nq.harbour.v1.a01_1",
+          "group": "PersonalSampler"
+        },
+        "22": {
+          "at": 3243.6153866999994,
+          "duration": 0.45,
+          "name": "nq.harbour.v1.a05_1",
+          "group": "PersonalSampler"
+        },
+        "23": {
+          "at": 3243.9325596,
+          "duration": 0.22,
+          "name": "nq.harbour.v1.a09_1",
+          "group": "PersonalSampler"
+        },
+        "24": {
+          "at": 3244.2494621999995,
+          "duration": 0.65,
+          "name": "nq.harbour.v1.b01_1",
+          "group": "PersonalSampler"
+        },
+        "25": {
+          "at": 3244.249546699999,
+          "duration": 0.22,
+          "name": "nq.harbour.v1.a09_1",
+          "group": "PersonalSampler"
+        },
+        "26": {
+          "at": 3244.2495923999995,
+          "duration": 0.38,
+          "name": "nq.harbour.v1.a01_1",
+          "group": "PersonalSampler"
+        },
+        "27": {
+          "at": 3244.5665677999987,
+          "duration": 0.22,
+          "name": "nq.harbour.v1.a09_1",
+          "group": "PersonalSampler"
+        },
+        "28": {
+          "at": 3244.8656051999988,
+          "duration": 1,
+          "name": "nq.harbour.v1.d01_1",
+          "group": "PersonalSampler"
+        },
+        "29": {
+          "at": 3244.8657613999985,
+          "duration": 0.22,
+          "name": "nq.harbour.v1.a09_1",
+          "group": "PersonalSampler"
+        },
+        "30": {
+          "at": 3244.8658308999984,
+          "duration": 0.38,
+          "name": "nq.harbour.v1.a01_1",
+          "group": "PersonalSampler"
+        },
+        "31": {
+          "at": 3244.865895499999,
+          "duration": 0.45,
+          "name": "nq.harbour.v1.a05_1",
+          "group": "PersonalSampler"
+        },
+        "32": {
+          "at": 3245.1822580999997,
+          "duration": 0.22,
+          "name": "nq.harbour.v1.a09_1",
+          "group": "PersonalSampler"
+        }
+      }
+    },
+    "v4PublicBegin": {
+      "waitLimit": 9.053024053573608,
+      "loop": false,
+      "hosting": true,
+      "expected": 32,
+      "duration": 5,
+      "completeAt": 7,
+      "unavailable": 0
+    },
+    "v4PublicEnd": {
+      "played": 32,
+      "listening": false,
+      "expected": 32,
+      "ended": true,
+      "hits": {
+        "1": {
+          "at": 3279.0017057999994,
+          "duration": 0.22,
+          "name": "nq.harbour.v1.a09_1",
+          "group": "CourtyardListening"
+        },
+        "2": {
+          "at": 3279.0018150999986,
+          "duration": 0.38,
+          "name": "nq.harbour.v1.a01_1",
+          "group": "CourtyardListening"
+        },
+        "3": {
+          "at": 3279.2973642999987,
+          "duration": 0.22,
+          "name": "nq.harbour.v1.a09_1",
+          "group": "CourtyardListening"
+        },
+        "4": {
+          "at": 3279.6145701999994,
+          "duration": 0.22,
+          "name": "nq.harbour.v1.a09_1",
+          "group": "CourtyardListening"
+        },
+        "5": {
+          "at": 3279.6147108999994,
+          "duration": 0.38,
+          "name": "nq.harbour.v1.a01_1",
+          "group": "CourtyardListening"
+        },
+        "6": {
+          "at": 3279.6147770999996,
+          "duration": 0.45,
+          "name": "nq.harbour.v1.a05_1",
+          "group": "CourtyardListening"
+        },
+        "7": {
+          "at": 3279.931039199999,
+          "duration": 0.22,
+          "name": "nq.harbour.v1.a09_1",
+          "group": "CourtyardListening"
+        },
+        "8": {
+          "at": 3280.246757499999,
+          "duration": 0.22,
+          "name": "nq.harbour.v1.a09_1",
+          "group": "CourtyardListening"
+        },
+        "9": {
+          "at": 3280.246988699999,
+          "duration": 0.38,
+          "name": "nq.harbour.v1.a01_1",
+          "group": "CourtyardListening"
+        },
+        "10": {
+          "at": 3280.5631945999994,
+          "duration": 0.22,
+          "name": "nq.harbour.v1.a09_1",
+          "group": "CourtyardListening"
+        },
+        "11": {
+          "at": 3280.8631885999985,
+          "duration": 0.22,
+          "name": "nq.harbour.v1.a09_1",
+          "group": "CourtyardListening"
+        },
+        "12": {
+          "at": 3280.8632875999992,
+          "duration": 0.38,
+          "name": "nq.harbour.v1.a01_1",
+          "group": "CourtyardListening"
+        },
+        "13": {
+          "at": 3280.863335599999,
+          "duration": 0.45,
+          "name": "nq.harbour.v1.a05_1",
+          "group": "CourtyardListening"
+        },
+        "14": {
+          "at": 3281.1807415999992,
+          "duration": 0.22,
+          "name": "nq.harbour.v1.a09_1",
+          "group": "CourtyardListening"
+        },
+        "15": {
+          "at": 3281.4971048999996,
+          "duration": 0.65,
+          "name": "nq.harbour.v1.b01_1",
+          "group": "CourtyardListening"
+        },
+        "16": {
+          "at": 3281.4971996999993,
+          "duration": 0.22,
+          "name": "nq.harbour.v1.a09_1",
+          "group": "CourtyardListening"
+        },
+        "17": {
+          "at": 3281.4972418999987,
+          "duration": 0.38,
+          "name": "nq.harbour.v1.a01_1",
+          "group": "CourtyardListening"
+        },
+        "18": {
+          "at": 3281.7974703,
+          "duration": 0.22,
+          "name": "nq.harbour.v1.a09_1",
+          "group": "CourtyardListening"
+        },
+        "19": {
+          "at": 3282.114287299999,
+          "duration": 1,
+          "name": "nq.harbour.v1.d01_1",
+          "group": "CourtyardListening"
+        },
+        "20": {
+          "at": 3282.1143667999986,
+          "duration": 0.22,
+          "name": "nq.harbour.v1.a09_1",
+          "group": "CourtyardListening"
+        },
+        "21": {
+          "at": 3282.114405099999,
+          "duration": 0.38,
+          "name": "nq.harbour.v1.a01_1",
+          "group": "CourtyardListening"
+        },
+        "22": {
+          "at": 3282.114445199999,
+          "duration": 0.45,
+          "name": "nq.harbour.v1.a05_1",
+          "group": "CourtyardListening"
+        },
+        "23": {
+          "at": 3282.4310392999996,
+          "duration": 0.22,
+          "name": "nq.harbour.v1.a09_1",
+          "group": "CourtyardListening"
+        },
+        "24": {
+          "at": 3282.747051999999,
+          "duration": 0.65,
+          "name": "nq.harbour.v1.b01_1",
+          "group": "CourtyardListening"
+        },
+        "25": {
+          "at": 3282.7472332999987,
+          "duration": 0.22,
+          "name": "nq.harbour.v1.a09_1",
+          "group": "CourtyardListening"
+        },
+        "26": {
+          "at": 3282.7473187999985,
+          "duration": 0.38,
+          "name": "nq.harbour.v1.a01_1",
+          "group": "CourtyardListening"
+        },
+        "27": {
+          "at": 3283.053712699999,
+          "duration": 0.22,
+          "name": "nq.harbour.v1.a09_1",
+          "group": "CourtyardListening"
+        },
+        "28": {
+          "at": 3283.363092399999,
+          "duration": 1,
+          "name": "nq.harbour.v1.d01_1",
+          "group": "CourtyardListening"
+        },
+        "29": {
+          "at": 3283.3631974,
+          "duration": 0.22,
+          "name": "nq.harbour.v1.a09_1",
+          "group": "CourtyardListening"
+        },
+        "30": {
+          "at": 3283.3633133999992,
+          "duration": 0.38,
+          "name": "nq.harbour.v1.a01_1",
+          "group": "CourtyardListening"
+        },
+        "31": {
+          "at": 3283.3633799,
+          "duration": 0.45,
+          "name": "nq.harbour.v1.a05_1",
+          "group": "CourtyardListening"
+        },
+        "32": {
+          "at": 3283.6801855999984,
+          "duration": 0.22,
+          "name": "nq.harbour.v1.a09_1",
+          "group": "CourtyardListening"
+        }
+      }
+    },
+    "v4PublicReturn": {
+      "songs": 1,
+      "reentered": true,
+      "returned": true
+    },
+    "v4FinalSmoke": {
+      "scrollingFrames": 0,
+      "public": {
+        "listening": false,
+        "played": 32,
+        "expected": 32,
+        "ended": true
+      },
+      "artwork": {
+        "softkey-v4": true,
+        "knob": true,
+        "pad": true,
+        "bezel-v4": true,
+        "faceplate": true,
+        "journal": true,
+        "sleeve-v4": true
+      },
+      "private": {
+        "pausedFrozen": true,
+        "expected": 32,
+        "played": 32,
+        "ended": true
+      },
+      "station": "Station_1",
+      "savedSongs": 1
+    }
+  },
+  "sourceParity": "source-parity.json",
+  "console": "",
+  "boundaries": {
+    "uploads": 0,
+    "computerUse": 0,
+    "publishing": 0,
+    "commits": 0,
+    "pushes": 0,
+    "saveMode": "Studio session only",
+    "humanListeningApproval": "NOT_RUN",
+    "physicalInputToSpeakerLatency": "NOT_MEASURED",
+    "independentTwoClientAcceptance": "NOT_RUN"
+  },
+  "place": "output/needle-quay-demo/NeedleQuay-Groovebox-v4.rbxlx",
+  "place_sha256": "b69f516b156155b371c8b02effd8379fc26dddfff9016a17fe7097a3a13d4db3"
+}

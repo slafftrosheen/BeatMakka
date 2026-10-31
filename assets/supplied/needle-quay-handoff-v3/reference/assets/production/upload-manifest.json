@@ -1,0 +1,217 @@
+{
+  "audio": [
+    {
+      "key": "kick",
+      "file": "assets/production/audio/kick.wav",
+      "asset_id": null
+    },
+    {
+      "key": "snare",
+      "file": "assets/production/audio/snare.wav",
+      "asset_id": null
+    },
+    {
+      "key": "closed_hat",
+      "file": "assets/production/audio/closed_hat.wav",
+      "asset_id": null
+    },
+    {
+      "key": "open_hat",
+      "file": "assets/production/audio/open_hat.wav",
+      "asset_id": null
+    },
+    {
+      "key": "clap",
+      "file": "assets/production/audio/clap.wav",
+      "asset_id": null
+    },
+    {
+      "key": "rim",
+      "file": "assets/production/audio/rim.wav",
+      "asset_id": null
+    },
+    {
+      "key": "low_tom",
+      "file": "assets/production/audio/low_tom.wav",
+      "asset_id": null
+    },
+    {
+      "key": "high_tom",
+      "file": "assets/production/audio/high_tom.wav",
+      "asset_id": null
+    },
+    {
+      "key": "shaker",
+      "file": "assets/production/audio/shaker.wav",
+      "asset_id": null
+    },
+    {
+      "key": "tambourine",
+      "file": "assets/production/audio/tambourine.wav",
+      "asset_id": null
+    },
+    {
+      "key": "bell",
+      "file": "assets/production/audio/bell.wav",
+      "asset_id": null
+    },
+    {
+      "key": "pluck",
+      "file": "assets/production/audio/pluck.wav",
+      "asset_id": null
+    },
+    {
+      "key": "bass_c",
+      "file": "assets/production/audio/bass_c.wav",
+      "asset_id": null
+    },
+    {
+      "key": "bass_eb",
+      "file": "assets/production/audio/bass_eb.wav",
+      "asset_id": null
+    },
+    {
+      "key": "bass_g",
+      "file": "assets/production/audio/bass_g.wav",
+      "asset_id": null
+    },
+    {
+      "key": "chord",
+      "file": "assets/production/audio/chord.wav",
+      "asset_id": null
+    },
+    {
+      "key": "metal_hit",
+      "file": "assets/production/audio/metal_hit.wav",
+      "asset_id": null
+    },
+    {
+      "key": "vent_thump",
+      "file": "assets/production/audio/vent_thump.wav",
+      "asset_id": null
+    },
+    {
+      "key": "robot_chirp",
+      "file": "assets/production/audio/robot_chirp.wav",
+      "asset_id": null
+    },
+    {
+      "key": "ui_tap",
+      "file": "assets/production/audio/ui_tap.wav",
+      "asset_id": null
+    },
+    {
+      "key": "ui_collect",
+      "file": "assets/production/audio/ui_collect.wav",
+      "asset_id": null
+    },
+    {
+      "key": "ui_save",
+      "file": "assets/production/audio/ui_save.wav",
+      "asset_id": null
+    },
+    {
+      "key": "ui_error",
+      "file": "assets/production/audio/ui_error.wav",
+      "asset_id": null
+    },
+    {
+      "key": "waterfront",
+      "file": "assets/production/audio/waterfront.wav",
+      "asset_id": null
+    }
+  ],
+  "images": [
+    {
+      "key": "atlas.quay.basecolor.512",
+      "file": "assets/production/materials/sets/quay/atlas_basecolor_512.png",
+      "asset_id": null
+    },
+    {
+      "key": "atlas.quay.basecolor.1024",
+      "file": "assets/production/materials/sets/quay/atlas_basecolor.png",
+      "asset_id": null
+    },
+    {
+      "key": "atlas.chalk.basecolor.512",
+      "file": "assets/production/materials/sets/chalk/atlas_basecolor_512.png",
+      "asset_id": null
+    },
+    {
+      "key": "atlas.chalk.basecolor.1024",
+      "file": "assets/production/materials/sets/chalk/atlas_basecolor.png",
+      "asset_id": null
+    },
+    {
+      "key": "atlas.coral.basecolor.512",
+      "file": "assets/production/materials/sets/coral/atlas_basecolor_512.png",
+      "asset_id": null
+    },
+    {
+      "key": "atlas.coral.basecolor.1024",
+      "file": "assets/production/materials/sets/coral/atlas_basecolor.png",
+      "asset_id": null
+    },
+    {
+      "key": "atlas.afterhours.basecolor.512",
+      "file": "assets/production/materials/sets/afterhours/atlas_basecolor_512.png",
+      "asset_id": null
+    },
+    {
+      "key": "atlas.afterhours.basecolor.1024",
+      "file": "assets/production/materials/sets/afterhours/atlas_basecolor.png",
+      "asset_id": null
+    },
+    {
+      "key": "atlas.roughness.512",
+      "file": "assets/production/materials/shared/atlas_roughness_512.png",
+      "asset_id": null
+    },
+    {
+      "key": "atlas.roughness.1024",
+      "file": "assets/production/materials/shared/atlas_roughness.png",
+      "asset_id": null
+    },
+    {
+      "key": "atlas.metalness.512",
+      "file": "assets/production/materials/shared/atlas_metalness_512.png",
+      "asset_id": null
+    },
+    {
+      "key": "atlas.metalness.1024",
+      "file": "assets/production/materials/shared/atlas_metalness.png",
+      "asset_id": null
+    },
+    {
+      "key": "ui.icons",
+      "file": "assets/production/graphics/G03_G04_icons.png",
+      "asset_id": null
+    },
+    {
+      "key": "ui.panel",
+      "file": "assets/production/graphics/panel_9slice.png",
+      "asset_id": null
+    },
+    {
+      "key": "ui.padmask",
+      "file": "assets/production/graphics/pad_mask.png",
+      "asset_id": null
+    },
+    {
+      "key": "ui.displaymask",
+      "file": "assets/production/graphics/display_mask.png",
+      "asset_id": null
+    },
+    {
+      "key": "ui.deviceface",
+      "file": "assets/production/graphics/device_face_mask.png",
+      "asset_id": null
+    },
+    {
+      "key": "records.sleeves",
+      "file": "assets/production/graphics/G01_record_sleeves.png",
+      "asset_id": null
+    }
+  ],
+  "policy": "Upload once per shared map to the experience owner. Masks/SVGs are source graphics; runtime UI can use native clipping without them. Assign only real permission-checked IDs."
+}

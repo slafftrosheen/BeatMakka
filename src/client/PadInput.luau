@@ -23,7 +23,7 @@ function PadInput:begin(pad, token)
         or type(pad) ~= "number"
         or pad % 1 ~= 0
         or pad < 1
-        or pad > 16
+        or pad > 64
     then
         return false
     end

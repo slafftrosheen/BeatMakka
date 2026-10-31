@@ -5,12 +5,16 @@ local Sound = require(Shared.PadSound)
 local Waves = require(Shared.SampleWaveforms)
 local Catalog = require(Shared.SampleCatalog)
 local Gui = require(script.Parent.GuiFactory)
+local Recipes = require(Shared.QuayFxRecipes)
+local Icons = require(script.Parent.GameIcons)
+local Voice = require(script.Parent.CompanionVoice)
+local Mix = require(script.Parent.AudioMix)
 local Editor = {}
 Editor.__index = Editor
 local sections = {
     Tone = { "gain", "pitch", "start", "finish" },
     ADSR = { "attack", "decay", "sustain", "release", "gate" },
-    FX = { "echo", "delay", "reverb" },
+    FX = { "echo", "delay", "reverb", "tone", "drive" },
 }
 local labels = {
     gain = "LEVEL",
@@ -25,6 +29,8 @@ local labels = {
     echo = "ECHO SEND",
     delay = "ECHO TIME",
     reverb = "ROOM SEND",
+    tone = "WARM / BRIGHT",
+    drive = "DRIVE",
 }
 function Editor.new(parent, change, audition, selectPad, preset)
     local self = setmetatable(
@@ -35,7 +41,7 @@ function Editor.new(parent, change, audition, selectPad, preset)
         Gui.make("Frame", parent, {
             Name = "SampleSculptor",
             LayoutOrder = 0,
-            Size = UDim2.new(1, -10, 0, 492),
+            Size = UDim2.new(1, -10, 0, 620),
             BackgroundColor3 = Theme.Ink,
             BorderSizePixel = 0,
         }),
@@ -45,17 +51,44 @@ function Editor.new(parent, change, audition, selectPad, preset)
     self.title = Gui.label(self.root, "PAD 01 / SAMPLE STUDIO", 15, Theme.Cream)
     self.title.Position, self.title.Size = UDim2.fromOffset(12, 8), UDim2.new(1, -216, 0, 40)
     local preview = Gui.button(self.root, "Audition", function()
-        if audition(self.pad, self.values) then
+        Voice.Cue:Fire("silence")
+        if self.pad and audition(self.pad, self.values) then
             self.auditionStarted = os.clock()
             self.auditionSettings = Sound.sanitize(self.values)
+            local wave = Waves[self.sample]
+            local duration = if wave
+                then wave.duration
+                    * (self.values.finish - self.values.start)
+                    / 2 ^ (self.values.pitch / 12)
+                else 4
+            local _, finish = Sound.timing(self.values, duration)
+            Mix.sampleAuditionUntil = os.clock() + finish + 1.2
+            if self.lesson and self.lesson.phase == "audition" and self.lesson.pad == self.pad then
+                self.lesson.phase = "listen"
+                self.lesson.finishAt = Mix.sampleAuditionUntil
+                self:drawLesson()
+            end
         end
     end)
+    self.usePad = Gui.button(self.root, "USE THIS PAD →", function()
+        self:confirmLessonPad()
+    end)
+    self.usePad.Position, self.usePad.Size = UDim2.new(1, -156, 0, 86), UDim2.fromOffset(144, 44)
+    self.usePad.Visible = false
+    self.usePad.ZIndex = 6
+    self.preview = preview
+    self.previewGlow = Gui.make("UIStroke", preview, {
+        Color = Theme.Amber,
+        Thickness = 3,
+        Enabled = false,
+        ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
+    })
     preview.Name, preview.Position, preview.Size =
         "AuditionSample", UDim2.new(1, -104, 0, 4), UDim2.fromOffset(92, 44)
     for i, delta in { -1, 1 } do
         local nav = Gui.button(self.root, if delta < 0 then "‹" else "›", function()
             self.drag = nil
-            selectPad(((self.pad or 1) - 1 + delta) % 16 + 1)
+            selectPad(((self.pad or 1) - 1 + delta) % 64 + 1)
         end)
         nav.Name = if delta < 0 then "PreviousPad" else "NextPad"
         nav.Position, nav.Size = UDim2.new(1, -204 + (i - 1) * 48, 0, 4), UDim2.fromOffset(44, 44)
@@ -107,6 +140,18 @@ function Editor.new(parent, change, audition, selectPad, preset)
         Visible = false,
     })
     self.playback = game:GetService("RunService").Heartbeat:Connect(function()
+        if self.lesson then
+            if not self.root.Parent.Visible then
+                self.lesson = nil
+                Voice.Cue:Fire("tutorial_cancel")
+                self:drawLesson()
+            elseif self.lesson.phase == "listen" and os.clock() >= self.lesson.finishAt then
+                self.taught[self.lesson.id] = true
+                self.lesson.phase = "done"
+                Voice.Cue:Fire("fx_done")
+                self:drawLesson()
+            end
+        end
         local at, wave = self.auditionStarted, self.sample and Waves[self.sample]
         if not at or not wave then
             if self.playhead.Visible then
@@ -152,7 +197,7 @@ function Editor.new(parent, change, audition, selectPad, preset)
             { Name = key, Size = UDim2.new(1, -24, 0, 42), BackgroundTransparency = 1 }
         )
         local name = Gui.label(row, labels[key], 12, Theme.Cream)
-        name.Size = UDim2.new(0.28, 0, 1, 0)
+        name.Size = UDim2.fromScale(0.28, 1)
         local minus = Gui.button(row, "−", function()
             self:set(key, self.values[key] - spec[4], true)
         end)
@@ -183,7 +228,7 @@ function Editor.new(parent, change, audition, selectPad, preset)
         value.BackgroundColor3 = Theme.Ink
         Gui.round(value, 5)
         value.AnchorPoint, value.Position = Vector2.new(0.5, 0.5), UDim2.fromScale(0.5, 0.5)
-        value.Size = UDim2.new(0, 66, 0, 26)
+        value.Size = UDim2.fromOffset(66, 26)
         value.TextXAlignment = Enum.TextXAlignment.Center
         rail.InputBegan:Connect(function(input)
             if
@@ -202,9 +247,28 @@ function Editor.new(parent, change, audition, selectPad, preset)
             preset(entry[1])
         end)
         b.Name = "Preset_" .. entry[1]
-        b.Position, b.Size = UDim2.new((i - 1) / 3, 12, 0, 354), UDim2.new(1 / 3, -16, 0, 44)
+        b.Position, b.Size = UDim2.new((i - 1) / 3, 12, 0, 442), UDim2.new(1 / 3, -16, 0, 44)
         self.presets[i] = b
     end
+    self.dryAudition = Gui.button(self.root, "A / DRY", function()
+        local dry = Sound.preset(self.values, "dry", self.bpm or 96)
+        if self.pad and audition(self.pad, dry) then
+            self.auditionStarted, self.auditionSettings = os.clock(), dry
+        end
+    end)
+    self.dryAudition.Name = "AuditionDry"
+    self.dryAudition.Position, self.dryAudition.Size =
+        UDim2.fromOffset(12, 494), UDim2.new(0.5, -18, 0, 44)
+    self.syncEcho = Gui.button(self.root, "SYNC / 1/2 BEAT", function()
+        local values = { 0.25, 0.5, 0.75, 1 }
+        self.syncIndex = (self.syncIndex or 1) % #values + 1
+        local beats = values[self.syncIndex]
+        self:set("delay", math.clamp(60 / (self.bpm or 96) * beats, 0.05, 1), true)
+        self.syncEcho.Text = "SYNC / " .. ({ "1/4", "1/2", "3/4", "1" })[self.syncIndex] .. " BEAT"
+    end)
+    self.syncEcho.Name = "SyncEcho"
+    self.syncEcho.Position, self.syncEcho.Size =
+        UDim2.new(0.5, 6, 0, 494), UDim2.new(0.5, -18, 0, 44)
     local reset = Gui.button(self.root, "Reset sound edits", function()
         preset("reset")
     end)
@@ -231,8 +295,141 @@ function Editor.new(parent, change, audition, selectPad, preset)
             self.change(key, self.values[key])
         end
     end)
+    self.recipePanel = Gui.round(
+        Gui.make("Frame", parent, {
+            Name = "DiscoveredFX",
+            LayoutOrder = 1,
+            Size = UDim2.new(1, -10, 0, 358),
+            BackgroundColor3 = Theme.Ink,
+            BorderSizePixel = 0,
+        }),
+        12
+    )
+    local heading = Gui.label(
+        self.recipePanel,
+        "DISCOVERED FX / SELECT PAD → APPLY → AUDITION",
+        12,
+        Theme.Amber
+    )
+    heading.Position, heading.Size = UDim2.fromOffset(12, 4), UDim2.new(1, -24, 0, 34)
+    self.taught = {}
+    self.lessonButton = Gui.button(self.recipePanel, "SHOW ME / LEARN AN EARNED FX", function()
+        if not self.lesson or self.lesson.phase == "done" then
+            local chosen
+            for _, item in Recipes.List do
+                if Recipes.earned(self.progress, item) then
+                    chosen = chosen or item
+                    if not self.taught[item.id] then
+                        chosen = item
+                        break
+                    end
+                end
+            end
+            if not chosen then
+                return
+            end
+            self.lesson = { id = chosen.id, phase = "select", pad = self.pad }
+            self.mode = "FX"
+            self:draw()
+            Voice.Cue:Fire("fx_select")
+            parent.CanvasPosition = Vector2.zero
+        elseif self.lesson.phase == "select" then
+            self.lesson.pad = self.pad
+            self.lesson.phase = "apply"
+            Voice.Cue:Fire("fx_apply")
+        elseif self.lesson.phase == "apply" then
+            Voice.Cue:Fire("fx_apply")
+        elseif self.lesson.phase == "audition" then
+            parent.CanvasPosition = Vector2.zero
+            Voice.Cue:Fire("fx_audition")
+        end
+        self:drawLesson()
+    end)
+    self.lessonButton.Position, self.lessonButton.Size =
+        UDim2.fromOffset(12, 42), UDim2.new(1, -64, 0, 58)
+    local cancelLesson = Gui.button(self.recipePanel, "×", function()
+        self.lesson = nil
+        Voice.Cue:Fire("tutorial_cancel")
+        self:drawLesson()
+    end)
+    cancelLesson.Position, cancelLesson.Size = UDim2.new(1, -48, 0, 48), UDim2.fromOffset(36, 44)
+    self.recipeRows = {}
+    for i, item in Recipes.List do
+        local row = Gui.make("Frame", self.recipePanel, {
+            Position = UDim2.fromOffset(10, 112 + (i - 1) * 60),
+            Size = UDim2.new(1, -20, 0, 54),
+            BackgroundColor3 = Theme.Graphite,
+            BorderSizePixel = 0,
+        })
+        Icons.make(row, item.icon, Theme.Amber, 26).Position = UDim2.fromOffset(6, 13)
+        local label = Gui.label(row, item.label, 12, Theme.Cream)
+        label.Position, label.Size = UDim2.fromOffset(40, 3), UDim2.new(1, -142, 0, 23)
+        local hint = Gui.label(row, item.hint, 11, Theme.FadedTeal)
+        hint.Position, hint.Size = UDim2.fromOffset(40, 27), UDim2.new(1, -142, 0, 24)
+        local button = Gui.button(row, "LOCKED", function()
+            if Recipes.earned(self.progress, item) then
+                if self.lesson and self.lesson.id == item.id and self.lesson.phase == "apply" then
+                    self.lesson.phase = "confirm"
+                    self:drawLesson()
+                end
+                preset(item.id)
+            end
+        end)
+        button.Position, button.Size = UDim2.new(1, -90, 0, 5), UDim2.fromOffset(84, 44)
+        local glow = Gui.make("UIStroke", button, {
+            Color = Theme.Amber,
+            Thickness = 3,
+            Enabled = false,
+            ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
+        })
+        self.recipeRows[item.id] = { button = button, hint = hint, glow = glow }
+    end
     self:draw()
     return self
+end
+function Editor:confirmLessonPad()
+    if not self.lesson or self.lesson.phase ~= "select" then
+        return
+    end
+    self.lesson.pad = self.pad
+    self.lesson.phase = "apply"
+    Voice.Cue:Fire("fx_apply")
+    local parent = self.root.Parent
+    parent.CanvasPosition = Vector2.new(
+        0,
+        math.max(
+            0,
+            self.recipePanel.AbsolutePosition.Y
+                - parent.AbsolutePosition.Y
+                + parent.CanvasPosition.Y
+                - 8
+        )
+    )
+    self:drawLesson()
+end
+function Editor:drawLesson()
+    self.usePad.Visible = self.lesson ~= nil and self.lesson.phase == "select"
+    for id, row in self.recipeRows or {} do
+        row.glow.Enabled = self.lesson ~= nil
+            and self.lesson.id == id
+            and self.lesson.phase == "apply"
+    end
+    self.previewGlow.Enabled = self.lesson ~= nil and self.lesson.phase == "audition"
+    if not self.lessonButton then
+        return
+    end
+    local lesson = self.lesson
+    self.lessonButton.Text = if not lesson
+        then "SHOW ME / LEARN AN EARNED FX"
+        elseif lesson.phase == "select" then string.format(
+            "1  SELECT PAD / USE PAD %02d →",
+            self.pad
+        )
+        elseif lesson.phase == "apply" then "2  APPLY " .. Recipes.find(lesson.id).label
+        elseif lesson.phase == "confirm" then "WAITING FOR PAD SETTINGS"
+        elseif lesson.phase == "audition" then "3  AUDITION ↑ / HEAR YOUR FX"
+        elseif lesson.phase == "listen" then "LISTENING…"
+        else "✓ FX LEARNED / SAVE YOUR BEAT"
 end
 function Editor:dragTo(x)
     local d = self.drag
@@ -254,6 +451,7 @@ function Editor:set(key, value, commit)
     end
 end
 function Editor:draw()
+    self.dryAudition.Visible, self.syncEcho.Visible = self.mode == "FX", self.mode == "FX"
     for _, b in self.presets do
         b.Visible = self.mode == "FX"
     end
@@ -310,11 +508,55 @@ function Editor:draw()
         else "Waveform unavailable for this source"
 end
 function Editor:update(state, pad)
+    if not state or not state.pattern then
+        self.lesson = nil
+        self.drag = nil
+        return
+    end
+    self.bpm = state.pattern and state.pattern.bpm or 96
+    if self.lesson then
+        if not state.station then
+            self.lesson = nil
+            Voice.Cue:Fire("tutorial_cancel")
+        elseif self.lesson.pad ~= pad and self.lesson.phase ~= "select" then
+            self.lesson = { id = self.lesson.id, phase = "select", pad = pad }
+            Voice.Cue:Fire("tutorial_cancel")
+        elseif self.lesson.phase == "confirm" then
+            local expected = Recipes.apply(
+                state.quay and state.quay.progress,
+                state.pattern.sounds[pad],
+                self.lesson.id,
+                state.pattern.bpm
+            )
+            local raw = state.pattern.sounds[pad]
+            if
+                expected
+                and math.abs(raw.echo - expected.echo) < 0.001
+                and math.abs(raw.reverb - expected.reverb) < 0.001
+                and math.abs(raw.delay - expected.delay) < 0.001
+            then
+                self.lesson.phase = "audition"
+                Voice.Cue:Fire("fx_audition")
+                self.root.Parent.CanvasPosition = Vector2.zero
+            end
+        end
+    end
+    self.progress = state.quay and state.quay.progress
+    for _, item in Recipes.List do
+        local row = self.recipeRows[item.id]
+        local earned = Recipes.earned(self.progress, item)
+        row.button.Text = if earned then "APPLY" else "LOCKED"
+        row.button.Active, row.button.Selectable, row.button.AutoButtonColor =
+            earned, earned, earned
+        row.button.BackgroundColor3 = if earned then Theme.Teal else Theme.Graphite
+        row.hint.Text = if earned then "READY / PAD " .. string.format("%02d", pad) else item.hint
+    end
     if self.pad ~= pad or not state.station then
         self.auditionStarted = nil
         self.drag = nil
     end
     self.pad = pad
+    self:drawLesson()
     if not state.pattern then
         return
     end
@@ -333,13 +575,20 @@ function Editor:update(state, pad)
     if not self.drag then
         self.values = Sound.sanitize(state.pattern.sounds and state.pattern.sounds[pad])
     end
-    self.title.Text = string.format("PAD %02d / %s", pad, Catalog.ById[self.sample].label)
+    local definition = Catalog.ById[self.sample] or Catalog.RetiredById[self.sample]
+    self.title.Text = string.format(
+        "%s%02d / %s",
+        string.char(65 + math.floor((pad - 1) / 16)),
+        (pad - 1) % 16 + 1,
+        if definition then definition.label else "Unavailable source"
+    )
     self:draw()
 end
 function Editor:destroy()
     self.playback:Disconnect()
     self.moved:Disconnect()
     self.ended:Disconnect()
+    self.recipePanel:Destroy()
     self.root:Destroy()
 end
 return Editor

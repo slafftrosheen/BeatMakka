@@ -1,0 +1,64 @@
+[
+  {
+    "id": "NQ-CMP-ALISSIA",
+    "glb_version": 2,
+    "glb_triangles": 3608,
+    "native_lod_triangles": [
+      3608,
+      1616,
+      504
+    ],
+    "images": [
+      [
+        512,
+        512
+      ]
+    ],
+    "skin_joints": 16,
+    "animations": [
+      "celebrate",
+      "idle",
+      "idle_listen",
+      "kneel",
+      "music_bob",
+      "point",
+      "run",
+      "think",
+      "walk",
+      "wave"
+    ],
+    "verified_sha256": true,
+    "art_approved": false
+  },
+  {
+    "id": "NQ-CMP-NIKOLAS",
+    "glb_version": 2,
+    "glb_triangles": 3196,
+    "native_lod_triangles": [
+      3196,
+      1426,
+      438
+    ],
+    "images": [
+      [
+        512,
+        512
+      ]
+    ],
+    "skin_joints": 16,
+    "animations": [
+      "celebrate",
+      "idle",
+      "idle_listen",
+      "kneel",
+      "music_bob",
+      "point",
+      "run",
+      "think",
+      "walk",
+      "wave"
+    ],
+    "verified_sha256": true,
+    "art_approved": false
+  }
+]

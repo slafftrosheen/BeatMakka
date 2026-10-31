@@ -1958,8 +1958,8 @@
     },
     {
       "path": "assets/production/needle-quay/quest-world-contracts.json",
-      "bytes": 14621,
-      "sha256": "fab3016120f1d6224451fdcd74b3a7763b2d1fd796d9ac33734caece098a3d11"
+      "bytes": 16492,
+      "sha256": "be3745da858091de46b0815fb173d0b824c7c7504201a4102ae9e9e8aec5cf1c"
     },
     {
       "path": "assets/production/needle-quay/site/after.png",

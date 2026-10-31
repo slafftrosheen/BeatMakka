@@ -1,0 +1,17 @@
+{
+  "provider": "built-in image_gen",
+  "requests": [
+    [
+      "bezel-v4",
+      "Production game UI asset: a single wide LCD display bezel, perfectly orthographic straight-on front view, landscape 3:2 aspect ratio, intended for a warm welcoming hand-built harbour groovebox for children. A slim rounded rectangular petrol-teal enamel surround with a narrow warm brass inner lip, small ivory corner accents and subtle soft bevel highlights. The entire central 88 percent is a flat very dark green blank screen with a fine gentle glass reflection ONLY at its extreme upper edge; no graphic content. Attractive tactile stylized 3D material, restrained wear, clean readable framing, fits a playful premium music instrument. Enclosure fills canvas with only 2 percent transparent outer margin; strict front view, no perspective, no environment, no shadows far outside. Absolutely no letters, logos, numbers, icons, controls, grid, waveform, knobs or text. Separate runtime graphics will supply everything. Genuinely transparent background outside the bezel. Border detail concentrated at outer 5 percent, scalable 9-slice friendly."
+    ],
+    [
+      "softkey-v4",
+      "Production game UI sprite: ONE wide rectangular tactile soft-key button cap for a friendly hand-built retro groovebox, strict orthographic front/top view, 3:1 aspect ratio. Cream ivory silicone with a shallow smooth concave face, softly rounded corners, warm inset highlight, slim dark teal mounting rim, subtle physical bevel. Clean premium stylized game art, cheerful approachable and beautifully tangible. Neutral pale face supports tinting in code, uniform near-flat lighting, subtle short ambient shadow inside margin only. Fills 94 percent of canvas, transparent outside, no surrounding machine. No text, symbol, letters, numbers, logo, LEDs, icon, separate objects or perspective. A single simple object ready for a scalable 9-slice UI button."
+    ],
+    [
+      "sleeve-v4",
+      "Production game UI asset: one square record sleeve cover, strictly flat orthographic front view. A warm ivory textured paper sleeve with a bold joyous abstract rhythm artwork in petrol teal, burnt orange, ochre gold and faded coral: flowing arcs, concentric circles, small syncopated blocks, a stylized harbour-wave motif. Friendly handmade screen print, child-appropriate, sophisticated but playful and immediately musical, warm Needle Quay retrofuture music workshop art direction. Thin teal outer edge and slight paper wear. Keep central composition clear at thumbnail size. Entire square cover opaque with artwork filling frame; no perspective, no table, no background scene. Absolutely NO letters, text, numbers, brand or logo. No baked labels, no record peeking out; runtime code will add title and vinyl motif."
+    ]
+  ]
+}

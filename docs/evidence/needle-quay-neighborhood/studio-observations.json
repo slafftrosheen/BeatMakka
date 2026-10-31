@@ -1,0 +1,92 @@
+{
+  "nqTori": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"host\":\"Tori\",\"line\":\"Help me make a little room between the crates. Then we can hear what you've made.\",\"action\":\"talk\",\"beaconHidden\":true,\"dialogue\":true,\"guideHidden\":true,\"panel\":true}"
+      }
+    ],
+    "isError": false
+  },
+  "nqQuestion": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"skinReady\":true,\"line\":\"A pulse can be simple. Put the metal sound in different moments, then listen to the spaces. You decide how it should feel.\",\"bones\":true}"
+      }
+    ],
+    "isError": false
+  },
+  "nqFeedback": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"notice\":\"Your metal pulse has 0 of 4 different unmuted steps in its fullest pattern. Assign Quay metal in Sounds; repeated taps on one step still count as one moment.\",\"pulse\":false,\"question\":\"A pulse can be simple. Put the metal sound in different moments, then listen to the spaces. You decide how it should feel.\"}"
+      }
+    ],
+    "isError": false
+  },
+  "nqRestorationFinal": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"marker\":\"274, 3, 70\",\"guide\":true,\"objective\":\"Rhythm in the metal\",\"board\":\"MAKING ROOM\\n1 / 2 local activities\"}"
+      }
+    ],
+    "isError": false
+  },
+  "nqTracking": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"marker\":\"316, 2, -124\",\"panelClosed\":true,\"objective\":\"The vent has a pulse\"}"
+      }
+    ],
+    "isError": false
+  },
+  "nqCafeFinal": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"host\":\"Nell Fen\",\"line\":\"People come in for a warm cup and stay for the sound of someone else being here. Cups, chairs, a door that never quite closes quietly.\",\"nellAction\":\"greet\",\"mainProgress\":{\"NQ-Q06\":false,\"NQ-Q04\":false,\"NQ-Q09\":false,\"NQ-Q12\":false,\"NQ-Q03\":false,\"NQ-Q07\":false,\"NQ-Q08\":false,\"NQ-Q02\":false,\"NQ-Q00\":true,\"NQ-Q01\":true,\"NQ-Q05\":false,\"NQ-Q11\":false,\"NQ-Q10\":false},\"open\":\"encounter:cafe\",\"guideHidden\":true}"
+      }
+    ],
+    "isError": false
+  },
+  "nqSana": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"host\":\"Sana Bell\",\"line\":\"A hand with the stage cases would help. I can do the rest; solo is fine.\",\"open\":\"encounter:sana\"}"
+      }
+    ],
+    "isError": false
+  },
+  "nqMarketVisit": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"host\":\"Naya\",\"open\":\"P3\",\"sort\":0,\"position\":\"395, 3.149996042251587, -85\"}"
+      }
+    ],
+    "isError": false
+  },
+  "nqRespawn": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"markerCount\":1,\"tracked\":\"The vent has a pulse\",\"position\":\"280, 3.349998712539673, 78\",\"guide\":true,\"nearbyRegistered\":true,\"beaconExists\":true}"
+      }
+    ],
+    "isError": false
+  },
+  "nqScene": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"actors\":{\"1\":{\"name\":\"Tori\",\"action\":\"listen\",\"skin\":true},\"3\":{\"name\":\"Naya\",\"action\":\"rest\",\"skin\":true},\"2\":{\"name\":\"Ivo\",\"action\":\"rest\",\"skin\":true},\"5\":{\"name\":\"Ronan Wren\",\"action\":\"rest\",\"skin\":true},\"4\":{\"name\":\"Sana Bell\",\"action\":\"rest\",\"skin\":true},\"7\":{\"action\":\"rest\",\"name\":\"Mica\"},\"6\":{\"name\":\"Nell Fen\",\"action\":\"rest\",\"skin\":true},\"9\":{\"name\":\"QuayResident2\",\"action\":\"rest\",\"skin\":true},\"8\":{\"name\":\"QuayResident1\",\"action\":\"walk\",\"skin\":true},\"11\":{\"name\":\"QuayResident4\",\"action\":\"rest\",\"skin\":true},\"10\":{\"name\":\"QuayResident3\",\"action\":\"rest\",\"skin\":true}},\"artLoaded\":67,\"meshInstances\":24,\"sounds\":0,\"parts\":58}"
+      }
+    ],
+    "isError": false
+  }
+}

@@ -1,0 +1,255 @@
+{
+  "studio": "5ddc3c93-7109-4122-811b-104c152004fc",
+  "place_sha256": "4e4230dd574db1a54684ffd984c01d3daf844c3b1f02586469ec2cd0e7357025",
+  "suites": [
+    {
+      "file": "tools/qa/mpc_studio_regression.luau",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"audio\":\"Pending; synthetic readiness only used for isolated snapshot fixture\",\"cloudWrites\":0,\"failures\":0,\"tests\":9,\"suite\":\"MPC Studio regression\",\"results\":{\"1\":{\"name\":\"64 bank addresses and edits remain independent during playback\",\"passed\":true,\"detail\":\"A01/B01/C01/D01 events and settings retained; bank switch preserved epoch and anchor\"},\"3\":{\"name\":\"delayed recording preserves absolute identity and pinned dependencies\",\"passed\":true,\"detail\":\"Delayed B01 stayed B01 after bank D; velocity, request dedupe, stale epoch and pinned kit verified\"},\"2\":{\"name\":\"fifth sequence, independent variation, multibar edits and undo/redo\",\"passed\":true,\"detail\":\"Five sequences; tick 7440 retained on bar two; variation and history independent\"},\"5\":{\"name\":\"Song playback seeks by step, pins edits, ends and clears old queue\",\"passed\":true,\"detail\":\"Finite end and two-second tail; step audition and snapshot isolation verified\"},\"4\":{\"name\":\"Song Mode repeat edits preserve references and real tempo duration\",\"passed\":true,\"detail\":\"5 bars; 18 seconds at sequence tempos, 10 seconds at Song 120 BPM; step references stable\"},\"7\":{\"name\":\"saved revisions, failed storage, pending finish and immutable fixture capture\",\"passed\":true,\"detail\":\"Session save accepted, outage retained previous save; pending finish refused; synthetic snapshot stayed immutable\"},\"6\":{\"name\":\"Play resumes the paused song instead of the selected sequence\",\"passed\":true,\"detail\":\"Paused song reference, snapshot and cursor retained across Play\"},\"9\":{\"name\":\"four working patterns and all six shelf bundles survive migration\",\"passed\":true,\"detail\":\"4 working + 24 shelf sequences; muted notes, retired identities, tempos and raw preimages retained; retry idempotent\"},\"8\":{\"name\":\"conversion retains arrangement and refuses multi-tempo flattening\",\"passed\":true,\"detail\":\"Single-tempo conversion created a 3-bar editable sequence; mixed-tempo source refused without truncation\"}}}"
+          }
+        ],
+        "isError": false
+      }
+    },
+    {
+      "file": "tools/qa/v3_identity_regression.luau",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"tests\":3,\"suite\":\"V3 identity and preservation\",\"failures\":0,\"results\":{\"1\":{\"name\":\"Finite first-time ledger totals 575 XP and cannot mint replay XP\",\"passed\":true,\"detail\":\"210 Listener + 180 Beatmaker + 185 Neighbour; repeated reconciliation unchanged\"},\"3\":{\"name\":\"Saved looks copy selections independently and enforce ownership\",\"passed\":true,\"detail\":\"Three independent presets; unavailable cosmetics and fourth preset rejected\"},\"2\":{\"name\":\"Earned history grants canonical cosmetics without creating Finished Songs\",\"passed\":true,\"detail\":\"Earned title and accessories preserved; no premium ownership or phantom songs\"}}}"
+          }
+        ],
+        "isError": false
+      }
+    },
+    {
+      "file": "tools/qa/local_audio_preview_server.luau",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"scope\":\"studio_private_fixture\",\"failures\":0,\"results\":[{\"passed\":true,\"name\":\"64 native local previews remain unavailable to approved readiness and semantic roles\",\"detail\":\"64 technical auditions; artistic approval, discovery roles and public pack remain pending\"},{\"passed\":true,\"name\":\"personal sequence includes all 64 canonical native preview events; public resolution stays strict\",\"detail\":\"Personal immutable schedule contains 64; approved-only transport and quest evidence reject them\"},{\"passed\":true,\"name\":\"recording snapshot retains newly tapped preview notes and source identity\",\"detail\":\"Recorded A02 remains in the private preview schedule; no save performed\"},{\"passed\":true,\"name\":\"song draft auditions do not satisfy Finished Song capture\",\"detail\":\"Draft playback works locally; Finish remains blocked by approved audio readiness\"},{\"passed\":true,\"name\":\"local Kit creates an independent native program and keeps prior edits\",\"detail\":\"All64 loaded into a new program; prior assignment/FX retained and selectable; unknown roster ID rejected\"}]}"
+          }
+        ],
+        "isError": false
+      }
+    },
+    {
+      "file": "tools/qa/graffiti_studio_regression.luau",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"tests\":2,\"suite\":\"Rendered mesh graffiti attachment\",\"failures\":0,\"results\":{\"1\":{\"name\":\"All eight building murals reference rendered mesh panels\",\"passed\":true,\"detail\":\"Eight exact mesh bindings; matching transforms/sizes; physical depth test enabled\"},\"2\":{\"name\":\"Placement follows rendered mesh translation, rotation and uniform scale\",\"passed\":true,\"detail\":\"Transformed/scaled image gap is 0.025 studs; stale sources and nonuniform scale fail closed\"}}}"
+          }
+        ],
+        "isError": false
+      }
+    },
+    {
+      "file": "tools/qa/local_audio_preview_client.luau",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"scope\":\"studio_client_voice_state\",\"failures\":0,\"human_listening_approval\":false,\"results\":[{\"passed\":true,\"name\":\"public engine never allocates preview voices\",\"detail\":\"No public preview voices or playback\"},{\"passed\":true,\"name\":\"personal engine loads 64 native candidates and starts their actual Sound voices\",\"detail\":\"64 locally loaded Sound voices started; human listening approval remains pending\"},{\"passed\":true,\"name\":\"stopping transport retains the visible pad audition selection\",\"detail\":\"Schedule selection cleared while 64 pad audition voices remain prepared\"},{\"passed\":true,\"name\":\"mute and stop suppress audition playback\",\"detail\":\"Muted play rejected and every disposable voice stopped\"}]}"
+          }
+        ],
+        "isError": false
+      }
+    },
+    {
+      "file": "tools/qa/mpc_client_probe.luau",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"summary\":{\"1\":{\"bpm\":180,\"revision\":5,\"id\":\"song_10\",\"duration\":4,\"totalBars\":3,\"name\":\"QA Harbour Song\",\"steps\":{\"1\":{\"index\":1,\"repeats\":1,\"duration\":1.3333333333333333,\"sequenceId\":\"seq_3\",\"stepId\":\"step_11\",\"hasTempoMap\":false,\"name\":\"QA Harbour Intro\",\"effectiveBpm\":180,\"bars\":1,\"startBar\":1,\"startAt\":0},\"2\":{\"index\":2,\"repeats\":2,\"duration\":2.6666666666666667,\"sequenceId\":\"seq_5\",\"stepId\":\"step_12\",\"hasTempoMap\":false,\"name\":\"QA Main\",\"effectiveBpm\":180,\"bars\":1,\"startBar\":2,\"startAt\":1.3333333333333333}},\"tempoMode\":\"song\",\"savedRevision\":5}},\"sequences\":5,\"draft\":{\"bpm\":180,\"revision\":5,\"name\":\"QA Harbour Song\",\"id\":\"song_10\",\"steps\":{\"1\":{\"repeats\":1,\"sequenceId\":\"seq_3\",\"stepId\":\"step_11\"},\"2\":{\"repeats\":2,\"sequenceId\":\"seq_5\",\"stepId\":\"step_12\"}},\"tempoMode\":\"song\",\"savedRevision\":5},\"station\":\"Station_1\",\"ready\":true}"
+          }
+        ],
+        "isError": false
+      }
+    },
+    {
+      "file": "tools/qa/mpc_ui_assertions.luau",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"tests\":3,\"suite\":\"MPC UI assertions\",\"failures\":0,\"results\":{\"1\":{\"name\":\"Song page exposes live position and pause control\",\"passed\":true,\"detail\":\"Stopped / add sections, then play your song from the beginning.\"},\"3\":{\"name\":\"Bar and Song BPM fields reflect the selected objects\",\"passed\":true,\"detail\":\"Displayed values match server-owned selection\"},\"2\":{\"name\":\"Arrangement step labels and controls use authored order\",\"passed\":true,\"detail\":\"Step headings stay paired with their controls\"}}}"
+          }
+        ],
+        "isError": false
+      }
+    },
+    {
+      "file": "tools/qa/v3_presentation_regression.luau",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"tests\":4,\"suite\":\"V3 presentation\",\"failures\":0,\"results\":{\"1\":{\"name\":\"Chapter story remains readable on the journal panel\",\"passed\":true,\"detail\":\"Text contrast 11.51:1\"},\"4\":{\"name\":\"Wardrobe mirror allocates no hidden world or camera\",\"passed\":true,\"detail\":\"Mirror is on demand; journal is closed during the instrument session\"},\"3\":{\"name\":\"First Light pin teaches the finished-song finale\",\"passed\":true,\"detail\":\"Perform your saved Finished Song from beginning to end in the Lantern Room.\"},\"2\":{\"name\":\"Hardware display follows all four absolute bank addresses\",\"passed\":true,\"detail\":\"All four bank addresses follow the selected physical pad; sequence unchanged\"}}}"
+          }
+        ],
+        "isError": false
+      }
+    }
+  ],
+  "source_parity": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"sourceBytes\":16995005,\"passed\":true,\"checked\":216,\"mismatches\":[]}"
+      }
+    ],
+    "isError": false
+  },
+  "layouts": [
+    {
+      "orientation": "Portrait",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"padPixels\":47,\"layout\":\"portrait\",\"duplicates\":[],\"buttons\":279}"
+          }
+        ],
+        "isError": false
+      }
+    },
+    {
+      "orientation": "LandscapeRight",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"padPixels\":51,\"layout\":\"landscape\",\"duplicates\":[],\"buttons\":279}"
+          }
+        ],
+        "isError": false
+      }
+    },
+    {
+      "orientation": "desktop",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"padPixels\":92,\"layout\":\"landscape\",\"duplicates\":[],\"buttons\":279}"
+          }
+        ],
+        "isError": false
+      }
+    }
+  ],
+  "knobs": [
+    {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"value\":0,\"key\":\"gain\",\"restored\":1}"
+        }
+      ],
+      "isError": false
+    },
+    {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"value\":-24,\"key\":\"pitch\",\"restored\":0}"
+        }
+      ],
+      "isError": false
+    },
+    {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"value\":1,\"key\":\"tone\",\"restored\":0}"
+        }
+      ],
+      "isError": false
+    },
+    {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"value\":0.45,\"key\":\"drive\",\"restored\":0}"
+        }
+      ],
+      "isError": false
+    },
+    {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"value\":0.5,\"key\":\"echo\",\"restored\":0}"
+        }
+      ],
+      "isError": false
+    },
+    {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"value\":0.5,\"key\":\"reverb\",\"restored\":0}"
+        }
+      ],
+      "isError": false
+    }
+  ],
+  "cancelled_drag": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"otherBankUntouched\":true,\"bankSwitchCancelsDrag\":true}"
+      }
+    ],
+    "isError": false
+  },
+  "assigned_graphic": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"newKit\":\"program_13\",\"availablePads\":64,\"assignedVocalHasMicFamily\":true}"
+      }
+    ],
+    "isError": false
+  },
+  "direct_ui": {
+    "banks": [
+      "A01",
+      "B01",
+      "C01",
+      "D01"
+    ],
+    "pad_play_across_tabs": 5,
+    "song_ui": {
+      "started": true,
+      "duration_seconds": 4,
+      "finite_end": true
+    }
+  },
+  "captures": [
+    "device-desktop.jpg",
+    "device-phone-portrait.jpg",
+    "device-phone-landscape.jpg",
+    "sample-waveform.jpg",
+    "journal.jpg",
+    "song-cards.jpg",
+    "graffiti-mesh-wall.jpg",
+    "corrected-ferry-door.jpg",
+    "corrected-shop.jpg"
+  ],
+  "scope": {
+    "local_studio": true,
+    "uploads": 0,
+    "human_listening_approval": false,
+    "finished_public_readiness": "PENDING",
+    "old_open_studio_retained": "ea7cc5ab-fb13-4f5d-8b51-669b300c267e"
+  }
+}

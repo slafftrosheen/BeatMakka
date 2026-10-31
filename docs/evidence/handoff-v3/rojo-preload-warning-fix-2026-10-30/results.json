@@ -1,0 +1,201 @@
+{
+  "date": "2026-10-30",
+  "studioId": "f32ad24c-4654-42d3-acf8-d6371d0ed69f",
+  "place": "NeedleQuay-MPC-v3-AssetTypeFixed.rbxlx",
+  "runtimeInterface": "Roblox Studio MCP",
+  "sourcePlaceSha256": "b173519a56fd6ac6ea076df14d0b80b23740dd66416dce621d333f88e0c3b677",
+  "originalPreloaderRed": {
+    "passed": false,
+    "requests": {
+      "1": {
+        "id": "rbxassetid://203785492",
+        "kind": "string"
+      },
+      "2": {
+        "id": "rbxassetid://6012985953",
+        "kind": "string"
+      }
+    }
+  },
+  "preloaderCases": {
+    "1": {
+      "cleaned": true,
+      "failLoad": false,
+      "imageUnchanged": true,
+      "passed": true,
+      "typedSound": true,
+      "failureBehaviorPreserved": true
+    },
+    "2": {
+      "cleaned": true,
+      "failLoad": true,
+      "imageUnchanged": true,
+      "passed": true,
+      "typedSound": true,
+      "failureBehaviorPreserved": true
+    }
+  },
+  "server": {
+    "audio": "Pending; synthetic readiness only used for isolated snapshot fixture",
+    "cloudWrites": 0,
+    "failures": 0,
+    "tests": 9,
+    "suite": "MPC Studio regression",
+    "results": {
+      "1": {
+        "name": "64 bank addresses and edits remain independent during playback",
+        "passed": true,
+        "detail": "A01/B01/C01/D01 events and settings retained; bank switch preserved epoch and anchor"
+      },
+      "2": {
+        "name": "fifth sequence, independent variation, multibar edits and undo/redo",
+        "passed": true,
+        "detail": "Five sequences; tick 7440 retained on bar two; variation and history independent"
+      },
+      "3": {
+        "name": "delayed recording preserves absolute identity and pinned dependencies",
+        "passed": true,
+        "detail": "Delayed B01 stayed B01 after bank D; velocity, request dedupe, stale epoch and pinned kit verified"
+      },
+      "4": {
+        "name": "Song Mode repeat edits preserve references and real tempo duration",
+        "passed": true,
+        "detail": "5 bars; 18 seconds at sequence tempos, 10 seconds at Song 120 BPM; step references stable"
+      },
+      "5": {
+        "name": "Song playback seeks by step, pins edits, ends and clears old queue",
+        "passed": true,
+        "detail": "Finite end and two-second tail; step audition and snapshot isolation verified"
+      },
+      "6": {
+        "name": "Play resumes the paused song instead of the selected sequence",
+        "passed": true,
+        "detail": "Paused song reference, snapshot and cursor retained across Play"
+      },
+      "7": {
+        "name": "saved revisions, failed storage, pending finish and immutable fixture capture",
+        "passed": true,
+        "detail": "Session save accepted, outage retained previous save; pending finish refused; synthetic snapshot stayed immutable"
+      },
+      "8": {
+        "name": "conversion retains arrangement and refuses multi-tempo flattening",
+        "passed": true,
+        "detail": "Single-tempo conversion created a 3-bar editable sequence; mixed-tempo source refused without truncation"
+      },
+      "9": {
+        "name": "four working patterns and all six shelf bundles survive migration",
+        "passed": true,
+        "detail": "4 working + 24 shelf sequences; muted notes, retired identities, tempos and raw preimages retained; retry idempotent"
+      }
+    }
+  },
+  "clientSetup": {
+    "summary": {
+      "1": {
+        "bpm": 180,
+        "revision": 5,
+        "id": "song_10",
+        "duration": 4,
+        "totalBars": 3,
+        "name": "QA Harbour Song",
+        "steps": {
+          "1": {
+            "index": 1,
+            "repeats": 1,
+            "duration": 1.3333333333333333,
+            "sequenceId": "seq_3",
+            "stepId": "step_11",
+            "hasTempoMap": false,
+            "name": "QA Harbour Intro",
+            "effectiveBpm": 180,
+            "bars": 1,
+            "startBar": 1,
+            "startAt": 0
+          },
+          "2": {
+            "index": 2,
+            "repeats": 2,
+            "duration": 2.6666666666666665,
+            "sequenceId": "seq_5",
+            "stepId": "step_12",
+            "hasTempoMap": false,
+            "name": "QA Main",
+            "effectiveBpm": 180,
+            "bars": 1,
+            "startBar": 2,
+            "startAt": 1.3333333333333333
+          }
+        },
+        "tempoMode": "song",
+        "savedRevision": 5
+      }
+    },
+    "sequences": 5,
+    "draft": {
+      "bpm": 180,
+      "revision": 5,
+      "name": "QA Harbour Song",
+      "id": "song_10",
+      "steps": {
+        "1": {
+          "repeats": 1,
+          "sequenceId": "seq_3",
+          "stepId": "step_11"
+        },
+        "2": {
+          "repeats": 2,
+          "sequenceId": "seq_5",
+          "stepId": "step_12"
+        }
+      },
+      "tempoMode": "song",
+      "savedRevision": 5
+    },
+    "station": "Station_1",
+    "ready": true
+  },
+  "ui": {
+    "tests": 3,
+    "suite": "MPC UI assertions",
+    "failures": 0,
+    "results": {
+      "1": {
+        "name": "Song page exposes live position and pause control",
+        "passed": true,
+        "detail": "Stopped / add sections, then play your song from the beginning."
+      },
+      "2": {
+        "name": "Arrangement step labels and controls use authored order",
+        "passed": true,
+        "detail": "Step headings stay paired with their controls"
+      },
+      "3": {
+        "name": "Bar and Song BPM fields reflect the selected objects",
+        "passed": true,
+        "detail": "Displayed values match server-owned selection"
+      }
+    }
+  },
+  "liveSong": {
+    "passed": true,
+    "musicalDuration": 4,
+    "tail": 2,
+    "observedSeconds": 6.186433792114258,
+    "playing": false,
+    "observedSections": [
+      "QA Harbour Intro / repeat 1 of 1",
+      "QA Main / repeat 1 of 2",
+      "QA Main / repeat 2 of 2"
+    ]
+  },
+  "console": {
+    "edit": "",
+    "playAfterRegression": "",
+    "playAfterLiveSong": ""
+  },
+  "uploads": 0,
+  "publishing": false,
+  "cloudWrites": 0,
+  "gameSourcesChanged": false,
+  "originalBackup": "C:/Users/slavd/.codex/backups/BeatMaka/rojo-preload-20261030-root-preserved/RojoManagedPlugin.rbxm"
+}

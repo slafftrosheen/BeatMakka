@@ -1,0 +1,88 @@
+{
+  "provider": "ElevenLabs",
+  "model": "eleven_v4",
+  "records": [
+    {
+      "file": "assets/production/needle-quay/voices/source/alissia-take1.mp3",
+      "generationId": "Kfsmho03aSWjyhr1Wztn",
+      "sha256": "a5a06ea3c9de2a0583ac2b4b6de339e897df74baf1251dcbdb8c3b6ec1aa4868",
+      "kind": "original"
+    },
+    {
+      "file": "assets/production/needle-quay/voices/source/alissia-take2.mp3",
+      "generationId": "sufdRUrIv26nAlcsw0Es",
+      "sha256": "abbdf9b1738bd0f05381594adf546580636e80c6d8a6e6a477941af6001a6cec",
+      "kind": "original"
+    },
+    {
+      "file": "assets/production/needle-quay/voices/alissia_turn.wav",
+      "source": "assets/production/needle-quay/voices/source/alissia-take1.mp3",
+      "startSeconds": 0.08,
+      "endSeconds": 0.88,
+      "subtitleId": "alissia_turn",
+      "sha256": "7f6abafa5ae6e18118683ea5c98ef24fb97886acafba540fbd8f25a027b15368",
+      "kind": "runtime-clip"
+    },
+    {
+      "file": "assets/production/needle-quay/voices/alissia_success.wav",
+      "source": "assets/production/needle-quay/voices/source/alissia-take1.mp3",
+      "startSeconds": 1.38,
+      "endSeconds": 2.58,
+      "subtitleId": "alissia_success",
+      "sha256": "9e3ce3ab5b842eb225565a75b2b649d4ef77a3c159f080829e86f8a297bfb806",
+      "kind": "runtime-clip"
+    },
+    {
+      "file": "assets/production/needle-quay/voices/alissia_route.wav",
+      "source": "assets/production/needle-quay/voices/source/alissia-take1.mp3",
+      "startSeconds": 3.02,
+      "endSeconds": 3.9,
+      "subtitleId": "alissia_route",
+      "sha256": "271b3dca7b3953496f78e5c1d480cffcecb01acb960caad1ae934f794bf0c600",
+      "kind": "runtime-clip"
+    },
+    {
+      "file": "assets/production/needle-quay/voices/source/nikolas-take1.mp3",
+      "generationId": "A25CIPw73nzdOXvdsS40",
+      "sha256": "9aa2fa066caff5dc9345daee4ca5b554203da64cac6ff7572705b7228ada3bf2",
+      "kind": "original"
+    },
+    {
+      "file": "assets/production/needle-quay/voices/source/nikolas-take2.mp3",
+      "generationId": "bzOsBeyO8AKHQOOYG9Dv",
+      "sha256": "49e20ca8440399b9535801aa8ad289b3b454eb0366bc2032d3928e745e6d141c",
+      "kind": "original"
+    },
+    {
+      "file": "assets/production/needle-quay/voices/nikolas_turn.wav",
+      "source": "assets/production/needle-quay/voices/source/nikolas-take1.mp3",
+      "startSeconds": 0,
+      "endSeconds": 1.3,
+      "subtitleId": "nikolas_turn",
+      "sha256": "216e2541efcab88a52565175adddf30ceb54253626d77df1969910e9f1fa0ef8",
+      "kind": "runtime-clip"
+    },
+    {
+      "file": "assets/production/needle-quay/voices/nikolas_success.wav",
+      "source": "assets/production/needle-quay/voices/source/nikolas-take1.mp3",
+      "startSeconds": 1.55,
+      "endSeconds": 3.02,
+      "subtitleId": "nikolas_success",
+      "sha256": "fd5b346bcd39a3e30910e4361c0efeb0b20d50f825907e1741cc85fc1d51cff7",
+      "kind": "runtime-clip"
+    },
+    {
+      "file": "assets/production/needle-quay/voices/nikolas_route.wav",
+      "source": "assets/production/needle-quay/voices/source/nikolas-take1.mp3",
+      "startSeconds": 3.52,
+      "endSeconds": 4.28,
+      "subtitleId": "nikolas_route",
+      "sha256": "5354223b275714e5269d56f1f7dd75e54a5badf635ca830faa7a4135a59b3826",
+      "kind": "runtime-clip"
+    }
+  ],
+  "selection": "First take of each approved audition set; second takes preserved.",
+  "processing": "Cuts at measured silent gaps, mono 44.1kHz PCM16. No voice transformation.",
+  "runtimeVerified": false,
+  "robloxUploads": 0
+}
