@@ -7,6 +7,7 @@ local Shared = game.ReplicatedStorage.Shared
 local Catalog = require(Shared.SampleCatalog)
 local Transport = require(Shared.MusicTransport)
 local Input = game:GetService("UserInputService")
+local GuiService = game:GetService("GuiService")
 local Run = game:GetService("RunService")
 local View = {}
 View.__index = View
@@ -188,6 +189,12 @@ function View.new(callbacks)
         end)
         button.InputEnded:Connect(function(input)
             self.padInput:finish(input)
+        end)
+        button.Activated:Connect(function(inputObject)
+            if inputObject and inputObject.UserInputType == Enum.UserInputType.Gamepad1 then
+                self:beginPad(i, inputObject)
+                self.padInput:finish(inputObject)
+            end
         end)
     end
     self.padControls = PadControls.new(self.performanceDeck, {
@@ -486,7 +493,7 @@ function View:command(action, a, b)
         return
     end
     if action == "Bank" then
-        self:cancelInput(false)
+        -- A bank switch changes the visible pads, not the lifetime of held notes.
         self.requestedBank = a
         self:paintPads()
         self:updateSelection()
@@ -598,6 +605,7 @@ function View:paintPads()
         attr(b, "AbsolutePad", absolute)
         attr(b, "Address", string.format("%s%02d", string.char(64 + bank), i))
         attr(b, "PadSelected", i == self.selectedPad)
+        Skin.setPadDown(b, self.padInput.held[absolute] ~= nil)
         attr(b, "SampleName", sample and sample.label or "NO SOUND")
         attr(
             b,
