@@ -9,7 +9,7 @@ local Discoveries = {
             address = 49,
             label = "Quay metal",
             origin = "A metal strike at the quay. Approved sample audio is pending.",
-            use = "Use ready I01 at four distinct rhythmic positions in a named sequence.",
+            use = "Open SEQ / Full editor / Sound hunts. Add this sound at any two rhythmic positions, then save. Echo practice is optional.",
         },
         I02 = {
             sample = "nq.harbour.v1.d02",
@@ -17,7 +17,7 @@ local Discoveries = {
             address = 50,
             label = "Vent thump",
             origin = "A low thump from the alley vent. Approved sample audio is pending.",
-            use = "Layer ready I02 with another part in a named sequence.",
+            use = "Layer this collected source with your metal part in a named sequence, then save your own rhythm.",
         },
         I03 = {
             sample = "nq.harbour.v1.d03",
@@ -25,7 +25,7 @@ local Discoveries = {
             address = 51,
             label = "Helper chirp",
             origin = "A short reply from Mica's speaker. Approved sample audio is pending.",
-            use = "Select a teaching bar; use ready I03 at relative ticks 0, 960, 1920 and 2880.",
+            use = "Copy a variation, change the chirp rhythm and save both sequences. The echo exercise is optional, not the creative objective.",
         },
     },
 }
@@ -43,7 +43,9 @@ for id, binding in Catalog.LocalDiscoveryBindings do
             .. ". Gameplay role: "
             .. binding.substitute_for
             .. "."
-        discovery.use = binding.use
+        -- Preserve the old exercise description as provenance, not a mandatory
+        -- completion rule for the current creative sound-hunt interaction.
+        discovery.legacyUse = binding.use
         discovery.localOnly, discovery.recordingEquivalence = true, false
         discovery.sourceSubstitute = true
         discovery.sourceLabel, discovery.sourceAddress = binding.label, binding.address

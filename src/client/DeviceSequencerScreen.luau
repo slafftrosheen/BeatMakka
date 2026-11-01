@@ -1,6 +1,7 @@
 -- A fixed step display. Creating/changing notes never rebuilds the interface.
 local W = require(script.Parent.DeviceWidgets)
 local Coach = require(script.Parent.FirstGrooveCoach)
+local RecorderGuide = require(script.Parent.RecorderGuide)
 local Catalog = require(game.ReplicatedStorage.Shared.SampleCatalog)
 local GuiService = game:GetService("GuiService")
 local Input = game:GetService("UserInputService")
@@ -17,22 +18,38 @@ function Screen.new(parent, api)
         ScrollingDirection = Enum.ScrollingDirection.Y,
     })
     self.editorBody = W.frame(self.editor, "Controls")
-    self.title = W.label(self.editorBody, "SequenceTitle", "MY SECTION", 17, W.amber)
-    self.padName = W.label(self.editorBody, "SelectedSound", "A01 / KICK", 13)
-    self.barName = W.label(self.editorBody, "BarNumber", "01 / 01", 14, W.amber)
-    self.previous = W.key(self.editorBody, "PreviousBar", "undo", "BAR", function()
+    self.noteBody = W.frame(self.editorBody, "NoteControls")
+    self.huntToggle = W.key(self.editorBody, "SoundHunts", "sound", "SOUND HUNTS", function()
+        self:showHunts(not self.huntsOpen)
+    end)
+    self.huntGuide = RecorderGuide.new(self.editorBody, {
+        command = api.command,
+        selectPad = api.selectPad,
+        edit = function()
+            self:showHunts(false)
+        end,
+    })
+    self.huntGuide.frame.Visible = false
+    self.huntGuide:setOpen(true)
+    table.insert(self.connections, self.huntGuide.frame:GetPropertyChangedSignal("AbsoluteSize"):Connect(function()
+        self:resizeContent()
+    end))
+    self.title = W.label(self.noteBody, "SequenceTitle", "MY SECTION", 17, W.amber)
+    self.padName = W.label(self.noteBody, "SelectedSound", "A01 / KICK", 13)
+    self.barName = W.label(self.noteBody, "BarNumber", "01 / 01", 14, W.amber)
+    self.previous = W.key(self.noteBody, "PreviousBar", "undo", "BAR", function()
         local m = self.state and self.state.music
         if m then
             api.command("Bar", math.max(1, m.bar - 1))
         end
     end)
-    self.next = W.key(self.editorBody, "NextBar", "redo", "BAR", function()
+    self.next = W.key(self.noteBody, "NextBar", "redo", "BAR", function()
         local m = self.state and self.state.music
         if m then
             api.command("Bar", math.min(m.sequence.bars, m.bar + 1))
         end
     end)
-    self.grid = W.frame(self.editorBody, "StepGrid")
+    self.grid = W.frame(self.noteBody, "StepGrid")
     for i = 1, 16 do
         local b = W.make(
             "TextButton",
@@ -70,7 +87,7 @@ function Screen.new(parent, api)
         end)
         self.steps[i] = { button = b, lamp = lamp, number = number }
     end
-    self.overview = W.frame(self.editorBody, "LaneOverview")
+    self.overview = W.frame(self.noteBody, "LaneOverview")
     for row = 1, 4 do
         local lane = { root = W.frame(self.overview, "Lane" .. row), cells = {} }
         lane.name = W.make(
@@ -99,16 +116,19 @@ function Screen.new(parent, api)
         end
         self.lanes[row] = lane
     end
-    self.laneBack = W.key(self.editorBody, "PreviousLanes", "undo", "LANES", function()
+    self.laneBack = W.key(self.noteBody, "PreviousLanes", "undo", "LANES", function()
         self.laneGroup = (self.laneGroup + 3) % 4
         self:paint()
     end)
-    self.laneNext = W.key(self.editorBody, "NextLanes", "redo", "LANES", function()
+    self.laneNext = W.key(self.noteBody, "NextLanes", "redo", "LANES", function()
         self.laneGroup = (self.laneGroup + 1) % 4
         self:paint()
     end)
-    self.status = W.label(self.editorBody, "SequenceStatus", "TAP A PAD • PLACE ITS NOTES", 11)
+    self.status = W.label(self.noteBody, "SequenceStatus", "TAP A PAD • PLACE ITS NOTES", 11)
     self.coach = Coach.new(self.rootFrame, api, function()
+        if self.coach and self.coach.expanded then
+            self.huntGuide:cancel()
+        end
         if self.width then
             self:resize(self.width, self.height)
         end
@@ -117,15 +137,16 @@ function Screen.new(parent, api)
             (selected and (selected:IsDescendantOf(self.coach.scroll) or selected:IsDescendantOf(self.coach.footer)))
             or (not selected and Input:GetLastInputType().Name:match("^Gamepad"))
         ) then
-            GuiService.SelectedObject = self.steps[1].button
+            GuiService.SelectedObject = if self.huntsOpen then self.huntToggle else self.steps[1].button
         end
     end)
     local function cancelCoach()
         self.coach:cancel()
         self.coach:paint()
+        self.huntGuide:cancel()
     end
     -- View:update returns early on station exit. Watch the enclosing panel as
-    -- well as the page so a confirmation cannot survive leaving and re-entering.
+    -- well as the page so delayed previews/confirmations cannot survive re-entry.
     local ancestor = parent
     while ancestor do
         local object = ancestor
@@ -145,6 +166,9 @@ function Screen.new(parent, api)
         ancestor = ancestor.Parent
     end
     table.insert(self.connections, Input.WindowFocusReleased:Connect(cancelCoach))
+    table.insert(self.connections, Input.TextBoxFocused:Connect(function()
+        self.huntGuide:cancel()
+    end))
     self.rootFrame.Destroying:Connect(function()
         for _, connection in self.connections do
             connection:Disconnect()
@@ -153,6 +177,29 @@ function Screen.new(parent, api)
     self.rootFrame:SetAttribute("PersistentControls", true)
     return self
 end
+function Screen:showHunts(open)
+    self.huntsOpen = open == true
+    self.huntGuide:cancel()
+    self.coach:cancel()
+    self.coach:paint()
+    self.noteBody.Visible = not self.huntsOpen
+    self.huntGuide.frame.Visible = self.huntsOpen
+    W.legend(self.huntToggle, if self.huntsOpen then "BACK TO NOTES" else "SOUND HUNTS")
+    self.editor.CanvasPosition = Vector2.zero
+    self:resizeContent()
+    local selected = GuiService.SelectedObject
+    if not self.huntsOpen and selected and selected:IsDescendantOf(self.huntGuide.frame) then
+        GuiService.SelectedObject = self.steps[self.huntGuide.step].button
+    end
+end
+function Screen:resizeContent()
+    if not self.width or not self.noteHeight then
+        return
+    end
+    local height = 50 + (if self.huntsOpen then self.huntGuide.frame.AbsoluteSize.Y else self.noteHeight)
+    self.editorBody.Size = UDim2.fromOffset(math.max(0, self.width - 8), height)
+    self.editor.CanvasSize = UDim2.fromOffset(0, height)
+end
 function Screen:update(state, pad)
     local changed = self.pad ~= pad
     self.state, self.pad = state, pad
@@ -160,6 +207,7 @@ function Screen:update(state, pad)
         self.laneGroup = math.floor(((pad - 1) % 16) / 4)
     end
     self.coach:update(state, pad)
+    self.huntGuide:update(state)
     self:paint()
 end
 function Screen:paint()
@@ -239,12 +287,15 @@ function Screen:resize(width, height)
     if self.width and (self.width ~= width or self.height ~= height) then
         self.coach:cancel()
         self.coach:paint()
+        self.huntGuide:cancel()
     end
     self.width, self.height = width, height
     self.coach:resize(width, height)
     self.editor.Visible = not self.coach.expanded
     W.place(self.editor, 0, 50, width, math.max(0, height - 50))
     local w = math.max(0, width - 8)
+    W.place(self.huntToggle, 0, 0, w, 44)
+    self.huntGuide.frame.Position = UDim2.fromOffset(0, 50)
     W.place(self.title, 0, 0, math.max(0, w - 116), 24)
     W.place(self.barName, w - 108, 0, 108, 24)
     self.barName.TextXAlignment = Enum.TextXAlignment.Right
@@ -273,9 +324,9 @@ function Screen:resize(width, height)
     W.place(self.laneBack, 0, footerY, 70, 44)
     W.place(self.laneNext, 76, footerY, 70, 44)
     W.place(self.status, 0, footerY + 48, w, 36)
-    local contentHeight = footerY + 88
-    W.place(self.editorBody, 0, 0, w, contentHeight)
-    self.editor.CanvasSize = UDim2.fromOffset(0, contentHeight)
+    self.noteHeight = footerY + 88
+    W.place(self.noteBody, 0, 50, w, self.noteHeight)
+    self:resizeContent()
     self.rootFrame:SetAttribute("StepColumns", columns)
 end
 function Screen:destroy()

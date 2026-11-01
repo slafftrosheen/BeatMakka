@@ -1,25 +1,30 @@
 local Music = require(script.Parent.QuayMusicEvidence)
--- Only ProfileStore evaluates rewards against captured, successfully saved music.
+local Catalog = require(script.Parent.SampleCatalog)
+-- ProfileStore evaluates the captured candidate; only a successful write admits
+-- its earned flags to the live profile. Unsaved edits never grant these rewards.
 local Missions = {
     Order = { "metal_pulse", "vent_duet", "helper_reply" },
     Definitions = {
         metal_pulse = {
             title = "A pulse for the quay",
-            objective = "Collect Quay metal. Put it on two different unmuted steps and save the named sequence.",
+            objective = "Collect Quay metal. Put it on any two different unmuted positions and save the named sequence. Echo practice is optional.",
             reward = "Quay pulse light repaired.",
         },
         vent_duet = {
             title = "An alley duet",
-            objective = "Collect Vent thump. Save a sequence with audible metal and vent notes together.",
+            objective = "Collect Vent thump. Save a sequence with audible metal and vent notes together; choose your own rhythm.",
             reward = "Alley duet light repaired.",
         },
         helper_reply = {
             title = "A reply for Mica",
-            objective = "Collect Helper chirp. Save two sequences with different audible chirp rhythms.",
+            objective = "Collect Helper chirp. Save two sequences with different audible chirp rhythms. No fixed echo pattern is required.",
             reward = "Helper reply light repaired.",
         },
     },
 }
+for _, definition in Missions.Definitions do
+    definition.objective = Catalog.localDiscoveryText(definition.objective)
+end
 
 function Missions.sanitize(raw)
     raw = if type(raw) == "table" then raw else {}
@@ -52,10 +57,8 @@ end
 
 function Missions.awarded(snapshot)
     local result = Missions.sanitize(snapshot.neighborhood)
-    if not snapshot.quest.accepted then
-        return result
-    end
-    -- Snapshot is captured by ProfileStore only after a successful storage write.
+    -- Collection plus saved musical actions are sufficient. Meeting Mica is
+    -- still available, but dialogue must not gate the sound-to-music encounter.
     local profile = {
         saved = { music = snapshot.music },
         music = snapshot.music,
@@ -108,14 +111,10 @@ function Missions.summary(profile)
         completed = completed,
         nextId = nextId,
         courtReady = courtReady,
-        objective = if not profile.quest.accepted
-            then "Meet Mica to begin the neighborhood jobs."
-            elseif nextId then Missions.Definitions[nextId].objective
-            elseif
-                not courtReady
-            then "Finish Mica's original courtyard request to prepare this section's concert."
-            elseif
-                profile.chapter and profile.chapter.completed == true
+        objective = if nextId then Missions.Definitions[nextId].objective
+            elseif not courtReady
+            then "Your three sound jobs are saved. Mica's courtyard request is the separate chapter path."
+            elseif profile.chapter and profile.chapter.completed == true
             then "Your chapter set restored this courtyard. Keep making music; other chapters are ahead."
             else "This courtyard is ready. Visit the Chapter concert prompt beside the listening podium to perform your own finished song.",
     }
