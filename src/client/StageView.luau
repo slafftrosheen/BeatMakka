@@ -1,88 +1,65 @@
--- Fixed courtyard deck. Six source rows, four queue lamps and context keys.
+-- One stage surface for selection, queue, opt-in listening and short performance.
+-- All controls are created once. Musical state remains server-owned.
 local GuiService = game:GetService("GuiService")
 local Input = game:GetService("UserInputService")
+local Set = require(game.ReplicatedStorage.Shared.StreetSet)
 local W = require(script.Parent.DeviceWidgets)
 local Skin = require(script.Parent.DeviceSkin)
 local View = {}
 View.__index = View
 local Dim = Color3.fromRGB(117, 147, 112)
-local Edge = Color3.fromRGB(66, 96, 69)
 local function seconds(value)
     value = math.max(0, math.floor(value or 0))
     return string.format("%02d:%02d", math.floor(value / 60), value % 60)
 end
-local function referenceKey(reference)
-    if type(reference) ~= "table" then
-        return nil
-    end
-    return tostring(reference.kind)
-        .. ":"
-        .. tostring(reference.id)
-        .. ":"
-        .. tostring(reference.revision)
-end
-local function label(parent, name, caption, size, color)
-    local object = W.label(parent, name, caption, size, color)
-    object.TextWrapped, object.TextTruncate = false, Enum.TextTruncate.AtEnd
-    object.ZIndex = parent.ZIndex + 1
-    return object
-end
 local function enabled(button, value)
-    button.Active, button.Selectable = value, value
-    button:SetAttribute("Enabled", value)
+    button.Active, button.Selectable = value == true, value == true
+    button.TextTransparency = if value then 0 else 0.4
 end
-local function restoreFocus(panel)
-    local selected = GuiService.SelectedObject
-    if not selected or not selected:IsDescendantOf(panel) then
-        return
+local function visible(object)
+    while object do
+        if object:IsA("GuiObject") and not object.Visible then
+            return false
+        end
+        object = object.Parent
     end
-    local screen = panel.Parent
-    local station, hud = screen:FindFirstChild("Workstation"), screen:FindFirstChild("HubHud")
-    local navigation = station and station:FindFirstChild("Navigation", true)
-    GuiService.SelectedObject = if station
-            and station.Visible
-            and navigation
-        then navigation:FindFirstChild("Sequence")
-        elseif hud and hud.Visible then hud:FindFirstChild("Sound")
-        else nil
+    return true
 end
-function View:_connect(signal, callback)
-    local connection = signal:Connect(callback)
-    table.insert(self.connections, connection)
-    return connection
+function View:_label(parent, name, caption, size)
+    local label = W.label(parent, name, caption, size or 12, W.text)
+    label.ZIndex = 17
+    return label
 end
-function View:_lcdButton(parent, name, caption, action)
+function View:_button(parent, name, caption, action)
     local button = W.make("TextButton", parent, {
-        Name = name,
-        Text = caption,
-        Font = Enum.Font.Code,
-        TextSize = 12,
-        TextColor3 = W.text,
-        BackgroundColor3 = W.ink,
-        BorderSizePixel = 0,
-        AutoButtonColor = false,
-        Active = true,
-        Selectable = true,
-        TextTruncate = Enum.TextTruncate.AtEnd,
-        ZIndex = parent.ZIndex + 1,
+        Name = name, Text = caption, Font = Enum.Font.Code, TextSize = 12,
+        TextColor3 = W.text, BackgroundColor3 = W.ink, BorderSizePixel = 0,
+        TextWrapped = true, AutoButtonColor = false, Selectable = true, Active = true, ZIndex = 18,
     })
-    local stroke = W.make(
-        "UIStroke",
-        button,
-        { Color = Edge, Thickness = 1, ApplyStrokeMode = Enum.ApplyStrokeMode.Border }
-    )
-    self:_connect(button.SelectionGained, function()
-        stroke.Color = W.amber
+    button:SetAttribute("AccessibleLabel", caption)
+    local ring = W.make("UIStroke", button, {
+        Color = Dim, Thickness = 1, ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
+    })
+    button.SelectionGained:Connect(function()
+        ring.Color = W.amber
     end)
-    self:_connect(button.SelectionLost, function()
-        stroke.Color = Edge
+    button.SelectionLost:Connect(function()
+        ring.Color = Dim
     end)
-    self:_connect(button.Activated, function()
+    button.Activated:Connect(function()
         if button.Active then
             action()
         end
     end)
     return button
+end
+function View:_caption(button, text)
+    W.set(button, "Text", text)
+    button:SetAttribute("AccessibleLabel", text)
+end
+function View:_selected()
+    local choices = self.stage and self.stage.available or {}
+    return choices[self.choiceIndex or 1]
 end
 function View:_cycle(direction)
     local choices = self.stage and self.stage.available or {}
@@ -90,445 +67,274 @@ function View:_cycle(direction)
         return
     end
     self.choiceIndex = ((self.choiceIndex or 1) - 1 + direction) % #choices + 1
-    local item = choices[self.choiceIndex]
-    self.selectedRef = { kind = item.kind, id = item.id, revision = item.revision }
+    local choice = self:_selected()
+    self.selectedRef = { kind = choice.kind, id = choice.id, revision = choice.revision }
     self:_render()
 end
-function View:_sourcePopup()
-    self.popup.Visible = true
-    self.popupPage = math.floor(((self.choiceIndex or 1) - 1) / 6) + 1
-    self:_renderPopup()
-    if Input.GamepadEnabled and self.popupRows[1].Visible then
-        GuiService.SelectedObject = self.popupRows[1]
+function View:_performance(action, values)
+    local p = self.stage and self.stage.performance
+    if not p then
+        return
     end
+    local packet = values or {}
+    packet.schema, packet.epoch, packet.revision = 1, p.epoch, p.revision
+    self.command(action, packet)
 end
 function View.new(screen, command, mute)
-    local self = setmetatable({
-        command = command,
-        screen = screen,
-        connections = {},
-        queueRows = {},
-        popupRows = {},
-        popupPage = 1,
-    }, View)
+    local self = setmetatable({ command = command, screen = screen, short = true, connections = {}, layers = {}, sources = {}, requests = {} }, View)
     self.panel = W.frame(screen, "CourtyardStage", W.ink)
     self.panel.AnchorPoint, self.panel.Position = Vector2.new(0.5, 0.5), UDim2.fromScale(0.5, 0.5)
     self.panel.Size, self.panel.Visible = UDim2.new(1, -24, 1, -24), false
     self.panel.ZIndex, self.panel.ClipsDescendants = 14, true
-    W.make("UISizeConstraint", self.panel, { MaxSize = Vector2.new(600, 420) })
-    W.make("UIStroke", self.panel, { Color = Edge, Thickness = 1 })
-    self.bezel = Skin.image(self.panel, "bezel-v4", {
-        Name = "StageBezel",
-        ScaleType = Enum.ScaleType.Slice,
-        SliceCenter = Rect.new(80, 80, 944, 602),
-        SliceScale = 0.12,
-        ZIndex = 14,
+    W.make("UISizeConstraint", self.panel, { MaxSize = Vector2.new(640, 620) })
+    Skin.image(self.panel, "bezel-v4", {
+        Name = "StageBezel", ScaleType = Enum.ScaleType.Slice,
+        SliceCenter = Rect.new(80, 80, 944, 602), SliceScale = 0.12, ZIndex = 14,
     })
-    self.label = label(self.panel, "StageHeading", "COURTYARD / PUBLIC SETS", 13, W.amber)
-    self.queueToggle = self:_lcdButton(self.panel, "ShowQueue", "QUEUE 0", function()
-        self.showQueue = not self.showQueue
-        self:_layout()
+    self.heading = self:_label(self.panel, "StageHeading", "STREET SET / YOUR MUSIC", 14)
+    self.heading.TextColor3 = W.amber
+    self.scroll = W.make("ScrollingFrame", self.panel, {
+        Name = "StageControls", BackgroundTransparency = 1, BorderSizePixel = 0,
+        CanvasSize = UDim2.fromOffset(0, 0), ScrollBarThickness = 4,
+        ScrollingDirection = Enum.ScrollingDirection.Y, ZIndex = 15,
+    })
+    self.selection = W.frame(self.scroll, "SelectionAndQueue")
+    self.sourceLabel = self:_label(self.selection, "SourceTitle", "Choose your own music", 16)
+    self.previous = self:_button(self.selection, "PreviousSource", "PREVIOUS", function() self:_cycle(-1) end)
+    self.next = self:_button(self.selection, "NextSource", "NEXT", function() self:_cycle(1) end)
+    self.mode = self:_button(self.selection, "PerformanceMode", "SPOTLIGHT EXCERPT", function()
+        self.short = not self.short
+        self:_render()
     end)
-    self.musicCard = W.frame(self.panel, "SelectedMusic", Color3.fromRGB(27, 49, 34))
-    self.musicCard.ZIndex = 15
-    self.art = self:_lcdButton(self.musicCard, "ChooseMusic", "", function()
-        self:_sourcePopup()
+    self.context = self:_label(self.selection, "SourceContext", "", 12)
+    self.queue = self:_label(self.selection, "PublicQueue", "", 12)
+    self.result = self:_label(self.selection, "PreviousSetResult", "", 12)
+    self.performance = W.frame(self.scroll, "PerformanceControls")
+    self.clock = self:_label(self.performance, "PerformanceClock", "", 16)
+    self.current = self:_label(self.performance, "CurrentSection", "", 13)
+    self.pending = self:_label(self.performance, "QueuedState", "", 12)
+    self.cancelChange = self:_button(self.performance, "CancelTransition", "CANCEL QUEUED CHANGE", function()
+        self:_performance("StageTransitionCancel")
     end)
-    self.art.ClipsDescendants = true
-    self.sleeve = Skin.image(
-        self.art,
-        "sleeve-v4",
-        { Name = "SelectedSleeve", ScaleType = Enum.ScaleType.Fit, ZIndex = self.art.ZIndex + 1 }
-    )
-    self.musicKind = label(self.musicCard, "MusicKind", "YOUR MUSIC", 10, W.amber)
-    self.musicTitle = label(self.musicCard, "MusicTitle", "Make a sequence first", 15, W.text)
-    self.musicTitle.TextWrapped, self.musicTitle.TextTruncate = true, Enum.TextTruncate.None
-    self.musicDetail = label(self.musicCard, "MusicDuration", "", 11, Dim)
-    self.previous = self:_lcdButton(self.musicCard, "PreviousMusic", "‹", function()
-        self:_cycle(-1)
-    end)
-    self.next = self:_lcdButton(self.musicCard, "NextMusic", "›", function()
-        self:_cycle(1)
-    end)
-    self.choicePage = label(self.musicCard, "MusicChoice", "0 / 0", 10, Dim)
-    self.choicePage.TextXAlignment = Enum.TextXAlignment.Center
-    self.queueCard = W.frame(self.panel, "PublicQueue", Color3.fromRGB(27, 49, 34))
-    self.queueCard.ZIndex = 15
-    self.nowHeading = label(self.queueCard, "StageState", "STAGE FREE", 11, W.amber)
-    self.performer = label(self.queueCard, "CurrentPerformer", "A QUIET ROOM IS ENOUGH", 11, W.text)
-    self.performanceTitle = label(self.queueCard, "PerformanceTitle", "", 10, Dim)
-    for slot = 1, 4 do
-        local row = W.frame(self.queueCard, "QueueSlot" .. slot)
-        row.ZIndex = 16
-        local lamp = W.frame(row, "TurnLamp", Edge)
-        lamp.ZIndex = 17
-        W.make("UICorner", lamp, { CornerRadius = UDim.new(1, 0) })
-        self.queueRows[slot] =
-            { root = row, lamp = lamp, text = label(row, "PerformerName", "", 10, Dim) }
-    end
-    self.noticeLabel = label(
-        self.panel,
-        "StageNotice",
-        "Choose music. Prepare a pinned set. Join by choice.",
-        10,
-        Dim
-    )
-    local function key(name, icon, legend, action)
-        local button = W.key(self.panel, name, icon, legend, function()
-            command(action, if action == "StagePrepare" then self.selectedRef else nil)
-        end)
-        button.ZIndex = 18
-        return button
-    end
-    self.prepare = key("PrepareSet", "sleeve", "PREPARE", "StagePrepare")
-    self.start = key("StartTurn", "play", "START TURN", "StageStart")
-    self.cancel = key("CancelSet", "close", "CANCEL SET", "StageCancel")
-    self.join = key("JoinSet", "sound", "JOIN", "StageJoin")
-    self.stop = key("StopSet", "stop", "END SET", "StageStop")
-    self.mute = W.key(self.panel, "MuteStage", "sound", "SOUND ON", mute or function() end)
-    self.close = key("LeaveStage", "back", "LEAVE STAGE", "StageClose")
-    self.mute.ZIndex, self.close.ZIndex = 18, 18
-    self.popup = W.frame(self.panel, "ChooseMusicPopup", W.ink)
-    self.popup.ZIndex, self.popup.Visible = 25, false
-    W.make("UIStroke", self.popup, { Color = W.amber, Thickness = 1 })
-    self.popupTitle = label(self.popup, "MusicPickerTitle", "CHOOSE YOUR MUSIC", 12, W.amber)
-    self.popupClose = self:_lcdButton(self.popup, "CloseMusicPicker", "×", function()
-        self.popup.Visible = false
-        if Input.GamepadEnabled then
-            GuiService.SelectedObject = self.art
-        end
-    end)
-    for slot = 1, 6 do
-        self.popupRows[slot] = self:_lcdButton(self.popup, "MusicSource" .. slot, "", function()
-            local item = (self.stage and self.stage.available or {})[(self.popupPage - 1) * 6 + slot]
-            if item then
-                self.choiceIndex = (self.popupPage - 1) * 6 + slot
-                self.selectedRef = { kind = item.kind, id = item.id, revision = item.revision }
-                self.popup.Visible = false
-                self:_render()
-                if Input.GamepadEnabled then
-                    GuiService.SelectedObject = self.art
-                end
+    self.layerHint = self:_label(self.performance, "LayerHint", "Layer ON permits new notes; existing one-shot tails finish naturally.", 11)
+    for _, role in Set.RoleOrder do
+        self.layers[role] = self:_button(self.performance, "Layer_" .. role, Set.Labels[role], function()
+            local p = self.stage and self.stage.performance
+            if p then
+                self:_performance("StageLayer", { role = role, muted = not p.current.mutes[role] })
             end
         end)
-        self.popupRows[slot].TextXAlignment = Enum.TextXAlignment.Left
     end
-    self.popupPrevious = self:_lcdButton(self.popup, "PreviousMusicPage", "‹", function()
-        self.popupPage = math.max(1, self.popupPage - 1)
-        self:_renderPopup()
+    self.sourceHint = self:_label(self.performance, "PinnedVariations", "Pinned same-tempo variations / changes start at their first bar", 11)
+    for index = 1, Set.MaxSources do
+        self.sources[index] = self:_button(self.performance, "PinnedSequence" .. index, "", function()
+            self:_performance("StageSequence", { source = index })
+        end)
+    end
+    self.requestHint = self:_label(self.performance, "AudienceKind", "NPC AUDIENCE / OPTIONAL REQUESTS", 12)
+    for _, kind in Set.RequestOrder do
+        self.requests[kind] = self:_button(self.performance, "Request_" .. kind, "", function()
+            self:_performance("StageAudienceRequest", { kind = kind })
+        end)
+    end
+    self.suggestion = self:_label(self.performance, "ListenerSuggestion", "", 12)
+    self.accept = self:_button(self.performance, "AcceptRequest", "ACCEPT REQUEST", function()
+        self:_performance("StageRequestAccept")
     end)
-    self.popupNext = self:_lcdButton(self.popup, "NextMusicPage", "›", function()
-        self.popupPage += 1
-        self:_renderPopup()
+    self.ignore = self:_button(self.performance, "IgnoreRequest", "IGNORE REQUEST", function()
+        self:_performance("StageRequestIgnore")
     end)
-    self.popupPageLabel = label(self.popup, "MusicPickerPage", "1 / 1", 10, Dim)
-    self.popupPageLabel.TextXAlignment = Enum.TextXAlignment.Center
-    self:_connect(self.panel:GetPropertyChangedSignal("AbsoluteSize"), function()
-        self:_layout()
+    self.feedback = self:_label(self.performance, "NpcResponse", "", 12)
+    self.notice = self:_label(self.panel, "StageNotice", "", 12)
+    self.primary = self:_button(self.panel, "PrimaryStageAction", "PREPARE", function()
+        local stage = self.stage
+        if not stage then return end
+        if stage.hosting then
+            command("StageStop")
+        elseif stage.canStart then
+            command("StageStart")
+        elseif stage.requesting then
+            command("StageCancel")
+        else
+            local choice = self:_selected()
+            if choice then
+                command("StagePrepare", {
+                    kind = choice.kind, id = choice.id, revision = choice.revision,
+                    mode = if self.short then "spotlight" elseif choice.kind == "finished" then "full" else "practice",
+                })
+            end
+        end
+    end)
+    self.secondary = self:_button(self.panel, "SecondaryStageAction", "JOIN BY CHOICE", function()
+        command(if self.stage and self.stage.canStart then "StageCancel" else "StageJoin")
+    end)
+    self.mute = self:_button(self.panel, "MuteStage", "SOUND ON", mute or function() end)
+    self.close = self:_button(self.panel, "LeaveStage", "LEAVE / EDIT", function() command("StageClose") end)
+    table.insert(self.connections, self.panel:GetPropertyChangedSignal("AbsoluteSize"):Connect(function() self:_layout() end))
+    self.panel.Destroying:Connect(function()
+        for _, connection in self.connections do connection:Disconnect() end
     end)
     self:_layout()
     return self
 end
 function View:_layout()
     local width, height = self.panel.AbsoluteSize.X, self.panel.AbsoluteSize.Y
-    if width <= 0 or height <= 0 then
-        return
+    if width <= 0 or height <= 0 then return end
+    W.place(self.heading, 12, 4, width - 24, 32)
+    W.place(self.scroll, 12, 40, width - 24, math.max(0, height - 192))
+    W.place(self.notice, 12, height - 148, width - 24, 44)
+    local keyWidth = (width - 30) / 2
+    W.place(self.primary, 12, height - 100, keyWidth, 44)
+    W.place(self.secondary, 18 + keyWidth, height - 100, keyWidth, 44)
+    W.place(self.mute, 12, height - 50, keyWidth, 44)
+    W.place(self.close, 18 + keyWidth, height - 50, keyWidth, 44)
+    local w, y = math.max(0, width - 32), 0
+    local live = self.stage and self.stage.performance ~= nil
+    self.selection.Visible, self.performance.Visible = not live, live
+    local root = if live then self.performance else self.selection
+    local function place(control, h)
+        W.place(control, 0, y, w, h)
+        y += h + 8
     end
-    W.place(self.label, 10, 6, width - 104, 23)
-    W.place(self.queueToggle, width - 90, 5, 80, 26)
-    local actionY, footerY = height - 103, height - 51
-    local bodyY, bodyHeight = 37, math.max(30, actionY - 57)
-    local stacked = width < 480
-    self.compactBody = stacked and bodyHeight < 185
-    if not stacked then
-        W.place(self.musicCard, 10, bodyY, math.floor((width - 30) * 0.59), bodyHeight)
-        W.place(
-            self.queueCard,
-            20 + math.floor((width - 30) * 0.59),
-            bodyY,
-            math.ceil((width - 30) * 0.41),
-            bodyHeight
-        )
-        self.musicCard.Visible, self.queueCard.Visible = true, true
-    elseif self.compactBody then
-        W.place(self.musicCard, 10, bodyY, width - 20, bodyHeight)
-        W.place(self.queueCard, 10, bodyY, width - 20, bodyHeight)
-        self.musicCard.Visible, self.queueCard.Visible = not self.showQueue, self.showQueue == true
-    else
-        local musicHeight = math.floor(bodyHeight * 0.53)
-        W.place(self.musicCard, 10, bodyY, width - 20, musicHeight)
-        W.place(
-            self.queueCard,
-            10,
-            bodyY + musicHeight + 5,
-            width - 20,
-            bodyHeight - musicHeight - 5
-        )
-        self.musicCard.Visible, self.queueCard.Visible = true, true
-    end
-    local cardWidth, cardHeight = self.musicCard.Size.X.Offset, self.musicCard.Size.Y.Offset
-    local artSize = math.max(30, math.min(cardHeight - 34, 94, cardWidth * 0.32))
-    W.place(self.art, 6, 6, artSize, artSize)
-    local textX = artSize + 14
-    W.place(self.musicKind, textX, 5, cardWidth - textX - 6, 15)
-    W.place(self.musicTitle, textX, 21, cardWidth - textX - 6, math.max(20, cardHeight - 64))
-    W.place(self.musicDetail, textX, cardHeight - 39, cardWidth - textX - 6, 15)
-    self.musicDetail.Visible = cardHeight >= 80
-    self.musicTitle.TextSize = if cardHeight < 90 then 12 else 15
-    self.musicTitle.TextWrapped = cardHeight >= 95
-    self.musicTitle.TextTruncate = if cardHeight >= 95
-        then Enum.TextTruncate.None
-        else Enum.TextTruncate.AtEnd
-    W.place(self.previous, 6, cardHeight - 26, 28, 22)
-    W.place(self.next, cardWidth - 34, cardHeight - 26, 28, 22)
-    W.place(self.choicePage, 38, cardHeight - 26, cardWidth - 76, 22)
-    local queueWidth, queueHeight = self.queueCard.Size.X.Offset, self.queueCard.Size.Y.Offset
-    W.place(self.nowHeading, 6, 3, queueWidth - 12, 15)
-    W.place(self.performer, 6, 18, queueWidth - 12, 17)
-    W.place(self.performanceTitle, 6, 35, queueWidth - 12, 14)
-    local rowTop = if queueHeight >= 108 then 49 else 36
-    self.performanceTitle.Visible = queueHeight >= 108
-    local queueColumns = if queueHeight < 92 then 2 else 1
-    local queueRowCount = 4 / queueColumns
-    local rowHeight = math.max(9, (queueHeight - rowTop - 4) / queueRowCount)
-    local rowWidth = (queueWidth - 12) / queueColumns
-    for slot, row in self.queueRows do
-        W.place(
-            row.root,
-            6 + (slot - 1) % queueColumns * rowWidth,
-            rowTop + math.floor((slot - 1) / queueColumns) * rowHeight,
-            rowWidth,
-            rowHeight
-        )
-        W.place(row.lamp, 1, math.max(1, (rowHeight - 5) / 2), 5, 5)
-        W.place(row.text, 13, 0, rowWidth - 14, rowHeight)
-        row.text.TextSize = if rowHeight < 14 then 9 else 10
-    end
-    W.place(self.noticeLabel, 10, actionY - 18, width - 20, 15)
-    local keyWidth = (width - 26) / 2
-    for _, button in { self.prepare, self.start, self.cancel, self.stop } do
-        W.place(button, 8, actionY, keyWidth, 44)
-    end
-    W.place(self.join, width / 2 + 5, actionY, keyWidth, 44)
-    if self.stage and self.stage.hosting then
-        W.place(self.stop, 8, actionY, width - 16, 44)
-    end
-    if self.stage and self.stage.canStart then
-        W.place(self.cancel, width / 2 + 5, actionY, keyWidth, 44)
-    end
-    W.place(self.mute, 8, footerY, keyWidth, 44)
-    W.place(self.close, width / 2 + 5, footerY, keyWidth, 44)
-    local popupWidth, popupHeight = math.min(width - 16, 420), math.min(height - 12, 320)
-    W.place(
-        self.popup,
-        (width - popupWidth) / 2,
-        (height - popupHeight) / 2,
-        popupWidth,
-        popupHeight
-    )
-    W.place(self.popupTitle, 8, 3, popupWidth - 53, 25)
-    W.place(self.popupClose, popupWidth - 38, 3, 30, 25)
-    local rowHeightPopup = math.max(16, (popupHeight - 64) / 6)
-    for slot, row in self.popupRows do
-        W.place(row, 8, 32 + (slot - 1) * rowHeightPopup, popupWidth - 16, rowHeightPopup - 2)
-    end
-    W.place(self.popupPrevious, 8, popupHeight - 27, 34, 22)
-    W.place(self.popupPageLabel, 46, popupHeight - 27, popupWidth - 92, 22)
-    W.place(self.popupNext, popupWidth - 42, popupHeight - 27, 34, 22)
-    W.set(
-        self.queueToggle,
-        "Text",
-        if self.compactBody and self.showQueue
-            then "MUSIC"
-            else "QUEUE " .. #(self.stage and self.stage.queue or {})
-    )
-    enabled(self.queueToggle, self.compactBody)
-end
-function View:_renderPopup()
-    local choices = self.stage and self.stage.available or {}
-    local pages = math.max(1, math.ceil(#choices / 6))
-    self.popupPage = math.clamp(self.popupPage, 1, pages)
-    for slot, row in self.popupRows do
-        local item = choices[(self.popupPage - 1) * 6 + slot]
-        row.Visible = item ~= nil
-        if item then
-            W.set(
-                row,
-                "Text",
-                "  " .. (if item.kind == "finished" then "SONG · " else "LOOP · ") .. item.title
-            )
-            row:SetAttribute("MusicId", item.id)
-            row:SetAttribute("MusicRevision", item.revision)
+    local function pair(a, b)
+        if w < 300 then
+            place(a, 48); place(b, 48)
+        else
+            W.place(a, 0, y, (w - 8) / 2, 48)
+            W.place(b, (w + 8) / 2, y, (w - 8) / 2, 48)
+            y += 56
         end
     end
-    W.set(self.popupPageLabel, "Text", tostring(self.popupPage) .. " / " .. tostring(pages))
-    enabled(self.popupPrevious, self.popupPage > 1)
-    enabled(self.popupNext, self.popupPage < pages)
+    if live then
+        place(self.clock, 28); place(self.current, 44); place(self.pending, 52)
+        place(self.cancelChange, 44); place(self.layerHint, 40)
+        pair(self.layers.drums, self.layers.bass); pair(self.layers.hook, self.layers.harbour)
+        place(self.sourceHint, 40)
+        for _, button in self.sources do
+            if button.Visible then place(button, 48) end
+        end
+        place(self.requestHint, 44)
+        for _, kind in Set.RequestOrder do place(self.requests[kind], 72) end
+        place(self.suggestion, 56); pair(self.accept, self.ignore); place(self.feedback, 64)
+    else
+        place(self.sourceLabel, 64); pair(self.previous, self.next)
+        place(self.mode, 48); place(self.context, 100); place(self.queue, 144); place(self.result, 104)
+    end
+    W.place(root, 0, 0, w, y)
+    self.scroll.CanvasSize = UDim2.fromOffset(0, y)
 end
 function View:_render()
     local stage = self.stage
-    if not stage then
-        return
-    end
+    if not stage then return end
+    local choice = self:_selected()
     local choices = stage.available or {}
-    self.choiceIndex = math.clamp(self.choiceIndex or 1, 1, math.max(1, #choices))
-    local choice = choices[self.choiceIndex]
-    W.set(self.musicTitle, "Text", choice and choice.title or "Make a sequence first")
-    self.musicTitle:SetAttribute(
-        "AccessibleLabel",
-        choice and choice.title or "Make a sequence first"
-    )
-    W.set(
-        self.musicKind,
-        "Text",
-        if choice and choice.kind == "finished" then "FINISHED SONG" else "SEQUENCE LOOP"
-    )
-    W.set(
-        self.musicDetail,
-        "Text",
-        if choice and choice.kind == "finished"
-            then seconds(choice.duration) .. " · PLAYS ONCE"
-            elseif choice then tostring(choice.bars or 0) .. " BARS · " .. tostring(
-                choice.bpm or 96
-            ) .. " BPM"
-            else "Your music stays yours"
-    )
-    W.set(
-        self.choicePage,
-        "Text",
-        tostring(if choice then self.choiceIndex else 0)
-            .. " / "
-            .. tostring(#choices)
-            .. " · CHOOSE"
-    )
-    W.set(
-        self.nowHeading,
-        "Text",
-        if stage.hosting
-            then "YOUR PUBLIC SET"
-            elseif stage.listening then "LISTENING BY CHOICE"
-            elseif stage.performer then "ON STAGE"
-            else "STAGE FREE"
-    )
-    W.set(self.performer, "Text", stage.performer or "A QUIET ROOM IS ENOUGH")
-    W.set(self.performanceTitle, "Text", stage.title or "Prepare music when you are ready")
-    for slot, row in self.queueRows do
-        local name = (stage.queue or {})[slot]
-        row.root.Visible = name ~= nil
-        W.set(row.text, "Text", string.format("%02d  %s", slot, name or ""))
-        row.text:SetAttribute(
-            "AccessibleLabel",
-            name and ("Queue position " .. slot .. ": " .. name) or ""
-        )
-        W.set(row.lamp, "BackgroundColor3", if stage.position == slot then W.amber else Dim)
+    W.set(self.heading, "Text", string.upper(stage.venue or "Courtyard") .. " / " .. (if stage.hosting then "YOUR SET" else "PUBLIC SETS"))
+    W.set(self.sourceLabel, "Text", (choice and choice.title or "Make a sequence first") .. "\n" .. tostring(self.choiceIndex or 0) .. " / " .. #choices)
+    local normalMode = if choice and choice.kind == "finished" then "FULL SONG" else "PRACTICE LOOP"
+    self:_caption(self.mode, if self.short then "SPOTLIGHT EXCERPT / SWITCH MODE" else normalMode .. " / SWITCH MODE")
+    W.set(self.context, "Text", if self.short
+        then "A short, bar-aligned excerpt. Target: 20-40 seconds; exact duration appears after Prepare. Your source Song is never shortened."
+        else if normalMode == "FULL SONG" then "Play the accepted Finished Song in full, with its original ending. No excerpt or performance mutations."
+        else "Loop the chosen Sequence until you stop. Spotlight adds short-set layer controls; Practice keeps the source unchanged.")
+    local rows = { if stage.performer then "ON STAGE: " .. stage.performer .. " / " .. (stage.performanceVenue or "Courtyard") else "Stage free / solo is welcome." }
+    for index, entry in stage.entries or {} do
+        table.insert(rows, index .. ". " .. entry.performer .. " / " .. entry.title .. " / " .. (entry.venue or "Courtyard"))
     end
-    local status
-    if stage.canStart then
-        local remaining = if stage.offerEndsAt
-            then math.max(0, math.ceil(stage.offerEndsAt - workspace:GetServerTimeNow()))
-            else stage.offerRemaining or 0
-        status = "YOUR TURN · START WITHIN " .. remaining .. "s"
-    elseif self.notice and os.clock() < self.noticeUntil then
-        status = self.notice
-    elseif stage.requesting then
-        status = "PINNED SET · QUEUE POSITION "
-            .. tostring(stage.position)
-            .. " · CANCEL TO REPLACE"
-    elseif stage.listening then
-        status = self.audioStatus or "Listening by choice. Sound and leave are always available."
-    else
-        status = "Prepare your music. Join another set only when you choose."
+    if stage.requesting then
+        table.insert(rows, "PINNED: " .. tostring(stage.preparedMode) .. " / " .. seconds(stage.preparedDuration))
     end
-    W.set(self.noticeLabel, "Text", status)
-    self.noticeLabel:SetAttribute("AccessibleLabel", status)
-    enabled(self.prepare, choice ~= nil and not stage.hosting and not stage.requesting)
-    enabled(self.start, stage.canStart == true)
-    enabled(self.cancel, stage.requesting == true)
-    enabled(self.join, stage.performer ~= nil and not stage.listening)
-    enabled(self.stop, stage.hosting == true)
-    enabled(self.previous, #choices > 1)
-    enabled(self.next, #choices > 1)
-    enabled(self.art, choice ~= nil)
-    self.prepare:SetAttribute(
-        "AccessibleLabel",
-        if choice
-            then "Prepare " .. (if choice.kind == "finished"
-                then "Finished Song: "
-                else "Sequence loop: ") .. choice.title
-            else "No music available to prepare"
-    )
-    W.legend(self.join, if stage.listening then "LISTENING" else "JOIN")
-    self.prepare.Visible = not stage.hosting and not stage.requesting
-    self.start.Visible = stage.canStart == true
-    self.cancel.Visible = stage.requesting == true and not stage.hosting
-    self.stop.Visible = stage.hosting == true
-    self.join.Visible = not stage.canStart and not stage.hosting
-    self.stop:SetAttribute("Selected", stage.hosting == true)
-    self.join:SetAttribute("Selected", stage.listening == true)
-    if self.popup.Visible then
-        self:_renderPopup()
+    W.set(self.queue, "Text", table.concat(rows, "\n"))
+    local result = stage.result
+    W.set(self.result, "Text", if result then
+        (if result.completed then "SPOTLIGHT FINISHED" else "SET INTERRUPTED") .. " / " .. result.bars .. " bars / " .. seconds(result.duration)
+            .. "\n" .. result.count .. " of 3 optional NPC responses. No votes or persistent rewards. Prepare again, or leave and edit your variation."
+        else "NPC reactions are authored game feedback, not real fans or votes. Joining another player's audio is always your choice.")
+    local editable = not stage.requesting and not stage.hosting
+    enabled(self.previous, #choices > 1 and editable); enabled(self.next, #choices > 1 and editable)
+    enabled(self.mode, choice ~= nil and editable)
+    local p = stage.performance
+    if p then
+        local now = workspace:GetServerTimeNow()
+        local elapsed = math.clamp(now - p.startedAt, 0, p.duration)
+        local current = if p.pending and now >= p.pending.at then p.pending else p.current
+        local source = p.sources[current.source]
+        W.set(self.clock, "Text", seconds(elapsed) .. " / " .. seconds(p.duration) .. " · " .. p.bars .. " BARS · " .. p.bpm .. " BPM")
+        W.set(self.current, "Text", "SPOTLIGHT EXCERPT / " .. (source and source.title or "")
+            .. (if p.localOnly then "\nLocal preview / listening approval pending" else ""))
+        W.set(self.pending, "Text", if p.pending then
+            (if now >= p.pending.at then "APPLIED / awaiting state acknowledgement" elseif now >= p.pending.at - Set.Lead then "COMMITTED" else "QUEUED")
+                .. " · bar " .. p.pending.bar .. " / source " .. p.sources[p.pending.source].title
+            else "No queued change. Layer and sequence controls target the next supported bar boundary.")
+        local canEdit = stage.hosting and not p.pending and now < p.endsAt
+        enabled(self.cancelChange, stage.hosting and p.pending ~= nil and now < p.pending.at - Set.Lead)
+        for _, role in Set.RoleOrder do
+            self:_caption(self.layers[role], Set.Labels[role] .. " / " .. (if not p.roles[role] then "NOT IN SET" elseif current.mutes[role] then "MUTED" else "ON"))
+            enabled(self.layers[role], canEdit and p.roles[role] == true)
+        end
+        for index, button in self.sources do
+            local item = p.sources[index]
+            button.Visible = item ~= nil
+            if item then
+                self:_caption(button, (if current.source == index then "CURRENT / " else "QUEUE / ") .. item.title)
+                enabled(button, canEdit and index ~= current.source)
+            end
+        end
+        W.set(self.requestHint, "Text", if stage.hosting then "NPC AUDIENCE / OPTIONAL MUSICAL REQUESTS" else "OPT-IN LISTENER / ONE REQUEST PER SET")
+        for _, kind in Set.RequestOrder do
+            local status = if p.fulfilled[kind] then "DONE" elseif p.availableRequests[kind] then "OPTIONAL" else "SOURCE PARTS MISSING"
+            self:_caption(self.requests[kind], status .. " / " .. Set.Requests[kind])
+            enabled(self.requests[kind], not stage.hosting and p.canRequest and p.availableRequests[kind] and not p.fulfilled[kind] and now < p.endsAt)
+        end
+        W.set(self.suggestion, "Text", if p.suggestion then "Listener " .. p.suggestion.name .. " requests: " .. Set.Requests[p.suggestion.kind]
+            elseif p.focusRequest then "Accepted request: " .. Set.Requests[p.focusRequest]
+            else "No listener request. A real audience is not required.")
+        enabled(self.accept, stage.hosting and p.suggestion ~= nil); enabled(self.ignore, stage.hosting and p.suggestion ~= nil)
+        W.set(self.feedback, "Text", p.feedback)
     end
+    self:_caption(self.primary, if stage.hosting then "END SET" elseif stage.canStart then "START TURN"
+        elseif stage.requesting then "CANCEL SET" elseif result then "PREPARE AGAIN" else "PREPARE SET")
+    enabled(self.primary, stage.hosting or stage.canStart or stage.requesting or choice ~= nil)
+    self:_caption(self.secondary, if stage.canStart then "CANCEL SET" elseif stage.listening then "LISTENING" else "JOIN BY CHOICE")
+    enabled(self.secondary, stage.canStart or (stage.canJoin and not stage.listening))
+    local notice = if self.noticeText and os.clock() < self.noticeUntil then self.noticeText
+        elseif stage.canStart then "Your turn / start within " .. math.max(0, math.ceil((stage.offerEndsAt or 0) - workspace:GetServerTimeNow())) .. "s"
+        elseif stage.listening then self.audioStatus or "Sound and Leave remain available."
+        else "Your work stays yours. No tutorial, chores or real audience required."
+    W.set(self.notice, "Text", notice)
+    self.notice:SetAttribute("AccessibleLabel", notice)
     self:_layout()
 end
 function View:update(stage, muted, notice, audioStatus)
     local wasOpen = self.panel.Visible
+    local oldPerformance = self.stage and self.stage.performance ~= nil
     self.stage, self.audioStatus = stage, audioStatus
     self.panel.Visible = stage ~= nil and stage.open == true
-    if wasOpen and not self.panel.Visible then
-        restoreFocus(self.panel)
-        self.popup.Visible = false
-    end
-    if not stage then
-        return
-    end
+    if not stage then return end
     local choices = stage.available or {}
-    local externalKey = referenceKey(stage.selectedRef)
-    local opening = self.panel.Visible and not wasOpen
-    local externalChanged = externalKey ~= self.externalRefKey
-    local requested = if stage.selectedRef and (opening or externalChanged)
-        then stage.selectedRef
-        else self.selectedRef or stage.selectedRef
-    self.externalRefKey = externalKey
+    local requested = self.selectedRef or stage.selectedRef
+    if self.panel.Visible and not wasOpen and stage.selectedRef then requested = stage.selectedRef end
     self.choiceIndex = 1
     for index, item in choices do
-        if requested and requested.kind == item.kind and requested.id == item.id then
-            self.choiceIndex = index
-            break
-        end
+        if requested and requested.kind == item.kind and requested.id == item.id then self.choiceIndex = index; break end
     end
-    local choice = choices[self.choiceIndex]
+    local choice = self:_selected()
     self.selectedRef = choice and { kind = choice.kind, id = choice.id, revision = choice.revision }
-    if notice then
-        self.notice, self.noticeUntil = notice, os.clock() + 6
-    end
-    W.legend(self.mute, if muted then "SOUND MUTED" else "SOUND ON")
-    self.mute:SetAttribute("Selected", muted == true)
+    if notice then self.noticeText, self.noticeUntil = notice, os.clock() + 6 end
+    self:_caption(self.mute, if muted then "SOUND MUTED" else "SOUND ON")
     self:_render()
+    if oldPerformance ~= (stage.performance ~= nil) then self.scroll.CanvasPosition = Vector2.zero end
     local selected = GuiService.SelectedObject
-    if
-        self.panel.Visible
-        and Input.GamepadEnabled
-        and (
-            not wasOpen
-            or not selected
-            or not selected:IsDescendantOf(self.panel)
-            or not selected.Selectable
-            or not selected.Visible
-        )
-    then
-        GuiService.SelectedObject = if stage.hosting
-            then self.stop
-            elseif stage.canStart then self.start
-            elseif stage.requesting then self.cancel
-            elseif self.join.Active then self.join
-            else self.prepare
+    if self.panel.Visible and Input.GamepadEnabled and (not wasOpen or not selected
+        or not selected:IsDescendantOf(self.panel) or not selected.Selectable or not visible(selected)) then
+        GuiService.SelectedObject = self.primary
+    elseif wasOpen and not self.panel.Visible and selected and selected:IsDescendantOf(self.panel) then
+        GuiService.SelectedObject = nil
     end
 end
 function View:destroy()
-    restoreFocus(self.panel)
-    for _, connection in self.connections do
-        connection:Disconnect()
-    end
+    local selected = GuiService.SelectedObject
+    if selected and selected:IsDescendantOf(self.panel) then GuiService.SelectedObject = nil end
+    for _, connection in self.connections do connection:Disconnect() end
     self.panel:Destroy()
 end
 return View

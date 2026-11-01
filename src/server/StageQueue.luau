@@ -1,6 +1,5 @@
--- Ephemeral rights for one courtyard stage; does not own music or profile progress.
+-- One voluntary queue for courtyard/street venues. No profile or music ownership.
 local Project = require(game.ReplicatedStorage.Shared.MusicProject)
-local Catalog = require(game.ReplicatedStorage.Shared.SampleCatalog)
 local Workspace = game:GetService("Workspace")
 local Stage = {}
 Stage.__index = Stage
@@ -8,15 +7,9 @@ local LIMIT, LIFETIME, OFFER = 4, 120, 30
 
 function Stage.new(session, podium, profiles, send, release, nearby, clock)
     local self = setmetatable({
-        session = session,
-        podium = podium,
-        profiles = profiles,
-        send = send,
-        release = release,
-        nearby = nearby,
-        clock = clock or os.clock,
-        queue = {},
-        opened = {},
+        session = session, podium = podium, profiles = profiles, send = send,
+        release = release, nearby = nearby, clock = clock or os.clock,
+        queue = {}, opened = {}, anchors = {},
     }, Stage)
     if podium.boardPrompt then
         podium.boardPrompt.Triggered:Connect(function(p)
@@ -25,7 +18,9 @@ function Stage.new(session, podium, profiles, send, release, nearby, clock)
     end
     return self
 end
-
+function Stage:anchor(p)
+    return self.anchors[p] or self.podium.anchor
+end
 function Stage:updateOffer()
     local head = self.queue[1]
     if self.session.owner or not head then
@@ -34,7 +29,6 @@ function Stage:updateOffer()
         self.offered, self.offerAt = head.player, self.clock()
     end
 end
-
 function Stage:refresh()
     self:updateOffer()
     local recipients = {}
@@ -48,7 +42,6 @@ function Stage:refresh()
         self.send(p)
     end
 end
-
 function Stage:remove(p)
     local removed = false
     for i = #self.queue, 1, -1 do
@@ -60,10 +53,10 @@ function Stage:remove(p)
     self:updateOffer()
     return removed
 end
-
-function Stage:open(p)
+function Stage:open(p, anchor)
+    anchor = anchor or self.podium.anchor
     local profile = self.profiles[p]
-    if not profile or not profile.ready or not self.nearby(p, self.podium.anchor, 11) then
+    if not profile or not profile.ready or not self.nearby(p, anchor, 11) then
         return
     end
     local now = self.clock()
@@ -71,27 +64,25 @@ function Stage:open(p)
         return
     end
     profile.lastStageBoard = now
+    if self.anchors[p] and self.anchors[p] ~= anchor then
+        self:depart(p)
+    end
     self.release(p)
-    self.opened[p] = true
-    self.send(
-        p,
-        "One stage. Prepare your snapshot or choose to listen. Nothing joins automatically."
-    )
+    self.opened[p], self.anchors[p] = true, anchor
+    self.send(p, "Choose Spotlight, Practice loop or Full Song. NPC requests are optional; listening is opt-in.")
 end
-
 function Stage:state(p)
-    local queue, entries, position = {}, {}, nil
+    local queue, entries, position, preparedMode, preparedDuration = {}, {}, nil, nil, nil
     for i, entry in self.queue do
         table.insert(queue, entry.player.DisplayName)
         table.insert(entries, {
-            performer = entry.player.DisplayName,
-            title = entry.snapshot.title,
-            ref = entry.snapshot.ref,
-            duration = entry.snapshot.schedule.duration,
-            loop = entry.snapshot.loop,
+            performer = entry.player.DisplayName, title = entry.snapshot.title,
+            ref = entry.snapshot.ref, duration = entry.snapshot.duration,
+            loop = entry.snapshot.loop, mode = entry.snapshot.mode,
+            venue = if entry.anchor == self.podium.anchor then "Courtyard" else "Street",
         })
         if entry.player == p then
-            position = i
+            position, preparedMode, preparedDuration = i, entry.snapshot.mode, entry.snapshot.duration
         end
     end
     local available = {}
@@ -101,77 +92,59 @@ function Stage:state(p)
         for _, id in project.sequenceOrder do
             local sequence = project.sequences[id]
             table.insert(available, {
-                kind = "sequence",
-                id = id,
-                revision = sequence.revision,
-                title = sequence.name,
-                bars = sequence.bars,
-                bpm = sequence.bpm,
-                loop = true,
+                kind = "sequence", id = id, revision = sequence.revision,
+                title = sequence.name, bars = sequence.bars, bpm = sequence.bpm, loop = true,
             })
         end
         local saved = profile.saved and profile.saved.music
         for _, id in saved and saved.finishedOrder or {} do
             local song = saved.finishedSongs[id]
             table.insert(available, {
-                kind = "finished",
-                id = id,
-                revision = song.revision,
-                title = song.title,
-                duration = song.duration,
-                loop = false,
+                kind = "finished", id = id, revision = song.revision,
+                title = song.title, duration = song.duration, loop = false,
             })
         end
     end
     return {
         open = self.opened[p] == true,
+        venue = if self:anchor(p) == self.podium.anchor then "Courtyard" else "Street",
         performer = self.session.owner and self.session.owner.DisplayName,
-        queue = queue,
-        entries = entries,
-        available = available,
+        queue = queue, entries = entries, available = available,
         selectedRef = profile and profile.listeningRef,
         title = self.session.prepared and self.session.prepared.title,
         performanceRef = self.session.prepared and self.session.prepared.ref,
         duration = self.session.prepared and self.session.prepared.duration,
-        position = position,
-        requesting = position ~= nil,
+        mode = self.session.prepared and self.session.prepared.mode,
+        performanceVenue = if self.session.activeAnchor == self.podium.anchor then "Courtyard" else "Street",
+        preparedMode = preparedMode, preparedDuration = preparedDuration,
+        position = position, requesting = position ~= nil,
         canStart = self.session.owner == nil and position == 1,
-        hosting = self.session.owner == p,
-        listening = self.session.members[p] == true,
-        offerRemaining = if self.offerAt
-            then math.max(0, math.ceil(OFFER - (self.clock() - self.offerAt)))
-            else nil,
+        canJoin = self.session.owner ~= nil and self.session.activeAnchor == self:anchor(p),
+        hosting = self.session.owner == p, listening = self.session.members[p] == true,
+        performance = self.session:performanceState(p), result = self.session.results[p],
+        offerRemaining = if self.offerAt then math.max(0, math.ceil(OFFER - (self.clock() - self.offerAt))) else nil,
         offerEndsAt = if self.offerAt
-            then Workspace:GetServerTimeNow() + math.max(0, OFFER - (self.clock() - self.offerAt))
-            else nil,
+            then Workspace:GetServerTimeNow() + math.max(0, OFFER - (self.clock() - self.offerAt)) else nil,
     }
 end
-
 function Stage:tick()
     local now, changed = self.clock(), false
     for i = #self.queue, 1, -1 do
         local entry = self.queue[i]
         local profile = self.profiles[entry.player]
-        if
-            not profile
-            or not profile.ready
-            or not self.nearby(entry.player, self.podium.anchor, 32)
+        if not profile or not profile.ready
+            or not self.nearby(entry.player, entry.anchor or self.podium.anchor, 32)
             or now - entry.createdAt >= LIFETIME
-            or (
-                not self.session.owner
-                and entry.player == self.offered
-                and now - self.offerAt >= OFFER
-            )
-        then
+            or (not self.session.owner and entry.player == self.offered and now - self.offerAt >= OFFER) then
             table.remove(self.queue, i)
             self.send(entry.player, "Your stage request ended. Prepare another set when ready.")
             changed = true
         end
     end
     for p in self.opened do
-        if not self.profiles[p] or not self.nearby(p, self.podium.anchor, 32) then
-            self.opened[p] = nil
-            self.send(p, "Stage board closed. Return to the courtyard to take part.")
+        if not self.profiles[p] or not self.nearby(p, self:anchor(p), 32) then
+            self.opened[p], self.anchors[p] = nil, nil
+            self.send(p, "Stage board closed. Return to its venue to take part.")
             changed = true
         end
     end
@@ -180,17 +153,15 @@ function Stage:tick()
         self:refresh()
     end
 end
-
 function Stage:depart(p)
     local associated = self.opened[p] or self.session.members[p]
-    self.opened[p] = nil
+    self.opened[p], self.anchors[p] = nil, nil
     local removed = self:remove(p)
     self.session:leave(p)
     if associated or removed then
         self:refresh()
     end
 end
-
 function Stage:command(p, action, payload)
     if action == "StageClose" then
         self:depart(p)
@@ -199,12 +170,8 @@ function Stage:command(p, action, payload)
     end
     self:tick()
     local profile = self.profiles[p]
-    if
-        not profile
-        or not profile.ready
-        or not self.opened[p]
-        or not self.nearby(p, self.podium.anchor, 32)
-    then
+    if not profile or not profile.ready or not self.opened[p]
+        or not self.nearby(p, self:anchor(p), 32) then
         return
     end
     if action == "StagePrepare" then
@@ -228,12 +195,12 @@ function Stage:command(p, action, payload)
             return
         end
         profile.listeningRef = Project.clone(snapshot.ref)
-        table.insert(self.queue, { player = p, snapshot = snapshot, createdAt = self.clock() })
+        table.insert(self.queue, {
+            player = p, snapshot = snapshot, createdAt = self.clock(), anchor = self:anchor(p),
+        })
         self:refresh()
-        self.send(
-            p,
-            "Snapshot prepared. Start when your turn is offered. You have not joined anyone's audio."
-        )
+        self.send(p, (if snapshot.mode == "spotlight" then "Spotlight excerpt" elseif snapshot.loop then "Practice loop" else "Full Song")
+            .. " prepared: " .. math.floor(snapshot.duration + 0.5) .. "s. Start when offered; no audio was joined automatically.")
     elseif action == "StageCancel" then
         if self:remove(p) then
             self:refresh()
@@ -245,26 +212,22 @@ function Stage:command(p, action, payload)
             self.send(p, "Wait for your own offered turn.")
             return
         end
-        for _, event in entry.snapshot.schedule.events do
-            if not Catalog.isPlaybackReady(event.sampleId, profile.unlocked) then
-                self.send(
-                    p,
-                    "This prepared set has unavailable audio. Cancel and review it before playing."
-                )
-                return
-            end
+        if not self.nearby(p, entry.anchor, 32) or not self.session:ready(entry.snapshot, profile) then
+            self.send(p, "Return to your prepared venue and review unavailable audio before starting.")
+            return
         end
         table.remove(self.queue, 1)
-        self.session:start(p, entry.snapshot)
+        self.session:start(p, entry.snapshot, if entry.anchor == self.podium.anchor then nil else entry.anchor)
     elseif action == "StageJoin" then
-        if self.session.owner and not self.session.members[p] then
+        if self.session.owner and not self.session.members[p]
+            and self.session.activeAnchor == self:anchor(p) then
             self.release(p)
             self.session.members[p] = true
-            self.send(p, "Joined voluntarily. Mute or leave at any time.")
+            self.send(p, "Joined voluntarily. Mute or leave at any time; requests never control the performer's music.")
         end
     elseif action == "StageStop" then
         if self.session.owner == p then
-            self.session:stop("This set ended. Choose to join the next performer when ready.")
+            self.session:stop("This set ended. Prepare again or return to your instrument for a variation.")
         end
     end
 end

@@ -23,16 +23,20 @@ function Playback:accept(packet)
             elseif offset > 0 then offset
             else nil
         self.key = key
-    elseif
-        packet.scheduleRevision ~= self.scheduleRevision
+        self.stoppedAtEnd = false
+    elseif packet.scheduleRevision ~= self.scheduleRevision
         and type(packet.scheduleChangedAt) == "number"
-    then
-        -- Sound/mixer and additive edits retain current voices and the cursor.
-        -- Newly inserted notes before this edit's instant must not fire late.
+        and not packet.futureOnly then
+        -- Ordinary additive edits must not fire newly inserted past notes late.
+        -- A server-authored future-only spotlight keeps its exact prefix and
+        -- cursor instead; accepting a queued change must not skip prefix notes.
         self.last = math.max(
             self.last or 0,
             packet.scheduleChangedAt - packet.startedAt + (packet.offset or 0)
         )
+    end
+    if self.scheduleRevision ~= packet.scheduleRevision then
+        self.stoppedAtEnd = false
     end
     self.scheduleRevision = packet.scheduleRevision
     self.packet = packet
@@ -51,6 +55,15 @@ function Playback:step(now)
     if now < packet.startedAt or elapsed < 0 or schedule.duration <= 0 then
         return
     end
+    -- Check the tail deadline before the half-open cursor early return. Once
+    -- last reaches duration, finish cannot advance, but tails must still stop.
+    if not packet.loop and elapsed >= (schedule.completeAt or schedule.duration) then
+        if not self.stoppedAtEnd then
+            self.audio:stop()
+            self.stoppedAtEnd = true
+        end
+        return
+    end
     local from = if self.last then self.last else math.max(0, elapsed - 0.08)
     -- Stalled frames skip stale notes; they never burst old sections on resume.
     from = math.max(from, elapsed - 0.08)
@@ -65,25 +78,15 @@ function Playback:step(now)
     local lastCycle = if packet.loop then math.floor(finish / schedule.duration) else 0
     for cycle = firstCycle, lastCycle do
         local offset = cycle * schedule.duration
-        for _, event in
-            Transport.eventsBetween(
-                schedule,
-                math.max(0, from - offset),
-                math.min(schedule.duration, finish - offset)
-            )
-        do
-            if
-                self.audio:play(event.sampleId, event.settings, event.route, event.velocity)
-                and self.played
-            then
+        for _, event in Transport.eventsBetween(
+            schedule, math.max(0, from - offset), math.min(schedule.duration, finish - offset)
+        ) do
+            if self.audio:play(event.sampleId, event.settings, event.route, event.velocity) and self.played then
                 self.played(event)
             end
         end
     end
     self.last = finish
-    if not packet.loop and elapsed >= schedule.completeAt then
-        self.audio:stop()
-    end
 end
 function Playback:stop()
     if self.packet then
@@ -92,9 +95,6 @@ function Playback:stop()
     self.packet = nil
     self.audio:setSchedule(nil)
     -- Selection belongs to the instrument/listener, independently of a schedule.
-    -- Stopping transport must retain the personal pads' preloaded audition voices.
-    self.key = nil
-    self.scheduleRevision = nil
-    self.last = nil
+    self.key, self.scheduleRevision, self.last, self.stoppedAtEnd = nil, nil, nil, nil
 end
 return Playback
