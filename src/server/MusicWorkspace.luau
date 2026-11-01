@@ -661,6 +661,20 @@ function Workspace.command(player, p, action, a, b, persist, send)
         local to = if action == "Undo" then (p.musicRedo or {}) else (p.musicUndo or {})
         local restored = Project.clone(from[#from])
         restored.revision = project.revision + 1
+        -- A history snapshot may predate the last successful save. Never let
+        -- undo/redo advertise an older savedRevision as the current revision.
+        for id, sequence in restored.sequences do
+            local current = project.sequences[id]
+            if current then
+                sequence.savedRevision = current.savedRevision
+            end
+        end
+        for id, draft in restored.drafts do
+            local current = project.drafts[id]
+            if current then
+                draft.savedRevision = current.savedRevision
+            end
+        end
         local t = p.transport
         local schedule, problem
         if t and t.ref.kind == "sequence" and restored.sequences[t.ref.id] then
