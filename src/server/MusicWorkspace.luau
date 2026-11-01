@@ -9,6 +9,7 @@ local Catalog = require(Shared.SampleCatalog)
 local PadSound = require(Shared.PadSound)
 local Profiles = require(script.Parent.ProfileStore)
 local WorkspaceState = require(script.Parent.WorkspaceState)
+local FirstGrooveSession = require(script.Parent.FirstGrooveSession)
 local Workspace = {}
 local function integer(v, lo, hi)
     return type(v) == "number" and v == v and v % 1 == 0 and v >= lo and v <= hi
@@ -452,6 +453,7 @@ function Workspace.handles(action)
                 "ArchiveOpen",
                 "RecoveryOpen",
                 "Restore",
+                "GrooveStart",
                 "Bpm",
                 "Step",
                 "PadSound",
@@ -473,6 +475,7 @@ function Workspace.command(player, p, action, a, b, persist, send)
             or action == "ArchiveOpen"
             or action == "RecoveryOpen"
             or action == "Restore"
+            or action == "GrooveStart"
         )
     then
         return false, "Wait for the current save before changing workspaces."
@@ -481,7 +484,13 @@ function Workspace.command(player, p, action, a, b, persist, send)
     local project = p.music.project
     local seq = project.sequences[p.sequenceId]
     local track = project.tracks[p.trackId]
-    if action == "Restore" then
+    if action == "GrooveStart" then
+        local ok, message = FirstGrooveSession.start(p, a)
+        if ok then
+            Workspace.sync(p)
+        end
+        return ok, message
+    elseif action == "Restore" then
         if a ~= p.editVersion then
             return false, "Your work changed. Review it before confirming Restore again."
         end

@@ -1,29 +1,38 @@
 -- A fixed step display. Creating/changing notes never rebuilds the interface.
 local W = require(script.Parent.DeviceWidgets)
+local Coach = require(script.Parent.FirstGrooveCoach)
 local Catalog = require(game.ReplicatedStorage.Shared.SampleCatalog)
+local GuiService = game:GetService("GuiService")
+local Input = game:GetService("UserInputService")
 local Screen = {}
 Screen.__index = Screen
 function Screen.new(parent, api)
     local self =
-        setmetatable({ api = api, steps = {}, beats = {}, lanes = {}, laneGroup = 0 }, Screen)
+        setmetatable({ api = api, steps = {}, beats = {}, lanes = {}, laneGroup = 0, connections = {} }, Screen)
     self.rootFrame = W.frame(parent, "Sequence")
     self.rootFrame.Size = UDim2.fromScale(1, 1)
-    self.title = W.label(self.rootFrame, "SequenceTitle", "MY SECTION", 17, W.amber)
-    self.padName = W.label(self.rootFrame, "SelectedSound", "A01 / KICK", 13)
-    self.barName = W.label(self.rootFrame, "BarNumber", "01 / 01", 14, W.amber)
-    self.previous = W.key(self.rootFrame, "PreviousBar", "undo", "BAR", function()
+    self.editor = W.make("ScrollingFrame", self.rootFrame, {
+        Name = "FullSequenceEditor", BackgroundTransparency = 1, BorderSizePixel = 0,
+        CanvasSize = UDim2.fromOffset(0, 0), ScrollBarThickness = 4,
+        ScrollingDirection = Enum.ScrollingDirection.Y,
+    })
+    self.editorBody = W.frame(self.editor, "Controls")
+    self.title = W.label(self.editorBody, "SequenceTitle", "MY SECTION", 17, W.amber)
+    self.padName = W.label(self.editorBody, "SelectedSound", "A01 / KICK", 13)
+    self.barName = W.label(self.editorBody, "BarNumber", "01 / 01", 14, W.amber)
+    self.previous = W.key(self.editorBody, "PreviousBar", "undo", "BAR", function()
         local m = self.state and self.state.music
         if m then
             api.command("Bar", math.max(1, m.bar - 1))
         end
     end)
-    self.next = W.key(self.rootFrame, "NextBar", "redo", "BAR", function()
+    self.next = W.key(self.editorBody, "NextBar", "redo", "BAR", function()
         local m = self.state and self.state.music
         if m then
             api.command("Bar", math.min(m.sequence.bars, m.bar + 1))
         end
     end)
-    self.grid = W.frame(self.rootFrame, "StepGrid")
+    self.grid = W.frame(self.editorBody, "StepGrid")
     for i = 1, 16 do
         local b = W.make(
             "TextButton",
@@ -61,7 +70,7 @@ function Screen.new(parent, api)
         end)
         self.steps[i] = { button = b, lamp = lamp, number = number }
     end
-    self.overview = W.frame(self.rootFrame, "LaneOverview")
+    self.overview = W.frame(self.editorBody, "LaneOverview")
     for row = 1, 4 do
         local lane = { root = W.frame(self.overview, "Lane" .. row), cells = {} }
         lane.name = W.make(
@@ -75,6 +84,7 @@ function Screen.new(parent, api)
                 TextColor3 = W.text,
                 BackgroundTransparency = 1,
                 TextXAlignment = Enum.TextXAlignment.Left,
+                TextTruncate = Enum.TextTruncate.AtEnd,
                 Selectable = true,
                 BorderSizePixel = 0,
             }
@@ -89,15 +99,57 @@ function Screen.new(parent, api)
         end
         self.lanes[row] = lane
     end
-    self.laneBack = W.key(self.rootFrame, "PreviousLanes", "undo", "LANES", function()
+    self.laneBack = W.key(self.editorBody, "PreviousLanes", "undo", "LANES", function()
         self.laneGroup = (self.laneGroup + 3) % 4
         self:paint()
     end)
-    self.laneNext = W.key(self.rootFrame, "NextLanes", "redo", "LANES", function()
+    self.laneNext = W.key(self.editorBody, "NextLanes", "redo", "LANES", function()
         self.laneGroup = (self.laneGroup + 1) % 4
         self:paint()
     end)
-    self.status = W.label(self.rootFrame, "SequenceStatus", "TAP A PAD • PLACE ITS NOTES", 11)
+    self.status = W.label(self.editorBody, "SequenceStatus", "TAP A PAD • PLACE ITS NOTES", 11)
+    self.coach = Coach.new(self.rootFrame, api, function()
+        if self.width then
+            self:resize(self.width, self.height)
+        end
+        local selected = GuiService.SelectedObject
+        if not self.coach.expanded and (
+            (selected and (selected:IsDescendantOf(self.coach.scroll) or selected:IsDescendantOf(self.coach.footer)))
+            or (not selected and Input:GetLastInputType().Name:match("^Gamepad"))
+        ) then
+            GuiService.SelectedObject = self.steps[1].button
+        end
+    end)
+    local function cancelCoach()
+        self.coach:cancel()
+        self.coach:paint()
+    end
+    -- View:update returns early on station exit. Watch the enclosing panel as
+    -- well as the page so a confirmation cannot survive leaving and re-entering.
+    local ancestor = parent
+    while ancestor do
+        local object = ancestor
+        if object:IsA("GuiObject") then
+            table.insert(self.connections, object:GetPropertyChangedSignal("Visible"):Connect(function()
+                if not object.Visible then
+                    cancelCoach()
+                end
+            end))
+        elseif object:IsA("ScreenGui") then
+            table.insert(self.connections, object:GetPropertyChangedSignal("Enabled"):Connect(function()
+                if not object.Enabled then
+                    cancelCoach()
+                end
+            end))
+        end
+        ancestor = ancestor.Parent
+    end
+    table.insert(self.connections, Input.WindowFocusReleased:Connect(cancelCoach))
+    self.rootFrame.Destroying:Connect(function()
+        for _, connection in self.connections do
+            connection:Disconnect()
+        end
+    end)
     self.rootFrame:SetAttribute("PersistentControls", true)
     return self
 end
@@ -107,6 +159,7 @@ function Screen:update(state, pad)
     if changed then
         self.laneGroup = math.floor(((pad - 1) % 16) / 4)
     end
+    self.coach:update(state, pad)
     self:paint()
 end
 function Screen:paint()
@@ -151,7 +204,10 @@ function Screen:paint()
         cell.button:SetAttribute("Playhead", head == true)
     end
     for index, lane in self.lanes do
-        local absolute = (m.bank - 1) * 16 + self.laneGroup * 4 + index
+        -- The pad argument includes an optimistic bank selection while the
+        -- server acknowledgement is pending; keep its lane overview consistent.
+        local bank = math.floor((self.pad - 1) / 16) + 1
+        local absolute = (bank - 1) * 16 + self.laneGroup * 4 + index
         lane.pad = absolute
         local source = Catalog.ById[s.pattern.assignments[absolute]]
         W.set(lane.name, "Text", string.format("%02d %s", absolute, source and source.label or ""))
@@ -180,47 +236,47 @@ function Screen:setPlayhead(value)
     end
 end
 function Screen:resize(width, height)
-    local short = height < 220
-    W.place(self.title, 0, 0, width - 116, 24)
-    W.place(self.barName, width - 108, 0, 108, 24)
+    if self.width and (self.width ~= width or self.height ~= height) then
+        self.coach:cancel()
+        self.coach:paint()
+    end
+    self.width, self.height = width, height
+    self.coach:resize(width, height)
+    self.editor.Visible = not self.coach.expanded
+    W.place(self.editor, 0, 50, width, math.max(0, height - 50))
+    local w = math.max(0, width - 8)
+    W.place(self.title, 0, 0, math.max(0, w - 116), 24)
+    W.place(self.barName, w - 108, 0, 108, 24)
     self.barName.TextXAlignment = Enum.TextXAlignment.Right
-    W.place(self.padName, 0, 27, width - 112, if short then 24 else 30)
-    W.place(self.previous, width - 100, 26, 46, 44)
-    W.place(self.next, width - 48, 26, 46, 44)
-    local top = if short then 60 else 72
-    local gridHeight =
-        math.min(if short then 76 else 126, math.max(64, height - top - (if short then 0 else 96)))
-    W.place(self.grid, 0, top, width, gridHeight)
+    W.place(self.padName, 0, 27, math.max(0, w - 112), 40)
+    W.place(self.previous, w - 100, 26, 46, 44)
+    W.place(self.next, w - 48, 26, 46, 44)
+    -- Reflow rather than squeeze sixteen controls into unusable narrow cells.
+    -- The editor scrolls; the separate physical performance pads do not.
+    local columns = if w >= 384 then 8 elseif w >= 192 then 4 else 2
+    local gridHeight = (16 / columns) * 48
+    W.place(self.grid, 0, 72, w, gridHeight)
     for i, cell in self.steps do
-        local x = (i - 1) % 8
-        local y = math.floor((i - 1) / 8)
-        W.place(cell.button, x * width / 8, y * gridHeight / 2, width / 8 - 5, gridHeight / 2 - 5)
+        local x, y = (i - 1) % columns, math.floor((i - 1) / columns)
+        W.place(cell.button, x * w / columns, y * 48, w / columns - 4, 44)
     end
-    self.overview.Visible = not short
-    self.laneBack.Visible = not short
-    self.laneNext.Visible = not short
-    self.status.Visible = height >= 280
-    if not short then
-        local y = top + gridHeight + 6
-        local h = math.max(44, math.min(112, height - y - 48))
-        W.place(self.overview, 0, y, width, h)
-        for row, lane in self.lanes do
-            W.place(lane.root, 0, (row - 1) * h / 4, width, h / 4 - 2)
-            W.place(lane.name, 0, 0, width * 0.33, h / 4 - 2)
-            for i, cell in lane.cells do
-                W.place(
-                    cell,
-                    width * 0.34 + (i - 1) * width * 0.66 / 16,
-                    4,
-                    width * 0.66 / 16 - 2,
-                    math.max(3, h / 4 - 10)
-                )
-            end
+    local overviewY = 72 + gridHeight + 8
+    W.place(self.overview, 0, overviewY, w, 176)
+    for row, lane in self.lanes do
+        W.place(lane.root, 0, (row - 1) * 44, w, 44)
+        W.place(lane.name, 0, 0, w * 0.38, 44)
+        for i, cell in lane.cells do
+            W.place(cell, w * 0.4 + (i - 1) * w * 0.6 / 16, 18, w * 0.6 / 16 - 2, 8)
         end
-        W.place(self.laneBack, 0, height - 44, 70, 40)
-        W.place(self.laneNext, 76, height - 44, 70, 40)
-        W.place(self.status, 156, height - 44, width - 160, 40)
     end
+    local footerY = overviewY + 184
+    W.place(self.laneBack, 0, footerY, 70, 44)
+    W.place(self.laneNext, 76, footerY, 70, 44)
+    W.place(self.status, 0, footerY + 48, w, 36)
+    local contentHeight = footerY + 88
+    W.place(self.editorBody, 0, 0, w, contentHeight)
+    self.editor.CanvasSize = UDim2.fromOffset(0, contentHeight)
+    self.rootFrame:SetAttribute("StepColumns", columns)
 end
 function Screen:destroy()
     self.rootFrame:Destroy()
