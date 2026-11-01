@@ -1,6 +1,7 @@
 -- One voluntary queue for courtyard/street venues. No profile or music ownership.
 local Project = require(game.ReplicatedStorage.Shared.MusicProject)
 local Workspace = game:GetService("Workspace")
+local Takes = require(script.Parent.PerformanceTakeSession)
 local Stage = {}
 Stage.__index = Stage
 local LIMIT, LIFETIME, OFFER = 4, 120, 30
@@ -73,6 +74,7 @@ function Stage:open(p, anchor)
 end
 function Stage:state(p)
     local queue, entries, position, preparedMode, preparedDuration = {}, {}, nil, nil, nil
+    local preparedCapture = false
     for i, entry in self.queue do
         table.insert(queue, entry.player.DisplayName)
         table.insert(entries, {
@@ -83,6 +85,7 @@ function Stage:state(p)
         })
         if entry.player == p then
             position, preparedMode, preparedDuration = i, entry.snapshot.mode, entry.snapshot.duration
+            preparedCapture = entry.snapshot.capture == true
         end
     end
     local available = {}
@@ -116,7 +119,9 @@ function Stage:state(p)
         duration = self.session.prepared and self.session.prepared.duration,
         mode = self.session.prepared and self.session.prepared.mode,
         performanceVenue = if self.session.activeAnchor == self.podium.anchor then "Courtyard" else "Street",
-        preparedMode = preparedMode, preparedDuration = preparedDuration,
+        preparedMode = preparedMode, preparedDuration = preparedDuration, preparedCapture = preparedCapture,
+        take = Takes.summary(profile),
+        canManageTake = position == nil and not self.session.members[p],
         position = position, requesting = position ~= nil,
         canStart = self.session.owner == nil and position == 1,
         canJoin = self.session.owner ~= nil and self.session.activeAnchor == self:anchor(p),
@@ -174,7 +179,21 @@ function Stage:command(p, action, payload)
         or not self.nearby(p, self:anchor(p), 32) then
         return
     end
-    if action == "StagePrepare" then
+    if action == "StageTakeKeep" or action == "StageTakeDiscard" then
+        if self.session.members[p] then
+            self.send(p, "Leave or stop listening before managing your retained take.")
+            return
+        end
+        for _, entry in self.queue do
+            if entry.player == p then
+                self.send(p, "Cancel your prepared set before managing the retained take.")
+                return
+            end
+        end
+        local _, message = Takes.command(profile, action, payload)
+        self.send(p, message)
+        return
+    elseif action == "StagePrepare" then
         if self.session.owner == p then
             self.send(p, "Stop your current set before preparing another.")
             return

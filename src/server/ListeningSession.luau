@@ -5,6 +5,7 @@ local Transport = require(Shared.MusicTransport)
 local Catalog = require(Shared.SampleCatalog)
 local StageQueue = require(script.Parent.StageQueue)
 local Performance = require(script.Parent.StreetPerformance)
+local Takes = require(script.Parent.PerformanceTakeSession)
 local ListeningSession = {}
 ListeningSession.__index = ListeningSession
 
@@ -86,8 +87,11 @@ function ListeningSession:prepare(player, requested)
     if type(ref) ~= "table" then
         return nil, "Choose a Sequence or saved Finished Song."
     end
-    local mode = ref.mode
-    ref.mode = nil
+    local mode, capture = ref.mode, ref.capture
+    ref.mode, ref.capture = nil, nil
+    if capture ~= nil and type(capture) ~= "boolean" then
+        return nil, "Choose Capture ON or OFF before preparing."
+    end
     if ref.kind == "Sequence" then
         ref.kind = "sequence"
     elseif ref.kind == "FinishedSong" then
@@ -99,6 +103,9 @@ function ListeningSession:prepare(player, requested)
     mode = mode or (if ref.kind == "sequence" then "practice" else "full")
     if mode ~= "spotlight" and mode ~= (if ref.kind == "sequence" then "practice" else "full") then
         return nil, "Choose Spotlight, Practice loop, or Full Song for this source."
+    end
+    if capture and mode ~= "spotlight" then
+        return nil, "Editable take capture is available for Spotlight only. Practice and Full Song are unchanged."
     end
     local songs = profile.saved and profile.saved.music and profile.saved.music.finishedSongs or {}
     local object = if ref.kind == "finished" then songs[ref.id] else project.sequences[ref.id]
@@ -124,12 +131,18 @@ function ListeningSession:prepare(player, requested)
     local prepared = {
         schema = 1, ref = ref, schedule = schedule, title = schedule.title,
         loop = ref.kind == "sequence", duration = schedule.duration,
-        localOnly = schedule.localOnly == true, mode = mode,
+        localOnly = schedule.localOnly == true, mode = mode, capture = capture == true,
     }
     if mode == "spotlight" then
         local performance, problem = Performance.prepare(profile, prepared)
         if not performance then
             return nil, problem
+        end
+        if capture then
+            local armed, captureProblem = Takes.arm(profile, performance,
+                if ref.kind == "finished" then object.project else project,
+                if ref.kind == "finished" then object.draftId else nil)
+            if not armed then return nil, captureProblem end
         end
         prepared.performance = performance
         prepared.schedule = performance.schedule
@@ -145,6 +158,7 @@ function ListeningSession:prepare(player, requested)
 end
 
 function ListeningSession:ready(prepared, profile)
+    if prepared.capture and profile.performanceTake then return false end
     local function sourceReady(events)
         for _, event in events do
             if not Catalog.isPlaybackReady(event.sampleId, profile.unlocked) then
@@ -246,7 +260,9 @@ function ListeningSession:performanceState(player)
     if not p or not self.members[player] then
         return nil
     end
-    return Performance.summary(p, player, self.owner, Workspace:GetServerTimeNow())
+    local summary = Performance.summary(p, player, self.owner, Workspace:GetServerTimeNow())
+    summary.capturing = player == self.owner and p.captureProject ~= nil
+    return summary
 end
 
 function ListeningSession:state(player)
@@ -284,10 +300,16 @@ end
 function ListeningSession:stop(notice)
     self:reportFirstLoop()
     local performance = self.prepared and self.prepared.performance
+    local performer, captureNotice = self.owner, nil
     if self.owner and performance then
         local now = Workspace:GetServerTimeNow()
         Performance.tick(performance, now)
         self.results[self.owner] = Performance.result(performance, now >= self.startedAt + performance.schedule.completeAt)
+        local profile = self.profiles[self.owner]
+        if profile then
+            captureNotice = Takes.retain(profile, performance, now)
+            self.results[self.owner].captureNotice = captureNotice
+        end
     end
     local members = self.members
     self.members, self.owner, self.prepared, self.performanceEligible = {}, nil, nil, false
@@ -295,7 +317,7 @@ function ListeningSession:stop(notice)
     Workspace:SetAttribute("QuayPublicBeat", nil)
     self.podium.prompt.ActionText, self.podium.label.Text = "Share selected music", "LISTENING COURT / IDLE"
     for player in members do
-        self.send(player, notice)
+        self.send(player, if player == performer and captureNotice then captureNotice else notice)
     end
     self.stage:refresh()
 end

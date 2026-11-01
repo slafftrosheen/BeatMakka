@@ -80,6 +80,30 @@ function View:_performance(action, values)
     packet.schema, packet.epoch, packet.revision = 1, p.epoch, p.revision
     self.command(action, packet)
 end
+local function takeKey(take)
+    if not take or take.imported or not take.context then return nil end
+    local c = take.context
+    return table.concat({ take.id, tostring(c.projectId), tostring(c.projectRevision),
+        tostring(c.workspaceGeneration), tostring(c.editVersion) }, ":")
+end
+function View:_takeAction(action)
+    local stage = self.stage
+    local take = stage and stage.take
+    if not take or take.imported or not stage.canManageTake or not self.panel.Visible then return end
+    local key, pending = takeKey(take), self.takeConfirmation
+    if pending and pending.key == key and pending.action == action and os.clock() < pending.untilAt then
+        self.takeConfirmation = nil
+        self.command(action, { schema = 1, id = take.id, context = table.clone(take.context) })
+        self:_render()
+        return
+    end
+    self.takeConfirmation = { key = key, action = action, untilAt = os.clock() + 5 }
+    self.noticeText = if action == "StageTakeKeep"
+        then "Press CONFIRM KEEP again: create an unsaved editable draft. Source music stays unchanged."
+        else "Press CONFIRM DISCARD again: remove only this temporary recording."
+    self.noticeUntil = os.clock() + 5
+    self:_render()
+end
 function View.new(screen, command, mute)
     local self = setmetatable({ command = command, screen = screen, short = true, connections = {}, layers = {}, sources = {}, requests = {} }, View)
     self.panel = W.frame(screen, "CourtyardStage", W.ink)
@@ -104,7 +128,21 @@ function View.new(screen, command, mute)
     self.next = self:_button(self.selection, "NextSource", "NEXT", function() self:_cycle(1) end)
     self.mode = self:_button(self.selection, "PerformanceMode", "SPOTLIGHT EXCERPT", function()
         self.short = not self.short
+        if not self.short then self.captureTake = false end
+        self.takeConfirmation = nil
         self:_render()
+    end)
+    self.capture = self:_button(self.selection, "CaptureTake", "CAPTURE OFF", function()
+        self.captureTake = not self.captureTake
+        self.takeConfirmation = nil
+        self:_render()
+    end)
+    self.takeStatus = self:_label(self.selection, "RetainedTake", "", 12)
+    self.keepTake = self:_button(self.selection, "KeepTake", "KEEP AS DRAFT", function()
+        self:_takeAction("StageTakeKeep")
+    end)
+    self.discardTake = self:_button(self.selection, "DiscardTake", "DISCARD TAKE", function()
+        self:_takeAction("StageTakeDiscard")
     end)
     self.context = self:_label(self.selection, "SourceContext", "", 12)
     self.queue = self:_label(self.selection, "PublicQueue", "", 12)
@@ -149,6 +187,7 @@ function View.new(screen, command, mute)
     self.primary = self:_button(self.panel, "PrimaryStageAction", "PREPARE", function()
         local stage = self.stage
         if not stage then return end
+        self.takeConfirmation = nil
         if stage.hosting then
             command("StageStop")
         elseif stage.canStart then
@@ -161,6 +200,7 @@ function View.new(screen, command, mute)
                 command("StagePrepare", {
                     kind = choice.kind, id = choice.id, revision = choice.revision,
                     mode = if self.short then "spotlight" elseif choice.kind == "finished" then "full" else "practice",
+                    capture = self.short and self.captureTake == true,
                 })
             end
         end
@@ -170,7 +210,22 @@ function View.new(screen, command, mute)
     end)
     self.mute = self:_button(self.panel, "MuteStage", "SOUND ON", mute or function() end)
     self.close = self:_button(self.panel, "LeaveStage", "LEAVE / EDIT", function() command("StageClose") end)
-    table.insert(self.connections, self.panel:GetPropertyChangedSignal("AbsoluteSize"):Connect(function() self:_layout() end))
+    local function cancelTake()
+        self.takeConfirmation = nil
+        if self.stage then self:_render() end
+    end
+    table.insert(self.connections, Input.WindowFocusReleased:Connect(cancelTake))
+    table.insert(self.connections, Input.TextBoxFocused:Connect(cancelTake))
+    table.insert(self.connections, screen:GetPropertyChangedSignal("Enabled"):Connect(function()
+        if not screen.Enabled then cancelTake() end
+    end))
+    table.insert(self.connections, self.panel:GetPropertyChangedSignal("Visible"):Connect(function()
+        if not self.panel.Visible then cancelTake() end
+    end))
+    table.insert(self.connections, self.panel:GetPropertyChangedSignal("AbsoluteSize"):Connect(function()
+        self.takeConfirmation = nil
+        self:_layout()
+    end))
     self.panel.Destroying:Connect(function()
         for _, connection in self.connections do connection:Disconnect() end
     end)
@@ -206,7 +261,7 @@ function View:_layout()
         end
     end
     if live then
-        place(self.clock, 28); place(self.current, 44); place(self.pending, 52)
+        place(self.clock, 28); place(self.current, 76); place(self.pending, 52)
         place(self.cancelChange, 44); place(self.layerHint, 40)
         pair(self.layers.drums, self.layers.bass); pair(self.layers.hook, self.layers.harbour)
         place(self.sourceHint, 40)
@@ -217,8 +272,11 @@ function View:_layout()
         for _, kind in Set.RequestOrder do place(self.requests[kind], 72) end
         place(self.suggestion, 56); pair(self.accept, self.ignore); place(self.feedback, 64)
     else
+        place(self.takeStatus, 120)
+        pair(self.keepTake, self.discardTake)
         place(self.sourceLabel, 64); pair(self.previous, self.next)
-        place(self.mode, 48); place(self.context, 100); place(self.queue, 144); place(self.result, 104)
+        place(self.mode, 48); place(self.capture, 52)
+        place(self.context, 100); place(self.queue, 144); place(self.result, 200)
     end
     W.place(root, 0, 0, w, y)
     self.scroll.CanvasSize = UDim2.fromOffset(0, y)
@@ -241,17 +299,47 @@ function View:_render()
         table.insert(rows, index .. ". " .. entry.performer .. " / " .. entry.title .. " / " .. (entry.venue or "Courtyard"))
     end
     if stage.requesting then
-        table.insert(rows, "PINNED: " .. tostring(stage.preparedMode) .. " / " .. seconds(stage.preparedDuration))
+        table.insert(rows, "PINNED: " .. tostring(stage.preparedMode) .. " / " .. seconds(stage.preparedDuration)
+            .. (if stage.preparedCapture then " / CAPTURE ON" else " / CAPTURE OFF"))
     end
     W.set(self.queue, "Text", table.concat(rows, "\n"))
     local result = stage.result
     W.set(self.result, "Text", if result then
         (if result.completed then "SPOTLIGHT FINISHED" else "SET INTERRUPTED") .. " / " .. result.bars .. " bars / " .. seconds(result.duration)
             .. "\n" .. result.count .. " of 3 optional NPC responses. No votes or persistent rewards. Prepare again, or leave and edit your variation."
+            .. (if result.captureNotice then "\n" .. result.captureNotice else "")
         else "NPC reactions are authored game feedback, not real fans or votes. Joining another player's audio is always your choice.")
     local editable = not stage.requesting and not stage.hosting
     enabled(self.previous, #choices > 1 and editable); enabled(self.next, #choices > 1 and editable)
     enabled(self.mode, choice ~= nil and editable)
+    local take = stage.take
+    local retained = take ~= nil and not take.imported
+    if retained then self.captureTake = false end
+    local pending = self.takeConfirmation
+    if pending and (pending.key ~= takeKey(take) or os.clock() >= pending.untilAt
+        or not stage.canManageTake or not self.panel.Visible) then
+        self.takeConfirmation, pending = nil, nil
+    end
+    self:_caption(self.capture, if not self.short then "CAPTURE / SPOTLIGHT ONLY"
+        elseif stage.requesting then (if stage.preparedCapture then "CAPTURE ON / PREPARED" else "CAPTURE OFF / PREPARED")
+        elseif retained then "TAKE RETAINED / KEEP OR DISCARD BEFORE CAPTURING"
+        elseif self.captureTake then "CAPTURE ON / KEEP AN EDITABLE TAKE"
+        else "CAPTURE OFF / TAP TO RECORD BAR CHANGES")
+    enabled(self.capture, self.short and editable and not retained)
+    self:_caption(self.keepTake, if pending and pending.action == "StageTakeKeep" then "CONFIRM KEEP" else "KEEP AS DRAFT")
+    self:_caption(self.discardTake, if pending and pending.action == "StageTakeDiscard" then "CONFIRM DISCARD" else "DISCARD TAKE")
+    enabled(self.keepTake, retained and stage.canManageTake and not take.saving)
+    enabled(self.discardTake, retained and stage.canManageTake)
+    W.set(self.takeStatus, "Text", if retained then
+        "TEMPORARY TAKE / " .. take.bars .. " of " .. take.plannedBars .. " bars / " .. seconds(take.duration)
+            .. (if take.partial then " / completed-bar excerpt" else "")
+            .. "\nNot saved. Keep as Draft, then Save at the instrument. Lost on leaving this server."
+        elseif take and take.imported then
+            "DRAFT IMPORTED / " .. take.title .. "\n"
+                .. (if not take.inWorkspace then "Not in this workspace: check Undo/Redo or your library."
+                    elseif take.saved then (if take.saveMode == "session" then "Saved for this Studio session only." else "Saved by the normal storage path.")
+                    else "Unsaved. Leave to your instrument, open SONG and Save. Undo/Redo is available.")
+        else "Optional take capture records Spotlight bar changes, not microphone/audio. Keep creates an editable Draft, never an automatic Finished Song.")
     local p = stage.performance
     if p then
         local now = workspace:GetServerTimeNow()
@@ -260,7 +348,8 @@ function View:_render()
         local source = p.sources[current.source]
         W.set(self.clock, "Text", seconds(elapsed) .. " / " .. seconds(p.duration) .. " · " .. p.bars .. " BARS · " .. p.bpm .. " BPM")
         W.set(self.current, "Text", "SPOTLIGHT EXCERPT / " .. (source and source.title or "")
-            .. (if p.localOnly then "\nLocal preview / listening approval pending" else ""))
+            .. (if p.localOnly then "\nLocal preview / listening approval pending" else "")
+            .. (if stage.hosting and p.capturing then "\nCAPTURING / accepted completed bars only" else ""))
         W.set(self.pending, "Text", if p.pending then
             (if now >= p.pending.at then "APPLIED / awaiting state acknowledgement" elseif now >= p.pending.at - Set.Lead then "COMMITTED" else "QUEUED")
                 .. " · bar " .. p.pending.bar .. " / source " .. p.sources[p.pending.source].title
@@ -293,7 +382,8 @@ function View:_render()
     end
     self:_caption(self.primary, if stage.hosting then "END SET" elseif stage.canStart then "START TURN"
         elseif stage.requesting then "CANCEL SET" elseif result then "PREPARE AGAIN" else "PREPARE SET")
-    enabled(self.primary, stage.hosting or stage.canStart or stage.requesting or choice ~= nil)
+    enabled(self.primary, stage.hosting or stage.canStart or stage.requesting
+        or (choice ~= nil and not (self.short and self.captureTake and retained)))
     self:_caption(self.secondary, if stage.canStart then "CANCEL SET" elseif stage.listening then "LISTENING" else "JOIN BY CHOICE")
     enabled(self.secondary, stage.canStart or (stage.canJoin and not stage.listening))
     local notice = if self.noticeText and os.clock() < self.noticeUntil then self.noticeText
@@ -309,7 +399,7 @@ function View:update(stage, muted, notice, audioStatus)
     local oldPerformance = self.stage and self.stage.performance ~= nil
     self.stage, self.audioStatus = stage, audioStatus
     self.panel.Visible = stage ~= nil and stage.open == true
-    if not stage then return end
+    if not stage then self.takeConfirmation = nil; return end
     local choices = stage.available or {}
     local requested = self.selectedRef or stage.selectedRef
     if self.panel.Visible and not wasOpen and stage.selectedRef then requested = stage.selectedRef end
