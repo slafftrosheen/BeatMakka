@@ -3,6 +3,7 @@
 local Pattern = require(script.Parent.Pattern)
 local Quay = require(script.Parent.QuayProgress)
 local Music = require(script.Parent.QuayMusicEvidence)
+local Signatures = require(script.Parent.HarbourSignatures)
 local Chapter = {}
 Chapter.Hints = {
     "Choose your Finished Song. We will hear it from its beginning to its last sound.",
@@ -163,6 +164,9 @@ function Chapter.summary(profile, session, open)
         end
     end
     local progress = if session then math.clamp(position / session.endDuration, 0, 1) else 0
+    local scene = if session and not session.paused and not session.ended
+        then Signatures.sample(Signatures.compile(session.schedule), if position > 0 then position else -1, false)
+        else nil
     return {
         open = open == true,
         eligible = Quay.readyForFinale(profile),
@@ -185,7 +189,12 @@ function Chapter.summary(profile, session, open)
             elseif session and session.paused then "Paused at the same musical position."
             elseif session then "Your finished arrangement is playing from beginning to end."
             else Chapter.Hints[1],
-        cue = if session then Chapter.Hints[math.min(7, math.floor(progress * 6) + 2)] else nil,
+        -- Retain the six presentation phases; cues now describe actual musical causes.
+        phase = if session then Chapter.Hints[math.min(7, math.floor(progress * 6) + 2)] else nil,
+        scene = scene,
+        cue = if session and session.paused then "NPC VENUE / paused with your music"
+            elseif session and session.ended then "NPC VENUE / your full song reached its ending"
+            elseif scene then scene.caption else nil,
         playback = session and not session.ended and not session.paused and {
             kind = "finished",
             id = session.id,
@@ -201,7 +210,8 @@ function Chapter.summary(profile, session, open)
         } or nil,
         reaction = if session and session.ended
             then 4
-            elseif session then math.min(3, math.floor(progress * 4) + 1)
+            elseif scene and scene.active then (if scene.climax then 3 else math.min(2, scene.roleCount))
+            elseif session then 0
             elseif ledger.completed then 4
             else 0,
     }

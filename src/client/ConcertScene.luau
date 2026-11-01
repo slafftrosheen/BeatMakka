@@ -1,25 +1,28 @@
 -- Personal temporary crowd stand-ins reuse H04; no imported NPC art claim.
 local Theme = require(game.ReplicatedStorage.Shared.Theme)
-local Transport = require(game.ReplicatedStorage.Shared.MusicTransport)
+local HarbourFeedback = require(script.Parent.HarbourFeedback)
 local Scene = {}
 Scene.__index = Scene
 
 function Scene.new()
-    return setmetatable({ actors = {}, lights = {}, reaction = 0 }, Scene)
+    return setmetatable({ actors = {} }, Scene)
 end
 
 function Scene:update(state)
-    self.playback = state and state.playback
-    self.paused = state and state.paused
-    self.reaction = if state then state.reaction else 0
-    if not state or (not state.open and state.checkpoint == 0) then
+    self.state = state
+    if not state or not state.open then
         self:destroy()
         return
     end
+    if not self.harbour then
+        self.harbour = HarbourFeedback.new("PersonalChapterSignatures")
+    end
+    self.harbour:accept(state.playback, state.sceneOrigin)
     local root = workspace:FindFirstChild("NeedleQuay")
-    if not root or self.folder then
+    if not root or (self.folder and self.folder.Parent) then
         return
     end
+    self.folder, self.actors = nil, {}
     local source
     for _, model in root:GetChildren() do
         if model:GetAttribute("DiscoveryId") == "I03" then
@@ -36,9 +39,10 @@ function Scene:update(state)
         local actor = source:Clone()
         actor.Name = role
         actor:SetAttribute("DiscoveryId", nil)
+        actor:SetAttribute("MotionRole", nil)
         actor:SetAttribute("ChapterStandIn", true)
         for _, object in actor:GetDescendants() do
-            if object:IsA("ProximityPrompt") or object:IsA("BillboardGui") then
+            if object:IsA("ProximityPrompt") or object:IsA("BillboardGui") or object:IsA("Highlight") then
                 object:Destroy()
             else
                 object:SetAttribute("MotionRole", nil)
@@ -68,87 +72,44 @@ function Scene:update(state)
             label.TextColor3 = Theme.Cream
             label.Font = Theme.Bold
             label.TextSize = 14
-            label.Text = role
+            label.Text = "NPC / " .. role
             label.Parent = gui
         end
     end
     folder.Parent = root
     self.folder = folder
-    for _, object in root:GetDescendants() do
-        if
-            object:IsA("BasePart")
-            and (object:GetAttribute("ChapterLight") or object.Name == "ListeningCourt")
-        then
-            table.insert(self.lights, {
-                object = object,
-                color = object.Color,
-                material = object.Material,
-                floor = object.Name == "ListeningCourt",
-            })
-        end
-    end
 end
 
 function Scene:step(effects)
-    local t
-    if self.playback then
-        local cursor = Transport.cursor(
-            self.playback.schedule,
-            math.max(0, workspace:GetServerTimeNow() - self.playback.startedAt)
-        )
-        self.beatPhase = (cursor.tick or 0) / 960 * math.pi * 2
-        t = self.beatPhase
-    elseif self.paused then
-        t = self.beatPhase or 0
-    else
-        t = os.clock() * 3
-    end
+    local cue = self.harbour and self.harbour:step(effects)
     for index, actor in self.actors do
         if actor.model.Parent then
             local move = CFrame.identity
-            if effects and self.reaction >= 1 then
-                move = CFrame.Angles(math.sin(t + index) * 0.035, 0, 0)
-                if self.reaction >= 2 then
-                    move *= CFrame.new(0, math.abs(math.sin(t + index)) * 0.12, 0)
+            if effects and cue and cue.active then
+                local amount = if index == 3 then cue.helper else cue.drums
+                move = CFrame.Angles(-amount * 0.035, 0, 0)
+                if cue.climax then
+                    move *= CFrame.new(0, amount * 0.05, 0)
                 end
             end
+            -- Pause, silence, end and reduced effects all settle to the base pose.
+            -- There is no independent wall-clock dance or delayed applause callback.
             actor.model:PivotTo(actor.base * move)
-        end
-    end
-    local key = tostring(self.reaction) .. tostring(effects)
-    if key ~= self.lightState then
-        self.lightState = key
-        for _, record in self.lights do
-            local object = record.object
-            if object.Parent then
-                object.Color = if record.floor
-                    then (if self.reaction >= 4 then Theme.FadedTeal else record.color)
-                    elseif self.reaction >= 3 then Theme.Amber
-                    else Theme.Graphite
-                object.Material = if not record.floor
-                        and effects
-                        and self.reaction >= 3
-                    then Enum.Material.Neon
-                    else Enum.Material.SmoothPlastic
-            end
         end
     end
 end
 
 function Scene:destroy()
+    if self.harbour then
+        self.harbour:destroy()
+        self.harbour = nil
+    end
     if self.folder then
         self.folder:Destroy()
         self.folder = nil
     end
     table.clear(self.actors)
-    for _, record in self.lights do
-        if record.object.Parent then
-            record.object.Color = record.color
-            record.object.Material = record.material
-        end
-    end
-    table.clear(self.lights)
-    self.lightState = nil
+    self.state = nil
 end
 
 return Scene

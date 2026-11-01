@@ -2,6 +2,7 @@ local Workspace = game:GetService("Workspace")
 local Shared = game:GetService("ReplicatedStorage").Shared
 local Theme = require(Shared.Theme)
 local Poses = require(Shared.MotionPoses)
+local HarbourFeedback = require(script.Parent.HarbourFeedback)
 local Feedback = {}
 Feedback.__index = Feedback
 
@@ -10,6 +11,7 @@ function Feedback.new()
         { targets = {}, pulses = {}, enabled = true, stage = 0, pose = "idle", poseUntil = 0 },
         Feedback
     )
+    self.harbour = HarbourFeedback.new("PersonalListeningSignatures")
     local function watch(object)
         if not object:IsDescendantOf(Workspace) then
             return
@@ -95,6 +97,8 @@ end
 
 function Feedback:update(state)
     self.state = state
+    -- Chapter feedback is owned by ConcertScene, never doubled here.
+    self.harbour:accept(if state.concert and state.concert.open then nil else state.listening)
     local completed = state.quest ~= nil and state.quest.completed == true
     if self.enabled and self.questCompleted == false and completed then
         self.pose = "celebrate"
@@ -113,6 +117,7 @@ function Feedback:update(state)
 end
 
 function Feedback:step()
+    self.harbour:step(self.enabled)
     local now = os.clock()
     local pose = Poses[if now < self.poseUntil
         then self.pose

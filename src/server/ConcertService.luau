@@ -34,7 +34,9 @@ function Service:open(player)
     self.send(player, "Choose your Finished Song. A quiet room is enough for this evening.")
 end
 function Service:state(player)
-    return Chapter.summary(self.profiles[player], self.sessions[player], self.opened[player])
+    local state = Chapter.summary(self.profiles[player], self.sessions[player], self.opened[player])
+    state.sceneOrigin = self.podium.anchor.Position
+    return state
 end
 function Service:stop(player)
     -- Stop or leave cancels an incomplete traversal. There is no seek or partial certificate.
