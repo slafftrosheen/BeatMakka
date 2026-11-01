@@ -834,12 +834,19 @@ function Workspace.command(player, p, action, a, b, persist, send)
         if not probe then
             return false, "Archive capacity reached; save before changing workspace."
         end
+        -- History from the previous workspace cannot be replayed into an
+        -- imported archive or recovery project with different object IDs.
+        Workspace.stop(p, true)
+        p.transport = nil
         p.music = proposed
         p.sequenceId = nil
         p.trackId = nil
         p.draftId = nil
+        p.musicUndo = {}
+        p.musicRedo = {}
+        p.noteDeltas = {}
+        p.recordHistoryEpoch = nil
         p.editVersion += 1
-        Workspace.stop(p, true)
         Workspace.sync(p)
         return true, "Imported workspace opened. Previous work is preserved in the library."
     elseif
