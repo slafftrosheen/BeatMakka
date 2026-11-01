@@ -8,6 +8,7 @@ local Finished = require(Shared.FinishedSong)
 local Catalog = require(Shared.SampleCatalog)
 local PadSound = require(Shared.PadSound)
 local Profiles = require(script.Parent.ProfileStore)
+local WorkspaceState = require(script.Parent.WorkspaceState)
 local Workspace = {}
 local function integer(v, lo, hi)
     return type(v) == "number" and v == v and v % 1 == 0 and v >= lo and v <= hi
@@ -174,30 +175,11 @@ local function replaceSequenceSchedule(p, schedule, recordProject, cancelVoices)
         t.recordSequence = Project.clone(recordProject.sequences[t.ref.id])
     end
 end
-local function preserveWorkspace(music, project)
-    for _, archive in music.archives do
-        if archive.project and archive.project.id == project.id then
-            archive.project = Project.clone(project)
-            return
-        end
-    end
-    local key = "workspace_" .. project.id
-    if not music.archives[key] then
-        table.insert(music.archiveOrder, key)
-    end
-    music.archives[key] = {
-        id = key,
-        name = project.name,
-        kind = "workspace",
-        project = Project.clone(project),
-        readOnly = false,
-    }
-end
 local function remember(p, before)
     p.musicUndo = p.musicUndo or {}
     p.musicRedo = {}
     table.insert(p.musicUndo, before)
-    if #p.musicUndo > 24 then
+    if #p.musicUndo > Project.Limits.History then
         table.remove(p.musicUndo, 1)
     end
 end
@@ -331,7 +313,8 @@ function Workspace.projection(p)
         end
     end
     local archives = {}
-    for key, value in p.music.archives do
+    for _, key in p.music.archiveOrder do
+        local value = p.music.archives[key]
         table.insert(
             archives,
             { id = key, name = value.name or tostring(key), readOnly = value.readOnly ~= false }
@@ -345,6 +328,7 @@ function Workspace.projection(p)
     return {
         projectId = p.music.project.id,
         projectRevision = p.music.project.revision,
+        workspaceGeneration = p.workspaceGeneration or 0,
         sequenceId = p.sequenceId,
         trackId = p.trackId,
         draftId = p.draftId,
@@ -467,6 +451,7 @@ function Workspace.handles(action)
                 "FinishedOpen",
                 "ArchiveOpen",
                 "RecoveryOpen",
+                "Restore",
                 "Bpm",
                 "Step",
                 "PadSound",
@@ -481,11 +466,31 @@ function Workspace.handles(action)
             ~= nil
 end
 function Workspace.command(player, p, action, a, b, persist, send)
+    if
+        p.saving
+        and (
+            action == "FinishedOpen"
+            or action == "ArchiveOpen"
+            or action == "RecoveryOpen"
+            or action == "Restore"
+        )
+    then
+        return false, "Wait for the current save before changing workspaces."
+    end
     Workspace.sync(p)
     local project = p.music.project
     local seq = project.sequences[p.sequenceId]
     local track = project.tracks[p.trackId]
-    if action == "Kit" then
+    if action == "Restore" then
+        if a ~= p.editVersion then
+            return false, "Your work changed. Review it before confirming Restore again."
+        end
+        local ok, message = Profiles.restore(p)
+        if ok then
+            Workspace.sync(p)
+        end
+        return ok, message
+    elseif action == "Kit" then
         local pack = if type(a) == "string" then Catalog.PackById[a] else nil
         if not pack and RunService:IsStudio() and type(a) == "string" then
             pack = Catalog.LocalPackById[a]
@@ -659,21 +664,9 @@ function Workspace.command(player, p, action, a, b, persist, send)
             return false, "No edit to " .. action:lower() .. "."
         end
         local to = if action == "Undo" then (p.musicRedo or {}) else (p.musicUndo or {})
-        local restored = Project.clone(from[#from])
-        restored.revision = project.revision + 1
-        -- A history snapshot may predate the last successful save. Never let
-        -- undo/redo advertise an older savedRevision as the current revision.
-        for id, sequence in restored.sequences do
-            local current = project.sequences[id]
-            if current then
-                sequence.savedRevision = current.savedRevision
-            end
-        end
-        for id, draft in restored.drafts do
-            local current = project.drafts[id]
-            if current then
-                draft.savedRevision = current.savedRevision
-            end
+        local restored, historyProblem = WorkspaceState.history(project, from[#from])
+        if not restored then
+            return false, historyProblem
         end
         local t = p.transport
         local schedule, problem
@@ -687,6 +680,7 @@ function Workspace.command(player, p, action, a, b, persist, send)
         table.remove(from)
         p.music.project = restored
         p.noteDeltas = {}
+        p.recordHistoryEpoch = nil
         if action == "Undo" then
             p.musicRedo = to
         else
@@ -794,30 +788,29 @@ function Workspace.command(player, p, action, a, b, persist, send)
         end
         return true, "Finished Song selected."
     elseif action == "FinishedOpen" then
-        local song = p.music.finishedSongs[a]
+        local song = if type(a) == "string" then p.music.finishedSongs[a] else nil
         if not song then
             return false, "Choose a Finished Song."
         end
-        p.musicUndo = p.musicUndo or {}
-        remember(p, project)
         local proposed = Project.clone(p.music)
-        preserveWorkspace(proposed, project)
+        local preserved, preservationProblem = WorkspaceState.preserve(proposed, project)
+        if not preserved then
+            return false, preservationProblem
+        end
         proposed.project = Finished.editCopy(song, "edit_" .. Http:GenerateGUID(false))
-        local valid, problem = Profiles.capture(p, proposed)
+        local selected = { draftId = song.draftId }
+        local valid, problem = Profiles.capture(p, proposed, selected)
         if not valid then
             return false, problem
         end
-        p.music = proposed
-        p.sequenceId = nil
-        p.trackId = nil
-        p.draftId = song.draftId
-        p.editVersion += 1
+        WorkspaceState.activate(p, proposed, selected)
         Workspace.sync(p)
         return true, "Editable copy opened; the finished revision remains unchanged."
     elseif action == "ArchiveOpen" or action == "RecoveryOpen" then
         local archive = if action == "RecoveryOpen"
             then p.music.recoveryProject
-            else p.music.archives[a]
+            elseif type(a) == "string" then p.music.archives[a]
+            else nil
         local candidate = archive and (archive.project or archive)
         if type(candidate) ~= "table" or not candidate.sequences then
             return false, "This archive is preserved as read-only source."
@@ -826,29 +819,31 @@ function Workspace.command(player, p, action, a, b, persist, send)
         if not valid then
             return false, problem
         end
-        -- Save the current workspace as an archive before opening another.
+        -- Capture the target before exchanging an editable archive's slot.
+        -- Read-only imported sources are never overwritten.
         local proposed = Project.clone(p.music)
-        preserveWorkspace(proposed, project)
         proposed.project = Project.clone(candidate)
-        local probe = Profiles.capture(p, proposed)
-        if not probe then
-            return false, "Archive capacity reached; save before changing workspace."
+        local preserved, preservationProblem = WorkspaceState.preserve(
+            proposed,
+            project,
+            if action == "ArchiveOpen" then a else nil
+        )
+        if not preserved then
+            return false, preservationProblem
         end
-        -- History from the previous workspace cannot be replayed into an
-        -- imported archive or recovery project with different object IDs.
-        Workspace.stop(p, true)
-        p.transport = nil
-        p.music = proposed
-        p.sequenceId = nil
-        p.trackId = nil
-        p.draftId = nil
-        p.musicUndo = {}
-        p.musicRedo = {}
-        p.noteDeltas = {}
-        p.recordHistoryEpoch = nil
-        p.editVersion += 1
+        if action == "RecoveryOpen" then
+            proposed.recoveryProject = nil
+        end
+        local probe, captureProblem = Profiles.capture(p, proposed, {})
+        if not probe then
+            return false, captureProblem
+        end
+        WorkspaceState.activate(p, proposed)
         Workspace.sync(p)
-        return true, "Imported workspace opened. Previous work is preserved in the library."
+        return true,
+            if action == "RecoveryOpen"
+                then "Recovery opened. Previous work is archived; Restore is available again."
+                else "Imported workspace opened. Previous work is preserved in the library."
     elseif
         action == "Save"
         or action == "SaveProject"
@@ -865,19 +860,11 @@ function Workspace.command(player, p, action, a, b, persist, send)
         if (action == "SaveSequence" or action == "SaveDraft") and not target then
             return false, "Choose an item to save."
         end
-        if target then
-            target.savedRevision = target.revision
+        -- ProfileStore alone acknowledges saved revisions. A second callback
+        -- must not mark another workspace clean by matching an ID/revision pair.
+        if not persist(player, p, nil, music) then
+            return false, "A save is already in progress. Your newer edits remain open."
         end
-        persist(player, p, nil, music, function(ok)
-            if ok and target then
-                local current = if action == "SaveSequence"
-                    then p.music.project.sequences[target.id]
-                    else p.music.project.drafts[target.id]
-                if current and current.revision == target.revision then
-                    current.savedRevision = target.revision
-                end
-            end
-        end)
         return true
     elseif action == "SongFinish" then
         if type(a) ~= "table" or type(a.requestId) ~= "string" or #a.requestId > 80 then
@@ -1025,12 +1012,14 @@ function Workspace.command(player, p, action, a, b, persist, send)
         return false, "Unsupported music command."
     end
     if payload.name ~= nil then
-        local expected = project.revision
+        -- Text filtering yields. Object identity also detects switching away and
+        -- reopening a workspace with the same numeric revision in the meantime.
+        local expected = project
         payload.name = filterName(player, payload.name)
         if not payload.name then
             return false, "The title could not be filtered; retry before saving it."
         end
-        if p.music.project.revision ~= expected then
+        if p.music.project ~= expected then
             return false, "Project changed while checking the title; retry."
         end
     end

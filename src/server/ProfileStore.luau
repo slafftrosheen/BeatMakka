@@ -14,6 +14,7 @@ local Companions = require(Shared.CompanionCatalog)
 local Rewards = require(Shared.QuayRewards)
 local Activities = require(Shared.QuayActivities)
 local Identity = require(Shared.QuayIdentity)
+local WorkspaceState = require(script.Parent.WorkspaceState)
 
 local ProfileStore = { Schema = 3, MaxBytes = 3000000 }
 local store
@@ -59,6 +60,7 @@ function ProfileStore.new()
         ready = false,
         editVersion = 0,
         savedEditVersion = 0,
+        workspaceGeneration = 0,
         bank = 1,
         bar = 1,
         velocity = 100,
@@ -71,7 +73,7 @@ function ProfileStore.new()
         teachingBar = 1,
     }
 end
-local function capture(profile, overrideMusic)
+local function capture(profile, overrideMusic, selected)
     local music = Project.clone(overrideMusic or profile.music)
     if type(music) ~= "table" or music.schema ~= 1 then
         return nil, "Unsupported music schema; your work is preserved."
@@ -80,6 +82,8 @@ local function capture(profile, overrideMusic)
     if not valid then
         return nil, problem
     end
+    selected = selected or profile
+    local finished = selected.selectedFinishedSongId or profile.selectedFinishedSongId
     local snapshot = {
         schema = ProfileStore.Schema,
         music = music,
@@ -95,18 +99,16 @@ local function capture(profile, overrideMusic)
         experience = Activities.sanitize(profile.experience),
         identity = Identity.sanitize(profile.identity),
         teachingBar = profile.teachingBar or 1,
-        sequenceId = if music.project.sequences[profile.sequenceId]
-            then profile.sequenceId
+        sequenceId = if music.project.sequences[selected.sequenceId]
+            then selected.sequenceId
             else music.project.sequenceOrder[1],
-        trackId = if music.project.tracks[profile.trackId]
-            then profile.trackId
+        trackId = if music.project.tracks[selected.trackId]
+            then selected.trackId
             else music.project.trackOrder[1],
-        draftId = if music.project.drafts[profile.draftId]
-            then profile.draftId
+        draftId = if music.project.drafts[selected.draftId]
+            then selected.draftId
             else music.project.draftOrder[1],
-        selectedFinishedSongId = if music.finishedSongs[profile.selectedFinishedSongId]
-            then profile.selectedFinishedSongId
-            else nil,
+        selectedFinishedSongId = if music.finishedSongs[finished] then finished else nil,
     }
     local ok, json = pcall(HttpService.JSONEncode, HttpService, snapshot)
     if not ok or #json > ProfileStore.MaxBytes then
@@ -189,6 +191,13 @@ function ProfileStore.save(player, profile, storage, overrideMusic)
     if not snapshot then
         return false, problem
     end
+    local generation = profile.workspaceGeneration or 0
+    -- A caller may have captured an override before dispatching its save task.
+    -- Never assign today's edit version to a different, older music document.
+    -- -1 is an in-memory dirty sentinel, not a persisted revision/schema change.
+    local capturedVersion = if WorkspaceState.same(profile.music, snapshot.music)
+        then profile.editVersion
+        else -1
     for _, sequence in snapshot.music.project.sequences do
         sequence.savedRevision = sequence.revision
     end
@@ -197,17 +206,27 @@ function ProfileStore.save(player, profile, storage, overrideMusic)
     end
     local function markAccepted()
         local current = profile.music.project
-        if current.id == snapshot.music.project.id then
-            for id, sequence in snapshot.music.project.sequences do
-                if
-                    current.sequences[id]
-                    and current.sequences[id].revision == sequence.revision
-                then
-                    current.sequences[id].savedRevision = sequence.revision
-                end
+        local written = snapshot.music.project
+        if current.id ~= written.id or (profile.workspaceGeneration or 0) ~= generation then
+            return
+        end
+        -- Numeric revisions alone are insufficient after loading an older branch.
+        -- A musical dependency edit also keeps its sequence/song visibly dirty.
+        local sameRouting = WorkspaceState.same(current.programs, written.programs)
+            and WorkspaceState.same(current.tracks, written.tracks)
+            and WorkspaceState.same(current.trackOrder, written.trackOrder)
+        if not sameRouting then
+            return
+        end
+        local sameSequences = WorkspaceState.same(current.sequences, written.sequences)
+        for id, sequence in written.sequences do
+            if WorkspaceState.same(current.sequences[id], sequence) then
+                current.sequences[id].savedRevision = sequence.revision
             end
-            for id, draft in snapshot.music.project.drafts do
-                if current.drafts[id] and current.drafts[id].revision == draft.revision then
+        end
+        if sameSequences then
+            for id, draft in written.drafts do
+                if WorkspaceState.same(current.drafts[id], draft) then
                     current.drafts[id].savedRevision = draft.revision
                 end
             end
@@ -235,7 +254,6 @@ function ProfileStore.save(player, profile, storage, overrideMusic)
         end
         snapshot.measuredBytes = #encoded
     end
-    local capturedVersion = profile.editVersion
     profile.saving = true
     if profile.saveMode == "session" and not storage then
         markAccepted()
@@ -265,7 +283,8 @@ function ProfileStore.save(player, profile, storage, overrideMusic)
             "Save could not reach storage. Your complete draft is still open; retry when ready."
     end
     if saved == nil then
-        return false, "A newer or unsupported save exists. Rejoin before saving over it."
+        return false,
+            "A newer or unsupported save exists. This workspace was not written; keep it open to preserve unsaved work."
     end
     markAccepted()
     profile.saved = snapshot
@@ -275,6 +294,9 @@ function ProfileStore.save(player, profile, storage, overrideMusic)
     return true, "Project, sequences, drafts and progress saved.", snapshot
 end
 function ProfileStore.restore(profile)
+    if profile.saving then
+        return false, "Wait for the current save before restoring."
+    end
     if not profile.saved or not profile.saved.music then
         return false, "No saved project to restore."
     end
@@ -282,27 +304,18 @@ function ProfileStore.restore(profile)
     -- immutable songs. A second recovery is refused rather than losing its preimage.
     if profile.music.recoveryProject then
         return false,
-            "A recovered workspace is already retained. Save or reopen it before restoring again."
+            "Open the retained recovery workspace before restoring again. Saving alone does not discard it."
     end
     -- Stage recovery and the saved project together. If the combined snapshot
-    -- exceeds the storage budget, leave the live workspace untouched.
+    -- exceeds the storage budget, leave the live workspace and transport untouched.
     local proposed = Project.clone(profile.music)
     proposed.recoveryProject = Project.clone(profile.music.project)
     proposed.project = Project.clone(profile.saved.music.project)
-    local valid, problem = Migration.validate(proposed)
-    if not valid then
-        return false, problem or "Saved project could not be restored safely."
-    end
-    local snapshot, captureProblem = capture(profile, proposed)
+    local snapshot, captureProblem = capture(profile, proposed, profile.saved)
     if not snapshot then
         return false, captureProblem
     end
-    profile.music = proposed
-    profile.editVersion += 1
-    -- Undo/redo snapshots belong to the old workspace, not the restored one.
-    profile.musicUndo = {}
-    profile.musicRedo = {}
-    profile.noteDeltas = {}
+    WorkspaceState.activate(profile, proposed, profile.saved)
     return true,
         "Saved project restored. The previous workspace is retained for recovery; earned progress and finished songs stay with you."
 end
