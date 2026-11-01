@@ -87,7 +87,6 @@ local function routeChanged(a, b)
             or x.projectId ~= y.projectId
             or x.trackId ~= y.trackId
             or x.sequenceId ~= y.sequenceId
-            or x.bank ~= y.bank
             or x.program.id ~= y.program.id
         )
 end
@@ -661,12 +660,11 @@ function View:update(state)
     local oldt = old and old.music and old.music.transport
     local newt = state.music and state.music.transport
     if oldt and (not newt or oldt.epoch ~= newt.epoch) then
-        self.padInput:cancel()
-        table.clear(self.heldContexts)
+        -- Transport epochs can change when playback starts; held live pads
+        -- remain owned by their input tokens until release or explicit Stop.
         self:clearFlashes()
     end
     if old and old.playing and not state.playing then
-        self:cancelInput(false)
         self:clearFlashes()
     end
     self.state = state
