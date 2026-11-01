@@ -284,9 +284,25 @@ function ProfileStore.restore(profile)
         return false,
             "A recovered workspace is already retained. Save or reopen it before restoring again."
     end
-    profile.music.recoveryProject = Project.clone(profile.music.project)
-    profile.music.project = Project.clone(profile.saved.music.project)
+    -- Stage recovery and the saved project together. If the combined snapshot
+    -- exceeds the storage budget, leave the live workspace untouched.
+    local proposed = Project.clone(profile.music)
+    proposed.recoveryProject = Project.clone(profile.music.project)
+    proposed.project = Project.clone(profile.saved.music.project)
+    local valid, problem = Migration.validate(proposed)
+    if not valid then
+        return false, problem or "Saved project could not be restored safely."
+    end
+    local snapshot, captureProblem = capture(profile, proposed)
+    if not snapshot then
+        return false, captureProblem
+    end
+    profile.music = proposed
     profile.editVersion += 1
+    -- Undo/redo snapshots belong to the old workspace, not the restored one.
+    profile.musicUndo = {}
+    profile.musicRedo = {}
+    profile.noteDeltas = {}
     return true,
         "Saved project restored. The previous workspace is retained for recovery; earned progress and finished songs stay with you."
 end
