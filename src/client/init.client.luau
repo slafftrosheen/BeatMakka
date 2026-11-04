@@ -144,7 +144,8 @@ connect(playerGui.ChildAdded, updateTouchControls)
 
 local function send(action, a, b)
     if canSend(state, action) then
-        if action == "JamJoin" or action == "JamPublish" or action == "JamTempo" then
+        if type(action) == "string" and action:sub(1, 3) == "Jam"
+            and action ~= "JamOpen" and action ~= "JamHide" and action ~= "JamLeave" then
             local jam = state and state.jam
             if not jam then
                 return
@@ -156,7 +157,7 @@ local function send(action, a, b)
                 at = Workspace:GetServerTimeNow(),
                 value = if action == "JamTempo" and jam.session
                     then math.clamp(jam.session.bpm + (a or 0), 60, 180)
-                    else nil,
+                    else a,
             }
         end
         if action == "Stop" or action == "Release" then

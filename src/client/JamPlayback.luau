@@ -129,7 +129,7 @@ function Playback:accept(state, now)
                     table.concat({ state.generation, slot, track.ownerUserId, track.version }, ":")
                 announced[key] = self.announced[key] or now
             end
-            if pending and track then
+            if pending and track and not pending.remove then
                 collect(pending.snapshot)
                 local key = table.concat(
                     { state.generation, slot, track.ownerUserId, pending.version },
