@@ -644,18 +644,22 @@ function Song:_render()
     end
     self.selectedStepId = self.selectedStepId or (steps[1] and steps[1].stepId)
     W.set(self.title, "Text", if draft then draft.name else "NEW SONG / TAP NEW")
-    W.set(
-        self.overview,
-        "Text",
-        if summary
-            then string.format(
-                "%02d SECTIONS   %d BARS   %s TOTAL",
-                #steps,
-                summary.totalBars,
-                seconds(summary.duration)
-            )
-            else "SEQUENCES → ADD → ARRANGE → FINISH"
-    )
+    local credits = {}
+    for _, contributor in (draft and type(draft.contributors) == "table"
+        and draft.contributors) or {} do
+        if type(contributor) == "table" and type(contributor.name) == "string" then
+            table.insert(credits, contributor.name)
+        end
+    end
+    local durationLabel = if summary then string.format(
+        "%02d SECTIONS   %d BARS   %s TOTAL",
+        #steps, summary.totalBars, seconds(summary.duration))
+        else "SEQUENCES → ADD → ARRANGE → FINISH"
+    local credited = if #credits > 0
+        then "BY " .. table.concat(credits, " + ") .. " / " .. durationLabel
+        else durationLabel
+    W.set(self.overview, "Text", credited)
+    self.overview:SetAttribute("AccessibleLabel", credited)
     W.set(self.pageLabel, "Text", string.format("%02d / %02d", self.pageIndex, pageCount))
     self.left.Active, self.right.Active = self.pageIndex > 1, self.pageIndex < pageCount
     self.left.TextColor3 = if self.left.Active then W.text else Dim

@@ -14,9 +14,21 @@ function Song.new(id, name, bpm)
 end
 
 function Song.summarize(project, draft)
+    local contributors = {}
+    for _, contributor in (if type(draft.contributors) == "table"
+        then draft.contributors else {}) do
+        if type(contributor) == "table" and type(contributor.name) == "string"
+            and type(contributor.role) == "string" then
+            table.insert(contributors, {
+                name = contributor.name, role = contributor.role,
+                userId = contributor.userId,
+            })
+        end
+    end
     local result = {
         id = draft.id,
         name = draft.name,
+        contributors = contributors,
         revision = draft.revision,
         savedRevision = draft.savedRevision or 0,
         totalBars = 0,

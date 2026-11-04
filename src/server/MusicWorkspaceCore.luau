@@ -307,10 +307,25 @@ function Workspace.projection(p)
     for _, id in p.music.finishedOrder do
         local s = p.music.finishedSongs[id]
         if s then
-            table.insert(
-                songs,
-                { id = id, revision = s.revision, title = s.title or s.name, duration = s.duration }
-            )
+            -- Credited collaborations keep authorship when deliberately finished.
+            local ownedDraft = s.project and s.project.drafts
+                and s.project.drafts[s.draftId]
+            local credits = {}
+            for _, contributor in (if ownedDraft
+                and type(ownedDraft.contributors) == "table"
+                then ownedDraft.contributors else {}) do
+                if type(contributor) == "table" and type(contributor.name) == "string" then
+                    table.insert(credits, {
+                        userId = contributor.userId, name = contributor.name,
+                        role = contributor.role,
+                    })
+                end
+            end
+            table.insert(songs, {
+                id = id, revision = s.revision,
+                title = s.title or s.name, duration = s.duration,
+                contributors = credits,
+            })
         end
     end
     local archives = {}

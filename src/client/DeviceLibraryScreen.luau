@@ -372,6 +372,13 @@ function Library:_render()
             local title = item.title or item.name or "Untitled"
             local saved = self.section == "Finished"
                 or (item.revision ~= nil and item.savedRevision == item.revision)
+            local credits = {}
+            for _, author in item.contributors or {} do
+                if type(author) == "table" and type(author.name) == "string" then
+                    table.insert(credits, author.name)
+                end
+            end
+            local creditText = if #credits > 0 then "BY " .. table.concat(credits, " + ") else nil
             card.title.Text = title
             card.title:SetAttribute("FullTitle", title)
             card.root:SetAttribute("SourceId", item.id)
@@ -397,6 +404,13 @@ function Library:_render()
                     item.revision or 1
                 )
                 else if item.readOnly == false then "EDITABLE SOURCE" else "RETAINED ORIGINAL"
+            if creditText then
+                card.detail.Text = if self.section == "Drafts"
+                    then string.format("DUET / %d BARS", item.totalBars or 0)
+                    else "CREDITED SONG / REV " .. tostring(item.revision or 1)
+            end
+            card.detail:SetAttribute("AccessibleLabel", creditText or card.detail.Text)
+            card.root:SetAttribute("Contributors", creditText)
             card.saved.BackgroundColor3 = if saved then Ink else Amber
             card.saved:SetAttribute("Saved", saved)
         end
@@ -427,6 +441,18 @@ function Library:_render()
         elseif self.section == "Archives" then "LEGACY IMPORTS / original maps and notes retained"
         elseif self.section == "Finished" then "SAVED REVISIONS / OPTIONS opens an editable copy"
         else "GREEN = SAVED / AMBER = EDITS / select a sleeve to open"
+    if selected and type(selected.contributors) == "table" and #selected.contributors > 0 then
+        local names = {}
+        for _, contributor in selected.contributors do
+            if type(contributor) == "table" and type(contributor.name) == "string" then
+                table.insert(names, contributor.name)
+            end
+        end
+        if #names > 0 then
+            self.hint.Text = "CREDITED TO " .. table.concat(names, " + ")
+                .. " / " .. (if self.section == "Finished" then "SAVED SONG" else "EDITABLE DRAFT")
+        end
+    end
 end
 
 function Library:update(state)
