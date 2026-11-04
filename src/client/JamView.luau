@@ -3,6 +3,7 @@ local W = require(script.Parent.DeviceWidgets)
 local Digital = require(script.Parent.DigitalDisplay)
 local GuiService = game:GetService("GuiService")
 local TextService = game:GetService("TextService")
+local Input = game:GetService("UserInputService")
 local View = {}
 View.__index = View
 local Dim = Color3.fromRGB(112, 145, 117)
@@ -56,6 +57,7 @@ function View.new(screen, command, mute)
     W.make("UIScale", self.tempo.root, { Scale = 0.55 })
     self.tempoLabel = label(self.panel, "SharedTempo", "BPM", 11, W.amber)
     self.info = W.key(self.panel, "JamInfo", "hint", "PARTNER", function()
+        self.copyConfirmation = nil
         self.page = if self.page == "session" then "partner"
             elseif self.page == "partner" then "info" else "session"
         self:paint()
@@ -101,6 +103,9 @@ function View.new(screen, command, mute)
     self.partnerIntro = W.label(self.partnerPage, "PartnerInfo",
         "Two separate owners. Nothing joins without an invitation.", 12, W.text)
     self.partnerIntro.TextWrapped = true
+    self.copyStatus = W.label(self.partnerPage, "JointCopyStatus",
+        "JOINT COPY / both contributors consent. No audio file or autosave.", 12, W.amber)
+    self.copyStatus.TextWrapped = true
     local function partnerKey(name, title, callback)
         local button = W.key(self.partnerPage, name, "people", title, callback)
         button:SetAttribute("JamPartnerAction", true)
@@ -152,9 +157,41 @@ function View.new(screen, command, mute)
     self.tempoDecline = partnerKey("DeclineTempo", "KEEP BPM", function()
         command("JamTempoDecline")
     end)
+    self.copyOffer = partnerKey("OfferJointCopy", "OFFER JOINT COPY", function()
+        command("JamCopyOffer")
+    end)
+    self.copyAccept = partnerKey("AcceptJointCopy", "ACCEPT JOINT COPY", function()
+        command("JamCopyAccept")
+    end)
+    self.copyDecline = partnerKey("DeclineJointCopy", "DECLINE COPY", function()
+        command("JamCopyDecline")
+    end)
+    local function confirmCopy(action)
+        local take = self.jam and self.jam.copyPending
+        if not take or take.imported then return end
+        local context = take.context or {}
+        local key = action .. ":" .. take.id .. ":" .. tostring(context.projectId)
+            .. ":" .. tostring(context.projectRevision) .. ":" .. tostring(context.workspaceGeneration)
+            .. ":" .. tostring(context.editVersion)
+        local pending = self.copyConfirmation
+        if pending and pending.key == key and os.clock() < pending.expiresAt then
+            self.copyConfirmation = nil
+            command(action, { id = take.id, context = context })
+        else
+            self.copyConfirmation = { key = key, action = action, expiresAt = os.clock() + 5 }
+            self:paint()
+        end
+    end
+    self.copyKeep = partnerKey("KeepJointDraft", "KEEP AS DRAFT", function()
+        confirmCopy("JamCopyKeep")
+    end)
+    self.copyDiscard = partnerKey("DiscardJointCopy", "DISCARD TEMPORARY", function()
+        confirmCopy("JamCopyDiscard")
+    end)
     self.partnerKeys = { self.roleChoice, self.candidate, self.invite, self.accept,
         self.decline, self.leadOffer, self.leadAccept, self.leadDecline,
-        self.swapOffer, self.swapAccept, self.swapDecline, self.tempoAccept, self.tempoDecline }
+        self.swapOffer, self.swapAccept, self.swapDecline, self.tempoAccept, self.tempoDecline,
+        self.copyOffer, self.copyAccept, self.copyDecline, self.copyKeep, self.copyDiscard }
     self.noticeLine = label(self.panel, "JamNotice", "", 11, Dim)
     self.keys = W.frame(self.panel, "JamHardwareKeys")
     local function key(name, icon, title, action, value)
@@ -177,6 +214,12 @@ function View.new(screen, command, mute)
             self:resize()
         end)
     )
+    table.insert(self.connections, Input.WindowFocusReleased:Connect(function()
+        self.copyConfirmation = nil
+    end))
+    table.insert(self.connections, Input.TextBoxFocused:Connect(function()
+        self.copyConfirmation = nil
+    end))
     self.panel.Destroying:Connect(function()
         for _, connection in self.connections do
             connection:Disconnect()
@@ -301,6 +344,8 @@ function View:paintPartner()
     self.candidateIndex = math.clamp(self.candidateIndex or 1, 1, math.max(1, #candidates))
     local selected = candidates[self.candidateIndex]
     local invite = jam.invitation
+    local take = jam.copyPending
+    local offer = session.copyOffer
     local hasPartner = session.tracks and session.tracks["1"] and session.tracks["2"]
         and not session.pending["1"] and not session.pending["2"]
     local role = jam.preferredRole or "rhythm"
@@ -313,6 +358,20 @@ function View:paintPartner()
                 .. (if jam.conductor then "YOU LEAD" else "YOUR PARTNER LEADS")
                 .. ". Publishing changes only your pinned role, never the other owner's music."
         else "Pick a musical role, then START JAM. After an invitation, your own notes must contain that role.")
+    local credits = {}
+    for _, contributor in (take and take.contributors) or {} do
+        table.insert(credits, contributor.name .. " (" .. contributor.role .. ")")
+    end
+    W.set(self.copyStatus, "Text", if take and take.imported then
+        "IMPORTED JOINT DRAFT / " .. (if take.inWorkspace then "OPEN SONG TO EDIT & SAVE"
+            else "NOT IN CURRENT WORKSPACE / CHECK UNDO OR ARCHIVES")
+        elseif take then
+            "TEMPORARY JOINT PHRASE / " .. take.bars .. " BARS · " .. take.bpm
+                .. " BPM / " .. table.concat(credits, " + ")
+                .. "\nSESSION ONLY / leave jam before Keep. This is not saved or finished."
+        elseif offer then
+            "JOINT COPY OFFER / BOTH CREDITS / accept or decline; no save happens automatically."
+        else "JOINT COPY / two consenting musicians. Keep later as an editable Draft; no autosave or publication.")
     caption(self.roleChoice, "NEXT ROLE / " .. string.upper(role))
     caption(self.candidate, if selected then "TO: " .. selected.name else "NO NEARBY MUSICIAN")
     local isGuestOffer = jam.active and not jam.conductor
@@ -337,6 +396,27 @@ function View:paintPartner()
     active(self.swapDecline, jam.active and swap ~= nil and swap.to == myId)
     active(self.tempoAccept, isGuestOffer and tempo ~= nil and tempo.to == myId)
     active(self.tempoDecline, isGuestOffer and tempo ~= nil and tempo.to == myId)
+    active(self.copyOffer, jam.active and hasPartner and not offer and not take
+        and not next(session.pending or {}) and not session.tempo)
+    active(self.copyAccept, jam.active and offer ~= nil and offer.to == myId)
+    active(self.copyDecline, jam.active and offer ~= nil and offer.to == myId)
+    active(self.copyKeep, take ~= nil and not take.imported and not jam.active)
+    active(self.copyDiscard, take ~= nil and not take.imported and not jam.active)
+    local confirm = self.copyConfirmation
+    if confirm then
+        local context = take and take.context or {}
+        local copyKey = confirm.action .. ":" .. tostring(take and take.id)
+            .. ":" .. tostring(context.projectId) .. ":" .. tostring(context.projectRevision)
+            .. ":" .. tostring(context.workspaceGeneration) .. ":" .. tostring(context.editVersion)
+        if copyKey ~= confirm.key or os.clock() >= confirm.expiresAt then
+            self.copyConfirmation = nil
+        end
+    end
+    confirm = self.copyConfirmation
+    caption(self.copyKeep, if confirm and confirm.action == "JamCopyKeep"
+        then "CONFIRM KEEP / UNSAVED DRAFT" else "KEEP AS DRAFT")
+    caption(self.copyDiscard, if confirm and confirm.action == "JamCopyDiscard"
+        then "CONFIRM DISCARD / TEMPORARY ONLY" else "DISCARD TEMPORARY")
     if tempo then
         caption(self.tempoAccept, "ACCEPT " .. tostring(tempo.bpm) .. " BPM")
     end
@@ -348,6 +428,8 @@ function View:layoutPartner()
     local y = 8
     W.place(self.partnerIntro, 4, y, w, 78)
     y += 86
+    W.place(self.copyStatus, 4, y, w, 98)
+    y += 106
     local paired = w >= 290
     local index = 1
     for _, button in self.partnerKeys do
@@ -382,12 +464,16 @@ function View:update(jam, muted, notice)
     local wasOpen = self.panel.Visible
     self.jam = jam
     self.panel.Visible = jam ~= nil and jam.open == true
+    if wasOpen and not self.panel.Visible then self.copyConfirmation = nil end
     local newInvite = jam and jam.invitation and
         tostring(jam.invitation.generation) .. ":" .. tostring(jam.invitation.fromUserId)
     if newInvite and newInvite ~= self.lastInvite then
         self.page = "partner"
     end
     self.lastInvite = newInvite
+    local newCopy = jam and jam.copyPending and jam.copyPending.id
+    if newCopy and newCopy ~= self.lastCopy then self.page = "partner" end
+    self.lastCopy = newCopy
     if notice then
         self.notice, self.untilAt = notice, os.clock() + 6
     end
@@ -429,6 +515,11 @@ function View:resize()
     local bw, bh = w - margin * 2, math.max(1, actionY - 72)
     W.place(self.body, margin, 46, bw, bh)
     W.place(self.partnerPage, 0, 0, bw, bh)
+    if (self.partnerWidth and self.partnerWidth ~= bw)
+        or (self.partnerHeight and self.partnerHeight ~= bh) then
+        self.copyConfirmation = nil
+    end
+    self.partnerWidth, self.partnerHeight = bw, bh
     local vertical = w < 450 and bh >= 170
     local cw, ch =
         if vertical then bw - 12 else (bw - 18) / 2, if vertical then (bh - 18) / 2 else bh - 12

@@ -3,6 +3,10 @@
 local Shared = game.ReplicatedStorage.Shared
 local Protocol = require(Shared.JamProtocol)
 local Sequence = require(Shared.MusicSequence)
+local Project = require(Shared.MusicProject)
+local Copy = require(Shared.JamCollaboration)
+local CopySession = require(script.Parent.JamCopySession)
+local Http = game:GetService("HttpService")
 local Service = {}
 Service.__index = Service
 local INVITE_SECONDS, OFFER_SECONDS, INVITE_COOLDOWN = 24, 20, 4
@@ -69,6 +73,7 @@ function Service:state(player)
             suggestedRole = invitation.role,
         } else nil,
         candidates = candidates,
+        copyPending = CopySession.summary(self.profiles[player]),
     }
 end
 
@@ -104,7 +109,8 @@ function Service:leave(player)
     self.members[player] = nil
     local session = self.session
     if session then
-        session.leadOffer, session.tempoOffer, session.roleOffer = nil, nil, nil
+        session.leadOffer, session.tempoOffer, session.roleOffer, session.copyOffer =
+            nil, nil, nil, nil
         if self.conductor == player then self.conductor = self:other(player) end
         if self.conductor then
             -- A departed player's voice ends at the next shared bar, not halfway
@@ -168,6 +174,24 @@ function Service:command(player, action, packet)
         self.send(player)
         return
     end
+    -- A personal retained copy remains actionable after the other player's
+    -- session continues or ends. Its private ID + full workspace context are
+    -- authoritative; unrelated jam revisions cannot invalidate Keep/Discard.
+    if action == "JamCopyKeep" or action == "JamCopyDiscard" then
+        local now = self.now()
+        if type(packet) ~= "table"
+            or not Protocol.request(packet, packet.generation, packet.revision, now) then
+            self.send(player, "This copy request arrived late. Review and confirm again.")
+            return
+        end
+        if self.members[player] then
+            self.send(player, "Leave the active duet first; the private joint copy stays available.")
+            return
+        end
+        local ok, notice = CopySession.manage(self.profiles[player], action, packet.value)
+        self.send(player, notice)
+        return
+    end
     self:tick()
     local now = self.now()
     if not Protocol.request(packet, self.generation, self.revision, now) then
@@ -176,6 +200,61 @@ function Service:command(player, action, packet)
     end
     local profile, slot, session = self.profiles[player], self.members[player], self.session
     local value = packet.value
+    if action == "JamCopyOffer" then
+        local partner = self:other(player)
+        if not slot or not partner or session.copyOffer or next(session.pending)
+            or session.tempo or session.tempoOffer or session.roleOffer
+            or session.leadPending or profile.jamCopyTake or self.profiles[partner].jamCopyTake then
+            self.send(player, "Both settled players need a free temporary-copy slot. Keep or discard an older copy first.")
+            return
+        end
+        session.copyOffer = {
+            from = player.UserId, to = partner.UserId,
+            expiresAt = now + OFFER_SECONDS,
+            versions = {
+                ["1"] = session.tracks["1"].version,
+                ["2"] = session.tracks["2"].version,
+            },
+            bpm = session.bpm,
+        }
+        self:changed(player,
+            "Offered a credited joint phrase snapshot. Your partner must accept; neither project is changed.")
+        return
+    end
+    if action == "JamCopyAccept" or action == "JamCopyDecline" then
+        local offer = session and session.copyOffer
+        if not slot or not offer or offer.to ~= player.UserId or offer.expiresAt <= now then
+            self.send(player, "That joint-copy offer is no longer available.")
+            return
+        end
+        session.copyOffer = nil
+        if action == "JamCopyDecline" then
+            self:changed(player, "Joint copy declined. Both musical projects remain unchanged.")
+            return
+        end
+        if next(session.pending) or session.tempo or offer.bpm ~= session.bpm
+            or session.tracks["1"].version ~= offer.versions["1"]
+            or session.tracks["2"].version ~= offer.versions["2"] then
+            self:changed(player, "The music changed after the offer. Request a fresh joint copy.")
+            return
+        end
+        local take, problem = Copy.capture(session, now, "jam_" .. Http:GenerateGUID(false))
+        if not take then
+            self:changed(player, problem)
+            return
+        end
+        local partner = self:other(player)
+        if not partner or profile.jamCopyTake or self.profiles[partner].jamCopyTake then
+            self:changed(player, "A participant left or already holds a temporary copy.")
+            return
+        end
+        profile.jamCopyTake = Project.clone(take)
+        self.profiles[partner].jamCopyTake = Project.clone(take)
+        self:changed(player, "Both credits captured as a TEMPORARY phrase. Leave the jam, then Keep as Draft and Save.")
+        self.send(partner,
+            "Your mutually accepted phrase is temporary. Leave the jam and Keep as Draft; no save was made.")
+        return
+    end
     if action == "JamRole" then
         if slot then
             self.send(player, "The active part is pinned. Ask for a role exchange instead.")
@@ -451,7 +530,7 @@ function Service:tick()
     local session = self.session
     if not session then return end
     local changed = false
-    for _, kind in { "tempoOffer", "leadOffer", "roleOffer" } do
+    for _, kind in { "tempoOffer", "leadOffer", "roleOffer", "copyOffer" } do
         local offer = session[kind]
         if offer and offer.expiresAt <= now then
             session[kind] = nil
