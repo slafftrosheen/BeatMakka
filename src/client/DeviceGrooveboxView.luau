@@ -128,6 +128,16 @@ function View.new(callbacks)
     self.performanceDeck = W.frame(self.body, "PerformanceDeck")
     attr(self.performanceDeck, "PersistentDeck", true)
     self.editorDeck = W.frame(self.body, "EditorDeck")
+    self.contextRail = W.make("TextLabel", self.editorDeck, {
+        Name = "MusicContextRail", Text = "",
+        Font = Enum.Font.Code, TextSize = 11,
+        TextColor3 = W.text, BackgroundColor3 = W.ink,
+        BackgroundTransparency = 0, BorderSizePixel = 0,
+        TextXAlignment = Enum.TextXAlignment.Left,
+        TextYAlignment = Enum.TextYAlignment.Center,
+        TextWrapped = false, TextTruncate = Enum.TextTruncate.AtEnd,
+        ZIndex = 5,
+    })
     Skin.image(self.editorDeck, "bezel-v4", {
         Name = "DisplayBezel",
         ScaleType = Enum.ScaleType.Slice,
@@ -141,12 +151,16 @@ function View.new(callbacks)
             self.bankRow,
             "Bank" .. string.char(64 + i),
             ({ "drum", "bass", "mic", "waves" })[i],
-            ({ "DRUMS", "BASS", "VOX", "QUAY" })[i],
+            ({ "A DRUMS", "B BASS", "C VOX", "D QUAY" })[i],
             function()
                 self:command("Bank", i)
             end
         )
         attr(b, "Bank", i)
+        attr(b, "BankMeaning", "sample_bank")
+        attr(b, "AccessibleLabel",
+            "SAMPLE BANK " .. string.char(64 + i)
+                .. " / " .. ({ "DRUMS", "BASS", "VOX", "QUAY" })[i])
         self.bankButtons[i] = b
     end
     self.padGrid = W.frame(self.performanceDeck, "PhysicalPads")
@@ -591,6 +605,44 @@ function View:pulsePad(pad, route)
     end
     Skin.pulse(self.pads[(pad - 1) % 16 + 1])
 end
+function View:paintContext()
+    local s = self.state
+    local m = s and s.music
+    if not m then return end
+    local bank = self:bank()
+    local bankLetter = string.char(64 + bank)
+    local address = string.format("%s%02d", bankLetter, self.selectedPad)
+    local absolute = (bank - 1) * 16 + self.selectedPad
+    local sampleId = s.pattern and s.pattern.assignments and s.pattern.assignments[absolute]
+    local sample = Catalog.ById[sampleId] or Catalog.RetiredById[sampleId]
+    local status = if s.saving then "SAVING SNAPSHOT"
+        elseif s.saveMode == "unavailable" then "SAVE UNAVAILABLE"
+        elseif s.dirty then "UNSAVED CHANGES"
+        elseif not s.hasSave then "NEW / NOT SAVED"
+        elseif s.saveMode == "session" then "SESSION SAVED"
+        else "SAVED"
+    local playback = if s.recording then "RECORDING"
+        elseif s.playing then "PLAYING" else "STOPPED"
+    local context = if self.page == "Song" then
+        "DRAFT SONG / " .. (m.draft and m.draft.name or "NEW DRAFT")
+        elseif self.page == "Library" then "MUSIC LIBRARY / SEQUENCES + DRAFTS + FINISHED"
+        elseif self.page == "Sounds" then "SOUND / " .. (sample and sample.label or "CHOOSE A SOUND")
+        elseif self.page == "Settings" then "DEVICE SETTINGS"
+        else "SEQUENCE / " .. (m.sequence and m.sequence.name or "NEW SEQUENCE")
+    local queued = if m.queued then " / NEXT SEQUENCE QUEUED" else ""
+    local caption = playback .. " | " .. status
+        .. " | SAMPLE BANK " .. bankLetter .. " / PAD " .. address
+        .. " | " .. context .. queued
+    W.set(self.contextRail, "Text", caption)
+    W.set(self.contextRail, "TextColor3", if s.dirty or s.saving
+        then W.amber else W.text)
+    attr(self.contextRail, "AccessibleLabel", caption)
+    attr(self.panel, "CurrentSampleBank", bankLetter)
+    attr(self.panel, "CurrentPadAddress", address)
+    attr(self.panel, "SaveState", status)
+    attr(self.panel, "MusicContentKind", self.page)
+end
+
 function View:paintPads()
     local s = self.state
     if not s or not s.pattern then
@@ -626,6 +678,7 @@ function View:paintPads()
     for i, b in self.bankButtons do
         attr(b, "Selected", i == bank)
     end
+    self:paintContext()
 end
 function View:updateSelection()
     if not self.state or not self.state.music then
@@ -716,6 +769,7 @@ function View:showPage(name)
         end
     end
     self:bindSoftKeys()
+    self:paintContext()
     self:resizeDevice()
 end
 function View:bindSoftKeys()
@@ -1456,8 +1510,15 @@ function View:resizeDevice()
     end
     local ownFooter = self.page == "Sequence" or self.page == "Settings" or self.page == "Sounds"
     local editorBottom = if ownFooter then 48 else 8
-    W.place(self.viewport, 14, 54, dw - 28, dh - 54 - editorBottom)
-    local vw, vh = dw - 28, dh - 54 - editorBottom
+    -- Reserve a readable music/status line only when the editor has room.
+    -- The fixed 16-pad performance deck is never resized for this indicator.
+    local contextHeight = if dh >= 240 then 24 else 0
+    self.contextRail.Visible = contextHeight > 0
+    self.contextRail.TextSize = if dw < 330 then 10 else 11
+    W.place(self.contextRail, 14, 51, dw - 28, contextHeight)
+    W.place(self.viewport, 14, 54 + contextHeight, dw - 28,
+        dh - 54 - contextHeight - editorBottom)
+    local vw, vh = dw - 28, dh - 54 - contextHeight - editorBottom
     self.sequenceScreen:resize(vw, vh)
     self.songScreen:resize(vw, vh)
     self.sampleEditor:resize(vw, vh)

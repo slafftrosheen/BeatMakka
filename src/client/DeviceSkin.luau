@@ -222,13 +222,13 @@ function Skin.pad(button)
         UDim2.fromScale(0.68, 0.08), UDim2.fromScale(0.22, 0.17), Enum.TextXAlignment.Right
     local caption = number:Clone()
     caption.Name, caption.Parent, caption.TextWrapped = "Caption", button, true
-    caption.Position, caption.Size = UDim2.fromScale(0.1, 0.54), UDim2.fromScale(0.8, 0.34)
+    caption.Position, caption.Size = UDim2.fromScale(0.1, 0.52), UDim2.fromScale(0.8, 0.28)
     caption.TextXAlignment, caption.TextYAlignment =
         Enum.TextXAlignment.Center, Enum.TextYAlignment.Center
     local status = number:Clone()
     status.Name, status.Parent, status.TextSize = "PadStatus", button, 9
     status.Position, status.Size, status.TextXAlignment =
-        UDim2.fromScale(0.12, 0.79), UDim2.fromScale(0.76, 0.10), Enum.TextXAlignment.Center
+        UDim2.fromScale(0.12, 0.82), UDim2.fromScale(0.76, 0.13), Enum.TextXAlignment.Center
     local indicator = make("Frame", button, {
         Name = "ReadyLamp",
         Position = UDim2.fromScale(0.15, 0.32),
@@ -260,6 +260,7 @@ function Skin.pad(button)
     local function refresh()
         local preview = button:GetAttribute("PreviewAvailable") == true
         local available = button:GetAttribute("AudioReady") == true
+        local approved = button:GetAttribute("AudioApproved") == true
         local held = button:GetAttribute("PadHeld") or button:GetAttribute("PadFlash")
         local selected = button:GetAttribute("PadSelected")
         local muted = button:GetAttribute("PadMuted")
@@ -305,14 +306,23 @@ function Skin.pad(button)
             then Color3.fromRGB(255, 225, 142)
             elseif available then Color3.fromRGB(88, 202, 143)
             else Color3.fromRGB(74, 84, 72)
-        key.Visible, status.Visible, caption.Visible = not small, muted and not tiny, not tiny
+        key.Visible, status.Visible, caption.Visible = not small, not tiny, not tiny
         glyph.Position = UDim2.fromScale(0.53, if tiny then 0.55 else 0.34)
         status.TextSize = if small then 8 else 9
         status.Text = if muted
             then "MUTED"
-            elseif preview then "READY"
-            elseif available then "READY"
-            else "NO FILE"
+            elseif available and approved then "READY"
+            elseif available then "LOCAL"
+            elseif preview then "PREVIEW"
+            else "NO AUDIO"
+        status.TextColor3 = if muted
+            then Color3.fromRGB(118, 51, 38)
+            else Color3.fromRGB(35, 58, 46)
+        button:SetAttribute("AccessibleLabel",
+            (button:GetAttribute("Address") or "PAD") .. " / "
+                .. (button:GetAttribute("SampleName") or "NO SOUND")
+                .. " / " .. status.Text
+                .. (if selected then " / SELECTED" else ""))
         Tween:Create(scale, TweenInfo.new(0.07), { Scale = if held then 0.94 else 1 }):Play()
     end
     for _, attribute in
@@ -327,6 +337,7 @@ function Skin.pad(button)
             "PadSelected",
             "PreviewAvailable",
             "AudioReady",
+            "AudioApproved",
             "PadHeld",
             "PadFlash",
         }
