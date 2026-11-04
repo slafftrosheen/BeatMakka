@@ -1,6 +1,8 @@
 local Shared = game.ReplicatedStorage.Shared
 local Progress = require(Shared.QuayProgress)
 local Cosmetics = require(Shared.CosmeticCatalog)
+local RoomCatalog = require(Shared.RoomCatalog)
+local RoamerIdentity = require(script.Parent.RoamerIdentity)
 local Story = require(Shared.QuayStory)
 local Activities = require(Shared.QuayActivities)
 local Samples = require(Shared.SampleCatalog)
@@ -166,7 +168,7 @@ function Service:updateVan(player, profile)
         return
     end
     local parking = if self.scene.stops[profile.quay.parking] then profile.quay.parking else "P1"
-    local finish = profile.room.finish
+    local finish = RoomCatalog.sanitize(profile.room, profile).finish
     if van.owner ~= player or van.displayName ~= player.DisplayName then
         van.owner, van.displayName = player, player.DisplayName
         van.model:SetAttribute("OwnerUserId", player.UserId)
@@ -192,6 +194,7 @@ function Service:updateVan(player, profile)
             end
         end
     end
+    RoamerIdentity.update(van, player, profile)
 end
 
 function Service:summary(player, profile)
@@ -233,6 +236,7 @@ function Service:summary(player, profile)
         open = self.opened[player],
         ownsVan = van ~= nil,
         nearVan = nearVan,
+        libraryRequest = profile.roamerShelfRequest or 0,
         canReturn = self.nearby(player, self.scene.exit.anchor, 45)
             or self.nearby(player, self.scene.courtExit.anchor, 40),
         evidence = Progress.evidence(profile),
@@ -612,11 +616,48 @@ function Service:command(player, action, value)
         self.send(player)
         return
     end
-    if action == "QuaySave" then
-        if os.clock() - (profile.lastSave or -math.huge) >= 5 then
-            profile.lastSave = os.clock()
-            self.persist(player, profile)
+    if action == "QuayRoamerSet" then
+        local van = self:van(player)
+        local bay = self.rooms.bays[self.rooms.byPlayer[player]]
+        if not van or van.owner ~= player
+            or van.model:GetAttribute("OwnerUserId") ~= player.UserId
+            or not bay or bay.owner ~= player then
+            self.send(player, "Only your own Roamer studio can be customized.")
+            return
         end
+        if type(value) ~= "table"
+            or type(value.key) ~= "string" or type(value.value) ~= "string"
+            or #value.key > 16 or #value.value > 32 then
+            self.send(player, "Choose a listed studio finish, sign or decor item.")
+            return
+        end
+        if not self.nearby(player, van.door.anchor, 15) then
+            self.send(player, "Stand beside your own Roamer to change its look.")
+            return
+        end
+        local now = os.clock()
+        if now - (profile.lastRoamerEdit or -math.huge) < 0.25 then
+            self.send(player, "Finish the previous studio change before selecting another.")
+            return
+        end
+        profile.lastRoamerEdit = now
+        local _, notice = self.rooms:change(
+            player, profile, value.key, value.value, van.door.anchor)
+        self.send(player, notice)
+        return
+    end
+    if action == "QuaySave" then
+        if profile.saving then
+            self.send(player, "A save is already in progress. Review its acknowledgement.")
+            return
+        end
+        local now = os.clock()
+        if now - (profile.lastSave or -math.huge) < 5 then
+            self.send(player, "A save was requested recently. Review the last result before retrying.")
+            return
+        end
+        profile.lastSave = now
+        self.persist(player, profile)
         return
     end
     if action == "QuayPark" then
@@ -649,7 +690,7 @@ function Service:command(player, action, value)
         end
         return
     end
-    if action == "QuayEnter" then
+    if action == "QuayEnter" or action == "QuayShelf" then
         if not atVan then
             self.send(player, "Walk to your Roamer's studio door first.")
             return
@@ -667,6 +708,10 @@ function Service:command(player, action, value)
             self:award(player, profile, "NQ-Q00")
             self.opened[player] = nil
             profile.companionRoute = "quay"
+            if action == "QuayShelf" then
+                -- Ephemeral one-shot page request, not stored as a music edit.
+                profile.roamerShelfRequest = (profile.roamerShelfRequest or 0) + 1
+            end
             self.enterStation(player, bay.stationId)
         end
         return
@@ -860,11 +905,18 @@ function Service:remove(player)
     if self.scene then
         local van = self:van(player)
         if van then
+            RoamerIdentity.reset(van)
             van.model:SetAttribute("OwnerUserId", nil)
             van.spawn.Enabled = false
             player.RespawnLocation = nil
             van.door.anchor.QuaySign.TextLabel.Text = "THE ROAMER / AVAILABLE"
             van.parking = nil
+            van.owner, van.displayName, van.finish = nil, nil, nil
+            for _, item in van.model:GetDescendants() do
+                if item:IsA("BasePart") and item:GetAttribute("VanTint") then
+                    item.Color = Cosmetics.Sets.quay.primary
+                end
+            end
             van.rewardLook = nil
             local lights = van.model:FindFirstChild("RewardLights")
             if lights then

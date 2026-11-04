@@ -59,6 +59,7 @@ local playbackKind
 local listeningEpoch = -1
 local appearance = DeviceAppearance.new()
 local state
+local lastRoamerShelfRequest = 0
 local streetPlayback = require(script.StreetMusicPlayback).new(function()
     return state
 end)
@@ -426,6 +427,14 @@ connect(stateEvent.OnClientEvent, function(nextState)
         state.dirty
     )
     view:update(state)
+    local shelfRequest = state.quay and state.quay.libraryRequest
+    if state.station and type(shelfRequest) == "number"
+        and shelfRequest > lastRoamerShelfRequest then
+        lastRoamerShelfRequest = shelfRequest
+        -- A deliberate Roamer shelf request opens the *existing* Library;
+        -- no separate shelf/music objects or extra save are created.
+        view:showPage("Library")
+    end
     if state.jam and state.jam.open then
         view:cancelInput(false)
         view.panel.Visible = false

@@ -334,6 +334,8 @@ function View.new()
     self.progress.Size, self.progress.AutomaticSize = UDim2.new(1, -10, 0, 0), Enum.AutomaticSize.Y
     self.progress.LayoutOrder = 3
     self.experiencePanel = ExperiencePanel.new(self.scroll, send)
+    self.roamerPanel = require(script.Parent.QuayRoamerPanel).new(
+        self.experiencePanel.style, send)
     self.shopRoot = Gui.make("Frame", self.scroll, {
         Name = "QuayShop",
         BackgroundTransparency = 1,
@@ -453,6 +455,7 @@ function View.new()
         )
     end
     button("enter", "MY STUDIO", "QuayEnter")
+    button("shelf", "OPEN MY BEAT SHELF", "QuayShelf")
     button("visit", "MEET THE HOST", "QuayVisit")
     button("explore", "KEEP EXPLORING", "QuayClose")
     button("back", "RETURN TO QUAY", "QuayReturn")
@@ -985,6 +988,7 @@ function View:render()
     end
     self.detailsControl.BackgroundColor3 = if self.details then Theme.Ink else Theme.Teal
     self.experiencePanel:update(state, self.tab, self.panel.Visible)
+    self.roamerPanel:update(state)
     self.shopRoot.Visible = self.tab == "shop"
     self.shopPanel:update(state.experience and state.experience.commerce)
     self.storyRoot.Visible = self.tab == "route"
@@ -1019,7 +1023,7 @@ function View:render()
         end
         self.title.Text = ({
             explore = "AROUND NEEDLE QUAY",
-            style = "YOUR GROOVE + WARDROBE",
+            style = "YOUR GROOVE + ROAMER + WARDROBE",
             shop = "QUAYSIDE COSMETICS",
         })[self.tab]
         return
@@ -1159,6 +1163,7 @@ function View:render()
         )
     end
     self.enter.Visible = quay.nearVan == true
+    self.shelf.Visible = quay.nearVan == true
     self.back.Visible = quay.canReturn == true
     for _, stop in Catalog.stops do
         self[stop.existing_parking_id].Visible = quay.canTravel == true

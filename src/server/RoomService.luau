@@ -119,14 +119,20 @@ function Rooms:summary(player, profile)
     }
 end
 
-function Rooms:change(player, profile, key, value)
+function Rooms:change(player, profile, key, value, roamerAnchor)
     local bay = self.bays[self.byPlayer[player]]
     if not bay or bay.owner ~= player then
         return false,
             "Both workshops are occupied. You can visit; a free bay is assigned when available."
     end
-    if not self.nearby(player, bay.anchor, 15) then
-        return false, "Return to your workshop to change its appearance."
+    local workshopNearby = self.nearby(player, bay.anchor, 15)
+    local roamerNearby = roamerAnchor ~= nil
+        and typeof(roamerAnchor) == "Instance"
+        and roamerAnchor:IsA("BasePart")
+        and roamerAnchor:GetAttribute("QuayInteraction") == "enter"
+        and self.nearby(player, roamerAnchor, 15)
+    if not workshopNearby and not roamerNearby then
+        return false, "Return to your workshop or your own Roamer to edit its appearance."
     end
     if not Catalog.allowed(profile, key, value) then
         return false,
@@ -138,7 +144,7 @@ function Rooms:change(player, profile, key, value)
     profile.room[key] = value
     profile.editVersion += 1
     self:update(player, profile)
-    return true, "Workshop updated for everyone here. Save profile to keep your choices."
+    return true, "Your studio appearance is updated. Save your profile to keep these choices."
 end
 
 function Rooms:remove(player)
