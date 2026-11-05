@@ -286,11 +286,15 @@ function View:_render()
     if not stage then return end
     local choice = self:_selected()
     local choices = stage.available or {}
+    local challenge = choice and choice.kind == "challenge"
+    if challenge then self.short, self.captureTake = true, false end
     W.set(self.heading, "Text", string.upper(stage.venue or "Courtyard") .. " / " .. (if stage.hosting then "YOUR SET" else "PUBLIC SETS"))
     W.set(self.sourceLabel, "Text", (choice and choice.title or "Make a sequence first") .. "\n" .. tostring(self.choiceIndex or 0) .. " / " .. #choices)
     local normalMode = if choice and choice.kind == "finished" then "FULL SONG" else "PRACTICE LOOP"
-    self:_caption(self.mode, if self.short then "SPOTLIGHT EXCERPT / SWITCH MODE" else normalMode .. " / SWITCH MODE")
-    W.set(self.context, "Text", if self.short
+    self:_caption(self.mode, if challenge then "SAME CRATE / EIGHT-BAR EXCERPT" elseif self.short then "SPOTLIGHT EXCERPT / SWITCH MODE" else normalMode .. " / SWITCH MODE")
+    W.set(self.context, "Text", if challenge
+        then "Your complete eight-bar challenge draft, with its deliberate ending. It remains an editable Draft Song. No take capture or Finished Song label is added."
+        elseif self.short
         then "A short, bar-aligned excerpt. Target: 20-40 seconds; exact duration appears after Prepare. Your source Song is never shortened."
         else if normalMode == "FULL SONG" then "Play the accepted Finished Song in full, with its original ending. No excerpt or performance mutations."
         else "Loop the chosen Sequence until you stop. Spotlight adds short-set layer controls; Practice keeps the source unchanged.")
@@ -311,7 +315,7 @@ function View:_render()
         else "NPC reactions are authored game feedback, not real fans or votes. Joining another player's audio is always your choice.")
     local editable = not stage.requesting and not stage.hosting
     enabled(self.previous, #choices > 1 and editable); enabled(self.next, #choices > 1 and editable)
-    enabled(self.mode, choice ~= nil and editable)
+    enabled(self.mode, choice ~= nil and editable and not challenge)
     local take = stage.take
     local retained = take ~= nil and not take.imported
     if retained then self.captureTake = false end
@@ -325,7 +329,7 @@ function View:_render()
         elseif retained then "TAKE RETAINED / KEEP OR DISCARD BEFORE CAPTURING"
         elseif self.captureTake then "CAPTURE ON / KEEP AN EDITABLE TAKE"
         else "CAPTURE OFF / TAP TO RECORD BAR CHANGES")
-    enabled(self.capture, self.short and editable and not retained)
+    enabled(self.capture, self.short and editable and not retained and not challenge)
     self:_caption(self.keepTake, if pending and pending.action == "StageTakeKeep" then "CONFIRM KEEP" else "KEEP AS DRAFT")
     self:_caption(self.discardTake, if pending and pending.action == "StageTakeDiscard" then "CONFIRM DISCARD" else "DISCARD TAKE")
     enabled(self.keepTake, retained and stage.canManageTake and not take.saving)

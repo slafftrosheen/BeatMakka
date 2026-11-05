@@ -37,6 +37,14 @@ function Service:other(player)
     return nil
 end
 
+function Service:musicContext(player, role)
+    local profile = self.profiles[player]
+    local project = profile and profile.music.project
+    if not project then return nil end
+    return Protocol.context(project, profile.sequenceId or project.sequenceOrder[1], role,
+        profile.unlocked, self.session and self.session.bpm)
+end
+
 function Service:state(player)
     local now = self.now()
     local invitation = self.invitations[player]
@@ -51,6 +59,7 @@ function Service:state(player)
                 table.insert(candidates, {
                     userId = other.UserId, name = other.DisplayName,
                     station = self.profiles[other].station,
+                    context = self:musicContext(other, Protocol.opposite(self.session.tracks[tostring(self.members[player])].role)),
                 })
             end
         end
@@ -65,12 +74,19 @@ function Service:state(player)
         role = self.members[player] and self.session and
             self.session.tracks[tostring(self.members[player])].role or nil,
         preferredRole = self.preferences[player] or "rhythm",
+        sourceContext = self:musicContext(player, if self.members[player] and self.session
+            then self.session.tracks[tostring(self.members[player])].role else self.preferences[player] or "rhythm"),
+        swapContext = self:musicContext(player, if self.members[player] and self.session
+            then Protocol.opposite(self.session.tracks[tostring(self.members[player])].role) else "hook"),
         conductor = self.conductor == player,
         session = if self.members[player] then self.session else nil,
         invitation = if invitation then {
             from = invitation.from.DisplayName, fromUserId = invitation.from.UserId,
             generation = invitation.generation, expiresAt = invitation.expiresAt,
             suggestedRole = invitation.role,
+            sharedContext = self.session and self.session.tracks[tostring(self.members[invitation.from])]
+                and self.session.tracks[tostring(self.members[invitation.from])].snapshot
+                and self.session.tracks[tostring(self.members[invitation.from])].snapshot.context,
         } else nil,
         candidates = candidates,
         copyPending = CopySession.summary(self.profiles[player]),
@@ -111,6 +127,7 @@ function Service:leave(player)
     if session then
         session.leadOffer, session.tempoOffer, session.roleOffer, session.copyOffer =
             nil, nil, nil, nil
+        session.contextOffer = nil
         if self.conductor == player then self.conductor = self:other(player) end
         if self.conductor then
             -- A departed player's voice ends at the next shared bar, not halfway
@@ -137,7 +154,8 @@ function Service:makeSnapshot(player, role)
     local project, sequenceId = source(profile)
     local bpm = if self.session then self.session.bpm
         else project and project.sequences[sequenceId] and project.sequences[sequenceId].bpm
-    return Protocol.capture(project, sequenceId, profile.unlocked, bpm, role)
+    return Protocol.capture(project, sequenceId, profile.unlocked, bpm, role,
+        { userId = player.UserId, name = player.Name })
 end
 
 function Service:tempoAt(session, bpm)
@@ -200,10 +218,37 @@ function Service:command(player, action, packet)
     end
     local profile, slot, session = self.profiles[player], self.members[player], self.session
     local value = packet.value
+    if table.find({ "JamJoin", "JamAccept", "JamPublish", "JamSwapOffer", "JamSwapAccept" }, action) then
+        local role = if slot and session then session.tracks[tostring(slot)].role else self.preferences[player] or "rhythm"
+        if action == "JamSwapOffer" or action == "JamSwapAccept" then role = Protocol.opposite(role) end
+        local declared, contextProblem = self:musicContext(player, role)
+        if not declared or type(value) ~= "table" or value.contextToken ~= declared.token then
+            self.send(player, contextProblem or "Review and acknowledge the current tuning and pitch offsets before sharing this part.")
+            return
+        end
+    end
+    if action == "JamContextAccept" or action == "JamContextDecline" then
+        local offer = session and session.contextOffer
+        if not slot or not offer or offer.to ~= player.UserId or offer.expiresAt <= now then
+            self.send(player, "That tuning-context proposal ended."); return
+        end
+        session.contextOffer = nil
+        if action == "JamContextAccept" then
+            local track = session.tracks[offer.slot]
+            if not track or track.version ~= offer.version or next(session.pending) or session.tempo then
+                self:changed(player, "The duet changed. Ask for a fresh context proposal."); return
+            end
+            session.pending[offer.slot] = { snapshot = offer.snapshot, role = track.role,
+                version = track.version + 1, applyAt = Protocol.boundary(session.anchor, session.bpm, now) }
+        end
+        self:changed(player, if action == "JamContextAccept" then "Tuning context accepted. The exact part joins next bar; no retuning."
+            else "Context proposal declined. Both accepted parts stay unchanged.")
+        return
+    end
     if action == "JamCopyOffer" then
         local partner = self:other(player)
         if not slot or not partner or session.copyOffer or next(session.pending)
-            or session.tempo or session.tempoOffer or session.roleOffer
+            or session.tempo or session.tempoOffer or session.roleOffer or session.contextOffer
             or session.leadPending or profile.jamCopyTake or self.profiles[partner].jamCopyTake then
             self.send(player, "Both settled players need a free temporary-copy slot. Keep or discard an older copy first.")
             return
@@ -301,13 +346,13 @@ function Service:command(player, action, packet)
             self.send(player, "Invitation cooldown is active.")
             return
         end
-        if type(value) ~= "number" or value % 1 ~= 0 or math.abs(value) > 1e15 then
+        if type(value) ~= "table" or type(value.userId) ~= "number" or value.userId % 1 ~= 0 or math.abs(value.userId) > 1e15 then
             self.send(player, "Choose a nearby station owner.")
             return
         end
         local target
         for other in self.profiles do
-            if other.UserId == value then target = other; break end
+            if other.UserId == value.userId then target = other; break end
         end
         if not target or target == player or self.members[target] or not self:owns(target) then
             self.send(player, "The invited musician is no longer available at their sampler.")
@@ -319,9 +364,14 @@ function Service:command(player, action, packet)
             return
         end
         local role = Protocol.opposite(session.tracks[tostring(slot)].role)
+        local declared = self:musicContext(target, role)
+        if not declared or value.contextToken ~= declared.token then
+            self.send(player, "The invited part changed. Review its tuning context and invite again."); return
+        end
         self.invitations[target] = {
             from = player, generation = self.generation,
             expiresAt = now + INVITE_SECONDS, role = role, seat = emptySlot,
+            sourceToken = declared.token,
         }
         self.preferences[target] = role
         self.nextInviteAt[player] = now + INVITE_COOLDOWN
@@ -357,6 +407,9 @@ function Service:command(player, action, packet)
         end
         local snapshot, problem = self:makeSnapshot(player, role)
         if not snapshot then self.send(player, problem); return end
+        if snapshot.context.token ~= invitation.sourceToken then
+            self.send(player, "Your contribution changed after its context was invited. Ask for a fresh invitation."); return
+        end
         self.departOther(player)
         self.members[player], self.invitations[player] = tonumber(invitation.seat), nil
         session.tracks[invitation.seat] = {
@@ -382,7 +435,7 @@ function Service:command(player, action, packet)
         end
         if not Sequence.integer(value, 60, 180) or session.tempo
             or session.tempoOffer or next(session.pending) or session.roleOffer
-            or session.leadPending then
+            or session.leadPending or session.contextOffer then
             self.send(player, "Choose 60–180 BPM after the pending change settles.")
             return
         end
@@ -451,7 +504,7 @@ function Service:command(player, action, packet)
     if action == "JamSwapOffer" then
         local other = self:other(player)
         if not slot or not other or session.roleOffer or next(session.pending)
-            or session.tempo or session.tempoOffer or session.leadPending then
+            or session.tempo or session.tempoOffer or session.leadPending or session.contextOffer then
             self.send(player, "Both parts must be settled before exchanging roles.")
             return
         end
@@ -478,6 +531,9 @@ function Service:command(player, action, packet)
         end
         session.roleOffer = nil
         if action == "JamSwapAccept" then
+            if offer.snapshots[tostring(slot)].context.token ~= value.contextToken then
+                self:changed(player, "Your source changed after the role offer. Request a fresh exchange."); return
+            end
             if next(session.pending) or session.tempo then
                 self.send(player, "A musical transition intervened. Request a new role exchange.")
                 return
@@ -497,13 +553,20 @@ function Service:command(player, action, packet)
         return
     end
     if action == "JamPublish" then
-        if not slot or session.pending[tostring(slot)] or session.tempo or session.roleOffer then
+        if not slot or session.pending[tostring(slot)] or session.tempo or session.roleOffer or session.contextOffer then
             self.send(player, "Join first and let your pending part/tempo change finish.")
             return
         end
         local track = session.tracks[tostring(slot)]
         local snapshot, problem = self:makeSnapshot(player, track.role)
         if not snapshot then self.send(player, problem); return end
+        local partner = self:other(player)
+        if partner and track.snapshot and snapshot.context.signature ~= track.snapshot.context.signature then
+            session.contextOffer = { from = player.UserId, to = partner.UserId, slot = tostring(slot),
+                snapshot = snapshot, version = track.version, expiresAt = now + OFFER_SECONDS }
+            self:changed(player, "Your tuning/pitch context changed. Your partner must acknowledge it before this part is queued.")
+            return
+        end
         session.pending[tostring(slot)] = {
             snapshot = snapshot, role = track.role, version = track.version + 1,
             applyAt = Protocol.boundary(session.anchor, session.bpm, now),
@@ -530,7 +593,7 @@ function Service:tick()
     local session = self.session
     if not session then return end
     local changed = false
-    for _, kind in { "tempoOffer", "leadOffer", "roleOffer", "copyOffer" } do
+    for _, kind in { "tempoOffer", "leadOffer", "roleOffer", "copyOffer", "contextOffer" } do
         local offer = session[kind]
         if offer and offer.expiresAt <= now then
             session[kind] = nil

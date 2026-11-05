@@ -50,7 +50,7 @@ local hosts = {
         role = "Breakwater Steps",
         accent = "Amber",
         place = "The little speaker sounds small here, until you leave it a pause. Then its reply can carry a long way across the water.",
-        music = "Select one teaching bar. Let ready Helper chirp answer on its four quarter notes: ticks 0, 960, 1920 and 2880. Other bars are your choice.",
+        music = "After the earlier sound hunts, save two personal Helper chirp rhythms. Choose your own notes; echo practice is optional.",
         welcome = "I have a small voice for a big place. Want to help me find a reply?",
         thanks = "The signal is reaching the breakwater. A little voice can still belong to the whole neighborhood.",
     },

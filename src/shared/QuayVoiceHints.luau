@@ -7,10 +7,10 @@ H.TextOnly =
     { metal = true, chirp = true, variation = true, save = true, finale = true, fx_done = true }
 function H.copy(cue, state)
     if cue == "metal" then
-        return "Use ready Quay metal at four distinct rhythmic positions in your named sequence."
+        return Objectives.ById["NQ-Q02"].text
     end
     if cue == "chirp" then
-        return "Select your teaching bar. Use ready Helper chirp at relative ticks 0, 960, 1920 and 2880."
+        return Objectives.ById["NQ-Q09"].text
     end
     if cue == "variation" then
         return "Keep your original sequence. Save a musically distinct variation with another name."

@@ -6,6 +6,7 @@ local Catalog = require(Shared.SampleCatalog)
 local StageQueue = require(script.Parent.StageQueue)
 local Performance = require(script.Parent.StreetPerformance)
 local Takes = require(script.Parent.PerformanceTakeSession)
+local Crate = require(Shared.CrateChallenge)
 local ListeningSession = {}
 ListeningSession.__index = ListeningSession
 
@@ -86,6 +87,28 @@ function ListeningSession:prepare(player, requested)
         or { kind = "sequence", id = profile.sequenceId or project.sequenceOrder[1] })
     if type(ref) ~= "table" then
         return nil, "Choose a Sequence or saved Finished Song."
+    end
+    if ref.kind == "challenge" then
+        local review = Crate.review(project, profile.unlocked)
+        if not review.present or not review.passed or ref.id ~= review.draftId
+            or ref.revision ~= review.ref.revision or ref.capture == true then
+            return nil, review.hint or "Review this challenge draft before preparing a short show. Take capture is not needed."
+        end
+        local schedule, problem = Transport.resolve(project, review.ref, nil, {
+            requireReady = true, ready = function(id) return Catalog.isPlaybackReady(id, profile.unlocked) end,
+        })
+        if not schedule then return nil, problem end
+        -- Shared names are fixed authored text. Personal draft titles stay private.
+        schedule.title = "Same Crate / A quiet dock wakes up"
+        for index, section in schedule.sections do section.name = if index == 1 then "Quiet dock" else "Arrival" end
+        local prepared = { schema = 1, ref = { kind = "challenge", id = review.draftId,
+            revision = review.ref.revision }, schedule = schedule, title = schedule.title,
+            loop = false, duration = schedule.duration, mode = "spotlight", capture = false,
+            spotlightBars = Crate.TotalBars, localOnly = schedule.localOnly == true }
+        local performance, message = Performance.prepare(profile, prepared)
+        if not performance then return nil, message end
+        prepared.performance, prepared.schedule, prepared.duration = performance, performance.schedule, performance.schedule.duration
+        return prepared
     end
     local mode, capture = ref.mode, ref.capture
     ref.mode, ref.capture = nil, nil
@@ -403,7 +426,7 @@ function ListeningSession:command(player, action, payload)
             self.send(player, message)
         end
     else
-        self.stage:command(player, action, payload)
+        return self.stage:command(player, action, payload)
     end
 end
 function ListeningSession:depart(player)

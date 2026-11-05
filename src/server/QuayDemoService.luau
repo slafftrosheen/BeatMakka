@@ -366,7 +366,7 @@ function Service:interact(player, kind, id)
             end
             message = if q.completed["NQ-Q02"]
                 then "Tori: That is our loading rail in your rhythm. Ivo could use a visit next."
-                else "Tori: Stow the three dock crates, then use Quay metal at four different rhythmic positions in a named sequence. Give it a name so you can find it again."
+                else "Tori: Make a named sequence with Quay metal at any two different positions, then save it. The dock crates can wait until you want to help."
         elseif id == "P2" then
             message = if q.completed["NQ-Q05"]
                 then "Ivo: You kept both ideas. Maybe I can bring this lamp without polishing it forever. Naya is at the market."
@@ -382,7 +382,7 @@ function Service:interact(player, kind, id)
             end
             message = if q.completed["NQ-Q10"]
                 then "Mica: The invitation is out. Nobody has to perform to belong. Ronan is waiting at the Lantern Room."
-                else "Mica: Select a teaching bar in your sequence. Put Helper chirp on its four quarter notes: ticks 0, 960, 1920 and 2880 within that bar. Then bring the reply back."
+                else "Mica: Finish the earlier sound hunts, then save two different Helper chirp rhythms of your own. Echo practice is optional. Bring your personal reply back."
         end
     elseif kind == "target" then
         local index = tonumber(id:sub(-1))
@@ -838,7 +838,7 @@ function Service:command(player, action, value)
             message = if not profile.unlocked.I01
                 then "Meet Tori first to collect the quay's metal sound."
                 else string.format(
-                    "Quay metal is at %d of 4 distinct rhythmic positions in your fullest ready sequence. Use its available local kit pad; repeated hits at one position count once.",
+                    "Saved Quay metal is at %d of 2 different positions in your fullest ready sequence. Choose your own rhythm, then Save Sequence; repeated hits at one position count once.",
                     evidence.metalSteps
                 )
         elseif id == "P2" then
@@ -853,7 +853,7 @@ function Service:command(player, action, value)
                 "Add an owned saved sequence to Song Mode, then Save Draft and wait for confirmation. You can finish the song later."
         else
             message =
-                "Select your teaching bar and place ready Helper chirp notes at ticks 0, 960, 1920 and 2880 within that bar. Extra chirps in that bar do not match; other bars and instruments are your choice."
+                "Save two sequences with different personal Helper chirp rhythms after the earlier sound hunts. There is no compulsory echo pattern."
         end
         self.send(player, message)
     end

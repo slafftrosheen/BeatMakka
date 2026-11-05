@@ -19,6 +19,10 @@ function Performance.prepare(profile, prepared)
         },
         feedback = "NPC audience / three optional musical requests, not votes.",
     }
+    if prepared.ref.kind == "challenge" then
+        if prepared.spotlightBars ~= 8 or source.bars ~= 8 then return nil, "This challenge show needs its complete eight-bar draft." end
+        p.bars = 8 -- trusted, bounded arrangement; never loop it to fill a longer show
+    end
     -- Only compatible variants from this exact current project are pinned.
     -- Finished Songs keep their captured project and do not borrow editor parts.
     if prepared.ref.kind == "sequence" then

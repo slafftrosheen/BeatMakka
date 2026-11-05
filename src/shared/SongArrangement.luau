@@ -1,4 +1,5 @@
 local Sequence = require(script.Parent.MusicSequence)
+local Attribution = require(script.Parent.MusicAttribution)
 local Song = {}
 
 function Song.new(id, name, bpm)
@@ -79,6 +80,7 @@ function Song.validate(project, draft, limits)
         or #draft.steps > limits.SongSteps
         or (draft.tempoMode ~= "sequence" and draft.tempoMode ~= "song")
         or not Sequence.integer(draft.bpm, 60, 180)
+        or not Attribution.valid(draft.attribution)
     then
         return false, "Invalid song draft or song-step budget exceeded."
     end

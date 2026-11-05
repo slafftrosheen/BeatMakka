@@ -2,10 +2,11 @@
 local PadInput = {}
 PadInput.__index = PadInput
 
-function PadInput.new(hit, changed)
+function PadInput.new(hit, changed, ended)
     return setmetatable({
         hit = hit,
         changed = changed,
+        ended = ended,
         active = {},
         held = {},
         hits = 0,
@@ -28,10 +29,12 @@ function PadInput:begin(pad, token)
         return false
     end
     local started = os.clock()
-    self.active[token] = pad
+    local input = { pad = pad }
+    self.active[token] = input
     self.held[pad] = (self.held[pad] or 0) + 1
     self.changed(pad, true)
-    local submitted, submittedAt = self.hit(pad)
+    local submitted, submittedAt, capture = self.hit(pad, token)
+    input.capture = capture
     submitted = submitted == true
     self.hits += 1
     if submitted then
@@ -43,12 +46,14 @@ function PadInput:begin(pad, token)
     return true
 end
 
-function PadInput:finish(token)
-    local pad = self.active[token]
-    if not pad then
+function PadInput:finish(token, cancelled)
+    local input = self.active[token]
+    if not input then
         return false
     end
+    local pad = input.pad
     self.active[token] = nil
+    if self.ended then self.ended(pad, token, input.capture, cancelled == true) end
     self.held[pad] -= 1
     if self.held[pad] == 0 then
         self.held[pad] = nil
@@ -58,11 +63,7 @@ function PadInput:finish(token)
 end
 
 function PadInput:cancel()
-    table.clear(self.active)
-    for pad in self.held do
-        self.changed(pad, false)
-    end
-    table.clear(self.held)
+    for token in table.clone(self.active) do self:finish(token, true) end
 end
 
 function PadInput:diagnostics()

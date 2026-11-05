@@ -14,7 +14,7 @@ end
 function Service:session(player, profile)
     local session = self.sessions[player]
     if not session then
-        session = { tokens = 5, at = os.clock(), level = 1, saved = profile.saved, discoveries = 0 }
+        session = { tokens = 5, at = os.clock(), level = 1, topic = "auto", saved = profile.saved, discoveries = 0 }
         for _, id in { "I01", "I02", "I03" } do
             if profile.unlocked[id] then
                 session.discoveries += 1
@@ -38,25 +38,35 @@ function Service:summary(player, profile)
     local s = self:session(player, profile)
     local route = self.world.demo ~= nil and profile.companionRoute ~= "legacy"
     local function project()
-        local key
-        if route then
-            local mask = 0
-            for i, id in require(Shared.QuayProgress).Order do
-                if profile.quay.completed[id] then
-                    mask += 2 ^ (i - 1)
-                end
+        local mask = 0
+        for i, id in require(Shared.QuayProgress).Order do
+            if profile.quay.completed[id] then
+                mask += 2 ^ (i - 1)
             end
-            key = tostring(mask)
-                .. ":"
-                .. tostring(profile.companionStop or profile.quay.parking)
-                .. ":"
-                .. preference.selected
-                .. ":"
-                .. s.level
         end
-        if not key or s.projectionKey ~= key then
-            s.projection = Progress.project(profile, route, preference.selected, s.level)
+        local music = profile.music.project
+        local ref = profile.transport and profile.transport.ref or {}
+        local mission = require(Shared.NeighborhoodMissions).summary(profile)
+        local parts = {
+            mask, route, profile.companionStop or profile.quay.parking,
+            preference.selected, s.level, s.topic, music.id, music.revision,
+            profile.workspaceGeneration, profile.sequenceId, profile.trackId, profile.draftId,
+            profile.selectedFinishedSongId, profile.station, profile.bank,
+            profile.playing, profile.recording, profile.nextSequence,
+            ref.kind, ref.id, ref.revision, profile.saveMode, profile.saving,
+            profile.editVersion, profile.savedEditVersion, mission.nextId,
+            profile.unlocked.I01, profile.unlocked.I02, profile.unlocked.I03,
+        }
+        -- Explicit bounds retain nil positions; ipairs would stop at the first nil.
+        local keyParts = {}
+        for index = 1, 29 do
+            keyParts[index] = tostring(parts[index])
+        end
+        local key = table.concat(keyParts, ":")
+        if s.projectionKey ~= key or s.projectionProject ~= music or s.projectionSaved ~= profile.saved then
+            s.projection = Progress.project(profile, route, preference.selected, s.level, s.topic)
             s.projectionKey = key
+            s.projectionProject, s.projectionSaved = music, profile.saved
         end
         return s.projection
     end
@@ -122,14 +132,21 @@ function Service:summary(player, profile)
             .. tostring(profile.unlocked.I02)
             .. ":"
             .. tostring(profile.unlocked.I03)
-        if s.journalKey ~= key or s.journalSaved ~= profile.saved then
+            .. ":"
+            .. tostring(profile.music.project.revision)
+            .. ":"
+            .. tostring(profile.trackId)
+        if s.journalKey ~= key or s.journalSaved ~= profile.saved
+            or s.journalProject ~= profile.music.project then
             s.journal = Journal.project(profile, preference.selected, location)
             s.journalKey, s.journalSaved = key, profile.saved
+            s.journalProject = profile.music.project
         end
         journal = s.journal
     end
     return {
         selected = preference.selected,
+        topic = s.topic,
         hints = preference.hints,
         hint = if preference.selected ~= "none" and preference.hints then hint else nil,
         target = node and node.anchor.Position,
@@ -144,7 +161,8 @@ function Service:command(player, action, value, extra)
     if player.Parent ~= Players or not profile or not profile.ready or extra ~= nil then
         return false
     end
-    if action ~= "CompanionSelect" and action ~= "CompanionHints" and action ~= "CompanionHint" then
+    if action ~= "CompanionSelect" and action ~= "CompanionHints" and action ~= "CompanionHint"
+        and action ~= "CompanionTopic" then
         return false
     end
     if action == "CompanionSelect" and not Catalog.valid(value) then
@@ -154,6 +172,9 @@ function Service:command(player, action, value, extra)
         return false
     end
     if action == "CompanionHint" and value ~= nil then
+        return false
+    end
+    if action == "CompanionTopic" and not Catalog.validTopic(value) then
         return false
     end
     local s, now = self:session(player, profile), os.clock()
@@ -172,6 +193,10 @@ function Service:command(player, action, value, extra)
     elseif action == "CompanionHints" then
         changed = preference.hints ~= value
         preference.hints = value
+    elseif action == "CompanionTopic" then
+        -- Advice navigation is ephemeral. It never selects a Sequence/Song,
+        -- changes editVersion, schedules a save, or changes any progression.
+        s.topic, s.level, s.projectionKey = value, 1, nil
     elseif preference.selected ~= "none" and preference.hints then
         -- Refresh context before escalating; a new task always starts with a gentle hint.
         self:summary(player, profile)

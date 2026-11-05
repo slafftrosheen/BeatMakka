@@ -270,6 +270,10 @@ function Library.new(parent, callbacks)
             self.recordPanel:open(item, self.section, self.state)
         end
     end, "sleeve")
+    self.challenge = button(self, self.popup, "OpenCrateChallenge", "SAME CRATE, DIFFERENT BEAT", function()
+        self.popup.Visible = false
+        self.challengePanel:open(self.state)
+    end, "steps")
     self.copy = button(self, self.popup, "OpenEditableCopy", "OPEN EDITABLE COPY", function()
         local item = self:_selected()
         if item and self.section == "Finished" then
@@ -291,7 +295,7 @@ function Library.new(parent, callbacks)
     self.closeOptions = button(self, self.popup, "CloseOptions", "CLOSE", function()
         self.popup.Visible = false
     end, "close")
-    for index, control in { self.details, self.copy, self.imports, self.recovery, self.closeOptions } do
+    for index, control in { self.details, self.challenge, self.copy, self.imports, self.recovery, self.closeOptions } do
         control.root.Position = UDim2.fromOffset(12, 38 + (index - 1) * 38)
         control.root.Size = UDim2.new(1, -24, 0, 32)
         control.root.ZIndex = 22
@@ -306,6 +310,14 @@ function Library.new(parent, callbacks)
         end
     end
     self.recordPanel = require(script.Parent.RecordShelfPanel).new(self.rootFrame, callbacks)
+    self.challengePanel = require(script.Parent.CrateChallengeView).new(self.rootFrame, {
+        command = callbacks.command, page = callbacks.page, selectPad = callbacks.selectPad,
+        compare = function()
+            self.section, self.pageIndex = "Releases", 1
+            self:_render()
+        end,
+    })
+    self.popup.CanvasSize = UDim2.fromOffset(0, 276)
     self:resize(parent.AbsoluteSize.X, parent.AbsoluteSize.Y)
     self:_render()
     return self
@@ -488,6 +500,7 @@ function Library:update(state)
     self.selectedIds.Drafts = self.selectedIds.Drafts or m.draftId
     self.selectedIds.Finished = self.selectedIds.Finished or m.selectedFinishedSongId
     if state and state.records then self.recordPanel:update(state) end
+    if state then self.challengePanel:update(state) end
     self:_render()
 end
 function Library:resize(width, height)

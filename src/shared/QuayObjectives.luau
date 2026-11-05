@@ -9,7 +9,7 @@ local entries = {
     {
         2,
         "Rhythm in the metal",
-        "Use ready Quay metal at four distinct rhythmic positions in a named sequence.",
+        "Save ready Quay metal at two different positions in a named sequence.",
         "P1",
     },
     {
@@ -41,7 +41,7 @@ local entries = {
     {
         9,
         "Signal, not noise",
-        "Select a teaching bar; use ready I03 at ticks 0, 960, 1920, 2880. Return to Mica.",
+        "Save two different personal Helper chirp rhythms after the earlier sound hunts. Return to Mica; echo practice is optional.",
         "P4",
     },
     { 10, "Light the breakwater", "Use the signal console after Mica hears your reply.", "P4" },

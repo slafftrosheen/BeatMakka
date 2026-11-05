@@ -17,6 +17,7 @@ local Restoration = require(script.Restoration)
 local DeviceAppearance = require(script.DeviceAppearance)
 local ListeningView = require(script.ListeningView)
 local RecordListeningView = require(script.RecordListeningView)
+local SampleVersions = require(ReplicatedStorage.Shared.SampleVersions)
 local StageView = require(script.StageView)
 local ConcertView = require(script.ConcertView)
 local ConcertScene = require(script.ConcertScene)
@@ -190,6 +191,12 @@ local function noteContext(pad)
         return nil
     end
     local def = m.program.pads[tostring(pad)]
+    local versionPins
+    if m.sampleVersions then
+        versionPins = {}
+        local pin = def and m.sampleVersions[def.sampleId]
+        if pin then versionPins[def.sampleId] = table.clone(pin) end
+    end
     return {
         projectId = m.projectId,
         sequenceId = m.sequenceId,
@@ -197,6 +204,7 @@ local function noteContext(pad)
         absolutePad = pad,
         epoch = state.epoch,
         sampleId = def and def.sampleId,
+        versionPins = versionPins,
         settings = def and def.settings,
         route = m.projectId .. ":" .. m.trackId .. ":" .. m.program.id .. ":" .. pad,
     }
@@ -214,11 +222,12 @@ local function tap(pad, captured)
         feedback:pulse(pad, state.station)
         return false
     end
-    local submitted = false
+    local submitted, handle = false, nil
     if
-        not state.pattern.muted[pad] and Catalog.isLocallyPlayable(context.sampleId, state.unlocked)
+        not state.pattern.muted[pad] and SampleVersions.matches(context.sampleId, context.versionPins)
+            and Catalog.isLocallyPlayable(context.sampleId, state.unlocked)
     then
-        submitted = audio:play(
+        submitted, handle = audio:play(
             context.sampleId,
             context.settings,
             context.route,
@@ -233,12 +242,13 @@ local function tap(pad, captured)
         event.requestId = Http:GenerateGUID(false)
         send("Tap", pad, event)
     end
-    return submitted, submittedAt
+    return submitted, submittedAt, handle
 end
 
 view = WorkshopView.new({
     command = send,
     tap = tap,
+    releaseVoice = function(handle, cancelled) audio:release(handle, cancelled) end,
     noteContext = noteContext,
     sampleReady = function(id)
         local bank = audio.banks[id]
@@ -264,7 +274,8 @@ view = WorkshopView.new({
         if state and state.records and state.records.session then return false end
         if state and state.station and state.pattern then
             local ctx = noteContext(pad)
-            local played = Catalog.isLocallyPlayable(state.pattern.assignments[pad], state.unlocked)
+            local played = ctx and SampleVersions.matches(ctx.sampleId, ctx.versionPins)
+                and Catalog.isLocallyPlayable(state.pattern.assignments[pad], state.unlocked)
                 and audio:play(
                     state.pattern.assignments[pad],
                     settings,
@@ -424,7 +435,8 @@ connect(stateEvent.OnClientEvent, function(nextState)
     local soloMusic = state.station ~= nil and nextListening == nil and not jamActive and nextRecord == nil
     audio.worldPreview = state.station == nil and nextListening == nil and not jamActive and nextRecord == nil
     if soloMusic then
-        audio:setSelection(state.music and state.music.program and state.music.program.pads or {})
+        audio:setSelection(state.music and state.music.program and state.music.program.pads or {}, nil,
+            state.music and state.music.sampleVersions)
         editorPlayback:accept(state.music and state.music.transport)
     else
         editorPlayback:stop()
@@ -435,6 +447,7 @@ connect(stateEvent.OnClientEvent, function(nextState)
                     and state.music
                 then state.music.program.pads
                 else {}
+            , nil, state.music and state.music.sampleVersions
         )
     end
     publicPlayback:accept(nextListening)

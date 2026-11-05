@@ -1,4 +1,5 @@
 -- Musical time is integer 960 PPQ in 4/4. Views never define storage length.
+local Attribution = require(script.Parent.MusicAttribution)
 local Sequence = { PPQ = 960, TicksPerBar = 3840, MinBpm = 60, MaxBpm = 180 }
 
 function Sequence.integer(value, minimum, maximum)
@@ -67,6 +68,7 @@ function Sequence.validate(sequence, tracks, limits)
         or type(sequence.trackMutes) ~= "table"
         or type(sequence.trackPadMutes) ~= "table"
         or type(sequence.tempoMap) ~= "table"
+        or not Attribution.valid(sequence.attribution)
     then
         return false,
             "Invalid sequence. Only 4/4, 60–180 BPM and the displayed bar budget are supported."

@@ -27,7 +27,7 @@ function M.project(q, objective)
         done = p.sort
         hint = "Meet Naya. Listen to the record, then choose its musical role."
     elseif id == "NQ-Q02" or id == "NQ-Q09" then
-        labels = { "COLLECT", "4 POSITIONS", "RETURN" }
+        labels = { "COLLECT", if id == "NQ-Q02" then "2 POSITIONS + SAVE" else "2 VARIATIONS + SAVE", "RETURN" }
         local key = if id == "NQ-Q02" then "metal" else "reply"
         done = if q.evidence[key] then 2 elseif q.collected and q.collected[key] then 1 else 0
         hint = if done == 0
@@ -35,8 +35,8 @@ function M.project(q, objective)
             elseif done == 2 then "Your beat is ready. Meet the marked host."
             elseif
                 id == "NQ-Q02"
-            then "Sequence → ready Quay metal. Add four distinct rhythmic positions."
-            else "Sequence → selected teaching bar. Ready I03 at relative ticks 0, 960, 1920, 2880 only."
+            then "Save a named sequence with audible Quay metal on two different positions."
+            else "Save two personal Helper chirp rhythms. Echo practice is optional; complete the earlier sound hunts too."
     elseif id == "NQ-Q05" or id == "NQ-Q07" then
         labels = { "MAKE", if id == "NQ-Q07" then "SAVE DRAFT" else "SAVE SEQUENCE", "RETURN" }
         done = if q.evidence[if id == "NQ-Q05" then "variation" else "draft"] then 2 else 0

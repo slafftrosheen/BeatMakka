@@ -21,9 +21,12 @@ function Versions.valid(pins)
     end
     return true
 end
-function Versions.capture(project)
+function Versions.capture(project, historical, routedOnly)
     local result = {}
-    for _, program in project.programs do
+    local routed = {}
+    for _, track in project.tracks do routed[track.programId] = true end
+    for id, program in project.programs do
+        if routedOnly and not routed[id] then continue end
         for _, pad in program.pads do
             if pad.sampleId ~= "" then
                 local pin = project.sampleVersions and project.sampleVersions[pad.sampleId]
@@ -34,7 +37,8 @@ function Versions.capture(project)
                     pin = { packId = packId, revision = tostring(program.mappingRevision) }
                 end
                 local previous = result[pad.sampleId]
-                local current = pin or Versions.current(pad.sampleId) or { packId = "unavailable", revision = "unknown" }
+                local current = pin or (if historical then { packId = sample and sample.pack or "unavailable", revision = "unverified" }
+                    else Versions.current(pad.sampleId)) or { packId = "unavailable", revision = "unknown" }
                 if previous and (previous.packId ~= current.packId or previous.revision ~= current.revision) then
                     return nil, "One sample has conflicting pack versions; no release was created."
                 end
@@ -42,6 +46,23 @@ function Versions.capture(project)
                     else current
             end
         end
+    end
+    return result
+end
+function Versions.unverified(pins)
+    if pins == nil then return true end
+    for _, pin in pins do if pin.revision == "unverified" or pin.revision == "unknown" then return true end end
+    return false
+end
+function Versions.merge(target, incoming)
+    local result = {}
+    for id, pin in target or {} do result[id] = table.clone(pin) end
+    for id, pin in incoming or {} do
+        local old = result[id]
+        if old and (old.packId ~= pin.packId or old.revision ~= pin.revision) then
+            return nil, "Copied music conflicts with a retained sample version: " .. id .. ". Both sources are unchanged."
+        end
+        result[id] = table.clone(pin)
     end
     return result
 end

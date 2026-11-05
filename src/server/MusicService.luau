@@ -17,6 +17,7 @@ local QuayExperienceService = require(script.Parent.QuayExperienceService)
 local CommerceService = require(script.Parent.CommerceService)
 local WardrobeService = require(script.Parent.WardrobeService)
 local RecordService = require(script.Parent.RecordService)
+local CrateChallengeService = require(script.Parent.CrateChallengeService)
 local MusicService = {}
 
 function MusicService.start(world)
@@ -44,6 +45,7 @@ function MusicService.start(world)
     local wardrobe
     local records
     local enterStation
+    local challenge
 
     local function nearby(player, anchor, distance)
         local character = player.Character
@@ -100,6 +102,7 @@ function MusicService.start(world)
             pattern = profile.pattern,
             music = WorkspaceModel.projection(profile, { userId = player.UserId, name = player.Name }),
             records = records and records:summary(player),
+            challenge = challenge and challenge:summary(player),
             quest = Quest.summary(profile),
             unlocked = profile.unlocked,
             station = profile.station,
@@ -240,6 +243,8 @@ function MusicService.start(world)
     jam = JamService.new(world.stations, profiles, send, function(player)
         listening:depart(player)
         concert:stop(player)
+        local profile = profiles[player]
+        if profile then WorkspaceModel.stop(profile, false) end
     end, nearby)
     records = RecordService.new(profiles, send, persist, function(player)
         local p = profiles[player]
@@ -264,10 +269,27 @@ function MusicService.start(world)
         enterStation(player, bay.stationId, true)
         return p.station == bay.stationId, "Record stopped. Your workbench is open and the accepted record is retained for a permitted remix."
     end)
+    challenge = CrateChallengeService.new(profiles, send, persist, function(player)
+        local p = profiles[player]
+        local station = p and world.stations[p.station]
+        return p ~= nil and p.ready and station ~= nil and station.owner == player and nearby(player, station.anchor, 15)
+            and not jam.members[player] and not records.sessions[player]
+    end, WorkspaceModel, function(player, ref)
+        local p = profiles[player]
+        if not quay or not quay:teleport(player, world.listening.anchor.Position + Vector3.new(0, 0, -5)) then
+            return false, "Could not reach the courtyard. Your challenge draft is unchanged."
+        end
+        p.stageFromWorkshop = true
+        listening:openBoard(player)
+        local prepared, problem = listening:command(player, "StagePrepare", { kind = "challenge", id = ref.id, revision = ref.revision })
+        if not prepared then return false, problem or "The stage could not prepare this challenge. Your draft is preserved." end
+        return true, "Short challenge show prepared at the courtyard. Start when offered; nobody joined automatically."
+    end)
     task.spawn(function()
         while network.Parent do
             task.wait(0.1)
             jam:tick()
+            challenge:tick()
             for player, profile in profiles do
                 if WorkspaceModel.tick(profile) then
                     send(player)
@@ -420,6 +442,7 @@ function MusicService.start(world)
         join(player)
     end
     Players.PlayerRemoving:Connect(function(player)
+        challenge:remove(player)
         records:remove(player)
         liveMusic:remove(player)
         quay:flush(player)
@@ -576,6 +599,11 @@ function MusicService.start(world)
         end
         if action:sub(1, 6) == "Record" and action ~= "Record" then
             local _, notice = records:command(player, action, a)
+            send(player, notice)
+            return
+        end
+        if action:sub(1, 9) == "Challenge" then
+            local _, notice = challenge:command(player, action, a)
             send(player, notice)
             return
         end

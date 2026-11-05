@@ -21,7 +21,15 @@ local function vector(row)
     return Vector3.new(table.unpack(row))
 end
 local function blocked(state)
-    return not state or not state.ready
+    -- Keep the one optional follower outside instrument/performance surfaces
+    -- and the journal. Leaving a surface resumes the same selected follower.
+    return not state or not state.ready or state.station ~= nil
+        or state.listening ~= nil
+        or (state.records and (state.records.session ~= nil or state.records.invite ~= nil))
+        or (state.stage and state.stage.open == true)
+        or (state.concert and state.concert.open == true)
+        or (state.jam and (state.jam.active == true or state.jam.open == true))
+        or (state.quay and state.quay.open ~= nil)
 end
 function Follower.new()
     local self = setmetatable(

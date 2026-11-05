@@ -2,6 +2,7 @@
 local Project = require(game.ReplicatedStorage.Shared.MusicProject)
 local Workspace = game:GetService("Workspace")
 local Takes = require(script.Parent.PerformanceTakeSession)
+local Crate = require(game.ReplicatedStorage.Shared.CrateChallenge)
 local Stage = {}
 Stage.__index = Stage
 local LIMIT, LIFETIME, OFFER = 4, 120, 30
@@ -107,6 +108,12 @@ function Stage:state(p)
                 title = song.title, duration = song.duration, loop = false,
             })
         end
+        local challenge = Crate.review(project, profile.unlocked)
+        if challenge.present and challenge.passed then
+            table.insert(available, { kind = "challenge", id = challenge.draftId,
+                revision = challenge.ref.revision, title = "Same Crate / eight-bar excerpt",
+                bars = Crate.TotalBars, bpm = Crate.Bpm, loop = false })
+        end
     end
     return {
         open = self.opened[p] == true,
@@ -177,7 +184,7 @@ function Stage:command(p, action, payload)
     local profile = self.profiles[p]
     if not profile or not profile.ready or not self.opened[p]
         or not self.nearby(p, self:anchor(p), 32) then
-        return
+        return false, "Open the nearby stage board before preparing."
     end
     if action == "StageTakeKeep" or action == "StageTakeDiscard" then
         if self.session.members[p] then
@@ -196,22 +203,22 @@ function Stage:command(p, action, payload)
     elseif action == "StagePrepare" then
         if self.session.owner == p then
             self.send(p, "Stop your current set before preparing another.")
-            return
+            return false, "Stop your current set before preparing another."
         end
         for _, entry in self.queue do
             if entry.player == p then
                 self.send(p, "Your snapshot is already prepared. Cancel before replacing it.")
-                return
+                return false, "Your snapshot is already prepared. Cancel before replacing it."
             end
         end
         if #self.queue >= LIMIT then
             self.send(p, "Four sets are waiting. Try again after a turn opens.")
-            return
+            return false, "Four sets are waiting. Try again after a turn opens."
         end
         local snapshot, message = self.session:prepare(p, payload)
         if not snapshot then
             self.send(p, message)
-            return
+            return false, message
         end
         profile.listeningRef = Project.clone(snapshot.ref)
         table.insert(self.queue, {
@@ -220,6 +227,7 @@ function Stage:command(p, action, payload)
         self:refresh()
         self.send(p, (if snapshot.mode == "spotlight" then "Spotlight excerpt" elseif snapshot.loop then "Practice loop" else "Full Song")
             .. " prepared: " .. math.floor(snapshot.duration + 0.5) .. "s. Start when offered; no audio was joined automatically.")
+        return true
     elseif action == "StageCancel" then
         if self:remove(p) then
             self:refresh()

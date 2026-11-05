@@ -363,6 +363,8 @@ function Workspace.projection(p, owner)
     return {
         projectId = p.music.project.id,
         projectRevision = p.music.project.revision,
+        sampleVersions = Project.clone(p.music.project.sampleVersions),
+        unverifiedVersions = Versions.unverified(p.music.project.sampleVersions),
         workspaceGeneration = p.workspaceGeneration or 0,
         sequenceId = p.sequenceId,
         trackId = p.trackId,

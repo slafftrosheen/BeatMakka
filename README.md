@@ -6,6 +6,8 @@ The user's latest choice makes the pack-native 64-sample order authoritative: A 
 
 The [2026-11-05 record shelf/release/remix source batch](docs/issue-work/2026-11-05-23-records.md) extends CRATES with personal sleeves, Continue, saved exact-version releases, same-server listening invitations and permissioned credited remix projects. It upgrades profile 3/music 1 to profile 4/music 2 while preserving existing music. The packaged v4 demo above predates this source batch and was not rebuilt here. Studio, device, two-client and hosted rejoin acceptance for #23 remain open.
 
+The [all-open-issue code ledger](docs/issue-work/2026-11-05-all-open-code.md) maps all 20 current open briefs to implemented source and separate acceptance. It adds the same-crate challenge under CRATES → Options, completes captured input/readiness, shared jam context, ordinary version preservation and contextual companion guidance, and inventories current audio without deploying it. The packaged v4 demo still predates these source changes; testing/asset/hardware/hosted acceptance remains separate.
+
 The project starts as a file-system-first Luau project. Roblox Studio is the place/runtime editor, Rojo syncs local source into Studio, and Rokit pins project tools. Blender is the DCC for authored geometry and cleanup. Tripo is an optional offline asset-production route; it is not a game runtime dependency.
 
 ## Requirements

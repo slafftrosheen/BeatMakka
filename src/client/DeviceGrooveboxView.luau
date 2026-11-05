@@ -166,18 +166,30 @@ function View.new(callbacks)
     self.padGrid = W.frame(self.performanceDeck, "PhysicalPads")
     attr(self.padGrid, "PadCount", 16)
     attr(self.padGrid, "GridOrder", "row-major-top-left")
-    self.padInput = Pads.new(function(pad)
+    self.padInput = Pads.new(function(pad, token)
         local context = callbacks.noteContext and callbacks.noteContext(pad)
-        self.heldContexts[pad] = { context = context, nextAt = os.clock() }
-        return callbacks.tap(pad, context)
+        local held = { pad = pad, context = context, nextAt = os.clock(), voices = {} }
+        self.heldContexts[token] = held
+        if typeof(token) == "Instance" and token:IsA("InputObject") then
+            held.cancelConnection = token:GetPropertyChangedSignal("UserInputState"):Connect(function()
+                if token.UserInputState == Enum.UserInputState.Cancel then self.padInput:finish(token, true) end
+            end)
+        end
+        local submitted, submittedAt, handle = callbacks.tap(pad, context)
+        if handle then held.voices[handle.voice] = handle end
+        return submitted, submittedAt, held
     end, function(pad, held)
         if math.floor((pad - 1) / 16) + 1 == self:bank() then
             Skin.setPadDown(self.pads[(pad - 1) % 16 + 1], held)
         end
-        if not held then
-            self.heldContexts[pad] = nil
+    end, function(_pad, token, captured, cancelled)
+        self.heldContexts[token] = nil
+        if captured and captured.cancelConnection then captured.cancelConnection:Disconnect() end
+        if captured and callbacks.releaseVoice then
+            for _, handle in captured.voices do callbacks.releaseVoice(handle, cancelled) end
         end
     end)
+    self.handledGamepad = setmetatable({}, { __mode = "k" })
     for i = 1, 16 do
         local button = W.make("TextButton", self.padGrid, {
             Name = string.format("Pad%02d", i),
@@ -196,15 +208,19 @@ function View.new(callbacks)
             if
                 input.UserInputType == Enum.UserInputType.MouseButton1
                 or input.UserInputType == Enum.UserInputType.Touch
+                or (input.UserInputType == Enum.UserInputType.Gamepad1 and input.KeyCode == Enum.KeyCode.ButtonA)
             then
+                if input.UserInputType == Enum.UserInputType.Gamepad1 then self.handledGamepad[input] = true end
                 self:beginPad(i, input)
             end
         end)
         button.InputEnded:Connect(function(input)
-            self.padInput:finish(input)
+            self.padInput:finish(input, input.UserInputState == Enum.UserInputState.Cancel)
         end)
         button.Activated:Connect(function(inputObject)
-            if inputObject and inputObject.UserInputType == Enum.UserInputType.Gamepad1 then
+            if inputObject and inputObject.UserInputType == Enum.UserInputType.Gamepad1 and not self.handledGamepad[inputObject] then
+                -- Accessibility/native fallback only. Physical ButtonA already
+                -- captured its source on InputBegan and must not retrigger here.
                 self:beginPad(i, inputObject)
                 self.padInput:finish(inputObject)
             end
@@ -284,6 +300,10 @@ function View.new(callbacks)
         end,
         page = function(name)
             self:showPage(name)
+        end,
+        selectPad = function(pad)
+            self:command("Bank", math.floor((pad - 1) / 16) + 1)
+            self:selectPad((pad - 1) % 16 + 1)
         end,
     })
     self.sampleEditor = require(script.Parent.DeviceSoundScreen).new(
@@ -392,8 +412,21 @@ function View.new(callbacks)
     end)
     table.insert(
         self.connections,
+        Input.InputBegan:Connect(function(input)
+            if input.UserInputType ~= Enum.UserInputType.Gamepad1 or input.KeyCode ~= Enum.KeyCode.ButtonA then return end
+            for index, pad in self.pads do
+                if GuiService.SelectedObject == pad then
+                    self.handledGamepad[input] = true
+                    self:beginPad(index, input)
+                    break
+                end
+            end
+        end)
+    )
+    table.insert(
+        self.connections,
         Input.InputEnded:Connect(function(input)
-            self.padInput:finish(input)
+            self.padInput:finish(input, input.UserInputState == Enum.UserInputState.Cancel)
         end)
     )
     table.insert(
@@ -421,6 +454,11 @@ function View.new(callbacks)
             )
         end
     end
+    for _, panel in { self.libraryScreen.recordPanel.root, self.libraryScreen.challengePanel.root } do
+        table.insert(self.connections, panel:GetPropertyChangedSignal("Visible"):Connect(function()
+            if panel.Visible then self:cancelInput(false) end
+        end))
+    end
     self.menu.Active, self.prompt.Active = true, true
     table.insert(
         self.connections,
@@ -442,20 +480,23 @@ function View.new(callbacks)
                     / 960
                     * 60
                     / m.sequence.bpm
-                for pad, held in self.heldContexts do
+                for _, held in self.heldContexts do
+                    local pad = held.pad
                     if os.clock() - held.nextAt >= interval then
                         held.nextAt = os.clock()
                         -- Keep a held repeat on its captured route while allowing
                         -- acknowledged live instrument edits on subsequent hits.
                         local current = callbacks.noteContext and callbacks.noteContext(pad)
-                        callbacks.tap(
+                        local _, _, handle = callbacks.tap(
                             pad,
                             if current
                                     and held.context
                                     and current.route == held.context.route
+                                    and current.sampleId == held.context.sampleId
                                 then current
                                 else held.context
                         )
+                        if handle then held.voices[handle.voice] = handle end
                         self:pulsePad(pad)
                     end
                 end
@@ -493,6 +534,7 @@ function View:hasModal()
         or (self.songScreen.popup and self.songScreen.popup.Visible)
         or (self.libraryScreen.popup and self.libraryScreen.popup.Visible)
         or self.libraryScreen.recordPanel.root.Visible
+        or self.libraryScreen.challengePanel.root.Visible
 end
 function View:closeModal()
     self.menu.Visible, self.prompt.Visible = false, false
@@ -503,6 +545,7 @@ function View:closeModal()
         self.libraryScreen.popup.Visible = false
     end
     self.libraryScreen.recordPanel.panel:show(false)
+    self.libraryScreen.challengePanel.panel:show(false)
 end
 function View:command(action, a, b)
     if not self.state or not self.state.ready then

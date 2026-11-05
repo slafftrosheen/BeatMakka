@@ -5,6 +5,7 @@ local Project = require(script.Parent.MusicProject)
 local Sequence = require(script.Parent.MusicSequence)
 local PadSound = require(script.Parent.PadSound)
 local Records = require(script.Parent.RecordRelease)
+local Versions = require(script.Parent.SampleVersions)
 local Migration = { Schema = 2, Id = "legacy_four_patterns_v1" }
 
 local function at(values, index)
@@ -155,6 +156,7 @@ local function importBundle(bundle, id, label, version)
     local project = Project.new(id, label)
     project.programs, project.tracks, project.trackOrder, project.sequences, project.sequenceOrder =
         {}, {}, {}, {}, {}
+    project.sampleVersions = nil -- imported identities have their own historical provenance
     project.nextId = 100
     project.import = { kind = "legacy_bundle", migrationId = Migration.Id, version = version }
     for index = 1, 4 do
@@ -309,6 +311,19 @@ local function upgrade(music)
         copy.schema = Migration.Schema
         copy.releases, copy.releaseOrder, copy.releaseRequests = {}, {}, {}
     end
+    local projects = { copy.project }
+    for _, archive in copy.archives do if archive.project then table.insert(projects, archive.project) end end
+    if copy.recoveryProject then table.insert(projects, copy.recoveryProject) end
+    for _, song in copy.finishedSongs do table.insert(projects, song.project) end
+    for _, project in projects do
+        if project.sampleVersions == nil then
+            local pins, problem = Versions.capture(project, true)
+            if not pins then return nil, problem end
+            project.sampleVersions = pins
+        end
+    end
+    local valid, problem = Migration.validate(copy)
+    if not valid then return nil, problem end
     return copy
 end
 function Migration.import(raw)
@@ -390,7 +405,7 @@ function Migration.import(raw)
     if not valid then
         return nil, validationMessage
     end
-    return music
+    return upgrade(music)
 end
 
 Migration.capture = Project.clone

@@ -11,6 +11,9 @@ function Shelf.new(parent, callbacks)
     self.panel, self.root = p, p.root
     self.heading, self.detail = p:label("RecordTitle", 17), p:label("RecordDetails")
     self.notice = p:label("RecordSaveNotice")
+    self.versions = p:button("ConfirmHistoricVersions", "USE CURRENT PACK VERSIONS / ARCHIVE HISTORIC REFERENCES", function()
+        callbacks.command("RecordUseCurrentVersions", { context = self.state.records.context })
+    end)
     self.art = p:add("Frame", { Name = "SleevePreview", Size = UDim2.fromOffset(92, 92),
         BackgroundColor3 = Color3.fromRGB(47, 92, 88), BorderSizePixel = 0 })
     self.sleeve = Sleeve.new(self.art, 34)
@@ -101,6 +104,9 @@ function Shelf:render()
         .. "\n" .. (if self.state.saving then "SAVE IN PROGRESS" elseif saved then Panel.storage(self.state.saveMode) else "UNSAVED EDITS / save explicitly")
     if released then self.detail.Text ..= "\nCAPTURED FROM / " .. item.type .. " revision " .. item.source.revision end
     self.notice.Text = self.state.notice or ""
+    self.versions.Visible = not released and self.section ~= "Finished" and self.state.music.unverifiedVersions == true
+    Panel.enable(self.versions, not self.state.saving)
+    if self.versions.Visible then self.notice.Text ..= "\nHistoric pack versions were not recorded. IDs and notes are preserved; choose current versions explicitly to play this workspace." end
     self.continue.Visible = not released
     self.continue.Text = if self.section == "Finished" then "PLAY FULL FINISHED SONG" else "CONTINUE " .. string.upper(item.type)
     self.keepCover.Visible = self.section == "Sections" or self.section == "Drafts"

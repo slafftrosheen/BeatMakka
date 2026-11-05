@@ -185,6 +185,20 @@ function View.new(parent, send)
     self.cardResize = card:GetPropertyChangedSignal("AbsoluteSize"):Connect(function()
         self:layoutCard()
     end)
+    self.topic = Gui.button(self.root, "GUIDANCE / CURRENT MUSIC", function()
+        local topic = self.state and self.state.topic or "auto"
+        local index = table.find(Catalog.HintTopics, topic) or 1
+        send("CompanionTopic", Catalog.HintTopics[index % #Catalog.HintTopics + 1])
+    end)
+    self.topic.Name, self.topic.LayoutOrder = "CompanionTopic", 5
+    self.topic.Size, self.topic.Font = UDim2.new(1, 0, 0, 44), Enum.Font.Code
+    self.topic:SetAttribute("UiIcon", "hint")
+    for _, child in self.root:GetChildren() do
+        if child:IsA("GuiObject") and child.LayoutOrder >= 7 then
+            child.LayoutOrder += 1
+        end
+    end
+    self.workspace = label("", 7, 13, Theme.FadedTeal)
     self:layoutCard()
     return self
 end
@@ -275,6 +289,13 @@ function View:update(snapshot, ready, saving)
     self.hints.Active, self.hints.Interactable = ready == true, ready == true
     self.hints.Text = if snapshot and snapshot.hints then "HINTS ON" else "HINTS OFF"
     local hint = snapshot and snapshot.hint
+    local topic = snapshot and snapshot.topic or "auto"
+    self.topic.Visible = selected ~= "none"
+    self.topic.Active, self.topic.Interactable = ready == true, ready == true
+    self.topic.Text = "GUIDANCE / " .. (Catalog.HintLabels[topic] or Catalog.HintLabels.auto)
+    self.topic:SetAttribute("AccessibleLabel", self.topic.Text .. ". Select to choose the next guidance topic; your music is unchanged.")
+    self.workspace.Visible = hint ~= nil
+    self.workspace.Text = if hint then hint.workspace or "" else ""
     self.hint.Visible = hint ~= nil
     self.hint.Text = if hint then hint.text else ""
     self.more.Visible = hint ~= nil

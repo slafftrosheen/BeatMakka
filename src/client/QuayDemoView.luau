@@ -26,24 +26,24 @@ local function graphicButton(button, iconName)
     button:SetAttribute("UiIcon", iconName)
 end
 local instructions = {
-    P1 = "TORI / DOCKSIDE EXCHANGE\nStow three crates. Make a named sequence with ready Quay metal at four distinct rhythmic positions, then return to Tori. Sharing a loop is optional.",
+    P1 = "TORI / DOCKSIDE EXCHANGE\nMake a named sequence with ready Quay metal at any two different positions and save it, then return to Tori. Crate cleanup and sharing a loop can wait.",
     P2 = "IVO / REPAIR ALLEY\nUse controls 1, 2, 3 in order. Save Sequence for your original and a musically distinct variation. Names and unused pad edits do not make a variation.",
     P3 = "NAYA + SANA / VINYL MARKET\nListen and match each ready record's role. Put an owned saved sequence into Song Mode and Save Draft. Finishing can wait. Help Sana stow three cases.",
-    P4 = "MICA / BREAKWATER STEPS\nSelect a teaching bar in your sequence. Use ready Helper chirp exactly at ticks 0, 960, 1920 and 2880 of that bar. Other bars and instruments are your choice. Return to check, then use the signal console.",
+    P4 = "MICA / BREAKWATER STEPS\nAfter the earlier sound hunts, save two different Helper chirp rhythms of your own. Echo practice is optional. Return to check, then use the signal console.",
     finale = "RONAN / THE LANTERN ROOM\nFinish and save your own song, then select its saved immutable revision. It needs two distinct musical sections and a collected sound layered with another part. Perform from beginning to actual end; pauses freeze progress and stopping cancels this attempt.",
     map = "NEEDLE QUAY / YOUR ROUTE\nYour Roamer holds your sequences and songs. A sequence is a section you can repeat. A song is your sections arranged from beginning to end. Pending sample audio cannot make a musical quest ready.",
 }
 local goals = {
     ["NQ-Q00"] = "Meet Tori or enter your own Roamer studio.",
     ["NQ-Q01"] = "Stow three dock crates.",
-    ["NQ-Q02"] = "Use I01 at four distinct rhythmic positions in a ready named sequence.",
+    ["NQ-Q02"] = "Save I01 at any two different positions in a ready named sequence.",
     ["NQ-Q03"] = "Share a saved loop if wanted, or continue privately. No audience or Finished Song needed.",
     ["NQ-Q04"] = "Isolate power, clear intake, restore power; collect I02.",
     ["NQ-Q05"] = "Save an original named sequence and a musically distinct variation.",
     ["NQ-Q06"] = "Listen to three ready records and match their roles.",
     ["NQ-Q07"] = "Save a Song Mode draft containing an owned saved sequence.",
     ["NQ-Q08"] = "Help Sana stow three stage cases.",
-    ["NQ-Q09"] = "Use I03 on quarter notes of the selected teaching bar: ticks 0, 960, 1920, 2880.",
+    ["NQ-Q09"] = "Save two different personal I03 rhythms after the earlier sound hunts.",
     ["NQ-Q10"] = "Use the signal after Mica hears your reply.",
     ["NQ-Q11"] = "Select a ready, successfully saved Finished Song with Ronan.",
     ["NQ-Q12"] = "Perform that pinned revision from beginning to its actual end.",
@@ -59,10 +59,10 @@ for id, text in instructions do
 end
 goals["NQ-Q02"] = "Use "
     .. Samples.discoveryLabel("I01", "I01")
-    .. " at four distinct rhythmic positions in a ready named sequence."
+    .. " at any two different positions in a ready named sequence, then save."
 goals["NQ-Q09"] = "Use "
     .. Samples.discoveryLabel("I03", "I03")
-    .. " on teaching-bar ticks 0, 960, 1920 and 2880."
+    .. " in two different personal saved rhythms; echo practice is optional."
 local buildingNames = {}
 for _, building in Catalog.buildings do
     buildingNames[building.id] = building.name

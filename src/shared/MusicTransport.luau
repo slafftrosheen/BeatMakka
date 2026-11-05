@@ -86,6 +86,8 @@ local function addSection(schedule, project, sequence, override, step, repetitio
                 if not ready then
                     schedule.unavailableCount += 1
                     schedule.unavailable[definition.sampleId] = true
+                    schedule.unavailableReasons[definition.sampleId] = if not Versions.matches(definition.sampleId, project.sampleVersions)
+                        then "versionMismatch" else "unavailable"
                     if options.requireReady then
                         return false,
                             "This music uses unavailable audio or a different pack version: " .. (if definition.sampleId
@@ -228,6 +230,7 @@ function Transport.resolve(project, reference, finishedSongs, options)
         totalBars = 0,
         expandedEvents = 0,
         unavailable = {},
+        unavailableReasons = {},
         unavailableCount = 0,
         audioTailSeconds = Transport.AudioTailSeconds,
     }

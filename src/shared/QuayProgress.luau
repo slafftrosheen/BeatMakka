@@ -4,6 +4,7 @@ local Pattern = require(script.Parent.Pattern)
 local Games = require(script.Parent.QuayStreetGames)
 local Commissions = require(script.Parent.QuayBeatCommissions)
 local Life = require(script.Parent.QuayLifeCatalog)
+local Missions = require(script.Parent.NeighborhoodMissions)
 local Quay = {}
 Quay.Order = {}
 for i = 0, 12 do
@@ -105,23 +106,17 @@ function Quay.evidence(profile)
         return cache.result
     end
     local metal, reply, metalSteps = false, false, 0
-    for _, id in (project and project.sequenceOrder) or {} do
-        local sequence = Music.sequence(project, id, profile.unlocked)
-        if sequence then
-            local _, count = Quay.rhythm(sequence, "I01")
-            metalSteps = math.max(metalSteps, count)
-            metal = metal or count >= 4
-            if id == profile.sequenceId then
-                local positions, hits = Quay.rhythm(sequence, "I03", profile.teachingBar or 1)
-                reply = hits == 4
-                    and positions[0]
-                    and positions[960]
-                    and positions[1920]
-                    and positions[2880]
-            end
-        end
-    end
     local saved, savedProject = Music.savedSequences(profile)
+    for _, evidence in saved do
+        local _, count = Quay.rhythm(evidence, "I01")
+        metalSteps = math.max(metalSteps, count)
+        metal = metal or count >= 2
+    end
+    -- Reuse the current saved sound-hunt contract. Its helper task accepts two
+    -- personal chirp variations; the optional echo exercise never gates chapter access.
+    local earned = if savedMusic then Missions.awarded({ music = savedMusic, unlocked = profile.unlocked,
+        neighborhood = profile.neighborhood }) else Missions.sanitize(profile.neighborhood)
+    reply = earned.helper_reply == true
     local signatures, variation = {}, false
     for _, sequence in saved do
         signatures[sequence.signature] = true

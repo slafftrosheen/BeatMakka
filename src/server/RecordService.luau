@@ -8,6 +8,7 @@ local Record = require(Shared.RecordRelease)
 local Project = require(Shared.MusicProject)
 local Catalog = require(Shared.SampleCatalog)
 local Activities = require(Shared.QuayActivities)
+local Versions = require(Shared.SampleVersions)
 local Profiles = require(script.Parent.ProfileStore)
 local State = require(script.Parent.WorkspaceState)
 local Service = {}
@@ -179,7 +180,41 @@ function Service:command(player, action, request)
             .. (if record.type == "Pattern/Loop" then "Pattern/Loop." else "Draft Song, until you deliberately Finish it.")
     end
     if not self.owns(player) then return false, "Open your own Beat Shelf at a workbench first." end
-    if action == "RecordCover" then
+    if action == "RecordUseCurrentVersions" then
+        if p.saving or not sameContext(p, request.context) then return false, "Review the current workspace before confirming its pack versions." end
+        if not Versions.unverified(p.music.project.sampleVersions) then return false, "This workspace already has recorded pack versions; mismatches are not silently upgraded." end
+        local music = Project.clone(p.music)
+        local old = music.project
+        local preserved, problem = State.preserve(music, old)
+        if not preserved then return false, problem end
+        local candidate = Project.clone(old)
+        local assignedPins, captureProblem = Versions.capture(candidate, true, true)
+        if not assignedPins then return false, captureProblem end
+        candidate.sampleVersions = assignedPins -- orphan identities remain in the archived preimage
+        for id, pin in candidate.sampleVersions or {} do
+            if pin.revision == "unverified" or pin.revision == "unknown" then
+                local current = Versions.current(id)
+                if not current then return false, "This retained sample is unavailable: " .. id .. ". No references were replaced." end
+                candidate.sampleVersions[id] = current
+            end
+        end
+        if candidate.revision >= 1e12 then return false, "Revision limit reached; originals retained." end
+        candidate.revision += 1
+        for _, sequence in candidate.sequences do
+            if sequence.revision >= 1e12 then return false, "Sequence revision limit reached." end
+            sequence.revision += 1
+        end
+        for _, draft in candidate.drafts do
+            if draft.revision >= 1e12 then return false, "Draft revision limit reached." end
+            draft.revision += 1
+        end
+        music.project = candidate
+        local selected = { sequenceId = p.sequenceId, trackId = p.trackId, draftId = p.draftId }
+        local captured, budgetProblem = Profiles.capture(p, music, selected)
+        if not captured then return false, budgetProblem end
+        State.activate(p, music, selected)
+        return true, "Current pack versions explicitly selected / UNSAVED. Historic references are retained in Imports. Save when ready."
+    elseif action == "RecordCover" then
         if p.saving or not sameContext(p, request.context) or type(request.cover) ~= "table"
             or not Activities.validSleeve(request.cover.motif, request.cover.palette) then
             return false, "Review this item's current revision and authored sleeve before keeping it."

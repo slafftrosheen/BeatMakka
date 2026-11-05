@@ -5,6 +5,8 @@ local Sequence = require(script.Parent.MusicSequence)
 local Song = require(script.Parent.SongArrangement)
 local Transport = require(script.Parent.MusicTransport)
 local Set = require(script.Parent.StreetSet)
+local Attribution = require(script.Parent.MusicAttribution)
+local Versions = require(script.Parent.SampleVersions)
 local Take = {}
 
 local function maskKey(mutes)
@@ -170,6 +172,9 @@ function Take.materialize(take, current, ready)
     local prefix = prefixFor(candidate)
     if not prefix then return nil, "ID capacity reached. The take is retained." end
     local source, used = take.project, {}
+    local pins, pinProblem = Versions.merge(candidate.sampleVersions, source.sampleVersions)
+    if not pins then return nil, pinProblem end
+    candidate.sampleVersions = pins
     for _, run in runs do
         local sequence = source.sequences[run.sequenceId]
         local from, finish = (run.firstBar - 1) * Sequence.TicksPerBar,
@@ -218,7 +223,7 @@ function Take.materialize(take, current, ready)
     draft.tempoMode = "song"
     draft.takeSource = { id = take.id, projectId = source.id, revision = source.revision,
         bars = take.bars, partial = take.partial, localOnly = take.localOnly }
-    local variants, variantCount = {}, 0
+    local variants, variantCount, attributes = {}, 0, {}
     for _, run in runs do
         local key = run.sequenceId .. ":" .. run.firstBar .. ":" .. run.bars .. ":" .. run.mask
         local sequenceId = variants[key]
@@ -231,6 +236,15 @@ function Take.materialize(take, current, ready)
             variants[key] = sequenceId
             local original = source.sequences[run.sequenceId]
             local copy = Project.clone(original)
+            local originalCredits = original.attribution or source.attribution
+            local creditOwner = originalCredits and originalCredits.creator
+                or (original.collaboration and original.collaboration.contributors and original.collaboration.contributors[1])
+            if creditOwner then
+                local credits, creditProblem = Attribution.capture(source, original, creditOwner)
+                if not credits then return nil, creditProblem end
+                copy.attribution = credits
+                table.insert(attributes, credits)
+            end
             copy.id, copy.name, copy.revision, copy.savedRevision = sequenceId, "Take section " .. variantCount, 1, 0
             copy.bars, copy.bpm, copy.tempoMap = run.bars, take.bpm, {}
             copy.trackEvents, copy.trackMutes, copy.trackPadMutes = {}, {}, {}
@@ -281,6 +295,11 @@ function Take.materialize(take, current, ready)
             if #draft.steps >= Project.Limits.SongSteps then return nil, "Song step capacity reached; take retained." end
             table.insert(draft.steps, { stepId = prefix .. "step_" .. (#draft.steps + 1), sequenceId = sequenceId, repeats = 1 })
         end
+    end
+    if #attributes > 0 then
+        local credits, creditProblem = Attribution.merge(attributes, attributes[1].creator, {})
+        if not credits then return nil, creditProblem end
+        draft.attribution, draft.contributors = credits, Project.clone(credits.contributors)
     end
     candidate.drafts[draft.id] = draft
     table.insert(candidate.draftOrder, draft.id)

@@ -6,6 +6,8 @@ local Sequence = require(script.Parent.MusicSequence)
 local Song = require(script.Parent.SongArrangement)
 local Transport = require(script.Parent.MusicTransport)
 local Jam = require(script.Parent.JamProtocol)
+local Attribution = require(script.Parent.MusicAttribution)
+local Versions = require(script.Parent.SampleVersions)
 local Copy = { Schema = 1 }
 local TICKS = Sequence.TicksPerBar
 
@@ -77,6 +79,14 @@ function Copy.capture(session, now, id)
         -- Pinned phrase, not proof of an earlier take; no audio recording.
         kind = "joint_phrase_snapshot",
     }
+    local attributes = {}
+    for _, member in sources do
+        if member.snapshot.project.attribution then table.insert(attributes, member.snapshot.project.attribution) end
+    end
+    local credits, creditProblem = Attribution.merge(attributes,
+        { userId = sources[1].ownerUserId, name = sources[1].name }, take.contributors)
+    if not credits then return nil, creditProblem end
+    take.attribution, take.contributors = credits, Project.clone(credits.contributors)
     local bytes, problem = Project.serializedBytes(take, Project.Limits.MusicBytes)
     return if bytes then take else nil, problem
 end
@@ -119,6 +129,7 @@ function Copy.materialize(take, current, ready)
     local merged = Sequence.new(resultId, "Back-to-Back / Both parts", take.bpm, take.bars)
     merged.collaboration = { id = take.id, kind = take.kind,
         contributors = Project.clone(take.contributors), bars = take.bars }
+    merged.attribution = Project.clone(take.attribution)
     local used, programs, trackMap, expected = {}, {}, {}, {}
     local targetSolo = soloPredicate(candidate)
     local programCount = 0
@@ -128,6 +139,9 @@ function Copy.materialize(take, current, ready)
         local source = member.snapshot
         local valid, problem = Project.validate(source.project)
         if not valid then return nil, problem end
+        local pins, versionProblem = Versions.merge(candidate.sampleVersions, source.project.sampleVersions)
+        if not pins then return nil, versionProblem end
+        candidate.sampleVersions = pins
         local schedule, scheduleProblem = Jam.schedule(source, take.bpm)
         if not schedule then return nil, scheduleProblem end
         if take.bars % source.bars ~= 0 then
@@ -215,6 +229,7 @@ function Copy.materialize(take, current, ready)
     draft.tempoMode = "song"
     draft.steps = { { stepId = prefix .. "step_1", sequenceId = resultId, repeats = 1 } }
     draft.contributors = Project.clone(take.contributors)
+    draft.attribution = Project.clone(take.attribution)
     draft.collaboration = { id = take.id, source = take.kind,
         recordedAtBar = take.recordedAtBar, bars = take.bars }
     candidate.drafts[draftId] = draft

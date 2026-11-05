@@ -1,6 +1,12 @@
 -- Fictional authored characters. No family photographs, likeness data or voice assets.
 local Catalog = {
     Order = { "none", "alissia", "nikolas" },
+    -- Session-only guidance choices. These never select or edit musical objects.
+    HintTopics = { "auto", "hunt", "sequence", "draft", "finished", "route" },
+    HintLabels = {
+        auto = "CURRENT MUSIC", hunt = "NEXT SOUND HUNT", sequence = "SELECTED SEQUENCE",
+        draft = "SELECTED DRAFT", finished = "SELECTED FINISHED SONG", route = "QUAY ROUTE",
+    },
     ById = {
         none = {
             name = "Alone",
@@ -27,6 +33,9 @@ local Catalog = {
 }
 function Catalog.valid(id)
     return type(id) == "string" and Catalog.ById[id] ~= nil
+end
+function Catalog.validTopic(id)
+    return type(id) == "string" and Catalog.HintLabels[id] ~= nil
 end
 function Catalog.sanitize(raw)
     -- The supplied v1 pack persisted a string; retain that choice during migration.

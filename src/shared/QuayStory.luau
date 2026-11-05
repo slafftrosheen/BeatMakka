@@ -18,7 +18,7 @@ Story.Chapters = {
         id = "dock",
         title = "The quay has a rhythm",
         summary = "Tori remembers when this dock corner had room for music. What could its everyday sounds become?",
-        nextStep = "Make room at the dock, then put Quay metal on four distinct rhythmic positions in a named sequence and check your music with Tori.",
+        nextStep = "Put Quay metal on any two different positions in a named sequence, save, and check your music with Tori. Help at the dock when you want.",
         required = { "NQ-Q01", "NQ-Q02" },
     },
     {
@@ -39,7 +39,7 @@ Story.Chapters = {
         id = "invitation",
         title = "An invitation, not a demand",
         summary = "Sana is making room for visitors. Mica can carry a clear invitation to the breakwater.",
-        nextStep = "Help Sana with the stage cases. Answer Mica using Helper chirp on the four quarter notes of your explicitly selected teaching bar, then restore the signal.",
+        nextStep = "Help Sana when ready. Answer Mica with two different saved Helper chirp rhythms of your own after the earlier sound hunts, then restore the signal.",
         required = { "NQ-Q08", "NQ-Q09", "NQ-Q10" },
     },
     {
@@ -245,7 +245,7 @@ Story.Scenes = {
             "That loading rail has kept the same clank for years. I wonder what you would make of it.",
             "I'll bring the chairs if you want to try a little gathering. No need to play in public before you are ready.",
         },
-        prompt = "Make room at the dock, then try Quay metal on four distinct rhythmic positions in a named sequence in your Roamer.",
+        prompt = "Try Quay metal on any two different positions in a named sequence in your Roamer and save it. Dock cleanup is a separate activity.",
     },
     dock_done = {
         title = "The loading rail, heard differently",
@@ -312,10 +312,10 @@ Story.Scenes = {
         speaker = "Mica",
         lines = {
             "I can carry a signal. I cannot decide what you want to say.",
-            "This Helper chirp is one of the quay's virtual sounds. Select a teaching bar. Try a clear reply at ticks 0, 960, 1920 and 2880 within that bar.",
+            "This Helper chirp is one of the quay's virtual sounds. Try two personal rhythms and save each as a named sequence. Echo practice is optional.",
             "An invitation does not need an answer straight away. People can join when they are ready.",
         },
-        prompt = "Bring the four-note reply back for a check, then use the signal console.",
+        prompt = "Bring your two personal saved replies back after the earlier sound hunts, then use the signal console.",
     },
     signal_done = {
         title = "An invitation across the breakwater",

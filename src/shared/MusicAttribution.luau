@@ -30,9 +30,24 @@ end
 function Attribution.capture(project, object, owner)
     local prior = project.attribution
     if not Attribution.valid(prior) or not person(owner) then return nil, "Invalid music credits; originals retained." end
-    local result = { schema = 1, creator = table.clone(prior and prior.creator or owner),
+    local objectAttribution = object and object.attribution
+    if not Attribution.valid(objectAttribution) then return nil, "Invalid object credits; originals retained." end
+    local result = { schema = 1, creator = table.clone((objectAttribution and objectAttribution.creator) or (prior and prior.creator) or owner),
         contributors = {}, sources = {} }
     local seen = {}
+    local seenSources = {}
+    local function addSources(attribution)
+        for _, source in attribution and attribution.sources or {} do
+            local key = source.releaseId .. ":" .. source.revision .. ":" .. source.creator.userId
+            if not seenSources[key] then
+                if #result.sources >= Attribution.Limit then return false end
+                seenSources[key] = true
+                table.insert(result.sources, { releaseId = source.releaseId, revision = source.revision,
+                    creator = table.clone(source.creator) })
+            end
+        end
+        return true
+    end
     local function add(author, fallback)
         if not person(author) then return false end
         if not seen[author.userId] then
@@ -49,11 +64,14 @@ function Attribution.capture(project, object, owner)
     end
     local function collect(selected)
         if not selected then return true end
+        local attribution = selected.attribution
+        if not Attribution.valid(attribution) or not addSources(attribution) then return false end
         local collaboration = selected.collaboration
         if collaboration ~= nil and type(collaboration) ~= "table" then return false end
         if selected.contributors ~= nil and type(selected.contributors) ~= "table" then return false end
         if collaboration and collaboration.contributors ~= nil and type(collaboration.contributors) ~= "table" then return false end
-        local lists = { selected.contributors or {}, collaboration and collaboration.contributors or {} }
+        local lists = { selected.contributors or {}, collaboration and collaboration.contributors or {},
+            attribution and attribution.contributors or {} }
         for _, list in lists do
             if type(list) ~= "table" or #list > Attribution.Limit then return false end
             for _, author in list do if not add(author, "Collaborator") then return false end end
@@ -71,10 +89,19 @@ function Attribution.capture(project, object, owner)
         end
     end
     if not add(owner, if prior then "Remixer" else "Creator") then return nil, "Credit capacity reached." end
-    for _, source in (prior and prior.sources or {}) do
-        table.insert(result.sources, { releaseId = source.releaseId, revision = source.revision,
-            creator = table.clone(source.creator) })
+    if not addSources(prior) then return nil, "Source lineage capacity reached; originals retained." end
+    return result
+end
+function Attribution.merge(attributes, owner, contributors)
+    local result, problem = Attribution.capture({}, { contributors = contributors }, owner)
+    if not result then return nil, problem end
+    local primary
+    for _, attribution in attributes do
+        primary = primary or attribution.creator
+        result, problem = Attribution.capture({ attribution = result }, { attribution = attribution }, owner)
+        if not result then return nil, problem end
     end
+    if primary then result.creator = table.clone(primary) end
     return result
 end
 function Attribution.remix(record, owner)

@@ -1,6 +1,8 @@
 -- Optional, read-only notebooks. Saved evidence is never promoted into quest awards here.
 local Discovery = require(script.Parent.DiscoveryCatalog)
 local Music = require(script.Parent.QuayMusicEvidence)
+local Samples = require(script.Parent.SampleCatalog)
+local Hunt = require(script.Parent.SoundHunt)
 local Journal = {}
 local observations = {
     I01 = {
@@ -93,12 +95,22 @@ function Journal.project(profile, selected, location)
                 count += 1
             end
             local note, definition = observations[id], Discovery.ById[id]
+            local source = Samples.discoveryFor(id)
+            local track = profile.music.project.tracks[profile.trackId]
+            local program = track and profile.music.project.programs[track.programId]
+            local pad = source and Hunt.pad(program, source.id)
+            local playback = if not found then "Not collected"
+                elseif not source or not Samples.isPlaybackReady(source.id, profile.unlocked) then "Audio unavailable here"
+                elseif Samples.isReady(source.id, profile.unlocked) then "Approved audio"
+                else "Local preview; listening approval pending"
             table.insert(pages, {
                 title = definition.label,
                 available = found,
                 place = note.place,
                 text = if found
-                    then note.text
+                    then definition.origin .. "\n" .. playback .. " / "
+                        .. (if pad then Hunt.address(pad) else "not assigned on this track")
+                        .. ". Find the source and audition in SEQ / Full editor / Sound Hunts."
                     else "An empty page for a sound you may find here. Collect it through the existing activity when you want to.",
                 status = if found then "FOUND SOUND" else "UNWRITTEN PAGE",
             })
@@ -133,7 +145,7 @@ function Journal.project(profile, selected, location)
             {
                 title = "Pulse",
                 available = metalSteps > 0,
-                place = "Quay metal / saved sequences",
+                place = Discovery.ById.I01.label .. " / saved sequences",
                 text = if metalSteps > 0
                     then string.format(
                         "Your saved metal rhythm uses up to %d distinct rhythmic positions in a sequence. Change one moment and hear what happens.",
@@ -145,7 +157,7 @@ function Journal.project(profile, selected, location)
             {
                 title = "Layers",
                 available = layered,
-                place = "Metal + vent / saved sequences",
+                place = Discovery.ById.I01.label .. " + " .. Discovery.ById.I02.label .. " / saved sequences",
                 text = if layered
                     then "One of your saved sequences lets metal and vent sound together. Each voice can leave room for the other."
                     else "Metal and vent have different edges. Try both in one sequence, then save a version you like.",
@@ -154,7 +166,7 @@ function Journal.project(profile, selected, location)
             {
                 title = "Replies",
                 available = variants >= 2,
-                place = "Helper chirp / saved sequences",
+                place = Discovery.ById.I03.label .. " / saved sequences",
                 text = string.format(
                     "Your last successfully saved sequences hold %d different audible chirp rhythms. Try changing the reply in another sequence.",
                     variants

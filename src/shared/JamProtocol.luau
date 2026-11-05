@@ -2,7 +2,9 @@ local Project = require(script.Parent.MusicProject)
 local Sequence = require(script.Parent.MusicSequence)
 local Transport = require(script.Parent.MusicTransport)
 local Catalog = require(script.Parent.SampleCatalog)
+local PadSound = require(script.Parent.PadSound)
 local Set = require(script.Parent.StreetSet)
+local Attribution = require(script.Parent.MusicAttribution)
 local Jam =
     { Schema = 3, Lead = 0.75, TrackGain = 0.05, Voices = 16, MaxEvents = 2048, MaxBytes = 350000 }
 
@@ -20,6 +22,45 @@ function Jam.roleAllows(role, event)
     return if role == "rhythm" then category == "drums" or category == "bass"
         elseif role == "hook" then category == "hook" or category == "harbour"
         else false
+end
+
+-- A declaration of source settings, never a claim of verified musical tuning.
+local function declaredContext(project, sequenceId, role, schedule)
+    local sequence = project and project.sequences[sequenceId]
+    if not sequence or not Jam.roleValid(role) then return nil end
+    local offsets, seen, assignments, mixed = {}, {}, {}, false
+    for _, event in schedule.events do
+        local sample = Catalog.ById[event.sampleId]
+        mixed = mixed or not sample or sample.pack ~= Catalog.PlannedPack.id
+        local pitch = event.settings.pitch
+        if not seen[pitch] then seen[pitch] = true; table.insert(offsets, pitch) end
+        assignments[event.trackId .. ":" .. tostring(event.pad)] = {
+            sampleId = event.sampleId, trackId = event.trackId, pad = event.pad, pitch = pitch,
+        }
+    end
+    table.sort(offsets)
+    local values = {}
+    for _, pitch in offsets do table.insert(values, string.format("%+g", pitch)) end
+    local changed, declarations = {}, {}
+    for _, assignment in assignments do
+        if assignment.pitch ~= 0 then
+            table.insert(changed, string.format("Part %d / %s / pad %d %+g st",
+                table.find(project.trackOrder, assignment.trackId) or 1,
+                Catalog.ById[assignment.sampleId] and Catalog.ById[assignment.sampleId].label or "Unavailable sound", assignment.pad, assignment.pitch))
+        end
+        table.insert(declarations, assignment)
+    end
+    table.sort(changed)
+    table.sort(declarations, function(a, b) return a.trackId .. ":" .. a.pad < b.trackId .. ":" .. b.pad end)
+    return { token = table.concat({ project.id, project.revision, sequenceId, sequence.revision, role }, ":"),
+        role = role, plannedKey = if mixed then "Mixed / unavailable palette" else Catalog.PlannedPack.key,
+        tuningVerified = false, pitchOffsets = offsets, pitchAssignments = declarations,
+        signature = (if mixed then "mixed" else Catalog.PlannedPack.key) .. "|" .. table.concat(changed, "|"),
+        label = (if mixed then "Mixed / unavailable palette" else "Planned " .. Catalog.PlannedPack.key)
+            .. " / tuning not listening-verified / pitch offsets "
+            .. (if #values > 0 then table.concat(values, ", ") .. " st" else "none")
+            .. (if #changed > 0 then " / modified: " .. table.concat(changed, "; ") else "")
+            .. " / no automatic retuning" }
 end
 
 local function selectRole(schedule, role)
@@ -40,12 +81,14 @@ local function selectRole(schedule, role)
     end
     schedule.events = events
     schedule.expandedEvents = #events
-    schedule.unavailable, schedule.unavailableCount = {}, 0
+    schedule.unavailable, schedule.unavailableCount, schedule.unavailableReasons = {}, 0, {}
     return schedule
 end
 
--- Session tempo adapts playback only; saved notes and source BPM never change.
-function Jam.capture(project, sequenceId, unlocked, bpm, role)
+-- Context and capture share the exact audible resolver/role/readiness policy.
+-- includeUnavailable keeps genuinely needed missing audio visible to selectRole,
+-- which rejects it; muted/solo-excluded/zero-gain notes never enter this schedule.
+local function resolveRole(project, sequenceId, unlocked, bpm, role)
     local sequence = project and project.sequences[sequenceId]
     if not sequence then
         return nil, "Choose a named Sequence before joining."
@@ -69,13 +112,62 @@ function Jam.capture(project, sequenceId, unlocked, bpm, role)
     if not schedule then
         return nil, message
     end
-    schedule, message = selectRole(schedule, role)
-    if not schedule then
-        return nil, message
+    return selectRole(schedule, role)
+end
+
+function Jam.context(project, sequenceId, role, unlocked, bpm)
+    local schedule, problem = resolveRole(project, sequenceId, unlocked, bpm, role)
+    if not schedule then return nil, problem end
+    return declaredContext(project, sequenceId, role, schedule)
+end
+
+-- Session tempo adapts playback only; saved notes and source BPM never change.
+function Jam.capture(project, sequenceId, unlocked, bpm, role, creator)
+    local schedule, message = resolveRole(project, sequenceId, unlocked, bpm, role)
+    if not schedule then return nil, message end
+    local sequence = project.sequences[sequenceId]
+    local attribution, creditProblem
+    if creator then
+        attribution, creditProblem = Attribution.capture(project, sequence, creator)
+        if not attribution then return nil, creditProblem end
     end
-    local copy = Project.clone(project)
-    copy.sequences = { [sequenceId] = Project.clone(sequence) }
-    copy.sequenceOrder, copy.drafts, copy.draftOrder = { sequenceId }, {}, {}
+    -- Export only the musical dependency fields. Stored private names and
+    -- unrelated project metadata never become another player's jam text.
+    local copy = { id = project.id, revision = project.revision, name = "Shared jam part",
+        ppq = project.ppq, defaultBpm = project.defaultBpm, nextId = project.nextId,
+        tracks = {}, trackOrder = Project.clone(project.trackOrder), programs = {},
+        sequences = {}, sequenceOrder = { sequenceId }, drafts = {}, draftOrder = {},
+        sampleVersions = project.sampleVersions and {} or nil }
+    copy.attribution = attribution and Project.clone(attribution)
+    local selected = {}
+    for _, event in schedule.events do
+        selected[event.programId] = selected[event.programId] or {}
+        selected[event.programId][tostring(event.pad)] = true
+    end
+    for index, trackId in project.trackOrder do
+        local original = project.tracks[trackId]
+        copy.tracks[trackId] = { id = original.id, revision = original.revision, name = "Part " .. index,
+            programId = original.programId, mix = Project.clone(original.mix) }
+        local originalProgram = project.programs[original.programId]
+        if not copy.programs[original.programId] then
+            local program = { id = originalProgram.id, revision = originalProgram.revision, name = "Shared kit", pads = {} }
+            for address, pad in originalProgram.pads do
+                local used = selected[original.programId] and selected[original.programId][address]
+                program.pads[address] = if used then { sampleId = pad.sampleId, settings = Project.clone(pad.settings) }
+                    else { sampleId = "", settings = PadSound.sanitize(nil) }
+                if used and copy.sampleVersions then copy.sampleVersions[pad.sampleId] = Project.clone(project.sampleVersions[pad.sampleId]) end
+            end
+            copy.programs[original.programId] = program
+        end
+    end
+    local section = {}
+    for _, key in { "id", "revision", "bars", "bpm", "meter", "trackEvents", "trackMutes", "trackPadMutes", "tempoMap", "savedRevision", "converted" } do
+        section[key] = Project.clone(sequence[key])
+    end
+    section.name = "Shared section"
+    copy.sequences[sequenceId] = section
+    schedule.title = Jam.RoleLabels[role]
+    for _, sectionInfo in schedule.sections do sectionInfo.name = "Shared section" end
     -- The network snapshot exports only the chosen musical part, never other
     -- private notes that happen to exist in the player's current Sequence.
     local audibleEventIds = {}
@@ -99,7 +191,8 @@ function Jam.capture(project, sequenceId, unlocked, bpm, role)
         schema = Jam.Schema,
         project = copy,
         ref = { kind = "sequence", id = sequenceId, revision = sequence.revision },
-        title = sequence.name,
+        title = Jam.RoleLabels[role],
+        context = declaredContext(project, sequenceId, role, schedule),
         role = role,
         sourceBpm = sequence.bpm,
         bars = sequence.bars,

@@ -77,6 +77,16 @@ function Project.program(id, label, assignments)
             settings = PadSound.sanitize(nil),
         }
     end
+    local pack
+    for _, pad in program.pads do
+        local pin = Versions.current(pad.sampleId)
+        if not pin or (pack and (pack.packId ~= pin.packId or pack.revision ~= pin.revision)) then
+            pack = nil
+            break
+        end
+        pack = pin
+    end
+    if pack then program.sourcePackId, program.mappingRevision = pack.packId, pack.revision end
     return program
 end
 
@@ -89,7 +99,7 @@ function Project.new(id, label)
             assignments[pad] = if sample then sample.id else ""
         end
     end
-    return {
+    local project = {
         id = id or "project_main",
         revision = 1,
         name = label or "My music",
@@ -112,6 +122,8 @@ function Project.new(id, label)
         drafts = {},
         draftOrder = {},
     }
+    project.sampleVersions = Versions.capture(project)
+    return project
 end
 
 local function orderValid(objects, order, maximum)
@@ -171,6 +183,10 @@ function Project.validate(project, skipBytes)
         or type(project.programs) ~= "table"
         or not Attribution.valid(project.attribution)
         or not Versions.valid(project.sampleVersions)
+        or (project.challenge ~= nil and (type(project.challenge) ~= "table"
+            or project.challenge.schema ~= 1 or project.challenge.promptId ~= "quiet_dock_v1"
+            or project.challenge.version ~= 1 or not identifier(project.challenge.quietId)
+            or not identifier(project.challenge.arrivalId) or not identifier(project.challenge.draftId)))
         or not orderValid(project.tracks, project.trackOrder, Project.Limits.Tracks)
         or not orderValid(project.sequences, project.sequenceOrder, Project.Limits.Sequences)
         or not orderValid(project.drafts, project.draftOrder, Project.Limits.Drafts)
@@ -810,6 +826,11 @@ function Project.apply(source, operation, payload)
     end
     if changedProgram then
         bump(changedProgram)
+    end
+    if project.sampleVersions and (changedTrack or changedProgram) then
+        local pins, problem = Versions.capture(project, true, true)
+        if not pins then return fail(problem) end
+        project.sampleVersions = pins
     end
     if changedTrack or changedProgram then
         for id, candidate in project.sequences do

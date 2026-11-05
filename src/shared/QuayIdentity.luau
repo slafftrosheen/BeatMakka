@@ -44,6 +44,7 @@ local Identity = {
         ["activity:sound_safari"] = { listener = 30, beatmaker = 10 },
         ["activity:pattern_bench"] = { beatmaker = 40 },
         ["activity:sleeve_studio"] = { beatmaker = 10, neighbour = 20 },
+        ["activity:same_crate"] = { beatmaker = 20, listener = 10 },
     },
 }
 

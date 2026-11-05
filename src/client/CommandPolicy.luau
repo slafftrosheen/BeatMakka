@@ -13,9 +13,11 @@ return function(state, action)
                     and (
                         action:sub(1, 4) == "Life"
                         or action:sub(1, 6) == "Record"
+                        or action:sub(1, 9) == "Challenge"
                         or action == "CompanionSelect"
                         or action == "CompanionHints"
                         or action == "CompanionHint"
+                        or action == "CompanionTopic"
                     )
                 )
                 or state.station ~= nil

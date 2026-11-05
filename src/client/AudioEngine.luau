@@ -5,6 +5,7 @@ local ContentIds = require(Shared.ContentIds)
 local LocalContent = require(Shared.LocalContent)
 local RunService = game:GetService("RunService")
 local Catalog = require(Shared.SampleCatalog)
+local Versions = require(Shared.SampleVersions)
 local PadVoiceProcessor = require(script.Parent.PadVoiceProcessor)
 local Mix = require(script.Parent.AudioMix)
 local AudioEngine = {}
@@ -190,6 +191,7 @@ function AudioEngine:_removeBank(id)
     for _, voice in bank.voices do
         self.processor:forget(voice)
         self.voiceStarted[voice] = nil
+        self.voiceOwners[voice] = nil
         voice:Stop()
         voice:Destroy()
         if bank.music then
@@ -235,6 +237,10 @@ function AudioEngine:_syncMusic()
             end
         end
     end
+    -- Keep every requested identity for truthful status even when it cannot
+    -- allocate a voice. Readiness never substitutes a different sample.
+    self.requestedMusic = table.clone(wanted)
+    for id in self.scheduleUnavailable or {} do self.requestedMusic[id] = true end
     local ordered = {}
     for id in wanted do
         if self:_isPlayable(id) then
@@ -257,6 +263,8 @@ function AudioEngine:_syncMusic()
                     local voice = bank.voices[index]
                     if not voice.IsPlaying then
                         self.processor:forget(voice)
+                        self.voiceOwners[voice] = nil
+                        self.voiceStarted[voice] = nil
                         voice:Destroy()
                         table.remove(bank.voices, index)
                         allocatedMusicVoices -= 1
@@ -284,40 +292,42 @@ end
 
 local function sameSelection(a, b)
     for id in a or {} do
-        if not b[id] then
+        if b[id] ~= a[id] then
             return false
         end
     end
     for id in b do
-        if not a or not a[id] then
+        if not a or a[id] ~= b[id] then
             return false
         end
     end
     return true
 end
 
-function AudioEngine:setSelection(assignments, mask)
+function AudioEngine:setSelection(assignments, mask, pins)
     if self.destroyed then
         return
     end
-    local wanted = {}
+    local wanted, unavailable = {}, {}
     for address, value in if type(assignments) == "table" then assignments else {} do
         local id = if type(value) == "table" then value.sampleId else value
         if
             (mask == nil or mask[address] == true or mask[tonumber(address)] == true)
             and type(id) == "string"
-            and self:_isPlayable(id)
         then
             wanted[id] = true
+            if not Versions.matches(id, pins) then unavailable[id] = "versionMismatch" end
         end
     end
     if
         sameSelection(self.selection, wanted)
+        and sameSelection(self.selectionUnavailable, unavailable)
         and self.selectionWorldPreview == self.worldPreview
     then
         return
     end
     self.selection = wanted
+    self.selectionUnavailable = unavailable
     self:_syncMusic()
 end
 
@@ -325,21 +335,26 @@ function AudioEngine:setSchedule(schedule)
     if self.destroyed then
         return
     end
-    local wanted = {}
+    local wanted, unavailable = {}, {}
     if type(schedule) == "table" then
         for _, event in schedule.events or {} do
-            if type(event.sampleId) == "string" and self:_isPlayable(event.sampleId) then
+            if type(event.sampleId) == "string" then
                 wanted[event.sampleId] = true
             end
+        end
+        for id in schedule.unavailable or {} do
+            unavailable[id] = (schedule.unavailableReasons and schedule.unavailableReasons[id]) or "unavailable"
         end
     end
     if
         sameSelection(self.scheduleSelection, wanted)
+        and sameSelection(self.scheduleUnavailable, unavailable)
         and self.selectionWorldPreview == self.worldPreview
     then
         return
     end
     self.scheduleSelection = wanted
+    self.scheduleUnavailable = unavailable
     self:_syncMusic()
 end
 
@@ -352,6 +367,8 @@ function AudioEngine.new(groupName, options)
         destroyed = false,
         ambientRequested = false,
         voiceStarted = {},
+        voiceOwners = {},
+        voiceGeneration = 0,
         musicVoiceCount = 0,
         chokes = {},
         Changed = Instance.new("BindableEvent"),
@@ -410,6 +427,21 @@ function AudioEngine.new(groupName, options)
     return self
 end
 
+function AudioEngine:_requestedState(id)
+    local denied = self.selectionUnavailable and self.selectionUnavailable[id]
+        or self.scheduleUnavailable and self.scheduleUnavailable[id]
+    if denied then return denied end
+    local sample = Catalog.ById[id]
+    if not sample then return "unavailable" end
+    if not self:_isPlayable(id) then
+        if not sample.audioApproved or not sample.runtimeAdmitted then return "unadmitted" end
+        local remote = ContentIds.Audio[id]
+        return if remote == nil or remote == 0 then "unconfigured" else "invalid"
+    end
+    local bank = self.banks[id]
+    return if bank then bank.state else "voiceBudget"
+end
+
 function AudioEngine:diagnostics()
     local states = {}
     for id, bank in self.banks do
@@ -420,10 +452,13 @@ function AudioEngine:diagnostics()
             localPreview = bank.localPreview,
         }
     end
+    local requested = {}
+    for id in self.requestedMusic or {} do requested[id] = self:_requestedState(id) end
     return {
         muted = self.muted,
         destroyed = self.destroyed,
         banks = states,
+        requested = requested,
         globalMusicVoices = allocatedMusicVoices,
         globalMusicVoiceLimit = MUSIC_VOICE_LIMIT,
         engineMusicVoices = self.musicVoiceCount,
@@ -437,21 +472,18 @@ function AudioEngine:status()
     if self.destroyed then
         return "Audio engine stopped."
     end
-    local counts =
-        { ready = 0, loading = 0, failed = 0, timedOut = 0, unconfigured = 0, invalid = 0 }
+    local counts = { ready = 0 }
     local musicCount, previewCount = 0, 0
-    for _, bank in self.banks do
-        if bank.music then
-            counts[bank.state] += 1
-            musicCount += 1
-            if bank.localPreview then
-                previewCount += 1
-            end
-        end
+    for id in self.requestedMusic or {} do
+        local state = self:_requestedState(id)
+        counts[state] = (counts[state] or 0) + 1
+        musicCount += 1
+        local bank = self.banks[id]
+        if bank and bank.localPreview then previewCount += 1 end
     end
     local prefix = if self.muted then "Sound muted. " else ""
-    if counts.unconfigured == musicCount then
-        return prefix .. "The harbour sounds are being prepared. You can edit and save drafts."
+    if musicCount == 0 then
+        return prefix .. "No music sounds selected."
     end
     local parts = { string.format("Sounds %d/%d ready", counts.ready, musicCount) }
     if previewCount > 0 then
@@ -464,9 +496,13 @@ function AudioEngine:status()
             { "timedOut", "timed out" },
             { "unconfigured", "unconfigured" },
             { "invalid", "invalid IDs" },
+            { "unavailable", "unavailable samples" },
+            { "unadmitted", "awaiting audio approval" },
+            { "versionMismatch", "different pack version" },
+            { "voiceBudget", "waiting for voice capacity" },
         }
     do
-        if counts[item[1]] > 0 then
+        if (counts[item[1]] or 0) > 0 then
             table.insert(parts, tostring(counts[item[1]]) .. " " .. item[2])
         end
     end
@@ -526,6 +562,7 @@ function AudioEngine:play(id, settings, route, velocity)
         return false
     end
     -- Oldest-voice stealing is deterministic and bounded to this sample.
+    self.voiceOwners[voice] = nil
     voice:Stop()
     voice.TimePosition = 0
     local musicRoute = route or ("sample:" .. id)
@@ -545,6 +582,7 @@ function AudioEngine:play(id, settings, route, velocity)
             local key = routeScope(route) .. ":" .. sample.chokeGroup
             local previous = self.chokes[key]
             if previous and previous ~= voice and previous.Parent then
+                self.voiceOwners[previous] = nil
                 previous:Stop()
                 self.processor:forget(previous)
             end
@@ -554,7 +592,24 @@ function AudioEngine:play(id, settings, route, velocity)
         voice.SoundGroup = self.cueGroup
     end
     self.voiceStarted[voice] = os.clock()
+    self.voiceGeneration += 1
+    local handle = { engine = self, voice = voice, generation = self.voiceGeneration,
+        sampleId = id, route = if type(route) == "table" then table.clone(route) else route }
+    self.voiceOwners[voice] = handle
     voice:Play()
+    return true, handle
+end
+
+-- Finger-up relinquishes a one-shot without cutting its authored tail. Cancel
+-- stops only the captured hit; a recycled/choked voice has a different handle.
+function AudioEngine:release(handle, cancelled)
+    if type(handle) ~= "table" or handle.engine ~= self
+        or self.voiceOwners[handle.voice] ~= handle then return false end
+    self.voiceOwners[handle.voice] = nil
+    if cancelled and handle.voice.Parent then
+        handle.voice:Stop()
+        self.processor:forget(handle.voice)
+    end
     return true
 end
 
@@ -563,6 +618,7 @@ function AudioEngine:click()
 end
 
 function AudioEngine:_stopVoices()
+    table.clear(self.voiceOwners)
     self.processor:stop()
     for _, bank in self.banks do
         for _, voice in bank.voices do

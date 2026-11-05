@@ -46,6 +46,29 @@ local function paginate(lines, width, height, size)
 end
 function View.new(screen, command, mute)
     local self = setmetatable({ page = "session", channels = {}, connections = {} }, View)
+    local function acknowledge(action, value)
+        local jam = self.jam or {}
+        local context = if action == "JamSwapOffer" or action == "JamSwapAccept" then jam.swapContext else jam.sourceContext
+        if action == "JamInvite" then context = value and value.context end
+        if not context then
+            -- An unavailable/empty role cannot acquire an acknowledgement.
+            -- Let the server return its resolver reason instead of a dead button.
+            command(action, { userId = value and value.userId })
+            return
+        end
+        local key = action .. ":" .. context.token .. ":" .. tostring(jam.generation) .. ":" .. tostring(jam.revision)
+            .. ":" .. tostring(value and value.userId or 0)
+        local pending = self.contextConfirmation
+        if pending and pending.key == key and os.clock() < pending.expiresAt then
+            self.contextConfirmation = nil
+            command(action, { contextToken = context.token, userId = value and value.userId })
+        else
+            self.contextConfirmation = { key = key, action = action, token = context.token,
+                revision = jam.revision, generation = jam.generation, label = context.label, expiresAt = os.clock() + 12 }
+            self.page = "partner"
+            self:paint()
+        end
+    end
     self.panel = W.frame(screen, "TwoPlayerJam", Color3.fromRGB(29, 48, 40))
     self.panel.AnchorPoint, self.panel.Position = Vector2.new(0.5, 0.5), UDim2.fromScale(0.5, 0.5)
     self.panel.Size, self.panel.Visible, self.panel.ZIndex = UDim2.new(1, -24, 1, -24), false, 20
@@ -58,6 +81,7 @@ function View.new(screen, command, mute)
     self.tempoLabel = label(self.panel, "SharedTempo", "BPM", 11, W.amber)
     self.info = W.key(self.panel, "JamInfo", "hint", "PARTNER", function()
         self.copyConfirmation = nil
+        self.contextConfirmation = nil
         self.page = if self.page == "session" then "partner"
             elseif self.page == "partner" then "info" else "session"
         self:paint()
@@ -103,6 +127,8 @@ function View.new(screen, command, mute)
     self.partnerIntro = W.label(self.partnerPage, "PartnerInfo",
         "Two separate owners. Nothing joins without an invitation.", 12, W.text)
     self.partnerIntro.TextWrapped = true
+    self.contextInfo = W.label(self.partnerPage, "SharedTuningContext", "", 12, W.amber)
+    self.contextInfo.TextWrapped = true
     self.copyStatus = W.label(self.partnerPage, "JointCopyStatus",
         "JOINT COPY / both contributors consent. No audio file or autosave.", 12, W.amber)
     self.copyStatus.TextWrapped = true
@@ -118,6 +144,7 @@ function View.new(screen, command, mute)
     self.candidate = partnerKey("ChooseInvitee", "CHOOSE MUSICIAN", function()
         local candidates = (self.jam and self.jam.candidates) or {}
         if #candidates > 0 then
+            self.contextConfirmation = nil
             self.candidateIndex = ((self.candidateIndex or 1) % #candidates) + 1
             self:paint()
         end
@@ -125,10 +152,10 @@ function View.new(screen, command, mute)
     self.invite = partnerKey("SendInvite", "INVITE", function()
         local candidates = (self.jam and self.jam.candidates) or {}
         local player = candidates[self.candidateIndex or 1]
-        if player then command("JamInvite", player.userId) end
+        if player then acknowledge("JamInvite", player) end
     end)
     self.accept = partnerKey("AcceptInvite", "ACCEPT INVITE", function()
-        command("JamAccept")
+        acknowledge("JamAccept")
     end)
     self.decline = partnerKey("DeclineInvite", "DECLINE", function()
         command("JamDecline")
@@ -143,10 +170,10 @@ function View.new(screen, command, mute)
         command("JamLeadDecline")
     end)
     self.swapOffer = partnerKey("OfferRoleExchange", "EXCHANGE ROLES", function()
-        command("JamSwapOffer")
+        acknowledge("JamSwapOffer")
     end)
     self.swapAccept = partnerKey("AcceptRoleExchange", "ACCEPT ROLES", function()
-        command("JamSwapAccept")
+        acknowledge("JamSwapAccept")
     end)
     self.swapDecline = partnerKey("DeclineRoleExchange", "KEEP ROLES", function()
         command("JamSwapDecline")
@@ -157,6 +184,8 @@ function View.new(screen, command, mute)
     self.tempoDecline = partnerKey("DeclineTempo", "KEEP BPM", function()
         command("JamTempoDecline")
     end)
+    self.contextAccept = partnerKey("AcceptTuningContext", "ACCEPT PITCH CONTEXT", function() command("JamContextAccept") end)
+    self.contextDecline = partnerKey("DeclineTuningContext", "KEEP CURRENT PART", function() command("JamContextDecline") end)
     self.copyOffer = partnerKey("OfferJointCopy", "OFFER JOINT COPY", function()
         command("JamCopyOffer")
     end)
@@ -191,12 +220,13 @@ function View.new(screen, command, mute)
     self.partnerKeys = { self.roleChoice, self.candidate, self.invite, self.accept,
         self.decline, self.leadOffer, self.leadAccept, self.leadDecline,
         self.swapOffer, self.swapAccept, self.swapDecline, self.tempoAccept, self.tempoDecline,
+        self.contextAccept, self.contextDecline,
         self.copyOffer, self.copyAccept, self.copyDecline, self.copyKeep, self.copyDiscard }
     self.noticeLine = label(self.panel, "JamNotice", "", 11, Dim)
     self.keys = W.frame(self.panel, "JamHardwareKeys")
     local function key(name, icon, title, action, value)
         return W.key(self.keys, name, icon, title, function()
-            command(action, value)
+            if action == "JamJoin" or action == "JamPublish" then acknowledge(action) else command(action, value) end
         end)
     end
     self.join = key("Join", "people", "START JAM", "JamJoin")
@@ -216,9 +246,11 @@ function View.new(screen, command, mute)
     )
     table.insert(self.connections, Input.WindowFocusReleased:Connect(function()
         self.copyConfirmation = nil
+        self.contextConfirmation = nil
     end))
     table.insert(self.connections, Input.TextBoxFocused:Connect(function()
         self.copyConfirmation = nil
+        self.contextConfirmation = nil
     end))
     self.panel.Destroying:Connect(function()
         for _, connection in self.connections do
@@ -280,6 +312,12 @@ function View:paint()
                 if pending then " / NEXT BAR QUEUED" else ""
             )
         )
+        if track and track.snapshot and track.snapshot.context then
+            table.insert(lines, "ACCEPTED / " .. track.snapshot.context.label)
+        end
+        if pending and pending.snapshot and pending.snapshot.context then
+            table.insert(lines, "NEXT PART / " .. pending.snapshot.context.label)
+        end
     end
     table.insert(
         lines,
@@ -350,6 +388,20 @@ function View:paintPartner()
         and not session.pending["1"] and not session.pending["2"]
     local role = jam.preferredRole or "rhythm"
     local mine = jam.role
+    local contextOffer = session.contextOffer
+    local pendingContext = self.contextConfirmation
+    if pendingContext and (pendingContext.revision ~= jam.revision or pendingContext.generation ~= jam.generation
+        or os.clock() >= pendingContext.expiresAt) then self.contextConfirmation = nil; pendingContext = nil end
+    local contextLines = { "TUNING CONTEXT / no automatic retuning" }
+    if pendingContext then table.insert(contextLines, "PRESS THE SAME CONFIRM BUTTON TO ACKNOWLEDGE\n" .. pendingContext.label)
+    elseif jam.sourceContext then table.insert(contextLines, "YOUR PART / " .. jam.sourceContext.label) end
+    if selected and selected.context then table.insert(contextLines, "INVITEE / " .. selected.context.label) end
+    if invite and invite.sharedContext then table.insert(contextLines, "PARTNER / " .. invite.sharedContext.label) end
+    if contextOffer then table.insert(contextLines, "PROPOSED / " .. contextOffer.snapshot.context.label) end
+    if session.roleOffer then
+        for _, snapshot in session.roleOffer.snapshots do table.insert(contextLines, "EXCHANGED / " .. snapshot.context.label) end
+    end
+    W.set(self.contextInfo, "Text", table.concat(contextLines, "\n"))
     W.set(self.partnerIntro, "Text", if invite then
         invite.from .. " invited you to play " .. string.upper(invite.suggestedRole)
             .. ". Accept by " .. string.format("%ds", math.max(0, math.ceil(invite.expiresAt - workspace:GetServerTimeNow())))
@@ -396,6 +448,8 @@ function View:paintPartner()
     active(self.swapDecline, jam.active and swap ~= nil and swap.to == myId)
     active(self.tempoAccept, isGuestOffer and tempo ~= nil and tempo.to == myId)
     active(self.tempoDecline, isGuestOffer and tempo ~= nil and tempo.to == myId)
+    active(self.contextAccept, jam.active and contextOffer ~= nil and contextOffer.to == myId)
+    active(self.contextDecline, jam.active and contextOffer ~= nil and contextOffer.to == myId)
     active(self.copyOffer, jam.active and hasPartner and not offer and not take
         and not next(session.pending or {}) and not session.tempo)
     active(self.copyAccept, jam.active and offer ~= nil and offer.to == myId)
@@ -420,6 +474,11 @@ function View:paintPartner()
     if tempo then
         caption(self.tempoAccept, "ACCEPT " .. tostring(tempo.bpm) .. " BPM")
     end
+    for _, spec in { { self.join, "JamJoin", "START JAM" }, { self.publish, "JamPublish", "PUBLISH" },
+        { self.invite, "JamInvite", "INVITE" }, { self.accept, "JamAccept", "ACCEPT INVITE" },
+        { self.swapOffer, "JamSwapOffer", "EXCHANGE ROLES" }, { self.swapAccept, "JamSwapAccept", "ACCEPT ROLES" } } do
+        caption(spec[1], if pendingContext and pendingContext.action == spec[2] then "CONFIRM " .. spec[3] else spec[3])
+    end
     if self.panel.AbsoluteSize.X > 0 then self:layoutPartner() end
 end
 
@@ -428,6 +487,10 @@ function View:layoutPartner()
     local y = 8
     W.place(self.partnerIntro, 4, y, w, 78)
     y += 86
+    local contextHeight = TextService:GetTextSize(self.contextInfo.Text, self.contextInfo.TextSize,
+        self.contextInfo.Font, Vector2.new(w, 100000)).Y + 12
+    W.place(self.contextInfo, 4, y, w, contextHeight)
+    y += contextHeight + 8
     W.place(self.copyStatus, 4, y, w, 98)
     y += 106
     local paired = w >= 290
@@ -464,7 +527,7 @@ function View:update(jam, muted, notice)
     local wasOpen = self.panel.Visible
     self.jam = jam
     self.panel.Visible = jam ~= nil and jam.open == true
-    if wasOpen and not self.panel.Visible then self.copyConfirmation = nil end
+    if wasOpen and not self.panel.Visible then self.copyConfirmation, self.contextConfirmation = nil, nil end
     local newInvite = jam and jam.invitation and
         tostring(jam.invitation.generation) .. ":" .. tostring(jam.invitation.fromUserId)
     if newInvite and newInvite ~= self.lastInvite then
@@ -474,6 +537,10 @@ function View:update(jam, muted, notice)
     local newCopy = jam and jam.copyPending and jam.copyPending.id
     if newCopy and newCopy ~= self.lastCopy then self.page = "partner" end
     self.lastCopy = newCopy
+    local newContext = jam and jam.session and jam.session.contextOffer
+    local contextKey = newContext and (tostring(newContext.from) .. ":" .. newContext.snapshot.context.token)
+    if contextKey and contextKey ~= self.lastContextOffer then self.page = "partner" end
+    self.lastContextOffer = contextKey
     if notice then
         self.notice, self.untilAt = notice, os.clock() + 6
     end
@@ -518,6 +585,7 @@ function View:resize()
     if (self.partnerWidth and self.partnerWidth ~= bw)
         or (self.partnerHeight and self.partnerHeight ~= bh) then
         self.copyConfirmation = nil
+        self.contextConfirmation = nil
     end
     self.partnerWidth, self.partnerHeight = bw, bh
     local vertical = w < 450 and bh >= 170
