@@ -5,6 +5,7 @@ local Games = require(script.Parent.QuayStreetGames)
 local Commissions = require(script.Parent.QuayBeatCommissions)
 local Life = require(script.Parent.QuayLifeCatalog)
 local Missions = require(script.Parent.NeighborhoodMissions)
+local Fair = require(script.Parent.QuayFair)
 local Quay = {}
 Quay.Order = {}
 for i = 0, 12 do
@@ -15,6 +16,7 @@ function Quay.sanitize(raw)
     raw = if type(raw) == "table" then raw else {}
     local result =
         { parking = "P1", completed = {}, dock = {}, market = {}, side = {}, repair = 0, sort = 0 }
+    result.fair = Fair.sanitize(raw.fair)
     result.commissions = {}
     result.life = Life.sanitize(raw.life)
     result.commission = if Commissions.find(raw.commission) then raw.commission else nil
@@ -43,6 +45,7 @@ end
 
 function Quay.equal(a, b)
     a, b = Quay.sanitize(a), Quay.sanitize(b)
+    if not Fair.equal(a.fair, b.fair) then return false end
     if not Life.equal(a.life, b.life) then
         return false
     end

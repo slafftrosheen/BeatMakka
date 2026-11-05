@@ -1,11 +1,14 @@
 -- Optional server-owned street games. No client-supplied completion or timing claims.
 local Theme = require(game.ReplicatedStorage.Shared.Theme)
 local Games = require(game.ReplicatedStorage.Shared.QuayStreetGames)
+local Fair = require(game.ReplicatedStorage.Shared.QuayFair)
 local Service = {}
 Service.__index = Service
 function Service.new(owner)
     local self =
-        setmetatable({ owner = owner, nodes = {}, rounds = {}, last = {}, serial = 0 }, Service)
+        setmetatable({ owner = owner, nodes = {}, rounds = {}, shops = {}, last = {}, serial = 0 }, Service)
+    self.prizeNode = require(script.Parent.QuayFairScene).build(owner.scene.root)
+    self.prizeNode.ProximityPrompt.Triggered:Connect(function(player) self:openShop(player) end)
     for _, id in Games.Order do
         local gameInfo = Games.ById[id]
         local row = { id, gameInfo.title, gameInfo.position }
@@ -15,6 +18,7 @@ function Service.new(owner)
         node.Anchored, node.Color, node.Material = true, Theme.Teal, Enum.Material.Metal
         node.Parent = owner.scene.root
         node:SetAttribute("StreetActivity", row[1])
+        node:SetAttribute("GuideIcon", gameInfo.icon)
         local gui = Instance.new("BillboardGui")
         gui.Size, gui.StudsOffset, gui.MaxDistance, gui.AlwaysOnTop =
             UDim2.fromOffset(150, 44), Vector3.new(0, 4, 0), 75, false
@@ -48,6 +52,8 @@ function Service:available(player, id)
     return p
         and p.ready
         and not p.station
+        and not p.playing
+        and not p.recording
         and self.nodes[id]
         and self.owner.nearby(player, self.nodes[id], 13)
 end
@@ -56,6 +62,7 @@ function Service:start(player, id)
         return
     end
     self.last[player] = os.clock()
+    self.shops[player] = nil
     self.owner.opened[player], self.owner.conversations[player] = nil, nil
     self.serial += 1
     local sequence = {}
@@ -71,9 +78,9 @@ function Service:start(player, id)
         score = 0,
         start = now + 1,
         response = now + 3.6,
-        expires = now + 28,
+        expires = now + (if Fair.isGame(id) then 45 else 28),
         status = "playing",
-        targetAt = now + 1,
+        targetAt = now + (if id == "bells" then Random.new(self.serial):NextNumber(1.2, 2.5) else 1),
     }
     self.owner.send(player)
 end
@@ -88,9 +95,40 @@ function Service:summary(player)
     end
     return round
 end
+function Service:atPrizes(player)
+    local p = self.owner.profiles[player]
+    return p and p.ready and not p.station and self.owner.nearby(player, self.prizeNode, 13)
+end
+function Service:openShop(player)
+    if not self:atPrizes(player) then return end
+    self.rounds[player] = nil
+    self.shops[player] = true
+    self.owner.opened[player], self.owner.conversations[player] = nil, nil
+    self.owner.send(player)
+end
+function Service:shopSummary(player)
+    if self.shops[player] and not self:atPrizes(player) then self.shops[player] = nil end
+    return self.shops[player] == true
+end
 function Service:command(player, action, value)
+    if action == "QuaySidePrizes" then self:openShop(player); return end
+    if action == "QuaySideClaim" then
+        local p = self.owner.profiles[player]
+        local prize = type(value) == "string" and Fair.find(value)
+        if not prize or not self:shopSummary(player) or not self:atPrizes(player) then return end
+        if os.clock() - (self.last[player] or 0) < 0.3 then return end
+        self.last[player] = os.clock()
+        local fair = Fair.summary(p.quay.fair)
+        if fair.prizes[prize.id] then self.owner.send(player, "Already kept."); return end
+        if fair.balance < prize.cost then self.owner.send(player, "Earn more fair coins first."); return end
+        p.quay.fair = Fair.sanitize(p.quay.fair)
+        p.quay.fair.prizes[prize.id] = true
+        self.owner:changed(player, p)
+        self.owner.send(player, prize.label .. " kept. Equip it in Style.")
+        return
+    end
     if action == "QuaySideClose" then
-        self.rounds[player] = nil
+        self.rounds[player], self.shops[player] = nil, nil
         self.owner.send(player)
         return
     end
@@ -119,7 +157,28 @@ function Service:command(player, action, value)
         return
     end
     self.last[player] = os.clock()
-    if round.id == "echo" then
+    if round.id == "targets" or round.id == "bells" then
+        if now < round.targetAt then return end
+        local window = if round.id == "bells" then 1.6 else 2.6
+        if now > round.targetAt + window or value.pad ~= round.sequence[round.index] then
+            round.status = "retry"
+        else
+            round.index += 1
+            round.score += 1
+            round.targetAt = now + (if round.id == "bells"
+                then Random.new(round.serial * 47 + round.index):NextNumber(0.8, 2) else 0.55)
+        end
+    elseif round.id == "rings" then
+        if now < round.targetAt or value.pad ~= 1 then return end
+        local phase = ((now - round.targetAt) % 2.4) / 2.4
+        if phase >= 0.35 and phase <= 0.65 then
+            round.index += 1
+            round.score += 1
+            round.targetAt = now + 0.65
+        else
+            round.status = "retry"
+        end
+    elseif round.id == "echo" then
         if now < round.response then
             return
         end
@@ -174,11 +233,21 @@ function Service:command(player, action, value)
             p.quay.side[round.id] = true
             self.owner:changed(player, p)
         end
+        round.expires = now + 60
+        if Fair.isGame(round.id) then
+            p.quay.fair = Fair.sanitize(p.quay.fair)
+            local count = p.quay.fair.clears[round.id]
+            round.coins = if count < Fair.Heats then Fair.CoinsPerHeat else 0
+            if count < Fair.Heats then
+                p.quay.fair.clears[round.id] = count + 1
+                self.owner:changed(player, p)
+            end
+        end
         self.owner:celebrate(player, round.id, first)
     end
     self.owner.send(player)
 end
 function Service:remove(player)
-    self.rounds[player], self.last[player] = nil, nil
+    self.rounds[player], self.last[player], self.shops[player] = nil, nil, nil
 end
 return Service

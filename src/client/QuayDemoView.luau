@@ -96,9 +96,13 @@ function View.new()
         ZIndexBehavior = Enum.ZIndexBehavior.Sibling,
     })
     self.route = ObjectiveView.new(self.screen)
+    self.worldGuidance = require(script.Parent.QuayWorldGuidance).new(self.screen)
     self.voice = require(script.Parent.CompanionVoice).new(self.screen)
     self.commissionVoice = require(script.Parent.QuayCommissionVoice).new(self.screen)
-    self.sideActivities = require(script.Parent.QuaySideActivityView).new(self.screen, send)
+    self.sideActivities = require(script.Parent.QuaySideActivityView).new(self.screen, send, function()
+        self.route:trackPlace("fair_prizes", "FAIR PRIZES", "Follow the prize picture. Choose a prize with your coins.")
+    end)
+    self.fairPrizes = require(script.Parent.QuayFairPrizeView).new(self.screen, send)
     self.badges = require(script.Parent.QuayBadgeView).new(self.screen)
     self.toggle = Gui.button(self.screen, "MAP", function()
         self.tab = "play"
@@ -713,6 +717,7 @@ function View.new()
             self.voice:accept(state)
             self.commissionVoice:accept(state)
             self.sideActivities:accept(state)
+            self.fairPrizes:accept(state)
             self.badges:accept(state)
             if not self.targetsReady then
                 self.targetsReady = true
@@ -804,7 +809,8 @@ function View.new()
             local character = Players.LocalPlayer.Character
             local root = character and character:FindFirstChild("HumanoidRootPart")
             local best = 12
-            if root and self.state and not self.state.station and not self.panel.Visible then
+            if root and self.state and not self.state.station and not self.panel.Visible
+                and not self.sideActivities.root.Visible and not self.fairPrizes.root.Visible then
                 for object in self.interactionTargets do
                     if not object.Parent then
                         self.interactionTargets[object] = nil
@@ -859,6 +865,8 @@ function View.new()
                         action = if progress.parcel == 2 then "Visit Tori" else "Read delivery note"
                     end
                 end
+                local picture = require(Shared.QuayGuideSymbols).forTarget(id)
+                self.interact:SetAttribute("UiIcon", picture)
                 self.interact.Text = (if Input.TouchEnabled then "" else "E / X  ·  ") .. action
             end
         end)
@@ -971,6 +979,8 @@ end
 function View:setEffects(enabled)
     self.effects = enabled
     self.badges.effects = enabled
+    self.sideActivities.effects = enabled
+    self.worldGuidance.effects = enabled
     for object in self.personal do
         if object.Parent then
             self:project(object)
@@ -984,9 +994,11 @@ function View:render()
     self.toggle.Visible = quay ~= nil
         and not state.station
         and not (state.concert and state.concert.open)
+        and not quay.sideActivity and not quay.fairShop
     local busy = state
         and (
             state.station
+            or (quay and (quay.sideActivity or quay.fairShop))
             or state.listening
             or (state.stage and state.stage.open)
             or (state.concert and state.concert.open)
@@ -1143,6 +1155,10 @@ function View:render()
                 "Sana is making room for a market stage. Meet her to help with the cases; Naya's record activity is nearby."
             self.visit.Text = "Meet Sana at the market"
         end
+    end
+    if building and quay.interior == open:sub(10) then
+        self.visit.Visible = false
+        self.help.Text = "Play a set at the pads, or open Explore at this desk."
     end
     if open == "encounter:cafe" then
         self.help.Text =
@@ -1307,7 +1323,9 @@ function View:destroy()
     table.clear(self.targetWatchers)
     self.route:destroy()
     self.voice:destroy()
+    self.worldGuidance:destroy()
     self.sideActivities:destroy()
+    self.fairPrizes:destroy()
     self.badges:destroy()
     self.companions:destroy()
     for _, connection in self.connections do

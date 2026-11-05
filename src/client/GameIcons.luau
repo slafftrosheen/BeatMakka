@@ -303,6 +303,12 @@ function Icons.make(parent, name, color, size)
         for i = 0, 3 do
             outline(0.1 + i * 0.2, 0.22, 0.2, 0.56, true)
         end
+    elseif name == "target" then
+        outline(0.08, 0.08, 0.84, 0.84, true)
+        outline(0.28, 0.28, 0.44, 0.44, true)
+        circle(0.43, 0.43, 0.14)
+        bar(0.45, 0, 0.1, 0.22)
+        bar(0.45, 0.78, 0.1, 0.22)
     elseif name == "lamp" then
         outline(0.25, 0.27, 0.5, 0.53)
         outline(0.35, 0.06, 0.3, 0.3, true)

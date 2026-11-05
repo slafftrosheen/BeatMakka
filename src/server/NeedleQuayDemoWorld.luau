@@ -689,6 +689,7 @@ function Demo.build(world)
     require(script.Parent.QuayStreetLife).build(scene)
     require(script.Parent.QuayStreetScene).build(scene)
     require(script.Parent.QuayVista).build(scene)
+    require(script.Parent.QuayInteriors).build(world, scene)
     world.demo = scene
     return scene
 end

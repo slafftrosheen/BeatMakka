@@ -1,10 +1,12 @@
 -- Local in-game equipment; unlocks are derived from server-owned progress.
 local Badges = require(script.Parent.QuayBadges)
+local Fair = require(script.Parent.QuayFair)
 local R = {}
 R.Categories = { "title", "badge", "companion", "roamer" }
 R.Labels = { title = "TITLES", badge = "PINS", companion = "CHARMS", roamer = "ROAMER" }
 R.Items = {
     title = {
+        { id = "fair_friend", label = "FAIR FRIEND", fair = "fair_friend", icon = "badge" },
         { id = "remixer", label = "QUAY REMIXER", commissions = 6, icon = "knob" },
         { id = "producer", label = "QUAY PRODUCER", commissions = 4, icon = "disc" },
         { id = "friend", label = "QUAY FRIEND", count = 3, icon = "flag" },
@@ -13,6 +15,7 @@ R.Items = {
     },
     badge = {},
     companion = {
+        { id = "fair_bell", label = "BEAT BELL", fair = "fair_bell", icon = "lamp", color = Color3.fromRGB(243, 182, 95) },
         {
             id = "echo",
             label = "ECHO DISC",
@@ -36,6 +39,7 @@ R.Items = {
         },
     },
     roamer = {
+        { id = "fair_glow", label = "FAIR LIGHTS", fair = "fair_glow", icon = "van", color = Color3.fromRGB(202, 116, 83) },
         {
             id = "coral",
             label = "CORAL RUNNING LIGHTS",
@@ -86,6 +90,7 @@ function R.earned(progress, item)
     if not item then
         return false
     end
+    if item.fair then return Fair.sanitize(progress.fair).prizes[item.fair] == true end
     if item.commissions then
         local count = 0
         for _, request in require(script.Parent.QuayBeatCommissions).List do
@@ -106,6 +111,7 @@ function R.earned(progress, item)
     return false
 end
 function R.hint(item)
+    if item.fair then return "Fair prize / " .. Fair.find(item.fair).cost .. " earned coins" end
     if item.commissions then
         return "Complete " .. tostring(item.commissions) .. " beat requests"
     end

@@ -118,7 +118,10 @@ function Objectives.select(quay, preferred)
     local q = quay.progress
     local id = if Objectives.ById[preferred] and not q.completed[preferred] then preferred else nil
     if not id then
-        for _, candidate in Objectives.Order do
+        -- Learn the instrument before the optional detour through the dock chores.
+        local guided = table.clone(Objectives.Order)
+        guided[2], guided[3] = guided[3], guided[2]
+        for _, candidate in guided do
             if candidate ~= "NQ-Q03" and not q.completed[candidate] then
                 id = candidate
                 break

@@ -100,12 +100,17 @@ function Service.new(
             end
         end)
     end
-    for _, node in { self.scene.exit, self.scene.courtExit } do
+    for _, node in { self.scene.exit } do
         node.prompt.Triggered:Connect(function(player)
             if self.nearby(player, node.anchor, 13) then
                 self:command(player, "QuayReturn")
             end
         end)
+    end
+    for id, room in self.scene.interiors or {} do
+        self.waypoints["inside_" .. id] = room.door.anchor.Position
+        room.door.prompt.Triggered:Connect(function(player) self:interior(player, id, false) end)
+        room.exit.prompt.Triggered:Connect(function(player) self:interior(player, id, true) end)
     end
     for id, node in self.scene.buildings do
         do
@@ -127,6 +132,24 @@ function Service.new(
     return self
 end
 
+function Service:interior(player, id, leaving)
+    local p = self.profiles[player]
+    local room = self.scene.interiors and self.scene.interiors[id]
+    if not p or not p.ready or not room then return false end
+    local source = if leaving then room.exit.anchor else room.door.anchor
+    if not self.nearby(player, source, 13) then return false end
+    local now = os.clock()
+    if now - (self.last[player] or 0) < 0.5 then return false end
+    self.last[player] = now
+    if self:teleport(player, if leaving then room.door.anchor.Position + Vector3.new(0, 1, -4) else room.spawn) then
+        self.opened[player], self.conversations[player] = nil, nil
+        self.sideActivities.rounds[player], self.sideActivities.shops[player] = nil, nil
+        self.send(player, if leaving then "Needle Quay" else require(Shared.QuayInteriorCatalog).ById[id].title)
+        return true
+    end
+    return false
+end
+
 function Service:van(player)
     local id = self.rooms.byPlayer[player]
     local index = if id == "Room_1" then 1 elseif id == "Room_2" then 2 else nil
@@ -140,7 +163,7 @@ function Service:arrive(player, profile, welcome)
     profile.companionRoute = "quay"
     profile.companionStop = profile.quay.parking
     if welcome then
-        self.opened[player] = if profile.quay.completed["NQ-Q00"] then nil else "map"
+        self.opened[player] = nil
     end
     self:updateVan(player, profile)
     task.spawn(function()
@@ -226,14 +249,22 @@ function Service:summary(player, profile)
     for id, node in self.sideActivities.nodes do
         waypoints["activity_" .. id] = node.Position
     end
+    waypoints.fair_prizes = self.sideActivities.prizeNode.Position
     if van then
         waypoints.enter = van.door.anchor.Position
     end
+    local interior
+    for id, room in self.scene.interiors or {} do
+        if self.nearby(player, room.exit.anchor, 38) then interior = id; break end
+    end
     return {
+        interior = interior,
         collected = { metal = profile.unlocked.I01 == true, reply = profile.unlocked.I03 == true },
         life = require(Shared.QuayLifeCatalog).summary(profile.quay),
         rewards = Rewards.sanitize(profile.rewards, profile.quay),
         sideActivity = self.sideActivities:summary(player),
+        fair = require(Shared.QuayFair).summary(profile.quay.fair),
+        fairShop = self.sideActivities:shopSummary(player),
         commission = self.commissions:summary(player, profile),
         canTravel = van ~= nil and canTravel,
         progress = Progress.sanitize(profile.quay),
@@ -523,13 +554,21 @@ function Service:command(player, action, value)
         if type(value) ~= "string" or #value > 32 then
             return
         end
-        if value:sub(1, 5) == "life:" then
+        if value:sub(1, 7) == "inside_" then
+            self:interior(player, value:sub(8), false)
+        elseif value:sub(1, 8) == "outside_" then
+            self:interior(player, value:sub(9), true)
+        elseif value == "fair:prizes" then
+            self.sideActivities:openShop(player)
+        elseif value:sub(1, 5) == "life:" then
             self.life:interact(player, value:sub(6))
         elseif value:sub(1, 10) == "encounter:" then
             self:encounter(player, value:sub(11))
         elseif value:sub(1, 9) == "building:" then
             local node = self.scene.buildings[value:sub(10)]
-            if node and self.nearby(player, node.anchor, 13) then
+            local room = self.scene.interiors and self.scene.interiors[value:sub(10)]
+            if node and (self.nearby(player, node.anchor, 13)
+                or (room and self.nearby(player, room.exit.anchor, 32))) then
                 profile.companionRoute = "quay"
                 self.opened[player] = value
                 self.send(player, "This place has a neighborhood activity. Meet its host to begin.")
@@ -595,6 +634,7 @@ function Service:command(player, action, value)
         return
     end
     if action == "QuayJournal" then
+        self.sideActivities.rounds[player], self.sideActivities.shops[player] = nil, nil
         self.opened[player] = "map"
         self.send(player)
         return

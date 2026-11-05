@@ -1,8 +1,23 @@
 -- One catalog for server stations, client presentation, navigation and saved keepsakes.
 return {
-    Order = { "echo", "pulse", "chase", "lantern" },
-    Routes = { "echo", "pulse", "chase", "lantern", "busk" },
+    Order = { "echo", "pulse", "chase", "lantern", "targets", "bells", "rings" },
+    Routes = { "echo", "pulse", "chase", "lantern", "targets", "bells", "rings", "busk" },
     ById = {
+        targets = {
+            title = "CORK GALLERY", position = Vector3.new(558, 2, -21), icon = "target",
+            hint = "Tap the raised target. Four cork hits fill a coin stamp.",
+            lesson = "Leave space between hits. A rest makes the next sound stand out.",
+        },
+        bells = {
+            title = "BEAT BELLS", position = Vector3.new(580, 2, -21), icon = "lamp",
+            hint = "Wait for the bell to light, then tap it. Four catches fill a coin stamp.",
+            lesson = "Wait, then answer. Listening helps a musical call and response.",
+        },
+        rings = {
+            title = "RING TOSS", position = Vector3.new(602, 2, -21), icon = "disc",
+            hint = "Let the ring reach the peg, then tap. Four throws fill a coin stamp.",
+            lesson = "Repeat a steady movement. Repetition builds a groove.",
+        },
         busk = {
             title = "STREET SET",
             position = Vector3.new(509, 0.6, 53),

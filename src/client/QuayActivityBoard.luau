@@ -95,13 +95,22 @@ function Board.new(parent, callbacks)
     end
     for _, id in Games.Order do
         local game = Games.ById[id]
-        add(id, "play", game.title, ({ echo = "Listen, then copy", pulse = "Tap four beats", chase = "Catch the lit pad", lantern = "Stop on amber" })[id], game.icon,
+        add(id, "play", game.title, ({ echo = "Listen, then copy", pulse = "Tap four beats", chase = "Catch the lit pad", lantern = "Stop on amber", targets = "Tap the raised target", bells = "Wait / catch the bell", rings = "Toss on the peg" })[id] or game.hint, game.icon,
             function() callbacks.game(id) end, function(s) return s.quay.progress.side[id] == true end, "activity_" .. id)
     end
     add("street_set", "play", "STREET SET", "Bring a loop or Song", "sound", function() callbacks.game("busk") end, nil, "activity_busk")
     add("make_music", "play", "YOUR ROAMER", "Make a beat or try Same Crate", "van", function()
         callbacks.place("enter", "YOUR ROAMER", "Open the instrument. Same Crate is in Crates > Options.")
     end, nil, "enter")
+    for _, id in require(Shared.QuayInteriorCatalog).Order do
+        local info = require(Shared.QuayInteriorCatalog).ById[id]
+        add("room_" .. id, "play", info.title, "Enter / play a set / explore", "pads", function()
+            callbacks.place("inside_" .. id, info.title, "Follow the doorway symbol. Enter to play or explore.")
+        end, nil, "inside_" .. id)
+    end
+    add("fair_prizes", "play", "FAIR PRIZES", "Earn coins / choose a prize", "badge", function()
+        callbacks.place("fair_prizes", "FAIR PRIZES", "Follow the prize symbol. Pick a prize with your earned coins.")
+    end, nil, "fair_prizes")
     for _, row in Life.Stamps do
         add("postcard_" .. row.id, "explore", row.title, "Pause and listen", "headphones", function()
             callbacks.life("listen_" .. row.id, row.title, "Stay by the listening post to collect this sound postcard.")

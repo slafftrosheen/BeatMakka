@@ -6,6 +6,10 @@ local Crate = require(game.ReplicatedStorage.Shared.CrateChallenge)
 local Stage = {}
 Stage.__index = Stage
 local LIMIT, LIFETIME, OFFER = 4, 120, 30
+local function venueName(anchor, podium)
+    return (anchor and anchor:GetAttribute("PerformanceVenue"))
+        or (if anchor == podium.anchor then "Courtyard" else "Street")
+end
 
 function Stage.new(session, podium, profiles, send, release, nearby, clock)
     local self = setmetatable({
@@ -82,7 +86,7 @@ function Stage:state(p)
             performer = entry.player.DisplayName, title = entry.snapshot.title,
             ref = entry.snapshot.ref, duration = entry.snapshot.duration,
             loop = entry.snapshot.loop, mode = entry.snapshot.mode,
-            venue = if entry.anchor == self.podium.anchor then "Courtyard" else "Street",
+            venue = venueName(entry.anchor, self.podium),
         })
         if entry.player == p then
             position, preparedMode, preparedDuration = i, entry.snapshot.mode, entry.snapshot.duration
@@ -117,7 +121,7 @@ function Stage:state(p)
     end
     return {
         open = self.opened[p] == true,
-        venue = if self:anchor(p) == self.podium.anchor then "Courtyard" else "Street",
+        venue = venueName(self:anchor(p), self.podium),
         performer = self.session.owner and self.session.owner.DisplayName,
         queue = queue, entries = entries, available = available,
         selectedRef = profile and profile.listeningRef,
@@ -125,7 +129,7 @@ function Stage:state(p)
         performanceRef = self.session.prepared and self.session.prepared.ref,
         duration = self.session.prepared and self.session.prepared.duration,
         mode = self.session.prepared and self.session.prepared.mode,
-        performanceVenue = if self.session.activeAnchor == self.podium.anchor then "Courtyard" else "Street",
+        performanceVenue = venueName(self.session.activeAnchor, self.podium),
         preparedMode = preparedMode, preparedDuration = preparedDuration, preparedCapture = preparedCapture,
         take = Takes.summary(profile),
         canManageTake = position == nil and not self.session.members[p],

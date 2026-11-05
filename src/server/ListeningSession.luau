@@ -36,6 +36,9 @@ function ListeningSession.new(podium, profiles, send, release, nearby, lifecycle
     prompt.Triggered:Connect(function(player)
         self.stage:open(player, street)
     end)
+    for _, venue in podium.venues or {} do
+        venue.prompt.Triggered:Connect(function(player) self.stage:open(player, venue.anchor) end)
+    end
     podium.prompt.Triggered:Connect(function(player)
         local profile = profiles[player]
         if not profile or not profile.ready or not nearby(player, podium.anchor, 11) then

@@ -32,6 +32,8 @@ local function busy(state)
         or state.quay.canReturn
         or state.quay.open ~= nil
         or state.quay.sideActivity ~= nil
+        or state.quay.fairShop == true
+        or state.quay.interior ~= nil
 end
 function View.new(screen)
     local self = setmetatable({ guide = true, elapsed = 0, expanded = false }, View)
@@ -150,9 +152,9 @@ function View.new(screen)
         Name = "QuayDestination",
         ResetOnSpawn = false,
         Adornee = self.marker,
-        Size = UDim2.fromOffset(180, 50),
+        Size = UDim2.fromOffset(194, 58),
         StudsOffsetWorldSpace = Vector3.new(0, 5, 0),
-        AlwaysOnTop = false,
+        AlwaysOnTop = true,
         MaxDistance = 650,
         Enabled = false,
     })
@@ -165,11 +167,12 @@ function View.new(screen)
         8
     )
     self.markerLabel = Gui.label(backing, "", 14, Theme.Cream)
-    Icons.make(backing, "flag", Theme.Amber, 24).Position = UDim2.fromOffset(8, 12)
+    self.destinationPicture = Gui.make("Frame", backing, { BackgroundTransparency = 1,
+        Position = UDim2.fromOffset(8, 8), Size = UDim2.fromOffset(40, 40) })
     self.markerLabel.Font = Enum.Font.Code
-    self.markerLabel.Position = UDim2.fromOffset(40, 0)
+    self.markerLabel.Position = UDim2.fromOffset(54, 0)
     self.markerLabel.Size, self.markerLabel.TextXAlignment =
-        UDim2.new(1, -48, 1, 0), Enum.TextXAlignment.Center
+        UDim2.new(1, -60, 1, 0), Enum.TextXAlignment.Center
     self.connection = RunService.Heartbeat:Connect(function(dt)
         self.elapsed += dt
         if self.elapsed < 0.2 then
@@ -330,7 +333,9 @@ function View:render()
     if not objective then
         return
     end
-    local action = if objective.title
+    local activityId = objective.target:match("^activity_(.+)$")
+    local action = if activityId and Games.ById[activityId] then Games.ById[activityId].title
+        elseif objective.title
         then objective.title
         elseif objective.target == "enter" then "MAKE A BEAT"
         elseif objective.target == "activity_echo" then "ECHO PADS"
@@ -427,6 +432,12 @@ function View:render()
     self.toggle.Text = if self.guide then "ON" else "OFF"
     self.toggle.BackgroundColor3 = if self.guide then Theme.Amber else Theme.Teal
     self.toggle.TextColor3 = if self.guide then Theme.Ink else Theme.Cream
+    local picture = require(game.ReplicatedStorage.Shared.QuayGuideSymbols).forTarget(objective.target)
+    if self.picture ~= picture then
+        self.picture = picture
+        self.destinationPicture:ClearAllChildren()
+        Icons.make(self.destinationPicture, picture, Theme.Amber, 40)
+    end
     self.markerLabel.Text = action
     if valid then
         self.marker.Position = destination

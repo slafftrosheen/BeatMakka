@@ -12,7 +12,7 @@ function Wayfinder.new()
         local dot = Instance.new("Part")
         dot.Name = "RouteDot" .. i
         dot.Shape = Enum.PartType.Ball
-        dot.Size = Vector3.new(0.38, 0.38, 0.38)
+        dot.Size = Vector3.new(0.65, 0.24, 0.65)
         dot.Anchored = true
         dot.CanCollide = false
         dot.CanQuery = false

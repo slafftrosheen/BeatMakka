@@ -121,6 +121,7 @@ function View:accept(state)
         and not state.station
         and not q.open
         and not q.sideActivity
+        and not q.fairShop
         and not (state.concert and state.concert.open)
         and not (state.jam and state.jam.open)
     self.wardrobe:accept(state)

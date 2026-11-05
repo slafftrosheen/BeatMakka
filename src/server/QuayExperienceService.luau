@@ -58,6 +58,8 @@ end
 
 function Service:at(player, buildingId)
     local node = self.scene and self.scene.buildings[buildingId]
+    local room = self.scene and self.scene.interiors and self.scene.interiors[buildingId]
+    if room and self.nearby(player, room.exit.anchor, 32) then return true end
     return node ~= nil and self.nearby(player, node.anchor, 18)
 end
 

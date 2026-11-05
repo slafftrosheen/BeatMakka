@@ -2,6 +2,7 @@ local Gui = require(script.Parent.GuiFactory)
 local Icons = require(script.Parent.GameIcons)
 local Theme = require(game.ReplicatedStorage.Shared.Theme)
 local Games = require(game.ReplicatedStorage.Shared.QuayStreetGames)
+local Fair = require(game.ReplicatedStorage.Shared.QuayFair)
 local Input = game:GetService("UserInputService")
 local Run = game:GetService("RunService")
 local DeviceSkin = require(script.Parent.DeviceSkin)
@@ -16,7 +17,7 @@ local function cue(role)
         Gui.Cue:Fire(id)
     end
 end
-function View.new(screen, send)
+function View.new(screen, send, showPrizes)
     local self = setmetatable({ send = send, pads = {}, dots = {}, effects = true }, View)
     self.root = Gui.round(
         Gui.make("Frame", screen, {
@@ -59,6 +60,8 @@ function View.new(screen, send)
     self.cue.Position, self.cue.Size = UDim2.fromOffset(20, 54), UDim2.new(1, -40, 0, 30)
     self.cue.TextXAlignment = Enum.TextXAlignment.Center
     self.cue.Font = Enum.Font.Code
+    self.cue.TextScaled = true
+    Gui.make("UITextSizeConstraint", self.cue, { MinTextSize = 10, MaxTextSize = 17 })
     self.rail = Gui.make("Frame", self.root, {
         Position = UDim2.new(0.1, 0, 0, 86),
         Size = UDim2.new(0.8, 0, 0, 10),
@@ -66,7 +69,7 @@ function View.new(screen, send)
         BorderSizePixel = 0,
         Visible = false,
     })
-    Gui.make("Frame", self.rail, {
+    self.hitWindow = Gui.make("Frame", self.rail, {
         Position = UDim2.fromScale(0.38, 0),
         Size = UDim2.fromScale(0.24, 1),
         BackgroundColor3 = Theme.Amber,
@@ -100,15 +103,31 @@ function View.new(screen, send)
             12
         )
     end
+    self.learn = Gui.button(self.root, "?", function()
+        self.lessonOpen = not self.lessonOpen
+        self:render()
+    end)
+    self.learn.Position, self.learn.Size = UDim2.fromOffset(10, 256), UDim2.fromOffset(44, 44)
+    self.learn:SetAttribute("UiIcon", "hint")
     self.retry = Gui.button(self.root, "PLAY AGAIN", function()
         send("QuaySideRetry")
     end)
-    self.retry.Position, self.retry.Size = UDim2.new(0.5, -90, 1, -54), UDim2.fromOffset(180, 42)
-    self.retry.Size = UDim2.fromOffset(180, 44)
+    self.retry.Position, self.retry.Size = UDim2.new(0.5, -70, 1, -54), UDim2.fromOffset(140, 44)
+    self.prizeRoute = Gui.button(self.root, "", function()
+        if showPrizes then showPrizes() end
+        send("QuaySideClose")
+    end)
+    self.prizeRoute.Position, self.prizeRoute.Size = UDim2.new(1, -54, 1, -54), UDim2.fromOffset(44, 44)
+    self.prizeRoute:SetAttribute("NoActionIcon", true)
+    Icons.make(self.prizeRoute, "badge", Theme.Amber, 28).Position = UDim2.fromOffset(8, 8)
+    self.prizeRoute:SetAttribute("AccessibleLabel", "Show the way to fair prizes")
     self.retry:SetAttribute("UiIcon", "play")
+    self.stamps = Gui.label(self.root, "", 11, Theme.Amber)
+    self.stamps.Position, self.stamps.Size = UDim2.fromOffset(20, 236), UDim2.new(1, -40, 0, 20)
+    self.stamps.TextXAlignment = Enum.TextXAlignment.Center
     self.result = Gui.label(self.root, "", 11, Theme.Cream)
     self.result.Name, self.result.Font = "RoundProgress", Enum.Font.Code
-    self.result.Position, self.result.Size = UDim2.fromOffset(20, 236), UDim2.new(1, -40, 0, 16)
+    self.result.Position, self.result.Size = UDim2.fromOffset(20, 54), UDim2.new(1, -40, 0, 16)
     self.result.TextXAlignment = Enum.TextXAlignment.Center
     self.connection = Run.Heartbeat:Connect(function()
         self:render()
@@ -128,7 +147,7 @@ function View.new(screen, send)
             [Enum.KeyCode.ButtonA] = 4,
         })[key.KeyCode]
         if pad then
-            if self.round and (self.round.id == "lantern" or self.round.id == "pulse") then
+            if self.round and (self.round.id == "lantern" or self.round.id == "pulse" or self.round.id == "rings") then
                 pad = 1
             end
             self:tap(pad)
@@ -149,8 +168,31 @@ function View:tap(pad)
     cue(sounds[pad])
     self.send("QuaySideTap", { serial = r.serial, pad = pad })
 end
+function View:resetTargets()
+    for part, base in self.targets or {} do
+        if part.Parent then part.Color, part.Material, part.CFrame = base.color, base.material, base.cf end
+    end
+    self.targets = {}
+end
 function View:accept(state)
-    self.round = state.quay and state.quay.sideActivity
+    self.fair = state.quay and state.quay.fair
+    self.saveMode = state.saveMode
+    local nextRound = state.quay and state.quay.sideActivity
+    if nextRound and (not self.round or nextRound.serial ~= self.round.serial) then self.lessonOpen = false end
+    if not nextRound or not self.round or self.round.id ~= nextRound.id then
+        self:resetTargets()
+        if nextRound and Fair.isGame(nextRound.id) then
+            local district = workspace:FindFirstChild("NeedleQuay")
+            local fair = district and district:FindFirstChild("DemoDistrict")
+            fair = fair and fair:FindFirstChild("NeedleQuayFair")
+            for _, part in fair and fair:GetDescendants() or {} do
+                if part:IsA("BasePart") and part:GetAttribute("FairGame") == nextRound.id then
+                    self.targets[part] = { color = part.Color, material = part.Material, cf = part.CFrame }
+                end
+            end
+        end
+    end
+    self.round = nextRound
     self.root.Visible = self.round ~= nil
     self:render()
 end
@@ -165,6 +207,7 @@ function View:render()
     local at = Games.ById[r.id].position
     if now > r.expires or not root or (root.Position - at).Magnitude > 15 then
         self.round = nil
+        self:resetTargets()
         self.root.Visible = false
         self.send("QuaySideClose")
         return
@@ -180,12 +223,32 @@ function View:render()
         local icon = Icons.make(self.root, Games.ById[r.id].icon, Theme.Amber, 28)
         icon.Name, icon.Position = "GameIcon", UDim2.fromOffset(16, 16)
     end
-    self.rail.Visible = r.id == "lantern"
+    local fair = Fair.isGame(r.id)
+    self.learn.Visible = fair
+    self.prizeRoute.Visible = fair and r.status == "complete"
+    self.learn.BackgroundColor3 = if self.lessonOpen then Theme.Amber else Theme.Teal
+    self.stamps.Visible = fair
+    local clears = self.fair and self.fair.clears[r.id] or 0
+    self.stamps.Text = (if clears > 0 then string.rep("● ", clears) else "")
+        .. string.rep("○ ", Fair.Heats - clears) .. "   +10"
+    self.rail.Visible = r.id == "lantern" or r.id == "rings"
+    self.hitWindow.Position = UDim2.fromScale(if r.id == "rings" then 0.35 else 0.38, 0)
+    self.hitWindow.Size = UDim2.fromScale(if r.id == "rings" then 0.30 else 0.24, 1)
     local active, beat
     if r.status == "complete" then
         self.cue.Text = "NICE!"
     elseif r.status == "retry" then
         self.cue.Text = "SO CLOSE. TRY AGAIN?"
+    elseif r.id == "targets" or r.id == "bells" then
+        local window = if r.id == "bells" then 1.6 else 2.6
+        active = if now >= r.targetAt and now <= r.targetAt + window then r.sequence[r.index] else nil
+        self.cue.Text = if now < r.targetAt then "…" elseif active then "TAP!" else "↻"
+        self.retry.Visible = now > r.targetAt + window
+    elseif r.id == "rings" then
+        local phase = if now >= r.targetAt then ((now - r.targetAt) % 2.4) / 2.4 else 0
+        self.cursor.Position = UDim2.fromScale(phase, 0.5)
+        self.cue.Text = if now < r.targetAt then "…" else "TOSS"
+        active = if phase >= 0.35 and phase <= 0.65 then 1 else nil
     elseif r.id == "echo" then
         if now >= r.response and self.voiceRound ~= r.serial then
             self.voiceRound = r.serial
@@ -220,8 +283,29 @@ function View:render()
             self.retry.Visible = true
         end
     end
+    if fair and self.lessonOpen then
+        self.cue.Text = Games.ById[r.id].lesson
+    end
+    self.result.Visible = not self.lessonOpen and (r.status == "complete" or r.status == "retry")
+    self.cue.Visible = r.status == "playing" or self.lessonOpen == true
+    -- Only this player sees their booth's round; nearby players keep their own rounds.
+    for part, base in self.targets or {} do
+        if part.Parent then
+            local lit = r.status == "playing" and (active == part:GetAttribute("FairPad")
+                or (r.id == "rings" and active == 1))
+            part.Color = if lit then Theme.Cream else base.color
+            part.Material = if lit and self.effects then Enum.Material.Neon else base.material
+            if part:GetAttribute("FairRing") and r.status == "playing" then
+                local phase = if now >= r.targetAt then ((now - r.targetAt) % 2.4) / 2.4 else 0
+                part.CFrame = base.cf + Vector3.new((phase - 0.5) * 6, 0, 0)
+            else part.CFrame = base.cf * CFrame.new(0, if lit then 0.45 else 0, 0) end
+        end
+    end
     local cueKey = tostring(r.serial) .. ":" .. tostring(beat)
-    self.result.Text = if r.status == "complete" then "KEPT / PLAY AGAIN TO PRACTISE"
+    self.result.Text = if r.status == "complete" and fair
+        then (if (r.coins or 0) > 0 then "+10 COINS" else "ALL 3 STAMPS KEPT")
+            .. (if self.saveMode == "session" then " / SESSION" elseif self.saveMode == "unavailable" then " / TEMPORARY" else " / JOURNAL")
+        elseif r.status == "complete" then "KEPT / PLAY AGAIN TO PRACTISE"
         elseif r.status == "retry" then tostring(r.score) .. " / 4 / TRY AGAIN"
         else tostring(r.score) .. " / 4"
     self.root:SetAttribute("AccessibleLabel", self.title.Text .. " / " .. self.cue.Text .. " / " .. self.result.Text)
@@ -230,10 +314,10 @@ function View:render()
         cue(if r.id == "echo" then sounds[active or 1] else "tutorial_closed_hat")
     end
     for i, button in self.pads do
-        button.Visible = r.id == "echo" or r.id == "chase" or i == 1
-        if (r.id == "pulse" or r.id == "lantern") and i == 1 then
+        button.Visible = r.id == "echo" or r.id == "chase" or r.id == "targets" or r.id == "bells" or i == 1
+        if (r.id == "pulse" or r.id == "lantern" or r.id == "rings") and i == 1 then
             button.Position, button.Size = UDim2.new(0.5, -72, 0, 100), UDim2.fromOffset(144, 112)
-            button.Text = if r.id == "lantern" then "LOCK" else "TAP"
+            button.Text = if r.id == "lantern" then "LOCK" elseif r.id == "rings" then "TOSS" else "TAP"
         else
             button.Position, button.Size =
                 UDim2.new((i - 1) * 0.25, 10, 0, 108), UDim2.new(0.25, -20, 0, 100)
@@ -242,7 +326,10 @@ function View:render()
         local lit = active == i or (self.hit == i and now < (self.hitUntil or 0))
         button.BackgroundColor3 = if lit then colors[i] else Theme.Graphite
         button.TextColor3 = if lit then Theme.Ink else colors[i]
-        local iconName = if r.id == "lantern"
+        local iconName = if r.id == "targets" then "target"
+            elseif r.id == "bells" then "lamp"
+            elseif r.id == "rings" then "disc"
+            elseif r.id == "lantern"
             then "lamp"
             elseif r.id == "chase" then "bolt"
             else ({ "drum", "steps", "sound", "drum" })[i]
@@ -270,6 +357,7 @@ function View:render()
     end
 end
 function View:destroy()
+    self:resetTargets()
     self.connection:Disconnect()
     self.input:Disconnect()
     self.root:Destroy()

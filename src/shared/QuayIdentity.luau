@@ -44,6 +44,9 @@ local Identity = {
         ["activity:sound_safari"] = { listener = 30, beatmaker = 10 },
         ["activity:pattern_bench"] = { beatmaker = 40 },
         ["activity:sleeve_studio"] = { beatmaker = 10, neighbour = 20 },
+        ["fair:targets"] = { listener = 10, beatmaker = 10 },
+        ["fair:bells"] = { listener = 20 },
+        ["fair:rings"] = { beatmaker = 20 },
         ["activity:same_crate"] = { beatmaker = 20, listener = 10 },
     },
 }
@@ -185,6 +188,10 @@ function Identity.reconcile(profile)
         if activities[id] == true then
             current.awards["activity:" .. id] = true
         end
+    end
+    local fair = require(script.Parent.QuayFair).sanitize(profile.quay and profile.quay.fair)
+    for _, id in require(script.Parent.QuayFair).Games do
+        if fair.clears[id] > 0 then current.awards["fair:" .. id] = true end
     end
     profile.identity = current
     return not Identity.equal(previous, current)
