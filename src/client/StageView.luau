@@ -5,6 +5,7 @@ local Input = game:GetService("UserInputService")
 local TextService = game:GetService("TextService")
 local Set = require(game.ReplicatedStorage.Shared.StreetSet)
 local VisualSteps = require(script.Parent.VisualSteps)
+local ChoiceVisual = require(game.ReplicatedStorage.Shared.StageChoiceVisual)
 local Icons = require(script.Parent.GameIcons)
 local W = require(script.Parent.DeviceWidgets)
 local Skin = require(script.Parent.DeviceSkin)
@@ -41,6 +42,8 @@ function View:_button(parent, name, caption, action, iconName)
     })
     button:SetAttribute("AccessibleLabel", caption)
     local icon = Icons.make(button, iconName or Icons.forText(caption) or "arrow", W.text, 20)
+    icon.Name = "StageActionIcon"
+    button:SetAttribute("StageIcon", iconName or Icons.forText(caption) or "arrow")
     icon.Position, icon.ZIndex = UDim2.new(0, 9, 0.5, -10), 19
     for _, child in icon:GetDescendants() do if child:IsA("GuiObject") then child.ZIndex = 19 end end
     W.make("UIPadding", button, { PaddingLeft = UDim.new(0, 36), PaddingRight = UDim.new(0, 6) })
@@ -69,15 +72,40 @@ function View:_selected()
     local choices = self.stage and self.stage.available or {}
     return choices[self.choiceIndex or 1]
 end
-function View:_cycle(direction)
-    local choices = self.stage and self.stage.available or {}
-    if #choices == 0 then
-        return
-    end
-    self.choiceIndex = ((self.choiceIndex or 1) - 1 + direction) % #choices + 1
-    local choice = self:_selected()
+function View:_choose(index)
+    local choice = self.stage and self.stage.available[index]
+    if not choice or self.stage.requesting or self.stage.hosting then return end
+    self.choiceIndex = index
     self.selectedRef = { kind = choice.kind, id = choice.id, revision = choice.revision }
+    self.takeConfirmation = nil
     self:_render()
+end
+function View:_icon(button, name, color)
+    local picture = button:FindFirstChild("StageActionIcon")
+    if button:GetAttribute("StageIcon") ~= name then
+        if picture then picture:Destroy() end
+        picture = Icons.make(button, name, color or W.text, 26)
+        picture.Name, picture.Position, picture.ZIndex = "StageActionIcon", UDim2.new(0, 8, 0.5, -13), 19
+        for _, child in picture:GetDescendants() do if child:IsA("GuiObject") then child.ZIndex = 19 end end
+        button:SetAttribute("StageIcon", name)
+    end
+    if picture then Icons.tint(picture, color or W.text) end
+end
+function View:_mode(choice)
+    return if self.short or (choice and choice.kind == "challenge") then "spotlight"
+        elseif choice and choice.kind == "finished" then "full" else "practice"
+end
+function View:_inspect(choice)
+    local stage = self.stage
+    local mode = self:_mode(choice)
+    local review = if ChoiceVisual.matches(stage.sourceReview, choice, mode) then stage.sourceReview else nil
+    if not choice or not self.panel.Visible or stage.requesting or stage.hosting or stage.listening or not stage.reviewToken then return review end
+    local key = table.concat({ tostring(stage.reviewToken), choice.kind, choice.id, tostring(choice.revision), mode }, ":")
+    if not review and (self.inspectKey ~= key or os.clock() - (self.inspectAt or 0) > 2) then
+        self.inspectKey, self.inspectAt = key, os.clock()
+        self.command("StageInspect", { token = stage.reviewToken, kind = choice.kind, id = choice.id, revision = choice.revision, mode = mode })
+    end
+    return review
 end
 function View:_performance(action, values)
     local p = self.stage and self.stage.performance
@@ -133,14 +161,22 @@ function View.new(screen, command, mute)
     self.flow = VisualSteps.new(self.scroll, { { "CHOOSE", "library" }, { "PREPARE", "flag" }, { "PLAY", "play" } }, 16)
     self.selection = W.frame(self.scroll, "SelectionAndQueue")
     self.sourceLabel = self:_label(self.selection, "SourceTitle", "Choose your own music", 16)
-    self.previous = self:_button(self.selection, "PreviousSource", "PREVIOUS", function() self:_cycle(-1) end)
-    self.next = self:_button(self.selection, "NextSource", "NEXT", function() self:_cycle(1) end)
-    self.mode = self:_button(self.selection, "PerformanceMode", "SPOTLIGHT EXCERPT", function()
-        self.short = not self.short
-        if not self.short then self.captureTake = false end
+    self.playback = W.frame(self.selection, "WholeSetProgress")
+    self.playbackClock = self:_label(self.playback, "Clock", "", 18)
+    self.playbackClock.Position, self.playbackClock.Size = UDim2.fromOffset(8, 0), UDim2.new(1, -16, 0, 30)
+    self.playbackBars = {}
+    for i = 1, 16 do
+        local bar = W.line(self.playback, "Progress" .. i, Dim)
+        bar.Position, bar.Size, bar.ZIndex = UDim2.new((i - 1) / 16, 1, 0, 36), UDim2.new(1 / 16, -3, 0, 10), 17
+        self.playbackBars[i] = bar
+    end
+    self.picker = require(script.Parent.StageSourcePicker).new(self.selection, function(index) self:_choose(index) end, function(short)
+        self.short = short
+        if not short then self.captureTake = false end
         self.takeConfirmation = nil
         self:_render()
     end)
+    self.studio = self:_button(self.selection, "MakeAtStudio", "MAKE", function() command("StageStudio") end, "van")
     self.capture = self:_button(self.selection, "CaptureTake", "CAPTURE OFF", function()
         self.captureTake = not self.captureTake
         self.takeConfirmation = nil
@@ -300,8 +336,9 @@ function View:_layout()
         for _, kind in Set.RequestOrder do place(self.requests[kind], 48) end
         place(self.suggestion); pair(self.accept, self.ignore); place(self.feedback)
     else
-        place(self.sourceLabel, textHeight(self.sourceLabel, 40)); pair(self.previous, self.next)
-        place(self.mode, 48); place(self.capture, 48); place(self.context)
+        place(self.sourceLabel, textHeight(self.sourceLabel, 40)); place(self.playback, 54)
+        self.picker:layout(w); place(self.picker.root, self.picker.height)
+        place(self.context); place(self.studio, 44); place(self.capture, 48)
         place(self.queue)
         for _, row in self.queueRows do place(row, textHeight(row, 48)) end
         place(self.takeStatus); pair(self.keepTake, self.discardTake); place(self.result)
@@ -324,11 +361,9 @@ function View:_render()
     if challenge then self.short, self.captureTake = true, false end
     W.set(self.heading, "Text", string.upper(stage.venue or "Courtyard") .. " / " .. (if stage.hosting then "YOUR SET" else "PUBLIC SETS"))
     local pinned = stage.requesting and stage.entries and stage.entries[stage.position]
-    W.set(self.sourceLabel, "Text", (pinned and "PINNED / " .. pinned.title or choice and choice.title or "Make a sequence first")
-        .. (if pinned then "" else "\n" .. tostring(self.choiceIndex or 0) .. " / " .. #choices))
+    W.set(self.sourceLabel, "Text", (pinned and "PINNED / " .. pinned.title or (stage.hosting or stage.listening) and stage.title or choice and choice.title or "MAKE A BEAT")
+        .. (if pinned or stage.hosting or stage.listening then "" else "\n" .. tostring(self.choiceIndex or 0) .. " / " .. #choices))
     local normalMode = if choice and choice.kind == "finished" then "FULL SONG" else "PRACTICE LOOP"
-    self:_caption(self.mode, if stage.requesting then "PINNED / " .. string.upper(stage.preparedMode or "SET")
-        elseif challenge then "SAME CRATE / 8 BARS" elseif self.short then "SPOTLIGHT / SWITCH" else normalMode .. " / SWITCH")
     W.set(self.context, "Text", if challenge
         then "Your complete eight-bar challenge draft, with its deliberate ending. It remains an editable Draft Song. No take capture or Finished Song label is added."
         elseif self.short
@@ -336,7 +371,8 @@ function View:_render()
         else if normalMode == "FULL SONG" then "Play the accepted Finished Song in full, with its original ending. No excerpt or performance mutations."
         else "Loop the chosen Sequence until you stop. Spotlight adds short-set layer controls; Practice keeps the source unchanged.")
     local contextDetail = self.context.Text
-    self.context.Text = if stage.requesting then "PINNED / " .. tostring(stage.preparedMode) .. " / " .. seconds(stage.preparedDuration)
+    self.context.Text = if stage.hosting or stage.listening then string.upper(stage.mode or "SET")
+        elseif stage.requesting then "PINNED / " .. tostring(stage.preparedMode) .. " / " .. seconds(stage.preparedDuration)
         elseif challenge then "DRAFT / eight-bar ending / source stays editable"
         elseif self.short then "SHORT EXCERPT / source stays intact"
         elseif normalMode == "FULL SONG" then "FULL FINISHED SONG / original ending" else "LOOP / plays until stopped"
@@ -361,9 +397,26 @@ function View:_render()
     self.result.Visible = result ~= nil
     if result then self.result.Text = (if result.completed then "SET COMPLETE" else "SET INTERRUPTED") .. " / " .. result.bars .. " BARS"
         .. "\nNPC RESPONSES / " .. result.count .. "/3" .. (if result.captureNotice then "\n" .. result.captureNotice else "") end
-    local editable = not stage.requesting and not stage.hosting
-    enabled(self.previous, #choices > 1 and editable); enabled(self.next, #choices > 1 and editable)
-    enabled(self.mode, choice ~= nil and editable and not challenge)
+    self.playback.Visible = (stage.hosting or stage.listening) and stage.performance == nil
+    if self.playback.Visible then
+        local elapsed = math.max(0, workspace:GetServerTimeNow() - (stage.startedAt or workspace:GetServerTimeNow()))
+        local duration = math.max(0.001, stage.duration or 0)
+        local phase = if stage.loop then elapsed % duration / duration else math.clamp(elapsed / duration, 0, 1)
+        self.playbackClock.Text = seconds(if stage.loop then elapsed % duration else math.min(elapsed, duration)) .. " / " .. seconds(duration)
+            .. (if stage.loop then " / LOOP" else " / SONG")
+        for index, bar in self.playbackBars do bar.BackgroundColor3 = if index <= math.floor(phase * 16) + 1 then W.amber else Dim end
+    end
+    local editable = not stage.requesting and not stage.hosting and not stage.listening
+    self.sourceLabel.Visible = not editable or #choices == 0
+    self.studio.Visible = editable and not stage.listening
+    enabled(self.studio, self.studio.Visible)
+    self.picker:set(stage, self.choiceIndex or 1, self.short)
+    local review = self:_inspect(choice)
+    if editable then
+        self.context.Text = if not choice then "" elseif not review then "CHECKING…"
+            elseif not review.ready then "CHECK SOUND / MAKE"
+            elseif review.visual.localOnly then "LOCAL PREVIEW" else "READY"
+    end
     local take = stage.take
     local retained = take ~= nil and not take.imported
     if retained then self.captureTake = false end
@@ -377,6 +430,7 @@ function View:_render()
         elseif retained then "TAKE RETAINED / KEEP OR DISCARD BEFORE CAPTURING"
         elseif self.captureTake then "CAPTURE BAR CHANGES / ON"
         else "CAPTURE BAR CHANGES / OFF")
+    self.capture.Visible = self.helpOpen == true or self.captureTake == true or retained or stage.preparedCapture == true
     enabled(self.capture, self.short and editable and not retained and not challenge)
     self:_caption(self.keepTake, if pending and pending.action == "StageTakeKeep" then "CONFIRM KEEP" else "KEEP AS DRAFT")
     self:_caption(self.discardTake, if pending and pending.action == "StageTakeDiscard" then "CONFIRM DISCARD" else "DISCARD TAKE")
@@ -396,6 +450,7 @@ function View:_render()
     self.takeStatus.Visible = take ~= nil
     self.help.Text = contextDetail .. "\n\n" .. resultDetail
         .. "\n\nCapture records Spotlight bar changes, not audio or microphone. Keep creates an unsaved Draft; save it at your instrument. One-shot tails finish naturally."
+    if review and review.problem then self.help.Text ..= "\n\n" .. review.problem end
     for _, kind in Set.RequestOrder do self.help.Text ..= "\n" .. Set.Requests[kind] end
     local p = stage.performance
     if p then
@@ -451,16 +506,23 @@ function View:_render()
         enabled(self.accept, stage.hosting and p.suggestion ~= nil); enabled(self.ignore, stage.hosting and p.suggestion ~= nil)
         W.set(self.feedback, "Text", p.feedback)
     end
-    self:_caption(self.primary, if stage.hosting then "END SET" elseif stage.canStart then "START TURN"
-        elseif stage.requesting then "CANCEL SET" elseif result then "PREPARE AGAIN" else "PREPARE SET")
+    self:_caption(self.primary, if stage.hosting then "STOP" elseif stage.canStart then "PLAY"
+        elseif stage.requesting then "CANCEL" else "PREPARE")
+    local primaryColor = if stage.canStart then W.ink else W.text
+    self.primary.BackgroundColor3 = if stage.canStart then W.amber else W.ink
+    self.primary.TextColor3, self.primary.TextSize = primaryColor, 18
+    self:_icon(self.primary, if stage.hosting then "stop" elseif stage.canStart then "play" elseif stage.requesting then "close" else "flag", primaryColor)
     enabled(self.primary, stage.hosting or stage.canStart or stage.requesting
-        or (choice ~= nil and not (self.short and self.captureTake and retained)))
+        or (choice ~= nil and review ~= nil and review.ready and not stage.listening and not (self.short and self.captureTake and retained)))
     self:_caption(self.secondary, if stage.canStart then "CANCEL SET" elseif stage.listening then "LISTENING" else "JOIN BY CHOICE")
     enabled(self.secondary, stage.canStart or (stage.canJoin and not stage.listening))
-    local notice = if self.noticeText and os.clock() < self.noticeUntil then self.noticeText
-        elseif stage.canStart then "Your turn / start within " .. math.max(0, math.ceil((stage.offerEndsAt or 0) - workspace:GetServerTimeNow())) .. "s"
-        elseif stage.listening then self.audioStatus or "Sound and Leave remain available."
-        else "Your work stays yours. No tutorial, chores or real audience required."
+    local notice = if stage.canStart then "Your turn / start within " .. math.max(0, math.ceil((stage.offerEndsAt or 0) - workspace:GetServerTimeNow())) .. "s"
+        elseif self.noticeText and os.clock() < self.noticeUntil then self.noticeText
+        elseif stage.listening then self.audioStatus or "LISTENING"
+        elseif stage.requesting then "WAIT / " .. tostring(stage.position)
+        elseif stage.hosting then "PLAYING"
+        elseif not choice then "MAKE → CHOOSE → PREPARE → PLAY"
+        else "CHOOSE → PREPARE → PLAY"
     W.set(self.notice, "Text", notice)
     self.notice:SetAttribute("AccessibleLabel", notice)
     self:_layout()
@@ -480,6 +542,7 @@ function View:update(stage, muted, notice, audioStatus)
     end
     local choice = self:_selected()
     self.selectedRef = choice and { kind = choice.kind, id = choice.id, revision = choice.revision }
+    if not wasOpen and self.panel.Visible then self.inspectKey, self.inspectAt, self.noticeText = nil, nil, nil end
     if notice then self.noticeText, self.noticeUntil = notice, os.clock() + 6 end
     self:_caption(self.mute, if muted then "SOUND MUTED" else "SOUND ON")
     self:_render()

@@ -20,27 +20,30 @@ function P.new()
         if not title and not badge then
             return
         end
+        local fairTitle = title and title.id == "fair_friend"
         local board = Gui.make(
             "BillboardGui",
             head,
             {
                 Name = "QuayEquippedRewards",
                 Adornee = head,
-                Size = UDim2.fromOffset(190, 60),
+                Size = UDim2.fromOffset(190, if fairTitle then 84 else 60),
                 StudsOffset = Vector3.new(0, 2.6, 0),
                 MaxDistance = 55,
                 AlwaysOnTop = false,
             }
         )
         self.boards[player] = board
+        if fairTitle then Icons.make(board, "badge", Theme.Amber, 24).Position = UDim2.new(0.5, -12, 0, 0) end
         if title then
             local label = Gui.label(board, title.label, 14, Theme.Amber)
             label.TextXAlignment = Enum.TextXAlignment.Center
             label.TextStrokeTransparency = 0.3
             label.Size = UDim2.new(1, 0, 0, 24)
+            label.Position = UDim2.fromOffset(0, if fairTitle then 26 else 0)
         end
         if badge then
-            Icons.make(board, badge.icon, Theme.Amber, 30).Position = UDim2.new(0.5, -15, 0, 26)
+            Icons.make(board, badge.icon, Theme.Amber, 30).Position = UDim2.new(0.5, -15, 0, if fairTitle then 54 else 26)
         end
     end
     local function hook(player)

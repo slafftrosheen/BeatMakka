@@ -632,6 +632,25 @@ function MusicService.start(world)
             experience:command(player, action, a, b)
             return
         end
+        if action == "StageStudio" then
+            local stage = listening.stage
+            if not stage.opened[player] or not nearby(player, stage:anchor(player), 32) then return end
+            if listening.owner == player then send(player, "End your set before editing."); return end
+            for _, entry in stage.queue do
+                if entry.player == player then send(player, "Cancel your prepared set before editing."); return end
+            end
+            local bay = rooms.bays[rooms.byPlayer[player]]
+            local station = bay and world.stations[bay.stationId]
+            if not bay or bay.owner ~= player or not station or (station.owner and station.owner ~= player) then
+                send(player, "Your own studio is not available yet.")
+                return
+            end
+            if quay:teleport(player, station.anchor.Position + Vector3.new(0, 0, -6)) then
+                profile.stageFromWorkshop = nil
+                enterStation(player, bay.stationId)
+            end
+            return
+        end
         if action == "QuayStage" then
             records:leave(player)
             local station = world.stations[profile.station]

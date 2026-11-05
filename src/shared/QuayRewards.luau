@@ -15,7 +15,7 @@ R.Items = {
     },
     badge = {},
     companion = {
-        { id = "fair_bell", label = "BEAT BELL", fair = "fair_bell", icon = "lamp", color = Color3.fromRGB(243, 182, 95) },
+        { id = "fair_bell", label = "BEAT BELL", fair = "fair_bell", icon = "bell", color = Color3.fromRGB(243, 182, 95) },
         {
             id = "echo",
             label = "ECHO DISC",

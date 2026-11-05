@@ -112,6 +112,14 @@ function View.new()
             end
         end
         self.route:trackActivity("targets")
+    end, function(prize)
+        send("QuaySideClose")
+        if prize.category == "roamer" then
+            self.route:trackPlace("enter", "YOUR FAIR LIGHTS", "Follow the Roamer picture to see your running lights.")
+        elseif prize.category == "companion" then
+            self.tab = "companions"
+            send("QuayJournal")
+        end
     end)
     self.badges = require(script.Parent.QuayBadgeView).new(self.screen)
     self.toggle = Gui.button(self.screen, "MAP", function()

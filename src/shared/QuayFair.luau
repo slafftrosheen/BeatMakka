@@ -12,7 +12,7 @@ local Fair = {
     PrizePosition = Vector3.new(624, 2, -21),
     Prizes = {
         { id = "fair_friend", category = "title", label = "FAIR FRIEND", icon = "badge", cost = 20 },
-        { id = "fair_bell", category = "companion", label = "BEAT BELL", icon = "lamp", cost = 30 },
+        { id = "fair_bell", category = "companion", label = "BEAT BELL", icon = "bell", cost = 30 },
         { id = "fair_glow", category = "roamer", label = "FAIR LIGHTS", icon = "van", cost = 40 },
     },
 }

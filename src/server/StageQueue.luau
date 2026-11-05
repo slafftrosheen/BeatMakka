@@ -3,6 +3,7 @@ local Project = require(game.ReplicatedStorage.Shared.MusicProject)
 local Workspace = game:GetService("Workspace")
 local Takes = require(script.Parent.PerformanceTakeSession)
 local Crate = require(game.ReplicatedStorage.Shared.CrateChallenge)
+local ChoiceVisual = require(game.ReplicatedStorage.Shared.StageChoiceVisual)
 local Stage = {}
 Stage.__index = Stage
 local LIMIT, LIFETIME, OFFER = 4, 120, 30
@@ -15,7 +16,7 @@ function Stage.new(session, podium, profiles, send, release, nearby, clock)
     local self = setmetatable({
         session = session, podium = podium, profiles = profiles, send = send,
         release = release, nearby = nearby, clock = clock or os.clock,
-        queue = {}, opened = {}, anchors = {},
+        queue = {}, opened = {}, anchors = {}, reviews = {}, reviewContexts = {}, reviewSerial = 0,
     }, Stage)
     if podium.boardPrompt then
         podium.boardPrompt.Triggered:Connect(function(p)
@@ -75,7 +76,22 @@ function Stage:open(p, anchor)
     end
     self.release(p)
     self.opened[p], self.anchors[p] = true, anchor
-    self.send(p, "Choose Spotlight, Practice loop or Full Song. NPC requests are optional; listening is opt-in.")
+    self.send(p)
+end
+function Stage:reviewContext(p)
+    local profile = self.profiles[p]
+    if not profile or not profile.music then return nil end
+    local project, saved = profile.music.project, profile.saved and profile.saved.music
+    local unlocked = tostring(profile.unlocked.I01) .. tostring(profile.unlocked.I02) .. tostring(profile.unlocked.I03)
+    local current = self.reviewContexts[p]
+    if not current or current.project ~= project or current.revision ~= project.revision
+        or current.saved ~= saved or current.generation ~= profile.workspaceGeneration or current.unlocked ~= unlocked then
+        self.reviewSerial += 1
+        current = { project = project, revision = project.revision, saved = saved,
+            generation = profile.workspaceGeneration, unlocked = unlocked, token = self.reviewSerial }
+        self.reviewContexts[p], self.reviews[p] = current, nil
+    end
+    return current
 end
 function Stage:state(p)
     local queue, entries, position, preparedMode, preparedDuration = {}, {}, nil, nil, nil
@@ -86,6 +102,7 @@ function Stage:state(p)
             performer = entry.player.DisplayName, title = entry.snapshot.title,
             ref = entry.snapshot.ref, duration = entry.snapshot.duration,
             loop = entry.snapshot.loop, mode = entry.snapshot.mode,
+            visual = if entry.player == p then entry.visual else nil,
             venue = venueName(entry.anchor, self.podium),
         })
         if entry.player == p then
@@ -119,13 +136,18 @@ function Stage:state(p)
                 bars = Crate.TotalBars, bpm = Crate.Bpm, loop = false })
         end
     end
+    local reviewContext = self.opened[p] and self:reviewContext(p)
     return {
+        reviewToken = reviewContext and reviewContext.token,
+        sourceReview = self.opened[p] and self.reviews[p] or nil,
         open = self.opened[p] == true,
         venue = venueName(self:anchor(p), self.podium),
         performer = self.session.owner and self.session.owner.DisplayName,
         queue = queue, entries = entries, available = available,
         selectedRef = profile and profile.listeningRef,
         title = self.session.prepared and self.session.prepared.title,
+        startedAt = self.session.startedAt,
+        loop = self.session.prepared and self.session.prepared.loop,
         performanceRef = self.session.prepared and self.session.prepared.ref,
         duration = self.session.prepared and self.session.prepared.duration,
         mode = self.session.prepared and self.session.prepared.mode,
@@ -159,7 +181,7 @@ function Stage:tick()
     end
     for p in self.opened do
         if not self.profiles[p] or not self.nearby(p, self:anchor(p), 32) then
-            self.opened[p], self.anchors[p] = nil, nil
+            self.opened[p], self.anchors[p], self.reviews[p], self.reviewContexts[p] = nil, nil, nil, nil
             self.send(p, "Stage board closed. Return to its venue to take part.")
             changed = true
         end
@@ -171,7 +193,7 @@ function Stage:tick()
 end
 function Stage:depart(p)
     local associated = self.opened[p] or self.session.members[p]
-    self.opened[p], self.anchors[p] = nil, nil
+    self.opened[p], self.anchors[p], self.reviews[p], self.reviewContexts[p] = nil, nil, nil, nil
     local removed = self:remove(p)
     self.session:leave(p)
     if associated or removed then
@@ -189,6 +211,20 @@ function Stage:command(p, action, payload)
     if not profile or not profile.ready or not self.opened[p]
         or not self.nearby(p, self:anchor(p), 32) then
         return false, "Open the nearby stage board before preparing."
+    end
+    if action == "StageInspect" then
+        local context = self:reviewContext(p)
+        if type(payload) ~= "table" or not context then return end
+        if payload.token ~= context.token then self.send(p); return end
+        if type(payload.id) ~= "string" or #payload.id > 96
+            or type(payload.revision) ~= "number" or payload.revision % 1 ~= 0 then return end
+        local ref = { kind = payload.kind, id = payload.id, revision = payload.revision }
+        local prepared, problem = self.session:prepare(p, { kind = ref.kind, id = ref.id,
+            revision = ref.revision, mode = payload.mode, capture = false })
+        self.reviews[p] = { ref = ref, mode = payload.mode, ready = prepared ~= nil,
+            visual = prepared and ChoiceVisual.from(prepared), problem = problem }
+        self.send(p)
+        return
     end
     if action == "StageTakeKeep" or action == "StageTakeDiscard" then
         if self.session.members[p] then
@@ -226,7 +262,7 @@ function Stage:command(p, action, payload)
         end
         profile.listeningRef = Project.clone(snapshot.ref)
         table.insert(self.queue, {
-            player = p, snapshot = snapshot, createdAt = self.clock(), anchor = self:anchor(p),
+            player = p, snapshot = snapshot, visual = ChoiceVisual.from(snapshot), createdAt = self.clock(), anchor = self:anchor(p),
         })
         self:refresh()
         self.send(p, (if snapshot.mode == "spotlight" then "Spotlight excerpt" elseif snapshot.loop then "Practice loop" else "Full Song")
