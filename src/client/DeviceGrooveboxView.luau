@@ -488,9 +488,11 @@ function View:absolutePad()
 end
 function View:hasModal()
     return self.menu.Visible
+        or (self.state and self.state.records and (self.state.records.invite ~= nil or self.state.records.session ~= nil))
         or self.prompt.Visible
         or (self.songScreen.popup and self.songScreen.popup.Visible)
         or (self.libraryScreen.popup and self.libraryScreen.popup.Visible)
+        or self.libraryScreen.recordPanel.root.Visible
 end
 function View:closeModal()
     self.menu.Visible, self.prompt.Visible = false, false
@@ -500,6 +502,7 @@ function View:closeModal()
     if self.libraryScreen.popup then
         self.libraryScreen.popup.Visible = false
     end
+    self.libraryScreen.recordPanel.panel:show(false)
 end
 function View:command(action, a, b)
     if not self.state or not self.state.ready then

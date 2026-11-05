@@ -357,6 +357,7 @@ function AudioEngine.new(groupName, options)
         Changed = Instance.new("BindableEvent"),
     }, AudioEngine)
     options = options or {}
+    self.localMute = options.localMute == true
     -- Local Studio playback uses the same technical sources in the instrument,
     -- listening area and Finished Song. This never changes approval/admission.
     self.allowLocalPreview = RunService:IsStudio()
@@ -575,8 +576,10 @@ function AudioEngine:setMuted(value)
         return
     end
     self.muted = value == true
-    Mix.muted = self.muted
-    Mix.Changed:Fire()
+    if not self.localMute then
+        Mix.muted = self.muted
+        Mix.Changed:Fire()
+    end
     self.applyMix()
     if self.muted then
         self:_stopVoices()

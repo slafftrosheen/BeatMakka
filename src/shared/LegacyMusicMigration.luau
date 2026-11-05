@@ -4,7 +4,8 @@
 local Project = require(script.Parent.MusicProject)
 local Sequence = require(script.Parent.MusicSequence)
 local PadSound = require(script.Parent.PadSound)
-local Migration = { Schema = 1, Id = "legacy_four_patterns_v1" }
+local Records = require(script.Parent.RecordRelease)
+local Migration = { Schema = 2, Id = "legacy_four_patterns_v1" }
 
 local function at(values, index)
     if type(values) ~= "table" then
@@ -182,12 +183,23 @@ function Migration.new()
         finishedSongs = {},
         finishedOrder = {},
         finishRequests = {},
+        releases = {},
+        releaseOrder = {},
+        releaseRequests = {},
     }
 end
 
 function Migration.validate(music)
-    if type(music) ~= "table" or music.schema ~= Migration.Schema then
+    if type(music) ~= "table" or (music.schema ~= 1 and music.schema ~= Migration.Schema) then
         return false, "Unsupported future music schema. Saving is disabled to preserve it."
+    end
+    if music.schema == 1 then
+        if music.releases ~= nil or music.releaseOrder ~= nil or music.releaseRequests ~= nil then
+            return false, "Unexpected release data in an older schema; original retained."
+        end
+    else
+        local valid, message = Records.validateLibrary(music)
+        if not valid then return false, message end
     end
     local valid, message = Project.validate(music.project)
     if not valid then
@@ -291,6 +303,14 @@ end
 
 -- Existing explicit music versions are never reimported or sanitized. This is
 -- idempotent even after a player has edited imported sequences.
+local function upgrade(music)
+    local copy = Project.clone(music)
+    if copy.schema == 1 then
+        copy.schema = Migration.Schema
+        copy.releases, copy.releaseOrder, copy.releaseRequests = {}, {}, {}
+    end
+    return copy
+end
 function Migration.import(raw)
     if raw == nil then
         return Migration.new()
@@ -303,14 +323,14 @@ function Migration.import(raw)
         if not valid then
             return nil, message
         end
-        return Project.clone(raw.music)
+        return upgrade(raw.music)
     end
-    if raw.schema == Migration.Schema and raw.project ~= nil then
+    if (raw.schema == 1 or raw.schema == Migration.Schema) and raw.project ~= nil then
         local valid, message = Migration.validate(raw)
         if not valid then
             return nil, message
         end
-        return Project.clone(raw)
+        return upgrade(raw)
     end
     if raw.schema ~= nil and raw.schema ~= 1 and raw.schema ~= 2 then
         return nil, "Unsupported future profile schema; no migration or save was attempted."

@@ -10,6 +10,9 @@ local PadSound = require(Shared.PadSound)
 local Profiles = require(script.Parent.ProfileStore)
 local WorkspaceState = require(script.Parent.WorkspaceState)
 local FirstGrooveSession = require(script.Parent.FirstGrooveSession)
+local Attribution = require(Shared.MusicAttribution)
+local Versions = require(Shared.SampleVersions)
+local Records = require(Shared.RecordRelease)
 local Workspace = {}
 local function integer(v, lo, hi)
     return type(v) == "number" and v == v and v % 1 == 0 and v >= lo and v <= hi
@@ -301,8 +304,24 @@ local function filterName(player, text)
     end)
     return if ok then result else nil
 end
-function Workspace.projection(p)
+function Workspace.projection(p, owner)
     local seq, track, program = Workspace.sync(p)
+    local packLabels = {}
+    local function enrich(item, project, source, kind)
+        item.type = kind
+        item.cover = Records.cover(source.cover)
+        item.attribution = Attribution.capture(project, source, owner)
+        if not packLabels[project] then packLabels[project] = Versions.label(project.sampleVersions or Versions.capture(project)) end
+        item.packLabel = packLabels[project]
+        return item
+    end
+    local library = Project.summary(p.music.project)
+    for _, item in library.sequences do
+        enrich(item, p.music.project, p.music.project.sequences[item.id], "Pattern/Loop")
+    end
+    for _, item in library.drafts do
+        enrich(item, p.music.project, p.music.project.drafts[item.id], "Draft Song")
+    end
     local songs = {}
     for _, id in p.music.finishedOrder do
         local s = p.music.finishedSongs[id]
@@ -321,11 +340,11 @@ function Workspace.projection(p)
                     })
                 end
             end
-            table.insert(songs, {
+            table.insert(songs, enrich({
                 id = id, revision = s.revision,
                 title = s.title or s.name, duration = s.duration,
                 contributors = credits,
-            })
+            }, s.project, ownedDraft or s, "Finished Song"))
         end
     end
     local archives = {}
@@ -352,7 +371,8 @@ function Workspace.projection(p)
         track = track,
         program = program,
         draft = p.music.project.drafts[p.draftId],
-        library = Project.summary(p.music.project),
+        attribution = Attribution.capture(p.music.project, p.music.project.drafts[p.draftId], owner),
+        library = library,
         finishedSongs = songs,
         archives = archives,
         hasRecovery = p.music.recoveryProject ~= nil,

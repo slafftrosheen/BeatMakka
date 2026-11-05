@@ -16,7 +16,7 @@ local Activities = require(Shared.QuayActivities)
 local Identity = require(Shared.QuayIdentity)
 local WorkspaceState = require(script.Parent.WorkspaceState)
 
-local ProfileStore = { Schema = 3, MaxBytes = 3000000 }
+local ProfileStore = { Schema = 4, MaxBytes = 3000000 }
 local store
 local function cloudStore()
     if not store then
@@ -33,7 +33,8 @@ local function supported(data)
         and (data.revision == nil or integer(data.revision, 0, 1e12))
         and Activities.supported(data.experience)
         and Identity.supported(data.identity)
-        and (data.schema < 3 or (type(data.music) == "table" and data.music.schema == 1))
+        and (data.schema < 3 or (type(data.music) == "table"
+            and data.music.schema == (if data.schema == 3 then 1 else Migration.Schema)))
 end
 local function emptyMusic()
     return Migration.new()
@@ -75,7 +76,7 @@ function ProfileStore.new()
 end
 local function capture(profile, overrideMusic, selected)
     local music = Project.clone(overrideMusic or profile.music)
-    if type(music) ~= "table" or music.schema ~= 1 then
+    if type(music) ~= "table" or music.schema ~= Migration.Schema then
         return nil, "Unsupported music schema; your work is preserved."
     end
     local valid, problem = Migration.validate(music)

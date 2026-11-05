@@ -12,6 +12,7 @@ return function(state, action)
                     type(action) == "string"
                     and (
                         action:sub(1, 4) == "Life"
+                        or action:sub(1, 6) == "Record"
                         or action == "CompanionSelect"
                         or action == "CompanionHints"
                         or action == "CompanionHint"

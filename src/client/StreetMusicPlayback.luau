@@ -17,7 +17,7 @@ function Playback.new(state)
         if
             root
             and not Mix.muted
-            and not (s and (s.station or s.listening or (s.concert and s.concert.playback)))
+            and not (s and (s.station or s.listening or (s.records and s.records.session) or (s.concert and s.concert.playback)))
         then
             packet, distance = Field.nearest(root.Position, 48, nil, true)
         end

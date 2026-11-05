@@ -16,6 +16,7 @@ local WorkshopView = require(script.DeviceGrooveboxView)
 local Restoration = require(script.Restoration)
 local DeviceAppearance = require(script.DeviceAppearance)
 local ListeningView = require(script.ListeningView)
+local RecordListeningView = require(script.RecordListeningView)
 local StageView = require(script.StageView)
 local ConcertView = require(script.ConcertView)
 local ConcertScene = require(script.ConcertScene)
@@ -48,6 +49,10 @@ local audio = AudioEngine.new(nil, { allowLocalPreview = true })
 local listeningAudio =
     AudioEngine.new("CourtyardListening", { musicOnly = true, strictSelection = true })
 local jamAudio = JamPlayback.new()
+local recordAudio = AudioEngine.new("PrivateRecord", { musicOnly = true, strictSelection = true, localMute = true })
+local recordPlayback = SchedulePlayback.new(recordAudio)
+local recordMuted, recordToken = false, nil
+local recordView, updateRecordUi
 local jamView
 local listeningView
 local stageView
@@ -101,6 +106,7 @@ local function ownsTouchControls()
             state.station
             or (state.concert and state.concert.open)
             or (state.stage and state.stage.open)
+            or (state.records and (state.records.session or state.records.invite))
         )
 end
 
@@ -199,6 +205,7 @@ local function tap(pad, captured)
     if not state or not state.ready or not state.station then
         return false
     end
+    if state.records and (state.records.session or state.records.invite) then return false end
     local context = captured or noteContext(pad)
     if not context then
         return false
@@ -254,6 +261,7 @@ view = WorkshopView.new({
         return math.clamp(level, 0, 1)
     end,
     preview = function(pad, settings)
+        if state and state.records and state.records.session then return false end
         if state and state.station and state.pattern then
             local ctx = noteContext(pad)
             local played = Catalog.isLocallyPlayable(state.pattern.assignments[pad], state.unlocked)
@@ -290,6 +298,8 @@ view = WorkshopView.new({
         audio:setMuted(value)
         listeningAudio:setMuted(value)
         jamAudio:setMuted(value)
+        recordAudio:setMuted(value or recordMuted)
+        if updateRecordUi then updateRecordUi() end
         if jamView and state then
             jamView:update(state.jam, value)
         end
@@ -326,6 +336,10 @@ connect(UserInputService.WindowFocusReleased, function()
     if state and state.jam and (state.jam.active or state.jam.open) then
         send("JamLeave")
     end
+    if state and state.records then
+        if state.records.session then send("RecordLeave", { token = state.records.session.token }) end
+        if state.records.invite then send("RecordDecline", { token = state.records.invite.token }) end
+    end
 end)
 connect(UserInputService.TextBoxFocused, function()
     view:cancelInput(false)
@@ -341,6 +355,15 @@ end)
 jamView = JamView.new(view.screen, send, function()
     view:setMuted(not view.muted)
 end)
+recordView = RecordListeningView.new(view.screen, send, function()
+    recordMuted = not recordMuted
+    recordAudio:setMuted(view.muted or recordMuted)
+    updateRecordUi()
+end)
+updateRecordUi = function()
+    if state then recordView:update(state, recordMuted, view.muted, recordAudio:status()) end
+end
+connect(recordAudio.Changed.Event, function() if updateRecordUi then updateRecordUi() end end)
 updateListeningUi = function(notice)
     if not state then
         return
@@ -369,6 +392,12 @@ connect(audio.Changed.Event, function()
     view:paintPads()
 end)
 connect(stateEvent.OnClientEvent, function(nextState)
+    local previousRecord = state and state.records and state.records.session
+    local nextRecord = nextState.records and nextState.records.session
+    if (nextRecord and nextRecord.token or nil) ~= recordToken then
+        recordToken, recordMuted = nextRecord and nextRecord.token or nil, false
+        recordAudio:setMuted(view.muted)
+    end
     if
         state
         and ((state.playing and not nextState.playing) or (state.station and not nextState.station))
@@ -392,8 +421,8 @@ connect(stateEvent.OnClientEvent, function(nextState)
     neighbors.state = nextState
     jamAudio:accept(state.jam, Workspace:GetServerTimeNow())
     local jamActive = state.jam and state.jam.active
-    local soloMusic = state.station ~= nil and nextListening == nil and not jamActive
-    audio.worldPreview = state.station == nil and nextListening == nil and not jamActive
+    local soloMusic = state.station ~= nil and nextListening == nil and not jamActive and nextRecord == nil
+    audio.worldPreview = state.station == nil and nextListening == nil and not jamActive and nextRecord == nil
     if soloMusic then
         audio:setSelection(state.music and state.music.program and state.music.program.pads or {})
         editorPlayback:accept(state.music and state.music.transport)
@@ -409,6 +438,7 @@ connect(stateEvent.OnClientEvent, function(nextState)
         )
     end
     publicPlayback:accept(nextListening)
+    recordPlayback:accept(nextRecord and nextRecord.playback)
     if not state.playing then
         transportInterrupted = false
     end
@@ -427,6 +457,12 @@ connect(stateEvent.OnClientEvent, function(nextState)
         state.dirty
     )
     view:update(state)
+    if nextRecord then
+        view:cancelInput(false)
+        view.panel.Visible = false
+    elseif previousRecord and previousRecord.remixed and state.station then
+        view:showPage(if state.music.draft then "Song" else "Sequence")
+    end
     local shelfRequest = state.quay and state.quay.libraryRequest
     if state.station and type(shelfRequest) == "number"
         and shelfRequest > lastRoamerShelfRequest then
@@ -442,6 +478,7 @@ connect(stateEvent.OnClientEvent, function(nextState)
     jamView:update(state.jam, view.muted, state.notice)
     concertScene:update(state.concert)
     updateListeningUi(state.notice)
+    updateRecordUi()
     view.audioStatus.Text = audio:status()
     Restoration.update(state.restoration, effects, state.neighborhood)
     appearance:apply(state)
@@ -683,6 +720,7 @@ connect(RunService.Heartbeat, function(dt)
     feedback:step()
     concertScene:step(effects)
     publicPlayback:step(Workspace:GetServerTimeNow())
+    recordPlayback:step(Workspace:GetServerTimeNow())
     refresh += dt
     if refresh > 1 then
         refresh = 0
@@ -774,8 +812,10 @@ script.Destroying:Connect(function()
     updateTouchControls()
     editorPlayback:stop()
     publicPlayback:stop()
+    recordPlayback:stop()
     audio:destroy()
     listeningAudio:destroy()
+    recordAudio:destroy()
     jamAudio:destroy()
     appearance:destroy()
     view.sampleEditor:destroy()

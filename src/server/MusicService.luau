@@ -16,6 +16,7 @@ local CompanionService = require(script.Parent.CompanionService)
 local QuayExperienceService = require(script.Parent.QuayExperienceService)
 local CommerceService = require(script.Parent.CommerceService)
 local WardrobeService = require(script.Parent.WardrobeService)
+local RecordService = require(script.Parent.RecordService)
 local MusicService = {}
 
 function MusicService.start(world)
@@ -41,6 +42,8 @@ function MusicService.start(world)
     local experience
     local commerce
     local wardrobe
+    local records
+    local enterStation
 
     local function nearby(player, anchor, distance)
         local character = player.Character
@@ -95,7 +98,8 @@ function MusicService.start(world)
         state:FireClient(player, {
             ready = profile.ready,
             pattern = profile.pattern,
-            music = WorkspaceModel.projection(profile),
+            music = WorkspaceModel.projection(profile, { userId = player.UserId, name = player.Name }),
+            records = records and records:summary(player),
             quest = Quest.summary(profile),
             unlocked = profile.unlocked,
             station = profile.station,
@@ -129,12 +133,13 @@ function MusicService.start(world)
         })
     end
 
-    local function release(player, notice)
+    local function release(player, notice, keepRecord)
         local profile = profiles[player]
         if not profile then
             return
         end
         local station = world.stations[profile.station]
+        if records and not keepRecord then records:leave(player) end
         if jam then
             jam:leave(player)
         end
@@ -148,7 +153,7 @@ function MusicService.start(world)
             station.screen.Text = "MK-I\nREADY"
         end
         profile.station = nil
-        WorkspaceModel.stop(profile, true)
+        if not keepRecord then WorkspaceModel.stop(profile, true) end
         send(player, notice)
     end
 
@@ -236,6 +241,29 @@ function MusicService.start(world)
         listening:depart(player)
         concert:stop(player)
     end, nearby)
+    records = RecordService.new(profiles, send, persist, function(player)
+        local p = profiles[player]
+        local station = p and world.stations[p.station]
+        return p ~= nil and p.ready and station ~= nil and station.owner == player
+            and nearby(player, station.anchor, 15)
+    end, function(player)
+        local p = profiles[player]
+        return not p or p.playing or p.recording or jam.members[player] ~= nil
+            or listening:state(player) ~= nil or concert.sessions[player] ~= nil
+    end, function(player)
+        -- Only the accepted-record action can request this transition. The bay,
+        -- station and destination come from the recipient's existing assignment.
+        local p = profiles[player]
+        local bay = rooms.bays[rooms.byPlayer[player]]
+        local station = bay and world.stations[bay.stationId]
+        if not p or not p.ready or not station then return false, "Your workbench is unavailable; the accepted record is retained." end
+        if station.owner and station.owner ~= player then return false, "Your workbench is occupied; the accepted record is retained." end
+        if not quay or not quay:teleport(player, station.anchor.Position + Vector3.new(0, 0, -6)) then
+            return false, "Could not enter your workbench. Your accepted record is retained."
+        end
+        enterStation(player, bay.stationId, true)
+        return p.station == bay.stationId, "Record stopped. Your workbench is open and the accepted record is retained for a permitted remix."
+    end)
     task.spawn(function()
         while network.Parent do
             task.wait(0.1)
@@ -276,7 +304,7 @@ function MusicService.start(world)
         end
     end)
 
-    local function enterStation(player, id)
+    enterStation = function(player, id, keepRecord)
         local profile = profiles[player]
         local station = world.stations[id]
         if
@@ -292,7 +320,7 @@ function MusicService.start(world)
             return
         end
         listening:depart(player)
-        release(player)
+        release(player, nil, keepRecord)
         profile.station = id
         station.owner = player
         station.label.Text = "MK-I  /  " .. player.DisplayName
@@ -392,6 +420,7 @@ function MusicService.start(world)
         join(player)
     end
     Players.PlayerRemoving:Connect(function(player)
+        records:remove(player)
         liveMusic:remove(player)
         quay:flush(player)
         listening:depart(player)
@@ -545,6 +574,11 @@ function MusicService.start(world)
         if not profile.ready then
             return
         end
+        if action:sub(1, 6) == "Record" and action ~= "Record" then
+            local _, notice = records:command(player, action, a)
+            send(player, notice)
+            return
+        end
         if action == "LeaveListening" then
             listening:depart(player)
             return
@@ -568,6 +602,7 @@ function MusicService.start(world)
             return
         end
         if action == "QuayStage" then
+            records:leave(player)
             local station = world.stations[profile.station]
             if not station or station.owner ~= player or not nearby(player, station.anchor, 15) then
                 send(
@@ -587,14 +622,17 @@ function MusicService.start(world)
             return
         end
         if action:sub(1, 3) == "Jam" then
+            records:leave(player)
             jam:command(player, action, a)
             return
         end
         if action:sub(1, 7) == "Chapter" then
+            records:leave(player)
             concert:command(player, action, a)
             return
         end
         if action:sub(1, 5) == "Stage" or action:sub(1, 9) == "Listening" then
+            records:leave(player)
             listening:command(player, action, a)
             if action == "StageClose" and profile.stageFromWorkshop then
                 profile.stageFromWorkshop = nil
@@ -605,6 +643,13 @@ function MusicService.start(world)
         local station = world.stations[profile.station]
         if not station or station.owner ~= player or not nearby(player, station.anchor, 15) then
             release(player, "Return to a workbench to edit your project.")
+            return
+        end
+        if
+            records.sessions[player]
+            and table.find({ "Play", "PlayStart", "Record", "Overdub", "SongPlay", "SongSeek", "FinishedPlay", "Tap" }, action)
+        then
+            send(player, "Close record listening before starting your instrument.")
             return
         end
         if
@@ -680,6 +725,7 @@ function MusicService.start(world)
     task.spawn(function()
         while network.Parent do
             task.wait(1)
+            records:tick()
             listening:tick()
             concert:tick()
             for player, profile in profiles do

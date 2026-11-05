@@ -4,6 +4,7 @@ local RawGui = require(script.Parent.GuiFactory)
 local Skin = require(script.Parent.DeviceSkin)
 local Icons = require(script.Parent.GameIcons)
 local Theme = require(game.ReplicatedStorage.Shared.Theme)
+local Sleeve = require(script.Parent.RecordSleeveView)
 local Library = {}
 Library.__index = Library
 
@@ -138,9 +139,10 @@ function Library.new(parent, callbacks)
     self.header = frame(self.rootFrame, "LibrarySegments")
     for index, spec in
         {
-            { "Sections", "SECTIONS", "steps" },
+            { "Sections", "LOOPS", "steps" },
             { "Drafts", "DRAFTS", "sleeve" },
             { "Finished", "FINISHED", "disc" },
+            { "Releases", "RELEASES", "sleeve" },
         }
     do
         local section = spec[1]
@@ -156,7 +158,7 @@ function Library.new(parent, callbacks)
         self.popup.Visible = not self.popup.Visible
     end)
     self.options.root.TextSize = 20
-    self.options.root.SelectionOrder = 4
+    self.options.root.SelectionOrder = 5
     self.body = frame(self.rootFrame, "SleeveCards")
     self.empty = text(self.body, "EmptyLibrary", "", 12, Dim)
     self.empty.Size = UDim2.fromScale(1, 1)
@@ -167,7 +169,7 @@ function Library.new(parent, callbacks)
         local card = button(self, self.body, "SleeveCard" .. index, "", function()
             self:_choose(index)
         end)
-        card.root.SelectionOrder = index + 4
+        card.root.SelectionOrder = index + 5
         card.art = frame(card.root, "VinylSleeve", {
             BackgroundTransparency = 0,
             BackgroundColor3 = Color3.fromRGB(121, 133, 93),
@@ -197,6 +199,7 @@ function Library.new(parent, callbacks)
             ScaleType = Enum.ScaleType.Fit,
             ZIndex = 6,
         })
+        card.sleeve = Sleeve.new(card.art)
         card.number = text(card.root, "SourceCode", "", 11, Dim)
         card.title = text(card.root, "SourceTitle", "", 12, Ink)
         card.detail = text(card.root, "SourceLength", "", 11, Dim)
@@ -228,6 +231,10 @@ function Library.new(parent, callbacks)
         if not item then
             return
         end
+        if self.section == "Releases" then
+            self.recordPanel:open(item, self.section, self.state)
+            return
+        end
         self.callbacks.command("ListeningSelect", {
             kind = if self.section == "Finished" then "finished" else "sequence",
             id = item.id,
@@ -238,12 +245,17 @@ function Library.new(parent, callbacks)
         self:_render()
     end, "people")
     self.hint = text(self.rootFrame, "LibraryHint", "", 11, Dim)
-    self.popup = frame(self.rootFrame, "LibraryOptions", {
+    self.popup = RawGui.make("ScrollingFrame", self.rootFrame, {
+        Name = "LibraryOptions",
         AnchorPoint = Vector2.new(0.5, 0.5),
         Position = UDim2.fromScale(0.5, 0.5),
         BackgroundTransparency = 0,
         BackgroundColor3 = Theme.Screen,
         Active = true,
+        BorderSizePixel = 0,
+        CanvasSize = UDim2.fromOffset(0, 238),
+        ScrollBarThickness = 4,
+        ScrollingDirection = Enum.ScrollingDirection.Y,
         Visible = false,
         ZIndex = 20,
     })
@@ -251,6 +263,13 @@ function Library.new(parent, callbacks)
     local heading = text(self.popup, "OptionsHeading", "LIBRARY / OPTIONS", 12, Amber)
     heading.Position, heading.Size, heading.ZIndex =
         UDim2.fromOffset(14, 8), UDim2.new(1, -28, 0, 24), 22
+    self.details = button(self, self.popup, "RecordDetails", "DETAILS / SLEEVE / RELEASE", function()
+        local item = self:_selected()
+        if item and self.section ~= "Archives" then
+            self.popup.Visible = false
+            self.recordPanel:open(item, self.section, self.state)
+        end
+    end, "sleeve")
     self.copy = button(self, self.popup, "OpenEditableCopy", "OPEN EDITABLE COPY", function()
         local item = self:_selected()
         if item and self.section == "Finished" then
@@ -272,7 +291,7 @@ function Library.new(parent, callbacks)
     self.closeOptions = button(self, self.popup, "CloseOptions", "CLOSE", function()
         self.popup.Visible = false
     end, "close")
-    for index, control in { self.copy, self.imports, self.recovery, self.closeOptions } do
+    for index, control in { self.details, self.copy, self.imports, self.recovery, self.closeOptions } do
         control.root.Position = UDim2.fromOffset(12, 38 + (index - 1) * 38)
         control.root.Size = UDim2.new(1, -24, 0, 32)
         control.root.ZIndex = 22
@@ -286,6 +305,7 @@ function Library.new(parent, callbacks)
             end
         end
     end
+    self.recordPanel = require(script.Parent.RecordShelfPanel).new(self.rootFrame, callbacks)
     self:resize(parent.AbsoluteSize.X, parent.AbsoluteSize.Y)
     self:_render()
     return self
@@ -307,19 +327,13 @@ function Library:_choose(index)
     end
     self.selectedIds[self.section] = item.id
     self.publicHint = false
-    if self.section == "Sections" then
-        self.callbacks.command("SequenceSelect", item.id)
-        self.callbacks.page("Sequence")
-    elseif self.section == "Drafts" then
-        self.callbacks.command("SongSelect", item.id)
-        self.callbacks.page("Song")
-    elseif self.section == "Finished" then
-        self.callbacks.command("FinishedSelect", item.id)
-    else
+    if self.section == "Archives" then
         self.callbacks.command("ArchiveOpen", item.id)
         if item.readOnly == false then
             self.callbacks.page("Sequence")
         end
+    else
+        self.recordPanel:open(item, self.section, self.state)
     end
     self:_render()
 end
@@ -333,10 +347,12 @@ function Library:_play()
         self.callbacks.command("FinishedPlay")
     elseif self.section == "Drafts" then
         self.callbacks.command("SongSelect", item.id)
-        self.callbacks.command("SongPlay")
+        self.callbacks.page("Song")
     elseif self.section == "Sections" then
         self.callbacks.command("SequenceSelect", item.id)
-        self.callbacks.command("PlayStart")
+        self.callbacks.page("Sequence")
+    elseif self.section == "Releases" then
+        self.recordPanel:open(item, self.section, self.state)
     else
         self.callbacks.command("ArchiveOpen", item.id)
     end
@@ -349,6 +365,7 @@ function Library:_render()
         then summary.sequences or {}
         elseif self.section == "Drafts" then summary.drafts or {}
         elseif self.section == "Finished" then m.finishedSongs or {}
+        elseif self.section == "Releases" then (self.state and self.state.records and self.state.records.releases or {})
         else m.archives or {}
     self.pageCount = math.max(1, math.ceil(#self.entries / self.pageSize))
     self.pageIndex = math.clamp(self.pageIndex, 1, self.pageCount)
@@ -370,24 +387,26 @@ function Library:_render()
         tint(card, item ~= nil, item ~= nil and selected ~= nil and item.id == selected.id)
         if item then
             local title = item.title or item.name or "Untitled"
-            local saved = self.section == "Finished"
+            local saved = self.section == "Finished" or self.section == "Releases"
                 or (item.revision ~= nil and item.savedRevision == item.revision)
             local credits = {}
-            for _, author in item.contributors or {} do
+            for _, author in (item.attribution and item.attribution.contributors) or item.contributors or {} do
                 if type(author) == "table" and type(author.name) == "string" then
                     table.insert(credits, author.name)
                 end
             end
             local creditText = if #credits > 0 then "BY " .. table.concat(credits, " + ") else nil
             card.title.Text = title
+            card.sleeve:update(item.cover)
             card.title:SetAttribute("FullTitle", title)
             card.root:SetAttribute("SourceId", item.id)
             card.number.Text = string.format(
                 "%s %02d",
                 if self.section == "Sections"
-                    then "SEQ"
+                    then "LOOP"
                     elseif self.section == "Drafts" then "DRAFT"
                     elseif self.section == "Finished" then "SONG"
+                    elseif self.section == "Releases" then "REL"
                     else "IMPORT",
                 (self.pageIndex - 1) * self.pageSize + index
             )
@@ -403,12 +422,8 @@ function Library:_render()
                     seconds(item.duration),
                     item.revision or 1
                 )
+                elseif self.section == "Releases" then item.type .. " / v1"
                 else if item.readOnly == false then "EDITABLE SOURCE" else "RETAINED ORIGINAL"
-            if creditText then
-                card.detail.Text = if self.section == "Drafts"
-                    then string.format("DUET / %d BARS", item.totalBars or 0)
-                    else "CREDITED SONG / REV " .. tostring(item.revision or 1)
-            end
             card.detail:SetAttribute("AccessibleLabel", creditText or card.detail.Text)
             card.root:SetAttribute("Contributors", creditText)
             card.saved.BackgroundColor3 = if saved then Ink else Amber
@@ -422,35 +437,42 @@ function Library:_render()
         elseif
             self.section == "Finished"
         then "No finished songs yet.\nOpen Song, arrange your sections, then Finish & Save."
+        elseif self.section == "Releases" then "No releases yet.\nSelect music, choose a sleeve and Release a copy."
         else "No legacy imports in this workspace."
     self.pageLabel.Text = string.format("%d / %d", self.pageIndex, self.pageCount)
     tint(self.previous, self.pageIndex > 1, false)
     tint(self.next, self.pageIndex < self.pageCount, false)
     tint(self.play, selected ~= nil, false)
-    self.play.root.Text = if self.section == "Archives" then "OPEN" else "PLAY"
+    self.play.root.Text = if self.section == "Archives" then "OPEN"
+        elseif self.section == "Releases" then "DETAILS"
+        elseif self.section == "Finished" then "FULL SONG" else "CONTINUE"
+    self.public.root.Text = if self.section == "Releases" then "INVITE" else "PUBLIC"
     tint(
         self.public,
-        selected ~= nil and (self.section == "Finished" or self.section == "Sections"),
+        selected ~= nil and (self.section == "Finished" or self.section == "Sections" or self.section == "Releases"),
         false
     )
     tint(self.copy, selected ~= nil and self.section == "Finished", false)
+    tint(self.details, selected ~= nil and self.section ~= "Archives", false)
     tint(self.imports, #(m.archives or {}) > 0, false)
     tint(self.recovery, m.hasRecovery == true, false)
     self.hint.Text = if self.publicHint
         then "TAKING YOUR MUSIC TO THE COURTYARD / prepare, then start"
         elseif self.section == "Archives" then "LEGACY IMPORTS / original maps and notes retained"
         elseif self.section == "Finished" then "SAVED REVISIONS / OPTIONS opens an editable copy"
-        else "GREEN = SAVED / AMBER = EDITS / select a sleeve to open"
-    if selected and type(selected.contributors) == "table" and #selected.contributors > 0 then
+        elseif self.section == "Releases" then "EXACT COPIES / INVITE starts no audio until accepted"
+        else "CONTINUE resumes work / select a sleeve for credits, audition and release"
+    local contributors = selected and ((selected.attribution and selected.attribution.contributors) or selected.contributors)
+    if type(contributors) == "table" and #contributors > 0 then
         local names = {}
-        for _, contributor in selected.contributors do
+        for _, contributor in contributors do
             if type(contributor) == "table" and type(contributor.name) == "string" then
                 table.insert(names, contributor.name)
             end
         end
         if #names > 0 then
             self.hint.Text = "CREDITED TO " .. table.concat(names, " + ")
-                .. " / " .. (if self.section == "Finished" then "SAVED SONG" else "EDITABLE DRAFT")
+                .. " / " .. (selected.type or "IMPORTED MUSIC")
         end
     end
 end
@@ -459,11 +481,13 @@ function Library:update(state)
     if self.destroyed then
         return
     end
+    self.state = state
     self.music = state and (state.music or state.library and state) or nil
     local m = self.music or {}
-    self.selectedIds.Sections = m.sequenceId or self.selectedIds.Sections
-    self.selectedIds.Drafts = m.draftId or self.selectedIds.Drafts
-    self.selectedIds.Finished = m.selectedFinishedSongId or self.selectedIds.Finished
+    self.selectedIds.Sections = self.selectedIds.Sections or m.sequenceId
+    self.selectedIds.Drafts = self.selectedIds.Drafts or m.draftId
+    self.selectedIds.Finished = self.selectedIds.Finished or m.selectedFinishedSongId
+    if state and state.records then self.recordPanel:update(state) end
     self:_render()
 end
 function Library:resize(width, height)
@@ -477,8 +501,8 @@ function Library:resize(width, height)
     local bodyTop, footerY = margin + headerHeight + gap, height - margin - 52
     self.header.Position = UDim2.fromOffset(margin, margin)
     self.header.Size = UDim2.fromOffset(math.max(1, width - margin * 2), headerHeight)
-    local tabWidth = math.max(1, (width - margin * 2 - 40 - gap * 3) / 3)
-    for index, section in { "Sections", "Drafts", "Finished" } do
+    local tabWidth = math.max(1, (width - margin * 2 - 40 - gap * 4) / 4)
+    for index, section in { "Sections", "Drafts", "Finished", "Releases" } do
         local tab = self.tabs[section]
         tab.root.Position = UDim2.fromOffset((index - 1) * (tabWidth + gap), 0)
         tab.root.Size = UDim2.fromOffset(tabWidth, headerHeight)
@@ -529,7 +553,7 @@ function Library:resize(width, height)
         UDim2.new(1, -actionWidth, 0, 0), UDim2.fromOffset(actionWidth, footerHeight)
     self.hint.Position = UDim2.fromOffset(margin, height - margin - 16)
     self.hint.Size = UDim2.fromOffset(math.max(1, width - margin * 2), 16)
-    self.popup.Size = UDim2.fromOffset(math.max(1, math.min(360, width - 16)), 200)
+    self.popup.Size = UDim2.fromOffset(math.max(1, math.min(360, width - 16)), math.max(64, math.min(238, height - 16)))
     if self.music then
         self:_render()
     end

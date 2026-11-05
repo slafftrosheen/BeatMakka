@@ -57,6 +57,7 @@ function Soundscape:step(dt)
         or s.playing
         or s.recording
         or s.listening
+        or (s.records and s.records.session)
         or (s.jam and s.jam.active)
         or (s.concert and s.concert.playback)
         or (s.quay and s.quay.sideActivity)

@@ -1,6 +1,7 @@
 local Sequence = require(script.Parent.MusicSequence)
 local Project = require(script.Parent.MusicProject)
 local Catalog = require(script.Parent.SampleCatalog)
+local Versions = require(script.Parent.SampleVersions)
 
 local Transport = { Schema = 1, AudioTailSeconds = 2 }
 
@@ -80,13 +81,14 @@ local function addSection(schedule, project, sequence, override, step, repetitio
                 and track.mix.gain > 0
                 and definition.settings.gain > 0
             then
-                local ready = Transport.isReady(definition.sampleId, options.ready)
+                local ready = Versions.matches(definition.sampleId, project.sampleVersions)
+                    and Transport.isReady(definition.sampleId, options.ready)
                 if not ready then
                     schedule.unavailableCount += 1
                     schedule.unavailable[definition.sampleId] = true
                     if options.requireReady then
                         return false,
-                            "This song uses unavailable audio: " .. (if definition.sampleId
+                            "This music uses unavailable audio or a different pack version: " .. (if definition.sampleId
                                     == ""
                                 then "empty pad"
                                 else definition.sampleId)

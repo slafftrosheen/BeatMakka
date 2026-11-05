@@ -3,6 +3,8 @@ local Sequence = require(script.Parent.MusicSequence)
 local Song = require(script.Parent.SongArrangement)
 local PadSound = require(script.Parent.PadSound)
 local Catalog = require(script.Parent.SampleCatalog)
+local Attribution = require(script.Parent.MusicAttribution)
+local Versions = require(script.Parent.SampleVersions)
 
 local Project = {}
 Project.Limits = {
@@ -167,6 +169,8 @@ function Project.validate(project, skipBytes)
         or not Sequence.integer(project.defaultBpm, 60, 180)
         or not Sequence.integer(project.nextId, 0, 1e12)
         or type(project.programs) ~= "table"
+        or not Attribution.valid(project.attribution)
+        or not Versions.valid(project.sampleVersions)
         or not orderValid(project.tracks, project.trackOrder, Project.Limits.Tracks)
         or not orderValid(project.sequences, project.sequenceOrder, Project.Limits.Sequences)
         or not orderValid(project.drafts, project.draftOrder, Project.Limits.Drafts)
@@ -609,6 +613,12 @@ function Project.apply(source, operation, payload)
             if type(sampleId) ~= "string" or sampleId == "" then
                 return fail("A kit must provide all 64 sound identities.")
             end
+            if project.sampleVersions then
+                if project.sampleVersions[sampleId] and not Versions.matches(sampleId, project.sampleVersions) then
+                    return fail("This kit conflicts with a retained sample version. The copied music is unchanged.")
+                end
+                project.sampleVersions[sampleId] = Versions.current(sampleId)
+            end
         end
         local id = newId(project, "program")
         local created = Project.program(id, payload.name, payload.assignments)
@@ -640,6 +650,9 @@ function Project.apply(source, operation, payload)
         local pad = program.pads[tostring(payload.pad or payload.absolutePad)]
         if payload.sampleId ~= nil then
             pad.sampleId = payload.sampleId
+            if project.sampleVersions and not project.sampleVersions[payload.sampleId] then
+                project.sampleVersions[payload.sampleId] = Versions.current(payload.sampleId)
+            end
         end
         if payload.settings ~= nil then
             if type(payload.settings) ~= "table" then
@@ -761,6 +774,9 @@ function Project.apply(source, operation, payload)
         end
         draft.tempoMode = payload.tempoMode or draft.tempoMode
         draft.bpm, changedDraft = payload.bpm or draft.bpm, draft
+    elseif operation == "SequenceCover" then
+        if not sequence then return fail("Choose a Pattern/Loop.") end
+        sequence.cover, changedSequence = Project.clone(payload.cover), sequence
     elseif operation == "SongCover" then
         if not draft then
             return fail("Choose a song draft.")

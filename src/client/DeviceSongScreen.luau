@@ -645,8 +645,8 @@ function Song:_render()
     self.selectedStepId = self.selectedStepId or (steps[1] and steps[1].stepId)
     W.set(self.title, "Text", if draft then draft.name else "NEW SONG / TAP NEW")
     local credits = {}
-    for _, contributor in (draft and type(draft.contributors) == "table"
-        and draft.contributors) or {} do
+    for _, contributor in (music.attribution and music.attribution.contributors)
+        or (draft and type(draft.contributors) == "table" and draft.contributors) or {} do
         if type(contributor) == "table" and type(contributor.name) == "string" then
             table.insert(credits, contributor.name)
         end
