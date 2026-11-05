@@ -4,8 +4,10 @@ local Missions = require(Shared.NeighborhoodMissions)
 local Catalog = require(Shared.SampleCatalog)
 local Hunt = require(Shared.SoundHunt)
 local Sequence = require(Shared.MusicSequence)
+local Versions = require(Shared.SampleVersions)
 local Gui = require(script.Parent.GuiFactory)
 local W = require(script.Parent.DeviceWidgets)
+local GuiService = game:GetService("GuiService")
 local Guide = {}
 Guide.__index = Guide
 
@@ -47,17 +49,26 @@ function Guide.new(parent, api)
     })
     self.intro = Gui.label(self.body, "", 14, if api then W.text else nil)
     self.intro.Size, self.intro.AutomaticSize, self.intro.LayoutOrder =
-        UDim2.new(1, 0, 0, 84), Enum.AutomaticSize.Y, 1
+        UDim2.new(1, 0, 0, 0), Enum.AutomaticSize.Y, 1
     for index, id in Discoveries.Order do
         local card = Gui.label(self.body, "", 14, if api then W.text else nil)
         card.Name = "Recorder_" .. id
         card.Size, card.AutomaticSize, card.LayoutOrder =
-            UDim2.new(1, 0, 0, 120), Enum.AutomaticSize.Y, index + 3
+            UDim2.new(1, 0, 0, 0), Enum.AutomaticSize.Y, index + 3
         self.cards[id] = card
     end
     if api then
         self:buildActions()
     end
+    self.detailsToggle = Gui.button(self.body, "FULL GUIDE", function()
+        self.detailsOpen = not self.detailsOpen
+        self:paint()
+    end)
+    self.detailsToggle.Size, self.detailsToggle.LayoutOrder = UDim2.new(1, 0, 0, 44), 13
+    self.detailsToggle:SetAttribute("UiIcon", "hint")
+    self.details = Gui.label(self.body, "", 14, if api then W.text else nil)
+    self.details.Size, self.details.AutomaticSize, self.details.LayoutOrder = UDim2.new(1, 0, 0, 0), Enum.AutomaticSize.Y, 14
+    self.details.Visible = false
     self.frame.Destroying:Connect(function()
         self.destroyed = true
         self:cancel()
@@ -85,21 +96,58 @@ function Guide:buildActions()
         self.selectors[id] = key
     end
     self.actionInfo = W.label(self.body, "DiscoveryActionStatus", "", 13, W.amber)
-    self.actionInfo.LayoutOrder = 8
-    self.actionInfo.Size = UDim2.new(1, 0, 0, 72)
+    self.actionInfo.LayoutOrder = 3
+    self.actionInfo.Size = UDim2.new(1, 0, 0, 0)
     self.actionInfo.AutomaticSize = Enum.AutomaticSize.Y
     self.actions = W.frame(self.body, "DiscoveryActions")
     self.actions.LayoutOrder = 9
     local grid = Gui.make("UIGridLayout", self.actions, {
         SortOrder = Enum.SortOrder.LayoutOrder, CellPadding = UDim2.fromOffset(4, 6),
     })
-    local function add(name, icon, text, callback)
-        local button = W.key(self.actions, name, icon, text, function()
+    self.stepGrid = W.frame(self.body, "DiscoveryNotePositions")
+    self.stepGrid.LayoutOrder = 7
+    local stepLayout = Gui.make("UIGridLayout", self.stepGrid, { SortOrder = Enum.SortOrder.LayoutOrder,
+        CellPadding = UDim2.fromOffset(4, 4) })
+    self.stepButtons = {}
+    for step = 1, 16 do
+        local b = Gui.button(self.stepGrid, string.format("%02d", step), function()
+            if not self:canUse() then return end
+            self:cancel()
+            self.step, self.feedback = step, nil
+            self:paint()
+        end)
+        b.Name, b.LayoutOrder = "SelectStep" .. step, step
+        b:SetAttribute("NoActionIcon", true)
+        local mark = Gui.make("Frame", b, { Name = "EchoReference", Position = UDim2.fromOffset(6, 3),
+            Size = UDim2.new(1, -12, 0, 3), BackgroundColor3 = W.amber, BorderSizePixel = 0,
+            Visible = false, ZIndex = 4 })
+        local note = Gui.make("Frame", b, { Name = "PlacedNote", Position = UDim2.new(1, -12, 1, -12),
+            Size = UDim2.fromOffset(6, 6), BackgroundColor3 = W.text, BorderSizePixel = 0, Visible = false, ZIndex = 4 })
+        Gui.round(note, 3)
+        self.stepButtons[step] = { button = b, echo = mark, note = note }
+    end
+    self.echoToggle = Gui.button(self.body, "OPTIONAL ECHO", function()
+        self:cancel()
+        self.echoOpen = not self.echoOpen
+        self:paint()
+    end)
+    self.echoToggle.Size, self.echoToggle.LayoutOrder = UDim2.new(1, 0, 0, 44), 10
+    self.echoToggle:SetAttribute("UiIcon", "headphones")
+    self.echoActions = W.frame(self.body, "OptionalEchoActions")
+    self.echoActions.LayoutOrder = 11
+    local echoLayout = Gui.make("UIGridLayout", self.echoActions, { SortOrder = Enum.SortOrder.LayoutOrder,
+        CellPadding = UDim2.fromOffset(4, 6) })
+    self.echoNote = W.label(self.body, "EchoScope", "Match the amber marks, or skip. Your own rhythm can complete the job.", 12)
+    self.echoNote.Size, self.echoNote.AutomaticSize, self.echoNote.LayoutOrder = UDim2.new(1, 0, 0, 0), Enum.AutomaticSize.Y, 12
+    local primaryCount, echoCount = 0, 0
+    local function add(name, icon, text, callback, optional)
+        local button = W.key(if optional then self.echoActions else self.actions, name, icon, text, function()
             if self:canUse() then
                 callback()
             end
         end)
-        button.LayoutOrder = #self.controls + 1
+        if optional then echoCount += 1; button.LayoutOrder = echoCount
+        else primaryCount += 1; button.LayoutOrder = primaryCount end
         self[name] = button
         table.insert(self.controls, button)
     end
@@ -116,14 +164,6 @@ function Guide:buildActions()
             self.api.selectPad((pad - 1) % 16 + 1)
             self.api.edit()
         end
-    end)
-    add("previousStep", "undo", "STEP -", function()
-        self.step = math.max(1, self.step - 1)
-        self:paint()
-    end)
-    add("nextStep", "redo", "STEP +", function()
-        self.step = math.min(16, self.step + 1)
-        self:paint()
     end)
     add("addNote", "plus", "ADD ONE NOTE", function()
         self:cancel()
@@ -143,7 +183,7 @@ function Guide:buildActions()
     end)
     add("listen", "sound", "OPTIONAL ECHO", function()
         self:listenEcho()
-    end)
+    end, true)
     add("check", "check", "CHECK ECHO GRID", function()
         local source = Hunt.source(self.selectedId)
         local m = self.state.music
@@ -152,12 +192,16 @@ function Guide:buildActions()
             then "The note positions match this optional echo. No reward or listening score is awarded."
             else "Try the displayed steps, or skip. Your own rhythm can still complete the creative job."
         self:paint()
-    end)
+    end, true)
     add("skip", "close", "SKIP ECHO", function()
         self:cancel()
+        self.echoOpen = false
         self.feedback = "Echo skipped. Keep your own rhythm; save it for the creative job."
         self:paint()
-    end)
+        if GuiService.SelectedObject and GuiService.SelectedObject:IsDescendantOf(self.echoActions) then
+            GuiService.SelectedObject = self.echoToggle
+        end
+    end, true)
     add("edit", "steps", "BACK TO NOTES", function()
         self:cancel()
         self.api.edit()
@@ -167,7 +211,12 @@ function Guide:buildActions()
         local width = math.max(0, self.frame.AbsoluteSize.X)
         local columns = if width >= 240 then 2 else 1
         grid.CellSize = UDim2.fromOffset(math.max(0, (width - (columns - 1) * 4) / columns), 44)
-        self.actions.Size = UDim2.new(1, 0, 0, math.ceil(#self.controls / columns) * 50)
+        echoLayout.CellSize = grid.CellSize
+        self.actions.Size = UDim2.new(1, 0, 0, math.ceil(primaryCount / columns) * 50)
+        self.echoActions.Size = UDim2.new(1, 0, 0, math.ceil(echoCount / columns) * 50)
+        local stepsAcross = if width >= 440 then 8 else 4
+        stepLayout.CellSize = UDim2.fromOffset(math.max(0, (width - (stepsAcross - 1) * 4) / stepsAcross), 44)
+        self.stepGrid.Size = UDim2.new(1, 0, 0, (16 / stepsAcross) * 48)
         local sourceColumns = if width >= 240 then 3 else 1
         sourceGrid.CellSize = UDim2.fromOffset(
             math.max(0, (width - (sourceColumns - 1) * 4) / sourceColumns), 44
@@ -206,6 +255,8 @@ function Guide:listenEcho()
     then
         return
     end
+    local pad = Hunt.pad(s.music.program, source.id)
+    if pad and not Versions.matches(source.id, s.music.sampleVersions) then return end
     self:cancel()
     local token = self.echoToken
     local bpm = math.clamp(s.music.sequence.bpm, Sequence.MinBpm, Sequence.MaxBpm)
@@ -254,10 +305,9 @@ function Guide:paint()
         return
     end
     local progress = state.neighborhood or { completed = 0, earned = {}, objective = "Find a source and make your own rhythm." }
-    self.toggle.Text = string.format("Virtual recorder / Jobs %d/3 / %s", progress.completed,
-        if self.open then "Close guide" else "Open guide")
-    self.intro.Text = "Authored game sounds, not microphone recording. Discovery adds context; your full instrument stays available. Exact echoes are optional. Creative jobs use your saved music.\nNEXT: "
-        .. progress.objective
+    self.toggle.Text = string.format("SOUND HUNTS / %d/3 / %s", progress.completed,
+        if self.open then "CLOSE" else "OPEN")
+    self.intro.Text = "Game sounds / no microphone recording. Make your own rhythm, then save."
         .. (if state.saveMode == "session" then "\nSaved progress lasts for this Studio session only."
             elseif state.saveMode == "unavailable" then "\nStorage unavailable: current edits are temporary."
             else "")
@@ -266,13 +316,25 @@ function Guide:paint()
         local jobId, job = Missions.Order[index], Missions.Definitions[Missions.Order[index]]
         local collected = state.unlocked and state.unlocked[id] == true
         self.cards[id].Visible = self.api == nil or id == self.selectedId
-        self.cards[id].Text = definition.label .. " / " .. (if collected then "COLLECTED" else "FIND THE SOURCE")
-            .. "\n" .. definition.origin .. "\n" .. job.title .. ": "
-            .. (if progress.earned[jobId] then "COMPLETE / " .. job.reward else job.objective)
+        self.cards[id].Text = definition.label .. " / " .. (if collected then "COLLECTED" else "FIND")
+            .. "\n" .. definition.origin
+            .. (if progress.earned[jobId] then "\nJOB KEPT" else "")
         if self.selectors[id] then
             self.selectors[id]:SetAttribute("Selected", id == self.selectedId)
         end
     end
+    self.details.Visible = self.detailsOpen == true
+    self.detailsToggle.Text = if self.detailsOpen then "LESS" else "FULL GUIDE"
+    local details = { "NEXT: " .. progress.objective,
+        "Creative jobs use saved music. Exact echoes are optional. Copy Variation copies notes; its track kit stays shared.",
+        "The grid shows this source on 16 positions in the current bar. Off-grid hits remain in your sequence; edit them in the full notes view." }
+    for index, id in Discoveries.Order do
+        if not self.api or id == self.selectedId then
+            local job = Missions.Definitions[Missions.Order[index]]
+            table.insert(details, job.title .. ": " .. job.objective .. " / " .. job.reward)
+        end
+    end
+    self.details.Text = table.concat(details, "\n\n")
     if not self.api then
         return
     end
@@ -281,15 +343,13 @@ function Guide:paint()
     local pad = source and Hunt.pad(m.program, source.id)
     local collected = state.unlocked and state.unlocked[self.selectedId] == true
     local playable = source ~= nil and Catalog.isPlaybackReady(source.id, state.unlocked)
+    local versionOK = pad == nil or Versions.matches(source.id, m.sampleVersions)
     local usable = state.ready and state.station ~= nil and m.sequence ~= nil
-    local status = if not collected then "Collect this source at its nearby quay prompt."
-        elseif not playable then "Audio unavailable here. Your existing sounds are not replaced."
-        elseif not pad then "This track has no matching pad. Assign the collected source through Sounds first."
-        else "Current pad " .. Hunt.address(pad) .. "; bar " .. tostring(m.bar) .. ", step " .. tostring(self.step)
-    local steps = {}
-    for _, step in Hunt.Echo[self.selectedId] do
-        table.insert(steps, tostring(step))
-    end
+    local status = if not collected then "FIND THE SOURCE AT THE QUAY"
+        elseif not playable then "AUDIO UNAVAILABLE / sources retained"
+        elseif not versionOK then "PACK VERSION UNAVAILABLE / review Crates details"
+        elseif not pad then "ASSIGN THIS SOURCE IN SOUNDS"
+        else Hunt.address(pad) .. " / BAR " .. tostring(m.bar) .. " / STEP " .. tostring(self.step)
     local saved = if state.saving then "SAVING SNAPSHOT"
         elseif state.saveMode == "unavailable" then "TEMPORARY / STORAGE UNAVAILABLE"
         elseif state.dirty then "UNSAVED CHANGES"
@@ -297,21 +357,17 @@ function Guide:paint()
         elseif state.saveMode == "session" then "SESSION SAVED"
         else "SAVED TO STORAGE"
     self.actionInfo.Text = status .. "\n" .. saved
-        .. "\nOptional echo steps: " .. table.concat(steps, ", ")
-        .. "\nCopy Variation copies notes; the track kit remains shared."
-        .. (if source and source.sourceSubstitute then "\nExplicit Studio substitute; original recording/listening approval remains pending." else "")
+        .. (if playable and not Catalog.isReady(source.id, state.unlocked) then "\nLOCAL PREVIEW / listening approval pending" else "")
         .. (if self.feedback then "\n" .. self.feedback else "")
         .. (if state.notice and state.notice ~= "" then "\nLast action: " .. state.notice else "")
     local enabled = {
-        audition = usable and collected and playable and not (state.jam and state.jam.active),
+        audition = usable and collected and playable and versionOK and not (state.jam and state.jam.active),
         locate = usable and pad ~= nil,
-        previousStep = usable and self.step > 1,
-        nextStep = usable and self.step < 16,
-        addNote = usable and collected and playable and pad ~= nil and not state.recording,
+        addNote = usable and collected and playable and versionOK and pad ~= nil and not state.recording,
         play = usable and not (state.jam and state.jam.active),
         variation = usable and not state.recording,
         save = usable and not state.saving and state.saveMode ~= "unavailable",
-        listen = usable and collected and playable and not state.playing and not state.recording
+        listen = usable and collected and playable and versionOK and not state.playing and not state.recording
             and not (state.jam and state.jam.active),
         check = usable and pad ~= nil,
         skip = usable,
@@ -321,6 +377,30 @@ function Guide:paint()
         local button = self[name]
         button.Active, button.Selectable = active == true, active == true
         button.Legend.TextTransparency = if active then 0 else 0.55
+    end
+    self.echoActions.Visible, self.echoNote.Visible = self.echoOpen == true, self.echoOpen == true
+    self.echoToggle.Text = if self.echoOpen then "CLOSE ECHO" else "OPTIONAL ECHO"
+    local starts, offGrid = {}, 0
+    local from = ((m.bar or 1) - 1) * Sequence.TicksPerBar
+    for _, event in m.sequence and m.sequence.trackEvents[m.trackId] or {} do
+        if event.pad == pad and event.tick >= from and event.tick < from + Sequence.TicksPerBar then
+            local relative = (event.tick - from) / (Sequence.PPQ / 4)
+            if relative % 1 == 0 then starts[relative + 1] = true else offGrid += 1 end
+        end
+    end
+    if offGrid > 0 then self.actionInfo.Text ..= "\n" .. offGrid .. " OFF-GRID HITS / full notes view" end
+    for step, cell in self.stepButtons do
+        local hasNote = starts[step] == true
+        local reference = self.echoOpen == true and table.find(Hunt.Echo[self.selectedId], step) ~= nil
+        cell.button.BackgroundColor3 = if step == self.step then W.amber elseif hasNote then Color3.fromRGB(47, 92, 88) else W.ink
+        cell.button.TextColor3 = if step == self.step then W.ink else W.text
+        cell.button:SetAttribute("Selected", step == self.step)
+        cell.button:SetAttribute("AccessibleLabel", "Step " .. step .. (if hasNote then " / note placed" else " / no note on this grid position")
+            .. (if reference then " / optional echo target" else ""))
+        cell.button.Active, cell.button.Interactable, cell.button.Selectable = usable == true, usable == true, usable == true
+        cell.echo.Visible = reference
+        cell.note.Visible = hasNote
+        cell.note.BackgroundColor3 = if step == self.step then W.ink else W.text
     end
     W.legend(self.addNote, "ADD AT STEP " .. self.step)
 end

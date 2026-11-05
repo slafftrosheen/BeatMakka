@@ -28,9 +28,28 @@ function Steps.new(parent, definitions, z)
         local mark = Gui.make("Frame", item, { Name = "CurrentStep", Position = UDim2.new(0, 6, 1, -3),
             Size = UDim2.new(1, -12, 0, 3), BorderSizePixel = 0, BackgroundColor3 = Theme.Amber,
             Visible = false, ZIndex = (z or 1) + 2 })
-        self.items[index] = { root = item, glyph = glyph, caption = caption, mark = mark }
+        self.items[index] = { root = item, glyph = glyph, icon = definition[2], caption = caption, mark = mark }
     end
     return self
+end
+
+-- Fixed step count; replace a glyph only when a different task needs it.
+function Steps:configure(definitions)
+    assert(#definitions == #self.items, "Visual step count is fixed")
+    self.definitions = definitions
+    for index, definition in definitions do
+        local item = self.items[index]
+        item.caption.Text = definition[1]
+        if item.icon ~= definition[2] then
+            item.glyph:Destroy()
+            item.glyph = Icons.make(item.root, definition[2], item.color or Theme.Cream, 24)
+            item.glyph.Position, item.glyph.ZIndex = UDim2.new(0.5, -12, 0, 5), item.caption.ZIndex
+            for _, child in item.glyph:GetDescendants() do
+                if child:IsA("GuiObject") then child.ZIndex = item.glyph.ZIndex end
+            end
+            item.icon = definition[2]
+        end
+    end
 end
 
 function Steps:update(current, completed)

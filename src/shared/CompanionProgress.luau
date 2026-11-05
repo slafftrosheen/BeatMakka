@@ -9,6 +9,7 @@ local Samples = require(script.Parent.SampleCatalog)
 local Groove = require(script.Parent.FirstGroove)
 local Quest = require(script.Parent.FirstPerformanceQuest)
 local Versions = require(script.Parent.SampleVersions)
+local Visual = require(script.Parent.CompanionVisual)
 local Progress = {}
 local stopTasks = {
     P1 = { "NQ-Q00", "NQ-Q01", "NQ-Q02" },
@@ -239,6 +240,7 @@ function Progress.project(profile, route, selected, level, topic)
     return {
         context = requested .. ":" .. id, level = level, maxLevel = 3, location = location,
         topic = requested,
+        visual = Visual.project(profile, topic, id),
         text = (if level == 1 then voice.first else voice.next) .. lines[level],
         workspace = transport .. playback .. queued .. ". " .. saveState(profile),
     }

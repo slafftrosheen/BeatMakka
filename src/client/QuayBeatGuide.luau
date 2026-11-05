@@ -28,18 +28,16 @@ function Guide:update(state, _)
     end
     local evidence = state.quay.evidence
     self.label.Text = if id == "NQ-Q02"
-        then "Sequence / ready Quay metal at four distinct rhythmic positions. " .. tostring(
+        then "Metal / two different positions + Save. " .. tostring(
             evidence.metalSteps
-        ) .. "/4"
+        ) .. "/2"
         elseif
             id == "NQ-Q05"
         then "Save Sequence / keep your original and save a musically distinct named variation."
         elseif
             id == "NQ-Q07"
         then "Song / add an owned saved sequence, then Save Draft. Finish later."
-        else "Sequence / teaching bar "
-            .. tostring(evidence.teachingBar)
-            .. ": ready I03 at ticks 0, 960, 1920, 2880."
+        else "Helper chirp / save two different personal rhythms. Echo is optional."
     return true
 end
 return Guide

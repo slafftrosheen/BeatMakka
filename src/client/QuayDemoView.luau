@@ -337,6 +337,11 @@ function View.new()
         end
     )
     self.dialogue = DialogueView.new(self.scroll, send)
+    self.dialogue.root.LayoutOrder = 2
+    self.questGuide = require(script.Parent.QuestGuideView).new(self.scroll, function(id)
+        self.route:track(id)
+        send("QuayClose")
+    end)
     self.commissions = require(script.Parent.QuayCommissionView).new(self.dialogue.root, send)
     self.notice = Gui.label(self.scroll, "", 15)
     self.notice.Size = UDim2.new(1, -10, 0, 0)
@@ -358,7 +363,7 @@ function View.new()
         PaddingRight = UDim.new(0, 12),
     })
     self.progress.Size, self.progress.AutomaticSize = UDim2.new(1, -10, 0, 0), Enum.AutomaticSize.Y
-    self.progress.LayoutOrder = 3
+    self.progress.LayoutOrder = 4
     self.experiencePanel = ExperiencePanel.new(self.scroll, send)
     self.roamerPanel = require(script.Parent.QuayRoamerPanel).new(
         self.experiencePanel.style, send)
@@ -378,7 +383,7 @@ function View.new()
         BackgroundTransparency = 1,
         Size = UDim2.new(1, -10, 0, 0),
         AutomaticSize = Enum.AutomaticSize.Y,
-        LayoutOrder = 1,
+        LayoutOrder = 3,
     })
     Gui.make(
         "UIListLayout",
@@ -394,13 +399,19 @@ function View.new()
     self.storyText.Name = "ChapterText"
     self.storyText.Size, self.storyText.AutomaticSize = UDim2.new(1, -8, 0, 0), Enum.AutomaticSize.Y
     self.storyText.LayoutOrder = 1
+    self.storyToggle = Gui.button(self.storyRoot, "HEAR THE STORY", function()
+        self.storyOpen = not self.storyOpen
+        self:render()
+    end)
+    self.storyToggle.Size, self.storyToggle.LayoutOrder = UDim2.new(1, -8, 0, 44), 2
+    graphicButton(self.storyToggle, "journal")
     self.storyNext = Gui.button(self.storyRoot, "Next", function()
         if self.currentScene then
             self.storyPage = (self.storyPage or 1) % #self.currentScene.lines + 1
         end
         self:render()
     end)
-    self.storyNext.Size, self.storyNext.LayoutOrder = UDim2.new(1, -8, 0, 48), 2
+    self.storyNext.Size, self.storyNext.LayoutOrder = UDim2.new(1, -8, 0, 48), 3
     graphicButton(self.storyNext, "arrow")
     self.dedications = Gui.make("Frame", self.scroll, {
         Name = "ConcertDedication",
@@ -427,7 +438,7 @@ function View.new()
         BackgroundTransparency = 1,
         Size = UDim2.new(1, -10, 0, 0),
         AutomaticSize = Enum.AutomaticSize.Y,
-        LayoutOrder = 4,
+        LayoutOrder = 5,
     })
     Gui.make(
         "UIListLayout",
@@ -528,7 +539,7 @@ function View.new()
         BackgroundTransparency = 1,
         Size = UDim2.new(1, -10, 0, 0),
         AutomaticSize = Enum.AutomaticSize.Y,
-        LayoutOrder = 5,
+        LayoutOrder = 6,
     })
     Gui.make(
         "UIListLayout",
@@ -564,6 +575,12 @@ function View.new()
         ),
         4
     )
+    self.historyToggle = Gui.button(self.journal, "QUEST LOG", function()
+        self.historyOpen = not self.historyOpen
+        self:render()
+    end)
+    self.historyToggle.Size, self.historyToggle.LayoutOrder = UDim2.new(1, 0, 0, 44), 1
+    graphicButton(self.historyToggle, "journal")
     for index, quest in Catalog.quests do
         local label = Gui.button(self.journal, "", function()
             self.route:track(quest.id)
@@ -581,7 +598,7 @@ function View.new()
         Gui.make("UISizeConstraint", label, { MinSize = Vector2.new(0, 64) })
         label.Size = UDim2.fromScale(1, 0)
         label.AutomaticSize = Enum.AutomaticSize.Y
-        label.LayoutOrder = index
+        label.LayoutOrder = index + 1
         label.Font = Enum.Font.Code
         label:SetAttribute("NoActionIcon", true)
         Icons.make(label, "check", Theme.Teal, 28).Name = "QuestDone"
@@ -1096,6 +1113,9 @@ function View:render()
         then "RESONANCE CITY\nOnly Needle Quay is open in this demo. Genres remain freely selectable in the sampler."
         else instructions[quay.open] or instructions.map
     local open = quay.open
+    local host = if open == "P1" or open == "P2" or open == "P3" or open == "P4" or open == "finale" then open else nil
+    self.questGuide:update(quay, host)
+    self.questGuide.root.Visible = not city and not companionTab and (open == "map" or host ~= nil)
     for _, b in self.activityButtons do
         b.Visible = open == "map"
     end
@@ -1141,12 +1161,14 @@ function View:render()
         else open
     local scene = Story.scene(sceneKey, quay.progress.completed)
     if self.currentScene ~= scene then
-        self.currentScene, self.storyPage = scene, 1
+        self.currentScene, self.storyPage, self.storyOpen = scene, 1, false
     end
     local page = self.storyPage or 1
     self.storyRoot.Visible = self.tab == "route"
     self.storyHeading.Text = scene.speaker .. " / " .. scene.title
     self.storyText.Text = scene.lines[page] .. "\n\n" .. scene.prompt
+    self.storyText.Visible, self.storyNext.Visible = self.storyOpen == true, self.storyOpen == true
+    self.storyToggle.Text = if self.storyOpen then "CLOSE STORY" else "HEAR THE STORY"
     self.storyNext.Text = if page < #scene.lines
         then "NEXT / " .. page .. "/" .. #scene.lines
         else "READ AGAIN"
@@ -1190,7 +1212,7 @@ function View:render()
         )
         elseif open == "P4" then (if p.completed["NQ-Q09"]
             then "Reply heard  ·  "
-            else "Mica is waiting for your four-note reply  ·  ") .. (if p.completed["NQ-Q10"]
+            else "Two personal chirp rhythms  ·  ") .. (if p.completed["NQ-Q10"]
             then "Signal on"
             else "Signal off")
         else ""
@@ -1222,6 +1244,7 @@ function View:render()
     local completedQuests = 0
     for _, quest in Catalog.quests do
         local done = quay.progress.completed[quest.id]
+        self.rows[quest.id].Visible = self.historyOpen == true
         completedQuests += if done then 1 else 0
         self.rows[quest.id].Interactable = not done
         self.rows[quest.id].Selectable = not done
@@ -1239,6 +1262,7 @@ function View:render()
             )
     end
     self.questTotals.Text = "YOUR CHAPTER / " .. completedQuests .. " OF " .. #Catalog.quests
+    self.historyToggle.Text = if self.historyOpen then "CLOSE QUEST LOG" else "QUEST LOG / " .. completedQuests .. "/" .. #Catalog.quests
     self.questFill.Size = UDim2.fromScale(completedQuests / math.max(1, #Catalog.quests), 1)
     self.help.Visible = not companionTab and self.details == true
 end

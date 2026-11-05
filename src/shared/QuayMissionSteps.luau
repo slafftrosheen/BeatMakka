@@ -51,8 +51,42 @@ function M.project(q, objective)
         done = if p.completed["NQ-Q09"] then 1 else 0
         hint = "After Mica accepts your reply, interact with the marked signal console."
     end
+    local compact = {
+        ["SAVE SEQUENCE"] = "SAVE", ["SAVE DRAFT"] = "DRAFT",
+        ["2 POSITIONS + SAVE"] = "2 HITS", ["2 VARIATIONS + SAVE"] = "2 LOOPS",
+        ["RECORD 1"] = "RECORD 1", ["RECORD 2"] = "RECORD 2", ["RECORD 3"] = "RECORD 3",
+        ["FX + BEAT"] = "FX + BEAT",
+    }
+    local short, icons = {}, {}
+    for index, label in labels do
+        short[index] = compact[label] or label
+        icons[index] = if label:find("SAVE", 1, true) then "save"
+            elseif label:find("RECORD", 1, true) then "disc"
+            elseif label:find("CASE", 1, true) then "crate"
+            elseif label == "FIND" then "route"
+            elseif label == "RETURN" then "people"
+            elseif label == "COLLECT" then "discovery"
+            elseif label == "POWER" or label == "RESTART" or label == "SIGNAL" or label == "LIGHT" then "lamp"
+            else "pads"
+    end
+    local action = if done >= #labels then "Ready to return"
+        elseif id == "NQ-Q02" and done == 1 then "Place metal at two positions, then save"
+        elseif id == "NQ-Q09" and done == 1 then "Save two different chirp rhythms"
+        elseif done == 2 and labels[3] == "RETURN" then "Return to your host"
+        elseif id and id:sub(1, 11) == "commission_" then (if done == 2 then "Play your saved sequence for the host" else "Make the requested FX beat, then save")
+        elseif id == "NQ-Q00" then "Meet Tori or open your Roamer"
+        elseif id == "NQ-Q11" then "Meet Ronan with a saved Finished Song"
+        elseif id == "NQ-Q12" then "Play your Finished Song through its ending"
+        elseif id == "NQ-Q05" then "Save your original and a changed variation"
+        elseif id == "NQ-Q07" then "Add a saved loop in Song, then Save Draft"
+        elseif id == "NQ-Q04" then ({ "POWER OFF", "CLEAR INTAKE", "RESTORE POWER" })[done + 1]
+        elseif id == "NQ-Q01" or id == "NQ-Q08" then "Stow the next marked case"
+        elseif id == "NQ-Q06" then "Listen, then choose the record's role"
+        elseif id == "NQ-Q10" then "Use the signal after Mica accepts your reply"
+        else short[math.clamp(done + 1, 1, #short)]
     return {
         labels = labels,
+        shortLabels = short, icons = icons, action = action,
         done = done,
         hint = hint,
         key = (id or objective.target) .. ":" .. objective.target .. ":" .. tostring(done),

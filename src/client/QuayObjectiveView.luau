@@ -208,7 +208,9 @@ function View:track(id)
     self.lifeTarget = nil
     self.placeTarget = nil
     self.activity = nil
-    self.preferred = id
+    -- Active commissions are selected by Objectives.select without a personal
+    -- quest preference; their synthetic IDs are not main-quest identifiers.
+    self.preferred = if Objectives.ById[id] then id else nil
     self.guide = true
     self:render()
     require(script.Parent.CompanionVoice).Cue:Fire("route")
@@ -370,7 +372,8 @@ function View:render()
         self.more.Text = if self.expanded then "LESS" else "HINT"
     end
     for i, label in self.stepLabels do
-        label.Text = steps.labels[i]
+        label.Text = steps.shortLabels and steps.shortLabels[i] or steps.labels[i]
+        label:SetAttribute("AccessibleLabel", steps.labels[i])
         local frame = self.stepFrames[i]
         frame.BackgroundColor3 = if i <= steps.done
             then Theme.Teal
