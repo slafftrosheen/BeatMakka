@@ -9,7 +9,7 @@ return {
             lesson = "Leave space between hits. A rest makes the next sound stand out.",
         },
         bells = {
-            title = "BEAT BELLS", position = Vector3.new(580, 2, -21), icon = "lamp",
+            title = "BEAT BELLS", position = Vector3.new(580, 2, -21), icon = "bell",
             hint = "Wait for the bell to light, then tap it. Four catches fill a coin stamp.",
             lesson = "Wait, then answer. Listening helps a musical call and response.",
         },

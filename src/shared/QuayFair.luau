@@ -3,6 +3,12 @@ local Fair = {
     Games = { "targets", "bells", "rings" },
     Heats = 3,
     CoinsPerHeat = 10,
+    DemoSeconds = 90,
+    RoundSeconds = 45,
+    Windows = { targets = 2.6, bells = 1.6 },
+    RingPeriod = 2.4,
+    RingLow = 0.35,
+    RingHigh = 0.65,
     PrizePosition = Vector3.new(624, 2, -21),
     Prizes = {
         { id = "fair_friend", category = "title", label = "FAIR FRIEND", icon = "badge", cost = 20 },

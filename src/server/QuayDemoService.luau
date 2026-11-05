@@ -29,7 +29,8 @@ function Service.new(
     nearby,
     persist,
     enterStation,
-    enterConcert
+    enterConcert,
+    enterSet
 )
     local self = setmetatable({
         world = world,
@@ -44,6 +45,7 @@ function Service.new(
         persist = persist,
         enterStation = enterStation,
         enterConcert = enterConcert,
+        enterSet = enterSet,
         opened = {},
         pending = {},
         last = {},
@@ -282,6 +284,11 @@ function Service:summary(player, profile)
             host,
             if conversation and conversation.host == host then conversation.choice else nil
         ),
+        roomTargets = if interior then {
+            set = self.scene.interiors[interior].set.Position,
+            look = self.scene.interiors[interior].activity.Position,
+            exit = self.scene.interiors[interior].exit.anchor.Position,
+        } else nil,
         waypoints = waypoints,
     }
 end
@@ -495,6 +502,23 @@ function Service:command(player, action, value)
     end
     if action:sub(1, 14) == "QuayCommission" then
         self.commissions:command(player, profile, action, value)
+        return
+    end
+    if action == "QuayRoomAction" then
+        if type(value) ~= "table" or type(value.id) ~= "string" then return end
+        local room = self.scene.interiors and self.scene.interiors[value.id]
+        if not room then return end
+        if value.kind == "exit" then self:interior(player, value.id, true); return end
+        local target = if value.kind == "set" then room.set elseif value.kind == "look" then room.activity else nil
+        if not target or not self.nearby(player, target, 11) then return end
+        if os.clock() - (self.last[player] or 0) < 0.3 then return end
+        self.last[player] = os.clock()
+        if value.kind == "set" then
+            if self.enterSet then self.enterSet(player, target) end
+        else
+            self.opened[player], self.conversations[player] = "building:" .. value.id, nil
+            self.send(player)
+        end
         return
     end
     if action == "QuayEquipReward" then

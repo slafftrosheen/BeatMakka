@@ -18,14 +18,22 @@ function Guide.new(screen)
         end
         local key = object:GetAttribute("QuayInteraction")
         local street = object:GetAttribute("StreetActivity")
-        if not key and not street and not object:GetAttribute("PerformanceVenue") then return end
+        local floor = object:GetAttribute("GuideFloor") == true
+        if not floor and not key and not street and not object:GetAttribute("PerformanceVenue") then return end
         local iconName = object:GetAttribute("GuideIcon") or Symbols.forTarget(key or ("activity_" .. (street or "busk")))
-        local gui = Gui.make("BillboardGui", screen.Parent, {
-            Name = "QuayPictureSign", Adornee = object, Size = UDim2.fromOffset(48, 48),
-            StudsOffsetWorldSpace = Vector3.new(0, 4, 0), MaxDistance = 38, AlwaysOnTop = false, Enabled = false,
-        })
-        local backing = Gui.round(Gui.make("Frame", gui, { Size = UDim2.fromScale(1, 1), BackgroundColor3 = Theme.Ink, BorderSizePixel = 0 }), 24)
-        Icons.make(backing, iconName, Theme.Amber, 32).Position = UDim2.fromOffset(8, 8)
+        local gui
+        if floor then
+            gui = Gui.make("SurfaceGui", screen.Parent, { Name = "QuayFloorPicture", Adornee = object,
+                Face = Enum.NormalId.Top, CanvasSize = Vector2.new(180, 140), LightInfluence = 0.25, Enabled = false })
+            Icons.make(gui, iconName, Theme.Amber, 100).Position = UDim2.fromOffset(40, 20)
+        else
+            gui = Gui.make("BillboardGui", screen.Parent, {
+                Name = "QuayPictureSign", Adornee = object, Size = UDim2.fromOffset(48, 48),
+                StudsOffsetWorldSpace = Vector3.new(0, 4, 0), MaxDistance = 38, AlwaysOnTop = false, Enabled = false,
+            })
+            local backing = Gui.round(Gui.make("Frame", gui, { Size = UDim2.fromScale(1, 1), BackgroundColor3 = Theme.Ink, BorderSizePixel = 0 }), 24)
+            Icons.make(backing, iconName, Theme.Amber, 32).Position = UDim2.fromOffset(8, 8)
+        end
         self.entries[object] = gui
     end
     for _, object in world:GetDescendants() do register(object) end

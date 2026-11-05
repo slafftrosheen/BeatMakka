@@ -96,13 +96,23 @@ function View.new()
         ZIndexBehavior = Enum.ZIndexBehavior.Sibling,
     })
     self.route = ObjectiveView.new(self.screen)
+    self.interiorGuide = require(script.Parent.QuayInteriorGuideView).new(self.screen, send)
     self.worldGuidance = require(script.Parent.QuayWorldGuidance).new(self.screen)
     self.voice = require(script.Parent.CompanionVoice).new(self.screen)
     self.commissionVoice = require(script.Parent.QuayCommissionVoice).new(self.screen)
     self.sideActivities = require(script.Parent.QuaySideActivityView).new(self.screen, send, function()
         self.route:trackPlace("fair_prizes", "FAIR PRIZES", "Follow the prize picture. Choose a prize with your coins.")
     end)
-    self.fairPrizes = require(script.Parent.QuayFairPrizeView).new(self.screen, send)
+    self.fairPrizes = require(script.Parent.QuayFairPrizeView).new(self.screen, send, function()
+        local fair = self.state and self.state.quay and self.state.quay.fair
+        for _, id in require(Shared.QuayFair).Games do
+            if not fair or fair.clears[id] < require(Shared.QuayFair).Heats then
+                self.route:trackActivity(id)
+                return
+            end
+        end
+        self.route:trackActivity("targets")
+    end)
     self.badges = require(script.Parent.QuayBadgeView).new(self.screen)
     self.toggle = Gui.button(self.screen, "MAP", function()
         self.tab = "play"
@@ -714,6 +724,7 @@ function View.new()
         network.State.OnClientEvent:Connect(function(state)
             self.state = state
             self.route:accept(state)
+            self.interiorGuide:accept(state)
             self.voice:accept(state)
             self.commissionVoice:accept(state)
             self.sideActivities:accept(state)
@@ -742,7 +753,9 @@ function View.new()
                 return
             end
             if input.KeyCode == Enum.KeyCode.E or input.KeyCode == Enum.KeyCode.ButtonX then
-                if self.interact.Visible then
+                if self.interiorGuide:isVisible() then
+                    self.interiorGuide:activate()
+                elseif self.interact.Visible then
                     self:interactWithNearest(send)
                 end
             end
@@ -810,7 +823,8 @@ function View.new()
             local root = character and character:FindFirstChild("HumanoidRootPart")
             local best = 12
             if root and self.state and not self.state.station and not self.panel.Visible
-                and not self.sideActivities.root.Visible and not self.fairPrizes.root.Visible then
+                and not self.sideActivities:isVisible() and not self.fairPrizes.root.Visible
+                and not self.interiorGuide:isVisible() then
                 for object in self.interactionTargets do
                     if not object.Parent then
                         self.interactionTargets[object] = nil
@@ -979,7 +993,7 @@ end
 function View:setEffects(enabled)
     self.effects = enabled
     self.badges.effects = enabled
-    self.sideActivities.effects = enabled
+    self.sideActivities:setEffects(enabled)
     self.worldGuidance.effects = enabled
     for object in self.personal do
         if object.Parent then
@@ -1023,7 +1037,7 @@ function View:render()
     self.toggle.Text = "QUAY"
     if self.panel.Visible and (not wasOpen or self.lastOpen ~= quay.open) then
         if quay.open ~= "map" then
-            self.tab = "route"
+            self.tab = if quay.interior and quay.open == "building:" .. quay.interior then "explore" else "route"
         end
         self.scroll.CanvasPosition = Vector2.zero
         if Input.GamepadEnabled then
@@ -1322,6 +1336,7 @@ function View:destroy()
     end
     table.clear(self.targetWatchers)
     self.route:destroy()
+    self.interiorGuide:destroy()
     self.voice:destroy()
     self.worldGuidance:destroy()
     self.sideActivities:destroy()

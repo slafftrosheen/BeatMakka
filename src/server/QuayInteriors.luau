@@ -29,6 +29,7 @@ function Interiors.build(world, scene)
         model:SetAttribute("ArtStage", "CODE_BLOCKOUT_NOT_ART_APPROVED")
         model:SetAttribute("BuildingId", id)
         local center = spec.center
+        local setAnchor = world.listening.anchor
         part(model, "Floor", Vector3.new(32, 0.5, 32), center + Vector3.new(0, -0.25, 0), Theme.Walnut, true)
         part(model, "Ceiling", Vector3.new(33, 0.5, 33), center + Vector3.new(0, 15, 0), Theme.Ink, true)
         if id ~= "NQ-BLD-01" then
@@ -42,6 +43,7 @@ function Interiors.build(world, scene)
             local venue = control(model, "SetConsole", spec.stage, "Play / listen", spec.title)
             venue.anchor:SetAttribute("PerformanceVenue", spec.title)
             venue.anchor:SetAttribute("GuideIcon", "pads")
+            setAnchor = venue.anchor
             table.insert(world.listening.venues, venue)
             local desk = part(model, "SetDesk", Vector3.new(5, 2.2, 1.5), spec.stage + Vector3.new(0, -1.9, 1.4), Theme.Walnut, true)
             for pad = 1, 8 do
@@ -84,17 +86,42 @@ function Interiors.build(world, scene)
         local activity = control(model, "ActivityDesk", center + Vector3.new(-12, 2, -10),
             "Explore", spec.title)
         activity.anchor:SetAttribute("QuayInteraction", "building:" .. id)
-        activity.anchor:SetAttribute("GuideIcon", if id == "NQ-BLD-03" then "pads" else "disc")
+        activity.anchor:SetAttribute("GuideIcon", "eye")
         local exit = if id == "NQ-BLD-01" then scene.courtExit
             else control(model, "Exit", center + Vector3.new(0, 2, -14), "Exit", "NEEDLE QUAY")
         exit.anchor.Position = center + Vector3.new(0, 2, -14)
         exit.anchor:SetAttribute("QuayInteraction", "outside_" .. id)
-        exit.anchor:SetAttribute("GuideIcon", "arrow")
+        exit.anchor:SetAttribute("GuideIcon", "door")
         local exterior = scene.buildings[id].anchor
         local door = control(scene.root, "InteriorDoor_" .. id, exterior.Position + Vector3.new(5, 0, -2), "Enter", spec.title)
         door.anchor:SetAttribute("QuayInteraction", "inside_" .. id)
-        door.anchor:SetAttribute("GuideIcon", "arrow")
-        scene.interiors[id] = { model = model, spawn = spec.spawn, exit = exit, door = door }
+        door.anchor:SetAttribute("GuideIcon", "door")
+        for _, target in {
+            { setAnchor, "set", "pads", Theme.Amber },
+            { activity.anchor, "look", "eye", Theme.FadedTeal },
+            { exit.anchor, "exit", "door", Theme.Cream },
+        } do
+            target[1]:SetAttribute("InteriorGuideKind", target[2])
+            target[1]:SetAttribute("GuideIcon", target[3])
+            local tile = part(model, "PictureFloor_" .. target[2], Vector3.new(3.5, 0.04, 2.5),
+                Vector3.new(target[1].Position.X, if id == "NQ-BLD-01" and target[2] == "set" then 1.04 else 0.04,
+                    target[1].Position.Z + (if target[2] == "exit" then 2.8 else -2.8)), Theme.Ink, false)
+            tile:SetAttribute("GuideFloor", true)
+            tile:SetAttribute("GuideIcon", target[3])
+            tile:SetAttribute("InteriorGuideKind", target[2])
+        end
+        -- Frames distinguish travel from furniture; symbols stay readable without an art texture.
+        for _, frame in { { model, exit.anchor.Position, Theme.FadedTeal }, { scene.root, door.anchor.Position, Theme.Amber } } do
+            local at = frame[2]
+            for _, side in { -1, 1 } do
+                part(frame[1], "DoorFrame", Vector3.new(0.25, 5.5, 0.35),
+                    Vector3.new(at.X + side * 2.1, 2.75, at.Z + 0.5), frame[3], false)
+            end
+            part(frame[1], "DoorHeader", Vector3.new(4.5, 0.3, 0.35),
+                Vector3.new(at.X, 5.5, at.Z + 0.5), frame[3], false)
+        end
+        scene.interiors[id] = { model = model, spawn = spec.spawn, exit = exit, door = door,
+            set = setAnchor, activity = activity.anchor }
     end
 end
 return Interiors

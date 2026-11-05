@@ -366,6 +366,9 @@ function MusicService.start(world)
         enterStation,
         function(player)
             concert:open(player)
+        end,
+        function(player, anchor)
+            listening.stage:open(player, anchor)
         end
     )
     commerce = CommerceService.new(profiles, function(player)

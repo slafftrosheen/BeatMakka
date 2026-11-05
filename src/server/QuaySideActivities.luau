@@ -78,8 +78,8 @@ function Service:start(player, id)
         score = 0,
         start = now + 1,
         response = now + 3.6,
-        expires = now + (if Fair.isGame(id) then 45 else 28),
-        status = "playing",
+        expires = now + (if Fair.isGame(id) then Fair.DemoSeconds else 28),
+        status = if Fair.isGame(id) then "ready" else "playing",
         targetAt = now + (if id == "bells" then Random.new(self.serial):NextNumber(1.2, 2.5) else 1),
     }
     self.owner.send(player)
@@ -136,6 +136,16 @@ function Service:command(player, action, value)
     if not round then
         return
     end
+    if action == "QuaySideBegin" then
+        if not Fair.isGame(round.id) or round.status ~= "ready" or value ~= round.serial then return end
+        if os.clock() - (self.last[player] or 0) < 0.09 then return end
+        self.last[player] = os.clock()
+        local now = workspace:GetServerTimeNow()
+        round.status, round.start, round.expires = "playing", now + 1, now + Fair.RoundSeconds
+        round.targetAt = now + (if round.id == "bells" then Random.new(round.serial):NextNumber(1.2, 2.5) else 1)
+        self.owner.send(player)
+        return
+    end
     if action == "QuaySideRetry" then
         self:start(player, round.id)
         return
@@ -159,7 +169,7 @@ function Service:command(player, action, value)
     self.last[player] = os.clock()
     if round.id == "targets" or round.id == "bells" then
         if now < round.targetAt then return end
-        local window = if round.id == "bells" then 1.6 else 2.6
+        local window = Fair.Windows[round.id]
         if now > round.targetAt + window or value.pad ~= round.sequence[round.index] then
             round.status = "retry"
         else
@@ -170,8 +180,8 @@ function Service:command(player, action, value)
         end
     elseif round.id == "rings" then
         if now < round.targetAt or value.pad ~= 1 then return end
-        local phase = ((now - round.targetAt) % 2.4) / 2.4
-        if phase >= 0.35 and phase <= 0.65 then
+        local phase = ((now - round.targetAt) % Fair.RingPeriod) / Fair.RingPeriod
+        if phase >= Fair.RingLow and phase <= Fair.RingHigh then
             round.index += 1
             round.score += 1
             round.targetAt = now + 0.65

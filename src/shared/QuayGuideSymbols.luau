@@ -8,7 +8,7 @@ function Symbols.forTarget(id)
         if info then return info.icon end
     end
     if id == "enter" then return "van" end
-    if id == "return" or id:match("^inside_") or id:match("^outside_") then return "arrow" end
+    if id == "return" or id:match("^inside_") or id:match("^outside_") then return "door" end
     if id == "fair:prizes" or id == "fair_prizes" then return "badge" end
     if id:match("^dock") or id:match("^market") or id:find("parcel", 1, true) then return "crate" end
     if id:match("^repair") then return "lamp" end
