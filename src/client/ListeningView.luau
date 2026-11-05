@@ -128,9 +128,11 @@ function View:update(session, soundStatus, muted)
     W.set(
         self.kind,
         "Text",
-        if session.ref and session.ref.kind == "finished"
+        if session.mode == "spotlight" then "SPOTLIGHT EXCERPT · PUBLIC LISTENING"
+        elseif session.ref and session.ref.kind == "finished"
             then "FINISHED SONG · PUBLIC LISTENING"
-            else "SEQUENCE LOOP · PUBLIC LISTENING"
+        elseif session.ref and session.ref.kind == "challenge" then "CHALLENGE DRAFT · PUBLIC LISTENING"
+        else "SEQUENCE LOOP · PUBLIC LISTENING"
     )
     self.panel:SetAttribute("LocalOnly", session.localOnly == true)
     self:tick()

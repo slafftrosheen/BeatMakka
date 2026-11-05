@@ -232,7 +232,7 @@ function Library.new(parent, callbacks)
             return
         end
         if self.section == "Releases" then
-            self.recordPanel:open(item, self.section, self.state)
+            self.recordPanel:open(item, self.section, self.state, "share")
             return
         end
         self.callbacks.command("ListeningSelect", {
@@ -309,7 +309,15 @@ function Library.new(parent, callbacks)
             end
         end
     end
-    self.recordPanel = require(script.Parent.RecordShelfPanel).new(self.rootFrame, callbacks)
+    local recordCallbacks = table.clone(callbacks)
+    recordCallbacks.openRelease = function(id)
+        self.section, self.pageIndex = "Releases", 1
+        self.selectedIds.Releases = id
+        self:_render()
+        local item = self:_selected()
+        if item then self.recordPanel:open(item, "Releases", self.state, "share") end
+    end
+    self.recordPanel = require(script.Parent.RecordShelfPanel).new(self.rootFrame, recordCallbacks)
     self.challengePanel = require(script.Parent.CrateChallengeView).new(self.rootFrame, {
         command = callbacks.command, page = callbacks.page, selectPad = callbacks.selectPad,
         compare = function()

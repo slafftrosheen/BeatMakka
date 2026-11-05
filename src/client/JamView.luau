@@ -4,9 +4,18 @@ local Digital = require(script.Parent.DigitalDisplay)
 local GuiService = game:GetService("GuiService")
 local TextService = game:GetService("TextService")
 local Input = game:GetService("UserInputService")
+local VisualSteps = require(script.Parent.VisualSteps)
+local Icons = require(script.Parent.GameIcons)
 local View = {}
 View.__index = View
 local Dim = Color3.fromRGB(112, 145, 117)
+local function visible(object)
+    while object do
+        if object:IsA("GuiObject") and not object.Visible then return false end
+        object = object.Parent
+    end
+    return true
+end
 local function caption(key, value)
     W.set(key.Legend, "Text", value)
     W.set(key, "Text", value)
@@ -64,8 +73,14 @@ function View.new(screen, command, mute)
             command(action, { contextToken = context.token, userId = value and value.userId })
         else
             self.contextConfirmation = { key = key, action = action, token = context.token,
-                revision = jam.revision, generation = jam.generation, label = context.label, expiresAt = os.clock() + 12 }
+                targetId = value and value.userId, revision = jam.revision, generation = jam.generation,
+                label = context.label, expiresAt = os.clock() + 12 }
+            local pending = self.contextConfirmation
+            task.delay(12, function()
+                if self.panel.Parent and self.contextConfirmation == pending then self.contextConfirmation = nil; self:paint() end
+            end)
             self.page = "partner"
+            self.partnerPage.CanvasPosition = Vector2.zero
             self:paint()
         end
     end
@@ -79,13 +94,15 @@ function View.new(screen, command, mute)
     self.tempo = Digital.new(self.panel)
     W.make("UIScale", self.tempo.root, { Scale = 0.55 })
     self.tempoLabel = label(self.panel, "SharedTempo", "BPM", 11, W.amber)
-    self.info = W.key(self.panel, "JamInfo", "hint", "PARTNER", function()
-        self.copyConfirmation = nil
-        self.contextConfirmation = nil
-        self.page = if self.page == "session" then "partner"
-            elseif self.page == "partner" then "info" else "session"
-        self:paint()
-    end)
+    self.tabRow, self.tabs = W.frame(self.panel, "JamSections"), {}
+    for _, definition in { { "session", "DUET", "sound" }, { "partner", "PARTNER", "people" }, { "info", "HELP", "hint" } } do
+        local page = definition[1]
+        self.tabs[page] = W.key(self.tabRow, page, definition[3], definition[2], function()
+            self.copyConfirmation, self.contextConfirmation, self.page = nil, nil, page
+            self:paint()
+            if Input.GamepadEnabled then GuiService.SelectedObject = self.tabs[page] end
+        end)
+    end
     self.body = W.frame(self.panel, "Actions", W.ink)
     self.body.ClipsDescendants = true
     W.make("UIStroke", self.body, { Color = Color3.fromRGB(62, 90, 70), Thickness = 1 })
@@ -106,6 +123,12 @@ function View.new(screen, command, mute)
         channel.source = label(channel.root, "PinnedSequence", "BRING YOUR OWN SECTION", 11, Dim)
         channel.status = label(channel.root, "SnapshotStatus", "WAITING", 10, Dim)
         channel.lamp = W.line(channel.root, "PendingLight", Dim)
+        channel.roleIcons = {}
+        for _, role in { "rhythm", "hook", "open" } do
+            local glyph = Icons.make(channel.root, ({ rhythm = "drum", hook = "sound", open = "people" })[role], W.amber, 16)
+            glyph.Position, glyph.Visible = UDim2.fromOffset(8, 4), false
+            channel.roleIcons[role] = glyph
+        end
         W.make("UICorner", channel.lamp, { CornerRadius = UDim.new(1, 0) })
         self.channels[slot] = channel
     end
@@ -132,8 +155,18 @@ function View.new(screen, command, mute)
     self.copyStatus = W.label(self.partnerPage, "JointCopyStatus",
         "JOINT COPY / both contributors consent. No audio file or autosave.", 12, W.amber)
     self.copyStatus.TextWrapped = true
+    self.flow = VisualSteps.new(self.partnerPage, { { "ROLE", "pads" }, { "INVITE", "people" }, { "PLAY", "play" } })
+    self.emptyPartner = W.label(self.partnerPage, "NoNearbyMusician", "SOLO PLAY CONTINUES / no nearby musician", 12, W.text)
+    self.contextToggle = W.key(self.partnerPage, "PitchDetails", "sound", "KEY + PITCH DETAILS", function()
+        if not self.contextForced then self.contextOpen = not self.contextOpen; self:paint() end
+    end)
+    self.copyToggle = W.key(self.partnerPage, "JointCopyDetails", "duplicate", "JOINT COPY", function()
+        self.copiesOpen = not self.copiesOpen; self:paint()
+    end)
     local function partnerKey(name, title, callback)
-        local button = W.key(self.partnerPage, name, "people", title, callback)
+        local icon = if name:find("Tempo", 1, true) then "knob" elseif name:find("Copy", 1, true) or name:find("Draft", 1, true) then "duplicate"
+            elseif name:find("Role", 1, true) then "pads" else "people"
+        local button = W.key(self.partnerPage, name, icon, title, callback)
         button:SetAttribute("JamPartnerAction", true)
         return button
     end
@@ -145,13 +178,16 @@ function View.new(screen, command, mute)
         local candidates = (self.jam and self.jam.candidates) or {}
         if #candidates > 0 then
             self.contextConfirmation = nil
-            self.candidateIndex = ((self.candidateIndex or 1) % #candidates) + 1
+            local index = 0
+            for i, candidate in candidates do if candidate.userId == self.candidateId then index = i; break end end
+            self.candidateId = candidates[index % #candidates + 1].userId
             self:paint()
         end
     end)
     self.invite = partnerKey("SendInvite", "INVITE", function()
         local candidates = (self.jam and self.jam.candidates) or {}
-        local player = candidates[self.candidateIndex or 1]
+        local player
+        for _, candidate in candidates do if candidate.userId == self.candidateId then player = candidate; break end end
         if player then acknowledge("JamInvite", player) end
     end)
     self.accept = partnerKey("AcceptInvite", "ACCEPT INVITE", function()
@@ -208,6 +244,10 @@ function View.new(screen, command, mute)
             command(action, { id = take.id, context = context })
         else
             self.copyConfirmation = { key = key, action = action, expiresAt = os.clock() + 5 }
+            local pending = self.copyConfirmation
+            task.delay(5, function()
+                if self.panel.Parent and self.copyConfirmation == pending then self.copyConfirmation = nil; self:paint() end
+            end)
             self:paint()
         end
     end
@@ -217,11 +257,10 @@ function View.new(screen, command, mute)
     self.copyDiscard = partnerKey("DiscardJointCopy", "DISCARD TEMPORARY", function()
         confirmCopy("JamCopyDiscard")
     end)
-    self.partnerKeys = { self.roleChoice, self.candidate, self.invite, self.accept,
-        self.decline, self.leadOffer, self.leadAccept, self.leadDecline,
-        self.swapOffer, self.swapAccept, self.swapDecline, self.tempoAccept, self.tempoDecline,
-        self.contextAccept, self.contextDecline,
-        self.copyOffer, self.copyAccept, self.copyDecline, self.copyKeep, self.copyDiscard }
+    self.partnerKeys = { self.accept, self.decline, self.contextAccept, self.contextDecline,
+        self.tempoAccept, self.tempoDecline, self.leadAccept, self.leadDecline, self.swapAccept, self.swapDecline,
+        self.copyAccept, self.copyDecline, self.roleChoice, self.candidate, self.invite,
+        self.leadOffer, self.swapOffer, self.copyOffer, self.copyKeep, self.copyDiscard }
     self.noticeLine = label(self.panel, "JamNotice", "", 11, Dim)
     self.keys = W.frame(self.panel, "JamHardwareKeys")
     local function key(name, icon, title, action, value)
@@ -230,7 +269,7 @@ function View.new(screen, command, mute)
         end)
     end
     self.join = key("Join", "people", "START JAM", "JamJoin")
-    self.publish = key("Publish", "save", "PUBLISH", "JamPublish")
+    self.publish = key("Publish", "steps", "UPDATE PART", "JamPublish")
     self.down = key("TempoDown", "undo", "BPM −", "JamTempo", -1)
     self.up = key("TempoUp", "redo", "BPM +", "JamTempo", 1)
     self.leave = key("Leave", "close", "LEAVE JAM", "JamLeave")
@@ -247,10 +286,12 @@ function View.new(screen, command, mute)
     table.insert(self.connections, Input.WindowFocusReleased:Connect(function()
         self.copyConfirmation = nil
         self.contextConfirmation = nil
+        if self.panel.Visible then self:paint() end
     end))
     table.insert(self.connections, Input.TextBoxFocused:Connect(function()
         self.copyConfirmation = nil
         self.contextConfirmation = nil
+        if self.panel.Visible then self:paint() end
     end))
     self.panel.Destroying:Connect(function()
         for _, connection in self.connections do
@@ -269,6 +310,7 @@ end
 function View:paint()
     local jam = self.jam or {}
     local session = jam.session
+    W.set(self.heading, "Text", "DUET / 2 PLAYERS")
     self.tempo:set(session and session.bpm or 96)
     self.tempoLabel.Text = if jam.active and jam.conductor then "LEAD BPM" else "SHARED BPM"
     self.tempoLabel:SetAttribute("BPM", session and session.bpm or 96)
@@ -281,6 +323,8 @@ function View:paint()
         local track = session and session.tracks and session.tracks[tostring(slot)]
         local pending = session and session.pending and session.pending[tostring(slot)]
         local source = track and track.snapshot and track.snapshot.title
+        channel.number.Text = if track then (if track.role == "rhythm" then "RHYTHM" else "HOOK / TEXTURE") else "OPEN ROLE"
+        for role, glyph in channel.roleIcons do glyph.Visible = role == (track and track.role or "open") end
         W.set(channel.name, "Text", track and track.name or "OPEN SEAT")
         W.set(
             channel.source,
@@ -341,7 +385,7 @@ function View:paint()
         table.insert(lines, "ROLE EXCHANGE OFFERED / OPEN PARTNER TO ANSWER.")
     end
     table.insert(lines,
-        "Edit your own Sequence in the sampler, then Publish only your chosen musical role at the next bar. A-D always selects sample banks.")
+        "Edit your own Sequence in the sampler, then Update Part at the next bar. A-D selects sound banks; updating a shared part does not save your project.")
     local notice = if self.notice and os.clock() < self.untilAt then self.notice else nil
     if notice then
         table.insert(lines, notice)
@@ -354,8 +398,8 @@ function View:paint()
             or (
                 if session and session.tempo
                     then "NEXT BAR / " .. session.tempo.bpm .. " BPM QUEUED"
-                    elseif jam.active then "EDIT YOUR SECTION → PUBLISH AT THE NEXT BAR"
-                    else "SELECT YOUR SECTION IN THE SAMPLER → JOIN"
+                    elseif jam.active then "EDIT IN SAMPLER / UPDATE PART"
+                    else "CHOOSE A ROLE / START SOLO"
             )
     )
     self.join.Visible, self.publish.Visible = not jam.active and not jam.hasSession, jam.active == true
@@ -367,11 +411,13 @@ function View:paint()
     self.partnerPage.Visible = self.page == "partner"
     self.infoPrevious.Visible, self.infoNext.Visible, self.infoCounter.Visible =
         self.page == "info", self.page == "info", self.page == "info"
-    caption(self.info, if self.page == "info" then "DUET"
-        elseif self.page == "partner" then "INFO" else "PARTNER")
-    self.info:SetAttribute("Selected", self.page ~= "session")
+    for page, tab in self.tabs do tab:SetAttribute("Selected", page == self.page) end
     self:paintPartner()
     self:paintInfo()
+    local selected = GuiService.SelectedObject
+    if self.panel.Visible and selected and selected:IsDescendantOf(self.panel) and (not visible(selected) or not selected.Selectable) then
+        GuiService.SelectedObject = self.tabs[self.page]
+    end
 end
 function View:paintPartner()
     local jam = self.jam or {}
@@ -379,18 +425,20 @@ function View:paintPartner()
     local me = game.Players.LocalPlayer
     local myId = me and me.UserId
     local candidates = jam.candidates or {}
-    self.candidateIndex = math.clamp(self.candidateIndex or 1, 1, math.max(1, #candidates))
-    local selected = candidates[self.candidateIndex]
+    local selected
+    for _, candidate in candidates do if candidate.userId == self.candidateId then selected = candidate; break end end
     local invite = jam.invitation
     local take = jam.copyPending
     local offer = session.copyOffer
     local hasPartner = session.tracks and session.tracks["1"] and session.tracks["2"]
         and not session.pending["1"] and not session.pending["2"]
+    local occupied = session.tracks and session.tracks["1"] ~= nil and session.tracks["2"] ~= nil
     local role = jam.preferredRole or "rhythm"
     local mine = jam.role
     local contextOffer = session.contextOffer
     local pendingContext = self.contextConfirmation
     if pendingContext and (pendingContext.revision ~= jam.revision or pendingContext.generation ~= jam.generation
+        or (pendingContext.action == "JamInvite" and (not selected or selected.userId ~= pendingContext.targetId))
         or os.clock() >= pendingContext.expiresAt) then self.contextConfirmation = nil; pendingContext = nil end
     local contextLines = { "TUNING CONTEXT / no automatic retuning" }
     if pendingContext then table.insert(contextLines, "PRESS THE SAME CONFIRM BUTTON TO ACKNOWLEDGE\n" .. pendingContext.label)
@@ -402,20 +450,27 @@ function View:paintPartner()
         for _, snapshot in session.roleOffer.snapshots do table.insert(contextLines, "EXCHANGED / " .. snapshot.context.label) end
     end
     W.set(self.contextInfo, "Text", table.concat(contextLines, "\n"))
+    self.contextForced = pendingContext ~= nil or contextOffer ~= nil or session.roleOffer ~= nil
+    self.contextInfo.Visible = self.contextForced or self.contextOpen == true
+    self.contextToggle.Active, self.contextToggle.Selectable = not self.contextForced, not self.contextForced
+    caption(self.contextToggle, if self.contextForced then "PITCH REVIEW / REQUIRED"
+        elseif self.contextOpen then "HIDE KEY + PITCH DETAILS" else "KEY + PITCH / REVIEW")
+    self.flow:update(if jam.active and (occupied or #candidates == 0) then 3 elseif jam.active then 2 else 1)
+    self.emptyPartner.Visible = jam.active == true and not occupied and #candidates == 0
     W.set(self.partnerIntro, "Text", if invite then
-        invite.from .. " invited you to play " .. string.upper(invite.suggestedRole)
-            .. ". Accept by " .. string.format("%ds", math.max(0, math.ceil(invite.expiresAt - workspace:GetServerTimeNow())))
+        invite.from .. " / " .. string.upper(invite.suggestedRole)
+            .. " / " .. string.format("%ds LEFT", math.max(0, math.ceil(invite.expiresAt - workspace:GetServerTimeNow())))
         elseif jam.active then
             "YOUR " .. string.upper(mine or role) .. " / "
                 .. (if jam.conductor then "YOU LEAD" else "YOUR PARTNER LEADS")
-                .. ". Publishing changes only your pinned role, never the other owner's music."
-        else "Pick a musical role, then START JAM. After an invitation, your own notes must contain that role.")
+                .. " / YOUR PROJECT STAYS YOURS"
+        else "CHOOSE ROLE / START SOLO / INVITE A MUSICIAN")
     local credits = {}
     for _, contributor in (take and take.contributors) or {} do
         table.insert(credits, contributor.name .. " (" .. contributor.role .. ")")
     end
     W.set(self.copyStatus, "Text", if take and take.imported then
-        "IMPORTED JOINT DRAFT / " .. (if take.inWorkspace then "OPEN SONG TO EDIT & SAVE"
+        "JOINT DRAFT / " .. (if take.inWorkspace then (if take.saved then (if take.saveMode == "session" then "SESSION SAVED" else "SAVED") else "UNSAVED / OPEN SONG TO SAVE")
             else "NOT IN CURRENT WORKSPACE / CHECK UNDO OR ARCHIVES")
         elseif take then
             "TEMPORARY JOINT PHRASE / " .. take.bars .. " BARS · " .. take.bpm
@@ -423,9 +478,13 @@ function View:paintPartner()
                 .. "\nSESSION ONLY / leave jam before Keep. This is not saved or finished."
         elseif offer then
             "JOINT COPY OFFER / BOTH CREDITS / accept or decline; no save happens automatically."
-        else "JOINT COPY / two consenting musicians. Keep later as an editable Draft; no autosave or publication.")
+        else "Both musicians approve. Keep later as a Draft; Save explicitly.")
+    local showCopy = take ~= nil or offer ~= nil or self.copiesOpen == true
+    self.copyStatus.Visible = showCopy
+    self.copyToggle.Visible = hasPartner == true and take == nil and offer == nil
+    caption(self.copyToggle, if self.copiesOpen then "CLOSE JOINT COPY" else "JOINT COPY / OPTIONAL")
     caption(self.roleChoice, "NEXT ROLE / " .. string.upper(role))
-    caption(self.candidate, if selected then "TO: " .. selected.name else "NO NEARBY MUSICIAN")
+    caption(self.candidate, if selected then "TO / " .. selected.name .. " / CHANGE" else "CHOOSE MUSICIAN")
     local isGuestOffer = jam.active and not jam.conductor
     local lead = session.leadOffer
     local swap = session.roleOffer
@@ -435,8 +494,8 @@ function View:paintPartner()
         button.Visible, button.Active, button.Selectable = enabled, enabled, enabled
     end
     active(self.roleChoice, not jam.active)
-    active(self.candidate, jam.conductor and #candidates > 1)
-    active(self.invite, jam.conductor and selected ~= nil and not hasPartner)
+    active(self.candidate, jam.conductor and #candidates > 0 and not occupied)
+    active(self.invite, jam.conductor and selected ~= nil and not occupied)
     active(self.accept, invite ~= nil)
     active(self.decline, invite ~= nil)
     active(self.leadOffer, jam.conductor and hasPartner and not lead and not session.leadPending)
@@ -450,7 +509,7 @@ function View:paintPartner()
     active(self.tempoDecline, isGuestOffer and tempo ~= nil and tempo.to == myId)
     active(self.contextAccept, jam.active and contextOffer ~= nil and contextOffer.to == myId)
     active(self.contextDecline, jam.active and contextOffer ~= nil and contextOffer.to == myId)
-    active(self.copyOffer, jam.active and hasPartner and not offer and not take
+    active(self.copyOffer, showCopy and jam.active and hasPartner and not offer and not take
         and not next(session.pending or {}) and not session.tempo)
     active(self.copyAccept, jam.active and offer ~= nil and offer.to == myId)
     active(self.copyDecline, jam.active and offer ~= nil and offer.to == myId)
@@ -474,10 +533,12 @@ function View:paintPartner()
     if tempo then
         caption(self.tempoAccept, "ACCEPT " .. tostring(tempo.bpm) .. " BPM")
     end
-    for _, spec in { { self.join, "JamJoin", "START JAM" }, { self.publish, "JamPublish", "PUBLISH" },
+    for _, spec in { { self.join, "JamJoin", "START JAM" }, { self.publish, "JamPublish", "UPDATE" },
         { self.invite, "JamInvite", "INVITE" }, { self.accept, "JamAccept", "ACCEPT INVITE" },
         { self.swapOffer, "JamSwapOffer", "EXCHANGE ROLES" }, { self.swapAccept, "JamSwapAccept", "ACCEPT ROLES" } } do
-        caption(spec[1], if pendingContext and pendingContext.action == spec[2] then "CONFIRM " .. spec[3] else spec[3])
+        local confirming = pendingContext and pendingContext.action == spec[2]
+        caption(spec[1], if confirming then (if spec[1] == self.join or spec[1] == self.publish then "CONFIRM" else "CONFIRM " .. spec[3]) else spec[3])
+        if spec[1] == self.publish then spec[1]:SetAttribute("AccessibleLabel", if confirming then "Confirm updated shared part / next bar" else "Update shared part / next bar") end
     end
     if self.panel.AbsoluteSize.X > 0 then self:layoutPartner() end
 end
@@ -485,26 +546,40 @@ end
 function View:layoutPartner()
     local w = math.max(40, self.partnerPage.AbsoluteSize.X - 12)
     local y = 8
-    W.place(self.partnerIntro, 4, y, w, 78)
-    y += 86
-    local contextHeight = TextService:GetTextSize(self.contextInfo.Text, self.contextInfo.TextSize,
-        self.contextInfo.Font, Vector2.new(w, 100000)).Y + 12
-    W.place(self.contextInfo, 4, y, w, contextHeight)
-    y += contextHeight + 8
-    W.place(self.copyStatus, 4, y, w, 98)
-    y += 106
-    local paired = w >= 290
-    local index = 1
-    for _, button in self.partnerKeys do
-        if button.Visible then
-            local width = if paired then (w - 6) / 2 else w
-            local x = if paired then ((index - 1) % 2) * (width + 6) else 0
-            W.place(button, x, y, width, 48)
-            if not paired or index % 2 == 0 then y += 54 end
-            index += 1
-        end
+    local function place(object, height)
+        if not object.Visible then return end
+        local h = height or TextService:GetTextSize(object.Text, object.TextSize, object.Font, Vector2.new(w, 100000)).Y + 10
+        W.place(object, 4, y, w, h); y += h + 8
     end
-    if paired and index % 2 == 0 then y += 54 end
+    place(self.flow.root, 56)
+    place(self.partnerIntro)
+    place(self.emptyPartner)
+    place(self.contextToggle, 48)
+    place(self.contextInfo)
+    local paired, index = w >= 290, 1
+    local function actions(list)
+        index = 1
+        for _, button in list do
+            if button.Visible then
+                local width = if paired then (w - 6) / 2 else w
+                local x = if paired then ((index - 1) % 2) * (width + 6) else 0
+                W.place(button, x, y, width, 48)
+                if not paired or index % 2 == 0 then y += 54 end
+                index += 1
+            end
+        end
+        if paired and index % 2 == 0 then y += 54 end
+    end
+    local main, copy = {}, {}
+    for _, button in self.partnerKeys do
+        if button == self.copyOffer or button == self.copyAccept or button == self.copyDecline or button == self.copyKeep or button == self.copyDiscard then
+            table.insert(copy, button)
+        else table.insert(main, button) end
+    end
+    actions(main)
+    place(self.copyToggle, 48)
+    place(self.copyStatus)
+    actions(copy)
     self.partnerPage.CanvasSize = UDim2.fromOffset(0, y + 6)
 end
 
@@ -559,11 +634,11 @@ function View:update(jam, muted, notice)
         self.panel.Visible
         and (
             not wasOpen
-            or (selected and selected:IsDescendantOf(self.panel) and not selected.Visible)
+            or (selected and selected:IsDescendantOf(self.panel) and (not visible(selected) or not selected.Selectable))
         )
     then
-        GuiService.SelectedObject = if jam.invitation then self.accept
-            elseif jam.active then self.publish else self.join
+        GuiService.SelectedObject = if jam.invitation and self.page == "partner" then self.accept
+            elseif jam.active then self.publish elseif self.join.Visible then self.join else self.tabs.partner
     end
 end
 function View:resize()
@@ -578,9 +653,12 @@ function View:resize()
     W.place(self.tempo.root, w - 190, 7, 114, 48)
     W.place(self.tempoLabel, w - 121, 10, 57, 26)
     self.tempoLabel.TextSize = 9
-    W.place(self.info, w - 60, 5, 50, 36)
-    local bw, bh = w - margin * 2, math.max(1, actionY - 72)
-    W.place(self.body, margin, 46, bw, bh)
+    W.place(self.tabRow, margin, 46, w - margin * 2, 44)
+    for index, page in { "session", "partner", "info" } do
+        W.place(self.tabs[page], (index - 1) * (w - margin * 2 + 6) / 3, 0, (w - margin * 2 - 12) / 3, 44)
+    end
+    local bw, bh = w - margin * 2, math.max(1, actionY - 120)
+    W.place(self.body, margin, 94, bw, bh)
     W.place(self.partnerPage, 0, 0, bw, bh)
     if (self.partnerWidth and self.partnerWidth ~= bw)
         or (self.partnerHeight and self.partnerHeight ~= bh) then
@@ -599,7 +677,7 @@ function View:resize()
             cw,
             ch
         )
-        W.place(channel.number, 8, 5, cw - 24, 15)
+        W.place(channel.number, 30, 5, cw - 46, 15)
         W.place(channel.lamp, cw - 14, 9, 5, 5)
         W.place(channel.name, 8, 23, cw - 16, if ch < 100 then 21 else 30)
         W.place(channel.source, 8, if ch < 100 then 46 else 59, cw - 16, 17)
@@ -609,7 +687,7 @@ function View:resize()
         channel.status.Visible = ch >= 60
     end
     local compactInfo = bh < 90
-    local infoNavHeight = if compactInfo then 22 else 40
+    local infoNavHeight = 44
     local infoNavY = bh - infoNavHeight - (if compactInfo then 2 else 6)
     local infoTextY = if compactInfo then 1 else 6
     W.place(self.label, 8, infoTextY, bw - 16, math.max(1, infoNavY - infoTextY - 2))

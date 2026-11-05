@@ -739,6 +739,7 @@ connect(RunService.Heartbeat, function(dt)
         refresh = 0
         view:tick()
         listeningView:tick()
+        recordView:tick()
         if state then
             jamView:update(state.jam, view.muted)
             stageView:update(state.stage, view.muted, nil, listeningAudio:status())
