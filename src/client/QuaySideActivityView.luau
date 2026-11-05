@@ -92,7 +92,7 @@ function View.new(screen, send)
         self.pads[i] = button
         self.dots[i] = Gui.round(
             Gui.make("Frame", self.root, {
-                Position = UDim2.new(0.5, (i - 2.5) * 28 - 6, 0, 228),
+                Position = UDim2.new(0.5, (i - 2.5) * 28 - 6, 0, 220),
                 Size = UDim2.fromOffset(12, 12),
                 BackgroundColor3 = Theme.Graphite,
                 BorderSizePixel = 0,
@@ -106,6 +106,10 @@ function View.new(screen, send)
     self.retry.Position, self.retry.Size = UDim2.new(0.5, -90, 1, -54), UDim2.fromOffset(180, 42)
     self.retry.Size = UDim2.fromOffset(180, 44)
     self.retry:SetAttribute("UiIcon", "play")
+    self.result = Gui.label(self.root, "", 11, Theme.Cream)
+    self.result.Name, self.result.Font = "RoundProgress", Enum.Font.Code
+    self.result.Position, self.result.Size = UDim2.fromOffset(20, 236), UDim2.new(1, -40, 0, 16)
+    self.result.TextXAlignment = Enum.TextXAlignment.Center
     self.connection = Run.Heartbeat:Connect(function()
         self:render()
     end)
@@ -179,7 +183,7 @@ function View:render()
     self.rail.Visible = r.id == "lantern"
     local active, beat
     if r.status == "complete" then
-        self.cue.Text = "NICE!  4 / 4"
+        self.cue.Text = "NICE!"
     elseif r.status == "retry" then
         self.cue.Text = "SO CLOSE. TRY AGAIN?"
     elseif r.id == "echo" then
@@ -217,6 +221,10 @@ function View:render()
         end
     end
     local cueKey = tostring(r.serial) .. ":" .. tostring(beat)
+    self.result.Text = if r.status == "complete" then "KEPT / PLAY AGAIN TO PRACTISE"
+        elseif r.status == "retry" then tostring(r.score) .. " / 4 / TRY AGAIN"
+        else tostring(r.score) .. " / 4"
+    self.root:SetAttribute("AccessibleLabel", self.title.Text .. " / " .. self.cue.Text .. " / " .. self.result.Text)
     if beat and cueKey ~= self.lastCue and r.status == "playing" and now < r.expires then
         self.lastCue = cueKey
         cue(if r.id == "echo" then sounds[active or 1] else "tutorial_closed_hat")
@@ -238,9 +246,8 @@ function View:render()
             then "lamp"
             elseif r.id == "chase" then "bolt"
             else ({ "drum", "steps", "sound", "drum" })[i]
-        local iconKey = iconName .. ":" .. tostring(lit)
-        if button:GetAttribute("MiniPadGraphic") ~= iconKey then
-            button:SetAttribute("MiniPadGraphic", iconKey)
+        if button:GetAttribute("MiniPadGraphic") ~= iconName then
+            button:SetAttribute("MiniPadGraphic", iconName)
             local previous = button:FindFirstChild("PadGraphic")
             if previous then
                 previous:Destroy()
@@ -253,6 +260,11 @@ function View:render()
                     shape.ZIndex = icon.ZIndex
                 end
             end
+        end
+        local color = if lit then Theme.Ink else colors[i]
+        if button:GetAttribute("PadGraphicColor") ~= color then
+            button:SetAttribute("PadGraphicColor", color)
+            Icons.tint(button.PadGraphic, color)
         end
         self.dots[i].BackgroundColor3 = if i <= r.score then Theme.Amber else Theme.Graphite
     end

@@ -5,6 +5,7 @@ local Pads = require(script.Parent.PadInput)
 local PadControls = require(script.Parent.DevicePadControls)
 local Shared = game.ReplicatedStorage.Shared
 local Catalog = require(Shared.SampleCatalog)
+local Versions = require(Shared.SampleVersions)
 local Transport = require(Shared.MusicTransport)
 local Input = game:GetService("UserInputService")
 local GuiService = game:GetService("GuiService")
@@ -128,16 +129,8 @@ function View.new(callbacks)
     self.performanceDeck = W.frame(self.body, "PerformanceDeck")
     attr(self.performanceDeck, "PersistentDeck", true)
     self.editorDeck = W.frame(self.body, "EditorDeck")
-    self.contextRail = W.make("TextLabel", self.editorDeck, {
-        Name = "MusicContextRail", Text = "",
-        Font = Enum.Font.Code, TextSize = 11,
-        TextColor3 = W.text, BackgroundColor3 = W.ink,
-        BackgroundTransparency = 0, BorderSizePixel = 0,
-        TextXAlignment = Enum.TextXAlignment.Left,
-        TextYAlignment = Enum.TextYAlignment.Center,
-        TextWrapped = false, TextTruncate = Enum.TextTruncate.AtEnd,
-        ZIndex = 5,
-    })
+    self.contextStatus = require(script.Parent.MusicStatusRail).new(self.editorDeck)
+    self.contextRail = self.contextStatus.root
     Skin.image(self.editorDeck, "bezel-v4", {
         Name = "DisplayBezel",
         ScaleType = Enum.ScaleType.Slice,
@@ -679,9 +672,12 @@ function View:paintContext()
     local caption = playback .. " | " .. status
         .. " | SAMPLE BANK " .. bankLetter .. " / PAD " .. address
         .. " | " .. context .. queued
-    W.set(self.contextRail, "Text", caption)
-    W.set(self.contextRail, "TextColor3", if s.dirty or s.saving
-        then W.amber else W.text)
+    local source = if self.page == "Song" then m.draft and m.draft.name or "NEW DRAFT"
+        elseif self.page == "Library" then "YOUR MUSIC"
+        elseif self.page == "Sounds" then sample and sample.label or "CHOOSE SOUND"
+        elseif self.page == "Settings" then "SETUP"
+        else m.sequence and m.sequence.name or "NEW LOOP"
+    self.contextStatus:update(s, source .. (if m.queued then " / NEXT QUEUED" else ""), address, caption)
     attr(self.contextRail, "AccessibleLabel", caption)
     attr(self.panel, "CurrentSampleBank", bankLetter)
     attr(self.panel, "CurrentPadAddress", address)
@@ -699,6 +695,7 @@ function View:paintPads()
         local absolute = (bank - 1) * 16 + i
         local id = s.pattern.assignments[absolute]
         local sample = Catalog.ById[id] or Catalog.RetiredById[id]
+        local versionMatches = Versions.matches(id, s.music and s.music.sampleVersions)
         attr(b, "AbsolutePad", absolute)
         attr(b, "Address", string.format("%s%02d", string.char(64 + bank), i))
         attr(b, "PadSelected", i == self.selectedPad)
@@ -714,10 +711,11 @@ function View:paintPads()
         attr(
             b,
             "AudioReady",
-            Catalog.isPlaybackReady(id, s.unlocked)
+            versionMatches and Catalog.isPlaybackReady(id, s.unlocked)
                 and (not self.callbacks.sampleReady or self.callbacks.sampleReady(id))
         )
         attr(b, "AudioApproved", Catalog.isReady(id, s.unlocked))
+        attr(b, "VersionMismatch", type(id) == "string" and id ~= "" and not versionMatches)
         attr(b, "PreviewAvailable", Catalog.isPreviewAvailable(id, s.unlocked))
         attr(b, "PadMuted", s.pattern.muted[absolute] == true)
     end
@@ -1560,8 +1558,8 @@ function View:resizeDevice()
     -- The fixed 16-pad performance deck is never resized for this indicator.
     local contextHeight = if dh >= 240 then 24 else 0
     self.contextRail.Visible = contextHeight > 0
-    self.contextRail.TextSize = if dw < 330 then 10 else 11
     W.place(self.contextRail, 14, 51, dw - 28, contextHeight)
+    self.contextStatus:resize(dw - 28)
     W.place(self.viewport, 14, 54 + contextHeight, dw - 28,
         dh - 54 - contextHeight - editorBottom)
     local vw, vh = dw - 28, dh - 54 - contextHeight - editorBottom

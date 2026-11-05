@@ -1,5 +1,6 @@
 local Shared = game:GetService("ReplicatedStorage").Shared
 local Activities = require(Shared.QuayActivities)
+local Identity = require(Shared.QuayIdentity)
 local Wardrobe = require(Shared.WardrobeCatalog)
 local Theme = require(Shared.Theme)
 local Gui = require(script.Parent.GuiFactory)
@@ -594,15 +595,12 @@ function Panel:update(fullState, tab, journalVisible)
             card = { root = frame, title = title, fill = fill }
             self.trackCards[track.id] = card
         end
-        card.title.Text = track.label
-            .. " / "
-            .. track.levelLabel
-            .. "\n"
-            .. track.xp
-            .. " XP"
-            .. (if track.nextAt then " / " .. track.nextAt else " / MASTERY")
+        card.title.Text = track.label .. " / LV " .. track.level
+            .. "\n" .. track.xp .. " XP" .. (if track.nextAt then " / " .. track.nextAt else " / MASTERY")
+        card.root:SetAttribute("AccessibleLabel", track.label .. " / " .. track.levelLabel .. " / " .. track.xp .. " XP")
+        local floor = Identity.TrackLevels[track.level] or 0
         card.fill.Size = UDim2.fromScale(
-            if track.nextAt then math.clamp(track.xp / math.max(1, track.nextAt), 0, 1) else 1,
+            if track.nextAt then math.clamp((track.xp - floor) / math.max(1, track.nextAt - floor), 0, 1) else 1,
             1
         )
     end

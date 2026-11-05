@@ -12,6 +12,12 @@ local Recipes = require(game.ReplicatedStorage.Shared.QuayFxRecipes)
 local DeviceSkin = require(script.Parent.DeviceSkin)
 local View = {}
 View.__index = View
+local function lifeComplete(key, progress)
+    return progress ~= nil and ((key:sub(1, 7) == "listen_" and progress.stamps[key:sub(8)] == true)
+        or (key:sub(1, 7) == "garden_" and progress.gardens[key:sub(8)] == true)
+        or (key == "parcel_pickup" and progress.parcel >= 1)
+        or (key == "parcel_drop" and progress.parcel == 2))
+end
 local function busy(state)
     return not state
         or not state.ready
@@ -200,6 +206,7 @@ function View.new(screen)
 end
 function View:track(id)
     self.lifeTarget = nil
+    self.placeTarget = nil
     self.activity = nil
     self.preferred = id
     self.guide = true
@@ -208,10 +215,12 @@ function View:track(id)
 end
 function View:trackActivity(id)
     self.lifeTarget = nil
+    self.placeTarget = nil
     if not Games.ById[id] then
         return
     end
     self.activity = id
+    self.activityWasComplete = self.state and self.state.quay and self.state.quay.progress.side[id] == true
     self.guide = true
     self:render()
     require(script.Parent.CompanionVoice).Cue:Fire("route")
@@ -222,6 +231,7 @@ function View:accept(state)
         self.commissionId = active
         if active then
             self.lifeTarget = nil
+            self.placeTarget = nil
             self.preferred = nil
             self.activity = nil
             self.fxTracking = false
@@ -229,18 +239,18 @@ function View:accept(state)
         end
     end
     self.state = state
+    if self.placeTarget and self.placeTarget.completion and state.experience then
+        local activity = state.experience.activities[self.placeTarget.completion]
+        if activity and activity.completed and not self.placeTarget.wasComplete then self.placeTarget = nil end
+    end
     local life = state.quay and state.quay.life and state.quay.life.progress
     if self.lifeTarget and life then
-        local key = self.lifeTarget.key
-        local done = (key:sub(1, 7) == "listen_" and life.stamps[key:sub(8)])
-            or (key:sub(1, 7) == "garden_" and life.gardens[key:sub(8)])
-            or (key == "parcel_pickup" and life.parcel >= 1)
-            or (key == "parcel_drop" and life.parcel == 2)
-        if done then
+        local done = lifeComplete(self.lifeTarget.key, life)
+        if done and not self.lifeTarget.wasComplete then
             self.lifeTarget = nil
         end
     end
-    if self.activity and state.quay and state.quay.progress.side[self.activity] then
+    if self.activity and state.quay and state.quay.progress.side[self.activity] and not self.activityWasComplete then
         self.activity = nil
         self.fxTracking = false
     end
@@ -259,16 +269,29 @@ function View:accept(state)
     self:render()
 end
 function View:trackLife(key, title, detail)
+    self.placeTarget = nil
     self.lifeTarget =
-        { key = key, target = "life_" .. key, title = string.upper(title), text = detail }
+        { key = key, target = "life_" .. key, title = string.upper(title), text = detail,
+            wasComplete = lifeComplete(key, self.state and self.state.quay and self.state.quay.life and self.state.quay.life.progress) }
     self.activity, self.preferred, self.fxTracking = nil, nil, false
     self.guide = true
     self:render()
+end
+function View:trackPlace(target, title, detail, completion)
+    local activity = completion and self.state and self.state.experience and self.state.experience.activities[completion]
+    self.placeTarget = { target = target, title = title, text = detail, completion = completion,
+        wasComplete = activity and activity.completed == true }
+    self.lifeTarget, self.activity, self.preferred, self.fxTracking = nil, nil, nil, false
+    self.guide = true
+    self.progressKey = nil
+    self:render()
+    require(script.Parent.CompanionVoice).Cue:Fire("route")
 end
 function View:render()
     local state = self.state
     local visible = not busy(state)
     local objective = state and Objectives.select(state.quay, self.preferred)
+    if self.placeTarget then objective = self.placeTarget end
     if self.lifeTarget then
         objective = self.lifeTarget
     end
@@ -326,11 +349,11 @@ function View:render()
             finale = "RONAN",
         })[objective.target] or "THE QUAY")
     local steps = Steps.project(state.quay, objective)
-    if self.lifeTarget then
+    if self.lifeTarget or self.placeTarget then
         steps = {
             key = objective.target,
-            done = 0,
-            labels = { "FIND", "INTERACT", "REMEMBER" },
+            done = if valid and playerRoot and (destination - playerRoot.Position).Magnitude < 12 then 1 else 0,
+            labels = if self.placeTarget then { "FIND", if self.placeTarget.completion then "EXPLORE" else "OPEN", "TRY" } else { "FIND", "INTERACT", "REMEMBER" },
             hint = objective.text,
         }
     end
@@ -344,8 +367,7 @@ function View:render()
     end
     if visible and self.guide and not self.hintOffered and (self.idleTime or 0) > 35 then
         self.hintOffered = true
-        self.expanded = true
-        self.resizeLayout()
+        self.more.Text = if self.expanded then "LESS" else "HINT"
     end
     for i, label in self.stepLabels do
         label.Text = steps.labels[i]
@@ -408,15 +430,15 @@ function View:render()
         local root = character and character:FindFirstChild("HumanoidRootPart")
         local distance = root and (destination - root.Position).Magnitude or 0
         self.distance.Text = if distance < 12
-            then "YOU'RE HERE  /  INTERACT"
-            else string.format("%03d  /  FOLLOW THE MARKERS", distance)
+            then (if self.placeTarget and self.placeTarget.completion then "HERE / OPEN EXPLORE" else "HERE / INTERACT")
+            else string.format("%03d studs", distance)
         if root and workspace.CurrentCamera then
             local localDirection =
                 workspace.CurrentCamera.CFrame:VectorToObjectSpace(destination - root.Position)
             self.arrow.Rotation = math.deg(math.atan2(localDirection.X, -localDirection.Z))
         end
     else
-        self.distance.Text = "Explore the quay at your own pace"
+        self.distance.Text = "EXPLORE AT YOUR PACE"
     end
 end
 function View:destroy()

@@ -60,6 +60,10 @@ function Service.new(
     self.celebrations.Parent = game.ReplicatedStorage.MusicNetwork
     self.celebrationSerial = 0
     self.waypoints = { finale = self.scene.finale.anchor.Position }
+    -- Activity guidance uses the same anchors as the server's proximity checks.
+    for id, node in self.scene.buildings do
+        self.waypoints["building_" .. id] = node.anchor.Position
+    end
     for id, node in self.scene.stops do
         self.waypoints[id] = node.anchor.Position
     end

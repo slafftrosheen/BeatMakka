@@ -311,6 +311,7 @@ function Skin.pad(button)
         status.TextSize = if small then 8 else 9
         status.Text = if muted
             then "MUTED"
+            elseif button:GetAttribute("VersionMismatch") then "VERSION"
             elseif available and approved then "READY"
             elseif available then "LOCAL"
             elseif preview then "PREVIEW"
@@ -337,6 +338,7 @@ function Skin.pad(button)
             "PadSelected",
             "PreviewAvailable",
             "AudioReady",
+            "VersionMismatch",
             "AudioApproved",
             "PadHeld",
             "PadFlash",

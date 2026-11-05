@@ -83,7 +83,7 @@ local function destination(id)
         else "P1"
 end
 function View.new()
-    local self = setmetatable({ connections = {}, personal = {}, tab = "route" }, View)
+    local self = setmetatable({ connections = {}, personal = {}, tab = "play" }, View)
     local network = game.ReplicatedStorage:WaitForChild("MusicNetwork")
     local command = network:WaitForChild("Command")
     local function send(action, value, extra)
@@ -101,6 +101,7 @@ function View.new()
     self.sideActivities = require(script.Parent.QuaySideActivityView).new(self.screen, send)
     self.badges = require(script.Parent.QuayBadgeView).new(self.screen)
     self.toggle = Gui.button(self.screen, "MAP", function()
+        self.tab = "play"
         send("QuayJournal")
     end)
     self.toggle.Name = "QuayMapToggle"
@@ -231,13 +232,14 @@ function View.new()
         BackgroundTransparency = 1,
         Position = UDim2.fromOffset(56, 58),
         Size = UDim2.new(1, -84, 0, 68),
-        CanvasSize = UDim2.fromOffset(728, 0),
+        CanvasSize = UDim2.fromOffset(832, 0),
         BorderSizePixel = 0,
         ScrollBarThickness = 2,
         ScrollingDirection = Enum.ScrollingDirection.X,
     })
     self.tabs = {}
     local tabNames = {
+        play = "Play",
         route = "Story",
         explore = "Explore",
         style = "Style",
@@ -247,6 +249,7 @@ function View.new()
         companions = "People",
     }
     local tabIcons = {
+        play = "pads",
         route = "journal",
         explore = "discovery",
         style = "headphones",
@@ -255,7 +258,7 @@ function View.new()
         life = "route",
         companions = "people",
     }
-    for index, name in { "route", "explore", "style", "shop", "city", "life", "companions" } do
+    for index, name in { "play", "route", "explore", "life", "style", "companions", "city", "shop" } do
         local button = Gui.button(tabs, tabNames[name], function()
             self.tab = name
             self.scroll.CanvasPosition = Vector2.zero
@@ -303,6 +306,29 @@ function View.new()
         { Padding = UDim.new(0, 10), SortOrder = Enum.SortOrder.LayoutOrder }
     )
     self.companions = CompanionView.new(self.scroll, send)
+    local function closeForRoute()
+        send("QuayClose")
+    end
+    self.activityBoard = require(script.Parent.QuayActivityBoard).new(self.scroll, {
+        game = function(id) self.route:trackActivity(id); closeForRoute() end,
+        life = function(key, name, detail) self.route:trackLife(key, name, detail); closeForRoute() end,
+        place = function(target, name, detail, completion)
+            self.route:trackPlace(target, name, detail, completion)
+            closeForRoute()
+        end,
+        tab = function(name)
+            self.tab = name
+            self.scroll.CanvasPosition = Vector2.zero
+            self:render()
+            if Input.GamepadEnabled then
+                local focus = self.tabs[name]
+                tabs.CanvasPosition = Vector2.new(math.clamp(focus.Position.X.Offset, 0,
+                    math.max(0, tabs.CanvasSize.X.Offset - tabs.AbsoluteSize.X)), 0)
+                GuiService.SelectedObject = focus
+            end
+        end,
+        save = function() send("QuaySave") end,
+    })
     self.life = require(script.Parent.QuayLifeView).new(
         self.scroll,
         function(key, lifeTitle, detail)
@@ -822,6 +848,11 @@ function View.new()
     )
     local function resizePanel()
         local height = self.screen.AbsoluteSize.Y
+        local width = math.min(850, self.screen.AbsoluteSize.X * 0.94)
+        local inset, trailing = if width < 500 then 20 else 56, if width < 500 then 14 else 28
+        tabs.Position, tabs.Size = UDim2.fromOffset(inset, 58), UDim2.new(1, -inset - trailing, 0, 68)
+        self.scroll.Position, self.scroll.Size = UDim2.fromOffset(inset, 136), UDim2.new(1, -inset - trailing, 1, -160)
+        self.title.Position, self.title.Size = UDim2.fromOffset(inset, 10), UDim2.new(1, -inset - 148, 0, 40)
         local content = self.scroll.UIListLayout.AbsoluteContentSize.Y + 140
         self.panel.Size = UDim2.new(0.94, 0, 0, math.min(height * 0.88, math.max(320, content)))
     end
@@ -959,7 +990,8 @@ function View:render()
         self.commissions:update(nil, nil)
         return
     end
-    self.toggle.Text = if quay.progress.completed["NQ-Q12"] then "OPEN NIGHT" else "MAP"
+    self:refreshWorldProjection(quay.progress)
+    self.toggle.Text = "QUAY"
     if self.panel.Visible and (not wasOpen or self.lastOpen ~= quay.open) then
         if quay.open ~= "map" then
             self.tab = "route"
@@ -985,6 +1017,19 @@ function View:render()
     for name, button in self.tabs do
         button.BackgroundColor3 = if self.tab == name then Theme.Ink else Theme.Teal
         button.SelectedMark.Visible = self.tab == name
+    end
+    self.activityBoard:update(state)
+    self.activityBoard.root.Visible = self.tab == "play"
+    if self.tab == "play" then
+        self.experiencePanel:update(state, self.tab, self.panel.Visible)
+        self.companions:setVisible(false)
+        self.dialogue:update(nil, false)
+        self.commissions:update(nil, nil)
+        for _, child in self.scroll:GetChildren() do
+            if child:IsA("GuiObject") then child.Visible = child == self.activityBoard.root end
+        end
+        self.title.Text = "YOUR QUAY"
+        return
     end
     self.detailsControl.BackgroundColor3 = if self.details then Theme.Ink else Theme.Teal
     self.experiencePanel:update(state, self.tab, self.panel.Visible)
@@ -1196,7 +1241,11 @@ function View:render()
     self.questTotals.Text = "YOUR CHAPTER / " .. completedQuests .. " OF " .. #Catalog.quests
     self.questFill.Size = UDim2.fromScale(completedQuests / math.max(1, #Catalog.quests), 1)
     self.help.Visible = not companionTab and self.details == true
-    local old, current = self.projected, quay.progress
+end
+
+-- World feedback follows progress regardless of the currently open journal tab.
+function View:refreshWorldProjection(current)
+    local old = self.projected
     local changed = not old or old.repair ~= current.repair or old.sort ~= current.sort
     if not changed then
         for _, field in { "completed", "dock", "market" } do

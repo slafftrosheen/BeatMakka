@@ -5,15 +5,16 @@ local Shared = game:GetService("ReplicatedStorage").Shared
 local Catalog = require(Shared.SampleCatalog)
 local Groove = require(Shared.FirstGroove)
 local Sequence = require(Shared.MusicSequence)
+local VisualSteps = require(script.Parent.VisualSteps)
 local Coach = {}
 Coach.__index = Coach
 
 local tips = {
-    "Choose a role below. Tap its highlighted physical pad to hear it. Sound-choice buttons replace that pad's sound in this track's shared kit.",
-    "EDIT NOTES opens the real sequencer. Tap a numbered step to add or remove a hit for the selected pad. Banks A-D change sounds, not the loop.",
-    "PLAY LOOP replays the selected section from its beginning. Try muting one sound, then bringing it back. UNDO reverses a musical edit.",
-    "Name your loop and SAVE. Wait for SESSION SAVED or SAVED TO STORAGE. SAVING and UNSAVED are not successful saves.",
-    "REOPEN SAVE restores the last saved project and keeps current edits for recovery. A loop is one section; Song Mode arranges sections into a complete Song.",
+    "Choose a sound below, then tap its physical pad.",
+    "EDIT NOTES: tap a step to place a hit. Banks A–D change sounds.",
+    "PLAY your loop. Mute a sound, bring it back, or UNDO an edit.",
+    "Name it, then SAVE. Wait for SAVED or SESSION SAVED.",
+    "REOPEN SAVE keeps current edits in recovery. Arrange loops in SONG when ready.",
 }
 
 local function enabled(button, value)
@@ -102,7 +103,8 @@ function Coach.new(parent, api, changed)
         CanvasSize = UDim2.fromOffset(0, 0), ScrollBarThickness = 4,
         ScrollingDirection = Enum.ScrollingDirection.Y, Visible = false,
     })
-    self.title = W.label(self.scroll, "Title", "MAKE THIS LOOP YOURS", 17, W.amber)
+    self.steps = VisualSteps.new(self.scroll, { { "SOUND", "pads" }, { "NOTES", "steps" }, { "LISTEN", "play" }, { "SAVE", "save" } })
+    self.title = W.label(self.scroll, "Title", "MAKE A LOOP", 17, W.amber)
     self.example = button(self.scroll, "Example", "EXAMPLE LOOP", function()
         self:start("example")
     end)
@@ -120,7 +122,7 @@ function Coach.new(parent, api, changed)
     for index, role in Groove.Roles do
         local item = { root = W.frame(self.scroll, role.id), choices = {} }
         item.title = W.label(item.root, "Role", role.label .. " / " .. Groove.address(role.pad), 14, W.amber)
-        item.select = button(item.root, "Select", "SELECT " .. Groove.address(role.pad), function()
+        item.select = button(item.root, "Select", Groove.address(role.pad), function()
             self:select(role.pad)
             self.message = role.hint .. " Tap " .. Groove.address(role.pad) .. " to hear it."
             self:paint()
@@ -191,6 +193,11 @@ function Coach.new(parent, api, changed)
         self:send("QuayStage")
     end)
     self.boundary = W.label(self.scroll, "StorageBoundary", "", 12)
+    self.detailsButton = button(self.scroll, "StorageHelp", "SAVE + RECOVERY HELP", function()
+        self.detailsOpen = not self.detailsOpen
+        if self.layoutWidth then self:resize(self.layoutWidth, self.layoutHeight) end
+        self:paint()
+    end)
     self.notice = W.label(self.scroll, "Result", "", 13, W.amber)
     self.footer = W.frame(self.root, "GuideActions")
     self.edit = button(self.footer, "EditNotes", "EDIT NOTES", function()
@@ -340,11 +347,12 @@ function Coach:paint()
     W.set(self.blank, "Text", if confirmAction == "blank" then "CONFIRM BLANK" else "START BLANK")
     W.set(self.reopen, "Text", if confirmAction == "restore" then "CONFIRM REOPEN" else "REOPEN SAVE")
     W.set(self.status, "Text", saveStatus(s))
+    self.steps:update(if self.tip >= 4 then 4 elseif self.tip == 3 then 3 elseif self.tip == 2 then 2 else 1)
     self.status:SetAttribute("SaveState", saveStatus(s))
-    W.set(self.tipText, "Text", string.format("TIP %d / %d\n%s", self.tip, #tips, tips[self.tip]))
+    W.set(self.tipText, "Text", tips[self.tip])
     W.set(self.availability, "Text", self.message or (if not exampleReady then problem
-        elseif preview then "Local preview audio; listening review pending. Select a role, then tap its physical pad."
-        else "Select a role, then tap its physical pad. The two-bar example is a loop, not a finished Song."))
+        elseif preview then "Local preview audio / listening review pending."
+        else "Two bars to make your own."))
     enabled(self.example, solo and not s.saving and exampleReady)
     enabled(self.blank, solo and not s.saving)
     enabled(self.edit, ready)
@@ -392,13 +400,14 @@ function Coach:paint()
     if s and s.jam and s.jam.active then
         boundary ..= " Leave the jam for solo playback."
     end
-    boundary ..= " Arrange sections in SONG and FINISH before a public set."
+    boundary ..= " SONG arranges loops; FINISH makes a Song."
     W.set(self.boundary, "Text", boundary)
-    W.set(self.notice, "Text", self.message or (s and s.notice) or
-        "Full editing is always available. No quest, companion or tutorial completion is required.")
+    W.set(self.detailsButton, "Text", if self.detailsOpen then "LESS HELP" else "SAVE + RECOVERY HELP")
+    W.set(self.notice, "Text", self.message or (s and s.notice) or "")
 end
 
 function Coach:resize(width, height)
+    self.layoutWidth, self.layoutHeight = width, height
     W.place(self.status, 0, 0, math.max(0, width - 114), 44)
     W.place(self.toggle, width - 110, 0, 110, 44)
     W.place(self.scroll, 0, 50, width, math.max(0, height - 102))
@@ -420,11 +429,13 @@ function Coach:resize(width, height)
             y += h + 8
         end
     end
+    W.place(self.steps.root, 0, y, w, 56)
+    y += 64
     W.place(self.title, 0, y, w, 28)
     y += 32
     row(self.example, self.blank)
-    W.place(self.availability, 0, y, w, 80)
-    y += 88
+    W.place(self.availability, 0, y, w, 48)
+    y += 56
     self.firstRoleY = y
     for _, item in self.roles do
         local roleHeight = if narrow then 192 else 140
@@ -441,8 +452,8 @@ function Coach:resize(width, height)
         end
         y += roleHeight + 6
     end
-    W.place(self.tipText, 0, y, w, 108)
-    y += 112
+    W.place(self.tipText, 0, y, w, 56)
+    y += 60
     W.place(self.nextTip, 0, y, w, 44)
     y += 52
     W.place(self.nameLabel, 0, y, w, 24)
@@ -453,8 +464,11 @@ function Coach:resize(width, height)
     row(self.recovery, self.leave)
     W.place(self.show, 0, y, w, 44)
     y += 52
-    W.place(self.boundary, 0, y, w, 144)
-    y += 152
+    W.place(self.detailsButton, 0, y, w, 44)
+    y += 52
+    self.boundary.Visible = self.detailsOpen == true
+    W.place(self.boundary, 0, y, w, 120)
+    if self.detailsOpen then y += 128 end
     W.place(self.notice, 0, y, w, 128)
     self.scroll.CanvasSize = UDim2.fromOffset(0, y + 136)
 end

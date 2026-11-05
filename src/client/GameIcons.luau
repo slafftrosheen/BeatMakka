@@ -339,4 +339,10 @@ function Icons.make(parent, name, color, size)
     end
     return root
 end
+function Icons.tint(root, color)
+    for _, child in root:GetDescendants() do
+        if child:IsA("Frame") then child.BackgroundColor3 = color
+        elseif child:IsA("UIStroke") then child.Color = color end
+    end
+end
 return Icons
