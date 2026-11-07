@@ -337,6 +337,18 @@ function ListeningSession:stop(notice)
             self.results[self.owner].captureNotice = captureNotice
         end
     end
+    if performer and self.prepared then
+        local receipt = self.results[performer]
+        if not performance then
+            receipt = {
+                completed = not self.prepared.loop and Workspace:GetServerTimeNow() >= self.startedAt + self.prepared.schedule.completeAt,
+                duration = math.max(0, Workspace:GetServerTimeNow() - self.startedAt),
+            }
+            self.results[performer] = receipt
+        end
+        -- Session receipt only; no save, progression or musical mutation.
+        receipt.id, receipt.mode, receipt.title = self.revision, self.prepared.mode, self.prepared.title
+    end
     local members = self.members
     self.members, self.owner, self.prepared, self.performanceEligible = {}, nil, nil, false
     self.revision += 1

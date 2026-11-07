@@ -45,11 +45,7 @@ function View.new(screen, send, showGames, showReward, goal)
     self.receiptTitle.Position, self.receiptTitle.Size = UDim2.fromOffset(80, 6), UDim2.new(1, -88, 0, 30)
     self.receiptAction = Gui.button(self.receipt, "WEAR", function() self:receiptChoose() end)
     self.receiptAction.Position, self.receiptAction.Size = UDim2.fromOffset(80, 36), UDim2.new(1, -88, 0, 44)
-    self.receiptDone = Gui.button(self.receipt, "OK", function()
-        self.receiptId, self.receipt.Visible = nil, false
-        self:render()
-        if Input.GamepadEnabled then GuiService.SelectedObject = self.games end
-    end)
+    self.receiptDone = Gui.button(self.receipt, "NEXT", function() self:receiptNext() end)
     self.receiptDone.Position, self.receiptDone.Size = UDim2.fromOffset(80, 82), UDim2.new(1, -88, 0, 44)
     for index, prize in Fair.Prizes do
         local row = Gui.make("Frame", self.scroll, { Size = UDim2.new(1, -8, 0, 104), BackgroundColor3 = Theme.Graphite, BorderSizePixel = 0, LayoutOrder = index })
@@ -125,6 +121,33 @@ function View:receiptChoose()
     if not prize or not q or self.pending then return end
     if q.rewards[prize.category] ~= prize.id then self:choose(prize)
     elseif self.showReward then self.showReward(prize) end
+end
+function View:receiptNextPrize()
+    local q = self.state and self.state.quay
+    if not q or not self.fair then return nil end
+    local prize = Guide.prize(self.fair, q.rewards, self.goal.id)
+    if not prize or prize.id ~= self.receiptId then return prize end
+    -- Wear for this receipt stays above; another prize is a separate choice.
+    for _, item in Fair.Prizes do
+        if item.id ~= self.receiptId and self.fair.prizes[item.id] and q.rewards[item.category] ~= item.id then return item end
+    end
+    for _, item in Fair.Prizes do
+        if item.id ~= self.receiptId and not self.fair.prizes[item.id] and self.fair.balance >= item.cost then return item end
+    end
+    return nil
+end
+function View:receiptNext()
+    if self.pending or not self.state or not self.fair then return end
+    local prize = self:receiptNextPrize()
+    if prize then
+        local owned = self.fair.prizes[prize.id] == true
+        self.receiptId = if owned then prize.id else nil
+        if not owned then self.goal.id = prize.id end
+        self:render()
+        self.scroll.CanvasPosition = if owned then Vector2.zero else Vector2.new(0, ((table.find(Fair.Prizes, prize) or 1) - 1) * 114)
+        if Input.GamepadEnabled then GuiService.SelectedObject = if owned then self.receiptAction else self.rows[prize.id].action end
+    elseif Guide.nextGame(self.fair) then self:gamesRoute()
+    else self.send("QuaySideClose") end
 end
 function View:accept(state)
     local was = self.root.Visible
@@ -230,9 +253,19 @@ function View:render()
         self.receiptTitle.Text = receipt.label
         local equipped = q.rewards[receipt.category] == receipt.id
         self.receiptAction.Text = if self.pending then "…" elseif not equipped then "WEAR"
-            elseif receipt.category == "roamer" then "SEE" elseif receipt.category == "companion" then "PEOPLE" else "DONE"
+            elseif receipt.category == "roamer" then "SEE" elseif receipt.category == "companion" then "PEOPLE" else "SHOW"
         self.receiptAction:SetAttribute("UiIcon", if not equipped then "check" elseif receipt.category == "roamer" then "van"
-            elseif receipt.category == "companion" then "people" else "door")
+            elseif receipt.category == "companion" then "people" else "badge")
+        self.receiptAction.BackgroundColor3, self.receiptAction.TextColor3 = Theme.Amber, Theme.Ink
+        self.receiptAction:SetAttribute("AccessibleLabel", if not equipped then "Wear " .. receipt.label
+            else "Show where " .. receipt.label .. " is worn")
+        local nextPrize = self:receiptNextPrize()
+        local nextGame = Guide.nextGame(self.fair)
+        self.receiptDone.Text = if nextPrize then "NEXT" elseif nextGame then "PLAY" else "OUT"
+        self.receiptDone:SetAttribute("UiIcon", if nextPrize then nextPrize.icon elseif nextGame then Games.ById[nextGame].icon else "door")
+        self.receiptDone:SetAttribute("AccessibleLabel", if nextPrize then "Look at " .. nextPrize.label .. "; no automatic claim"
+            elseif nextGame then "Follow the picture to " .. Games.ById[nextGame].title else "Return to the fair")
+        self.receiptDone.Active, self.receiptDone.Interactable, self.receiptDone.Selectable = self.pending == nil, self.pending == nil, self.pending == nil
         self.receiptAction.Active, self.receiptAction.Interactable, self.receiptAction.Selectable = self.pending == nil, self.pending == nil, self.pending == nil
     end
     local focused = GuiService.SelectedObject
