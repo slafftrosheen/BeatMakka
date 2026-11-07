@@ -1,10 +1,12 @@
 -- Fixed arrangement LCD. Cards, repeat blocks, popups and hardware keys are
 -- allocated once; state updates only rebind their values and stable identities.
 local Input = game:GetService("UserInputService")
+local GuiService = game:GetService("GuiService")
 local Http = game:GetService("HttpService")
 local Shared = game.ReplicatedStorage.Shared
 local Transport = require(Shared.MusicTransport)
 local W = require(script.Parent.DeviceWidgets)
+local Icons = require(script.Parent.GameIcons)
 local Song = {}
 Song.__index = Song
 local Dim = Color3.fromRGB(114, 146, 111)
@@ -184,6 +186,10 @@ function Song.new(parent, callbacks)
     self.clock = text(self.rootFrame, "DigitalClock", "00:00", 20, W.amber)
     self.clock.TextXAlignment = Enum.TextXAlignment.Right
     self.overview = text(self.rootFrame, "SongOverview", "ARRANGE YOUR SECTIONS", 11, Dim)
+    self.takeGuide = W.frame(self.rootFrame, "TakeSavePicture")
+    self.takeGuide.Visible, self.takeGuide.ZIndex = false, 5
+    self.takeGuideLabel = text(self.takeGuide, "NextAction", "", 11, W.amber)
+    self.takeGuideLabel.Position, self.takeGuideLabel.Size = UDim2.fromOffset(22, 0), UDim2.new(1, -22, 1, 0)
     self.status = text(self.rootFrame, "SongStatus", "STOPPED", 11, Dim)
     self.status.TextXAlignment = Enum.TextXAlignment.Right
     self.timeline = W.frame(self.rootFrame, "ArrangementTimeline")
@@ -365,6 +371,14 @@ function Song.new(parent, callbacks)
         self.keys[spec[1]] = key
     end
 
+    local saveGuideBorder = W.frame(self.keys.Save, "NextTakeAction")
+    saveGuideBorder.Size, saveGuideBorder.ZIndex = UDim2.fromScale(1, 1), 8
+    local playGuideBorder = W.frame(self.keys.Play, "NextTakeAction")
+    playGuideBorder.Size, playGuideBorder.ZIndex = UDim2.fromScale(1, 1), 8
+    self.takeSaveOutline = W.make("UIStroke", saveGuideBorder, { Color = W.amber, Thickness = 3,
+        ApplyStrokeMode = Enum.ApplyStrokeMode.Border, Enabled = false })
+    self.takePlayOutline = W.make("UIStroke", playGuideBorder, { Color = W.amber, Thickness = 3,
+        ApplyStrokeMode = Enum.ApplyStrokeMode.Border, Enabled = false })
     self.popup = W.frame(self.rootFrame, "SongPopup", W.ink)
     self.popup.ZIndex, self.popup.Visible = 20, false
     W.make("UIStroke", self.popup, { Color = W.amber, Thickness = 1 })
@@ -729,10 +743,46 @@ function Song:_render()
         key:SetAttribute("Enabled", enabled)
     end
     self.keys.Save:SetAttribute("Selected", draft ~= nil and draft.savedRevision == draft.revision)
+    self:_takeGuidance(draft, #steps > 0)
     if self.popup.Visible then
         self:_renderPopup()
     end
     self:tick()
+end
+function Song:guideTake(id)
+    self.guidedTakeId = id
+end
+function Song:_takeGuidance(draft, canPlay)
+    local state = self.state
+    local take = state and state.stage and state.stage.take
+    local active = draft ~= nil and take ~= nil and take.id == self.guidedTakeId and take.imported
+        and take.inWorkspace and state.music.draftId == take.draftId
+    self.takeGuideActive = active
+    self.takeGuide.Visible, self.clock.Visible = active, not active
+    self.takeSaveOutline.Enabled, self.takePlayOutline.Enabled = false, false
+    if not active then self.guidedTakeId = nil; return end
+    if Input.GamepadEnabled and GuiService.SelectedObject == self.keys.Save and not self.keys.Save.Selectable then
+        GuiService.SelectedObject = self.drafts
+    end
+    local saved = take.saved == true and draft.savedRevision == draft.revision
+    local waiting = state.saving == true
+    local unavailable = state.saveMode == "unavailable"
+    local icon = if waiting then "eye" elseif saved then "check" else "save"
+    if self.takeGuideIcon ~= icon then
+        if self.takeGuidePicture then self.takeGuidePicture:Destroy() end
+        self.takeGuidePicture = Icons.make(self.takeGuide, icon, W.amber, 16)
+        self.takeGuidePicture.ZIndex = 6
+        for _, child in self.takeGuidePicture:GetDescendants() do if child:IsA("GuiObject") then child.ZIndex = 6 end end
+        self.takeGuideIcon = icon
+    end
+    self.takeGuideLabel.Text = if waiting then "SAVING" elseif saved then
+        (if state.saveMode == "session" then "SESSION" else "SAVED")
+        elseif unavailable then "RETRY" else "SAVE"
+    self.takeSaveOutline.Enabled = not waiting and not saved
+    self.takePlayOutline.Enabled = not waiting and saved and canPlay
+    self.takeGuide:SetAttribute("AccessibleLabel", (if waiting then "Saving; wait for acknowledgement" elseif saved then
+        (if state.saveMode == "session" then "Saved for this Studio session only; choose Play" else "Saved; choose Play")
+        elseif unavailable then "Not saved; retry Save" else "Choose Save to keep this draft") .. ". No automatic save or playback.")
 end
 function Song:update(state)
     local oldId = self.state and self.state.music and self.state.music.draftId
@@ -767,6 +817,7 @@ function Song:resize(width, height)
     W.place(self.drafts, w - 158, 3, 70, 25)
     W.place(self.clock, w - 84, 3, 78, 25)
     W.place(self.overview, 6, 29, w - 104, 17)
+    W.place(self.takeGuide, w - 88, 6, 82, 20)
     W.place(self.status, w - 98, 29, 92, 17)
     W.place(self.timeline, 5, timelineY, w - 10, timelineHeight)
     local arrow, gap = if w < 400 then 23 else 28, 6
@@ -829,6 +880,9 @@ function Song:tick()
     local transport = music.transport
     local active = transport and transport.ref.kind == "song" and transport.ref.id == music.draftId
     local playing = active and transport.playing
+    self.takeGuide.Visible = self.takeGuideActive == true and not playing
+    self.clock.Visible = not self.takeGuide.Visible
+    if playing then self.takePlayOutline.Enabled = false end
     W.legend(self.keys.Play, if playing then "PAUSE" else "PLAY")
     self.keys.Play:SetAttribute("Selected", playing == true)
     local position = 0

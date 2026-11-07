@@ -57,6 +57,7 @@ local recordView, updateRecordUi
 local jamView
 local listeningView
 local stageView
+local stageSaveRoute
 local updateListeningUi
 local concertView
 local concertScene = ConcertScene.new()
@@ -152,6 +153,15 @@ connect(playerGui.ChildAdded, updateTouchControls)
 
 local function send(action, a, b)
     if canSend(state, action) then
+        if action == "StageStudio" then
+            local take = state.stage and state.stage.take
+            local music = state.music
+            stageSaveRoute = if take and take.imported and take.inWorkspace and not take.saved
+                and music and music.draftId == take.draftId then {
+                    takeId = take.id, draftId = take.draftId, projectId = music.projectId,
+                    generation = music.workspaceGeneration, expires = os.clock() + 15,
+                } else nil
+        elseif action == "StageClose" then stageSaveRoute = nil end
         if type(action) == "string" and action:sub(1, 3) == "Jam"
             and action ~= "JamOpen" and action ~= "JamHide" and action ~= "JamLeave" then
             local jam = state and state.jam
@@ -470,6 +480,25 @@ connect(stateEvent.OnClientEvent, function(nextState)
         state.dirty
     )
     view:update(state)
+    if stageSaveRoute then
+        local route, music = stageSaveRoute, state.music
+        local take = state.stage and state.stage.take
+        local matches = music and take and take.id == route.takeId and take.imported and take.inWorkspace
+            and music.projectId == route.projectId and music.workspaceGeneration == route.generation
+            and music.draftId == route.draftId and take.draftId == route.draftId
+        if os.clock() > route.expires or not matches then
+            stageSaveRoute = nil
+        elseif state.station and not (state.stage and state.stage.open) and not nextRecord and not jamActive then
+            stageSaveRoute = nil
+            view.songScreen:guideTake(route.takeId)
+            view:showPage("Song")
+            if UserInputService.GamepadEnabled then
+                local song = view.songScreen
+                game:GetService("GuiService").SelectedObject = if take.saved and song.keys.Play.Selectable then song.keys.Play
+                    elseif song.keys.Save.Selectable then song.keys.Save else song.drafts
+            end
+        end
+    end
     if nextRecord then
         view:cancelInput(false)
         view.panel.Visible = false

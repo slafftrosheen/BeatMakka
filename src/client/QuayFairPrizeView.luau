@@ -212,7 +212,7 @@ function View:render()
         anyUnworn = anyUnworn or (owned and not equipped)
         allOwned = allOwned and owned
         anyOwned = anyOwned or owned
-        row.picture:update(owned)
+        row.picture:update(owned, equipped)
         row.goalMark.Visible = self.goal.id == prize.id and not owned
         row.outline.Enabled = suggested ~= nil and suggested.id == prize.id and not self.receiptId and not self.pending
         local waiting = self.pending ~= nil
@@ -221,7 +221,7 @@ function View:render()
             elseif equipped then (if prize.category == "companion" then "PEOPLE" elseif prize.category == "roamer" then "SEE" else "SHOW") elseif owned then "WEAR" elseif affordable then "GET" else "PLAY"
         row.action:SetAttribute("UiIcon", if row.outline.Enabled then "hand" elseif equipped then
             (if prize.category == "companion" then "people" elseif prize.category == "roamer" then "van" else "badge")
-            elseif owned then "check" elseif affordable then "bag" else "coin")
+            elseif owned then "bag" elseif affordable then "bag" else "coin")
         row.action:SetAttribute("AccessibleLabel", prize.label .. (if equipped then " / equipped / show reward destination" elseif owned then " / equip owned prize"
             elseif affordable then " / claim for " .. prize.cost .. " coins" else " / play games for " .. (prize.cost - self.fair.balance) .. " more coins"))
         row.action.Active, row.action.Interactable, row.action.Selectable = enabled, enabled, enabled
@@ -249,12 +249,12 @@ function View:render()
             self.receiptPicture.root.Position = UDim2.fromOffset(8, 18)
             self.receiptPictureId = receipt.id
         end
-        self.receiptPicture:update(true)
         self.receiptTitle.Text = receipt.label
         local equipped = q.rewards[receipt.category] == receipt.id
+        self.receiptPicture:update(true, equipped)
         self.receiptAction.Text = if self.pending then "…" elseif not equipped then "WEAR"
             elseif receipt.category == "roamer" then "SEE" elseif receipt.category == "companion" then "PEOPLE" else "SHOW"
-        self.receiptAction:SetAttribute("UiIcon", if not equipped then "check" elseif receipt.category == "roamer" then "van"
+        self.receiptAction:SetAttribute("UiIcon", if not equipped then "hand" elseif receipt.category == "roamer" then "van"
             elseif receipt.category == "companion" then "people" else "badge")
         self.receiptAction.BackgroundColor3, self.receiptAction.TextColor3 = Theme.Amber, Theme.Ink
         self.receiptAction:SetAttribute("AccessibleLabel", if not equipped then "Wear " .. receipt.label

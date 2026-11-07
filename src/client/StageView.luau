@@ -566,7 +566,8 @@ function View:_render()
     end
     self:_caption(self.primary, if finished then "AGAIN" elseif stage.hosting then "STOP" elseif stage.canStart then "PLAY"
         elseif stage.requesting then "CANCEL" else "PREPARE")
-    local nextPrimary = finished or stage.canStart or (ready and not (self.short and self.captureTake and retained))
+    local saveNext = finished and take and take.imported and take.inWorkspace and not take.saved
+    local nextPrimary = if finished then not saveNext else stage.canStart or (ready and not (self.short and self.captureTake and retained))
     local primaryColor = if nextPrimary then W.ink else W.text
     self.primary.BackgroundColor3 = if nextPrimary then W.amber else W.ink
     self.primary.TextColor3, self.primary.TextSize = primaryColor, 18
@@ -574,7 +575,8 @@ function View:_render()
     enabled(self.primary, finished or stage.hosting or stage.canStart or stage.requesting
         or (choice ~= nil and review ~= nil and review.ready and not stage.listening and not (self.short and self.captureTake and retained)))
     self:_caption(self.secondary, if finished then "STUDIO" elseif stage.canStart then "CANCEL SET" elseif stage.listening then "LISTENING" else "LISTEN")
-    self:_icon(self.secondary, if finished then "van" elseif stage.canStart then "close" else "headphones")
+    self.secondary.BackgroundColor3, self.secondary.TextColor3 = if saveNext then W.amber else W.ink, if saveNext then W.ink else W.text
+    self:_icon(self.secondary, if saveNext then "save" elseif finished then "van" elseif stage.canStart then "close" else "headphones", if saveNext then W.ink else W.text)
     self.secondary:SetAttribute("AccessibleLabel", if finished then "Go to your own studio to create or save music" elseif stage.canStart then "Cancel your prepared set"
         elseif stage.listening then "Already listening by choice" else "Choose to listen to this player's set")
     enabled(self.secondary, finished or stage.canStart or (stage.canJoin and not stage.listening))
@@ -582,7 +584,7 @@ function View:_render()
     self:_icon(self.close, "door")
     local notice = if stage.canStart then "Your turn / start within " .. math.max(0, math.ceil((stage.offerEndsAt or 0) - workspace:GetServerTimeNow())) .. "s"
         elseif self.noticeText and os.clock() < self.noticeUntil then self.noticeText
-        elseif finished then (if retained then "KEEP AS DRAFT / THEN SAVE" else "AGAIN / STUDIO / OUT")
+        elseif finished then (if retained then "KEEP AS DRAFT / THEN SAVE" elseif saveNext then "SAVE AT STUDIO" else "AGAIN / STUDIO / OUT")
         elseif stage.listening then self.audioStatus or "LISTENING"
         elseif stage.requesting then "WAIT / " .. tostring(stage.position)
         elseif stage.hosting then "PLAYING"
@@ -590,7 +592,7 @@ function View:_render()
         elseif ready then "PREPARE"
         else "CHOOSE"
     local noticeIcon = if stage.hosting then "sound" elseif stage.listening then "headphones"
-        elseif stage.canStart or nextPrimary then "hand" elseif stage.requesting then "eye"
+        elseif saveNext or stage.canStart or nextPrimary then "hand" elseif stage.requesting then "eye"
         elseif needsMusic then "van" else "library"
     if self.noticeIcon ~= noticeIcon then
         self.noticePicture:ClearAllChildren()
@@ -631,6 +633,7 @@ function View:update(stage, muted, notice, audioStatus)
     if self.panel.Visible and Input.GamepadEnabled and (not wasOpen or not selected
         or (self.finish.root.Visible and not oldFinish) or not selected:IsDescendantOf(self.panel) or not selected.Selectable or not visible(selected)) then
         GuiService.SelectedObject = if self.finish.root.Visible and self.keepTake.Visible and self.keepTake.Selectable then self.keepTake
+            elseif self.finish.root.Visible and stage.take and stage.take.imported and stage.take.inWorkspace and not stage.take.saved then self.secondary
             elseif self.primary.Selectable then self.primary elseif self.studio.Visible and self.studio.Selectable then self.studio
             elseif self.secondary.Selectable then self.secondary else self.close
     elseif wasOpen and not self.panel.Visible and selected and selected:IsDescendantOf(self.panel) then
