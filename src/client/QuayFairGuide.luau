@@ -9,8 +9,12 @@ function Guide.nextGame(fair, preferred)
     end
     return nil
 end
-function Guide.prize(fair, rewards)
+function Guide.prize(fair, rewards, preferred)
     if not fair then return nil end
+    local target = Fair.find(preferred)
+    if target and not fair.prizes[target.id] then
+        return if fair.balance >= target.cost then target else nil
+    end
     for _, prize in Fair.Prizes do
         if fair.prizes[prize.id] and (rewards or {})[prize.category] ~= prize.id then return prize end
     end
@@ -19,14 +23,16 @@ function Guide.prize(fair, rewards)
     end
     return nil
 end
-function Guide.goal(fair)
+function Guide.goal(fair, preferred)
+    local target = Fair.find(preferred)
+    if target and (not fair or not fair.prizes[target.id]) then return target end
     for _, prize in Fair.Prizes do
         if not fair or not fair.prizes[prize.id] then return prize end
     end
     return nil
 end
-function Guide.afterRound(fair, rewards, current)
-    local prize = Guide.prize(fair, rewards)
+function Guide.afterRound(fair, rewards, current, preferred)
+    local prize = Guide.prize(fair, rewards, preferred)
     if prize then return { kind = "prize", prize = prize, icon = prize.icon, caption = "PRIZE" } end
     local gameId = Guide.nextGame(fair, current)
     if gameId then return { kind = "game", id = gameId, caption = if gameId == current then "PLAY" else "NEXT" } end

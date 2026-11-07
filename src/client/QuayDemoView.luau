@@ -100,10 +100,11 @@ function View.new()
     self.worldGuidance = require(script.Parent.QuayWorldGuidance).new(self.screen)
     self.voice = require(script.Parent.CompanionVoice).new(self.screen)
     self.commissionVoice = require(script.Parent.QuayCommissionVoice).new(self.screen)
+    self.fairGoal = {} -- Local picture target only; not currency or saved progression.
     self.sideActivities = require(script.Parent.QuaySideActivityView).new(self.screen, send, function(gameId)
         if gameId then self.route:trackActivity(gameId); return end
         self.route:trackPlace("fair_prizes", "FAIR PRIZES", "Follow the prize picture. Choose a prize with your coins.")
-    end)
+    end, self.fairGoal)
     self.fairPrizes = require(script.Parent.QuayFairPrizeView).new(self.screen, send, function()
         local fair = self.state and self.state.quay and self.state.quay.fair
         local id = require(script.Parent.QuayFairGuide).nextGame(fair)
@@ -117,7 +118,7 @@ function View.new()
             self.tab = "companions"
             send("QuayJournal")
         end
-    end)
+    end, self.fairGoal)
     self.badges = require(script.Parent.QuayBadgeView).new(self.screen)
     self.toggle = Gui.button(self.screen, "MAP", function()
         self.tab = "play"
@@ -728,6 +729,9 @@ function View.new()
         self.connections,
         network.State.OnClientEvent:Connect(function(state)
             self.state = state
+            if self.fairGoal.id and state.quay and state.quay.fair and state.quay.fair.prizes[self.fairGoal.id] then
+                self.fairGoal.id = nil
+            end
             self.route:accept(state)
             self.interiorGuide:accept(state)
             self.voice:accept(state)

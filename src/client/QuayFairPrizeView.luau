@@ -8,6 +8,7 @@ local GuiService = game:GetService("GuiService")
 local Steps = require(script.Parent.VisualSteps)
 local RewardPicture = require(script.Parent.FairRewardPicture)
 local Guide = require(script.Parent.QuayFairGuide)
+local CoinSlots = require(script.Parent.FairCoinSlots)
 local View = {}
 View.__index = View
 local function picture(parent, name, color, size)
@@ -16,8 +17,8 @@ local function picture(parent, name, color, size)
     for _, child in icon:GetDescendants() do if child:IsA("GuiObject") then child.ZIndex = 4 end end
     return icon
 end
-function View.new(screen, send, showGames, showReward)
-    local self = setmetatable({ rows = {}, awaiting = {}, intent = 0, send = send, showGames = showGames, showReward = showReward }, View)
+function View.new(screen, send, showGames, showReward, goal)
+    local self = setmetatable({ goal = goal or {}, rows = {}, awaiting = {}, intent = 0, send = send, showGames = showGames, showReward = showReward }, View)
     self.root = Gui.round(Gui.make("Frame", screen, {
         Name = "FairPrizes", AnchorPoint = Vector2.new(0.5, 0.5), Position = UDim2.fromScale(0.5, 0.5),
         Size = UDim2.new(1, -24, 0.92, 0), BackgroundColor3 = Theme.Ink, BorderSizePixel = 0, Visible = false, ZIndex = 30,
@@ -56,18 +57,16 @@ function View.new(screen, send, showGames, showReward)
         art.root.Position = UDim2.fromOffset(3, 12)
         local title = Gui.label(row, prize.label, 13, Theme.Cream)
         title.Position, title.Size = UDim2.fromOffset(68, 4), UDim2.new(1, -76, 0, 24)
-        local tokens = {}
-        for coin = 1, prize.cost / Fair.CoinsPerHeat do
-            local token = picture(row, "coin", Theme.Stone, 18)
-            token.Position = UDim2.fromOffset(68 + (coin - 1) * 23, 28)
-            tokens[coin] = token
-        end
+        local tokens = CoinSlots.new(row, prize.cost / Fair.CoinsPerHeat, 18, 5, 4)
+        tokens.root.Position = UDim2.fromOffset(68, 28)
         local cost = Gui.label(row, tostring(prize.cost), 12, Theme.Cream)
-        cost.Position, cost.Size = UDim2.fromOffset(68 + #tokens * 23, 26), UDim2.fromOffset(36, 22)
+        cost.Position, cost.Size = UDim2.fromOffset(68 + prize.cost / Fair.CoinsPerHeat * 23, 26), UDim2.fromOffset(36, 22)
         local action = Gui.button(row, "GET", function() self:choose(prize) end)
         action.Position, action.Size = UDim2.fromOffset(68, 52), UDim2.new(1, -76, 0, 44)
         local outline = Gui.make("UIStroke", row, { Color = Theme.Amber, Thickness = 2, Enabled = false })
-        self.rows[prize.id] = { outline = outline, action = action, tokens = tokens, cost = cost, picture = art }
+        local goalMark = picture(row, "flag", Theme.Amber, 16)
+        goalMark.Position, goalMark.Visible = UDim2.fromOffset(48, 4), false
+        self.rows[prize.id] = { goalMark = goalMark, outline = outline, action = action, tokens = tokens, cost = cost, picture = art }
     end
     self.games = Gui.button(self.root, "PLAY", function() self:gamesRoute() end)
     self.games.Position, self.games.Size = UDim2.new(0, 12, 1, -52), UDim2.fromOffset(112, 44)
@@ -94,6 +93,7 @@ function View:gamesRoute()
 end
 function View:choose(prize)
     if not self.fair or self.pending then return end
+    if not self.fair.prizes[prize.id] then self.goal.id = prize.id end
     if self.fair.prizes[prize.id] and self.state.quay.rewards[prize.category] == prize.id then
         self.receiptId = prize.id
         self.scroll.CanvasPosition = Vector2.zero
@@ -155,8 +155,9 @@ function View:accept(state)
         if Input.GamepadEnabled then GuiService.SelectedObject = self.receiptAction end
     end
     if not was then
-        local prize = Guide.prize(self.fair, state.quay.rewards)
-        local index = if prize then table.find(Fair.Prizes, prize) else 1
+        local prize = Guide.prize(self.fair, state.quay.rewards, self.goal.id)
+        local target = prize or Fair.find(self.goal.id)
+        local index = if target then table.find(Fair.Prizes, target) else 1
         self.scroll.CanvasPosition = Vector2.new(0, ((index or 1) - 1) * 114)
         if Input.GamepadEnabled then GuiService.SelectedObject = if prize then self.rows[prize.id].action else self.games end
     end
@@ -172,14 +173,14 @@ function View:render()
         elseif state.saveMode == "session" then "STUDIO SESSION"
         elseif state.dirty then "UNSAVED CHANGES" else "JOURNAL KEPT"
     if state.notice then self.notice.Text = state.notice end
-    local suggested = Guide.prize(self.fair, q.rewards)
+    local suggested = Guide.prize(self.fair, q.rewards, self.goal.id)
     local gameId = Guide.nextGame(self.fair)
     self.games.Text = if gameId then "PLAY" else "PRACTICE"
     self.games:SetAttribute("UiIcon", if gameId then Games.ById[gameId].icon else "redo")
     self.games:SetAttribute("AccessibleLabel", if gameId then "Follow the picture route to a game with coins remaining" else "All fair coins earned; play again for fun without more coins")
     self.games.BackgroundColor3 = if not suggested and not self.receiptId then Theme.Amber else Theme.Teal
     self.games.TextColor3 = if not suggested and not self.receiptId then Theme.Ink else Theme.Cream
-    local anyOwned, anyAffordable, anyUnworn, allOwned = false, false, false, true
+    local anyOwned, anyUnworn, allOwned = false, false, true
     for _, prize in Fair.Prizes do
         local row = self.rows[prize.id]
         local owned = self.fair.prizes[prize.id] == true
@@ -188,8 +189,8 @@ function View:render()
         anyUnworn = anyUnworn or (owned and not equipped)
         allOwned = allOwned and owned
         anyOwned = anyOwned or owned
-        anyAffordable = anyAffordable or (not owned and affordable)
         row.picture:update(owned)
+        row.goalMark.Visible = self.goal.id == prize.id and not owned
         row.outline.Enabled = suggested ~= nil and suggested.id == prize.id and not self.receiptId and not self.pending
         local waiting = self.pending ~= nil
         local enabled = not waiting
@@ -203,14 +204,20 @@ function View:render()
         row.action.Active, row.action.Interactable, row.action.Selectable = enabled, enabled, enabled
         row.action.BackgroundColor3 = if equipped then Theme.Graphite elseif affordable and not owned then Theme.Amber else Theme.Teal
         row.action.TextColor3 = if affordable and not owned then Theme.Ink else Theme.Cream
-        for index, token in row.tokens do
-            Icons.tint(token, if owned or self.fair.balance >= index * Fair.CoinsPerHeat then Theme.Amber else Theme.Stone)
-        end
+        row.tokens:update(if owned then prize.cost / Fair.CoinsPerHeat else self.fair.balance / Fair.CoinsPerHeat,
+            prize.cost / Fair.CoinsPerHeat)
         row.cost.Text = if owned then "" else tostring(prize.cost)
     end
-    self.flow:update(if allOwned and not anyUnworn then 0 elseif self.receiptId or anyUnworn then 3 elseif anyAffordable then 2 else 1,
-        { self.fair.earned > 0, anyOwned, allOwned and not anyUnworn })
     local receipt = Fair.find(self.receiptId)
+    if receipt then
+        local equipped = q.rewards[receipt.category] == receipt.id
+        self.flow:configure({ { "GET", "bag" }, { "WEAR", "check" }, { "SEE", if receipt.category == "roamer" then "van" elseif receipt.category == "companion" then "people" else "badge" } })
+        self.flow:update(if equipped then 3 else 2, { true, equipped, false })
+    else
+        self.flow:configure({ { "PLAY", "pads" }, { "GET", "bag" }, { "WEAR", "check" } })
+        self.flow:update(if allOwned and not anyUnworn then 0 elseif suggested then (if self.fair.prizes[suggested.id] then 3 else 2) else 1,
+            { self.fair.earned > 0, anyOwned, allOwned and not anyUnworn })
+    end
     self.receipt.Visible = receipt ~= nil
     if receipt then
         if self.receiptPictureId ~= receipt.id then

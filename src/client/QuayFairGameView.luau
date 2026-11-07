@@ -8,6 +8,7 @@ local Gui = require(script.Parent.GuiFactory)
 local Icons = require(script.Parent.GameIcons)
 local Steps = require(script.Parent.VisualSteps)
 local Guide = require(script.Parent.QuayFairGuide)
+local CoinSlots = require(script.Parent.FairCoinSlots)
 local Input = game:GetService("UserInputService")
 local Players = game:GetService("Players")
 local GuiService = game:GetService("GuiService")
@@ -23,8 +24,8 @@ end
 local function enable(button, value)
     button.Active, button.Interactable, button.Selectable = value, value, value
 end
-function View.new(screen, send, showPrizes)
-    local self = setmetatable({ send = send, showPrizes = showPrizes, pads = {}, marks = {}, stamps = {}, targets = {}, effects = true }, View)
+function View.new(screen, send, showPrizes, goal)
+    local self = setmetatable({ goal = goal or {}, send = send, showPrizes = showPrizes, pads = {}, marks = {}, targets = {}, effects = true }, View)
     self.root = Gui.round(Gui.make("Frame", screen, { Name = "FairGame", Visible = false,
         AnchorPoint = Vector2.new(0.5, 0.5), Position = UDim2.fromScale(0.5, 0.5),
         Size = UDim2.fromOffset(480, 450), BackgroundColor3 = Theme.Ink, BorderSizePixel = 0, ZIndex = 22 }), 14)
@@ -71,12 +72,9 @@ function View.new(screen, send, showPrizes)
     self.wonCoin.Position = UDim2.new(0.25, -20, 0.5, -26)
     self.outcomeArrow = glyph(self.outcome, "arrow", Theme.Cream, 24)
     self.outcomeArrow.Position, self.outcomeArrow.Rotation = UDim2.new(0.5, -12, 0.5, -12), 90
-    self.goalCoins = {}
-    for i = 1, 4 do
-        local coin = glyph(self.outcome, "coin", Theme.Stone, 18)
-        coin.Position = UDim2.new(0.5, (i - 2.5) * 24 - 9, 1, -20)
-        self.goalCoins[i] = coin
-    end
+    self.goalCoins = CoinSlots.new(self.outcome, 4, 18, 6, 4)
+    self.goalCoins.root.AnchorPoint = Vector2.new(0.5, 1)
+    self.goalCoins.root.Position = UDim2.new(0.5, 14, 1, -2)
     self.progress = Gui.make("Frame", self.root, { BackgroundTransparency = 1 })
     for i = 1, 4 do
         local mark = Gui.round(Gui.make("Frame", self.progress, { Position = UDim2.new(0.5, (i - 2.5) * 30 - 12, 0, 0),
@@ -86,11 +84,9 @@ function View.new(screen, send, showPrizes)
         self.marks[i] = { root = mark, check = check }
     end
     self.coins = Gui.make("Frame", self.root, { BackgroundTransparency = 1 })
-    for i = 1, Fair.Heats do
-        local coin = glyph(self.coins, "coin", Theme.Graphite, 22)
-        coin.Position = UDim2.new(0.5, (i - 2) * 28 - 11, 0, 0)
-        self.stamps[i] = coin
-    end
+    self.stamps = CoinSlots.new(self.coins, Fair.Heats, 22, 6, 4)
+    self.stamps.root.AnchorPoint = Vector2.new(0.5, 0)
+    self.stamps.root.Position = UDim2.fromScale(0.5, 0)
     self.wallet = Gui.label(self.coins, "", 12, Theme.Amber)
     self.wallet.Position, self.wallet.Size = UDim2.new(0.5, 48, 0, 0), UDim2.fromOffset(86, 24)
     self.primary = Gui.button(self.root, "PLAY", function() self:primaryAction() end)
@@ -146,7 +142,7 @@ function View:primaryAction()
         self.pending = os.clock() + 2
         self.send("QuaySideBegin", r.serial)
     elseif r.status == "complete" then
-        local nextStep = Guide.afterRound(self.fair, self.rewards, r.id)
+        local nextStep = Guide.afterRound(self.fair, self.rewards, r.id, self.goal.id)
         if nextStep.kind == "game" and nextStep.id == r.id then
             self.send("QuaySideRetry")
         else
@@ -223,7 +219,7 @@ function View:render()
         return
     end
     local demo, won = r.status == "ready", r.status == "complete"
-    local nextStep = Guide.afterRound(self.fair, self.rewards, r.id)
+    local nextStep = Guide.afterRound(self.fair, self.rewards, r.id, self.goal.id)
     local clears = self.fair and self.fair.clears[r.id] or 0
     self.padArea.Visible, self.outcome.Visible = not won, won
     if won then
@@ -242,11 +238,19 @@ function View:render()
             self.outcomeIconName = name
         end
         -- Empty coin slots explain the next price without requiring arithmetic.
-        local goal = Guide.goal(self.fair)
-        for i, coin in self.goalCoins do
-            coin.Visible = not self.compact and goal ~= nil and i <= goal.cost / Fair.CoinsPerHeat
-            Icons.tint(coin, if self.fair and self.fair.balance >= i * Fair.CoinsPerHeat then Theme.Amber else Theme.Stone)
+        local target = Guide.goal(self.fair, self.goal.id)
+        self.goalCoins.root.Visible = not self.compact and target ~= nil
+        if target then
+            local slots = target.cost / Fair.CoinsPerHeat
+            self.goalCoins:update((self.fair and self.fair.balance or 0) / Fair.CoinsPerHeat, slots)
+            if self.goalPictureId ~= target.id then
+                if self.goalPicture then self.goalPicture:Destroy() end
+                self.goalPicture = glyph(self.outcome, target.icon, Theme.Cream, 22)
+                self.goalPictureId = target.id
+            end
+            self.goalPicture.Position = UDim2.new(0.5, 14 - (slots * 24 - 6) / 2 - 28, 1, -24)
         end
+        if self.goalPicture then self.goalPicture.Visible = self.goalCoins.root.Visible end
         self.outcome:SetAttribute("AccessibleLabel", if nextStep.kind == "prize" then "Go to the prize counter for " .. nextStep.prize.label
             elseif nextStep.kind == "game" then "Earn the next ten coins at " .. Games.ById[nextStep.id].title
             else "All fair prizes owned and worn; leave or play for fun")
@@ -303,7 +307,7 @@ function View:render()
         mark.check.Visible = i <= r.score
         mark.root.BackgroundColor3 = if i <= r.score then Theme.Teal else Theme.Graphite
     end
-    for i, stamp in self.stamps do Icons.tint(stamp, if i <= clears then Theme.Amber else Theme.Graphite) end
+    self.stamps:update(clears, Fair.Heats)
     self.wallet.Text = tostring(self.fair and self.fair.balance or 0)
         .. (if self.saveMode == "session" then " / SESSION" elseif self.saveMode == "unavailable" then " / TEMP" else "")
     self.wallet:SetAttribute("AccessibleLabel", "Fair coins: " .. self.wallet.Text)

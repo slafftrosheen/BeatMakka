@@ -17,9 +17,9 @@ local function cue(role)
         Gui.Cue:Fire(id)
     end
 end
-function View.new(screen, send, showPrizes)
+function View.new(screen, send, showPrizes, goal)
     local self = setmetatable({ send = send, pads = {}, dots = {}, effects = true }, View)
-    self.fairGames = require(script.Parent.QuayFairGameView).new(screen, send, showPrizes)
+    self.fairGames = require(script.Parent.QuayFairGameView).new(screen, send, showPrizes, goal)
     self.root = Gui.round(
         Gui.make("Frame", screen, {
             Name = "StreetGame",

@@ -190,6 +190,7 @@ function View.new(screen, command, mute)
         self:_takeAction("StageTakeDiscard")
     end)
     self.context = self:_label(self.selection, "SourceContext", "", 12)
+    self.queuePictures = require(script.Parent.StageQueuePictures).new(self.selection)
     self.queue = self:_label(self.selection, "PublicQueue", "", 12)
     self.queueRows = {}
     for index = 1, 4 do
@@ -339,6 +340,7 @@ function View:_layout()
         for _, kind in Set.RequestOrder do place(self.requests[kind], 48) end
         place(self.suggestion); pair(self.accept, self.ignore); place(self.feedback)
     else
+        place(self.queuePictures.root, 64)
         place(self.sourceLabel, textHeight(self.sourceLabel, 40)); place(self.playback, 54)
         self.picker:layout(w); place(self.picker.root, self.picker.height)
         place(self.context); place(self.studio, 44); place(self.capture, 48)
@@ -378,10 +380,12 @@ function View:_render()
         elseif challenge then "DRAFT / eight-bar ending / source stays editable"
         elseif self.short then "SHORT EXCERPT / source stays intact"
         elseif normalMode == "FULL SONG" then "FULL FINISHED SONG / original ending" else "LOOP / plays until stopped"
+    self.queuePictures:update(stage)
+    self.queue.Visible = self.helpOpen == true
     local rows = { if stage.performer then "ON STAGE / " .. stage.performer else "STAGE FREE / SOLO WELCOME" }
     for index, row in self.queueRows do
         local entry = stage.entries and stage.entries[index]
-        row.Visible = entry ~= nil
+        row.Visible = entry ~= nil and self.helpOpen == true
         if entry then row.Text = (if index == stage.position then "YOU / " else index .. " / ") .. entry.performer .. "\n" .. entry.title end
     end
     if stage.requesting then
@@ -530,7 +534,10 @@ function View:_render()
     self:_icon(self.primary, if stage.hosting then "stop" elseif stage.canStart then "play" elseif stage.requesting then "close" else "flag", primaryColor)
     enabled(self.primary, stage.hosting or stage.canStart or stage.requesting
         or (choice ~= nil and review ~= nil and review.ready and not stage.listening and not (self.short and self.captureTake and retained)))
-    self:_caption(self.secondary, if stage.canStart then "CANCEL SET" elseif stage.listening then "LISTENING" else "JOIN BY CHOICE")
+    self:_caption(self.secondary, if stage.canStart then "CANCEL SET" elseif stage.listening then "LISTENING" else "LISTEN")
+    self:_icon(self.secondary, if stage.canStart then "close" else "headphones")
+    self.secondary:SetAttribute("AccessibleLabel", if stage.canStart then "Cancel your prepared set"
+        elseif stage.listening then "Already listening by choice" else "Choose to listen to this player's set")
     enabled(self.secondary, stage.canStart or (stage.canJoin and not stage.listening))
     local notice = if stage.canStart then "Your turn / start within " .. math.max(0, math.ceil((stage.offerEndsAt or 0) - workspace:GetServerTimeNow())) .. "s"
         elseif self.noticeText and os.clock() < self.noticeUntil then self.noticeText
