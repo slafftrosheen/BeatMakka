@@ -7,6 +7,7 @@ local Catalog = require(Shared.SampleCatalog)
 local Gui = require(script.Parent.GuiFactory)
 local Icons = require(script.Parent.GameIcons)
 local Steps = require(script.Parent.VisualSteps)
+local Guide = require(script.Parent.QuayFairGuide)
 local Input = game:GetService("UserInputService")
 local Players = game:GetService("Players")
 local GuiService = game:GetService("GuiService")
@@ -65,6 +66,17 @@ function View.new(screen, send, showPrizes)
     self.peg.Position = UDim2.new(0.5, -11, 0.5, -11)
     self.ring = glyph(self.rail, "disc", Theme.Cream, 26)
     self.ring.AnchorPoint = Vector2.new(0.5, 0.5)
+    self.outcome = Gui.make("Frame", self.root, { Name = "WinToNextPicture", BackgroundTransparency = 1, Visible = false })
+    self.wonCoin = glyph(self.outcome, "coin", Theme.Amber, 40)
+    self.wonCoin.Position = UDim2.new(0.25, -20, 0.5, -26)
+    self.outcomeArrow = glyph(self.outcome, "arrow", Theme.Cream, 24)
+    self.outcomeArrow.Position, self.outcomeArrow.Rotation = UDim2.new(0.5, -12, 0.5, -12), 90
+    self.goalCoins = {}
+    for i = 1, 4 do
+        local coin = glyph(self.outcome, "coin", Theme.Stone, 18)
+        coin.Position = UDim2.new(0.5, (i - 2.5) * 24 - 9, 1, -20)
+        self.goalCoins[i] = coin
+    end
     self.progress = Gui.make("Frame", self.root, { BackgroundTransparency = 1 })
     for i = 1, 4 do
         local mark = Gui.round(Gui.make("Frame", self.progress, { Position = UDim2.new(0.5, (i - 2.5) * 30 - 12, 0, 0),
@@ -112,6 +124,7 @@ function View.new(screen, send, showPrizes)
         local width = math.min(if self.compact then 640 else 500, screen.AbsoluteSize.X - 24)
         self.root.Size = UDim2.fromOffset(width, height)
         self.padArea.Position, self.padArea.Size = UDim2.fromOffset(12, 134), UDim2.new(1, -24, 0, if self.compact then math.max(44, height - 248) else 164)
+        self.outcome.Position, self.outcome.Size = self.padArea.Position, self.padArea.Size
         self.progress.Position, self.progress.Size = UDim2.new(0, 12, 1, -106), UDim2.new(1, -24, 0, 24)
         self.coins.Position, self.coins.Size = UDim2.new(0, 12, 1, -78), UDim2.new(1, -24, 0, 24)
         self:render()
@@ -133,8 +146,15 @@ function View:primaryAction()
         self.pending = os.clock() + 2
         self.send("QuaySideBegin", r.serial)
     elseif r.status == "complete" then
-        if self.showPrizes then self.showPrizes() end
-        self.send("QuaySideClose")
+        local nextStep = Guide.afterRound(self.fair, self.rewards, r.id)
+        if nextStep.kind == "game" and nextStep.id == r.id then
+            self.send("QuaySideRetry")
+        else
+            if self.showPrizes and nextStep.kind ~= "done" then
+                self.showPrizes(if nextStep.kind == "game" then nextStep.id else nil)
+            end
+            self.send("QuaySideClose")
+        end
     elseif r.status == "retry" or self.missed then self.send("QuaySideRetry") end
 end
 function View:tap(pad)
@@ -170,6 +190,7 @@ function View:accept(state)
         end
     end
     self.round, self.fair, self.saveMode = r, state.quay and state.quay.fair, state.saveMode
+    self.rewards = state.quay and state.quay.rewards
     self.root.Visible = r ~= nil
     if not r then self.lesson.Visible = false; return end
     if newRound then
@@ -202,6 +223,34 @@ function View:render()
         return
     end
     local demo, won = r.status == "ready", r.status == "complete"
+    local nextStep = Guide.afterRound(self.fair, self.rewards, r.id)
+    local clears = self.fair and self.fair.clears[r.id] or 0
+    self.padArea.Visible, self.outcome.Visible = not won, won
+    if won then
+        local earnedIcon = if (r.coins or 0) > 0 then "coin" else "check"
+        if self.wonCoinName ~= earnedIcon then
+            self.wonCoin:Destroy()
+            self.wonCoin = glyph(self.outcome, earnedIcon, Theme.Amber, 40)
+            self.wonCoin.Position = UDim2.new(0.25, -20, 0.5, -20)
+            self.wonCoinName = earnedIcon
+        end
+        local name = nextStep.icon or Games.ById[nextStep.id].icon
+        if self.outcomeIconName ~= name then
+            if self.outcomeIcon then self.outcomeIcon:Destroy() end
+            self.outcomeIcon = glyph(self.outcome, name, Theme.Amber, 40)
+            self.outcomeIcon.Position = UDim2.new(0.75, -20, 0.5, -20)
+            self.outcomeIconName = name
+        end
+        -- Empty coin slots explain the next price without requiring arithmetic.
+        local goal = Guide.goal(self.fair)
+        for i, coin in self.goalCoins do
+            coin.Visible = not self.compact and goal ~= nil and i <= goal.cost / Fair.CoinsPerHeat
+            Icons.tint(coin, if self.fair and self.fair.balance >= i * Fair.CoinsPerHeat then Theme.Amber else Theme.Stone)
+        end
+        self.outcome:SetAttribute("AccessibleLabel", if nextStep.kind == "prize" then "Go to the prize counter for " .. nextStep.prize.label
+            elseif nextStep.kind == "game" then "Earn the next ten coins at " .. Games.ById[nextStep.id].title
+            else "All fair prizes owned and worn; leave or play for fun")
+    end
     local elapsed = os.clock() - (self.demoAt or os.clock())
     local phase = if demo then (elapsed % Fair.RingPeriod) / Fair.RingPeriod else math.max(0, (now - r.targetAt) % Fair.RingPeriod) / Fair.RingPeriod
     local waiting = not demo and now < r.targetAt
@@ -214,14 +263,17 @@ function View:render()
         active = if r.id == "rings" then (if phase >= Fair.RingLow and phase <= Fair.RingHigh then 1 else nil) else r.sequence[r.index]
     end
     local failed = r.status == "retry" or self.missed
-    self.cue.Text = if won then (if (r.coins or 0) > 0 then "+10" else "3 / 3")
+    self.cue.Text = if won then (if (r.coins or 0) > 0 then "+" .. tostring(r.coins) else "PRACTICE")
         elseif failed then "AGAIN" elseif demo then "WATCH" elseif waiting or (r.id == "rings" and not active) then "WAIT" else "TAP"
-    local cuePicture = if won then "coin" elseif failed then "redo" elseif demo or waiting or not active then "eye" else "hand"
+    local cuePicture = if won then (if (r.coins or 0) > 0 then "coin" else "check") elseif failed then "redo" elseif demo or waiting or not active then "eye" else "hand"
     if self.cuePicture ~= cuePicture then
         self.wait:Destroy()
         self.wait = glyph(self.root, cuePicture, Theme.Amber, 24)
         self.wait.Position, self.cuePicture = UDim2.fromOffset(14, 102), cuePicture
     end
+    self.flow:configure({ { "SEE", "eye" }, { "PLAY", "hand" },
+        { if won then nextStep.caption elseif clears < Fair.Heats then "COIN" else "FUN",
+            if won then (nextStep.icon or Games.ById[nextStep.id].icon) elseif clears < Fair.Heats then "coin" else "redo" } })
     self.flow:update(if won then 3 elseif demo then 1 else 2, { demo == false, won, false })
     self.rail.Visible = r.id == "rings"
     self.ring.Position = UDim2.fromScale(if waiting then 0 else phase, 0.5)
@@ -251,15 +303,16 @@ function View:render()
         mark.check.Visible = i <= r.score
         mark.root.BackgroundColor3 = if i <= r.score then Theme.Teal else Theme.Graphite
     end
-    local clears = self.fair and self.fair.clears[r.id] or 0
     for i, stamp in self.stamps do Icons.tint(stamp, if i <= clears then Theme.Amber else Theme.Graphite) end
     self.wallet.Text = tostring(self.fair and self.fair.balance or 0)
         .. (if self.saveMode == "session" then " / SESSION" elseif self.saveMode == "unavailable" then " / TEMP" else "")
     self.wallet:SetAttribute("AccessibleLabel", "Fair coins: " .. self.wallet.Text)
     local primary = demo or failed or won
     self.primary.Visible, self.again.Visible, self.learn.Visible = primary, won, r.status ~= "playing"
-    self.primary.Text = if demo then "PLAY" elseif won then "PRIZE" else "AGAIN"
-    self.primary:SetAttribute("UiIcon", if won then "badge" elseif failed then "redo" else "play")
+    self.primary.Text = if demo then "PLAY" elseif won then nextStep.caption else "AGAIN"
+    self.primary:SetAttribute("UiIcon", if won then (nextStep.icon or Games.ById[nextStep.id].icon) elseif failed then "redo" else "play")
+    self.primary:SetAttribute("AccessibleLabel", if won then self.outcome:GetAttribute("AccessibleLabel")
+        elseif demo then "Start this game" else "Watch and try again")
     enable(self.primary, primary and not (demo and self.pending and os.clock() < self.pending))
     self.primary.BackgroundColor3 = if won then Theme.Amber else Theme.Teal
     self.primary.TextColor3 = if won then Theme.Ink else Theme.Cream

@@ -244,6 +244,8 @@ function View.new(screen, command, mute)
     end, "hint")
     self.help = self:_label(self.scroll, "StageHelp", "", 12)
     self.notice = self:_label(self.panel, "StageNotice", "", 12)
+    self.noticePicture = W.frame(self.panel, "NextActionPicture")
+    self.noticePicture.ZIndex = 18
     self.primary = self:_button(self.panel, "PrimaryStageAction", "PREPARE", function()
         local stage = self.stage
         if not stage then return end
@@ -297,7 +299,8 @@ function View:_layout()
     if width <= 0 or height <= 0 then return end
     W.place(self.heading, 12, 4, width - 24, 32)
     W.place(self.scroll, 12, 40, width - 24, math.max(0, height - 192))
-    W.place(self.notice, 12, height - 148, width - 24, 44)
+    W.place(self.noticePicture, 12, height - 140, 28, 28)
+    W.place(self.notice, 48, height - 148, width - 60, 44)
     local keyWidth = (width - 30) / 2
     W.place(self.primary, 12, height - 100, keyWidth, 44)
     W.place(self.secondary, 18 + keyWidth, height - 100, keyWidth, 44)
@@ -357,7 +360,6 @@ function View:_render()
     local choice = self:_selected()
     local choices = stage.available or {}
     local challenge = choice and choice.kind == "challenge"
-    self.flow:update(if stage.hosting or stage.listening or stage.canStart then 3 elseif stage.requesting then 2 else 1)
     if challenge then self.short, self.captureTake = true, false end
     W.set(self.heading, "Text", string.upper(stage.venue or "Courtyard") .. " / " .. (if stage.hosting then "YOUR SET" else "PUBLIC SETS"))
     local pinned = stage.requesting and stage.entries and stage.entries[stage.position]
@@ -417,6 +419,12 @@ function View:_render()
             elseif not review.ready then "CHECK SOUND / MAKE"
             elseif review.visual.localOnly then "LOCAL PREVIEW" else "READY"
     end
+    local ready = editable and choice ~= nil and review ~= nil and review.ready == true
+    self.flow:update(if stage.hosting or stage.listening or stage.canStart then 3 elseif stage.requesting or ready then 2 else 1,
+        { choice ~= nil, stage.canStart or stage.hosting or stage.listening, false })
+    local needsMusic = editable and (not choice or (review ~= nil and not review.ready))
+    self.studio.BackgroundColor3, self.studio.TextColor3 = if needsMusic then W.amber else W.ink, if needsMusic then W.ink else W.text
+    self:_icon(self.studio, "van", if needsMusic then W.ink else W.text)
     local take = stage.take
     local retained = take ~= nil and not take.imported
     if retained then self.captureTake = false end
@@ -466,19 +474,26 @@ function View:_render()
         local current = if p.pending and now >= p.pending.at then p.pending else p.current
         local source = p.sources[current.source]
         W.set(self.clock, "Text", seconds(elapsed) .. " / " .. seconds(p.duration) .. " · " .. p.bars .. " BARS · " .. p.bpm .. " BPM")
-        W.set(self.current, "Text", "SPOTLIGHT EXCERPT / " .. (source and source.title or "")
-            .. (if p.localOnly then "\nLocal preview / listening approval pending" else "")
+        W.set(self.current, "Text", (source and source.title or "")
+            .. (if p.localOnly then "\nLOCAL PREVIEW" else "")
             .. (if stage.hosting and p.capturing then "\nCAPTURING / accepted completed bars only" else ""))
         W.set(self.pending, "Text", if p.pending then
             (if now >= p.pending.at then "APPLIED / awaiting state acknowledgement" elseif now >= p.pending.at - Set.Lead then "COMMITTED" else "QUEUED")
                 .. " · bar " .. p.pending.bar .. " / source " .. p.sources[p.pending.source].title
-            else "NEXT CHANGE / BAR BOUNDARY")
+            else "")
+        self.pending.Visible = p.pending ~= nil
         self.cancelChange.Visible = p.pending ~= nil
         local canEdit = stage.hosting and not p.pending and now < p.endsAt
         enabled(self.cancelChange, stage.hosting and p.pending ~= nil and now < p.pending.at - Set.Lead)
         for _, role in Set.RoleOrder do
-            self:_caption(self.layers[role], Set.Labels[role] .. " / " .. (if not p.roles[role] then "NOT IN SET" elseif current.mutes[role] then "MUTED" else "ON"))
-            enabled(self.layers[role], canEdit and p.roles[role] == true)
+            local button = self.layers[role]
+            local audible = not current.mutes[role]
+            button.Visible = p.roles[role] == true
+            self:_caption(button, Set.Labels[role] .. (if audible then " / ON" else " / OFF"))
+            button.BackgroundColor3, button.TextColor3 = if audible then W.amber else W.ink, if audible then W.ink else W.text
+            self:_icon(button, ({ drums = "drum", bass = "bass", hook = "sound", harbour = "waves" })[role], if audible then W.ink else W.text)
+            button:SetAttribute("AccessibleLabel", Set.Labels[role] .. (if audible then " / playing / tap to mute on the next bar" else " / muted / tap to bring back on the next bar"))
+            enabled(button, canEdit and p.roles[role] == true)
         end
         for index, button in self.sources do
             local item = p.sources[index]
@@ -508,8 +523,9 @@ function View:_render()
     end
     self:_caption(self.primary, if stage.hosting then "STOP" elseif stage.canStart then "PLAY"
         elseif stage.requesting then "CANCEL" else "PREPARE")
-    local primaryColor = if stage.canStart then W.ink else W.text
-    self.primary.BackgroundColor3 = if stage.canStart then W.amber else W.ink
+    local nextPrimary = stage.canStart or (ready and not (self.short and self.captureTake and retained))
+    local primaryColor = if nextPrimary then W.ink else W.text
+    self.primary.BackgroundColor3 = if nextPrimary then W.amber else W.ink
     self.primary.TextColor3, self.primary.TextSize = primaryColor, 18
     self:_icon(self.primary, if stage.hosting then "stop" elseif stage.canStart then "play" elseif stage.requesting then "close" else "flag", primaryColor)
     enabled(self.primary, stage.hosting or stage.canStart or stage.requesting
@@ -521,8 +537,19 @@ function View:_render()
         elseif stage.listening then self.audioStatus or "LISTENING"
         elseif stage.requesting then "WAIT / " .. tostring(stage.position)
         elseif stage.hosting then "PLAYING"
-        elseif not choice then "MAKE → CHOOSE → PREPARE → PLAY"
-        else "CHOOSE → PREPARE → PLAY"
+        elseif needsMusic then "MAKE"
+        elseif ready then "PREPARE"
+        else "CHOOSE"
+    local noticeIcon = if stage.hosting then "sound" elseif stage.listening then "headphones"
+        elseif stage.canStart or nextPrimary then "hand" elseif stage.requesting then "eye"
+        elseif needsMusic then "van" else "library"
+    if self.noticeIcon ~= noticeIcon then
+        self.noticePicture:ClearAllChildren()
+        local picture = Icons.make(self.noticePicture, noticeIcon, W.amber, 28)
+        picture.ZIndex = 19
+        for _, child in picture:GetDescendants() do if child:IsA("GuiObject") then child.ZIndex = 19 end end
+        self.noticeIcon = noticeIcon
+    end
     W.set(self.notice, "Text", notice)
     self.notice:SetAttribute("AccessibleLabel", notice)
     self:_layout()
@@ -550,7 +577,8 @@ function View:update(stage, muted, notice, audioStatus)
     local selected = GuiService.SelectedObject
     if self.panel.Visible and Input.GamepadEnabled and (not wasOpen or not selected
         or not selected:IsDescendantOf(self.panel) or not selected.Selectable or not visible(selected)) then
-        GuiService.SelectedObject = if self.primary.Selectable then self.primary elseif self.secondary.Selectable then self.secondary else self.close
+        GuiService.SelectedObject = if self.primary.Selectable then self.primary elseif self.studio.Visible and self.studio.Selectable then self.studio
+            elseif self.secondary.Selectable then self.secondary else self.close
     elseif wasOpen and not self.panel.Visible and selected and selected:IsDescendantOf(self.panel) then
         GuiService.SelectedObject = nil
     end

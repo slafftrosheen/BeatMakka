@@ -2,10 +2,12 @@ local Gui = require(script.Parent.GuiFactory)
 local Icons = require(script.Parent.GameIcons)
 local Theme = require(game.ReplicatedStorage.Shared.Theme)
 local Fair = require(game.ReplicatedStorage.Shared.QuayFair)
+local Games = require(game.ReplicatedStorage.Shared.QuayStreetGames)
 local Input = game:GetService("UserInputService")
 local GuiService = game:GetService("GuiService")
 local Steps = require(script.Parent.VisualSteps)
 local RewardPicture = require(script.Parent.FairRewardPicture)
+local Guide = require(script.Parent.QuayFairGuide)
 local View = {}
 View.__index = View
 local function picture(parent, name, color, size)
@@ -64,7 +66,8 @@ function View.new(screen, send, showGames, showReward)
         cost.Position, cost.Size = UDim2.fromOffset(68 + #tokens * 23, 26), UDim2.fromOffset(36, 22)
         local action = Gui.button(row, "GET", function() self:choose(prize) end)
         action.Position, action.Size = UDim2.fromOffset(68, 52), UDim2.new(1, -76, 0, 44)
-        self.rows[prize.id] = { action = action, tokens = tokens, cost = cost, picture = art }
+        local outline = Gui.make("UIStroke", row, { Color = Theme.Amber, Thickness = 2, Enabled = false })
+        self.rows[prize.id] = { outline = outline, action = action, tokens = tokens, cost = cost, picture = art }
     end
     self.games = Gui.button(self.root, "PLAY", function() self:gamesRoute() end)
     self.games.Position, self.games.Size = UDim2.new(0, 12, 1, -52), UDim2.fromOffset(112, 44)
@@ -151,12 +154,11 @@ function View:accept(state)
         self.scroll.CanvasPosition = Vector2.zero
         if Input.GamepadEnabled then GuiService.SelectedObject = self.receiptAction end
     end
-    if not was and Input.GamepadEnabled then
-        local focus = self.games
-        for _, prize in Fair.Prizes do
-            if self.rows[prize.id].action.Selectable then focus = self.rows[prize.id].action; break end
-        end
-        GuiService.SelectedObject = focus
+    if not was then
+        local prize = Guide.prize(self.fair, state.quay.rewards)
+        local index = if prize then table.find(Fair.Prizes, prize) else 1
+        self.scroll.CanvasPosition = Vector2.new(0, ((index or 1) - 1) * 114)
+        if Input.GamepadEnabled then GuiService.SelectedObject = if prize then self.rows[prize.id].action else self.games end
     end
 end
 function View:render()
@@ -170,6 +172,13 @@ function View:render()
         elseif state.saveMode == "session" then "STUDIO SESSION"
         elseif state.dirty then "UNSAVED CHANGES" else "JOURNAL KEPT"
     if state.notice then self.notice.Text = state.notice end
+    local suggested = Guide.prize(self.fair, q.rewards)
+    local gameId = Guide.nextGame(self.fair)
+    self.games.Text = if gameId then "PLAY" else "PRACTICE"
+    self.games:SetAttribute("UiIcon", if gameId then Games.ById[gameId].icon else "redo")
+    self.games:SetAttribute("AccessibleLabel", if gameId then "Follow the picture route to a game with coins remaining" else "All fair coins earned; play again for fun without more coins")
+    self.games.BackgroundColor3 = if not suggested and not self.receiptId then Theme.Amber else Theme.Teal
+    self.games.TextColor3 = if not suggested and not self.receiptId then Theme.Ink else Theme.Cream
     local anyOwned, anyAffordable, anyUnworn, allOwned = false, false, false, true
     for _, prize in Fair.Prizes do
         local row = self.rows[prize.id]
@@ -181,11 +190,14 @@ function View:render()
         anyOwned = anyOwned or owned
         anyAffordable = anyAffordable or (not owned and affordable)
         row.picture:update(owned)
+        row.outline.Enabled = suggested ~= nil and suggested.id == prize.id and not self.receiptId and not self.pending
         local waiting = self.pending ~= nil
         local enabled = not waiting
         row.action.Text = if waiting and self.pending.id == prize.id then "…"
             elseif equipped then (if prize.category == "companion" then "PEOPLE" elseif prize.category == "roamer" then "SEE" else "SHOW") elseif owned then "WEAR" elseif affordable then "GET" else "PLAY"
-        row.action:SetAttribute("UiIcon", if equipped or owned then "check" elseif affordable then "bag" else "pads")
+        row.action:SetAttribute("UiIcon", if row.outline.Enabled then "hand" elseif equipped then
+            (if prize.category == "companion" then "people" elseif prize.category == "roamer" then "van" else "badge")
+            elseif owned then "check" elseif affordable then "bag" else "coin")
         row.action:SetAttribute("AccessibleLabel", prize.label .. (if equipped then " / equipped / show reward destination" elseif owned then " / equip owned prize"
             elseif affordable then " / claim for " .. prize.cost .. " coins" else " / play games for " .. (prize.cost - self.fair.balance) .. " more coins"))
         row.action.Active, row.action.Interactable, row.action.Selectable = enabled, enabled, enabled

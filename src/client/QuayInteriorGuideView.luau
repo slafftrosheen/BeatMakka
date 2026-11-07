@@ -33,7 +33,21 @@ function Guide.new(screen, send)
         for _, child in hint:GetDescendants() do if child:IsA("GuiObject") then child.ZIndex = 4 end end
         self.buttons[kind] = { root = button, icon = icon, hint = hint, hintName = "route" }
     end
-    self.connection = game:GetService("RunService").Heartbeat:Connect(function() self:render() end)
+    self.marker = Gui.make("Part", workspace, { Name = "LocalRoomDestination", Anchored = true,
+        Size = Vector3.one, Transparency = 1, CanCollide = false, CanTouch = false, CanQuery = false, CastShadow = false })
+    self.beacon = Gui.make("BillboardGui", screen.Parent, { Name = "RoomDestinationPicture", Adornee = self.marker,
+        ResetOnSpawn = false, Size = UDim2.fromOffset(64, 70), StudsOffsetWorldSpace = Vector3.new(0, 3, 0),
+        AlwaysOnTop = true, MaxDistance = 40, Enabled = false })
+    self.beaconBack = Gui.round(Gui.make("Frame", self.beacon, { Size = UDim2.fromOffset(64, 60),
+        BackgroundColor3 = Theme.Ink, BorderSizePixel = 0 }), 10)
+    self.beaconHint = Icons.make(self.beaconBack, "hand", Theme.Ink, 20)
+    self.beaconHint.Position, self.beaconHint.ZIndex = UDim2.fromOffset(42, 40), 3
+    for _, child in self.beaconHint:GetDescendants() do if child:IsA("GuiObject") then child.ZIndex = 3 end end
+    self.elapsed = 0
+    self.connection = game:GetService("RunService").Heartbeat:Connect(function(dt)
+        self.elapsed += dt
+        if self.elapsed >= 0.1 then self.elapsed = 0; self:render() end
+    end)
     return self
 end
 function Guide:accept(state)
@@ -64,6 +78,21 @@ function Guide:render()
     local valid = typeof(target) == "Vector3"
     self.near = valid and root ~= nil and (target - root.Position).Magnitude <= 10
     self.route:update(root and root.Position, target, self.root.Visible and valid and not self.near)
+    self.beacon.Enabled = self.root.Visible and valid
+    if self.beacon.Enabled then
+        self.marker.Position = target
+        if self.beaconChoice ~= self.selected then
+            if self.beaconPicture then self.beaconPicture:Destroy() end
+            local name = if self.selected == "set" then "pads" elseif self.selected == "look" then "eye" else "door"
+            self.beaconPicture = Icons.make(self.beaconBack, name, Theme.Amber, 40)
+            self.beaconPicture.Position = UDim2.fromOffset(12, 8)
+            self.beaconChoice = self.selected
+        end
+        self.beaconBack.BackgroundColor3 = if self.near then Theme.Amber else Theme.Ink
+        Icons.tint(self.beaconPicture, if self.near then Theme.Ink else Theme.Amber)
+        self.beaconHint.Visible = self.near
+        self.beacon:SetAttribute("AccessibleLabel", self.selected .. (if self.near then " / activate the matching picture" else " / walk to this picture"))
+    end
     if not self.root.Visible then return end
     if not wasVisible and game:GetService("UserInputService").GamepadEnabled then
         game:GetService("GuiService").SelectedObject = self.buttons[self.selected].root
@@ -72,6 +101,7 @@ function Guide:render()
         local item = self.buttons[choice[1]]
         local selected = choice[1] == self.selected
         item.root.BackgroundColor3 = if selected then Theme.Amber else Theme.Ink
+        item.root.TextColor3 = if selected then Theme.Ink else Theme.Cream
         Icons.tint(item.icon, if selected then Theme.Ink else Theme.Cream)
         local hintName = if selected and self.near then "hand" else "route"
         if item.hintName ~= hintName then
@@ -86,6 +116,6 @@ function Guide:render()
     end
 end
 function Guide:destroy()
-    self.connection:Disconnect(); self.route:destroy(); self.root:Destroy()
+    self.connection:Disconnect(); self.route:destroy(); self.beacon:Destroy(); self.marker:Destroy(); self.root:Destroy()
 end
 return Guide

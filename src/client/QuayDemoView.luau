@@ -100,18 +100,15 @@ function View.new()
     self.worldGuidance = require(script.Parent.QuayWorldGuidance).new(self.screen)
     self.voice = require(script.Parent.CompanionVoice).new(self.screen)
     self.commissionVoice = require(script.Parent.QuayCommissionVoice).new(self.screen)
-    self.sideActivities = require(script.Parent.QuaySideActivityView).new(self.screen, send, function()
+    self.sideActivities = require(script.Parent.QuaySideActivityView).new(self.screen, send, function(gameId)
+        if gameId then self.route:trackActivity(gameId); return end
         self.route:trackPlace("fair_prizes", "FAIR PRIZES", "Follow the prize picture. Choose a prize with your coins.")
     end)
     self.fairPrizes = require(script.Parent.QuayFairPrizeView).new(self.screen, send, function()
         local fair = self.state and self.state.quay and self.state.quay.fair
-        for _, id in require(Shared.QuayFair).Games do
-            if not fair or fair.clears[id] < require(Shared.QuayFair).Heats then
-                self.route:trackActivity(id)
-                return
-            end
-        end
-        self.route:trackActivity("targets")
+        local id = require(script.Parent.QuayFairGuide).nextGame(fair)
+        -- All coin-awarding heats complete: this is explicitly free practice.
+        self.route:trackActivity(id or "targets")
     end, function(prize)
         send("QuaySideClose")
         if prize.category == "roamer" then
